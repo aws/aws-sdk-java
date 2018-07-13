@@ -84,6 +84,17 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
     private Integer attachmentCount;
     /**
      * <p>
+     * The number of entities (users and roles) for which the policy is used as the permissions boundary.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private Integer permissionsBoundaryUsageCount;
+    /**
+     * <p>
      * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      */
@@ -429,6 +440,73 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of entities (users and roles) for which the policy is used as the permissions boundary.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundaryUsageCount
+     *        The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     */
+
+    public void setPermissionsBoundaryUsageCount(Integer permissionsBoundaryUsageCount) {
+        this.permissionsBoundaryUsageCount = permissionsBoundaryUsageCount;
+    }
+
+    /**
+     * <p>
+     * The number of entities (users and roles) for which the policy is used as the permissions boundary.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
+     *         <p>
+     *         For more information about permissions boundaries, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     */
+
+    public Integer getPermissionsBoundaryUsageCount() {
+        return this.permissionsBoundaryUsageCount;
+    }
+
+    /**
+     * <p>
+     * The number of entities (users and roles) for which the policy is used as the permissions boundary.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundaryUsageCount
+     *        The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedPolicyDetail withPermissionsBoundaryUsageCount(Integer permissionsBoundaryUsageCount) {
+        setPermissionsBoundaryUsageCount(permissionsBoundaryUsageCount);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether the policy can be attached to an IAM user, group, or role.
      * </p>
      * 
@@ -734,6 +812,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
             sb.append("DefaultVersionId: ").append(getDefaultVersionId()).append(",");
         if (getAttachmentCount() != null)
             sb.append("AttachmentCount: ").append(getAttachmentCount()).append(",");
+        if (getPermissionsBoundaryUsageCount() != null)
+            sb.append("PermissionsBoundaryUsageCount: ").append(getPermissionsBoundaryUsageCount()).append(",");
         if (getIsAttachable() != null)
             sb.append("IsAttachable: ").append(getIsAttachable()).append(",");
         if (getDescription() != null)
@@ -782,6 +862,11 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
             return false;
         if (other.getAttachmentCount() != null && other.getAttachmentCount().equals(this.getAttachmentCount()) == false)
             return false;
+        if (other.getPermissionsBoundaryUsageCount() == null ^ this.getPermissionsBoundaryUsageCount() == null)
+            return false;
+        if (other.getPermissionsBoundaryUsageCount() != null
+                && other.getPermissionsBoundaryUsageCount().equals(this.getPermissionsBoundaryUsageCount()) == false)
+            return false;
         if (other.getIsAttachable() == null ^ this.getIsAttachable() == null)
             return false;
         if (other.getIsAttachable() != null && other.getIsAttachable().equals(this.getIsAttachable()) == false)
@@ -816,6 +901,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getDefaultVersionId() == null) ? 0 : getDefaultVersionId().hashCode());
         hashCode = prime * hashCode + ((getAttachmentCount() == null) ? 0 : getAttachmentCount().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundaryUsageCount() == null) ? 0 : getPermissionsBoundaryUsageCount().hashCode());
         hashCode = prime * hashCode + ((getIsAttachable() == null) ? 0 : getIsAttachable().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());

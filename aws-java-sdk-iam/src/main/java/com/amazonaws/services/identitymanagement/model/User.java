@@ -113,6 +113,17 @@ public class User implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date passwordLastUsed;
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private AttachedPermissionsBoundary permissionsBoundary;
 
     /**
      * Default constructor for User object. Callers should use the setter or fluent setter (with...) methods to
@@ -586,6 +597,73 @@ public class User implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the user.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     */
+
+    public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The ARN of the policy used to set the permissions boundary for the user.</p>
+     *         <p>
+     *         For more information about permissions boundaries, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     */
+
+    public AttachedPermissionsBoundary getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the user.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -607,7 +685,9 @@ public class User implements Serializable, Cloneable {
         if (getCreateDate() != null)
             sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getPasswordLastUsed() != null)
-            sb.append("PasswordLastUsed: ").append(getPasswordLastUsed());
+            sb.append("PasswordLastUsed: ").append(getPasswordLastUsed()).append(",");
+        if (getPermissionsBoundary() != null)
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +726,10 @@ public class User implements Serializable, Cloneable {
             return false;
         if (other.getPasswordLastUsed() != null && other.getPasswordLastUsed().equals(this.getPasswordLastUsed()) == false)
             return false;
+        if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
+            return false;
+        if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
         return true;
     }
 
@@ -660,6 +744,7 @@ public class User implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getPasswordLastUsed() == null) ? 0 : getPasswordLastUsed().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;
     }
 

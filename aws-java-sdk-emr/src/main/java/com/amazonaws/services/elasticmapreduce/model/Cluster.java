@@ -86,7 +86,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String runningAmiVersion;
     /**
      * <p>
-     * The release label for the Amazon EMR release.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
+     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      */
     private String releaseLabel;
@@ -646,11 +652,23 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
+     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release.
+     *        The Amazon EMR release label, which determines the version of open-source application packages installed
+     *        on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
+     *        release version, for example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     *        versions and included application versions and features, see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *        >http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *        releases versions 4.x and later. Earlier versions use <code>AmiVersion</code>.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -659,10 +677,22 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
+     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
-     * @return The release label for the Amazon EMR release.
+     * @return The Amazon EMR release label, which determines the version of open-source application packages installed
+     *         on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
+     *         release version, for example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     *         versions and included application versions and features, see <a
+     *         href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *         >http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *         releases versions 4.x and later. Earlier versions use <code>AmiVersion</code>.
      */
 
     public String getReleaseLabel() {
@@ -671,11 +701,23 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com
+     * /emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release.
+     *        The Amazon EMR release label, which determines the version of open-source application packages installed
+     *        on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
+     *        release version, for example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     *        versions and included application versions and features, see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *        >http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *        releases versions 4.x and later. Earlier versions use <code>AmiVersion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

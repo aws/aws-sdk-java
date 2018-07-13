@@ -1102,4 +1102,35 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult> asyncHandler);
 
+    /**
+     * <p>
+     * Updates the throughput mode or the amount of provisioned throughput of an existing file system.
+     * </p>
+     * 
+     * @param updateFileSystemRequest
+     * @return A Java Future containing the result of the UpdateFileSystem operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.UpdateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFileSystemResult> updateFileSystemAsync(UpdateFileSystemRequest updateFileSystemRequest);
+
+    /**
+     * <p>
+     * Updates the throughput mode or the amount of provisioned throughput of an existing file system.
+     * </p>
+     * 
+     * @param updateFileSystemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFileSystem operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.UpdateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFileSystemResult> updateFileSystemAsync(UpdateFileSystemRequest updateFileSystemRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResult> asyncHandler);
+
 }

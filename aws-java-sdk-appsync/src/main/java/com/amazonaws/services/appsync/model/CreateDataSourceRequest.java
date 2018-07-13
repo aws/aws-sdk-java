@@ -73,6 +73,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private ElasticsearchDataSourceConfig elasticsearchConfig;
+    /**
+     * <p>
+     * Http endpoint settings.
+     * </p>
+     */
+    private HttpDataSourceConfig httpConfig;
 
     /**
      * <p>
@@ -415,6 +421,46 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Http endpoint settings.
+     * </p>
+     * 
+     * @param httpConfig
+     *        Http endpoint settings.
+     */
+
+    public void setHttpConfig(HttpDataSourceConfig httpConfig) {
+        this.httpConfig = httpConfig;
+    }
+
+    /**
+     * <p>
+     * Http endpoint settings.
+     * </p>
+     * 
+     * @return Http endpoint settings.
+     */
+
+    public HttpDataSourceConfig getHttpConfig() {
+        return this.httpConfig;
+    }
+
+    /**
+     * <p>
+     * Http endpoint settings.
+     * </p>
+     * 
+     * @param httpConfig
+     *        Http endpoint settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withHttpConfig(HttpDataSourceConfig httpConfig) {
+        setHttpConfig(httpConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -440,7 +486,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getLambdaConfig() != null)
             sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getElasticsearchConfig() != null)
-            sb.append("ElasticsearchConfig: ").append(getElasticsearchConfig());
+            sb.append("ElasticsearchConfig: ").append(getElasticsearchConfig()).append(",");
+        if (getHttpConfig() != null)
+            sb.append("HttpConfig: ").append(getHttpConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +535,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getElasticsearchConfig() != null && other.getElasticsearchConfig().equals(this.getElasticsearchConfig()) == false)
             return false;
+        if (other.getHttpConfig() == null ^ this.getHttpConfig() == null)
+            return false;
+        if (other.getHttpConfig() != null && other.getHttpConfig().equals(this.getHttpConfig()) == false)
+            return false;
         return true;
     }
 
@@ -503,6 +555,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDynamodbConfig() == null) ? 0 : getDynamodbConfig().hashCode());
         hashCode = prime * hashCode + ((getLambdaConfig() == null) ? 0 : getLambdaConfig().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchConfig() == null) ? 0 : getElasticsearchConfig().hashCode());
+        hashCode = prime * hashCode + ((getHttpConfig() == null) ? 0 : getHttpConfig().hashCode());
         return hashCode;
     }
 

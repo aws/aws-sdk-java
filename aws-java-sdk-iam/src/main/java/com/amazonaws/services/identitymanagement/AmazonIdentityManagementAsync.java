@@ -1810,6 +1810,53 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Deletes the permissions boundary for the specified IAM role.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a role might increase its permissions by allowing anyone who assumes the
+     * role to perform all the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteRolePermissionsBoundaryRequest
+     * @return A Java Future containing the result of the DeleteRolePermissionsBoundary operation returned by the
+     *         service.
+     * @sample AmazonIdentityManagementAsync.DeleteRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(
+            DeleteRolePermissionsBoundaryRequest deleteRolePermissionsBoundaryRequest);
+
+    /**
+     * <p>
+     * Deletes the permissions boundary for the specified IAM role.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a role might increase its permissions by allowing anyone who assumes the
+     * role to perform all the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteRolePermissionsBoundaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRolePermissionsBoundary operation returned by the
+     *         service.
+     * @sample AmazonIdentityManagementAsyncHandler.DeleteRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(
+            DeleteRolePermissionsBoundaryRequest deleteRolePermissionsBoundaryRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified inline policy that is embedded in the specified IAM role.
      * </p>
      * <p>
@@ -2185,6 +2232,53 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the permissions boundary for the specified IAM user.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a user might increase its permissions by allowing the user to perform all
+     * the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteUserPermissionsBoundaryRequest
+     * @return A Java Future containing the result of the DeleteUserPermissionsBoundary operation returned by the
+     *         service.
+     * @sample AmazonIdentityManagementAsync.DeleteUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(
+            DeleteUserPermissionsBoundaryRequest deleteUserPermissionsBoundaryRequest);
+
+    /**
+     * <p>
+     * Deletes the permissions boundary for the specified IAM user.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a user might increase its permissions by allowing the user to perform all
+     * the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteUserPermissionsBoundaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserPermissionsBoundary operation returned by the
+     *         service.
+     * @sample AmazonIdentityManagementAsyncHandler.DeleteUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(
+            DeleteUserPermissionsBoundaryRequest deleteUserPermissionsBoundaryRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResult> asyncHandler);
 
     /**
      * <p>
@@ -5085,6 +5179,67 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Adds or updates the policy that is specified as the IAM role's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a role. Use the boundary to control the maximum
+     * permissions that the role can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the role.
+     * </p>
+     * <p>
+     * You cannot set the boundary for a service-linked role.
+     * </p>
+     * <important>
+     * <p>
+     * Policies used as permissions boundaries do not provide permissions. You must also attach a permissions policy to
+     * the role. To learn how the effective permissions for a role are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putRolePermissionsBoundaryRequest
+     * @return A Java Future containing the result of the PutRolePermissionsBoundary operation returned by the service.
+     * @sample AmazonIdentityManagementAsync.PutRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(
+            PutRolePermissionsBoundaryRequest putRolePermissionsBoundaryRequest);
+
+    /**
+     * <p>
+     * Adds or updates the policy that is specified as the IAM role's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a role. Use the boundary to control the maximum
+     * permissions that the role can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the role.
+     * </p>
+     * <p>
+     * You cannot set the boundary for a service-linked role.
+     * </p>
+     * <important>
+     * <p>
+     * Policies used as permissions boundaries do not provide permissions. You must also attach a permissions policy to
+     * the role. To learn how the effective permissions for a role are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putRolePermissionsBoundaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRolePermissionsBoundary operation returned by the service.
+     * @sample AmazonIdentityManagementAsyncHandler.PutRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(
+            PutRolePermissionsBoundaryRequest putRolePermissionsBoundaryRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds or updates an inline policy document that is embedded in the specified IAM role.
      * </p>
      * <p>
@@ -5165,6 +5320,61 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      */
     java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest putRolePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, PutRolePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates the policy that is specified as the IAM user's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a user. Use the boundary to control the maximum
+     * permissions that the user can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the user.
+     * </p>
+     * <important>
+     * <p>
+     * Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions
+     * policy to the user. To learn how the effective permissions for a user are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putUserPermissionsBoundaryRequest
+     * @return A Java Future containing the result of the PutUserPermissionsBoundary operation returned by the service.
+     * @sample AmazonIdentityManagementAsync.PutUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(
+            PutUserPermissionsBoundaryRequest putUserPermissionsBoundaryRequest);
+
+    /**
+     * <p>
+     * Adds or updates the policy that is specified as the IAM user's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a user. Use the boundary to control the maximum
+     * permissions that the user can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the user.
+     * </p>
+     * <important>
+     * <p>
+     * Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions
+     * policy to the user. To learn how the effective permissions for a user are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putUserPermissionsBoundaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutUserPermissionsBoundary operation returned by the service.
+     * @sample AmazonIdentityManagementAsyncHandler.PutUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(
+            PutUserPermissionsBoundaryRequest putUserPermissionsBoundaryRequest,
+            com.amazonaws.handlers.AsyncHandler<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResult> asyncHandler);
 
     /**
      * <p>
@@ -6236,7 +6446,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * <p>
      * Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
      * Service-specific credentials that are inactive cannot be used for authentication to the service. This operation
-     * can be used to disable a user’s service-specific credential as part of a credential rotation work flow.
+     * can be used to disable a user's service-specific credential as part of a credential rotation work flow.
      * </p>
      * 
      * @param updateServiceSpecificCredentialRequest
@@ -6253,7 +6463,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * <p>
      * Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
      * Service-specific credentials that are inactive cannot be used for authentication to the service. This operation
-     * can be used to disable a user’s service-specific credential as part of a credential rotation work flow.
+     * can be used to disable a user's service-specific credential as part of a credential rotation work flow.
      * </p>
      * 
      * @param updateServiceSpecificCredentialRequest

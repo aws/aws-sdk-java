@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if the AWS account has already created maximum number of file systems allowed per account.
+ * Returned if the AWS account has already created the maximum number of file systems allowed per account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -52,6 +52,10 @@ public class ListPoliciesRequestMarshaller implements Marshaller<Request<ListPol
             request.addParameter("PathPrefix", StringUtils.fromString(listPoliciesRequest.getPathPrefix()));
         }
 
+        if (listPoliciesRequest.getPolicyUsageFilter() != null) {
+            request.addParameter("PolicyUsageFilter", StringUtils.fromString(listPoliciesRequest.getPolicyUsageFilter()));
+        }
+
         if (listPoliciesRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(listPoliciesRequest.getMarker()));
         }

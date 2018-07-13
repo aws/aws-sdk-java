@@ -48,6 +48,10 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
             request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
         }
 
+        if (createUserRequest.getPermissionsBoundary() != null) {
+            request.addParameter("PermissionsBoundary", StringUtils.fromString(createUserRequest.getPermissionsBoundary()));
+        }
+
         return request;
     }
 

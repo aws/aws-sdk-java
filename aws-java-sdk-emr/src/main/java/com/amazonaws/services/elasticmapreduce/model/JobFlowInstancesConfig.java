@@ -94,10 +94,10 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     private Boolean terminationProtected;
     /**
      * <p>
-     * The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     * (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
-     * AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI
-     * version is used.
+     * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
+     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
+     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
      * </p>
      */
     private String hadoopVersion;
@@ -672,17 +672,18 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     * (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
-     * AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI
-     * version is used.
+     * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
+     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
+     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
      * </p>
      * 
      * @param hadoopVersion
-     *        The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     *        (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used,
-     *        unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop
-     *        for that AMI version is used.
+     *        Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid
+     *        inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or
+     *        "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code>
+     *        parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
+     *        is used.
      */
 
     public void setHadoopVersion(String hadoopVersion) {
@@ -691,16 +692,17 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     * (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
-     * AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI
-     * version is used.
+     * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
+     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
+     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
      * </p>
      * 
-     * @return The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     *         (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used,
-     *         unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of
-     *         Hadoop for that AMI version is used.
+     * @return Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid
+     *         inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or
+     *         "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code>
+     *         parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
+     *         is used.
      */
 
     public String getHadoopVersion() {
@@ -709,17 +711,18 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     * (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
-     * AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI
-     * version is used.
+     * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
+     * are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
+     * not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.
      * </p>
      * 
      * @param hadoopVersion
-     *        The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205"
-     *        (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used,
-     *        unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop
-     *        for that AMI version is used.
+     *        Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid
+     *        inputs are "0.18" (deprecated), "0.20" (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or
+     *        "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code>
+     *        parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

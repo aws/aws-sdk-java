@@ -43,6 +43,8 @@ public class DataSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaConfig").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("elasticsearchConfig").build();
+    private static final MarshallingInfo<StructuredPojo> HTTPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpConfig").build();
 
     private static final DataSourceMarshaller instance = new DataSourceMarshaller();
 
@@ -68,6 +70,7 @@ public class DataSourceMarshaller {
             protocolMarshaller.marshall(dataSource.getDynamodbConfig(), DYNAMODBCONFIG_BINDING);
             protocolMarshaller.marshall(dataSource.getLambdaConfig(), LAMBDACONFIG_BINDING);
             protocolMarshaller.marshall(dataSource.getElasticsearchConfig(), ELASTICSEARCHCONFIG_BINDING);
+            protocolMarshaller.marshall(dataSource.getHttpConfig(), HTTPCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -100,6 +100,10 @@ public class UserDetailStaxUnmarshaller implements Unmarshaller<UserDetail, Stax
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    userDetail.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userDetail;

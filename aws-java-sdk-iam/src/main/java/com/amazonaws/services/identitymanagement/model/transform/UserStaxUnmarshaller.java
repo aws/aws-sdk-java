@@ -72,6 +72,11 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
                     user.setPasswordLastUsed(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    user.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return user;

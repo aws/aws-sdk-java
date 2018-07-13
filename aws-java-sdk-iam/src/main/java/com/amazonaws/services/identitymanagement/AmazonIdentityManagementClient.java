@@ -2647,6 +2647,70 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Deletes the permissions boundary for the specified IAM role.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a role might increase its permissions by allowing anyone who assumes the
+     * role to perform all the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteRolePermissionsBoundaryRequest
+     * @return Result of the DeleteRolePermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.DeleteRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRolePermissionsBoundaryResult deleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRolePermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRolePermissionsBoundaryResult executeDeleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest deleteRolePermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRolePermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRolePermissionsBoundaryRequest> request = null;
+        Response<DeleteRolePermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRolePermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(deleteRolePermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteRolePermissionsBoundaryResult>(
+                    new DeleteRolePermissionsBoundaryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified inline policy that is embedded in the specified IAM role.
      * </p>
      * <p>
@@ -3156,6 +3220,66 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<DeleteUserResult> responseHandler = new StaxResponseHandler<DeleteUserResult>(new DeleteUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the permissions boundary for the specified IAM user.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a user might increase its permissions by allowing the user to perform all
+     * the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteUserPermissionsBoundaryRequest
+     * @return Result of the DeleteUserPermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.DeleteUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteUserPermissionsBoundaryResult deleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserPermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserPermissionsBoundaryResult executeDeleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest deleteUserPermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserPermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserPermissionsBoundaryRequest> request = null;
+        Response<DeleteUserPermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserPermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(deleteUserPermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteUserPermissionsBoundaryResult>(
+                    new DeleteUserPermissionsBoundaryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6694,6 +6818,83 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Adds or updates the policy that is specified as the IAM role's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a role. Use the boundary to control the maximum
+     * permissions that the role can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the role.
+     * </p>
+     * <p>
+     * You cannot set the boundary for a service-linked role.
+     * </p>
+     * <important>
+     * <p>
+     * Policies used as permissions boundaries do not provide permissions. You must also attach a permissions policy to
+     * the role. To learn how the effective permissions for a role are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putRolePermissionsBoundaryRequest
+     * @return Result of the PutRolePermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.PutRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutRolePermissionsBoundaryResult putRolePermissionsBoundary(PutRolePermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRolePermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final PutRolePermissionsBoundaryResult executePutRolePermissionsBoundary(PutRolePermissionsBoundaryRequest putRolePermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRolePermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRolePermissionsBoundaryRequest> request = null;
+        Response<PutRolePermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRolePermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(putRolePermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutRolePermissionsBoundaryResult>(
+                    new PutRolePermissionsBoundaryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or updates an inline policy document that is embedded in the specified IAM role.
      * </p>
      * <p>
@@ -6771,6 +6972,76 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<PutRolePolicyResult> responseHandler = new StaxResponseHandler<PutRolePolicyResult>(new PutRolePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates the policy that is specified as the IAM user's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a user. Use the boundary to control the maximum
+     * permissions that the user can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the user.
+     * </p>
+     * <important>
+     * <p>
+     * Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions
+     * policy to the user. To learn how the effective permissions for a user are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putUserPermissionsBoundaryRequest
+     * @return Result of the PutUserPermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.PutUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutUserPermissionsBoundaryResult putUserPermissionsBoundary(PutUserPermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutUserPermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final PutUserPermissionsBoundaryResult executePutUserPermissionsBoundary(PutUserPermissionsBoundaryRequest putUserPermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putUserPermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutUserPermissionsBoundaryRequest> request = null;
+        Response<PutUserPermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutUserPermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(putUserPermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutUserPermissionsBoundaryResult>(
+                    new PutUserPermissionsBoundaryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8162,7 +8433,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
      * Service-specific credentials that are inactive cannot be used for authentication to the service. This operation
-     * can be used to disable a user’s service-specific credential as part of a credential rotation work flow.
+     * can be used to disable a user's service-specific credential as part of a credential rotation work flow.
      * </p>
      * 
      * @param updateServiceSpecificCredentialRequest

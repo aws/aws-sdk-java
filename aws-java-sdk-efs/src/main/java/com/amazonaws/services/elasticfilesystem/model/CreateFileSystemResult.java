@@ -72,13 +72,13 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     private Integer numberOfMountTargets;
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code>
-     * field, and the time at which that size was determined in its <code>Timestamp</code> field. The
-     * <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when
-     * there are no writes to the file system. That is, the value will represent actual size only if the file system is
-     * not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file
-     * system was at any instant in time.
+     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
+     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
+     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
+     * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
+     * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
+     * at any point in time.
      * </p>
      */
     private FileSystemSize sizeInBytes;
@@ -90,17 +90,35 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     private String performanceMode;
     /**
      * <p>
-     * A boolean value that, if true, indicates that the file system is encrypted.
+     * A Boolean value that, if true, indicates that the file system is encrypted.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      * encrypted file system.
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     * change.
+     * </p>
+     */
+    private String throughputMode;
+    /**
+     * <p>
+     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * </p>
+     */
+    private Double provisionedThroughputInMibps;
 
     /**
      * <p>
@@ -435,23 +453,23 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code>
-     * field, and the time at which that size was determined in its <code>Timestamp</code> field. The
-     * <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when
-     * there are no writes to the file system. That is, the value will represent actual size only if the file system is
-     * not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file
-     * system was at any instant in time.
+     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
+     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
+     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
+     * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
+     * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
+     * at any point in time.
      * </p>
      * 
      * @param sizeInBytes
-     *        Latest known metered size (in bytes) of data stored in the file system, in bytes, in its
-     *        <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code>
-     *        field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note
-     *        that the value does not represent the size of a consistent snapshot of the file system, but it is
-     *        eventually consistent when there are no writes to the file system. That is, the value will represent
-     *        actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise,
-     *        the value is not the exact size the file system was at any instant in time.
+     *        Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field,
+     *        and the time at which that size was determined in its <code>Timestamp</code> field. The
+     *        <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The
+     *        <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but
+     *        it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code>
+     *        represents actual size only if the file system is not modified for a period longer than a couple of hours.
+     *        Otherwise, the value is not the exact size that the file system was at any point in time.
      */
 
     public void setSizeInBytes(FileSystemSize sizeInBytes) {
@@ -460,22 +478,23 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code>
-     * field, and the time at which that size was determined in its <code>Timestamp</code> field. The
-     * <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when
-     * there are no writes to the file system. That is, the value will represent actual size only if the file system is
-     * not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file
-     * system was at any instant in time.
+     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
+     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
+     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
+     * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
+     * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
+     * at any point in time.
      * </p>
      * 
-     * @return Latest known metered size (in bytes) of data stored in the file system, in bytes, in its
-     *         <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code>
-     *         field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note
-     *         that the value does not represent the size of a consistent snapshot of the file system, but it is
-     *         eventually consistent when there are no writes to the file system. That is, the value will represent
-     *         actual size only if the file system is not modified for a period longer than a couple of hours.
-     *         Otherwise, the value is not the exact size the file system was at any instant in time.
+     * @return Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field,
+     *         and the time at which that size was determined in its <code>Timestamp</code> field. The
+     *         <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The
+     *         <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system,
+     *         but it is eventually consistent when there are no writes to the file system. That is,
+     *         <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period
+     *         longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any
+     *         point in time.
      */
 
     public FileSystemSize getSizeInBytes() {
@@ -484,23 +503,23 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code>
-     * field, and the time at which that size was determined in its <code>Timestamp</code> field. The
-     * <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when
-     * there are no writes to the file system. That is, the value will represent actual size only if the file system is
-     * not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file
-     * system was at any instant in time.
+     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
+     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
+     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
+     * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
+     * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
+     * at any point in time.
      * </p>
      * 
      * @param sizeInBytes
-     *        Latest known metered size (in bytes) of data stored in the file system, in bytes, in its
-     *        <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code>
-     *        field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note
-     *        that the value does not represent the size of a consistent snapshot of the file system, but it is
-     *        eventually consistent when there are no writes to the file system. That is, the value will represent
-     *        actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise,
-     *        the value is not the exact size the file system was at any instant in time.
+     *        Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field,
+     *        and the time at which that size was determined in its <code>Timestamp</code> field. The
+     *        <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The
+     *        <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but
+     *        it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code>
+     *        represents actual size only if the file system is not modified for a period longer than a couple of hours.
+     *        Otherwise, the value is not the exact size that the file system was at any point in time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -584,11 +603,11 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A boolean value that, if true, indicates that the file system is encrypted.
+     * A Boolean value that, if true, indicates that the file system is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        A boolean value that, if true, indicates that the file system is encrypted.
+     *        A Boolean value that, if true, indicates that the file system is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -597,10 +616,10 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A boolean value that, if true, indicates that the file system is encrypted.
+     * A Boolean value that, if true, indicates that the file system is encrypted.
      * </p>
      * 
-     * @return A boolean value that, if true, indicates that the file system is encrypted.
+     * @return A Boolean value that, if true, indicates that the file system is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -609,11 +628,11 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A boolean value that, if true, indicates that the file system is encrypted.
+     * A Boolean value that, if true, indicates that the file system is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        A boolean value that, if true, indicates that the file system is encrypted.
+     *        A Boolean value that, if true, indicates that the file system is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -624,10 +643,10 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A boolean value that, if true, indicates that the file system is encrypted.
+     * A Boolean value that, if true, indicates that the file system is encrypted.
      * </p>
      * 
-     * @return A boolean value that, if true, indicates that the file system is encrypted.
+     * @return A Boolean value that, if true, indicates that the file system is encrypted.
      */
 
     public Boolean isEncrypted() {
@@ -636,12 +655,12 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      * encrypted file system.
      * </p>
      * 
      * @param kmsKeyId
-     *        The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     *        The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      *        encrypted file system.
      */
 
@@ -651,11 +670,11 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      * encrypted file system.
      * </p>
      * 
-     * @return The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * @return The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      *         encrypted file system.
      */
 
@@ -665,18 +684,179 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      * encrypted file system.
      * </p>
      * 
      * @param kmsKeyId
-     *        The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     *        The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
      *        encrypted file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFileSystemResult withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     * change.
+     * </p>
+     * 
+     * @param throughputMode
+     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
+     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
+     *        throughput mode change.
+     * @see ThroughputMode
+     */
+
+    public void setThroughputMode(String throughputMode) {
+        this.throughputMode = throughputMode;
+    }
+
+    /**
+     * <p>
+     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     * change.
+     * </p>
+     * 
+     * @return The throughput mode for a file system. There are two throughput modes to choose from for your file
+     *         system: bursting and provisioned. You can decrease your file system's throughput in Provisioned
+     *         Throughput mode or change between the throughput modes as long as it’s been more than 24 hours since the
+     *         last decrease or throughput mode change.
+     * @see ThroughputMode
+     */
+
+    public String getThroughputMode() {
+        return this.throughputMode;
+    }
+
+    /**
+     * <p>
+     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     * change.
+     * </p>
+     * 
+     * @param throughputMode
+     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
+     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
+     *        throughput mode change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThroughputMode
+     */
+
+    public CreateFileSystemResult withThroughputMode(String throughputMode) {
+        setThroughputMode(throughputMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     * change.
+     * </p>
+     * 
+     * @param throughputMode
+     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
+     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
+     *        throughput mode change.
+     * @see ThroughputMode
+     */
+
+    public void setThroughputMode(ThroughputMode throughputMode) {
+        withThroughputMode(throughputMode);
+    }
+
+    /**
+     * <p>
+     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     * bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
+     * change.
+     * </p>
+     * 
+     * @param throughputMode
+     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
+     *        bursting and provisioned. You can decrease your file system's throughput in Provisioned Throughput mode or
+     *        change between the throughput modes as long as it’s been more than 24 hours since the last decrease or
+     *        throughput mode change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThroughputMode
+     */
+
+    public CreateFileSystemResult withThroughputMode(ThroughputMode throughputMode) {
+        this.throughputMode = throughputMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * </p>
+     * 
+     * @param provisionedThroughputInMibps
+     *        The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
+     *        is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     *        href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     *        Increase</a> in the <i>Amazon EFS User Guide.</i>
+     */
+
+    public void setProvisionedThroughputInMibps(Double provisionedThroughputInMibps) {
+        this.provisionedThroughputInMibps = provisionedThroughputInMibps;
+    }
+
+    /**
+     * <p>
+     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * </p>
+     * 
+     * @return The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
+     *         is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     *         href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     *         Increase</a> in the <i>Amazon EFS User Guide.</i>
+     */
+
+    public Double getProvisionedThroughputInMibps() {
+        return this.provisionedThroughputInMibps;
+    }
+
+    /**
+     * <p>
+     * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
+     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * </p>
+     * 
+     * @param provisionedThroughputInMibps
+     *        The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
+     *        is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
+     *        href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     *        Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemResult withProvisionedThroughputInMibps(Double provisionedThroughputInMibps) {
+        setProvisionedThroughputInMibps(provisionedThroughputInMibps);
         return this;
     }
 
@@ -712,7 +892,11 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         if (getEncrypted() != null)
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getThroughputMode() != null)
+            sb.append("ThroughputMode: ").append(getThroughputMode()).append(",");
+        if (getProvisionedThroughputInMibps() != null)
+            sb.append("ProvisionedThroughputInMibps: ").append(getProvisionedThroughputInMibps());
         sb.append("}");
         return sb.toString();
     }
@@ -771,6 +955,14 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getThroughputMode() == null ^ this.getThroughputMode() == null)
+            return false;
+        if (other.getThroughputMode() != null && other.getThroughputMode().equals(this.getThroughputMode()) == false)
+            return false;
+        if (other.getProvisionedThroughputInMibps() == null ^ this.getProvisionedThroughputInMibps() == null)
+            return false;
+        if (other.getProvisionedThroughputInMibps() != null && other.getProvisionedThroughputInMibps().equals(this.getProvisionedThroughputInMibps()) == false)
+            return false;
         return true;
     }
 
@@ -790,6 +982,8 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getPerformanceMode() == null) ? 0 : getPerformanceMode().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getThroughputMode() == null) ? 0 : getThroughputMode().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedThroughputInMibps() == null) ? 0 : getProvisionedThroughputInMibps().hashCode());
         return hashCode;
     }
 

@@ -83,6 +83,17 @@ public class Role implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxSessionDuration;
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private AttachedPermissionsBoundary permissionsBoundary;
 
     /**
      * <p>
@@ -459,6 +470,73 @@ public class Role implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the role.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     */
+
+    public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The ARN of the policy used to set the permissions boundary for the role.</p>
+     *         <p>
+     *         For more information about permissions boundaries, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     */
+
+    public AttachedPermissionsBoundary getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy used to set the permissions boundary for the role.</p>
+     *        <p>
+     *        For more information about permissions boundaries, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Role withPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -484,7 +562,9 @@ public class Role implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getMaxSessionDuration() != null)
-            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration());
+            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration()).append(",");
+        if (getPermissionsBoundary() != null)
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
         sb.append("}");
         return sb.toString();
     }
@@ -531,6 +611,10 @@ public class Role implements Serializable, Cloneable {
             return false;
         if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
             return false;
+        if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
+            return false;
+        if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
         return true;
     }
 
@@ -547,6 +631,7 @@ public class Role implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;
     }
 

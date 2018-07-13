@@ -62,6 +62,19 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String pathPrefix;
     /**
      * <p>
+     * The policy usage method to use for filtering the results.
+     * </p>
+     * <p>
+     * To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, all policies are returned.
+     * </p>
+     */
+    private String policyUsageFilter;
+    /**
+     * <p>
      * Use this parameter only when paginating results and only after you receive a response indicating that the results
      * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
      * indicate where the next call should start.
@@ -388,6 +401,149 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The policy usage method to use for filtering the results.
+     * </p>
+     * <p>
+     * To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, all policies are returned.
+     * </p>
+     * 
+     * @param policyUsageFilter
+     *        The policy usage method to use for filtering the results.</p>
+     *        <p>
+     *        To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
+     *        To list only the policies used to set permissions boundaries, set the value to 
+     *        <code>PermissionsBoundary</code>.
+     *        </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, all policies are returned.
+     * @see PolicyUsageType
+     */
+
+    public void setPolicyUsageFilter(String policyUsageFilter) {
+        this.policyUsageFilter = policyUsageFilter;
+    }
+
+    /**
+     * <p>
+     * The policy usage method to use for filtering the results.
+     * </p>
+     * <p>
+     * To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, all policies are returned.
+     * </p>
+     * 
+     * @return The policy usage method to use for filtering the results.</p>
+     *         <p>
+     *         To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
+     *         To list only the policies used to set permissions boundaries, set the value to 
+     *         <code>PermissionsBoundary</code>.
+     *         </p>
+     *         <p>
+     *         This parameter is optional. If it is not included, all policies are returned.
+     * @see PolicyUsageType
+     */
+
+    public String getPolicyUsageFilter() {
+        return this.policyUsageFilter;
+    }
+
+    /**
+     * <p>
+     * The policy usage method to use for filtering the results.
+     * </p>
+     * <p>
+     * To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, all policies are returned.
+     * </p>
+     * 
+     * @param policyUsageFilter
+     *        The policy usage method to use for filtering the results.</p>
+     *        <p>
+     *        To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
+     *        To list only the policies used to set permissions boundaries, set the value to 
+     *        <code>PermissionsBoundary</code>.
+     *        </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, all policies are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyUsageType
+     */
+
+    public ListPoliciesRequest withPolicyUsageFilter(String policyUsageFilter) {
+        setPolicyUsageFilter(policyUsageFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The policy usage method to use for filtering the results.
+     * </p>
+     * <p>
+     * To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, all policies are returned.
+     * </p>
+     * 
+     * @param policyUsageFilter
+     *        The policy usage method to use for filtering the results.</p>
+     *        <p>
+     *        To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
+     *        To list only the policies used to set permissions boundaries, set the value to 
+     *        <code>PermissionsBoundary</code>.
+     *        </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, all policies are returned.
+     * @see PolicyUsageType
+     */
+
+    public void setPolicyUsageFilter(PolicyUsageType policyUsageFilter) {
+        withPolicyUsageFilter(policyUsageFilter);
+    }
+
+    /**
+     * <p>
+     * The policy usage method to use for filtering the results.
+     * </p>
+     * <p>
+     * To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+     * </p>
+     * <p>
+     * This parameter is optional. If it is not included, all policies are returned.
+     * </p>
+     * 
+     * @param policyUsageFilter
+     *        The policy usage method to use for filtering the results.</p>
+     *        <p>
+     *        To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
+     *        To list only the policies used to set permissions boundaries, set the value to 
+     *        <code>PermissionsBoundary</code>.
+     *        </p>
+     *        <p>
+     *        This parameter is optional. If it is not included, all policies are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyUsageType
+     */
+
+    public ListPoliciesRequest withPolicyUsageFilter(PolicyUsageType policyUsageFilter) {
+        this.policyUsageFilter = policyUsageFilter.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Use this parameter only when paginating results and only after you receive a response indicating that the results
      * are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to
      * indicate where the next call should start.
@@ -540,6 +696,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("OnlyAttached: ").append(getOnlyAttached()).append(",");
         if (getPathPrefix() != null)
             sb.append("PathPrefix: ").append(getPathPrefix()).append(",");
+        if (getPolicyUsageFilter() != null)
+            sb.append("PolicyUsageFilter: ").append(getPolicyUsageFilter()).append(",");
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
@@ -570,6 +728,10 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getPathPrefix() != null && other.getPathPrefix().equals(this.getPathPrefix()) == false)
             return false;
+        if (other.getPolicyUsageFilter() == null ^ this.getPolicyUsageFilter() == null)
+            return false;
+        if (other.getPolicyUsageFilter() != null && other.getPolicyUsageFilter().equals(this.getPolicyUsageFilter()) == false)
+            return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
@@ -589,6 +751,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         hashCode = prime * hashCode + ((getOnlyAttached() == null) ? 0 : getOnlyAttached().hashCode());
         hashCode = prime * hashCode + ((getPathPrefix() == null) ? 0 : getPathPrefix().hashCode());
+        hashCode = prime * hashCode + ((getPolicyUsageFilter() == null) ? 0 : getPolicyUsageFilter().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;

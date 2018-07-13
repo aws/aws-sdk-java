@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+ * Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

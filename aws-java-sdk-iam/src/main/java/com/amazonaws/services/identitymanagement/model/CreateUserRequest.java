@@ -54,6 +54,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String userName;
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the user.
+     * </p>
+     */
+    private String permissionsBoundary;
 
     /**
      * Default constructor for CreateUserRequest object. Callers should use the setter or fluent setter (with...)
@@ -255,6 +261,46 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the user.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy that is used to set the permissions boundary for the user.
+     */
+
+    public void setPermissionsBoundary(String permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the user.
+     * </p>
+     * 
+     * @return The ARN of the policy that is used to set the permissions boundary for the user.
+     */
+
+    public String getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the user.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy that is used to set the permissions boundary for the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withPermissionsBoundary(String permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -268,7 +314,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: ").append(getUserName());
+            sb.append("UserName: ").append(getUserName()).append(",");
+        if (getPermissionsBoundary() != null)
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +339,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
+        if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
+            return false;
+        if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
         return true;
     }
 
@@ -301,6 +353,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;
     }
 

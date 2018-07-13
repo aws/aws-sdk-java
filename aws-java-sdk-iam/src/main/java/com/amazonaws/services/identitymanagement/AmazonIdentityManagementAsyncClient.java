@@ -1447,6 +1447,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request) {
+
+        return deleteRolePermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(
+            final DeleteRolePermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResult> asyncHandler) {
+        final DeleteRolePermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRolePermissionsBoundaryResult>() {
+            @Override
+            public DeleteRolePermissionsBoundaryResult call() throws Exception {
+                DeleteRolePermissionsBoundaryResult result = null;
+
+                try {
+                    result = executeDeleteRolePermissionsBoundary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(DeleteRolePolicyRequest request) {
 
         return deleteRolePolicyAsync(request, null);
@@ -1697,6 +1731,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request) {
+
+        return deleteUserPermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(
+            final DeleteUserPermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResult> asyncHandler) {
+        final DeleteUserPermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUserPermissionsBoundaryResult>() {
+            @Override
+            public DeleteUserPermissionsBoundaryResult call() throws Exception {
+                DeleteUserPermissionsBoundaryResult result = null;
+
+                try {
+                    result = executeDeleteUserPermissionsBoundary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3992,6 +4060,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request) {
+
+        return putRolePermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(final PutRolePermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResult> asyncHandler) {
+        final PutRolePermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRolePermissionsBoundaryResult>() {
+            @Override
+            public PutRolePermissionsBoundaryResult call() throws Exception {
+                PutRolePermissionsBoundaryResult result = null;
+
+                try {
+                    result = executePutRolePermissionsBoundary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest request) {
 
         return putRolePolicyAsync(request, null);
@@ -4009,6 +4110,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executePutRolePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request) {
+
+        return putUserPermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(final PutUserPermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResult> asyncHandler) {
+        final PutUserPermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutUserPermissionsBoundaryResult>() {
+            @Override
+            public PutUserPermissionsBoundaryResult call() throws Exception {
+                PutUserPermissionsBoundaryResult result = null;
+
+                try {
+                    result = executePutUserPermissionsBoundary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

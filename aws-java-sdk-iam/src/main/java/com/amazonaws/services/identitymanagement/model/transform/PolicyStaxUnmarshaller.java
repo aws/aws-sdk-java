@@ -73,6 +73,11 @@ public class PolicyStaxUnmarshaller implements Unmarshaller<Policy, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundaryUsageCount", targetDepth)) {
+                    policy.setPermissionsBoundaryUsageCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("IsAttachable", targetDepth)) {
                     policy.setIsAttachable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

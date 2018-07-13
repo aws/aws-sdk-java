@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned if the file system's life cycle state is not "created".
+ * Returned if the file system's lifecycle state is not "available".
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

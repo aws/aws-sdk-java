@@ -22,6 +22,7 @@ public enum LifeCycleState {
 
     Creating("creating"),
     Available("available"),
+    Updating("updating"),
     Deleting("deleting"),
     Deleted("deleted");
 

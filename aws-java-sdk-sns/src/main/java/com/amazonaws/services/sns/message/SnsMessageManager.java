@@ -114,12 +114,18 @@ public class SnsMessageManager {
 
     //TODO SNS team will use a consistent pattern for certificate naming. Then remove the special handling based on region
     private String resolveCertCommonName(String region) {
-        if (Regions.CN_NORTH_1.getName().equals(region) || Regions.CN_NORTHWEST_1.getName().equals(region)) {
+        if (Regions.CN_NORTH_1.getName().equals(region)) {
             return "sns-cn-north-1.amazonaws.com.cn";
-        } else if (Regions.GovCloud.getName().equals(region)) {
-            return "sns-us-gov-west-1.amazonaws.com";
-        } else {
-            return "sns." + RegionUtils.getRegion(region).getDomain();
         }
+
+        if (Regions.CN_NORTHWEST_1.getName().equals(region)) {
+            return "sns-cn-northwest-1.amazonaws.com.cn";
+        }
+
+        if (Regions.GovCloud.getName().equals(region)) {
+            return "sns-us-gov-west-1.amazonaws.com";
+        }
+
+        return "sns." + RegionUtils.getRegion(region).getDomain();
     }
 }

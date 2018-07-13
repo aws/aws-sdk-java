@@ -23,7 +23,8 @@ public enum DataSourceType {
     AWS_LAMBDA("AWS_LAMBDA"),
     AMAZON_DYNAMODB("AMAZON_DYNAMODB"),
     AMAZON_ELASTICSEARCH("AMAZON_ELASTICSEARCH"),
-    NONE("NONE");
+    NONE("NONE"),
+    HTTP("HTTP");
 
     private String value;
 

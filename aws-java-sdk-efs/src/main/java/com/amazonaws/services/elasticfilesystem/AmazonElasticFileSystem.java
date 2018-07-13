@@ -170,7 +170,15 @@ public interface AmazonElasticFileSystem {
      *         Returned if the file system you are trying to create already exists, with the creation token you
      *         provided.
      * @throws FileSystemLimitExceededException
-     *         Returned if the AWS account has already created maximum number of file systems allowed per account.
+     *         Returned if the AWS account has already created the maximum number of file systems allowed per account.
+     * @throws InsufficientThroughputCapacityException
+     *         Returned if there's not enough capacity to provision additional throughput. This value might be returned
+     *         when you try to create a file system in provisioned throughput mode, when you attempt to increase the
+     *         provisioned throughput of an existing file system, or when you attempt to change an existing file system
+     *         from bursting to provisioned throughput mode.
+     * @throws ThroughputLimitExceededException
+     *         Returned if the throughput mode or amount of provisioned throughput can't be changed because the
+     *         throughput limit of 1024 MiB/s has been reached.
      * @sample AmazonElasticFileSystem.CreateFileSystem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"
      *      target="_top">AWS API Documentation</a>
@@ -342,9 +350,9 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @throws IncorrectFileSystemLifeCycleStateException
-     *         Returned if the file system's life cycle state is not "created".
+     *         Returned if the file system's lifecycle state is not "available".
      * @throws MountTargetConflictException
      *         Returned if the mount target would violate one of the specified restrictions based on the file system's
      *         existing mount targets.
@@ -356,15 +364,15 @@ public interface AmazonElasticFileSystem {
      * @throws IpAddressInUseException
      *         Returned if the request specified an <code>IpAddress</code> that is already in use in the subnet.
      * @throws NetworkInterfaceLimitExceededException
-     *         The calling account has reached the ENI limit for the specific AWS region. Client should try to delete
-     *         some ENIs or get its account limit raised. For more information, see <a
+     *         The calling account has reached the limit for elastic network interfaces for the specific AWS Region. The
+     *         client should try to delete some elastic network interfaces or get the account limit raised. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC
-     *         Limits</a> in the Amazon Virtual Private Cloud User Guide (see the Network interfaces per VPC entry in
-     *         the table).
+     *         Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table).
      * @throws SecurityGroupLimitExceededException
      *         Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.
      * @throws SecurityGroupNotFoundException
-     *         Returned if one of the specified security groups does not exist in the subnet's VPC.
+     *         Returned if one of the specified security groups doesn't exist in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
      * @sample AmazonElasticFileSystem.CreateMountTarget
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"
@@ -391,7 +399,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.CreateTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags" target="_top">AWS
      *      API Documentation</a>
@@ -427,7 +435,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @throws FileSystemInUseException
      *         Returned if a file system has mount targets.
      * @sample AmazonElasticFileSystem.DeleteFileSystem
@@ -513,7 +521,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DeleteTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags" target="_top">AWS
      *      API Documentation</a>
@@ -558,7 +566,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeFileSystems
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems"
      *      target="_top">AWS API Documentation</a>
@@ -631,7 +639,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found in the caller's account.
      * @sample AmazonElasticFileSystem.DescribeMountTargets
@@ -658,7 +666,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws FileSystemNotFoundException
-     *         Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags" target="_top">AWS
      *      API Documentation</a>
@@ -706,13 +714,46 @@ public interface AmazonElasticFileSystem {
      * @throws SecurityGroupLimitExceededException
      *         Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.
      * @throws SecurityGroupNotFoundException
-     *         Returned if one of the specified security groups does not exist in the subnet's VPC.
+     *         Returned if one of the specified security groups doesn't exist in the subnet's VPC.
      * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups"
      *      target="_top">AWS API Documentation</a>
      */
     ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
+
+    /**
+     * <p>
+     * Updates the throughput mode or the amount of provisioned throughput of an existing file system.
+     * </p>
+     * 
+     * @param updateFileSystemRequest
+     * @return Result of the UpdateFileSystem operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
+     * @throws InsufficientThroughputCapacityException
+     *         Returned if there's not enough capacity to provision additional throughput. This value might be returned
+     *         when you try to create a file system in provisioned throughput mode, when you attempt to increase the
+     *         provisioned throughput of an existing file system, or when you attempt to change an existing file system
+     *         from bursting to provisioned throughput mode.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws ThroughputLimitExceededException
+     *         Returned if the throughput mode or amount of provisioned throughput can't be changed because the
+     *         throughput limit of 1024 MiB/s has been reached.
+     * @throws TooManyRequestsException
+     *         Returned if you don’t wait at least 24 hours before changing the throughput mode, or decreasing the
+     *         Provisioned Throughput value.
+     * @sample AmazonElasticFileSystem.UpdateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFileSystemResult updateFileSystem(UpdateFileSystemRequest updateFileSystemRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

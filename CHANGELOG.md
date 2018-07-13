@@ -1,3 +1,32 @@
+# __1.11.367__ __2018-07-12__
+## __AWS AppSync__
+  - ### Features
+    - This release adds support for configuring HTTP  endpoints as data sources for your AWS AppSync GraphQL API.
+
+## __AWS CodeBuild__
+  - ### Features
+    - Update CodeBuild CreateProject API - serviceRole is a required input 
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - SDK release to support IAM delegated administrator feature. The feature lets customers attach permissions boundary to IAM principals. The IAM principals cannot operate exceeding the permission specified in permissions boundary.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Amazon Data Lifecycle Manager (DLM) for EBS Snapshots provides a simple, automated way to back up data stored on Amazon EBS volumes. You can define backup and retention schedules for EBS snapshots by creating lifecycle policies based on tags. With this feature, you no longer have to rely on custom scripts to create and manage your backups. This feature is now available in the US East (N. Virginia), US West (Oregon), and Europe (Ireland) AWS regions at no additional cost.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - Amazon EFS now allows you to instantly provision the throughput required for your applications independent of the amount of data stored in your file system, allowing you to optimize throughput for your applications performance needs. Starting today, you can provision the throughput your applications require quickly with a few simple steps using AWS Console, AWS CLI or AWS API to achieve consistent performance.
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Documentation updates for EMR.
+
+## __Amazon SNS__
+  - ### Bugfixes
+    - Fix `SnsMessageManager` to use proper certificate name for ZHY region
+
 # __1.11.366__ __2018-07-11__
 ## __AWS Cost Explorer Service__
   - ### Features

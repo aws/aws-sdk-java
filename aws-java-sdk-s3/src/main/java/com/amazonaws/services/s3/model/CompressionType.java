@@ -17,7 +17,8 @@ package com.amazonaws.services.s3.model;
 
 public enum CompressionType {
     NONE("NONE"),
-    GZIP("GZIP");
+    GZIP("GZIP"),
+    BZIP2("BZIP2");
 
     private final String compressionType;
 

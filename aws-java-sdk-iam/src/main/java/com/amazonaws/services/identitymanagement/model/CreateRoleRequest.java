@@ -108,6 +108,12 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Integer maxSessionDuration;
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     */
+    private String permissionsBoundary;
 
     /**
      * <p>
@@ -622,6 +628,46 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy that is used to set the permissions boundary for the role.
+     */
+
+    public void setPermissionsBoundary(String permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     * 
+     * @return The ARN of the policy that is used to set the permissions boundary for the role.
+     */
+
+    public String getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy that is used to set the permissions boundary for the role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withPermissionsBoundary(String permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -641,7 +687,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getMaxSessionDuration() != null)
-            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration());
+            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration()).append(",");
+        if (getPermissionsBoundary() != null)
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary());
         sb.append("}");
         return sb.toString();
     }
@@ -676,6 +724,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
             return false;
+        if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
+            return false;
+        if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
         return true;
     }
 
@@ -689,6 +741,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         return hashCode;
     }
 

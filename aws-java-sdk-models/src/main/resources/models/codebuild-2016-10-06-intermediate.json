@@ -9896,7 +9896,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "name", "source", "artifacts", "environment" ],
+      "required" : [ "name", "source", "artifacts", "environment", "serviceRole" ],
       "shapeName" : "CreateProjectRequest",
       "signerAware" : false,
       "signerType" : null,

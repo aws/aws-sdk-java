@@ -92,6 +92,14 @@ public class FileSystemDescriptionJsonUnmarshaller implements Unmarshaller<FileS
                     context.nextToken();
                     fileSystemDescription.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ThroughputMode", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setThroughputMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisionedThroughputInMibps", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

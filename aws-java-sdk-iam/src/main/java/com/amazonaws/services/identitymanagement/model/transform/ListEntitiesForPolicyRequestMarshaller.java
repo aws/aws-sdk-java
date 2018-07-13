@@ -53,6 +53,10 @@ public class ListEntitiesForPolicyRequestMarshaller implements Marshaller<Reques
             request.addParameter("PathPrefix", StringUtils.fromString(listEntitiesForPolicyRequest.getPathPrefix()));
         }
 
+        if (listEntitiesForPolicyRequest.getPolicyUsageFilter() != null) {
+            request.addParameter("PolicyUsageFilter", StringUtils.fromString(listEntitiesForPolicyRequest.getPolicyUsageFilter()));
+        }
+
         if (listEntitiesForPolicyRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(listEntitiesForPolicyRequest.getMarker()));
         }

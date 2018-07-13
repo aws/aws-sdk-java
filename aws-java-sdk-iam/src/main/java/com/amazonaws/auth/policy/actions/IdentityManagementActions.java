@@ -91,6 +91,8 @@ public enum IdentityManagementActions implements Action {
     DeletePolicyVersion("iam:DeletePolicyVersion"),
     /** Action for the DeleteRole operation. */
     DeleteRole("iam:DeleteRole"),
+    /** Action for the DeleteRolePermissionsBoundary operation. */
+    DeleteRolePermissionsBoundary("iam:DeleteRolePermissionsBoundary"),
     /** Action for the DeleteRolePolicy operation. */
     DeleteRolePolicy("iam:DeleteRolePolicy"),
     /** Action for the DeleteSAMLProvider operation. */
@@ -107,6 +109,8 @@ public enum IdentityManagementActions implements Action {
     DeleteSigningCertificate("iam:DeleteSigningCertificate"),
     /** Action for the DeleteUser operation. */
     DeleteUser("iam:DeleteUser"),
+    /** Action for the DeleteUserPermissionsBoundary operation. */
+    DeleteUserPermissionsBoundary("iam:DeleteUserPermissionsBoundary"),
     /** Action for the DeleteUserPolicy operation. */
     DeleteUserPolicy("iam:DeleteUserPolicy"),
     /** Action for the DeleteVirtualMFADevice operation. */
@@ -217,8 +221,12 @@ public enum IdentityManagementActions implements Action {
     ListVirtualMFADevices("iam:ListVirtualMFADevices"),
     /** Action for the PutGroupPolicy operation. */
     PutGroupPolicy("iam:PutGroupPolicy"),
+    /** Action for the PutRolePermissionsBoundary operation. */
+    PutRolePermissionsBoundary("iam:PutRolePermissionsBoundary"),
     /** Action for the PutRolePolicy operation. */
     PutRolePolicy("iam:PutRolePolicy"),
+    /** Action for the PutUserPermissionsBoundary operation. */
+    PutUserPermissionsBoundary("iam:PutUserPermissionsBoundary"),
     /** Action for the PutUserPolicy operation. */
     PutUserPolicy("iam:PutUserPolicy"),
     /** Action for the RemoveClientIDFromOpenIDConnectProvider operation. */

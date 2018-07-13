@@ -963,6 +963,6 @@ public abstract class AmazonWebServiceClient {
     }
 
     public ClientConfiguration getClientConfiguration() {
-       return new ClientConfiguration(clientConfiguration);
+        return new ClientConfiguration(clientConfiguration);
     }
 }

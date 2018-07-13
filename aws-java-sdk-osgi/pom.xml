@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.367-SNAPSHOT</version>
+    <version>1.11.367</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-dlm</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-macie</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -986,6 +992,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon Data Lifecycle Manager</title>
+                                  <packages>com.amazonaws.services.dlm*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Macie</title>
                                   <packages>com.amazonaws.services.macie*</packages>
