@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum VisibilityType {
 
     PUBLIC("PUBLIC"),
-    PRIVATE("PRIVATE");
+    PRIVATE("PRIVATE"),
+    SHARED("SHARED");
 
     private String value;
 

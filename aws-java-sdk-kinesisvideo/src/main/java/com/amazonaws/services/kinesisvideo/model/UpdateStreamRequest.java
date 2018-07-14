@@ -62,7 +62,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to
      * the consumers of the stream. For more information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify
-     * the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.
      * </p>
      * <p>
@@ -276,7 +276,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to
      * the consumers of the stream. For more information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify
-     * the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.
      * </p>
      * <p>
@@ -288,7 +288,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream
      *        contains to the consumers of the stream. For more information about media types, see <a
      *        href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to
-     *        specify the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     *        specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *        Requirements</a>.</p>
      *        <p>
      *        To play video on the console, you must specify the correct video type. For example, if the video in the
@@ -304,7 +304,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to
      * the consumers of the stream. For more information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify
-     * the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.
      * </p>
      * <p>
@@ -315,7 +315,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream
      *         contains to the consumers of the stream. For more information about media types, see <a
      *         href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to
-     *         specify the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     *         specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *         Requirements</a>.</p>
      *         <p>
      *         To play video on the console, you must specify the correct video type. For example, if the video in the
@@ -331,7 +331,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to
      * the consumers of the stream. For more information about media types, see <a
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify
-     * the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     * the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      * Requirements</a>.
      * </p>
      * <p>
@@ -343,7 +343,7 @@ public class UpdateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream
      *        contains to the consumers of the stream. For more information about media types, see <a
      *        href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to
-     *        specify the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+     *        specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *        Requirements</a>.</p>
      *        <p>
      *        To play video on the console, you must specify the correct video type. For example, if the video in the

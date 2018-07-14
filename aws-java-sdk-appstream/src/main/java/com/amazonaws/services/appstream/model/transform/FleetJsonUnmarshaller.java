@@ -68,6 +68,10 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setImageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageArn", targetDepth)) {
+                    context.nextToken();
+                    fleet.setImageArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
                     fleet.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));

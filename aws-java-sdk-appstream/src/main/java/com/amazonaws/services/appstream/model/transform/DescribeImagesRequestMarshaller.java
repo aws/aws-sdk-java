@@ -30,6 +30,10 @@ public class DescribeImagesRequestMarshaller {
 
     private static final MarshallingInfo<List> NAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Names").build();
+    private static final MarshallingInfo<List> ARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arns").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,6 +56,8 @@ public class DescribeImagesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeImagesRequest.getNames(), NAMES_BINDING);
+            protocolMarshaller.marshall(describeImagesRequest.getArns(), ARNS_BINDING);
+            protocolMarshaller.marshall(describeImagesRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(describeImagesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeImagesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

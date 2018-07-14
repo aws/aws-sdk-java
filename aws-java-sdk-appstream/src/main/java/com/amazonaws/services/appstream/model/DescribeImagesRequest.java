@@ -33,6 +33,18 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<String> names;
     /**
      * <p>
+     * The ARNs of the public, private, and shared images to describe.
+     * </p>
+     */
+    private java.util.List<String> arns;
+    /**
+     * <p>
+     * The type of image (public, private, or shared) to describe.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
      * retrieved.
      * </p>
@@ -40,7 +52,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      */
     private Integer maxResults;
@@ -117,6 +129,135 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The ARNs of the public, private, and shared images to describe.
+     * </p>
+     * 
+     * @return The ARNs of the public, private, and shared images to describe.
+     */
+
+    public java.util.List<String> getArns() {
+        return arns;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the public, private, and shared images to describe.
+     * </p>
+     * 
+     * @param arns
+     *        The ARNs of the public, private, and shared images to describe.
+     */
+
+    public void setArns(java.util.Collection<String> arns) {
+        if (arns == null) {
+            this.arns = null;
+            return;
+        }
+
+        this.arns = new java.util.ArrayList<String>(arns);
+    }
+
+    /**
+     * <p>
+     * The ARNs of the public, private, and shared images to describe.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArns(java.util.Collection)} or {@link #withArns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param arns
+     *        The ARNs of the public, private, and shared images to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withArns(String... arns) {
+        if (this.arns == null) {
+            setArns(new java.util.ArrayList<String>(arns.length));
+        }
+        for (String ele : arns) {
+            this.arns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the public, private, and shared images to describe.
+     * </p>
+     * 
+     * @param arns
+     *        The ARNs of the public, private, and shared images to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withArns(java.util.Collection<String> arns) {
+        setArns(arns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of image (public, private, or shared) to describe.
+     * </p>
+     * 
+     * @param type
+     *        The type of image (public, private, or shared) to describe.
+     * @see VisibilityType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of image (public, private, or shared) to describe.
+     * </p>
+     * 
+     * @return The type of image (public, private, or shared) to describe.
+     * @see VisibilityType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of image (public, private, or shared) to describe.
+     * </p>
+     * 
+     * @param type
+     *        The type of image (public, private, or shared) to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VisibilityType
+     */
+
+    public DescribeImagesRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of image (public, private, or shared) to describe.
+     * </p>
+     * 
+     * @param type
+     *        The type of image (public, private, or shared) to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VisibilityType
+     */
+
+    public DescribeImagesRequest withType(VisibilityType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
      * retrieved.
      * </p>
@@ -163,11 +304,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum size of each results page.
+     *        The maximum size of each page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -176,10 +317,10 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      * 
-     * @return The maximum size of each results page.
+     * @return The maximum size of each page of results.
      */
 
     public Integer getMaxResults() {
@@ -188,11 +329,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum size of each results page.
+     * The maximum size of each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum size of each results page.
+     *        The maximum size of each page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,6 +355,10 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getNames() != null)
             sb.append("Names: ").append(getNames()).append(",");
+        if (getArns() != null)
+            sb.append("Arns: ").append(getArns()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -236,6 +381,14 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNames() != null && other.getNames().equals(this.getNames()) == false)
             return false;
+        if (other.getArns() == null ^ this.getArns() == null)
+            return false;
+        if (other.getArns() != null && other.getArns().equals(this.getArns()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -253,6 +406,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNames() == null) ? 0 : getNames().hashCode());
+        hashCode = prime * hashCode + ((getArns() == null) ? 0 : getArns().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

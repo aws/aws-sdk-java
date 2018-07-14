@@ -56,6 +56,8 @@ public class ImageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicBaseImageReleasedDate").build();
     private static final MarshallingInfo<String> APPSTREAMAGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppstreamAgentVersion").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImagePermissions").build();
 
     private static final ImageMarshaller instance = new ImageMarshaller();
 
@@ -87,6 +89,7 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(image.getPublicBaseImageReleasedDate(), PUBLICBASEIMAGERELEASEDDATE_BINDING);
             protocolMarshaller.marshall(image.getAppstreamAgentVersion(), APPSTREAMAGENTVERSION_BINDING);
+            protocolMarshaller.marshall(image.getImagePermissions(), IMAGEPERMISSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

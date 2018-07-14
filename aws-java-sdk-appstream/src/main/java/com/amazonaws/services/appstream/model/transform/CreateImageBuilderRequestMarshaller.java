@@ -31,6 +31,8 @@ public class CreateImageBuilderRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> IMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageName").build();
+    private static final MarshallingInfo<String> IMAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageArn").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class CreateImageBuilderRequestMarshaller {
         try {
             protocolMarshaller.marshall(createImageBuilderRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createImageBuilderRequest.getImageName(), IMAGENAME_BINDING);
+            protocolMarshaller.marshall(createImageBuilderRequest.getImageArn(), IMAGEARN_BINDING);
             protocolMarshaller.marshall(createImageBuilderRequest.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(createImageBuilderRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createImageBuilderRequest.getDisplayName(), DISPLAYNAME_BINDING);

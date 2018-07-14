@@ -503,6 +503,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -574,6 +576,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -1019,6 +1023,61 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to
+     * which you previously granted these permissions can no longer use the image.
+     * </p>
+     * 
+     * @param deleteImagePermissionsRequest
+     * @return Result of the DeleteImagePermissions operation returned by the service.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteImagePermissionsResult deleteImagePermissions(DeleteImagePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImagePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImagePermissionsResult executeDeleteImagePermissions(DeleteImagePermissionsRequest deleteImagePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteImagePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteImagePermissionsRequest> request = null;
+        Response<DeleteImagePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteImagePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImagePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteImagePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteImagePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the
      * stack is no longer available to users. Also, any reservations made for application streaming sessions for the
      * stack are released.
@@ -1240,12 +1299,67 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Retrieves a list that describes the permissions for a private image that you own.
+     * </p>
+     * 
+     * @param describeImagePermissionsRequest
+     * @return Result of the DescribeImagePermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeImagePermissionsResult describeImagePermissions(DescribeImagePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImagePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImagePermissionsResult executeDescribeImagePermissions(DescribeImagePermissionsRequest describeImagePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeImagePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImagePermissionsRequest> request = null;
+        Response<DescribeImagePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImagePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeImagePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeImagePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeImagePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list that describes one or more specified images, if the image names are provided. Otherwise, all
      * images in the account are described.
      * </p>
      * 
      * @param describeImagesRequest
      * @return Result of the DescribeImages operation returned by the service.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DescribeImages
@@ -2134,6 +2248,62 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateFleetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates permissions for the specified private image.
+     * </p>
+     * 
+     * @param updateImagePermissionsRequest
+     * @return Result of the UpdateImagePermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @sample AmazonAppStream.UpdateImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateImagePermissionsResult updateImagePermissions(UpdateImagePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateImagePermissions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateImagePermissionsResult executeUpdateImagePermissions(UpdateImagePermissionsRequest updateImagePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateImagePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateImagePermissionsRequest> request = null;
+        Response<UpdateImagePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateImagePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateImagePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateImagePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateImagePermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

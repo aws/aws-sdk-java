@@ -28,6 +28,11 @@ public class AbstractAmazonKinesisVideoArchivedMedia implements AmazonKinesisVid
     }
 
     @Override
+    public GetHLSStreamingSessionURLResult getHLSStreamingSessionURL(GetHLSStreamingSessionURLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMediaForFragmentListResult getMediaForFragmentList(GetMediaForFragmentListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

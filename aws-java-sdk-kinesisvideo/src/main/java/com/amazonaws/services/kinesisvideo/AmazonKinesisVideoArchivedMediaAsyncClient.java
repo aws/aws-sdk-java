@@ -61,6 +61,39 @@ public class AmazonKinesisVideoArchivedMediaAsyncClient extends AmazonKinesisVid
     }
 
     @Override
+    public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request) {
+
+        return getHLSStreamingSessionURLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(final GetHLSStreamingSessionURLRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHLSStreamingSessionURLRequest, GetHLSStreamingSessionURLResult> asyncHandler) {
+        final GetHLSStreamingSessionURLRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetHLSStreamingSessionURLResult>() {
+            @Override
+            public GetHLSStreamingSessionURLResult call() throws Exception {
+                GetHLSStreamingSessionURLResult result = null;
+
+                try {
+                    result = executeGetHLSStreamingSessionURL(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMediaForFragmentListResult> getMediaForFragmentListAsync(GetMediaForFragmentListRequest request) {
 
         return getMediaForFragmentListAsync(request, null);

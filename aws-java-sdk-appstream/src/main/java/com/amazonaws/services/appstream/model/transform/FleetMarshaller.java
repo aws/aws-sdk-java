@@ -38,6 +38,8 @@ public class FleetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> IMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageName").build();
+    private static final MarshallingInfo<String> IMAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageArn").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<String> FLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -82,6 +84,7 @@ public class FleetMarshaller {
             protocolMarshaller.marshall(fleet.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(fleet.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(fleet.getImageName(), IMAGENAME_BINDING);
+            protocolMarshaller.marshall(fleet.getImageArn(), IMAGEARN_BINDING);
             protocolMarshaller.marshall(fleet.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(fleet.getFleetType(), FLEETTYPE_BINDING);
             protocolMarshaller.marshall(fleet.getComputeCapacityStatus(), COMPUTECAPACITYSTATUS_BINDING);

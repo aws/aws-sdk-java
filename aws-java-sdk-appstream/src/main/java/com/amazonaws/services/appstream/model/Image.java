@@ -114,6 +114,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String appstreamAgentVersion;
+    /**
+     * <p>
+     * The permissions to provide to the destination AWS account for the specified image.
+     * </p>
+     */
+    private ImagePermissions imagePermissions;
 
     /**
      * <p>
@@ -833,6 +839,46 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The permissions to provide to the destination AWS account for the specified image.
+     * </p>
+     * 
+     * @param imagePermissions
+     *        The permissions to provide to the destination AWS account for the specified image.
+     */
+
+    public void setImagePermissions(ImagePermissions imagePermissions) {
+        this.imagePermissions = imagePermissions;
+    }
+
+    /**
+     * <p>
+     * The permissions to provide to the destination AWS account for the specified image.
+     * </p>
+     * 
+     * @return The permissions to provide to the destination AWS account for the specified image.
+     */
+
+    public ImagePermissions getImagePermissions() {
+        return this.imagePermissions;
+    }
+
+    /**
+     * <p>
+     * The permissions to provide to the destination AWS account for the specified image.
+     * </p>
+     * 
+     * @param imagePermissions
+     *        The permissions to provide to the destination AWS account for the specified image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withImagePermissions(ImagePermissions imagePermissions) {
+        setImagePermissions(imagePermissions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -870,7 +916,9 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getPublicBaseImageReleasedDate() != null)
             sb.append("PublicBaseImageReleasedDate: ").append(getPublicBaseImageReleasedDate()).append(",");
         if (getAppstreamAgentVersion() != null)
-            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion());
+            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion()).append(",");
+        if (getImagePermissions() != null)
+            sb.append("ImagePermissions: ").append(getImagePermissions());
         sb.append("}");
         return sb.toString();
     }
@@ -941,6 +989,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAppstreamAgentVersion() != null && other.getAppstreamAgentVersion().equals(this.getAppstreamAgentVersion()) == false)
             return false;
+        if (other.getImagePermissions() == null ^ this.getImagePermissions() == null)
+            return false;
+        if (other.getImagePermissions() != null && other.getImagePermissions().equals(this.getImagePermissions()) == false)
+            return false;
         return true;
     }
 
@@ -963,6 +1015,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getPublicBaseImageReleasedDate() == null) ? 0 : getPublicBaseImageReleasedDate().hashCode());
         hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
+        hashCode = prime * hashCode + ((getImagePermissions() == null) ? 0 : getImagePermissions().hashCode());
         return hashCode;
     }
 

@@ -31,8 +31,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<Image> images;
     /**
      * <p>
-     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
      * </p>
      */
     private String nextToken;
@@ -109,13 +108,12 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used to retrieve the next page of results. If this value is empty, only the first
-     *        page is retrieved.
+     *        The pagination token to use to retrieve the next page of results. If there are no more pages, this value
+     *        is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +122,11 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
      * </p>
      * 
-     * @return The pagination token used to retrieve the next page of results. If this value is empty, only the first
-     *         page is retrieved.
+     * @return The pagination token to use to retrieve the next page of results. If there are no more pages, this value
+     *         is null.
      */
 
     public String getNextToken() {
@@ -138,13 +135,12 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
-     * retrieved.
+     * The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used to retrieve the next page of results. If this value is empty, only the first
-     *        page is retrieved.
+     *        The pagination token to use to retrieve the next page of results. If there are no more pages, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

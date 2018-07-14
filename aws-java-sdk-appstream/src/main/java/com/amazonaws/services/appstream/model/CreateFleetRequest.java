@@ -39,6 +39,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String imageName;
     /**
      * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     */
+    private String imageArn;
+    /**
+     * <p>
      * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
@@ -295,6 +301,46 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public CreateFleetRequest withImageName(String imageName) {
         setImageName(imageName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN of the public, private, or shared image to use.
+     */
+
+    public void setImageArn(String imageArn) {
+        this.imageArn = imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @return The ARN of the public, private, or shared image to use.
+     */
+
+    public String getImageArn() {
+        return this.imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN of the public, private, or shared image to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withImageArn(String imageArn) {
+        setImageArn(imageArn);
         return this;
     }
 
@@ -1493,6 +1539,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Name: ").append(getName()).append(",");
         if (getImageName() != null)
             sb.append("ImageName: ").append(getImageName()).append(",");
+        if (getImageArn() != null)
+            sb.append("ImageArn: ").append(getImageArn()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getFleetType() != null)
@@ -1534,6 +1582,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getImageName() == null ^ this.getImageName() == null)
             return false;
         if (other.getImageName() != null && other.getImageName().equals(this.getImageName()) == false)
+            return false;
+        if (other.getImageArn() == null ^ this.getImageArn() == null)
+            return false;
+        if (other.getImageArn() != null && other.getImageArn().equals(this.getImageArn()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
@@ -1585,6 +1637,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
+        hashCode = prime * hashCode + ((getImageArn() == null) ? 0 : getImageArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getComputeCapacity() == null) ? 0 : getComputeCapacity().hashCode());

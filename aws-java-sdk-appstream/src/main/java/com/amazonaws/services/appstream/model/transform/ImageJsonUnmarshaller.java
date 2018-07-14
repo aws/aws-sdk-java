@@ -104,6 +104,10 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                     context.nextToken();
                     image.setAppstreamAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImagePermissions", targetDepth)) {
+                    context.nextToken();
+                    image.setImagePermissions(ImagePermissionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

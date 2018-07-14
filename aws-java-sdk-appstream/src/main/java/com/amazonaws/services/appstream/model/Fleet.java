@@ -60,6 +60,12 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private String imageName;
     /**
      * <p>
+     * The ARN for the public, private, or shared image.
+     * </p>
+     */
+    private String imageArn;
+    /**
+     * <p>
      * The instance type to use when launching fleet instances.
      * </p>
      */
@@ -340,6 +346,46 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     public Fleet withImageName(String imageName) {
         setImageName(imageName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN for the public, private, or shared image.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN for the public, private, or shared image.
+     */
+
+    public void setImageArn(String imageArn) {
+        this.imageArn = imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the public, private, or shared image.
+     * </p>
+     * 
+     * @return The ARN for the public, private, or shared image.
+     */
+
+    public String getImageArn() {
+        return this.imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the public, private, or shared image.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN for the public, private, or shared image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withImageArn(String imageArn) {
+        setImageArn(imageArn);
         return this;
     }
 
@@ -1084,6 +1130,8 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getImageName() != null)
             sb.append("ImageName: ").append(getImageName()).append(",");
+        if (getImageArn() != null)
+            sb.append("ImageArn: ").append(getImageArn()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getFleetType() != null)
@@ -1139,6 +1187,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (other.getImageName() == null ^ this.getImageName() == null)
             return false;
         if (other.getImageName() != null && other.getImageName().equals(this.getImageName()) == false)
+            return false;
+        if (other.getImageArn() == null ^ this.getImageArn() == null)
+            return false;
+        if (other.getImageArn() != null && other.getImageArn().equals(this.getImageArn()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
@@ -1197,6 +1249,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
+        hashCode = prime * hashCode + ((getImageArn() == null) ? 0 : getImageArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getComputeCapacityStatus() == null) ? 0 : getComputeCapacityStatus().hashCode());

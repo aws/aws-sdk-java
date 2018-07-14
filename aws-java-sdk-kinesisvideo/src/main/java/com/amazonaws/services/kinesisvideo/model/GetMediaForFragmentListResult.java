@@ -32,8 +32,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information
-     * about the chunks, see <a href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
-     * The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
+     * about the chunks, see <a
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The
+     * chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
      * following additional Matroska (MKV) tags:
      * </p>
      * <ul>
@@ -119,8 +120,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information
-     * about the chunks, see <a href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
-     * The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
+     * about the chunks, see <a
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The
+     * chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
      * following additional Matroska (MKV) tags:
      * </p>
      * <ul>
@@ -164,9 +166,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * @param payload
      *        The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For
      *        information about the chunks, see <a
-     *        href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that
-     *        Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following
-     *        additional Matroska (MKV) tags: </p>
+     *        href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
+     *        The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also
+     *        include the following additional Matroska (MKV) tags: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -212,8 +214,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information
-     * about the chunks, see <a href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
-     * The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
+     * about the chunks, see <a
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The
+     * chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
      * following additional Matroska (MKV) tags:
      * </p>
      * <ul>
@@ -256,9 +259,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * 
      * @return The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For
      *         information about the chunks, see <a
-     *         href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that
-     *         Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following
-     *         additional Matroska (MKV) tags: </p>
+     *         href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
+     *         The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also
+     *         include the following additional Matroska (MKV) tags: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -304,8 +307,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information
-     * about the chunks, see <a href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
-     * The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
+     * about the chunks, see <a
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The
+     * chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the
      * following additional Matroska (MKV) tags:
      * </p>
      * <ul>
@@ -349,9 +353,9 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * @param payload
      *        The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For
      *        information about the chunks, see <a
-     *        href="docs.aws.amazon.com/acuity/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that
-     *        Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following
-     *        additional Matroska (MKV) tags: </p>
+     *        href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
+     *        The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also
+     *        include the following additional Matroska (MKV) tags: </p>
      *        <ul>
      *        <li>
      *        <p>

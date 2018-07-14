@@ -195,6 +195,8 @@ public interface AmazonAppStream {
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -230,6 +232,8 @@ public interface AmazonAppStream {
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -384,6 +388,24 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to
+     * which you previously granted these permissions can no longer use the image.
+     * </p>
+     * 
+     * @param deleteImagePermissionsRequest
+     * @return Result of the DeleteImagePermissions operation returned by the service.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteImagePermissionsResult deleteImagePermissions(DeleteImagePermissionsRequest deleteImagePermissionsRequest);
+
+    /**
+     * <p>
      * Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the
      * stack is no longer available to users. Also, any reservations made for application streaming sessions for the
      * stack are released.
@@ -458,12 +480,29 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Retrieves a list that describes the permissions for a private image that you own.
+     * </p>
+     * 
+     * @param describeImagePermissionsRequest
+     * @return Result of the DescribeImagePermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeImagePermissionsResult describeImagePermissions(DescribeImagePermissionsRequest describeImagePermissionsRequest);
+
+    /**
+     * <p>
      * Retrieves a list that describes one or more specified images, if the image names are provided. Otherwise, all
      * images in the account are described.
      * </p>
      * 
      * @param describeImagesRequest
      * @return Result of the DescribeImages operation returned by the service.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.DescribeImages
@@ -784,6 +823,25 @@ public interface AmazonAppStream {
      *      Documentation</a>
      */
     UpdateFleetResult updateFleet(UpdateFleetRequest updateFleetRequest);
+
+    /**
+     * <p>
+     * Adds or updates permissions for the specified private image.
+     * </p>
+     * 
+     * @param updateImagePermissionsRequest
+     * @return Result of the UpdateImagePermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @sample AmazonAppStream.UpdateImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateImagePermissionsResult updateImagePermissions(UpdateImagePermissionsRequest updateImagePermissionsRequest);
 
     /**
      * <p>

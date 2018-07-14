@@ -1,3 +1,16 @@
+# __1.11.368__ __2018-07-13__
+## __Amazon AppStream__
+  - ### Features
+    - This API update adds support for sharing AppStream images across AWS accounts within the same region.
+
+## __Amazon Kinesis Video Streams__
+  - ### Features
+    - Adds support for HLS video playback of Kinesis Video streams using the KinesisVideo client by including "GET_HLS_STREAMING_SESSION_URL" as an additional APIName parameter in the GetDataEndpoint input.
+
+## __Amazon Kinesis Video Streams Archived Media__
+  - ### Features
+    - Adds support for HLS video playback of Kinesis Video streams by providing the GetHLSStreamingSessionURL function in the KinesisVideoArchivedMedia client.
+
 # __1.11.367__ __2018-07-12__
 ## __AWS AppSync__
   - ### Features

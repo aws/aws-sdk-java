@@ -39,6 +39,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     private String imageName;
     /**
      * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     */
+    private String imageArn;
+    /**
+     * <p>
      * The instance type to use when launching the image builder.
      * </p>
      */
@@ -158,6 +164,46 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateImageBuilderRequest withImageName(String imageName) {
         setImageName(imageName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN of the public, private, or shared image to use.
+     */
+
+    public void setImageArn(String imageArn) {
+        this.imageArn = imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @return The ARN of the public, private, or shared image to use.
+     */
+
+    public String getImageArn() {
+        return this.imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN of the public, private, or shared image to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest withImageArn(String imageArn) {
+        setImageArn(imageArn);
         return this;
     }
 
@@ -474,6 +520,8 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("Name: ").append(getName()).append(",");
         if (getImageName() != null)
             sb.append("ImageName: ").append(getImageName()).append(",");
+        if (getImageArn() != null)
+            sb.append("ImageArn: ").append(getImageArn()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getDescription() != null)
@@ -509,6 +557,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getImageName() == null ^ this.getImageName() == null)
             return false;
         if (other.getImageName() != null && other.getImageName().equals(this.getImageName()) == false)
+            return false;
+        if (other.getImageArn() == null ^ this.getImageArn() == null)
+            return false;
+        if (other.getImageArn() != null && other.getImageArn().equals(this.getImageArn()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
@@ -548,6 +600,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
+        hashCode = prime * hashCode + ((getImageArn() == null) ? 0 : getImageArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());

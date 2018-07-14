@@ -99,6 +99,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public DeleteImagePermissionsResult deleteImagePermissions(DeleteImagePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteStackResult deleteStack(DeleteStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -115,6 +120,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DescribeImageBuildersResult describeImageBuilders(DescribeImageBuildersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeImagePermissionsResult describeImagePermissions(DescribeImagePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,6 +205,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public UpdateFleetResult updateFleet(UpdateFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateImagePermissionsResult updateImagePermissions(UpdateImagePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

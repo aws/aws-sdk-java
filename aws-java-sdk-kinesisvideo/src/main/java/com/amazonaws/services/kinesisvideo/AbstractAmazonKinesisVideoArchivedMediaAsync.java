@@ -28,6 +28,19 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     }
 
     @Override
+    public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request) {
+
+        return getHLSStreamingSessionURLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetHLSStreamingSessionURLRequest, GetHLSStreamingSessionURLResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMediaForFragmentListResult> getMediaForFragmentListAsync(GetMediaForFragmentListRequest request) {
 
         return getMediaForFragmentListAsync(request, null);
