@@ -25,7 +25,7 @@ import com.amazonaws.client.AwsSyncClientParams;
  **/
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public final class AmazonSNSClientBuilder extends AwsSyncClientBuilder<AmazonSNSClientBuilder, AmazonSNS> {
+public final class AmazonSNSClientBuilder extends AwsSyncClientBuilder<AmazonSNSClientBuilder, AmazonSNSClient> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();
 
@@ -40,7 +40,7 @@ public final class AmazonSNSClientBuilder extends AwsSyncClientBuilder<AmazonSNS
      * @return Default client using the {@link com.amazonaws.auth.DefaultAWSCredentialsProviderChain} and
      *         {@link com.amazonaws.regions.DefaultAwsRegionProviderChain} chain
      */
-    public static AmazonSNS defaultClient() {
+    public static AmazonSNSClient defaultClient() {
         return standard().build();
     }
 
@@ -56,7 +56,7 @@ public final class AmazonSNSClientBuilder extends AwsSyncClientBuilder<AmazonSNS
      * @return Fully configured implementation of AmazonSNS.
      */
     @Override
-    protected AmazonSNS build(AwsSyncClientParams params) {
+    protected AmazonSNSClient build(AwsSyncClientParams params) {
         return new AmazonSNSClient(params);
     }
 
