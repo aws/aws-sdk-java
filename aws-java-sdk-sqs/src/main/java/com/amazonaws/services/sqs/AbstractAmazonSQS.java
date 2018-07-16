@@ -243,4 +243,8 @@ public class AbstractAmazonSQS implements AmazonSQS {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public ClientConfiguration getClientConfiguration() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

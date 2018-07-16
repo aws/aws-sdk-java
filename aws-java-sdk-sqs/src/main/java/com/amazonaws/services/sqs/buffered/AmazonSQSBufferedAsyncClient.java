@@ -23,6 +23,7 @@ import java.util.concurrent.Future;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.regions.Region;
@@ -900,5 +901,10 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
     @Override
     public Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl, AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
         return listQueueTagsAsync(new ListQueueTagsRequest(queueUrl), asyncHandler);
+    }
+
+    @Override
+    public ClientConfiguration getClientConfiguration() {
+        return realSQS.getClientConfiguration();
     }
 }

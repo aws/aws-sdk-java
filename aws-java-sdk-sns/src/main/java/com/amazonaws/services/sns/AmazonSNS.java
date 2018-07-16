@@ -1095,4 +1095,8 @@ public interface AmazonSNS {
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
+    /**
+     * Accessor for the configuration for this client
+     */
+    ClientConfiguration getClientConfiguration();
 }

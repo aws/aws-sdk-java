@@ -304,4 +304,8 @@ public class AbstractAmazonSNS implements AmazonSNS {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public ClientConfiguration getClientConfiguration() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }
