@@ -32,8 +32,8 @@ public class StopDominantLanguageDetectionJobResult extends com.amazonaws.Amazon
     private String jobId;
     /**
      * <p>
-     * Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was previously
-     * stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
+     * Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     * previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * </p>
      */
     private String jobStatus;
@@ -80,12 +80,12 @@ public class StopDominantLanguageDetectionJobResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was previously
-     * stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
+     * Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     * previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * </p>
      * 
      * @param jobStatus
-     *        Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     *        Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
      *        previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * @see JobStatus
      */
@@ -96,12 +96,12 @@ public class StopDominantLanguageDetectionJobResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was previously
-     * stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
+     * Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     * previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * </p>
      * 
-     * @return Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was
-     *         previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
+     * @return Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job
+     *         was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * @see JobStatus
      */
 
@@ -111,12 +111,12 @@ public class StopDominantLanguageDetectionJobResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was previously
-     * stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
+     * Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     * previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * </p>
      * 
      * @param jobStatus
-     *        Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     *        Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
      *        previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
@@ -129,12 +129,12 @@ public class StopDominantLanguageDetectionJobResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was previously
-     * stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
+     * Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     * previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * </p>
      * 
      * @param jobStatus
-     *        Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code> if the job was
+     *        Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was
      *        previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus

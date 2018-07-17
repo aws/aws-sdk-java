@@ -172,7 +172,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      */
     @Override
     public void close() throws IOException {
-        if (readAllBytes() || isAborted()) {
+        if (_readAllBytes() || isAborted()) {
             super.close();
         } else {
             LOG.warn(
@@ -218,7 +218,8 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
         }
     }
 
-    private boolean readAllBytes() {
+    // Underscore to prevent clash with Java 9's method.
+    private boolean _readAllBytes() {
         return bytesRead >= contentLength || eofReached;
     }
 }

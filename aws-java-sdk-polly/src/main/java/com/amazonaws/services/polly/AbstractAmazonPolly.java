@@ -53,12 +53,27 @@ public class AbstractAmazonPolly implements AmazonPolly {
     }
 
     @Override
+    public GetSpeechSynthesisTaskResult getSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLexiconsResult listLexicons(ListLexiconsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListSpeechSynthesisTasksResult listSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutLexiconResult putLexicon(PutLexiconRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSpeechSynthesisTaskResult startSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -348,6 +348,39 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     }
 
     @Override
+    public java.util.concurrent.Future<GetSpeechSynthesisTaskResult> getSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request) {
+
+        return getSpeechSynthesisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSpeechSynthesisTaskResult> getSpeechSynthesisTaskAsync(final GetSpeechSynthesisTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSpeechSynthesisTaskRequest, GetSpeechSynthesisTaskResult> asyncHandler) {
+        final GetSpeechSynthesisTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSpeechSynthesisTaskResult>() {
+            @Override
+            public GetSpeechSynthesisTaskResult call() throws Exception {
+                GetSpeechSynthesisTaskResult result = null;
+
+                try {
+                    result = executeGetSpeechSynthesisTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLexiconsResult> listLexiconsAsync(ListLexiconsRequest request) {
 
         return listLexiconsAsync(request, null);
@@ -381,6 +414,39 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
     }
 
     @Override
+    public java.util.concurrent.Future<ListSpeechSynthesisTasksResult> listSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request) {
+
+        return listSpeechSynthesisTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSpeechSynthesisTasksResult> listSpeechSynthesisTasksAsync(final ListSpeechSynthesisTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSpeechSynthesisTasksRequest, ListSpeechSynthesisTasksResult> asyncHandler) {
+        final ListSpeechSynthesisTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSpeechSynthesisTasksResult>() {
+            @Override
+            public ListSpeechSynthesisTasksResult call() throws Exception {
+                ListSpeechSynthesisTasksResult result = null;
+
+                try {
+                    result = executeListSpeechSynthesisTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(PutLexiconRequest request) {
 
         return putLexiconAsync(request, null);
@@ -398,6 +464,39 @@ public class AmazonPollyAsyncClient extends AmazonPollyClient implements AmazonP
 
                 try {
                     result = executePutLexicon(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSpeechSynthesisTaskResult> startSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request) {
+
+        return startSpeechSynthesisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSpeechSynthesisTaskResult> startSpeechSynthesisTaskAsync(final StartSpeechSynthesisTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSpeechSynthesisTaskRequest, StartSpeechSynthesisTaskResult> asyncHandler) {
+        final StartSpeechSynthesisTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSpeechSynthesisTaskResult>() {
+            @Override
+            public StartSpeechSynthesisTaskResult call() throws Exception {
+                StartSpeechSynthesisTaskResult result = null;
+
+                try {
+                    result = executeStartSpeechSynthesisTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

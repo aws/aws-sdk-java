@@ -197,6 +197,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDetectSyntaxResult> batchDetectSyntaxAsync(BatchDetectSyntaxRequest request) {
+
+        return batchDetectSyntaxAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectSyntaxResult> batchDetectSyntaxAsync(final BatchDetectSyntaxRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDetectSyntaxRequest, BatchDetectSyntaxResult> asyncHandler) {
+        final BatchDetectSyntaxRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDetectSyntaxResult>() {
+            @Override
+            public BatchDetectSyntaxResult call() throws Exception {
+                BatchDetectSyntaxResult result = null;
+
+                try {
+                    result = executeBatchDetectSyntax(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDominantLanguageDetectionJobResult> describeDominantLanguageDetectionJobAsync(
             DescribeDominantLanguageDetectionJobRequest request) {
 
@@ -482,6 +515,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeDetectSentiment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectSyntaxResult> detectSyntaxAsync(DetectSyntaxRequest request) {
+
+        return detectSyntaxAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectSyntaxResult> detectSyntaxAsync(final DetectSyntaxRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectSyntaxRequest, DetectSyntaxResult> asyncHandler) {
+        final DetectSyntaxRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectSyntaxResult>() {
+            @Override
+            public DetectSyntaxResult call() throws Exception {
+                DetectSyntaxResult result = null;
+
+                try {
+                    result = executeDetectSyntax(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -49,7 +49,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private String jobType;
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      */
     private String snowballType;
@@ -117,8 +117,8 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private Notification notification;
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      */
@@ -336,11 +336,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
@@ -350,10 +350,10 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
-     * @return The type of appliance used with this job.
+     * @return The type of device used with this job.
      * @see SnowballType
      */
 
@@ -363,11 +363,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -379,11 +379,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
@@ -393,11 +393,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -857,15 +857,15 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
      * @param dataTransferProgress
-     *        A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS.
-     *        This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
-     *        both import and export jobs.
+     *        A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
+     *        data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     *        import and export jobs.
      */
 
     public void setDataTransferProgress(DataTransfer dataTransferProgress) {
@@ -874,14 +874,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
-     * @return A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS.
-     *         This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
-     *         both import and export jobs.
+     * @return A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
+     *         data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     *         import and export jobs.
      */
 
     public DataTransfer getDataTransferProgress() {
@@ -890,15 +890,15 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
      * @param dataTransferProgress
-     *        A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS.
-     *        This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
-     *        both import and export jobs.
+     *        A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
+     *        data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     *        import and export jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

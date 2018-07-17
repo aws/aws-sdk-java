@@ -67,6 +67,19 @@ public class AbstractAmazonPollyAsync extends AbstractAmazonPolly implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetSpeechSynthesisTaskResult> getSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request) {
+
+        return getSpeechSynthesisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSpeechSynthesisTaskResult> getSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSpeechSynthesisTaskRequest, GetSpeechSynthesisTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLexiconsResult> listLexiconsAsync(ListLexiconsRequest request) {
 
         return listLexiconsAsync(request, null);
@@ -80,6 +93,19 @@ public class AbstractAmazonPollyAsync extends AbstractAmazonPolly implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListSpeechSynthesisTasksResult> listSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request) {
+
+        return listSpeechSynthesisTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSpeechSynthesisTasksResult> listSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSpeechSynthesisTasksRequest, ListSpeechSynthesisTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(PutLexiconRequest request) {
 
         return putLexiconAsync(request, null);
@@ -88,6 +114,19 @@ public class AbstractAmazonPollyAsync extends AbstractAmazonPolly implements Ama
     @Override
     public java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(PutLexiconRequest request,
             com.amazonaws.handlers.AsyncHandler<PutLexiconRequest, PutLexiconResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSpeechSynthesisTaskResult> startSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request) {
+
+        return startSpeechSynthesisTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSpeechSynthesisTaskResult> startSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSpeechSynthesisTaskRequest, StartSpeechSynthesisTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

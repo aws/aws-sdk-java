@@ -32,6 +32,8 @@ public class JobResourceMarshaller {
             .marshallLocationName("S3Resources").build();
     private static final MarshallingInfo<List> LAMBDARESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LambdaResources").build();
+    private static final MarshallingInfo<List> EC2AMIRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ec2AmiResources").build();
 
     private static final JobResourceMarshaller instance = new JobResourceMarshaller();
 
@@ -51,6 +53,7 @@ public class JobResourceMarshaller {
         try {
             protocolMarshaller.marshall(jobResource.getS3Resources(), S3RESOURCES_BINDING);
             protocolMarshaller.marshall(jobResource.getLambdaResources(), LAMBDARESOURCES_BINDING);
+            protocolMarshaller.marshall(jobResource.getEc2AmiResources(), EC2AMIRESOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

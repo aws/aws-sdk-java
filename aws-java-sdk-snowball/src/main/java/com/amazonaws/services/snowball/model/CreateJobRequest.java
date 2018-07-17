@@ -130,8 +130,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      */
     private String snowballType;
@@ -1008,13 +1008,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -1024,11 +1024,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
+     * @return The type of AWS Snowball device to use for this job. Currently, the only supported device type for
      *         cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
@@ -1039,13 +1039,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1057,13 +1057,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -1073,13 +1073,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */

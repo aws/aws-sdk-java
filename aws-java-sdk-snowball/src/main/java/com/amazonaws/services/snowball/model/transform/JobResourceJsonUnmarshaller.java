@@ -56,6 +56,10 @@ public class JobResourceJsonUnmarshaller implements Unmarshaller<JobResource, Js
                     context.nextToken();
                     jobResource.setLambdaResources(new ListUnmarshaller<LambdaResource>(LambdaResourceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("Ec2AmiResources", targetDepth)) {
+                    context.nextToken();
+                    jobResource.setEc2AmiResources(new ListUnmarshaller<Ec2AmiResource>(Ec2AmiResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

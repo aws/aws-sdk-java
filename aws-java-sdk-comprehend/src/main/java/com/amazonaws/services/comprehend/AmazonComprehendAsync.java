@@ -170,6 +170,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and
+     * returns information about them. For more information, see <a>how-syntax</a>.
+     * </p>
+     * 
+     * @param batchDetectSyntaxRequest
+     * @return A Java Future containing the result of the BatchDetectSyntax operation returned by the service.
+     * @sample AmazonComprehendAsync.BatchDetectSyntax
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDetectSyntaxResult> batchDetectSyntaxAsync(BatchDetectSyntaxRequest batchDetectSyntaxRequest);
+
+    /**
+     * <p>
+     * Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and
+     * returns information about them. For more information, see <a>how-syntax</a>.
+     * </p>
+     * 
+     * @param batchDetectSyntaxRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDetectSyntax operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.BatchDetectSyntax
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDetectSyntaxResult> batchDetectSyntaxAsync(BatchDetectSyntaxRequest batchDetectSyntaxRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDetectSyntaxRequest, BatchDetectSyntaxResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the properties associated with a dominant language detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -482,6 +515,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      */
     java.util.concurrent.Future<DetectSentimentResult> detectSentimentAsync(DetectSentimentRequest detectSentimentRequest,
             com.amazonaws.handlers.AsyncHandler<DetectSentimentRequest, DetectSentimentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inspects text for syntax and the part of speech of words in the document. For more information,
+     * <a>how-syntax</a>.
+     * </p>
+     * 
+     * @param detectSyntaxRequest
+     * @return A Java Future containing the result of the DetectSyntax operation returned by the service.
+     * @sample AmazonComprehendAsync.DetectSyntax
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DetectSyntaxResult> detectSyntaxAsync(DetectSyntaxRequest detectSyntaxRequest);
+
+    /**
+     * <p>
+     * Inspects text for syntax and the part of speech of words in the document. For more information,
+     * <a>how-syntax</a>.
+     * </p>
+     * 
+     * @param detectSyntaxRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectSyntax operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.DetectSyntax
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DetectSyntaxResult> detectSyntaxAsync(DetectSyntaxRequest detectSyntaxRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectSyntaxRequest, DetectSyntaxResult> asyncHandler);
 
     /**
      * <p>
@@ -828,16 +894,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops a dominant language detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopDominantLanguageDetectionJobRequest
@@ -855,16 +921,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops a dominant language detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopDominantLanguageDetectionJobRequest
@@ -887,16 +953,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops an entities detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopEntitiesDetectionJobRequest
@@ -912,16 +978,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops an entities detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopEntitiesDetectionJobRequest
@@ -942,16 +1008,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops a key phrases detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopKeyPhrasesDetectionJobRequest
@@ -968,16 +1034,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops a key phrases detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopKeyPhrasesDetectionJobRequest
@@ -999,16 +1065,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops a sentiment detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopSentimentDetectionJobRequest
@@ -1025,16 +1091,16 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * Stops a sentiment detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopSentimentDetectionJobRequest

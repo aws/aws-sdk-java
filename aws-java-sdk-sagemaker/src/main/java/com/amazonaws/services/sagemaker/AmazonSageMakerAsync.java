@@ -733,6 +733,119 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Starts a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that
+     * you specify.
+     * </p>
+     * <p>
+     * To perform batch transformations, you create a transform job and use the data that you have readily available.
+     * </p>
+     * <p>
+     * In the request body, you provide the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TransformJobName</code> - Identifies the transform job. The name must be unique within an AWS Region in an
+     * AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ModelName</code> - Identifies the model to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon S3 location where it is
+     * stored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the
+     * results from the transform job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformResources</code> - Identifies the ML compute instances for the transform job.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how batch transformation works Amazon SageMaker, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It Works</a>.
+     * </p>
+     * 
+     * @param createTransformJobRequest
+     * @return A Java Future containing the result of the CreateTransformJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransformJobResult> createTransformJobAsync(CreateTransformJobRequest createTransformJobRequest);
+
+    /**
+     * <p>
+     * Starts a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that
+     * you specify.
+     * </p>
+     * <p>
+     * To perform batch transformations, you create a transform job and use the data that you have readily available.
+     * </p>
+     * <p>
+     * In the request body, you provide the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TransformJobName</code> - Identifies the transform job. The name must be unique within an AWS Region in an
+     * AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ModelName</code> - Identifies the model to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon S3 location where it is
+     * stored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the
+     * results from the transform job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformResources</code> - Identifies the ML compute instances for the transform job.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how batch transformation works Amazon SageMaker, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It Works</a>.
+     * </p>
+     * 
+     * @param createTransformJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransformJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransformJobResult> createTransformJobAsync(CreateTransformJobRequest createTransformJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransformJobRequest, CreateTransformJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the endpoint was
      * created.
      * </p>
@@ -1186,6 +1299,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Returns information about a transform job.
+     * </p>
+     * 
+     * @param describeTransformJobRequest
+     * @return A Java Future containing the result of the DescribeTransformJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransformJobResult> describeTransformJobAsync(DescribeTransformJobRequest describeTransformJobRequest);
+
+    /**
+     * <p>
+     * Returns information about a transform job.
+     * </p>
+     * 
+     * @param describeTransformJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTransformJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTransformJobResult> describeTransformJobAsync(DescribeTransformJobRequest describeTransformJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTransformJobRequest, DescribeTransformJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists endpoint configurations.
      * </p>
      * 
@@ -1487,6 +1631,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Lists transform jobs.
+     * </p>
+     * 
+     * @param listTransformJobsRequest
+     * @return A Java Future containing the result of the ListTransformJobs operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListTransformJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTransformJobsResult> listTransformJobsAsync(ListTransformJobsRequest listTransformJobsRequest);
+
+    /**
+     * <p>
+     * Lists transform jobs.
+     * </p>
+     * 
+     * @param listTransformJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTransformJobs operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListTransformJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTransformJobsResult> listTransformJobsAsync(ListTransformJobsRequest listTransformJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTransformJobsRequest, ListTransformJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
      * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
      * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
@@ -1528,7 +1703,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
-     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * data that the training jobs write to Amazon CloudWatch Logs are still available in CloudWatch. After the tuning
      * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
      * </p>
      * 
@@ -1547,7 +1722,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
-     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * data that the training jobs write to Amazon CloudWatch Logs are still available in CloudWatch. After the tuning
      * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
      * </p>
      * 
@@ -1660,6 +1835,47 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<StopTrainingJobResult> stopTrainingJobAsync(StopTrainingJobRequest stopTrainingJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopTrainingJobRequest, StopTrainingJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a transform job.
+     * </p>
+     * <p>
+     * When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status of the job changes to
+     * <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set to <code>Stopped</code>. When you
+     * stop a transform job before it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
+     * </p>
+     * 
+     * @param stopTransformJobRequest
+     * @return A Java Future containing the result of the StopTransformJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.StopTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopTransformJobResult> stopTransformJobAsync(StopTransformJobRequest stopTransformJobRequest);
+
+    /**
+     * <p>
+     * Stops a transform job.
+     * </p>
+     * <p>
+     * When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status of the job changes to
+     * <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set to <code>Stopped</code>. When you
+     * stop a transform job before it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
+     * </p>
+     * 
+     * @param stopTransformJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopTransformJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StopTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopTransformJobResult> stopTransformJobAsync(StopTransformJobRequest stopTransformJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopTransformJobRequest, StopTransformJobResult> asyncHandler);
 
     /**
      * <p>

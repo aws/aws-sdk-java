@@ -31,10 +31,16 @@ public enum PollyActions implements Action {
     DescribeVoices("polly:DescribeVoices"),
     /** Action for the GetLexicon operation. */
     GetLexicon("polly:GetLexicon"),
+    /** Action for the GetSpeechSynthesisTask operation. */
+    GetSpeechSynthesisTask("polly:GetSpeechSynthesisTask"),
     /** Action for the ListLexicons operation. */
     ListLexicons("polly:ListLexicons"),
+    /** Action for the ListSpeechSynthesisTasks operation. */
+    ListSpeechSynthesisTasks("polly:ListSpeechSynthesisTasks"),
     /** Action for the PutLexicon operation. */
     PutLexicon("polly:PutLexicon"),
+    /** Action for the StartSpeechSynthesisTask operation. */
+    StartSpeechSynthesisTask("polly:StartSpeechSynthesisTask"),
     /** Action for the SynthesizeSpeech operation. */
     SynthesizeSpeech("polly:SynthesizeSpeech"),
 

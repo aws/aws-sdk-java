@@ -74,6 +74,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateTransformJobResult createTransformJob(CreateTransformJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +144,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeTransformJobResult describeTransformJob(DescribeTransformJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEndpointConfigsResult listEndpointConfigs(ListEndpointConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +194,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListTransformJobsResult listTransformJobs(ListTransformJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartNotebookInstanceResult startNotebookInstance(StartNotebookInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -200,6 +215,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public StopTrainingJobResult stopTrainingJob(StopTrainingJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopTransformJobResult stopTransformJob(StopTransformJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

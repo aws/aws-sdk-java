@@ -40,7 +40,7 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer maxResults;
     /**
      * <p>
-     * A filter that only training jobs created after the specified time (timestamp).
+     * A filter that returns only training jobs created after the specified time (timestamp).
      * </p>
      */
     private java.util.Date creationTimeAfter;
@@ -176,11 +176,11 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter that only training jobs created after the specified time (timestamp).
+     * A filter that returns only training jobs created after the specified time (timestamp).
      * </p>
      * 
      * @param creationTimeAfter
-     *        A filter that only training jobs created after the specified time (timestamp).
+     *        A filter that returns only training jobs created after the specified time (timestamp).
      */
 
     public void setCreationTimeAfter(java.util.Date creationTimeAfter) {
@@ -189,10 +189,10 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter that only training jobs created after the specified time (timestamp).
+     * A filter that returns only training jobs created after the specified time (timestamp).
      * </p>
      * 
-     * @return A filter that only training jobs created after the specified time (timestamp).
+     * @return A filter that returns only training jobs created after the specified time (timestamp).
      */
 
     public java.util.Date getCreationTimeAfter() {
@@ -201,11 +201,11 @@ public class ListTrainingJobsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A filter that only training jobs created after the specified time (timestamp).
+     * A filter that returns only training jobs created after the specified time (timestamp).
      * </p>
      * 
      * @param creationTimeAfter
-     *        A filter that only training jobs created after the specified time (timestamp).
+     *        A filter that returns only training jobs created after the specified time (timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

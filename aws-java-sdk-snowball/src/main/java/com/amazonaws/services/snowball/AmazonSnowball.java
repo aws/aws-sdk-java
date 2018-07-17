@@ -27,11 +27,11 @@ import com.amazonaws.services.snowball.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of
- * data between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands
- * described here provide access to the same functionality that is available in the AWS Snowball Management Console,
- * which enables you to create and manage jobs for Snowball. To transfer data locally with a Snowball appliance, you'll
- * need to use the Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
+ * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
+ * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
+ * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
+ * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
+ * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
  * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
@@ -122,8 +122,8 @@ public interface AmazonSnowball {
     /**
      * <p>
      * Cancels the specified job. You can only cancel a job before its <code>JobState</code> value changes to
-     * <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
-     * return a job's <code>JobState</code> as part of the response element data returned.
+     * <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action returns
+     * a job's <code>JobState</code> as part of the response element data returned.
      * </p>
      * 
      * @param cancelJobRequest
@@ -180,6 +180,8 @@ public interface AmazonSnowball {
      *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
+     * @throws Ec2RequestFailedException
+     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -207,6 +209,8 @@ public interface AmazonSnowball {
      *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five notes.
+     * @throws Ec2RequestFailedException
+     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob" target="_top">AWS API
      *      Documentation</a>
@@ -406,6 +410,27 @@ public interface AmazonSnowball {
 
     /**
      * <p>
+     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS
+     * account that would be supported for use on a Snowball Edge device. Currently, supported AMIs are based on the
+     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
+     * available on the AWS Marketplace.
+     * </p>
+     * 
+     * @param listCompatibleImagesRequest
+     * @return Result of the ListCompatibleImages operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
+     * @throws Ec2RequestFailedException
+     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     * @sample AmazonSnowball.ListCompatibleImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListCompatibleImagesResult listCompatibleImages(ListCompatibleImagesRequest listCompatibleImagesRequest);
+
+    /**
+     * <p>
      * Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code>
      * object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case
      * of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs
@@ -444,6 +469,8 @@ public interface AmazonSnowball {
      *         Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
+     * @throws Ec2RequestFailedException
+     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -475,6 +502,8 @@ public interface AmazonSnowball {
      *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five notes.
+     * @throws Ec2RequestFailedException
+     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob" target="_top">AWS API
      *      Documentation</a>

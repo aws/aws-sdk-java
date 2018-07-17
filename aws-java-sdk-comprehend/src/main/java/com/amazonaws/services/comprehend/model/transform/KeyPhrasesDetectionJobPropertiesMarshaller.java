@@ -45,6 +45,8 @@ public class KeyPhrasesDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDataConfig").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
 
     private static final KeyPhrasesDetectionJobPropertiesMarshaller instance = new KeyPhrasesDetectionJobPropertiesMarshaller();
 
@@ -71,6 +73,7 @@ public class KeyPhrasesDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(keyPhrasesDetectionJobProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(keyPhrasesDetectionJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(keyPhrasesDetectionJobProperties.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(keyPhrasesDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -796,6 +796,101 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Starts a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that
+     * you specify.
+     * </p>
+     * <p>
+     * To perform batch transformations, you create a transform job and use the data that you have readily available.
+     * </p>
+     * <p>
+     * In the request body, you provide the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TransformJobName</code> - Identifies the transform job. The name must be unique within an AWS Region in an
+     * AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ModelName</code> - Identifies the model to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon S3 location where it is
+     * stored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the
+     * results from the transform job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TransformResources</code> - Identifies the ML compute instances for the transform job.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how batch transformation works Amazon SageMaker, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It Works</a>.
+     * </p>
+     * 
+     * @param createTransformJobRequest
+     * @return Result of the CreateTransformJob operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTransformJobResult createTransformJob(CreateTransformJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransformJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransformJobResult executeCreateTransformJob(CreateTransformJobRequest createTransformJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransformJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransformJobRequest> request = null;
+        Response<CreateTransformJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransformJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTransformJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTransformJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTransformJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the endpoint was
      * created.
      * </p>
@@ -1469,6 +1564,57 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns information about a transform job.
+     * </p>
+     * 
+     * @param describeTransformJobRequest
+     * @return Result of the DescribeTransformJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeTransformJobResult describeTransformJob(DescribeTransformJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTransformJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTransformJobResult executeDescribeTransformJob(DescribeTransformJobRequest describeTransformJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTransformJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTransformJobRequest> request = null;
+        Response<DescribeTransformJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTransformJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTransformJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTransformJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTransformJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists endpoint configurations.
      * </p>
      * 
@@ -1926,6 +2072,55 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Lists transform jobs.
+     * </p>
+     * 
+     * @param listTransformJobsRequest
+     * @return Result of the ListTransformJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListTransformJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTransformJobsResult listTransformJobs(ListTransformJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTransformJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListTransformJobsResult executeListTransformJobs(ListTransformJobsRequest listTransformJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTransformJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTransformJobsRequest> request = null;
+        Response<ListTransformJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTransformJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTransformJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTransformJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTransformJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
      * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
      * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
@@ -1986,7 +2181,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
-     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * data that the training jobs write to Amazon CloudWatch Logs are still available in CloudWatch. After the tuning
      * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
      * </p>
      * 
@@ -2145,6 +2340,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<StopTrainingJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopTrainingJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a transform job.
+     * </p>
+     * <p>
+     * When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status of the job changes to
+     * <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set to <code>Stopped</code>. When you
+     * stop a transform job before it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
+     * </p>
+     * 
+     * @param stopTransformJobRequest
+     * @return Result of the StopTransformJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StopTransformJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopTransformJobResult stopTransformJob(StopTransformJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopTransformJob(request);
+    }
+
+    @SdkInternalApi
+    final StopTransformJobResult executeStopTransformJob(StopTransformJobRequest stopTransformJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopTransformJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopTransformJobRequest> request = null;
+        Response<StopTransformJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopTransformJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTransformJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopTransformJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopTransformJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

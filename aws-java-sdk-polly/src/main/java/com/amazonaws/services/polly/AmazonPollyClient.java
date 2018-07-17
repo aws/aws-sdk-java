@@ -78,20 +78,20 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3BucketException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidS3BucketException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSampleRateException").withModeledClass(
                                     com.amazonaws.services.polly.model.InvalidSampleRateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SynthesisTaskNotFoundException").withModeledClass(
+                                    com.amazonaws.services.polly.model.SynthesisTaskNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxLexiconsNumberExceededException").withModeledClass(
                                     com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MarksNotSupportedForFormatException").withModeledClass(
-                                    com.amazonaws.services.polly.model.MarksNotSupportedForFormatException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxLexemeLengthExceededException").withModeledClass(
                                     com.amazonaws.services.polly.model.MaxLexemeLengthExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsLanguageException").withModeledClass(
-                                    com.amazonaws.services.polly.model.UnsupportedPlsLanguageException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsAlphabetException").withModeledClass(
                                     com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException.class))
@@ -99,14 +99,32 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                             new JsonErrorShapeMetadata().withErrorCode("TextLengthExceededException").withModeledClass(
                                     com.amazonaws.services.polly.model.TextLengthExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLexiconException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidLexiconException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SsmlMarksNotSupportedForTextTypeException").withModeledClass(
+                                    com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidS3KeyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSnsTopicArnException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidSnsTopicArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MarksNotSupportedForFormatException").withModeledClass(
+                                    com.amazonaws.services.polly.model.MarksNotSupportedForFormatException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTaskIdException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidTaskIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsLanguageException").withModeledClass(
+                                    com.amazonaws.services.polly.model.UnsupportedPlsLanguageException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LexiconNotFoundException").withModeledClass(
                                     com.amazonaws.services.polly.model.LexiconNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LexiconSizeExceededException").withModeledClass(
                                     com.amazonaws.services.polly.model.LexiconSizeExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLexiconException").withModeledClass(
-                                    com.amazonaws.services.polly.model.InvalidLexiconException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSsmlException").withModeledClass(
                                     com.amazonaws.services.polly.model.InvalidSsmlException.class))
@@ -116,9 +134,6 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withModeledClass(
                                     com.amazonaws.services.polly.model.ServiceFailureException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SsmlMarksNotSupportedForTextTypeException").withModeledClass(
-                                    com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.polly.model.AmazonPollyException.class));
 
     /**
@@ -497,6 +512,64 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
 
     /**
      * <p>
+     * Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains information about the
+     * given speech synthesis task, including the status of the task, and a link to the S3 bucket containing the output
+     * of the task.
+     * </p>
+     * 
+     * @param getSpeechSynthesisTaskRequest
+     * @return Result of the GetSpeechSynthesisTask operation returned by the service.
+     * @throws InvalidTaskIdException
+     *         The provided Task ID is not valid. Please provide a valid Task ID and try again.
+     * @throws ServiceFailureException
+     *         An unknown condition has caused a service failure.
+     * @throws SynthesisTaskNotFoundException
+     *         The Speech Synthesis task with requested Task ID cannot be found.
+     * @sample AmazonPolly.GetSpeechSynthesisTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSpeechSynthesisTaskResult getSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSpeechSynthesisTask(request);
+    }
+
+    @SdkInternalApi
+    final GetSpeechSynthesisTaskResult executeGetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest getSpeechSynthesisTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSpeechSynthesisTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSpeechSynthesisTaskRequest> request = null;
+        Response<GetSpeechSynthesisTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSpeechSynthesisTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSpeechSynthesisTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSpeechSynthesisTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSpeechSynthesisTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of pronunciation lexicons stored in an AWS Region. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
@@ -539,6 +612,62 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
 
             HttpResponseHandler<AmazonWebServiceResponse<ListLexiconsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLexiconsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of SpeechSynthesisTask objects ordered by their creation date. This operation can filter the tasks
+     * by their status, for example, allowing users to list only tasks that are completed.
+     * </p>
+     * 
+     * @param listSpeechSynthesisTasksRequest
+     * @return Result of the ListSpeechSynthesisTasks operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The NextToken is invalid. Verify that it's spelled correctly, and then try again.
+     * @throws ServiceFailureException
+     *         An unknown condition has caused a service failure.
+     * @sample AmazonPolly.ListSpeechSynthesisTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSpeechSynthesisTasksResult listSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSpeechSynthesisTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListSpeechSynthesisTasksResult executeListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest listSpeechSynthesisTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSpeechSynthesisTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSpeechSynthesisTasksRequest> request = null;
+        Response<ListSpeechSynthesisTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSpeechSynthesisTasksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSpeechSynthesisTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSpeechSynthesisTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSpeechSynthesisTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -623,6 +752,92 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
 
     /**
      * <p>
+     * Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>. This
+     * operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket
+     * for the service to store the output of the synthesis task and two optional parameters (OutputS3KeyPrefix and
+     * SnsTopicArn). Once the synthesis task is created, this operation will return a SpeechSynthesisTask object, which
+     * will include an identifier of this task as well as the current status.
+     * </p>
+     * 
+     * @param startSpeechSynthesisTaskRequest
+     * @return Result of the StartSpeechSynthesisTask operation returned by the service.
+     * @throws TextLengthExceededException
+     *         The value of the "Text" parameter is longer than the accepted limits. For the
+     *         <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of
+     *         which no more than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API, the
+     *         maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not
+     *         counted as billed characters.
+     * @throws InvalidS3BucketException
+     *         The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements
+     *         and try again.
+     * @throws InvalidS3KeyException
+     *         The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key name.
+     * @throws InvalidSampleRateException
+     *         The specified sample rate is not valid.
+     * @throws InvalidSnsTopicArnException
+     *         The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try again.
+     * @throws InvalidSsmlException
+     *         The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try
+     *         again.
+     * @throws LexiconNotFoundException
+     *         Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its
+     *         name is misspelled or specifying a lexicon that is in a different region.</p>
+     *         <p>
+     *         Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name
+     *         is spelled correctly. Then try again.
+     * @throws ServiceFailureException
+     *         An unknown condition has caused a service failure.
+     * @throws MarksNotSupportedForFormatException
+     *         Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only
+     *         available for content in <code>json</code> format.
+     * @throws SsmlMarksNotSupportedForTextTypeException
+     *         SSML speech marks are not supported for plain text-type input.
+     * @sample AmazonPolly.StartSpeechSynthesisTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartSpeechSynthesisTaskResult startSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSpeechSynthesisTask(request);
+    }
+
+    @SdkInternalApi
+    final StartSpeechSynthesisTaskResult executeStartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest startSpeechSynthesisTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSpeechSynthesisTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSpeechSynthesisTaskRequest> request = null;
+        Response<StartSpeechSynthesisTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSpeechSynthesisTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSpeechSynthesisTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSpeechSynthesisTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSpeechSynthesisTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML.
      * Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by
      * English voices) unless phoneme mapping is used. For more information, see <a
@@ -632,8 +847,10 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      * @param synthesizeSpeechRequest
      * @return Result of the SynthesizeSpeech operation returned by the service.
      * @throws TextLengthExceededException
-     *         The value of the "Text" parameter is longer than the accepted limits. The limit for input text is a
-     *         maximum of 6000 characters total, of which no more than 3000 can be billed characters. SSML tags are not
+     *         The value of the "Text" parameter is longer than the accepted limits. For the
+     *         <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of
+     *         which no more than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API, the
+     *         maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not
      *         counted as billed characters.
      * @throws InvalidSampleRateException
      *         The specified sample rate is not valid.

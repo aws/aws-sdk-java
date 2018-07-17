@@ -69,21 +69,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleARN;
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      */
     private String snowballType;
     /**
      * <p>
      * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
@@ -439,13 +439,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -455,12 +455,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *         for cluster jobs is <code>EDGE</code>.
+     * @return The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *         cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -470,13 +470,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -488,13 +488,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -504,13 +504,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -523,13 +523,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
@@ -554,12 +554,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
+     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
      *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
@@ -590,13 +590,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
@@ -620,12 +620,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @return The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *         Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while
-     *         in transit. Regional shipping speeds are as follows:</p>
+     *         Snowball Edge device, rather it represents how quickly each device moves to its destination while in
+     *         transit. Regional shipping speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *         In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *         about a day.
      *         </p>
      *         </li>
@@ -656,13 +656,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
@@ -687,12 +687,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
+     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
      *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
@@ -725,13 +725,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
@@ -756,12 +756,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
+     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
      *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
@@ -792,13 +792,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     * shipping speeds are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
@@ -823,12 +823,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
+     *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
      *        transit. Regional shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>

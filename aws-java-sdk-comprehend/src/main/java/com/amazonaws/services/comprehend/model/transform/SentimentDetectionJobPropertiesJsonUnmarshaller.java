@@ -84,6 +84,10 @@ public class SentimentDetectionJobPropertiesJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     sentimentDetectionJobProperties.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    sentimentDetectionJobProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

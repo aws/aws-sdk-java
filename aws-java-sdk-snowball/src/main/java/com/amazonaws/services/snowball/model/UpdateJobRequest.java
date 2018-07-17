@@ -47,8 +47,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Notification notification;
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      */
     private JobResource resources;
@@ -222,13 +221,11 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      * 
      * @param resources
-     *        The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     *        <a>JobResource</a> object (for multiple buckets or key ranges).
+     *        The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      */
 
     public void setResources(JobResource resources) {
@@ -237,12 +234,10 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      * 
-     * @return The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     *         <a>JobResource</a> object (for multiple buckets or key ranges).
+     * @return The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      */
 
     public JobResource getResources() {
@@ -251,13 +246,11 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      * 
      * @param resources
-     *        The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     *        <a>JobResource</a> object (for multiple buckets or key ranges).
+     *        The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

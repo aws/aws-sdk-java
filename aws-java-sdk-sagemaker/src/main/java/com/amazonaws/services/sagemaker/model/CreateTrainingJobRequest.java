@@ -27,8 +27,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears in the
-     * Amazon SageMaker console.
+     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
      * </p>
      */
     private String trainingJobName;
@@ -139,13 +138,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears in the
-     * Amazon SageMaker console.
+     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
      * </p>
      * 
      * @param trainingJobName
-     *        The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears
-     *        in the Amazon SageMaker console.
+     *        The name of the training job. The name must be unique within an AWS Region in an AWS account.
      */
 
     public void setTrainingJobName(String trainingJobName) {
@@ -154,12 +151,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears in the
-     * Amazon SageMaker console.
+     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
      * </p>
      * 
-     * @return The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears
-     *         in the Amazon SageMaker console.
+     * @return The name of the training job. The name must be unique within an AWS Region in an AWS account.
      */
 
     public String getTrainingJobName() {
@@ -168,13 +163,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears in the
-     * Amazon SageMaker console.
+     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
      * </p>
      * 
      * @param trainingJobName
-     *        The name of the training job. The name must be unique within an AWS Region in an AWS account. It appears
-     *        in the Amazon SageMaker console.
+     *        The name of the training job. The name must be unique within an AWS Region in an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

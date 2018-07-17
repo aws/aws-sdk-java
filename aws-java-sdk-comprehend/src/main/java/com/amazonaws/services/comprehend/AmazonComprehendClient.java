@@ -83,9 +83,6 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("BatchSizeLimitExceededException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.JobNotFoundException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TextSizeLimitExceededException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.TextSizeLimitExceededException.class))
                     .addErrorMetadata(
@@ -94,6 +91,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.InternalServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
+                                    com.amazonaws.services.comprehend.model.JobNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.TooManyRequestsException.class))
@@ -374,6 +374,70 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDetectSentimentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDetectSentimentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and
+     * returns information about them. For more information, see <a>how-syntax</a>.
+     * </p>
+     * 
+     * @param batchDetectSyntaxRequest
+     * @return Result of the BatchDetectSyntax operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For all APIs except
+     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
+     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
+     *         languages, see <a>how-languages</a>
+     * @throws BatchSizeLimitExceededException
+     *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
+     *         documents.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.BatchDetectSyntax
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchDetectSyntaxResult batchDetectSyntax(BatchDetectSyntaxRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDetectSyntax(request);
+    }
+
+    @SdkInternalApi
+    final BatchDetectSyntaxResult executeBatchDetectSyntax(BatchDetectSyntaxRequest batchDetectSyntaxRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDetectSyntaxRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDetectSyntaxRequest> request = null;
+        Response<BatchDetectSyntaxResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDetectSyntaxRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDetectSyntaxRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDetectSyntaxResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDetectSyntaxResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -915,6 +979,67 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DetectSentimentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetectSentimentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inspects text for syntax and the part of speech of words in the document. For more information,
+     * <a>how-syntax</a>.
+     * </p>
+     * 
+     * @param detectSyntaxRequest
+     * @return Result of the DetectSyntax operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For all APIs except
+     *         <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish text. For the
+     *         <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100 languages. For a list of
+     *         languages, see <a>how-languages</a>
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DetectSyntax
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DetectSyntaxResult detectSyntax(DetectSyntaxRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectSyntax(request);
+    }
+
+    @SdkInternalApi
+    final DetectSyntaxResult executeDetectSyntax(DetectSyntaxRequest detectSyntaxRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detectSyntaxRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectSyntaxRequest> request = null;
+        Response<DetectSyntaxResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectSyntaxRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectSyntaxRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetectSyntaxResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetectSyntaxResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1522,16 +1647,16 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Stops a dominant language detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopDominantLanguageDetectionJobRequest
@@ -1592,16 +1717,16 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Stops an entities detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopEntitiesDetectionJobRequest
@@ -1661,16 +1786,16 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Stops a key phrases detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopKeyPhrasesDetectionJobRequest
@@ -1730,16 +1855,16 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
      * Stops a sentiment detection job in progress.
      * </p>
      * <p>
-     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
-     * <code>STOPPING</code> state.
+     * If the job state is <code>IN_PROGRESS</code> the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state; otherwise the job is be stopped and put into the <code>STOPPED</code> state.
      * </p>
      * <p>
      * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
-     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
-     * Exception.
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request Exception.
      * </p>
      * <p>
-     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * When a job is stopped, any documents already processed are written to the output location.
      * </p>
      * 
      * @param stopSentimentDetectionJobRequest

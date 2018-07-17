@@ -45,6 +45,8 @@ public class SentimentDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDataConfig").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
 
     private static final SentimentDetectionJobPropertiesMarshaller instance = new SentimentDetectionJobPropertiesMarshaller();
 
@@ -71,6 +73,7 @@ public class SentimentDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(sentimentDetectionJobProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(sentimentDetectionJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(sentimentDetectionJobProperties.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(sentimentDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

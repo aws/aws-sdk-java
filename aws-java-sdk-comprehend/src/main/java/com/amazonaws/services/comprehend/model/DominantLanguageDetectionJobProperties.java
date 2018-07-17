@@ -77,6 +77,12 @@ public class DominantLanguageDetectionJobProperties implements Serializable, Clo
      * </p>
      */
     private OutputDataConfig outputDataConfig;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * </p>
+     */
+    private String dataAccessRoleArn;
 
     /**
      * <p>
@@ -426,6 +432,46 @@ public class DominantLanguageDetectionJobProperties implements Serializable, Clo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * </p>
+     * 
+     * @param dataAccessRoleArn
+     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     */
+
+    public void setDataAccessRoleArn(String dataAccessRoleArn) {
+        this.dataAccessRoleArn = dataAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     */
+
+    public String getDataAccessRoleArn() {
+        return this.dataAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * </p>
+     * 
+     * @param dataAccessRoleArn
+     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DominantLanguageDetectionJobProperties withDataAccessRoleArn(String dataAccessRoleArn) {
+        setDataAccessRoleArn(dataAccessRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -451,7 +497,9 @@ public class DominantLanguageDetectionJobProperties implements Serializable, Clo
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
         if (getOutputDataConfig() != null)
-            sb.append("OutputDataConfig: ").append(getOutputDataConfig());
+            sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
+        if (getDataAccessRoleArn() != null)
+            sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -498,6 +546,10 @@ public class DominantLanguageDetectionJobProperties implements Serializable, Clo
             return false;
         if (other.getOutputDataConfig() != null && other.getOutputDataConfig().equals(this.getOutputDataConfig()) == false)
             return false;
+        if (other.getDataAccessRoleArn() == null ^ this.getDataAccessRoleArn() == null)
+            return false;
+        if (other.getDataAccessRoleArn() != null && other.getDataAccessRoleArn().equals(this.getDataAccessRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -514,6 +566,7 @@ public class DominantLanguageDetectionJobProperties implements Serializable, Clo
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         return hashCode;
     }
 

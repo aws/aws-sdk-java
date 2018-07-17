@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data is only available
+ * Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available
  * while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
  * </p>
  * 

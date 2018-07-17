@@ -108,6 +108,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public ListCompatibleImagesResult listCompatibleImages(ListCompatibleImagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListJobsResult listJobs(ListJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

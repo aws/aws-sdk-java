@@ -362,6 +362,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTransformJobResult> createTransformJobAsync(CreateTransformJobRequest request) {
+
+        return createTransformJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransformJobResult> createTransformJobAsync(final CreateTransformJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTransformJobRequest, CreateTransformJobResult> asyncHandler) {
+        final CreateTransformJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTransformJobResult>() {
+            @Override
+            public CreateTransformJobResult call() throws Exception {
+                CreateTransformJobResult result = null;
+
+                try {
+                    result = executeCreateTransformJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest request) {
 
         return deleteEndpointAsync(request, null);
@@ -797,6 +830,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTransformJobResult> describeTransformJobAsync(DescribeTransformJobRequest request) {
+
+        return describeTransformJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTransformJobResult> describeTransformJobAsync(final DescribeTransformJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTransformJobRequest, DescribeTransformJobResult> asyncHandler) {
+        final DescribeTransformJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTransformJobResult>() {
+            @Override
+            public DescribeTransformJobResult call() throws Exception {
+                DescribeTransformJobResult result = null;
+
+                try {
+                    result = executeDescribeTransformJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEndpointConfigsResult> listEndpointConfigsAsync(ListEndpointConfigsRequest request) {
 
         return listEndpointConfigsAsync(request, null);
@@ -1098,6 +1164,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListTransformJobsResult> listTransformJobsAsync(ListTransformJobsRequest request) {
+
+        return listTransformJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTransformJobsResult> listTransformJobsAsync(final ListTransformJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTransformJobsRequest, ListTransformJobsResult> asyncHandler) {
+        final ListTransformJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTransformJobsResult>() {
+            @Override
+            public ListTransformJobsResult call() throws Exception {
+                ListTransformJobsResult result = null;
+
+                try {
+                    result = executeListTransformJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartNotebookInstanceResult> startNotebookInstanceAsync(StartNotebookInstanceRequest request) {
 
         return startNotebookInstanceAsync(request, null);
@@ -1214,6 +1313,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeStopTrainingJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopTransformJobResult> stopTransformJobAsync(StopTransformJobRequest request) {
+
+        return stopTransformJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopTransformJobResult> stopTransformJobAsync(final StopTransformJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopTransformJobRequest, StopTransformJobResult> asyncHandler) {
+        final StopTransformJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopTransformJobResult>() {
+            @Override
+            public StopTransformJobResult call() throws Exception {
+                StopTransformJobResult result = null;
+
+                try {
+                    result = executeStopTransformJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -58,7 +58,7 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
     private String jobType;
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      */
     private String snowballType;
@@ -346,11 +346,11 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
@@ -360,10 +360,10 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
-     * @return The type of appliance used with this job.
+     * @return The type of device used with this job.
      * @see SnowballType
      */
 
@@ -373,11 +373,11 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -389,11 +389,11 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
@@ -403,11 +403,11 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
