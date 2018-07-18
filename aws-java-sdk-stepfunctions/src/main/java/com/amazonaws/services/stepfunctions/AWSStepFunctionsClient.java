@@ -79,7 +79,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     private static final String DEFAULT_SIGNING_NAME = "states";
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
-    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+    protected static final com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory configFactory = new com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory();
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()

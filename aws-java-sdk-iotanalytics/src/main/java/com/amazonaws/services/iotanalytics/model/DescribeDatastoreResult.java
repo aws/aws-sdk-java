@@ -29,6 +29,12 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private Datastore datastore;
+    /**
+     * <p>
+     * Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     */
+    private DatastoreStatistics statistics;
 
     /**
      * <p>
@@ -71,6 +77,49 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     * 
+     * @param statistics
+     *        Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the
+     *        request.
+     */
+
+    public void setStatistics(DatastoreStatistics statistics) {
+        this.statistics = statistics;
+    }
+
+    /**
+     * <p>
+     * Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     * 
+     * @return Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the
+     *         request.
+     */
+
+    public DatastoreStatistics getStatistics() {
+        return this.statistics;
+    }
+
+    /**
+     * <p>
+     * Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     * 
+     * @param statistics
+     *        Statistics about the data store. Included if the 'includeStatistics' parameter is set to true in the
+     *        request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatastoreResult withStatistics(DatastoreStatistics statistics) {
+        setStatistics(statistics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +131,9 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatastore() != null)
-            sb.append("Datastore: ").append(getDatastore());
+            sb.append("Datastore: ").append(getDatastore()).append(",");
+        if (getStatistics() != null)
+            sb.append("Statistics: ").append(getStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +152,10 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getDatastore() != null && other.getDatastore().equals(this.getDatastore()) == false)
             return false;
+        if (other.getStatistics() == null ^ this.getStatistics() == null)
+            return false;
+        if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +165,7 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDatastore() == null) ? 0 : getDatastore().hashCode());
+        hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         return hashCode;
     }
 

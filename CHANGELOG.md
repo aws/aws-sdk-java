@@ -1,3 +1,8 @@
+# __1.11.370__ __2018-07-18__
+## __AWS IoT Analytics__
+  - ### Features
+    - This change allows publishing of channel/datastore size as part of the describe-channel/describe-datastore APIs. We introduce an optional boolean parameter 'includeStatistics' in the Describe request. If the user sets this parameter to true, the describe response will return the resource size and timestamp at which the size was recorded. If the parameter is set to false, the size won't be computed or returned.
+
 # __1.11.369__ __2018-07-17__
 ## __Amazon Comprehend__
   - ### Features

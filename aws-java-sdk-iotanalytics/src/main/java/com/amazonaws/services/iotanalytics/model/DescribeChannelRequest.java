@@ -31,6 +31,12 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String channelName;
+    /**
+     * <p>
+     * If true, include statistics about the channel in the response.
+     * </p>
+     */
+    private Boolean includeStatistics;
 
     /**
      * <p>
@@ -73,6 +79,58 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * If true, include statistics about the channel in the response.
+     * </p>
+     * 
+     * @param includeStatistics
+     *        If true, include statistics about the channel in the response.
+     */
+
+    public void setIncludeStatistics(Boolean includeStatistics) {
+        this.includeStatistics = includeStatistics;
+    }
+
+    /**
+     * <p>
+     * If true, include statistics about the channel in the response.
+     * </p>
+     * 
+     * @return If true, include statistics about the channel in the response.
+     */
+
+    public Boolean getIncludeStatistics() {
+        return this.includeStatistics;
+    }
+
+    /**
+     * <p>
+     * If true, include statistics about the channel in the response.
+     * </p>
+     * 
+     * @param includeStatistics
+     *        If true, include statistics about the channel in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelRequest withIncludeStatistics(Boolean includeStatistics) {
+        setIncludeStatistics(includeStatistics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, include statistics about the channel in the response.
+     * </p>
+     * 
+     * @return If true, include statistics about the channel in the response.
+     */
+
+    public Boolean isIncludeStatistics() {
+        return this.includeStatistics;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +142,9 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChannelName() != null)
-            sb.append("ChannelName: ").append(getChannelName());
+            sb.append("ChannelName: ").append(getChannelName()).append(",");
+        if (getIncludeStatistics() != null)
+            sb.append("IncludeStatistics: ").append(getIncludeStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +163,10 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
             return false;
+        if (other.getIncludeStatistics() == null ^ this.getIncludeStatistics() == null)
+            return false;
+        if (other.getIncludeStatistics() != null && other.getIncludeStatistics().equals(this.getIncludeStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +176,7 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
+        hashCode = prime * hashCode + ((getIncludeStatistics() == null) ? 0 : getIncludeStatistics().hashCode());
         return hashCode;
     }
 

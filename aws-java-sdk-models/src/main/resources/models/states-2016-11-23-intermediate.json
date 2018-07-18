@@ -15,7 +15,7 @@
       "shapeName" : "CreateStateMachineInput",
       "typeAdapterFqcn" : "com.amazonaws.services.stepfunctions.builder.StateMachineAdapter"
     } ],
-    "customClientConfigFactory" : null,
+    "customClientConfigFactory" : "com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory",
     "customCodeTemplates" : null,
     "customErrorCodeFieldName" : null,
     "customExceptionUnmarshallerImpl" : null,
@@ -24066,7 +24066,7 @@
       "wrapper" : false
     }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
+  "clientConfigFactory" : "com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory",
   "customAuthorizers" : { },
   "examples" : {
     "examples" : { },

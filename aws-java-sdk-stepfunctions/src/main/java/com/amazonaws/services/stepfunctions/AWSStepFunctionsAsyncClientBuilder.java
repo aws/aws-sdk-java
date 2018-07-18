@@ -27,7 +27,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSStepFunctionsAsyncClientBuilder extends AwsAsyncClientBuilder<AWSStepFunctionsAsyncClientBuilder, AWSStepFunctionsAsync> {
 
-    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();;
+    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory();;
 
     /**
      * @return Create new instance of builder with all defaults set.

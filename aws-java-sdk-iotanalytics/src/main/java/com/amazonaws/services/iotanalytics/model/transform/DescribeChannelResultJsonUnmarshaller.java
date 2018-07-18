@@ -52,6 +52,10 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeChannelResult.setChannel(ChannelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("statistics", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setStatistics(ChannelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -52,6 +52,10 @@ public class DescribeDatastoreResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeDatastoreResult.setDatastore(DatastoreJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("statistics", targetDepth)) {
+                    context.nextToken();
+                    describeDatastoreResult.setStatistics(DatastoreStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

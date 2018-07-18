@@ -29,6 +29,8 @@ public class DescribeChannelRequestMarshaller {
 
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("channelName").build();
+    private static final MarshallingInfo<Boolean> INCLUDESTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeStatistics").build();
 
     private static final DescribeChannelRequestMarshaller instance = new DescribeChannelRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeChannelRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeChannelRequest.getChannelName(), CHANNELNAME_BINDING);
+            protocolMarshaller.marshall(describeChannelRequest.getIncludeStatistics(), INCLUDESTATISTICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

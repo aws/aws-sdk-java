@@ -36,7 +36,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     private String messageId;
     /**
      * <p>
-     * The payload of the message.
+     * The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data (in
+     * which case you must decode it by means of a pipeline activity).
      * </p>
      */
     private java.nio.ByteBuffer payload;
@@ -83,7 +84,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The payload of the message.
+     * The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data (in
+     * which case you must decode it by means of a pipeline activity).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -97,7 +99,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param payload
-     *        The payload of the message.
+     *        The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data
+     *        (in which case you must decode it by means of a pipeline activity).
      */
 
     public void setPayload(java.nio.ByteBuffer payload) {
@@ -106,7 +109,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The payload of the message.
+     * The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data (in
+     * which case you must decode it by means of a pipeline activity).
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -116,7 +120,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The payload of the message.
+     * @return The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data
+     *         (in which case you must decode it by means of a pipeline activity).
      */
 
     public java.nio.ByteBuffer getPayload() {
@@ -125,7 +130,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The payload of the message.
+     * The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data (in
+     * which case you must decode it by means of a pipeline activity).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -139,7 +145,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param payload
-     *        The payload of the message.
+     *        The payload of the message. This may be a JSON string or a Base64-encoded string representing binary data
+     *        (in which case you must decode it by means of a pipeline activity).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
