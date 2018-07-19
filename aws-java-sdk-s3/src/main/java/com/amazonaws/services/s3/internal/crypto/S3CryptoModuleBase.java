@@ -424,8 +424,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             EncryptionMaterialsFactory f = (EncryptionMaterialsFactory)req;
             final EncryptionMaterials materials = f.getEncryptionMaterials();
             if (materials != null) {
-                return buildContentCryptoMaterial(materials,
-                        cryptoConfig.getCryptoProvider(), req);
+                return buildContentCryptoMaterial(materials, req);
             }
         }
         if (req instanceof MaterialsDescriptionProvider) {
@@ -471,7 +470,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         if (kekMaterials == null) {
             return null;
         }
-        return buildContentCryptoMaterial(kekMaterials, provider, req);
+        return buildContentCryptoMaterial(kekMaterials, req);
     }
 
     /**
@@ -487,7 +486,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
         EncryptionMaterials kekMaterials = kekMaterialProvider.getEncryptionMaterials();
         if (kekMaterials == null)
             throw new SdkClientException("No material available from the encryption material provider");
-        return buildContentCryptoMaterial(kekMaterials, provider, req);
+        return buildContentCryptoMaterial(kekMaterials, req);
     }
 
     @Override
@@ -519,11 +518,11 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      * @param materials a non-null encryption material
      */
     private ContentCryptoMaterial buildContentCryptoMaterial(
-            EncryptionMaterials materials, Provider provider,
+            EncryptionMaterials materials,
             AmazonWebServiceRequest req) {
         // Randomly generate the IV
         final byte[] iv = new byte[contentCryptoScheme.getIVLengthInBytes()];
-        cryptoScheme.getSecureRandom().nextBytes(iv);
+        cryptoConfig.getSecureRandom().nextBytes(iv);
 
         if (materials.isKMSEnabled()) {
             final Map<String, String> encryptionContext =
@@ -542,31 +541,28 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                         contentCryptoScheme.getKeyGeneratorAlgorithm());
             byte[] keyBlob = copyAllBytesFrom(keyGenRes.getCiphertextBlob());
             return ContentCryptoMaterial.wrap(cek, iv,
-                    contentCryptoScheme, provider, cryptoConfig.getAlwaysUseCryptoProvider(),
+                    contentCryptoScheme, cryptoConfig.getCryptoProvider(),
+                    cryptoConfig.getAlwaysUseCryptoProvider(),
                     new KMSSecuredCEK(keyBlob, encryptionContext));
         } else {
             // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
             return ContentCryptoMaterial.create(
-                    generateCEK(materials, provider),
-                    iv, materials, cryptoScheme, provider,
-                    cryptoConfig.getAlwaysUseCryptoProvider(), kms, req);
+                    generateCEK(materials),
+                    iv, materials, cryptoScheme, cryptoConfig, kms, req);
         }
     }
 
     /**
      * @param kekMaterials non-null encryption materials
      */
-    protected final SecretKey generateCEK(
-            final EncryptionMaterials kekMaterials,
-            final Provider providerIn) {
+    protected final SecretKey generateCEK(final EncryptionMaterials kekMaterials) {
         final String keygenAlgo = contentCryptoScheme.getKeyGeneratorAlgorithm();
         KeyGenerator generator;
         try {
-            generator = providerIn == null
+            generator = cryptoConfig.getCryptoProvider() == null
                 ? KeyGenerator.getInstance(keygenAlgo)
-                : KeyGenerator.getInstance(keygenAlgo, providerIn);
-            generator.init(contentCryptoScheme.getKeyLengthInBits(),
-                    cryptoScheme.getSecureRandom());
+                : KeyGenerator.getInstance(keygenAlgo, cryptoConfig.getCryptoProvider());
+            generator.init(contentCryptoScheme.getKeyLengthInBits(), cryptoConfig.getSecureRandom());
             // Set to true iff the key encryption involves the use of BC's public key
             boolean involvesBCPublicKey = false;
             KeyPair keypair = kekMaterials.getKeyPair();
@@ -822,14 +818,12 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 newCCM = origCCM.recreate(req.getMaterialsDescription(),
                         this.kekMaterialsProvider,
                         cryptoScheme,
-                        cryptoConfig.getCryptoProvider(),
-                        cryptoConfig.getAlwaysUseCryptoProvider(), kms, req);
+                        cryptoConfig, kms, req);
             } else {
                 newCCM = origCCM.recreate(newKEK,
                         this.kekMaterialsProvider,
                         cryptoScheme,
-                        cryptoConfig.getCryptoProvider(),
-                        cryptoConfig.getAlwaysUseCryptoProvider(), kms, req);
+                        cryptoConfig, kms, req);
             }
             PutObjectRequest putInstFileRequest = req.createPutObjectRequest(retrieved);
             // Put the new instruction file into S3
