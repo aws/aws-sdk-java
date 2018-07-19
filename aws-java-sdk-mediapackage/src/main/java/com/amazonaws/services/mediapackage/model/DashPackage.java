@@ -37,6 +37,13 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer minUpdatePeriodSeconds;
     /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
+     * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
+     * more than one period. If the list contains "ADS", new periods will be created where the Channel source contains
+     * SCTE-35 ad markers.
+     */
+    private java.util.List<String> periodTriggers;
+    /**
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output
      * is enabled.
      */
@@ -182,6 +189,125 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
 
     public DashPackage withMinUpdatePeriodSeconds(Integer minUpdatePeriodSeconds) {
         setMinUpdatePeriodSeconds(minUpdatePeriodSeconds);
+        return this;
+    }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
+     * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
+     * more than one period. If the list contains "ADS", new periods will be created where the Channel source contains
+     * SCTE-35 ad markers.
+     * 
+     * @return A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media
+     *         Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+     *         be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+     *         the Channel source contains SCTE-35 ad markers.
+     * @see PeriodTriggersElement
+     */
+
+    public java.util.List<String> getPeriodTriggers() {
+        return periodTriggers;
+    }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
+     * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
+     * more than one period. If the list contains "ADS", new periods will be created where the Channel source contains
+     * SCTE-35 ad markers.
+     * 
+     * @param periodTriggers
+     *        A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media
+     *        Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+     *        be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+     *        the Channel source contains SCTE-35 ad markers.
+     * @see PeriodTriggersElement
+     */
+
+    public void setPeriodTriggers(java.util.Collection<String> periodTriggers) {
+        if (periodTriggers == null) {
+            this.periodTriggers = null;
+            return;
+        }
+
+        this.periodTriggers = new java.util.ArrayList<String>(periodTriggers);
+    }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
+     * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
+     * more than one period. If the list contains "ADS", new periods will be created where the Channel source contains
+     * SCTE-35 ad markers.
+     * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPeriodTriggers(java.util.Collection)} or {@link #withPeriodTriggers(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param periodTriggers
+     *        A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media
+     *        Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+     *        be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+     *        the Channel source contains SCTE-35 ad markers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PeriodTriggersElement
+     */
+
+    public DashPackage withPeriodTriggers(String... periodTriggers) {
+        if (this.periodTriggers == null) {
+            setPeriodTriggers(new java.util.ArrayList<String>(periodTriggers.length));
+        }
+        for (String ele : periodTriggers) {
+            this.periodTriggers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
+     * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
+     * more than one period. If the list contains "ADS", new periods will be created where the Channel source contains
+     * SCTE-35 ad markers.
+     * 
+     * @param periodTriggers
+     *        A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media
+     *        Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+     *        be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+     *        the Channel source contains SCTE-35 ad markers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PeriodTriggersElement
+     */
+
+    public DashPackage withPeriodTriggers(java.util.Collection<String> periodTriggers) {
+        setPeriodTriggers(periodTriggers);
+        return this;
+    }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
+     * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
+     * more than one period. If the list contains "ADS", new periods will be created where the Channel source contains
+     * SCTE-35 ad markers.
+     * 
+     * @param periodTriggers
+     *        A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media
+     *        Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
+     *        be partitioned into more than one period. If the list contains "ADS", new periods will be created where
+     *        the Channel source contains SCTE-35 ad markers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PeriodTriggersElement
+     */
+
+    public DashPackage withPeriodTriggers(PeriodTriggersElement... periodTriggers) {
+        java.util.ArrayList<String> periodTriggersCopy = new java.util.ArrayList<String>(periodTriggers.length);
+        for (PeriodTriggersElement value : periodTriggers) {
+            periodTriggersCopy.add(value.toString());
+        }
+        if (getPeriodTriggers() == null) {
+            setPeriodTriggers(periodTriggersCopy);
+        } else {
+            getPeriodTriggers().addAll(periodTriggersCopy);
+        }
         return this;
     }
 
@@ -363,6 +489,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             sb.append("MinBufferTimeSeconds: ").append(getMinBufferTimeSeconds()).append(",");
         if (getMinUpdatePeriodSeconds() != null)
             sb.append("MinUpdatePeriodSeconds: ").append(getMinUpdatePeriodSeconds()).append(",");
+        if (getPeriodTriggers() != null)
+            sb.append("PeriodTriggers: ").append(getPeriodTriggers()).append(",");
         if (getProfile() != null)
             sb.append("Profile: ").append(getProfile()).append(",");
         if (getSegmentDurationSeconds() != null)
@@ -401,6 +529,10 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMinUpdatePeriodSeconds() != null && other.getMinUpdatePeriodSeconds().equals(this.getMinUpdatePeriodSeconds()) == false)
             return false;
+        if (other.getPeriodTriggers() == null ^ this.getPeriodTriggers() == null)
+            return false;
+        if (other.getPeriodTriggers() != null && other.getPeriodTriggers().equals(this.getPeriodTriggers()) == false)
+            return false;
         if (other.getProfile() == null ^ this.getProfile() == null)
             return false;
         if (other.getProfile() != null && other.getProfile().equals(this.getProfile()) == false)
@@ -430,6 +562,7 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getManifestWindowSeconds() == null) ? 0 : getManifestWindowSeconds().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTimeSeconds() == null) ? 0 : getMinBufferTimeSeconds().hashCode());
         hashCode = prime * hashCode + ((getMinUpdatePeriodSeconds() == null) ? 0 : getMinUpdatePeriodSeconds().hashCode());
+        hashCode = prime * hashCode + ((getPeriodTriggers() == null) ? 0 : getPeriodTriggers().hashCode());
         hashCode = prime * hashCode + ((getProfile() == null) ? 0 : getProfile().hashCode());
         hashCode = prime * hashCode + ((getSegmentDurationSeconds() == null) ? 0 : getSegmentDurationSeconds().hashCode());
         hashCode = prime * hashCode + ((getStreamSelection() == null) ? 0 : getStreamSelection().hashCode());

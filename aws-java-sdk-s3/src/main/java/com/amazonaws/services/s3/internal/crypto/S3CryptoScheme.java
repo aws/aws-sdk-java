@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
-import java.security.SecureRandom;
-
 import com.amazonaws.services.s3.model.CryptoMode;
 
 /**
@@ -25,14 +23,14 @@ import com.amazonaws.services.s3.model.CryptoMode;
 final class S3CryptoScheme {
     // http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html
     // http://docs.oracle.com/javase/7/docs/technotes/guides/security/crypto/CryptoSpec.html#Key
-    static final String AES = "AES"; 
+    static final String AES = "AES";
     static final String RSA = "RSA";
     private final S3KeyWrapScheme kwScheme;
 
     private final ContentCryptoScheme contentCryptoScheme;
 
     private S3CryptoScheme(ContentCryptoScheme contentCryptoScheme,
-            S3KeyWrapScheme kwScheme) {
+                           S3KeyWrapScheme kwScheme) {
         this.contentCryptoScheme = contentCryptoScheme;
         this.kwScheme = kwScheme;
     }
@@ -52,15 +50,15 @@ final class S3CryptoScheme {
 
     static S3CryptoScheme from(CryptoMode mode) {
         switch (mode) {
-        case EncryptionOnly:
-            return new S3CryptoScheme(ContentCryptoScheme.AES_CBC,
-                    S3KeyWrapScheme.NONE);
-        case AuthenticatedEncryption:
-        case StrictAuthenticatedEncryption:
-            return new S3CryptoScheme(ContentCryptoScheme.AES_GCM,
-                    new S3KeyWrapScheme());
-        default:
-            throw new IllegalStateException();
+            case EncryptionOnly:
+                return new S3CryptoScheme(ContentCryptoScheme.AES_CBC,
+                                          S3KeyWrapScheme.NONE);
+            case AuthenticatedEncryption:
+            case StrictAuthenticatedEncryption:
+                return new S3CryptoScheme(ContentCryptoScheme.AES_GCM,
+                                          new S3KeyWrapScheme());
+            default:
+                throw new IllegalStateException();
         }
     }
 }

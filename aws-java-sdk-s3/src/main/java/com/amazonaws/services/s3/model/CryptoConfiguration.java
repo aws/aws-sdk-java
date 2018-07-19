@@ -62,7 +62,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      */
     public CryptoConfiguration() {
         this(CryptoMode.EncryptionOnly); // default to Encryption Only (EO) for
-                                         // backward compatibility
+        // backward compatibility
     }
 
     /**
@@ -230,7 +230,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             caller to decide what to do about it.
      */
     public void setCryptoMode(CryptoMode cryptoMode)
-            throws UnsupportedOperationException {
+        throws UnsupportedOperationException {
         this.cryptoMode = cryptoMode;
         check(cryptoMode);
     }
@@ -247,7 +247,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             caller to decide what to do about it.
      */
     public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode)
-            throws UnsupportedOperationException {
+        throws UnsupportedOperationException {
         this.cryptoMode = cryptoMode;
         check(cryptoMode);
         return this;
@@ -272,7 +272,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *            instruction file would always cause security exception.
      */
     public void setIgnoreMissingInstructionFile(
-            boolean ignoreMissingInstructionFile) {
+        boolean ignoreMissingInstructionFile) {
         this.ignoreMissingInstructionFile = ignoreMissingInstructionFile;
     }
 
@@ -281,7 +281,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      * found during a GET operation.
      */
     public CryptoConfiguration withIgnoreMissingInstructionFile(
-            boolean ignoreMissingInstructionFile) {
+        boolean ignoreMissingInstructionFile) {
         this.ignoreMissingInstructionFile = ignoreMissingInstructionFile;
         return this;
     }
@@ -299,7 +299,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         // user has explicitly overridden us (i.e., with the FIPS-compliant BouncyCastle
         // implementation).
         boolean preferBC = (cryptoMode == CryptoMode.AuthenticatedEncryption)
-                || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
+                           || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
 
         boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider);
 
@@ -308,12 +308,12 @@ public class CryptoConfiguration implements Cloneable,Serializable {
                 CryptoRuntime.enableBouncyCastle();
                 if (!CryptoRuntime.isBouncyCastleAvailable()) {
                     throw new UnsupportedOperationException(
-                            "The Bouncy castle library jar is required on the classpath to enable authenticated encryption");
+                        "The Bouncy castle library jar is required on the classpath to enable authenticated encryption");
                 }
             }
             if (!CryptoRuntime.isAesGcmAvailable())
                 throw new UnsupportedOperationException(
-                        "More recent version of the Bouncy castle library is required to enable authenticated encryption");
+                    "More recent version of the Bouncy castle library is required to enable authenticated encryption");
         }
     }
 
@@ -356,11 +356,11 @@ public class CryptoConfiguration implements Cloneable,Serializable {
             throw new UnsupportedOperationException();
         }
         @Override public void setIgnoreMissingInstructionFile(
-                boolean ignoreMissingInstructionFile) {
+            boolean ignoreMissingInstructionFile) {
             throw new UnsupportedOperationException();
         }
         @Override public CryptoConfiguration withIgnoreMissingInstructionFile(
-                boolean ignoreMissingInstructionFile) {
+            boolean ignoreMissingInstructionFile) {
             throw new UnsupportedOperationException();
         }
         @Override public void setKmsRegion(Regions kmsRegion) {

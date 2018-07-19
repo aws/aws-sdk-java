@@ -87,6 +87,7 @@ import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.ObjectExpirationHeaderHandler;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
+import com.amazonaws.services.s3.internal.S3AbortableInputStream;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
@@ -1460,7 +1461,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
             }
 
-            s3Object.setObjectContent(new S3ObjectInputStream(is, httpRequest, false));
+            S3AbortableInputStream abortableInputStream =
+                new S3AbortableInputStream(is, httpRequest, s3Object.getObjectMetadata().getContentLength());
+            s3Object.setObjectContent(new S3ObjectInputStream(abortableInputStream, httpRequest, false));
             return s3Object;
         } catch (AmazonS3Exception ase) {
             /*

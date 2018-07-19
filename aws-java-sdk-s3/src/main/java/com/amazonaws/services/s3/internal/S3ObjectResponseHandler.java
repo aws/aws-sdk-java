@@ -54,14 +54,10 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         ObjectMetadata metadata = object.getObjectMetadata();
         populateObjectMetadata(response, metadata);
 
-        object.setObjectContent(new S3ObjectInputStream(abortableIs(response), response.getHttpRequest()));
+        object.setObjectContent(new S3ObjectInputStream(response.getContent(), response.getHttpRequest()));
 
         awsResponse.setResult(object);
         return awsResponse;
-    }
-
-    private S3AbortableInputStream abortableIs(HttpResponse response) {
-        return new S3AbortableInputStream(response.getContent(), response.getHttpRequest(), getContentLength(response));
     }
 
     /**

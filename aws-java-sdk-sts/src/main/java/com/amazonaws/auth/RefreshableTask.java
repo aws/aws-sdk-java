@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
@@ -271,7 +272,7 @@ class RefreshableTask<T> implements Closeable {
      */
     private void handleInterruptedException(String message, InterruptedException cause) {
         Thread.currentThread().interrupt();
-        throw new AmazonClientException(message, cause);
+        throw new AbortedException(message, cause);
     }
 
 }

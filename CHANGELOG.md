@@ -1,3 +1,8 @@
+# __1.11.371__ __2018-07-19__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - Adds support for DASH OriginEnpoints with multiple media presentation description periods triggered by presence of SCTE-35 ad markers in Channel input streams.
+
 # __1.11.370__ __2018-07-18__
 ## __AWS IoT Analytics__
   - ### Features

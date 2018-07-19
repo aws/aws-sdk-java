@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediapackage.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class DashPackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minBufferTimeSeconds").build();
     private static final MarshallingInfo<Integer> MINUPDATEPERIODSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minUpdatePeriodSeconds").build();
+    private static final MarshallingInfo<List> PERIODTRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("periodTriggers").build();
     private static final MarshallingInfo<String> PROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("profile").build();
     private static final MarshallingInfo<Integer> SEGMENTDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -64,6 +67,7 @@ public class DashPackageMarshaller {
             protocolMarshaller.marshall(dashPackage.getManifestWindowSeconds(), MANIFESTWINDOWSECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getMinBufferTimeSeconds(), MINBUFFERTIMESECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getMinUpdatePeriodSeconds(), MINUPDATEPERIODSECONDS_BINDING);
+            protocolMarshaller.marshall(dashPackage.getPeriodTriggers(), PERIODTRIGGERS_BINDING);
             protocolMarshaller.marshall(dashPackage.getProfile(), PROFILE_BINDING);
             protocolMarshaller.marshall(dashPackage.getSegmentDurationSeconds(), SEGMENTDURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getStreamSelection(), STREAMSELECTION_BINDING);

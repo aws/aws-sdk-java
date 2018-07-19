@@ -42,7 +42,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     private long markedBytes;
     private boolean eofReached = false;
 
-    S3AbortableInputStream(InputStream in, HttpRequestBase httpRequest, long contentLength) {
+    public S3AbortableInputStream(InputStream in, HttpRequestBase httpRequest, long contentLength) {
         super(in);
         this.httpRequest = httpRequest;
         this.contentLength = contentLength;

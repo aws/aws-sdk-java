@@ -64,6 +64,10 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                     context.nextToken();
                     dashPackage.setMinUpdatePeriodSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("periodTriggers", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("profile", targetDepth)) {
                     context.nextToken();
                     dashPackage.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
