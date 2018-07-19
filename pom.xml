@@ -116,6 +116,7 @@
     <module>aws-java-sdk-events</module>
     <module>aws-java-sdk-cognitoidentity</module>
     <module>aws-java-sdk-cognitosync</module>
+    <module>aws-java-sdk-cognito-client</module>
     <module>aws-java-sdk-directconnect</module>
     <module>aws-java-sdk-cloudformation</module>
     <module>aws-java-sdk-cloudfront</module>
