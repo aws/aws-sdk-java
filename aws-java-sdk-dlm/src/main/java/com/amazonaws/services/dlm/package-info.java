@@ -12,15 +12,15 @@
  */
 
 /**
- * <fullname>Amazon Data Lifecyle Manager</fullname>
+ * <fullname>Amazon Data Lifecycle Manager</fullname>
  * <p>
- * With Amazon Data Lifecyle Manager, you can manage the lifecycle of your AWS resources. You create lifecycle policies,
- * which are used to automate operations on the specified resources.
+ * With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources. You create lifecycle
+ * policies, which are used to automate operations on the specified resources.
  * </p>
  * <p>
- * Data Lifecycle Manager supports Amazon EBS volumes and snapshots. For information about using Data Lifecycle Manager
- * with Amazon EBS, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Amazon Data
- * Lifecyle Manager for Amazon EBS Snapshots</a>.
+ * Amazon DLM supports Amazon EBS volumes and snapshots. For information about using Amazon DLM with Amazon EBS, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating the Amazon EBS Snapshot
+ * Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
  * </p>
  */
 package com.amazonaws.services.dlm;

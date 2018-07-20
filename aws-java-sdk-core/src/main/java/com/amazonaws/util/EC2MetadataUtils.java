@@ -246,6 +246,13 @@ public class EC2MetadataUtils {
                 EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_DOCUMENT));
     }
 
+    /**
+     * Get the signature of the instance.
+     */
+    public static String getInstanceSignature() {
+        return fetchData(EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_SIGNATURE);
+    }
+
     static InstanceInfo doGetInstanceInfo(String json) {
         if (null != json) {
             try {
@@ -258,13 +265,6 @@ public class EC2MetadataUtils {
             }
         }
         return null;
-    }
-
-    /**
-     * Get the signature of the instance.
-     */
-    public static String getInstanceSignature() {
-        return fetchData(EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_SIGNATURE);
     }
 
     /**

@@ -1,3 +1,12 @@
+# __1.11.372__ __2018-07-20__
+## __AWS Config__
+  - ### Features
+    - Setting internal length limits on resourceId for APIs.  
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Update documentation for Amazon Data Lifecycle Manager.
+
 # __1.11.371__ __2018-07-19__
 ## __AWS Elemental MediaPackage__
   - ### Features
