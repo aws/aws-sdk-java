@@ -64,7 +64,7 @@ public class SigningCertificateStaxUnmarshaller implements Unmarshaller<SigningC
                 }
 
                 if (context.testExpression("UploadDate", targetDepth)) {
-                    signingCertificate.setUploadDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    signingCertificate.setUploadDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

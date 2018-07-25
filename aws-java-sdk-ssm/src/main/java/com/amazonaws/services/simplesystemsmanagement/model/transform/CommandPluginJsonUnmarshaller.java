@@ -66,11 +66,11 @@ public class CommandPluginJsonUnmarshaller implements Unmarshaller<CommandPlugin
                 }
                 if (context.testExpression("ResponseStartDateTime", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setResponseStartDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    commandPlugin.setResponseStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResponseFinishDateTime", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setResponseFinishDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    commandPlugin.setResponseFinishDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
                     context.nextToken();

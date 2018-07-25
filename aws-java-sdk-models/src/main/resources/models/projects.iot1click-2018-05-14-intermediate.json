@@ -109,6 +109,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateDeviceWithPlacementRequest",
         "variableName" : "associateDeviceWithPlacementRequest",
         "variableType" : "AssociateDeviceWithPlacementRequest",
@@ -152,6 +153,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreatePlacementRequest",
         "variableName" : "createPlacementRequest",
         "variableType" : "CreatePlacementRequest",
@@ -191,6 +193,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectRequest",
         "variableName" : "createProjectRequest",
         "variableType" : "CreateProjectRequest",
@@ -234,6 +237,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePlacementRequest",
         "variableName" : "deletePlacementRequest",
         "variableType" : "DeletePlacementRequest",
@@ -277,6 +281,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectRequest",
         "variableName" : "deleteProjectRequest",
         "variableType" : "DeleteProjectRequest",
@@ -316,6 +321,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribePlacementRequest",
         "variableName" : "describePlacementRequest",
         "variableType" : "DescribePlacementRequest",
@@ -355,6 +361,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectRequest",
         "variableName" : "describeProjectRequest",
         "variableType" : "DescribeProjectRequest",
@@ -398,6 +405,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateDeviceFromPlacementRequest",
         "variableName" : "disassociateDeviceFromPlacementRequest",
         "variableType" : "DisassociateDeviceFromPlacementRequest",
@@ -437,6 +445,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetDevicesInPlacementRequest",
         "variableName" : "getDevicesInPlacementRequest",
         "variableType" : "GetDevicesInPlacementRequest",
@@ -476,6 +485,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPlacementsRequest",
         "variableName" : "listPlacementsRequest",
         "variableType" : "ListPlacementsRequest",
@@ -511,6 +521,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsRequest",
         "variableName" : "listProjectsRequest",
         "variableType" : "ListProjectsRequest",
@@ -554,6 +565,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdatePlacementRequest",
         "variableName" : "updatePlacementRequest",
         "variableType" : "UpdatePlacementRequest",
@@ -597,6 +609,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectRequest",
         "variableName" : "updateProjectRequest",
         "variableType" : "UpdateProjectRequest",
@@ -682,6 +695,7 @@
         "setterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -694,6 +708,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -745,6 +760,7 @@
         "setterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -757,6 +773,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -808,6 +825,7 @@
         "setterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -820,6 +838,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -871,6 +890,7 @@
         "setterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.*/",
         "setterMethodName" : "setDeviceTemplateName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceTemplateName",
           "variableType" : "String",
@@ -883,6 +903,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceTemplateName",
           "variableType" : "String",
@@ -936,6 +957,7 @@
           "setterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -948,6 +970,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -1000,6 +1023,7 @@
           "setterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.*/",
           "setterMethodName" : "setDeviceTemplateName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceTemplateName",
             "variableType" : "String",
@@ -1012,6 +1036,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceTemplateName",
             "variableType" : "String",
@@ -1064,6 +1089,7 @@
           "setterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -1076,6 +1102,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -1128,6 +1155,7 @@
           "setterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -1140,6 +1168,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -1158,6 +1187,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateDeviceWithPlacementRequest",
         "variableName" : "associateDeviceWithPlacementRequest",
         "variableType" : "AssociateDeviceWithPlacementRequest",
@@ -1197,6 +1227,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateDeviceWithPlacementResult",
         "variableName" : "associateDeviceWithPlacementResult",
         "variableType" : "AssociateDeviceWithPlacementResult",
@@ -1273,6 +1304,7 @@
         "setterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -1285,6 +1317,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -1336,6 +1369,7 @@
         "setterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -1348,6 +1382,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -1442,6 +1477,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -1454,6 +1490,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -1477,6 +1514,7 @@
         "setterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -1489,6 +1527,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -1585,6 +1624,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -1597,6 +1637,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -1620,6 +1661,7 @@
           "setterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -1632,6 +1674,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -1684,6 +1727,7 @@
           "setterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -1696,6 +1740,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -1748,6 +1793,7 @@
           "setterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -1760,6 +1806,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -1778,6 +1825,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreatePlacementRequest",
         "variableName" : "createPlacementRequest",
         "variableType" : "CreatePlacementRequest",
@@ -1817,6 +1865,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreatePlacementResult",
         "variableName" : "createPlacementResult",
         "variableType" : "CreatePlacementResult",
@@ -1893,6 +1942,7 @@
         "setterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -1905,6 +1955,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -1956,6 +2007,7 @@
         "setterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -1968,6 +2020,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -2019,6 +2072,7 @@
         "setterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.*/",
         "setterMethodName" : "setPlacementTemplate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementTemplate",
           "variableName" : "placementTemplate",
           "variableType" : "PlacementTemplate",
@@ -2031,6 +2085,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementTemplate",
           "variableName" : "placementTemplate",
           "variableType" : "PlacementTemplate",
@@ -2084,6 +2139,7 @@
           "setterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -2096,6 +2152,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -2148,6 +2205,7 @@
           "setterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.*/",
           "setterMethodName" : "setPlacementTemplate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementTemplate",
             "variableName" : "placementTemplate",
             "variableType" : "PlacementTemplate",
@@ -2160,6 +2218,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementTemplate",
             "variableName" : "placementTemplate",
             "variableType" : "PlacementTemplate",
@@ -2212,6 +2271,7 @@
           "setterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -2224,6 +2284,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -2242,6 +2303,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectRequest",
         "variableName" : "createProjectRequest",
         "variableType" : "CreateProjectRequest",
@@ -2281,6 +2343,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectResult",
         "variableName" : "createProjectResult",
         "variableType" : "CreateProjectResult",
@@ -2357,6 +2420,7 @@
         "setterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -2369,6 +2433,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -2420,6 +2485,7 @@
         "setterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -2432,6 +2498,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -2485,6 +2552,7 @@
           "setterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -2497,6 +2565,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -2549,6 +2618,7 @@
           "setterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -2561,6 +2631,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -2579,6 +2650,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePlacementRequest",
         "variableName" : "deletePlacementRequest",
         "variableType" : "DeletePlacementRequest",
@@ -2618,6 +2690,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePlacementResult",
         "variableName" : "deletePlacementResult",
         "variableType" : "DeletePlacementResult",
@@ -2694,6 +2767,7 @@
         "setterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -2706,6 +2780,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -2759,6 +2834,7 @@
           "setterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -2771,6 +2847,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -2789,6 +2866,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectRequest",
         "variableName" : "deleteProjectRequest",
         "variableType" : "DeleteProjectRequest",
@@ -2828,6 +2906,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectResult",
         "variableName" : "deleteProjectResult",
         "variableType" : "DeleteProjectResult",
@@ -2904,6 +2983,7 @@
         "setterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -2916,6 +2996,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -2967,6 +3048,7 @@
         "setterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -2979,6 +3061,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -3032,6 +3115,7 @@
           "setterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -3044,6 +3128,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -3096,6 +3181,7 @@
           "setterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -3108,6 +3194,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -3126,6 +3213,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribePlacementRequest",
         "variableName" : "describePlacementRequest",
         "variableType" : "DescribePlacementRequest",
@@ -3195,6 +3283,7 @@
         "setterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.*/",
         "setterMethodName" : "setPlacement",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementDescription",
           "variableName" : "placement",
           "variableType" : "PlacementDescription",
@@ -3207,6 +3296,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementDescription",
           "variableName" : "placement",
           "variableType" : "PlacementDescription",
@@ -3260,6 +3350,7 @@
           "setterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.*/",
           "setterMethodName" : "setPlacement",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementDescription",
             "variableName" : "placement",
             "variableType" : "PlacementDescription",
@@ -3272,6 +3363,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementDescription",
             "variableName" : "placement",
             "variableType" : "PlacementDescription",
@@ -3293,6 +3385,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribePlacementResult",
         "variableName" : "describePlacementResult",
         "variableType" : "DescribePlacementResult",
@@ -3369,6 +3462,7 @@
         "setterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -3381,6 +3475,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -3434,6 +3529,7 @@
           "setterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -3446,6 +3542,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -3464,6 +3561,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectRequest",
         "variableName" : "describeProjectRequest",
         "variableType" : "DescribeProjectRequest",
@@ -3533,6 +3631,7 @@
         "setterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.*/",
         "setterMethodName" : "setProject",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDescription",
           "variableName" : "project",
           "variableType" : "ProjectDescription",
@@ -3545,6 +3644,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDescription",
           "variableName" : "project",
           "variableType" : "ProjectDescription",
@@ -3598,6 +3698,7 @@
           "setterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.*/",
           "setterMethodName" : "setProject",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDescription",
             "variableName" : "project",
             "variableType" : "ProjectDescription",
@@ -3610,6 +3711,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDescription",
             "variableName" : "project",
             "variableType" : "ProjectDescription",
@@ -3631,6 +3733,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectResult",
         "variableName" : "describeProjectResult",
         "variableType" : "DescribeProjectResult",
@@ -3700,6 +3803,7 @@
         "setterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.*/",
         "setterMethodName" : "setDeviceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceType",
           "variableType" : "String",
@@ -3712,6 +3816,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceType",
           "variableType" : "String",
@@ -3806,6 +3911,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -3818,6 +3924,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -3841,6 +3948,7 @@
         "setterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.*/",
         "setterMethodName" : "setCallbackOverrides",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "callbackOverrides",
           "variableType" : "java.util.Map<String,String>",
@@ -3853,6 +3961,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "callbackOverrides",
           "variableType" : "java.util.Map<String,String>",
@@ -3949,6 +4058,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -3961,6 +4071,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -3984,6 +4095,7 @@
           "setterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.*/",
           "setterMethodName" : "setCallbackOverrides",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "callbackOverrides",
             "variableType" : "java.util.Map<String,String>",
@@ -3996,6 +4108,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "callbackOverrides",
             "variableType" : "java.util.Map<String,String>",
@@ -4048,6 +4161,7 @@
           "setterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.*/",
           "setterMethodName" : "setDeviceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceType",
             "variableType" : "String",
@@ -4060,6 +4174,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceType",
             "variableType" : "String",
@@ -4081,6 +4196,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeviceTemplate",
         "variableName" : "deviceTemplate",
         "variableType" : "DeviceTemplate",
@@ -4157,6 +4273,7 @@
         "setterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -4169,6 +4286,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -4220,6 +4338,7 @@
         "setterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -4232,6 +4351,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -4283,6 +4403,7 @@
         "setterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.*/",
         "setterMethodName" : "setDeviceTemplateName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceTemplateName",
           "variableType" : "String",
@@ -4295,6 +4416,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceTemplateName",
           "variableType" : "String",
@@ -4348,6 +4470,7 @@
           "setterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.*/",
           "setterMethodName" : "setDeviceTemplateName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceTemplateName",
             "variableType" : "String",
@@ -4360,6 +4483,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceTemplateName",
             "variableType" : "String",
@@ -4412,6 +4536,7 @@
           "setterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -4424,6 +4549,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -4476,6 +4602,7 @@
           "setterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -4488,6 +4615,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -4506,6 +4634,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateDeviceFromPlacementRequest",
         "variableName" : "disassociateDeviceFromPlacementRequest",
         "variableType" : "DisassociateDeviceFromPlacementRequest",
@@ -4545,6 +4674,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateDeviceFromPlacementResult",
         "variableName" : "disassociateDeviceFromPlacementResult",
         "variableType" : "DisassociateDeviceFromPlacementResult",
@@ -4621,6 +4751,7 @@
         "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -4633,6 +4764,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -4684,6 +4816,7 @@
         "setterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -4696,6 +4829,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -4749,6 +4883,7 @@
           "setterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -4761,6 +4896,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -4813,6 +4949,7 @@
           "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -4825,6 +4962,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -4843,6 +4981,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetDevicesInPlacementRequest",
         "variableName" : "getDevicesInPlacementRequest",
         "variableType" : "GetDevicesInPlacementRequest",
@@ -4955,6 +5094,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -4967,6 +5107,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -4990,6 +5131,7 @@
         "setterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.*/",
         "setterMethodName" : "setDevices",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "devices",
           "variableType" : "java.util.Map<String,String>",
@@ -5002,6 +5144,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "devices",
           "variableType" : "java.util.Map<String,String>",
@@ -5098,6 +5241,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -5110,6 +5254,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -5133,6 +5278,7 @@
           "setterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.*/",
           "setterMethodName" : "setDevices",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "devices",
             "variableType" : "java.util.Map<String,String>",
@@ -5145,6 +5291,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "devices",
             "variableType" : "java.util.Map<String,String>",
@@ -5166,6 +5313,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetDevicesInPlacementResult",
         "variableName" : "getDevicesInPlacementResult",
         "variableType" : "GetDevicesInPlacementResult",
@@ -5235,6 +5383,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -5247,6 +5396,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -5300,6 +5450,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -5312,6 +5463,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -5330,6 +5482,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalFailureException",
         "variableName" : "internalFailureException",
         "variableType" : "InternalFailureException",
@@ -5399,6 +5552,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -5411,6 +5565,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -5464,6 +5619,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -5476,6 +5632,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -5494,6 +5651,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidRequestException",
         "variableName" : "invalidRequestException",
         "variableType" : "InvalidRequestException",
@@ -5570,6 +5728,7 @@
         "setterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -5582,6 +5741,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -5633,6 +5793,7 @@
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5645,6 +5806,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5696,6 +5858,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5708,6 +5871,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5761,6 +5925,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5773,6 +5938,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5825,6 +5991,7 @@
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5837,6 +6004,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5889,6 +6057,7 @@
           "setterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -5901,6 +6070,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -5919,6 +6089,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPlacementsRequest",
         "variableName" : "listPlacementsRequest",
         "variableType" : "ListPlacementsRequest",
@@ -6025,6 +6196,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PlacementSummary",
               "variableName" : "member",
               "variableType" : "PlacementSummary",
@@ -6037,6 +6209,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PlacementSummary",
               "variableName" : "member",
               "variableType" : "PlacementSummary",
@@ -6066,6 +6239,7 @@
         "setterDocumentation" : "/**<p>An object listing the requested placements.</p>\n@param placements An object listing the requested placements.*/",
         "setterMethodName" : "setPlacements",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PlacementSummary>",
           "variableName" : "placements",
           "variableType" : "java.util.List<PlacementSummary>",
@@ -6078,6 +6252,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object listing the requested placements.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlacements(java.util.Collection)} or {@link #withPlacements(java.util.Collection)} if you want to override the existing values.</p>\n@param placements An object listing the requested placements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PlacementSummary>",
           "variableName" : "placements",
           "variableType" : "java.util.List<PlacementSummary>",
@@ -6129,6 +6304,7 @@
         "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6141,6 +6317,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6194,6 +6371,7 @@
           "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6206,6 +6384,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6295,6 +6474,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PlacementSummary",
                 "variableName" : "member",
                 "variableType" : "PlacementSummary",
@@ -6307,6 +6487,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PlacementSummary",
                 "variableName" : "member",
                 "variableType" : "PlacementSummary",
@@ -6336,6 +6517,7 @@
           "setterDocumentation" : "/**<p>An object listing the requested placements.</p>\n@param placements An object listing the requested placements.*/",
           "setterMethodName" : "setPlacements",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PlacementSummary>",
             "variableName" : "placements",
             "variableType" : "java.util.List<PlacementSummary>",
@@ -6348,6 +6530,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object listing the requested placements.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlacements(java.util.Collection)} or {@link #withPlacements(java.util.Collection)} if you want to override the existing values.</p>\n@param placements An object listing the requested placements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PlacementSummary>",
             "variableName" : "placements",
             "variableType" : "java.util.List<PlacementSummary>",
@@ -6369,6 +6552,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPlacementsResult",
         "variableName" : "listPlacementsResult",
         "variableType" : "ListPlacementsResult",
@@ -6445,6 +6629,7 @@
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6457,6 +6642,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6508,6 +6694,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -6520,6 +6707,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -6573,6 +6761,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6585,6 +6774,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6637,6 +6827,7 @@
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6649,6 +6840,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6667,6 +6859,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsRequest",
         "variableName" : "listProjectsRequest",
         "variableType" : "ListProjectsRequest",
@@ -6773,6 +6966,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ProjectSummary",
               "variableName" : "member",
               "variableType" : "ProjectSummary",
@@ -6785,6 +6979,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ProjectSummary",
               "variableName" : "member",
               "variableType" : "ProjectSummary",
@@ -6814,6 +7009,7 @@
         "setterDocumentation" : "/**<p>An object containing the list of projects.</p>\n@param projects An object containing the list of projects.*/",
         "setterMethodName" : "setProjects",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ProjectSummary>",
           "variableName" : "projects",
           "variableType" : "java.util.List<ProjectSummary>",
@@ -6826,6 +7022,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object containing the list of projects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects An object containing the list of projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ProjectSummary>",
           "variableName" : "projects",
           "variableType" : "java.util.List<ProjectSummary>",
@@ -6877,6 +7074,7 @@
         "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6889,6 +7087,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6942,6 +7141,7 @@
           "setterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6954,6 +7154,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -7043,6 +7244,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ProjectSummary",
                 "variableName" : "member",
                 "variableType" : "ProjectSummary",
@@ -7055,6 +7257,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ProjectSummary",
                 "variableName" : "member",
                 "variableType" : "ProjectSummary",
@@ -7084,6 +7287,7 @@
           "setterDocumentation" : "/**<p>An object containing the list of projects.</p>\n@param projects An object containing the list of projects.*/",
           "setterMethodName" : "setProjects",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ProjectSummary>",
             "variableName" : "projects",
             "variableType" : "java.util.List<ProjectSummary>",
@@ -7096,6 +7300,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object containing the list of projects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects An object containing the list of projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ProjectSummary>",
             "variableName" : "projects",
             "variableType" : "java.util.List<ProjectSummary>",
@@ -7117,6 +7322,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsResult",
         "variableName" : "listProjectsResult",
         "variableType" : "ListProjectsResult",
@@ -7186,6 +7392,7 @@
         "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -7198,6 +7405,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -7249,6 +7457,7 @@
         "setterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -7261,6 +7470,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -7355,6 +7565,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -7367,6 +7578,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -7390,6 +7602,7 @@
         "setterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -7402,6 +7615,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -7453,6 +7667,7 @@
         "setterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -7465,6 +7680,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -7516,6 +7732,7 @@
         "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -7528,6 +7745,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -7624,6 +7842,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -7636,6 +7855,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -7659,6 +7879,7 @@
           "setterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -7671,6 +7892,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -7723,6 +7945,7 @@
           "setterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -7735,6 +7958,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -7787,6 +8011,7 @@
           "setterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -7799,6 +8024,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -7851,6 +8077,7 @@
           "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -7863,6 +8090,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -7915,6 +8143,7 @@
           "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -7927,6 +8156,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -7948,6 +8178,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PlacementDescription",
         "variableName" : "placementDescription",
         "variableType" : "PlacementDescription",
@@ -8017,6 +8248,7 @@
         "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -8029,6 +8261,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -8080,6 +8313,7 @@
         "setterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -8092,6 +8326,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -8143,6 +8378,7 @@
         "setterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -8155,6 +8391,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -8206,6 +8443,7 @@
         "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -8218,6 +8456,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -8271,6 +8510,7 @@
           "setterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -8283,6 +8523,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -8335,6 +8576,7 @@
           "setterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -8347,6 +8589,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -8399,6 +8642,7 @@
           "setterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -8411,6 +8655,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -8463,6 +8708,7 @@
           "setterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -8475,6 +8721,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -8496,6 +8743,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PlacementSummary",
         "variableName" : "placementSummary",
         "variableType" : "PlacementSummary",
@@ -8608,6 +8856,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -8620,6 +8869,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -8643,6 +8893,7 @@
         "setterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.*/",
         "setterMethodName" : "setDefaultAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "defaultAttributes",
           "variableType" : "java.util.Map<String,String>",
@@ -8655,6 +8906,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "defaultAttributes",
           "variableType" : "java.util.Map<String,String>",
@@ -8749,6 +9001,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceTemplate",
               "variableName" : "value",
               "variableType" : "DeviceTemplate",
@@ -8761,6 +9014,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceTemplate",
               "variableName" : "value",
               "variableType" : "DeviceTemplate",
@@ -8784,6 +9038,7 @@
         "setterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.*/",
         "setterMethodName" : "setDeviceTemplates",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,DeviceTemplate>",
           "variableName" : "deviceTemplates",
           "variableType" : "java.util.Map<String,DeviceTemplate>",
@@ -8796,6 +9051,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,DeviceTemplate>",
           "variableName" : "deviceTemplates",
           "variableType" : "java.util.Map<String,DeviceTemplate>",
@@ -8892,6 +9148,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -8904,6 +9161,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -8927,6 +9185,7 @@
           "setterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.*/",
           "setterMethodName" : "setDefaultAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "defaultAttributes",
             "variableType" : "java.util.Map<String,String>",
@@ -8939,6 +9198,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "defaultAttributes",
             "variableType" : "java.util.Map<String,String>",
@@ -9034,6 +9294,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceTemplate",
                 "variableName" : "value",
                 "variableType" : "DeviceTemplate",
@@ -9046,6 +9307,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceTemplate",
                 "variableName" : "value",
                 "variableType" : "DeviceTemplate",
@@ -9069,6 +9331,7 @@
           "setterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.*/",
           "setterMethodName" : "setDeviceTemplates",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,DeviceTemplate>",
             "variableName" : "deviceTemplates",
             "variableType" : "java.util.Map<String,DeviceTemplate>",
@@ -9081,6 +9344,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,DeviceTemplate>",
             "variableName" : "deviceTemplates",
             "variableType" : "java.util.Map<String,DeviceTemplate>",
@@ -9102,6 +9366,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PlacementTemplate",
         "variableName" : "placementTemplate",
         "variableType" : "PlacementTemplate",
@@ -9171,6 +9436,7 @@
         "setterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -9183,6 +9449,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -9234,6 +9501,7 @@
         "setterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -9246,6 +9514,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -9297,6 +9566,7 @@
         "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -9309,6 +9579,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -9360,6 +9631,7 @@
         "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -9372,6 +9644,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -9423,6 +9696,7 @@
         "setterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.*/",
         "setterMethodName" : "setPlacementTemplate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementTemplate",
           "variableName" : "placementTemplate",
           "variableType" : "PlacementTemplate",
@@ -9435,6 +9709,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementTemplate",
           "variableName" : "placementTemplate",
           "variableType" : "PlacementTemplate",
@@ -9488,6 +9763,7 @@
           "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -9500,6 +9776,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -9552,6 +9829,7 @@
           "setterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -9564,6 +9842,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -9616,6 +9895,7 @@
           "setterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.*/",
           "setterMethodName" : "setPlacementTemplate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementTemplate",
             "variableName" : "placementTemplate",
             "variableType" : "PlacementTemplate",
@@ -9628,6 +9908,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementTemplate",
             "variableName" : "placementTemplate",
             "variableType" : "PlacementTemplate",
@@ -9680,6 +9961,7 @@
           "setterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -9692,6 +9974,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -9744,6 +10027,7 @@
           "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -9756,6 +10040,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -9777,6 +10062,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ProjectDescription",
         "variableName" : "projectDescription",
         "variableType" : "ProjectDescription",
@@ -9846,6 +10132,7 @@
         "setterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -9858,6 +10145,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -9909,6 +10197,7 @@
         "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -9921,6 +10210,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -9972,6 +10262,7 @@
         "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
         "setterMethodName" : "setUpdatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -9984,6 +10275,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedDate",
           "variableType" : "java.util.Date",
@@ -10037,6 +10329,7 @@
           "setterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -10049,6 +10342,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -10101,6 +10395,7 @@
           "setterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -10113,6 +10408,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -10165,6 +10461,7 @@
           "setterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.*/",
           "setterMethodName" : "setUpdatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -10177,6 +10474,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedDate",
             "variableType" : "java.util.Date",
@@ -10198,6 +10496,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ProjectSummary",
         "variableName" : "projectSummary",
         "variableType" : "ProjectSummary",
@@ -10267,6 +10566,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -10279,6 +10579,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -10332,6 +10633,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -10344,6 +10646,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -10362,6 +10665,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceConflictException",
         "variableName" : "resourceConflictException",
         "variableType" : "ResourceConflictException",
@@ -10431,6 +10735,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -10443,6 +10748,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -10496,6 +10802,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -10508,6 +10815,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -10526,6 +10834,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceNotFoundException",
         "variableName" : "resourceNotFoundException",
         "variableType" : "ResourceNotFoundException",
@@ -10595,6 +10904,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -10607,6 +10917,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -10660,6 +10971,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -10672,6 +10984,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -10690,6 +11003,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TooManyRequestsException",
         "variableName" : "tooManyRequestsException",
         "variableType" : "TooManyRequestsException",
@@ -10766,6 +11080,7 @@
         "setterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.*/",
         "setterMethodName" : "setPlacementName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -10778,6 +11093,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "placementName",
           "variableType" : "String",
@@ -10829,6 +11145,7 @@
         "setterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -10841,6 +11158,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -10935,6 +11253,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -10947,6 +11266,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -10970,6 +11290,7 @@
         "setterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -10982,6 +11303,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -11078,6 +11400,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -11090,6 +11413,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -11113,6 +11437,7 @@
           "setterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -11125,6 +11450,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -11177,6 +11503,7 @@
           "setterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.*/",
           "setterMethodName" : "setPlacementName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -11189,6 +11516,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "placementName",
             "variableType" : "String",
@@ -11241,6 +11569,7 @@
           "setterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -11253,6 +11582,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -11271,6 +11601,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdatePlacementRequest",
         "variableName" : "updatePlacementRequest",
         "variableType" : "UpdatePlacementRequest",
@@ -11310,6 +11641,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdatePlacementResult",
         "variableName" : "updatePlacementResult",
         "variableType" : "UpdatePlacementResult",
@@ -11386,6 +11718,7 @@
         "setterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.*/",
         "setterMethodName" : "setProjectName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -11398,6 +11731,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectName",
           "variableType" : "String",
@@ -11449,6 +11783,7 @@
         "setterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -11461,6 +11796,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -11512,6 +11848,7 @@
         "setterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.*/",
         "setterMethodName" : "setPlacementTemplate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementTemplate",
           "variableName" : "placementTemplate",
           "variableType" : "PlacementTemplate",
@@ -11524,6 +11861,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PlacementTemplate",
           "variableName" : "placementTemplate",
           "variableType" : "PlacementTemplate",
@@ -11577,6 +11915,7 @@
           "setterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -11589,6 +11928,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -11641,6 +11981,7 @@
           "setterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.*/",
           "setterMethodName" : "setPlacementTemplate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementTemplate",
             "variableName" : "placementTemplate",
             "variableType" : "PlacementTemplate",
@@ -11653,6 +11994,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PlacementTemplate",
             "variableName" : "placementTemplate",
             "variableType" : "PlacementTemplate",
@@ -11705,6 +12047,7 @@
           "setterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.*/",
           "setterMethodName" : "setProjectName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -11717,6 +12060,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectName",
             "variableType" : "String",
@@ -11735,6 +12079,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectRequest",
         "variableName" : "updateProjectRequest",
         "variableType" : "UpdateProjectRequest",
@@ -11774,6 +12119,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectResult",
         "variableName" : "updateProjectResult",
         "variableType" : "UpdateProjectResult",

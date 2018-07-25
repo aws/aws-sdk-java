@@ -59,7 +59,7 @@ public class StackResourceSummaryStaxUnmarshaller implements Unmarshaller<StackR
                 }
 
                 if (context.testExpression("LastUpdatedTimestamp", targetDepth)) {
-                    stackResourceSummary.setLastUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResourceSummary.setLastUpdatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

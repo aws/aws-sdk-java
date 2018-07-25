@@ -59,7 +59,7 @@ public class UpdateDeploymentResultJsonUnmarshaller implements Unmarshaller<Upda
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    updateDeploymentResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updateDeploymentResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("apiSummary", targetDepth)) {
                     context.nextToken();

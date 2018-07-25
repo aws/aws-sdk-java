@@ -66,11 +66,11 @@ public class LifecyclePolicyJsonUnmarshaller implements Unmarshaller<LifecyclePo
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
                     context.nextToken();
-                    lifecyclePolicy.setDateCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lifecyclePolicy.setDateCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DateModified", targetDepth)) {
                     context.nextToken();
-                    lifecyclePolicy.setDateModified(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lifecyclePolicy.setDateModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PolicyDetails", targetDepth)) {
                     context.nextToken();

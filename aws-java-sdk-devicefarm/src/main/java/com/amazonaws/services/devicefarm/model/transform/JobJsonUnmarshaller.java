@@ -62,7 +62,7 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    job.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -74,11 +74,11 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    job.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    job.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();

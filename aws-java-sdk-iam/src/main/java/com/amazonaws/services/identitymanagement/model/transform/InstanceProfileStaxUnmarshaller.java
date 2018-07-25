@@ -66,7 +66,7 @@ public class InstanceProfileStaxUnmarshaller implements Unmarshaller<InstancePro
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    instanceProfile.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceProfile.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -82,11 +82,11 @@ public class GetMaintenanceWindowResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    getMaintenanceWindowResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMaintenanceWindowResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedDate", targetDepth)) {
                     context.nextToken();
-                    getMaintenanceWindowResult.setModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMaintenanceWindowResult.setModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

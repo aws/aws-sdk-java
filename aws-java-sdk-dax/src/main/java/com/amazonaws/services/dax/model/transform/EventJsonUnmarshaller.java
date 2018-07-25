@@ -62,7 +62,7 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 }
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();
-                    event.setDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    event.setDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

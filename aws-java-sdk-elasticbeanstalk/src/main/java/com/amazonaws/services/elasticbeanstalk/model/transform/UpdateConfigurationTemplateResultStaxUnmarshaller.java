@@ -81,12 +81,12 @@ public class UpdateConfigurationTemplateResultStaxUnmarshaller implements Unmars
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    updateConfigurationTemplateResult.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    updateConfigurationTemplateResult.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    updateConfigurationTemplateResult.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

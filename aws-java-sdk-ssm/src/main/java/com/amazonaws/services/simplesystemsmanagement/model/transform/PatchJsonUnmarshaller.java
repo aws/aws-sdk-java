@@ -54,7 +54,7 @@ public class PatchJsonUnmarshaller implements Unmarshaller<Patch, JsonUnmarshall
                 }
                 if (context.testExpression("ReleaseDate", targetDepth)) {
                     context.nextToken();
-                    patch.setReleaseDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    patch.setReleaseDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
                     context.nextToken();

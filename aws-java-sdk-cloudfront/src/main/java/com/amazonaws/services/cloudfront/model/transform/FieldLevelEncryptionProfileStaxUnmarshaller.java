@@ -49,7 +49,7 @@ public class FieldLevelEncryptionProfileStaxUnmarshaller implements Unmarshaller
                 }
 
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
-                    fieldLevelEncryptionProfile.setLastModifiedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fieldLevelEncryptionProfile.setLastModifiedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

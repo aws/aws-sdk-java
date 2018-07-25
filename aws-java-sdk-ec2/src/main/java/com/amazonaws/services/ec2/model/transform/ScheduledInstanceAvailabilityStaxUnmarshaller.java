@@ -54,7 +54,7 @@ public class ScheduledInstanceAvailabilityStaxUnmarshaller implements Unmarshall
                 }
 
                 if (context.testExpression("firstSlotStartTime", targetDepth)) {
-                    scheduledInstanceAvailability.setFirstSlotStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledInstanceAvailability.setFirstSlotStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

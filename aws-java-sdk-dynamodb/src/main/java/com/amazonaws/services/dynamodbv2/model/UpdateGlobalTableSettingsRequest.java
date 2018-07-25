@@ -39,6 +39,12 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
     private Long globalTableProvisionedWriteCapacityUnits;
     /**
      * <p>
+     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * </p>
+     */
+    private AutoScalingSettingsUpdate globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
+    /**
+     * <p>
      * Represents the settings of a global secondary index for a global table that will be modified.
      * </p>
      */
@@ -130,6 +136,48 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
     public UpdateGlobalTableSettingsRequest withGlobalTableProvisionedWriteCapacityUnits(Long globalTableProvisionedWriteCapacityUnits) {
         setGlobalTableProvisionedWriteCapacityUnits(globalTableProvisionedWriteCapacityUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * </p>
+     * 
+     * @param globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate
+     *        AutoScaling settings for managing provisioned write capacity for the global table.
+     */
+
+    public void setGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(
+            AutoScalingSettingsUpdate globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate) {
+        this.globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
+    }
+
+    /**
+     * <p>
+     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * </p>
+     * 
+     * @return AutoScaling settings for managing provisioned write capacity for the global table.
+     */
+
+    public AutoScalingSettingsUpdate getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() {
+        return this.globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
+    }
+
+    /**
+     * <p>
+     * AutoScaling settings for managing provisioned write capacity for the global table.
+     * </p>
+     * 
+     * @param globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate
+     *        AutoScaling settings for managing provisioned write capacity for the global table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGlobalTableSettingsRequest withGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(
+            AutoScalingSettingsUpdate globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate) {
+        setGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate);
         return this;
     }
 
@@ -294,6 +342,9 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
             sb.append("GlobalTableName: ").append(getGlobalTableName()).append(",");
         if (getGlobalTableProvisionedWriteCapacityUnits() != null)
             sb.append("GlobalTableProvisionedWriteCapacityUnits: ").append(getGlobalTableProvisionedWriteCapacityUnits()).append(",");
+        if (getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() != null)
+            sb.append("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate: ")
+                    .append(getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate()).append(",");
         if (getGlobalTableGlobalSecondaryIndexSettingsUpdate() != null)
             sb.append("GlobalTableGlobalSecondaryIndexSettingsUpdate: ").append(getGlobalTableGlobalSecondaryIndexSettingsUpdate()).append(",");
         if (getReplicaSettingsUpdate() != null)
@@ -321,6 +372,13 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
         if (other.getGlobalTableProvisionedWriteCapacityUnits() != null
                 && other.getGlobalTableProvisionedWriteCapacityUnits().equals(this.getGlobalTableProvisionedWriteCapacityUnits()) == false)
             return false;
+        if (other.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() == null
+                ^ this.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() == null)
+            return false;
+        if (other.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() != null
+                && other.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate().equals(
+                        this.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate()) == false)
+            return false;
         if (other.getGlobalTableGlobalSecondaryIndexSettingsUpdate() == null ^ this.getGlobalTableGlobalSecondaryIndexSettingsUpdate() == null)
             return false;
         if (other.getGlobalTableGlobalSecondaryIndexSettingsUpdate() != null
@@ -340,6 +398,10 @@ public class UpdateGlobalTableSettingsRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getGlobalTableName() == null) ? 0 : getGlobalTableName().hashCode());
         hashCode = prime * hashCode + ((getGlobalTableProvisionedWriteCapacityUnits() == null) ? 0 : getGlobalTableProvisionedWriteCapacityUnits().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() == null) ? 0
+                        : getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate().hashCode());
         hashCode = prime * hashCode
                 + ((getGlobalTableGlobalSecondaryIndexSettingsUpdate() == null) ? 0 : getGlobalTableGlobalSecondaryIndexSettingsUpdate().hashCode());
         hashCode = prime * hashCode + ((getReplicaSettingsUpdate() == null) ? 0 : getReplicaSettingsUpdate().hashCode());

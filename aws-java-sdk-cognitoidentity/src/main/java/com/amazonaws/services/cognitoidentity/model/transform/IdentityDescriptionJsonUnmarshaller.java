@@ -58,11 +58,11 @@ public class IdentityDescriptionJsonUnmarshaller implements Unmarshaller<Identit
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    identityDescription.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    identityDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    identityDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    identityDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

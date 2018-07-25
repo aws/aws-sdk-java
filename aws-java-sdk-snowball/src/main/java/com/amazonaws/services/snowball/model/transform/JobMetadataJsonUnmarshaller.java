@@ -66,7 +66,7 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    jobMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();

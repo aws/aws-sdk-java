@@ -70,7 +70,7 @@ public class LastCrawlInfoJsonUnmarshaller implements Unmarshaller<LastCrawlInfo
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    lastCrawlInfo.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lastCrawlInfo.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

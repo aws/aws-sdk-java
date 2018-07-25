@@ -76,12 +76,12 @@ public class PlatformDescriptionStaxUnmarshaller implements Unmarshaller<Platfor
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    platformDescription.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    platformDescription.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    platformDescription.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    platformDescription.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

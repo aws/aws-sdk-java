@@ -50,7 +50,7 @@ public class ServerEventJsonUnmarshaller implements Unmarshaller<ServerEvent, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    serverEvent.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    serverEvent.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ServerName", targetDepth)) {
                     context.nextToken();

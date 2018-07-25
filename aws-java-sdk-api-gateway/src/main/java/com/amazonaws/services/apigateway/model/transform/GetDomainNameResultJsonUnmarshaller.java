@@ -62,7 +62,7 @@ public class GetDomainNameResultJsonUnmarshaller implements Unmarshaller<GetDoma
                 }
                 if (context.testExpression("certificateUploadDate", targetDepth)) {
                     context.nextToken();
-                    getDomainNameResult.setCertificateUploadDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainNameResult.setCertificateUploadDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("regionalDomainName", targetDepth)) {
                     context.nextToken();

@@ -78,7 +78,7 @@ public class ClusterMetadataJsonUnmarshaller implements Unmarshaller<ClusterMeta
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    clusterMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    clusterMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();

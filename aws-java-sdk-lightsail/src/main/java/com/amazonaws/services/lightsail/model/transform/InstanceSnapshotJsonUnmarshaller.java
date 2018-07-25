@@ -62,7 +62,7 @@ public class InstanceSnapshotJsonUnmarshaller implements Unmarshaller<InstanceSn
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    instanceSnapshot.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceSnapshot.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();

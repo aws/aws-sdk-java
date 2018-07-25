@@ -111,19 +111,19 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeTrainingJobResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTrainingJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingStartTime", targetDepth)) {
                     context.nextToken();
-                    describeTrainingJobResult.setTrainingStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTrainingJobResult.setTrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingEndTime", targetDepth)) {
                     context.nextToken();
-                    describeTrainingJobResult.setTrainingEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTrainingJobResult.setTrainingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    describeTrainingJobResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTrainingJobResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

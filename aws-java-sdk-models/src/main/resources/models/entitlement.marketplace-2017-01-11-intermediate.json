@@ -105,6 +105,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetEntitlementsRequest",
         "variableName" : "getEntitlementsRequest",
         "variableType" : "GetEntitlementsRequest",
@@ -183,6 +184,7 @@
         "setterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -195,6 +197,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -246,6 +249,7 @@
         "setterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.*/",
         "setterMethodName" : "setDimension",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "dimension",
           "variableType" : "String",
@@ -258,6 +262,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "dimension",
           "variableType" : "String",
@@ -309,6 +314,7 @@
         "setterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.*/",
         "setterMethodName" : "setCustomerIdentifier",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
           "variableType" : "String",
@@ -321,6 +327,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
           "variableType" : "String",
@@ -372,6 +379,7 @@
         "setterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "EntitlementValue",
           "variableName" : "value",
           "variableType" : "EntitlementValue",
@@ -384,6 +392,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "EntitlementValue",
           "variableName" : "value",
           "variableType" : "EntitlementValue",
@@ -435,6 +444,7 @@
         "setterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.*/",
         "setterMethodName" : "setExpirationDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "expirationDate",
           "variableType" : "java.util.Date",
@@ -447,6 +457,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "expirationDate",
           "variableType" : "java.util.Date",
@@ -500,6 +511,7 @@
           "setterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.*/",
           "setterMethodName" : "setCustomerIdentifier",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
             "variableType" : "String",
@@ -512,6 +524,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
             "variableType" : "String",
@@ -564,6 +577,7 @@
           "setterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.*/",
           "setterMethodName" : "setDimension",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "dimension",
             "variableType" : "String",
@@ -576,6 +590,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "dimension",
             "variableType" : "String",
@@ -628,6 +643,7 @@
           "setterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.*/",
           "setterMethodName" : "setExpirationDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "expirationDate",
             "variableType" : "java.util.Date",
@@ -640,6 +656,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "expirationDate",
             "variableType" : "java.util.Date",
@@ -692,6 +709,7 @@
           "setterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -704,6 +722,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -756,6 +775,7 @@
           "setterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "EntitlementValue",
             "variableName" : "value",
             "variableType" : "EntitlementValue",
@@ -768,6 +788,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "EntitlementValue",
             "variableName" : "value",
             "variableType" : "EntitlementValue",
@@ -789,6 +810,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Entitlement",
         "variableName" : "entitlement",
         "variableType" : "Entitlement",
@@ -858,6 +880,7 @@
         "setterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setIntegerValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "integerValue",
           "variableType" : "Integer",
@@ -870,6 +893,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "integerValue",
           "variableType" : "Integer",
@@ -921,6 +945,7 @@
         "setterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setDoubleValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Double",
           "variableName" : "doubleValue",
           "variableType" : "Double",
@@ -933,6 +958,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Double",
           "variableName" : "doubleValue",
           "variableType" : "Double",
@@ -984,6 +1010,7 @@
         "setterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setBooleanValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "booleanValue",
           "variableType" : "Boolean",
@@ -996,6 +1023,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "booleanValue",
           "variableType" : "Boolean",
@@ -1047,6 +1075,7 @@
         "setterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.*/",
         "setterMethodName" : "setStringValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "stringValue",
           "variableType" : "String",
@@ -1059,6 +1088,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "stringValue",
           "variableType" : "String",
@@ -1112,6 +1142,7 @@
           "setterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setBooleanValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "booleanValue",
             "variableType" : "Boolean",
@@ -1124,6 +1155,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "booleanValue",
             "variableType" : "Boolean",
@@ -1176,6 +1208,7 @@
           "setterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setDoubleValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Double",
             "variableName" : "doubleValue",
             "variableType" : "Double",
@@ -1188,6 +1221,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Double",
             "variableName" : "doubleValue",
             "variableType" : "Double",
@@ -1240,6 +1274,7 @@
           "setterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setIntegerValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "integerValue",
             "variableType" : "Integer",
@@ -1252,6 +1287,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "integerValue",
             "variableType" : "Integer",
@@ -1304,6 +1340,7 @@
           "setterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.*/",
           "setterMethodName" : "setStringValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "stringValue",
             "variableType" : "String",
@@ -1316,6 +1353,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "stringValue",
             "variableType" : "String",
@@ -1337,6 +1375,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "EntitlementValue",
         "variableName" : "entitlementValue",
         "variableType" : "EntitlementValue",
@@ -1382,6 +1421,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetEntitlementFilterName",
         "variableName" : "getEntitlementFilterName",
         "variableType" : "GetEntitlementFilterName",
@@ -1458,6 +1498,7 @@
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -1470,6 +1511,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -1561,6 +1603,7 @@
             "setterDocumentation" : "/**\n@param key \n@see GetEntitlementFilterName*/",
             "setterMethodName" : "setKey",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "key",
               "variableType" : "String",
@@ -1573,6 +1616,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param key \n@return Returns a reference to this object so that method calls can be chained together.\n@see GetEntitlementFilterName*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "key",
               "variableType" : "String",
@@ -1664,6 +1708,7 @@
                 "setterDocumentation" : "/**\n@param member */",
                 "setterMethodName" : "setMember",
                 "setterModel" : {
+                  "timestampFormat" : null,
                   "variableDeclarationType" : "String",
                   "variableName" : "member",
                   "variableType" : "String",
@@ -1676,6 +1721,7 @@
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "variable" : {
+                  "timestampFormat" : null,
                   "variableDeclarationType" : "String",
                   "variableName" : "member",
                   "variableType" : "String",
@@ -1705,6 +1751,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "java.util.List<String>",
               "variableName" : "value",
               "variableType" : "java.util.List<String>",
@@ -1717,6 +1764,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "java.util.List<String>",
               "variableName" : "value",
               "variableType" : "java.util.List<String>",
@@ -1740,6 +1788,7 @@
         "setterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,java.util.List<String>>",
           "variableName" : "filter",
           "variableType" : "java.util.Map<String,java.util.List<String>>",
@@ -1752,6 +1801,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,java.util.List<String>>",
           "variableName" : "filter",
           "variableType" : "java.util.Map<String,java.util.List<String>>",
@@ -1803,6 +1853,7 @@
         "setterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -1815,6 +1866,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -1866,6 +1918,7 @@
         "setterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -1878,6 +1931,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -1971,6 +2025,7 @@
               "setterDocumentation" : "/**\n@param key \n@see GetEntitlementFilterName*/",
               "setterMethodName" : "setKey",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "key",
                 "variableType" : "String",
@@ -1983,6 +2038,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param key \n@return Returns a reference to this object so that method calls can be chained together.\n@see GetEntitlementFilterName*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "key",
                 "variableType" : "String",
@@ -2074,6 +2130,7 @@
                   "setterDocumentation" : "/**\n@param member */",
                   "setterMethodName" : "setMember",
                   "setterModel" : {
+                    "timestampFormat" : null,
                     "variableDeclarationType" : "String",
                     "variableName" : "member",
                     "variableType" : "String",
@@ -2086,6 +2143,7 @@
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "variable" : {
+                    "timestampFormat" : null,
                     "variableDeclarationType" : "String",
                     "variableName" : "member",
                     "variableType" : "String",
@@ -2115,6 +2173,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "java.util.List<String>",
                 "variableName" : "value",
                 "variableType" : "java.util.List<String>",
@@ -2127,6 +2186,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "java.util.List<String>",
                 "variableName" : "value",
                 "variableType" : "java.util.List<String>",
@@ -2150,6 +2210,7 @@
           "setterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,java.util.List<String>>",
             "variableName" : "filter",
             "variableType" : "java.util.Map<String,java.util.List<String>>",
@@ -2162,6 +2223,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,java.util.List<String>>",
             "variableName" : "filter",
             "variableType" : "java.util.Map<String,java.util.List<String>>",
@@ -2214,6 +2276,7 @@
           "setterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -2226,6 +2289,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -2278,6 +2342,7 @@
           "setterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2290,6 +2355,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2342,6 +2408,7 @@
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -2354,6 +2421,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -2372,6 +2440,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetEntitlementsRequest",
         "variableName" : "getEntitlementsRequest",
         "variableType" : "GetEntitlementsRequest",
@@ -2478,6 +2547,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Entitlement",
               "variableName" : "member",
               "variableType" : "Entitlement",
@@ -2490,6 +2560,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Entitlement",
               "variableName" : "member",
               "variableType" : "Entitlement",
@@ -2519,6 +2590,7 @@
         "setterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
         "setterMethodName" : "setEntitlements",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Entitlement>",
           "variableName" : "entitlements",
           "variableType" : "java.util.List<Entitlement>",
@@ -2531,6 +2603,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntitlements(java.util.Collection)} or {@link #withEntitlements(java.util.Collection)} if you want to override the existing values.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Entitlement>",
           "variableName" : "entitlements",
           "variableType" : "java.util.List<Entitlement>",
@@ -2582,6 +2655,7 @@
         "setterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2594,6 +2668,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2684,6 +2759,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Entitlement",
                 "variableName" : "member",
                 "variableType" : "Entitlement",
@@ -2696,6 +2772,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Entitlement",
                 "variableName" : "member",
                 "variableType" : "Entitlement",
@@ -2725,6 +2802,7 @@
           "setterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
           "setterMethodName" : "setEntitlements",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Entitlement>",
             "variableName" : "entitlements",
             "variableType" : "java.util.List<Entitlement>",
@@ -2737,6 +2815,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntitlements(java.util.Collection)} or {@link #withEntitlements(java.util.Collection)} if you want to override the existing values.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Entitlement>",
             "variableName" : "entitlements",
             "variableType" : "java.util.List<Entitlement>",
@@ -2789,6 +2868,7 @@
           "setterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2801,6 +2881,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2822,6 +2903,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetEntitlementsResult",
         "variableName" : "getEntitlementsResult",
         "variableType" : "GetEntitlementsResult",
@@ -2858,6 +2940,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServiceErrorException",
         "variableName" : "internalServiceErrorException",
         "variableType" : "InternalServiceErrorException",
@@ -2894,6 +2977,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidParameterException",
         "variableName" : "invalidParameterException",
         "variableType" : "InvalidParameterException",
@@ -2930,6 +3014,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ThrottlingException",
         "variableName" : "throttlingException",
         "variableType" : "ThrottlingException",

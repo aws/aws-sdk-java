@@ -67,7 +67,7 @@ public class DescribeEndpointConfigResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeEndpointConfigResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeEndpointConfigResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

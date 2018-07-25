@@ -62,7 +62,7 @@ public class ConfigStreamDeliveryInfoJsonUnmarshaller implements Unmarshaller<Co
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
                     context.nextToken();
-                    configStreamDeliveryInfo.setLastStatusChangeTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configStreamDeliveryInfo.setLastStatusChangeTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

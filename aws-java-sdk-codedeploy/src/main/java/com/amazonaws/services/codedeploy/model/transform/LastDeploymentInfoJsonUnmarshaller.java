@@ -58,11 +58,11 @@ public class LastDeploymentInfoJsonUnmarshaller implements Unmarshaller<LastDepl
                 }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
-                    lastDeploymentInfo.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lastDeploymentInfo.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    lastDeploymentInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lastDeploymentInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

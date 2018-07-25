@@ -81,7 +81,7 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    describeChangeSetResult.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeChangeSetResult.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

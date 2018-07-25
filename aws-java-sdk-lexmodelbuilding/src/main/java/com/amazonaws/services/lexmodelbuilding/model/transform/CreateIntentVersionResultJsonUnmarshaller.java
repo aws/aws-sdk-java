@@ -94,11 +94,11 @@ public class CreateIntentVersionResultJsonUnmarshaller implements Unmarshaller<C
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    createIntentVersionResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createIntentVersionResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    createIntentVersionResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createIntentVersionResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

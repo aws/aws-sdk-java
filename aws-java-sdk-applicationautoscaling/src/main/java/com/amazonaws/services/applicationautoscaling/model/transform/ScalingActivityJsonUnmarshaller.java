@@ -74,11 +74,11 @@ public class ScalingActivityJsonUnmarshaller implements Unmarshaller<ScalingActi
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    scalingActivity.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scalingActivity.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    scalingActivity.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scalingActivity.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
                     context.nextToken();

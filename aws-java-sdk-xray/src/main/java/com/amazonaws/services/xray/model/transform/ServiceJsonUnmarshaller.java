@@ -78,11 +78,11 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    service.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    service.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    service.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    service.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Edges", targetDepth)) {
                     context.nextToken();

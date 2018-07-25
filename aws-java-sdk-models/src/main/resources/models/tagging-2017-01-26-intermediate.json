@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : {
       "FailureInfo" : [ "ErrorCode" ]
     },
@@ -111,6 +111,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetResourcesRequest",
         "variableName" : "getResourcesRequest",
         "variableType" : "GetResourcesRequest",
@@ -154,6 +155,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetTagKeysRequest",
         "variableName" : "getTagKeysRequest",
         "variableType" : "GetTagKeysRequest",
@@ -197,6 +199,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetTagValuesRequest",
         "variableName" : "getTagValuesRequest",
         "variableType" : "GetTagValuesRequest",
@@ -236,6 +239,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TagResourcesRequest",
         "variableName" : "tagResourcesRequest",
         "variableType" : "TagResourcesRequest",
@@ -275,6 +279,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UntagResourcesRequest",
         "variableName" : "untagResourcesRequest",
         "variableType" : "UntagResourcesRequest",
@@ -329,6 +334,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ErrorCode",
         "variableName" : "errorCode",
         "variableType" : "ErrorCode",
@@ -398,6 +404,7 @@
         "setterDocumentation" : "/**<p>The HTTP status code of the common error.</p>\n@param statusCode The HTTP status code of the common error.*/",
         "setterMethodName" : "setStatusCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "statusCode",
           "variableType" : "Integer",
@@ -410,6 +417,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HTTP status code of the common error.</p>\n@param statusCode The HTTP status code of the common error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "statusCode",
           "variableType" : "Integer",
@@ -461,6 +469,7 @@
         "setterDocumentation" : "/**<p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>\n@param errorCode The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.\n@see ErrorCode*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -473,6 +482,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>\n@param errorCode The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -524,6 +534,7 @@
         "setterDocumentation" : "/**<p>The message of the common error.</p>\n@param errorMessage The message of the common error.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorMessage",
           "variableType" : "String",
@@ -536,6 +547,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The message of the common error.</p>\n@param errorMessage The message of the common error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorMessage",
           "variableType" : "String",
@@ -589,6 +601,7 @@
           "setterDocumentation" : "/**<p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>\n@param errorCode The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.\n@see ErrorCode*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -601,6 +614,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.</p>\n@param errorCode The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the AWS service that hosts the resource that you want to tag.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -653,6 +667,7 @@
           "setterDocumentation" : "/**<p>The message of the common error.</p>\n@param errorMessage The message of the common error.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorMessage",
             "variableType" : "String",
@@ -665,6 +680,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The message of the common error.</p>\n@param errorMessage The message of the common error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorMessage",
             "variableType" : "String",
@@ -717,6 +733,7 @@
           "setterDocumentation" : "/**<p>The HTTP status code of the common error.</p>\n@param statusCode The HTTP status code of the common error.*/",
           "setterMethodName" : "setStatusCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "statusCode",
             "variableType" : "Integer",
@@ -729,6 +746,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HTTP status code of the common error.</p>\n@param statusCode The HTTP status code of the common error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "statusCode",
             "variableType" : "Integer",
@@ -750,6 +768,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "FailureInfo",
         "variableName" : "failureInfo",
         "variableType" : "FailureInfo",
@@ -826,6 +845,7 @@
         "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -838,6 +858,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -926,6 +947,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "TagFilter",
               "variableName" : "member",
               "variableType" : "TagFilter",
@@ -938,6 +960,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "TagFilter",
               "variableName" : "member",
               "variableType" : "TagFilter",
@@ -967,6 +990,7 @@
         "setterDocumentation" : "/**<p>A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.</p>\n@param tagFilters A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.*/",
         "setterMethodName" : "setTagFilters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<TagFilter>",
           "variableName" : "tagFilters",
           "variableType" : "java.util.List<TagFilter>",
@@ -979,6 +1003,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagFilters(java.util.Collection)} or {@link #withTagFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param tagFilters A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<TagFilter>",
           "variableName" : "tagFilters",
           "variableType" : "java.util.List<TagFilter>",
@@ -1030,6 +1055,7 @@
         "setterDocumentation" : "/**<p>A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items. </p>\n@param resourcesPerPage A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.*/",
         "setterMethodName" : "setResourcesPerPage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "resourcesPerPage",
           "variableType" : "Integer",
@@ -1042,6 +1068,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items. </p>\n@param resourcesPerPage A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "resourcesPerPage",
           "variableType" : "Integer",
@@ -1093,6 +1120,7 @@
         "setterDocumentation" : "/**<p>A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.</p>\n@param tagsPerPage A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.*/",
         "setterMethodName" : "setTagsPerPage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "tagsPerPage",
           "variableType" : "Integer",
@@ -1105,6 +1133,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.</p>\n@param tagsPerPage A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "tagsPerPage",
           "variableType" : "Integer",
@@ -1193,6 +1222,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1205,6 +1235,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1234,6 +1265,7 @@
         "setterDocumentation" : "/**<p>The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>\n@param resourceTypeFilters The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li>*/",
         "setterMethodName" : "setResourceTypeFilters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceTypeFilters",
           "variableType" : "java.util.List<String>",
@@ -1246,6 +1278,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypeFilters(java.util.Collection)} or {@link #withResourceTypeFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypeFilters The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceTypeFilters",
           "variableType" : "java.util.List<String>",
@@ -1299,6 +1332,7 @@
           "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -1311,6 +1345,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a <code>PaginationToken</code>, use that string for this value to request an additional page of data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -1400,6 +1435,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -1412,6 +1448,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -1441,6 +1478,7 @@
           "setterDocumentation" : "/**<p>The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>\n@param resourceTypeFilters The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li>*/",
           "setterMethodName" : "setResourceTypeFilters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceTypeFilters",
             "variableType" : "java.util.List<String>",
@@ -1453,6 +1491,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypeFilters(java.util.Collection)} or {@link #withResourceTypeFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypeFilters The constraints on the resources that you want returned. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of service name strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces\">AWS Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax\">Example ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceTypeFilters",
             "variableType" : "java.util.List<String>",
@@ -1505,6 +1544,7 @@
           "setterDocumentation" : "/**<p>A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items. </p>\n@param resourcesPerPage A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.*/",
           "setterMethodName" : "setResourcesPerPage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "resourcesPerPage",
             "variableType" : "Integer",
@@ -1517,6 +1557,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items. </p>\n@param resourcesPerPage A limit that restricts the number of resources returned by GetResources in paginated output. You can set ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "resourcesPerPage",
             "variableType" : "Integer",
@@ -1606,6 +1647,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "TagFilter",
                 "variableName" : "member",
                 "variableType" : "TagFilter",
@@ -1618,6 +1660,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "TagFilter",
                 "variableName" : "member",
                 "variableType" : "TagFilter",
@@ -1647,6 +1690,7 @@
           "setterDocumentation" : "/**<p>A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.</p>\n@param tagFilters A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.*/",
           "setterMethodName" : "setTagFilters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<TagFilter>",
             "variableName" : "tagFilters",
             "variableType" : "java.util.List<TagFilter>",
@@ -1659,6 +1703,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagFilters(java.util.Collection)} or {@link #withTagFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param tagFilters A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.</p> <p>If you specify multiple filters connected by an AND operator in a single request, the response returns only those resources that are associated with every specified filter.</p> <p>If you specify multiple filters connected by an OR operator in a single request, the response returns all resources that are associated with at least one or possibly more of the specified filters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<TagFilter>",
             "variableName" : "tagFilters",
             "variableType" : "java.util.List<TagFilter>",
@@ -1711,6 +1756,7 @@
           "setterDocumentation" : "/**<p>A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.</p>\n@param tagsPerPage A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.*/",
           "setterMethodName" : "setTagsPerPage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "tagsPerPage",
             "variableType" : "Integer",
@@ -1723,6 +1769,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.</p>\n@param tagsPerPage A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p> <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "tagsPerPage",
             "variableType" : "Integer",
@@ -1741,6 +1788,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetResourcesRequest",
         "variableName" : "getResourcesRequest",
         "variableType" : "GetResourcesRequest",
@@ -1810,6 +1858,7 @@
         "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -1822,6 +1871,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -1910,6 +1960,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ResourceTagMapping",
               "variableName" : "member",
               "variableType" : "ResourceTagMapping",
@@ -1922,6 +1973,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ResourceTagMapping",
               "variableName" : "member",
               "variableType" : "ResourceTagMapping",
@@ -1951,6 +2003,7 @@
         "setterDocumentation" : "/**<p>A list of resource ARNs and the tags (keys and values) associated with each.</p>\n@param resourceTagMappingList A list of resource ARNs and the tags (keys and values) associated with each.*/",
         "setterMethodName" : "setResourceTagMappingList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ResourceTagMapping>",
           "variableName" : "resourceTagMappingList",
           "variableType" : "java.util.List<ResourceTagMapping>",
@@ -1963,6 +2016,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of resource ARNs and the tags (keys and values) associated with each.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTagMappingList(java.util.Collection)} or {@link #withResourceTagMappingList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTagMappingList A list of resource ARNs and the tags (keys and values) associated with each.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ResourceTagMapping>",
           "variableName" : "resourceTagMappingList",
           "variableType" : "java.util.List<ResourceTagMapping>",
@@ -2016,6 +2070,7 @@
           "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -2028,6 +2083,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -2117,6 +2173,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ResourceTagMapping",
                 "variableName" : "member",
                 "variableType" : "ResourceTagMapping",
@@ -2129,6 +2186,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ResourceTagMapping",
                 "variableName" : "member",
                 "variableType" : "ResourceTagMapping",
@@ -2158,6 +2216,7 @@
           "setterDocumentation" : "/**<p>A list of resource ARNs and the tags (keys and values) associated with each.</p>\n@param resourceTagMappingList A list of resource ARNs and the tags (keys and values) associated with each.*/",
           "setterMethodName" : "setResourceTagMappingList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ResourceTagMapping>",
             "variableName" : "resourceTagMappingList",
             "variableType" : "java.util.List<ResourceTagMapping>",
@@ -2170,6 +2229,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of resource ARNs and the tags (keys and values) associated with each.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTagMappingList(java.util.Collection)} or {@link #withResourceTagMappingList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTagMappingList A list of resource ARNs and the tags (keys and values) associated with each.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ResourceTagMapping>",
             "variableName" : "resourceTagMappingList",
             "variableType" : "java.util.List<ResourceTagMapping>",
@@ -2191,6 +2251,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetResourcesResult",
         "variableName" : "getResourcesResult",
         "variableType" : "GetResourcesResult",
@@ -2267,6 +2328,7 @@
         "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -2279,6 +2341,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -2332,6 +2395,7 @@
           "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -2344,6 +2408,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -2362,6 +2427,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetTagKeysRequest",
         "variableName" : "getTagKeysRequest",
         "variableType" : "GetTagKeysRequest",
@@ -2431,6 +2497,7 @@
         "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -2443,6 +2510,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -2531,6 +2599,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2543,6 +2612,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2572,6 +2642,7 @@
         "setterDocumentation" : "/**<p>A list of all tag keys in the AWS account.</p>\n@param tagKeys A list of all tag keys in the AWS account.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagKeys",
           "variableType" : "java.util.List<String>",
@@ -2584,6 +2655,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of all tag keys in the AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of all tag keys in the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagKeys",
           "variableType" : "java.util.List<String>",
@@ -2637,6 +2709,7 @@
           "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -2649,6 +2722,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -2738,6 +2812,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2750,6 +2825,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2779,6 +2855,7 @@
           "setterDocumentation" : "/**<p>A list of all tag keys in the AWS account.</p>\n@param tagKeys A list of all tag keys in the AWS account.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagKeys",
             "variableType" : "java.util.List<String>",
@@ -2791,6 +2868,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of all tag keys in the AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of all tag keys in the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagKeys",
             "variableType" : "java.util.List<String>",
@@ -2812,6 +2890,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetTagKeysResult",
         "variableName" : "getTagKeysResult",
         "variableType" : "GetTagKeysResult",
@@ -2888,6 +2967,7 @@
         "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -2900,6 +2980,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -2951,6 +3032,7 @@
         "setterDocumentation" : "/**<p>The key for which you want to list all existing values in the specified region for the AWS account.</p>\n@param key The key for which you want to list all existing values in the specified region for the AWS account.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -2963,6 +3045,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key for which you want to list all existing values in the specified region for the AWS account.</p>\n@param key The key for which you want to list all existing values in the specified region for the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -3016,6 +3099,7 @@
           "setterDocumentation" : "/**<p>The key for which you want to list all existing values in the specified region for the AWS account.</p>\n@param key The key for which you want to list all existing values in the specified region for the AWS account.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -3028,6 +3112,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key for which you want to list all existing values in the specified region for the AWS account.</p>\n@param key The key for which you want to list all existing values in the specified region for the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -3080,6 +3165,7 @@
           "setterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -3092,6 +3178,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.</p>\n@param paginationToken A string that indicates that additional data is available. Leave this value empty for your initial request. If the response includes a PaginationToken, use that string for this value to request an additional page of data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -3110,6 +3197,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetTagValuesRequest",
         "variableName" : "getTagValuesRequest",
         "variableType" : "GetTagValuesRequest",
@@ -3179,6 +3267,7 @@
         "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
         "setterMethodName" : "setPaginationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -3191,6 +3280,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "paginationToken",
           "variableType" : "String",
@@ -3279,6 +3369,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -3291,6 +3382,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -3320,6 +3412,7 @@
         "setterDocumentation" : "/**<p>A list of all tag values for the specified key in the AWS account.</p>\n@param tagValues A list of all tag values for the specified key in the AWS account.*/",
         "setterMethodName" : "setTagValues",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagValues",
           "variableType" : "java.util.List<String>",
@@ -3332,6 +3425,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of all tag values for the specified key in the AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagValues(java.util.Collection)} or {@link #withTagValues(java.util.Collection)} if you want to override the existing values.</p>\n@param tagValues A list of all tag values for the specified key in the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagValues",
           "variableType" : "java.util.List<String>",
@@ -3385,6 +3479,7 @@
           "setterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.*/",
           "setterMethodName" : "setPaginationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -3397,6 +3492,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.</p>\n@param paginationToken A string that indicates that the response contains more data than can be returned in a single response. To receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "paginationToken",
             "variableType" : "String",
@@ -3486,6 +3582,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -3498,6 +3595,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -3527,6 +3625,7 @@
           "setterDocumentation" : "/**<p>A list of all tag values for the specified key in the AWS account.</p>\n@param tagValues A list of all tag values for the specified key in the AWS account.*/",
           "setterMethodName" : "setTagValues",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagValues",
             "variableType" : "java.util.List<String>",
@@ -3539,6 +3638,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of all tag values for the specified key in the AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagValues(java.util.Collection)} or {@link #withTagValues(java.util.Collection)} if you want to override the existing values.</p>\n@param tagValues A list of all tag values for the specified key in the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagValues",
             "variableType" : "java.util.List<String>",
@@ -3560,6 +3660,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetTagValuesResult",
         "variableName" : "getTagValuesResult",
         "variableType" : "GetTagValuesResult",
@@ -3596,6 +3697,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServiceException",
         "variableName" : "internalServiceException",
         "variableType" : "InternalServiceException",
@@ -3632,6 +3734,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidParameterException",
         "variableName" : "invalidParameterException",
         "variableType" : "InvalidParameterException",
@@ -3668,6 +3771,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PaginationTokenExpiredException",
         "variableName" : "paginationTokenExpiredException",
         "variableType" : "PaginationTokenExpiredException",
@@ -3737,6 +3841,7 @@
         "setterDocumentation" : "/**<p>An array of resource ARN(s).</p>\n@param resourceARN An array of resource ARN(s).*/",
         "setterMethodName" : "setResourceARN",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceARN",
           "variableType" : "String",
@@ -3749,6 +3854,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of resource ARN(s).</p>\n@param resourceARN An array of resource ARN(s).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceARN",
           "variableType" : "String",
@@ -3837,6 +3943,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Tag",
               "variableName" : "member",
               "variableType" : "Tag",
@@ -3849,6 +3956,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Tag",
               "variableName" : "member",
               "variableType" : "Tag",
@@ -3878,6 +3986,7 @@
         "setterDocumentation" : "/**<p>The tags that have been applied to one or more AWS resources.</p>\n@param tags The tags that have been applied to one or more AWS resources.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
@@ -3890,6 +3999,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags that have been applied to one or more AWS resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags that have been applied to one or more AWS resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
@@ -3943,6 +4053,7 @@
           "setterDocumentation" : "/**<p>An array of resource ARN(s).</p>\n@param resourceARN An array of resource ARN(s).*/",
           "setterMethodName" : "setResourceARN",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceARN",
             "variableType" : "String",
@@ -3955,6 +4066,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of resource ARN(s).</p>\n@param resourceARN An array of resource ARN(s).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceARN",
             "variableType" : "String",
@@ -4044,6 +4156,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Tag",
                 "variableName" : "member",
                 "variableType" : "Tag",
@@ -4056,6 +4169,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Tag",
                 "variableName" : "member",
                 "variableType" : "Tag",
@@ -4085,6 +4199,7 @@
           "setterDocumentation" : "/**<p>The tags that have been applied to one or more AWS resources.</p>\n@param tags The tags that have been applied to one or more AWS resources.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
@@ -4097,6 +4212,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags that have been applied to one or more AWS resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags that have been applied to one or more AWS resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
@@ -4118,6 +4234,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceTagMapping",
         "variableName" : "resourceTagMapping",
         "variableType" : "ResourceTagMapping",
@@ -4187,6 +4304,7 @@
         "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -4199,6 +4317,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -4250,6 +4369,7 @@
         "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param value The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -4262,6 +4382,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param value The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -4315,6 +4436,7 @@
           "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -4327,6 +4449,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -4379,6 +4502,7 @@
           "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param value The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -4391,6 +4515,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param value The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -4412,6 +4537,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Tag",
         "variableName" : "tag",
         "variableType" : "Tag",
@@ -4481,6 +4607,7 @@
         "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -4493,6 +4620,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -4581,6 +4709,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4593,6 +4722,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4622,6 +4752,7 @@
         "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param values The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
         "setterMethodName" : "setValues",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "values",
           "variableType" : "java.util.List<String>",
@@ -4634,6 +4765,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "values",
           "variableType" : "java.util.List<String>",
@@ -4687,6 +4819,7 @@
           "setterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -4699,6 +4832,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>\n@param key One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -4788,6 +4922,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4800,6 +4935,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4829,6 +4965,7 @@
           "setterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n@param values The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).*/",
           "setterMethodName" : "setValues",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "values",
             "variableType" : "java.util.List<String>",
@@ -4841,6 +4978,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "values",
             "variableType" : "java.util.List<String>",
@@ -4862,6 +5000,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TagFilter",
         "variableName" : "tagFilter",
         "variableType" : "TagFilter",
@@ -4975,6 +5114,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4987,6 +5127,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5016,6 +5157,7 @@
         "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
         "setterMethodName" : "setResourceARNList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceARNList",
           "variableType" : "java.util.List<String>",
@@ -5028,6 +5170,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceARNList(java.util.Collection)} or {@link #withResourceARNList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceARNList",
           "variableType" : "java.util.List<String>",
@@ -5122,6 +5265,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -5134,6 +5278,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -5157,6 +5302,7 @@
         "setterDocumentation" : "/**<p>The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>\n@param tags The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "tags",
           "variableType" : "java.util.Map<String,String>",
@@ -5169,6 +5315,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>\n@param tags The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "tags",
           "variableType" : "java.util.Map<String,String>",
@@ -5259,6 +5406,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5271,6 +5419,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5300,6 +5449,7 @@
           "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
           "setterMethodName" : "setResourceARNList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceARNList",
             "variableType" : "java.util.List<String>",
@@ -5312,6 +5462,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceARNList(java.util.Collection)} or {@link #withResourceARNList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to tag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceARNList",
             "variableType" : "java.util.List<String>",
@@ -5407,6 +5558,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -5419,6 +5571,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -5442,6 +5595,7 @@
           "setterDocumentation" : "/**<p>The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>\n@param tags The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "tags",
             "variableType" : "java.util.Map<String,String>",
@@ -5454,6 +5608,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>\n@param tags The tags that you want to add to the specified resources. A tag consists of a key and a value that you define.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "tags",
             "variableType" : "java.util.Map<String,String>",
@@ -5472,6 +5627,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TagResourcesRequest",
         "variableName" : "tagResourcesRequest",
         "variableType" : "TagResourcesRequest",
@@ -5584,6 +5740,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailureInfo",
               "variableName" : "value",
               "variableType" : "FailureInfo",
@@ -5596,6 +5753,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailureInfo",
               "variableName" : "value",
               "variableType" : "FailureInfo",
@@ -5619,6 +5777,7 @@
         "setterDocumentation" : "/**<p>Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.*/",
         "setterMethodName" : "setFailedResourcesMap",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
           "variableName" : "failedResourcesMap",
           "variableType" : "java.util.Map<String,FailureInfo>",
@@ -5631,6 +5790,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
           "variableName" : "failedResourcesMap",
           "variableType" : "java.util.Map<String,FailureInfo>",
@@ -5727,6 +5887,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailureInfo",
                 "variableName" : "value",
                 "variableType" : "FailureInfo",
@@ -5739,6 +5900,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailureInfo",
                 "variableName" : "value",
                 "variableType" : "FailureInfo",
@@ -5762,6 +5924,7 @@
           "setterDocumentation" : "/**<p>Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.*/",
           "setterMethodName" : "setFailedResourcesMap",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
             "variableName" : "failedResourcesMap",
             "variableType" : "java.util.Map<String,FailureInfo>",
@@ -5774,6 +5937,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be tagged. An error code, status code, and error message are returned for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
             "variableName" : "failedResourcesMap",
             "variableType" : "java.util.Map<String,FailureInfo>",
@@ -5795,6 +5959,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TagResourcesResult",
         "variableName" : "tagResourcesResult",
         "variableType" : "TagResourcesResult",
@@ -5831,6 +5996,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ThrottledException",
         "variableName" : "throttledException",
         "variableType" : "ThrottledException",
@@ -5944,6 +6110,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5956,6 +6123,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5985,6 +6153,7 @@
         "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
         "setterMethodName" : "setResourceARNList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceARNList",
           "variableType" : "java.util.List<String>",
@@ -5997,6 +6166,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceARNList(java.util.Collection)} or {@link #withResourceARNList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceARNList",
           "variableType" : "java.util.List<String>",
@@ -6085,6 +6255,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6097,6 +6268,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6126,6 +6298,7 @@
         "setterDocumentation" : "/**<p>A list of the tag keys that you want to remove from the specified resources.</p>\n@param tagKeys A list of the tag keys that you want to remove from the specified resources.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagKeys",
           "variableType" : "java.util.List<String>",
@@ -6138,6 +6311,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the tag keys that you want to remove from the specified resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of the tag keys that you want to remove from the specified resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagKeys",
           "variableType" : "java.util.List<String>",
@@ -6228,6 +6402,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6240,6 +6415,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6269,6 +6445,7 @@
           "setterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.*/",
           "setterMethodName" : "setResourceARNList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceARNList",
             "variableType" : "java.util.List<String>",
@@ -6281,6 +6458,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceARNList(java.util.Collection)} or {@link #withResourceARNList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceARNList A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An ARN can be set to a maximum of 1600 characters. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceARNList",
             "variableType" : "java.util.List<String>",
@@ -6370,6 +6548,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6382,6 +6561,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6411,6 +6591,7 @@
           "setterDocumentation" : "/**<p>A list of the tag keys that you want to remove from the specified resources.</p>\n@param tagKeys A list of the tag keys that you want to remove from the specified resources.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagKeys",
             "variableType" : "java.util.List<String>",
@@ -6423,6 +6604,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the tag keys that you want to remove from the specified resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of the tag keys that you want to remove from the specified resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagKeys",
             "variableType" : "java.util.List<String>",
@@ -6441,6 +6623,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UntagResourcesRequest",
         "variableName" : "untagResourcesRequest",
         "variableType" : "UntagResourcesRequest",
@@ -6553,6 +6736,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailureInfo",
               "variableName" : "value",
               "variableType" : "FailureInfo",
@@ -6565,6 +6749,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailureInfo",
               "variableName" : "value",
               "variableType" : "FailureInfo",
@@ -6588,6 +6773,7 @@
         "setterDocumentation" : "/**<p>Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.*/",
         "setterMethodName" : "setFailedResourcesMap",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
           "variableName" : "failedResourcesMap",
           "variableType" : "java.util.Map<String,FailureInfo>",
@@ -6600,6 +6786,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
           "variableName" : "failedResourcesMap",
           "variableType" : "java.util.Map<String,FailureInfo>",
@@ -6696,6 +6883,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailureInfo",
                 "variableName" : "value",
                 "variableType" : "FailureInfo",
@@ -6708,6 +6896,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailureInfo",
                 "variableName" : "value",
                 "variableType" : "FailureInfo",
@@ -6731,6 +6920,7 @@
           "setterDocumentation" : "/**<p>Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.*/",
           "setterMethodName" : "setFailedResourcesMap",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
             "variableName" : "failedResourcesMap",
             "variableType" : "java.util.Map<String,FailureInfo>",
@@ -6743,6 +6933,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.</p>\n@param failedResourcesMap Details of resources that could not be untagged. An error code, status code, and error message are returned for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,FailureInfo>",
             "variableName" : "failedResourcesMap",
             "variableType" : "java.util.Map<String,FailureInfo>",
@@ -6764,6 +6955,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UntagResourcesResult",
         "variableName" : "untagResourcesResult",
         "variableType" : "UntagResourcesResult",

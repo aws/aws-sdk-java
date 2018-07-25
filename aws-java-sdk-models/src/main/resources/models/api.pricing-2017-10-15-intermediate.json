@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -113,6 +113,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeServicesRequest",
         "variableName" : "describeServicesRequest",
         "variableType" : "DescribeServicesRequest",
@@ -160,6 +161,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAttributeValuesRequest",
         "variableName" : "getAttributeValuesRequest",
         "variableType" : "GetAttributeValuesRequest",
@@ -207,6 +209,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetProductsRequest",
         "variableName" : "getProductsRequest",
         "variableType" : "GetProductsRequest",
@@ -285,6 +288,7 @@
         "setterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -297,6 +301,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -350,6 +355,7 @@
           "setterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -362,6 +368,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The specific value of an <code>attributeName</code>.</p>\n@param value The specific value of an <code>attributeName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -383,6 +390,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AttributeValue",
         "variableName" : "attributeValue",
         "variableType" : "AttributeValue",
@@ -459,6 +467,7 @@
         "setterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -471,6 +480,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -522,6 +532,7 @@
         "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -534,6 +545,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -585,6 +597,7 @@
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -597,6 +610,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -648,6 +662,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -660,6 +675,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -713,6 +729,7 @@
           "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -725,6 +742,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -777,6 +795,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -789,6 +808,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results that you want returned in the response.</p>\n@param maxResults The maximum number of results that you want returned in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -841,6 +861,7 @@
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -853,6 +874,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -905,6 +927,7 @@
           "setterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -917,6 +940,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>\n@param serviceCode The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -935,6 +959,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeServicesRequest",
         "variableName" : "describeServicesRequest",
         "variableType" : "DescribeServicesRequest",
@@ -1041,6 +1066,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Service",
               "variableName" : "member",
               "variableType" : "Service",
@@ -1053,6 +1079,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Service",
               "variableName" : "member",
               "variableType" : "Service",
@@ -1082,6 +1109,7 @@
         "setterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n@param services The service metadata for the service or services in the response.*/",
         "setterMethodName" : "setServices",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Service>",
           "variableName" : "services",
           "variableType" : "java.util.List<Service>",
@@ -1094,6 +1122,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The service metadata for the service or services in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Service>",
           "variableName" : "services",
           "variableType" : "java.util.List<Service>",
@@ -1145,6 +1174,7 @@
         "setterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -1157,6 +1187,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -1208,6 +1239,7 @@
         "setterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -1220,6 +1252,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -1273,6 +1306,7 @@
           "setterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -1285,6 +1319,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version of the response. For example, <code>aws_v1</code>.</p>\n@param formatVersion The format version of the response. For example, <code>aws_v1</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -1337,6 +1372,7 @@
           "setterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -1349,6 +1385,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token for the next set of retreivable results.</p>\n@param nextToken The pagination token for the next set of retreivable results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -1438,6 +1475,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Service",
                 "variableName" : "member",
                 "variableType" : "Service",
@@ -1450,6 +1488,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Service",
                 "variableName" : "member",
                 "variableType" : "Service",
@@ -1479,6 +1518,7 @@
           "setterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n@param services The service metadata for the service or services in the response.*/",
           "setterMethodName" : "setServices",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Service>",
             "variableName" : "services",
             "variableType" : "java.util.List<Service>",
@@ -1491,6 +1531,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service metadata for the service or services in the response.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The service metadata for the service or services in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Service>",
             "variableName" : "services",
             "variableType" : "java.util.List<Service>",
@@ -1512,6 +1553,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeServicesResult",
         "variableName" : "describeServicesResult",
         "variableType" : "DescribeServicesResult",
@@ -1548,6 +1590,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExpiredNextTokenException",
         "variableName" : "expiredNextTokenException",
         "variableType" : "ExpiredNextTokenException",
@@ -1617,6 +1660,7 @@
         "setterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@see FilterType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -1629,6 +1673,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FilterType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -1680,6 +1725,7 @@
         "setterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.*/",
         "setterMethodName" : "setField",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "field",
           "variableType" : "String",
@@ -1692,6 +1738,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "field",
           "variableType" : "String",
@@ -1743,6 +1790,7 @@
         "setterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -1755,6 +1803,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -1808,6 +1857,7 @@
           "setterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.*/",
           "setterMethodName" : "setField",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "field",
             "variableType" : "String",
@@ -1820,6 +1870,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.</p>\n@param field The product metadata field that you want to filter on. You can filter by just the service code to see all products for a specific service, filter by just the attribute name to see a specific attribute for multiple services, or use both a service code and an attribute name to retrieve only products that match both fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code> attribute name to get the prices for only Amazon EC2 volumes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "field",
             "variableType" : "String",
@@ -1872,6 +1923,7 @@
           "setterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@see FilterType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -1884,6 +1936,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.</p>\n@param type The type of filter that you want to use.</p> <p>Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that match both the given filter field and the given value.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FilterType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -1936,6 +1989,7 @@
           "setterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -1948,6 +2002,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.</p>\n@param value The service code or attribute value that you want to filter by. If you are filtering by service code this is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -1969,6 +2024,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Filter",
         "variableName" : "filter",
         "variableType" : "Filter",
@@ -2011,6 +2067,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "FilterType",
         "variableName" : "filterType",
         "variableType" : "FilterType",
@@ -2087,6 +2144,7 @@
         "setterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -2099,6 +2157,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -2150,6 +2209,7 @@
         "setterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.*/",
         "setterMethodName" : "setAttributeName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "attributeName",
           "variableType" : "String",
@@ -2162,6 +2222,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "attributeName",
           "variableType" : "String",
@@ -2213,6 +2274,7 @@
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2225,6 +2287,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2276,6 +2339,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -2288,6 +2352,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -2341,6 +2406,7 @@
           "setterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.*/",
           "setterMethodName" : "setAttributeName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "attributeName",
             "variableType" : "String",
@@ -2353,6 +2419,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>\n@param attributeName The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "attributeName",
             "variableType" : "String",
@@ -2405,6 +2472,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -2417,6 +2485,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in response.</p>\n@param maxResults The maximum number of results to return in response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -2469,6 +2538,7 @@
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2481,6 +2551,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2533,6 +2604,7 @@
           "setterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -2545,6 +2617,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>\n@param serviceCode The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -2563,6 +2636,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAttributeValuesRequest",
         "variableName" : "getAttributeValuesRequest",
         "variableType" : "GetAttributeValuesRequest",
@@ -2669,6 +2743,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "AttributeValue",
               "variableName" : "member",
               "variableType" : "AttributeValue",
@@ -2681,6 +2756,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "AttributeValue",
               "variableName" : "member",
               "variableType" : "AttributeValue",
@@ -2710,6 +2786,7 @@
         "setterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.*/",
         "setterMethodName" : "setAttributeValues",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<AttributeValue>",
           "variableName" : "attributeValues",
           "variableType" : "java.util.List<AttributeValue>",
@@ -2722,6 +2799,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeValues(java.util.Collection)} or {@link #withAttributeValues(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<AttributeValue>",
           "variableName" : "attributeValues",
           "variableType" : "java.util.List<AttributeValue>",
@@ -2773,6 +2851,7 @@
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2785,6 +2864,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2875,6 +2955,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "AttributeValue",
                 "variableName" : "member",
                 "variableType" : "AttributeValue",
@@ -2887,6 +2968,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "AttributeValue",
                 "variableName" : "member",
                 "variableType" : "AttributeValue",
@@ -2916,6 +2998,7 @@
           "setterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.*/",
           "setterMethodName" : "setAttributeValues",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<AttributeValue>",
             "variableName" : "attributeValues",
             "variableType" : "java.util.List<AttributeValue>",
@@ -2928,6 +3011,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeValues(java.util.Collection)} or {@link #withAttributeValues(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeValues The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<AttributeValue>",
             "variableName" : "attributeValues",
             "variableType" : "java.util.List<AttributeValue>",
@@ -2980,6 +3064,7 @@
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2992,6 +3077,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3013,6 +3099,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAttributeValuesResult",
         "variableName" : "getAttributeValuesResult",
         "variableType" : "GetAttributeValuesResult",
@@ -3089,6 +3176,7 @@
         "setterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -3101,6 +3189,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -3189,6 +3278,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Filter",
               "variableName" : "member",
               "variableType" : "Filter",
@@ -3201,6 +3291,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Filter",
               "variableName" : "member",
               "variableType" : "Filter",
@@ -3230,6 +3321,7 @@
         "setterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.*/",
         "setterMethodName" : "setFilters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Filter>",
           "variableName" : "filters",
           "variableType" : "java.util.List<Filter>",
@@ -3242,6 +3334,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Filter>",
           "variableName" : "filters",
           "variableType" : "java.util.List<Filter>",
@@ -3293,6 +3386,7 @@
         "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -3305,6 +3399,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -3356,6 +3451,7 @@
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3368,6 +3464,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3419,6 +3516,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3431,6 +3529,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3521,6 +3620,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Filter",
                 "variableName" : "member",
                 "variableType" : "Filter",
@@ -3533,6 +3633,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Filter",
                 "variableName" : "member",
                 "variableType" : "Filter",
@@ -3562,6 +3663,7 @@
           "setterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.*/",
           "setterMethodName" : "setFilters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Filter>",
             "variableName" : "filters",
             "variableType" : "java.util.List<Filter>",
@@ -3574,6 +3676,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of filters that limit the returned products. only products that match all filters are returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The list of filters that limit the returned products. only products that match all filters are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Filter>",
             "variableName" : "filters",
             "variableType" : "java.util.List<Filter>",
@@ -3626,6 +3729,7 @@
           "setterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -3638,6 +3742,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code> </p>\n@param formatVersion The format version that you want the response to be in.</p> <p>Valid values are: <code>aws_v1</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -3690,6 +3795,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3702,6 +3808,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in the response.</p>\n@param maxResults The maximum number of results to return in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3754,6 +3861,7 @@
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3766,6 +3874,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results that you want to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results that you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3818,6 +3927,7 @@
           "setterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -3830,6 +3940,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the service whose products you want to retrieve. </p>\n@param serviceCode The code for the service whose products you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -3848,6 +3959,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetProductsRequest",
         "variableName" : "getProductsRequest",
         "variableType" : "GetProductsRequest",
@@ -3917,6 +4029,7 @@
         "setterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.*/",
         "setterMethodName" : "setFormatVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -3929,6 +4042,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "formatVersion",
           "variableType" : "String",
@@ -4017,6 +4131,7 @@
             "setterDocumentation" : "/**<p>\nThis field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For example: '{\"key\": \"value\"}'.\n</p>\n<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4029,6 +4144,7 @@
             "unmarshallingType" : "JSON_VALUE",
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4058,6 +4174,7 @@
         "setterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.*/",
         "setterMethodName" : "setPriceList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "priceList",
           "variableType" : "java.util.List<String>",
@@ -4070,6 +4187,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPriceList(java.util.Collection)} or {@link #withPriceList(java.util.Collection)} if you want to override the existing values.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "priceList",
           "variableType" : "java.util.List<String>",
@@ -4121,6 +4239,7 @@
         "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4133,6 +4252,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4186,6 +4306,7 @@
           "setterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.*/",
           "setterMethodName" : "setFormatVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -4198,6 +4319,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format version of the response. For example, aws_v1.</p>\n@param formatVersion The format version of the response. For example, aws_v1.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "formatVersion",
             "variableType" : "String",
@@ -4250,6 +4372,7 @@
           "setterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4262,6 +4385,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token that indicates the next set of results to retrieve.</p>\n@param nextToken The pagination token that indicates the next set of results to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4351,6 +4475,7 @@
               "setterDocumentation" : "/**<p>\nThis field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For example: '{\"key\": \"value\"}'.\n</p>\n<p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4363,6 +4488,7 @@
               "unmarshallingType" : "JSON_VALUE",
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4392,6 +4518,7 @@
           "setterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.*/",
           "setterMethodName" : "setPriceList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "priceList",
             "variableType" : "java.util.List<String>",
@@ -4404,6 +4531,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPriceList(java.util.Collection)} or {@link #withPriceList(java.util.Collection)} if you want to override the existing values.</p>\n@param priceList The list of products that match your filters. The list contains both the product metadata and the price information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "priceList",
             "variableType" : "java.util.List<String>",
@@ -4425,6 +4553,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetProductsResult",
         "variableName" : "getProductsResult",
         "variableType" : "GetProductsResult",
@@ -4461,6 +4590,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalErrorException",
         "variableName" : "internalErrorException",
         "variableType" : "InternalErrorException",
@@ -4497,6 +4627,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidNextTokenException",
         "variableName" : "invalidNextTokenException",
         "variableType" : "InvalidNextTokenException",
@@ -4533,6 +4664,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidParameterException",
         "variableName" : "invalidParameterException",
         "variableType" : "InvalidParameterException",
@@ -4569,6 +4701,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NotFoundException",
         "variableName" : "notFoundException",
         "variableType" : "NotFoundException",
@@ -4638,6 +4771,7 @@
         "setterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -4650,6 +4784,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
@@ -4738,6 +4873,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4750,6 +4886,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4779,6 +4916,7 @@
         "setterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n@param attributeNames The attributes that are available for this service.*/",
         "setterMethodName" : "setAttributeNames",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "attributeNames",
           "variableType" : "java.util.List<String>",
@@ -4791,6 +4929,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The attributes that are available for this service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "attributeNames",
           "variableType" : "java.util.List<String>",
@@ -4881,6 +5020,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4893,6 +5033,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4922,6 +5063,7 @@
           "setterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n@param attributeNames The attributes that are available for this service.*/",
           "setterMethodName" : "setAttributeNames",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "attributeNames",
             "variableType" : "java.util.List<String>",
@@ -4934,6 +5076,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attributes that are available for this service.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The attributes that are available for this service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "attributeNames",
             "variableType" : "java.util.List<String>",
@@ -4986,6 +5129,7 @@
           "setterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -4998,6 +5142,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the AWS service.</p>\n@param serviceCode The code for the AWS service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
@@ -5019,6 +5164,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Service",
         "variableName" : "service",
         "variableType" : "Service",

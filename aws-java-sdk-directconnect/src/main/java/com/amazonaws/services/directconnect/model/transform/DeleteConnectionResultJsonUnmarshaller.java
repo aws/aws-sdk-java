@@ -86,7 +86,7 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deleteConnectionResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
                     context.nextToken();

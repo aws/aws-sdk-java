@@ -62,11 +62,11 @@ public class TableInputJsonUnmarshaller implements Unmarshaller<TableInput, Json
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
                     context.nextToken();
-                    tableInput.setLastAccessTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableInput.setLastAccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAnalyzedTime", targetDepth)) {
                     context.nextToken();
-                    tableInput.setLastAnalyzedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableInput.setLastAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Retention", targetDepth)) {
                     context.nextToken();

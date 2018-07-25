@@ -59,12 +59,12 @@ public class VolumeStatusEventStaxUnmarshaller implements Unmarshaller<VolumeSta
                 }
 
                 if (context.testExpression("notAfter", targetDepth)) {
-                    volumeStatusEvent.setNotAfter(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    volumeStatusEvent.setNotAfter(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("notBefore", targetDepth)) {
-                    volumeStatusEvent.setNotBefore(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    volumeStatusEvent.setNotBefore(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

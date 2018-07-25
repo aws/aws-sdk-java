@@ -58,7 +58,7 @@ public class DescribeActivityResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    describeActivityResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeActivityResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -70,11 +70,11 @@ public class RepositoryMetadataJsonUnmarshaller implements Unmarshaller<Reposito
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    repositoryMetadata.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    repositoryMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("cloneUrlHttp", targetDepth)) {
                     context.nextToken();

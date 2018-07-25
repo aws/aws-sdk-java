@@ -54,11 +54,11 @@ public class JsonClassifierJsonUnmarshaller implements Unmarshaller<JsonClassifi
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    jsonClassifier.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jsonClassifier.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
                     context.nextToken();
-                    jsonClassifier.setLastUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jsonClassifier.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

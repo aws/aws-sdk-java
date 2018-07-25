@@ -62,7 +62,7 @@ public class UpdateFileSystemResultJsonUnmarshaller implements Unmarshaller<Upda
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    updateFileSystemResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updateFileSystemResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
                     context.nextToken();

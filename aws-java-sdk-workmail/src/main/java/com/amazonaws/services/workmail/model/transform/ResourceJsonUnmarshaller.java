@@ -70,11 +70,11 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                 }
                 if (context.testExpression("EnabledDate", targetDepth)) {
                     context.nextToken();
-                    resource.setEnabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resource.setEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisabledDate", targetDepth)) {
                     context.nextToken();
-                    resource.setDisabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resource.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

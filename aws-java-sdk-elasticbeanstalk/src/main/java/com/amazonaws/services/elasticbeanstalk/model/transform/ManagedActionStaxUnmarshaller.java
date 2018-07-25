@@ -64,7 +64,7 @@ public class ManagedActionStaxUnmarshaller implements Unmarshaller<ManagedAction
                 }
 
                 if (context.testExpression("WindowStartTime", targetDepth)) {
-                    managedAction.setWindowStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    managedAction.setWindowStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -50,7 +50,7 @@ public class GetServersResultJsonUnmarshaller implements Unmarshaller<GetServers
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastModifiedOn", targetDepth)) {
                     context.nextToken();
-                    getServersResult.setLastModifiedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getServersResult.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("serverCatalogStatus", targetDepth)) {
                     context.nextToken();

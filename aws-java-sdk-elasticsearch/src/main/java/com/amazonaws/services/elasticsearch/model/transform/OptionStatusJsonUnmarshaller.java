@@ -50,11 +50,11 @@ public class OptionStatusJsonUnmarshaller implements Unmarshaller<OptionStatus, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    optionStatus.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdateDate", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setUpdateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    optionStatus.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdateVersion", targetDepth)) {
                     context.nextToken();

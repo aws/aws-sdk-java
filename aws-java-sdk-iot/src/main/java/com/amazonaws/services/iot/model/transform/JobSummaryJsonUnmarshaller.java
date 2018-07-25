@@ -70,15 +70,15 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    jobSummary.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    jobSummary.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
                     context.nextToken();
-                    jobSummary.setCompletedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobSummary.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

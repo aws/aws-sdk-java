@@ -102,7 +102,7 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    fleet.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fleet.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FleetErrors", targetDepth)) {
                     context.nextToken();

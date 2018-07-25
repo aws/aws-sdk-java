@@ -50,7 +50,7 @@ public class TelemetryRecordJsonUnmarshaller implements Unmarshaller<TelemetryRe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    telemetryRecord.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    telemetryRecord.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SegmentsReceivedCount", targetDepth)) {
                     context.nextToken();

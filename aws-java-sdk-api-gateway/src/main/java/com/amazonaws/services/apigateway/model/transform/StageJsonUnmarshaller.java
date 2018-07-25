@@ -105,11 +105,11 @@ public class StageJsonUnmarshaller implements Unmarshaller<Stage, JsonUnmarshall
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    stage.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stage.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    stage.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stage.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

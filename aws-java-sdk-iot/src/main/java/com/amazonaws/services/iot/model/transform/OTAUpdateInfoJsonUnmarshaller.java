@@ -58,11 +58,11 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    oTAUpdateInfo.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    oTAUpdateInfo.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();

@@ -56,6 +56,11 @@ public class ReplicaSettingsUpdateJsonUnmarshaller implements Unmarshaller<Repli
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsUpdate.setReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdateJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("ReplicaGlobalSecondaryIndexSettingsUpdate", targetDepth)) {
                     context.nextToken();
                     replicaSettingsUpdate.setReplicaGlobalSecondaryIndexSettingsUpdate(new ListUnmarshaller<ReplicaGlobalSecondaryIndexSettingsUpdate>(

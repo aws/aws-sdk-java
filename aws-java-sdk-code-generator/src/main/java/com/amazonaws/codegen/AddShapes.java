@@ -33,6 +33,7 @@ import com.amazonaws.codegen.model.service.Shape;
 import com.amazonaws.codegen.naming.NamingStrategy;
 import com.amazonaws.util.StringUtils;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -161,13 +162,17 @@ abstract class AddShapes {
                                                variableType + " type.");
         }
 
+        String timestampFormat = null;
+        if (variableType.equals(Date.class.getName())) {
+            timestampFormat = getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocol);
+        }
 
         final MemberModel memberModel = new MemberModel();
 
         memberModel.withC2jName(c2jMemberName)
                    .withC2jShape(c2jShapeName)
                    .withName(capitialize(c2jMemberName))
-                   .withVariable(new VariableModel(variableName, variableType, variableDeclarationType)
+                   .withVariable(new VariableModel(variableName, variableType, variableDeclarationType, timestampFormat)
                                          .withDocumentation(c2jMemberDefinition.getDocumentation()))
                    .withSetterModel(new VariableModel(variableName, variableType, variableDeclarationType)
                                             .withDocumentation(generateSetterDocumentation()))
@@ -204,6 +209,60 @@ abstract class AddShapes {
         memberModel.setJsonValue(c2jMemberDefinition.isJsonvalue());
 
         return memberModel;
+    }
+
+    /**
+     * Get default timestamp format if the provided timestamp format is null or empty.
+     *
+     * - All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
+     * - All timestamp values serialized in query strings are formatted using iso8601 by default.
+     * - The default timestamp formats per protocol for structured payload shapes are as follows:
+     *
+     * rest-json: unixTimestamp
+     * jsonrpc: unixTimestamp
+     * rest-xml: iso8601
+     * query: iso8601
+     * ec2: iso8601
+     */
+    private String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes, String protocolString) {
+        String timestampFormat = c2jMemberDefinition.getTimestampFormat();
+
+        if (!StringUtils.isNullOrEmpty(timestampFormat)) {
+            return TimestampFormat.fromValue(timestampFormat).getFormat();
+        }
+
+        String shapeName = c2jMemberDefinition.getShape();
+        Shape shape = allC2jShapes.get(shapeName);
+
+        if (!StringUtils.isNullOrEmpty(shape.getTimestampFormat())) {
+            return TimestampFormat.fromValue(shape.getTimestampFormat()).getFormat();
+        }
+
+        String location = c2jMemberDefinition.getLocation();
+        if (Location.HEADER.toString().equals(location)) {
+            return TimestampFormat.RFC_822.format;
+        }
+
+        if (Location.QUERY_STRING.toString().equals(location)) {
+            return TimestampFormat.ISO_8601.format;
+        }
+
+        Protocol protocol = Protocol.fromValue(protocolString);
+
+        switch (protocol) {
+            case REST_XML:
+            case QUERY:
+            case EC2:
+            case API_GATEWAY:
+                return TimestampFormat.ISO_8601.format;
+            case REST_JSON:
+            case CBOR:
+            case ION:
+            case AWS_JSON:
+                return TimestampFormat.UNIX_TIMESTAMP.format;
+        }
+
+        throw new RuntimeException("Cannot determine timestamp format for protocol " + protocol);
     }
 
     private ParameterHttpMapping generateParameterHttpMapping(Shape parentShape,
@@ -367,5 +426,36 @@ abstract class AddShapes {
 
     protected String getProtocol() {
         return getServiceModel().getMetadata().getProtocol();
+    }
+
+    enum TimestampFormat {
+
+        ISO_8601("iso8601"),
+        UNIX_TIMESTAMP("unixTimestamp"),
+        RFC_822("rfc822");
+
+        private final String format;
+
+        TimestampFormat(String format) {
+            this.format = format;
+        }
+
+        public static TimestampFormat fromValue(String format) {
+            if (format == null) {
+                return null;
+            }
+
+            for (TimestampFormat timestampFormat : TimestampFormat.values()) {
+                if (timestampFormat.format.equals(format)) {
+                    return timestampFormat;
+                }
+            }
+
+            throw new IllegalArgumentException("Unknown enum value for TimestampFormat : " + format);
+        }
+
+        public String getFormat() {
+            return format;
+        }
     }
 }

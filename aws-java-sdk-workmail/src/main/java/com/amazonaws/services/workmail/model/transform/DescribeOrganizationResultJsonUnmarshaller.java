@@ -74,7 +74,7 @@ public class DescribeOrganizationResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("CompletedDate", targetDepth)) {
                     context.nextToken();
-                    describeOrganizationResult.setCompletedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeOrganizationResult.setCompletedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();

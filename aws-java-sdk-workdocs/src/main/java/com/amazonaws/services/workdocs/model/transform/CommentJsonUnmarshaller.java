@@ -70,7 +70,7 @@ public class CommentJsonUnmarshaller implements Unmarshaller<Comment, JsonUnmars
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    comment.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    comment.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

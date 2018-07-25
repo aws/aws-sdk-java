@@ -74,11 +74,11 @@ public class ScheduledActionJsonUnmarshaller implements Unmarshaller<ScheduledAc
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    scheduledAction.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scheduledAction.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    scheduledAction.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scheduledAction.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ScalableTargetAction", targetDepth)) {
                     context.nextToken();
@@ -86,7 +86,7 @@ public class ScheduledActionJsonUnmarshaller implements Unmarshaller<ScheduledAc
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    scheduledAction.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scheduledAction.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

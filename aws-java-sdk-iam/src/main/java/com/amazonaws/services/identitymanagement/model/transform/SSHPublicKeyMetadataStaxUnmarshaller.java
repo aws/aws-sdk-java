@@ -59,7 +59,7 @@ public class SSHPublicKeyMetadataStaxUnmarshaller implements Unmarshaller<SSHPub
                 }
 
                 if (context.testExpression("UploadDate", targetDepth)) {
-                    sSHPublicKeyMetadata.setUploadDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    sSHPublicKeyMetadata.setUploadDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

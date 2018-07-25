@@ -59,17 +59,17 @@ public class StackSummaryStaxUnmarshaller implements Unmarshaller<StackSummary, 
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    stackSummary.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSummary.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
-                    stackSummary.setLastUpdatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSummary.setLastUpdatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DeletionTime", targetDepth)) {
-                    stackSummary.setDeletionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSummary.setDeletionTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

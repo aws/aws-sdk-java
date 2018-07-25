@@ -106,35 +106,35 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 }
                 if (context.testExpression("connectivityAt", targetDepth)) {
                     context.nextToken();
-                    task.setConnectivityAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setConnectivityAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("pullStartedAt", targetDepth)) {
                     context.nextToken();
-                    task.setPullStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setPullStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("pullStoppedAt", targetDepth)) {
                     context.nextToken();
-                    task.setPullStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setPullStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionStoppedAt", targetDepth)) {
                     context.nextToken();
-                    task.setExecutionStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setExecutionStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    task.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    task.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stoppingAt", targetDepth)) {
                     context.nextToken();
-                    task.setStoppingAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setStoppingAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stoppedAt", targetDepth)) {
                     context.nextToken();
-                    task.setStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("group", targetDepth)) {
                     context.nextToken();

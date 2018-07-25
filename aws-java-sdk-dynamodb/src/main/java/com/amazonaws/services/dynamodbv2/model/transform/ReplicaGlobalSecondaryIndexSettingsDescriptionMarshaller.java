@@ -33,8 +33,14 @@ public class ReplicaGlobalSecondaryIndexSettingsDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IndexStatus").build();
     private static final MarshallingInfo<Long> PROVISIONEDREADCAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedReadCapacityUnits").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDREADCAPACITYAUTOSCALINGSETTINGS_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedReadCapacityAutoScalingSettings")
+            .build();
     private static final MarshallingInfo<Long> PROVISIONEDWRITECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedWriteCapacityUnits").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGS_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedWriteCapacityAutoScalingSettings")
+            .build();
 
     private static final ReplicaGlobalSecondaryIndexSettingsDescriptionMarshaller instance = new ReplicaGlobalSecondaryIndexSettingsDescriptionMarshaller();
 
@@ -55,8 +61,12 @@ public class ReplicaGlobalSecondaryIndexSettingsDescriptionMarshaller {
             protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsDescription.getIndexName(), INDEXNAME_BINDING);
             protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsDescription.getIndexStatus(), INDEXSTATUS_BINDING);
             protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsDescription.getProvisionedReadCapacityUnits(), PROVISIONEDREADCAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsDescription.getProvisionedReadCapacityAutoScalingSettings(),
+                    PROVISIONEDREADCAPACITYAUTOSCALINGSETTINGS_BINDING);
             protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsDescription.getProvisionedWriteCapacityUnits(),
                     PROVISIONEDWRITECAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsDescription.getProvisionedWriteCapacityAutoScalingSettings(),
+                    PROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

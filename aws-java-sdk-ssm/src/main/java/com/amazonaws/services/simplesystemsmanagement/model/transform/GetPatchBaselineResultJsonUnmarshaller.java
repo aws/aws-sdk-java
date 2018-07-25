@@ -90,11 +90,11 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    getPatchBaselineResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getPatchBaselineResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedDate", targetDepth)) {
                     context.nextToken();
-                    getPatchBaselineResult.setModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getPatchBaselineResult.setModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

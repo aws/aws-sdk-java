@@ -44,12 +44,12 @@ public class SlotDateTimeRangeRequestStaxUnmarshaller implements Unmarshaller<Sl
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("EarliestTime", targetDepth)) {
-                    slotDateTimeRangeRequest.setEarliestTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    slotDateTimeRangeRequest.setEarliestTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LatestTime", targetDepth)) {
-                    slotDateTimeRangeRequest.setLatestTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    slotDateTimeRangeRequest.setLatestTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

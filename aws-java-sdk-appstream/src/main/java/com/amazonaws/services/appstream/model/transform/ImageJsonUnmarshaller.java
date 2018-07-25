@@ -94,11 +94,11 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    image.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    image.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PublicBaseImageReleasedDate", targetDepth)) {
                     context.nextToken();
-                    image.setPublicBaseImageReleasedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    image.setPublicBaseImageReleasedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AppstreamAgentVersion", targetDepth)) {
                     context.nextToken();

@@ -78,19 +78,19 @@ public class SecretListEntryJsonUnmarshaller implements Unmarshaller<SecretListE
                 }
                 if (context.testExpression("LastRotatedDate", targetDepth)) {
                     context.nextToken();
-                    secretListEntry.setLastRotatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    secretListEntry.setLastRotatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastChangedDate", targetDepth)) {
                     context.nextToken();
-                    secretListEntry.setLastChangedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    secretListEntry.setLastChangedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAccessedDate", targetDepth)) {
                     context.nextToken();
-                    secretListEntry.setLastAccessedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    secretListEntry.setLastAccessedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedDate", targetDepth)) {
                     context.nextToken();
-                    secretListEntry.setDeletedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    secretListEntry.setDeletedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

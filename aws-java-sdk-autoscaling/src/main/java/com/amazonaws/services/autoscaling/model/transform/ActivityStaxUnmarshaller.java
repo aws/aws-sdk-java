@@ -64,12 +64,12 @@ public class ActivityStaxUnmarshaller implements Unmarshaller<Activity, StaxUnma
                 }
 
                 if (context.testExpression("StartTime", targetDepth)) {
-                    activity.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    activity.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EndTime", targetDepth)) {
-                    activity.setEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    activity.setEndTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

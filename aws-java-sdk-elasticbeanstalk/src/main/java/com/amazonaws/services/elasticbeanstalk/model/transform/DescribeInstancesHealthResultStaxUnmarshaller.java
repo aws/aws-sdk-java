@@ -56,7 +56,7 @@ public class DescribeInstancesHealthResultStaxUnmarshaller implements Unmarshall
                 }
 
                 if (context.testExpression("RefreshedAt", targetDepth)) {
-                    describeInstancesHealthResult.setRefreshedAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeInstancesHealthResult.setRefreshedAt(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

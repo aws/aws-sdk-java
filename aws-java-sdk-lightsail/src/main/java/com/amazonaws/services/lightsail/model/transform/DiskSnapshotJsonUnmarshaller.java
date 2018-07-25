@@ -62,7 +62,7 @@ public class DiskSnapshotJsonUnmarshaller implements Unmarshaller<DiskSnapshot, 
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    diskSnapshot.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    diskSnapshot.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();

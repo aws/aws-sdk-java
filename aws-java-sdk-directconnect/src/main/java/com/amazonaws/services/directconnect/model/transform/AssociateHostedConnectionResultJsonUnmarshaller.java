@@ -86,7 +86,7 @@ public class AssociateHostedConnectionResultJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    associateHostedConnectionResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associateHostedConnectionResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
                     context.nextToken();

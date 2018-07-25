@@ -70,11 +70,11 @@ public class RoleAliasDescriptionJsonUnmarshaller implements Unmarshaller<RoleAl
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    roleAliasDescription.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    roleAliasDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    roleAliasDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    roleAliasDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -86,7 +86,7 @@ public class ConnectorJsonUnmarshaller implements Unmarshaller<Connector, JsonUn
                 }
                 if (context.testExpression("associatedOn", targetDepth)) {
                     context.nextToken();
-                    connector.setAssociatedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    connector.setAssociatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

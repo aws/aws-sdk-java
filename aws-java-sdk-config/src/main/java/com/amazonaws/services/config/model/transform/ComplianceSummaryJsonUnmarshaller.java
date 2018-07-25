@@ -58,7 +58,7 @@ public class ComplianceSummaryJsonUnmarshaller implements Unmarshaller<Complianc
                 }
                 if (context.testExpression("ComplianceSummaryTimestamp", targetDepth)) {
                     context.nextToken();
-                    complianceSummary.setComplianceSummaryTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    complianceSummary.setComplianceSummaryTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

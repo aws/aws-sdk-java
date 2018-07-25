@@ -54,11 +54,11 @@ public class ProjectSummaryJsonUnmarshaller implements Unmarshaller<ProjectSumma
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    projectSummary.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    projectSummary.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedDate", targetDepth)) {
                     context.nextToken();
-                    projectSummary.setUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    projectSummary.setUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

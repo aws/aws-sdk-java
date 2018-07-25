@@ -86,7 +86,7 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableStatistics.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TableState", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,7 @@ public class PutEventsRequestEntryJsonUnmarshaller implements Unmarshaller<PutEv
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Time", targetDepth)) {
                     context.nextToken();
-                    putEventsRequestEntry.setTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    putEventsRequestEntry.setTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
                     context.nextToken();

@@ -49,7 +49,7 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
                 }
 
                 if (context.testExpression("createDate", targetDepth)) {
-                    scheduledInstance.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledInstance.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -74,7 +74,7 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
                 }
 
                 if (context.testExpression("nextSlotStartTime", targetDepth)) {
-                    scheduledInstance.setNextSlotStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledInstance.setNextSlotStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -84,7 +84,7 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
                 }
 
                 if (context.testExpression("previousSlotEndTime", targetDepth)) {
-                    scheduledInstance.setPreviousSlotEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledInstance.setPreviousSlotEndTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -104,12 +104,12 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
                 }
 
                 if (context.testExpression("termEndDate", targetDepth)) {
-                    scheduledInstance.setTermEndDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledInstance.setTermEndDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("termStartDate", targetDepth)) {
-                    scheduledInstance.setTermStartDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledInstance.setTermStartDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

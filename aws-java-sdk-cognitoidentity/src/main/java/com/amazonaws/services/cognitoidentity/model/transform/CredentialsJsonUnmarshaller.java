@@ -62,7 +62,7 @@ public class CredentialsJsonUnmarshaller implements Unmarshaller<Credentials, Js
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
                     context.nextToken();
-                    credentials.setExpiration(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    credentials.setExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

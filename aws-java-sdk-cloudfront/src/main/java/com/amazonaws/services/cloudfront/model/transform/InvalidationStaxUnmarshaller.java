@@ -54,7 +54,7 @@ public class InvalidationStaxUnmarshaller implements Unmarshaller<Invalidation, 
                 }
 
                 if (context.testExpression("CreateTime", targetDepth)) {
-                    invalidation.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    invalidation.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

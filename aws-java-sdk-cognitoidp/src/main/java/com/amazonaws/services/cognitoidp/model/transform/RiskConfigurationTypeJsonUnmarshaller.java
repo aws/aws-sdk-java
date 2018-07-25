@@ -72,7 +72,7 @@ public class RiskConfigurationTypeJsonUnmarshaller implements Unmarshaller<RiskC
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    riskConfigurationType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    riskConfigurationType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -75,11 +75,11 @@ public class ScalingPlanJsonUnmarshaller implements Unmarshaller<ScalingPlan, Js
                 }
                 if (context.testExpression("StatusStartTime", targetDepth)) {
                     context.nextToken();
-                    scalingPlan.setStatusStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scalingPlan.setStatusStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    scalingPlan.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scalingPlan.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

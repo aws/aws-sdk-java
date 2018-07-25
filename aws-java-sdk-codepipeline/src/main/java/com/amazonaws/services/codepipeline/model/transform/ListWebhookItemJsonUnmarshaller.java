@@ -66,7 +66,7 @@ public class ListWebhookItemJsonUnmarshaller implements Unmarshaller<ListWebhook
                 }
                 if (context.testExpression("lastTriggered", targetDepth)) {
                     context.nextToken();
-                    listWebhookItem.setLastTriggered(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    listWebhookItem.setLastTriggered(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();

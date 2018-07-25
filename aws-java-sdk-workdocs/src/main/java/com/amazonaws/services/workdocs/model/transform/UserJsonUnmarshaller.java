@@ -90,11 +90,11 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    user.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    user.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    user.setModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    user.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeZoneId", targetDepth)) {
                     context.nextToken();

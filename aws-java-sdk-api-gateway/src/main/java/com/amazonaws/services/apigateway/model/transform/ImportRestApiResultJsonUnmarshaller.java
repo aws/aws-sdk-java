@@ -62,7 +62,7 @@ public class ImportRestApiResultJsonUnmarshaller implements Unmarshaller<ImportR
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    importRestApiResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    importRestApiResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

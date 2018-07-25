@@ -59,12 +59,12 @@ public class StackSetOperationSummaryStaxUnmarshaller implements Unmarshaller<St
                 }
 
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
-                    stackSetOperationSummary.setCreationTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSetOperationSummary.setCreationTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EndTimestamp", targetDepth)) {
-                    stackSetOperationSummary.setEndTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSetOperationSummary.setEndTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

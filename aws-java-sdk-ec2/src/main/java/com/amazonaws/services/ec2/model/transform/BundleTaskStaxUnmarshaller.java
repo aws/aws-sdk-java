@@ -64,7 +64,7 @@ public class BundleTaskStaxUnmarshaller implements Unmarshaller<BundleTask, Stax
                 }
 
                 if (context.testExpression("startTime", targetDepth)) {
-                    bundleTask.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    bundleTask.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -79,7 +79,7 @@ public class BundleTaskStaxUnmarshaller implements Unmarshaller<BundleTask, Stax
                 }
 
                 if (context.testExpression("updateTime", targetDepth)) {
-                    bundleTask.setUpdateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    bundleTask.setUpdateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

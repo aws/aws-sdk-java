@@ -59,12 +59,12 @@ public class EnableLoggingResultStaxUnmarshaller implements Unmarshaller<EnableL
                 }
 
                 if (context.testExpression("LastSuccessfulDeliveryTime", targetDepth)) {
-                    enableLoggingResult.setLastSuccessfulDeliveryTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    enableLoggingResult.setLastSuccessfulDeliveryTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastFailureTime", targetDepth)) {
-                    enableLoggingResult.setLastFailureTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    enableLoggingResult.setLastFailureTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

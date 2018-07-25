@@ -54,7 +54,7 @@ public class AuthorizationDataJsonUnmarshaller implements Unmarshaller<Authoriza
                 }
                 if (context.testExpression("expiresAt", targetDepth)) {
                     context.nextToken();
-                    authorizationData.setExpiresAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    authorizationData.setExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("proxyEndpoint", targetDepth)) {
                     context.nextToken();

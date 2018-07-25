@@ -70,7 +70,7 @@ public class SourceTableDetailsJsonUnmarshaller implements Unmarshaller<SourceTa
                 }
                 if (context.testExpression("TableCreationDateTime", targetDepth)) {
                     context.nextToken();
-                    sourceTableDetails.setTableCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    sourceTableDetails.setTableCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
                     context.nextToken();

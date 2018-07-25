@@ -49,7 +49,7 @@ public class PublicKeyStaxUnmarshaller implements Unmarshaller<PublicKey, StaxUn
                 }
 
                 if (context.testExpression("CreatedTime", targetDepth)) {
-                    publicKey.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    publicKey.setCreatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

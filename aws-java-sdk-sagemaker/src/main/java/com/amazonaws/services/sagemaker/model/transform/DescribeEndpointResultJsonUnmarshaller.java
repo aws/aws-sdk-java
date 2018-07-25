@@ -75,11 +75,11 @@ public class DescribeEndpointResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeEndpointResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeEndpointResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    describeEndpointResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeEndpointResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

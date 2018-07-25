@@ -66,11 +66,11 @@ public class MaintenanceWindowExecutionJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowExecution.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    maintenanceWindowExecution.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowExecution.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    maintenanceWindowExecution.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

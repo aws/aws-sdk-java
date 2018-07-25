@@ -78,11 +78,11 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    putBotResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    putBotResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    putBotResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    putBotResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("idleSessionTTLInSeconds", targetDepth)) {
                     context.nextToken();

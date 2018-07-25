@@ -90,7 +90,7 @@ public class ImageBuilderJsonUnmarshaller implements Unmarshaller<ImageBuilder, 
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    imageBuilder.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    imageBuilder.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EnableDefaultInternetAccess", targetDepth)) {
                     context.nextToken();

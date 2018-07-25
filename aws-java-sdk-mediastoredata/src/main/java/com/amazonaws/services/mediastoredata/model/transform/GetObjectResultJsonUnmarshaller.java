@@ -54,7 +54,7 @@ public class GetObjectResultJsonUnmarshaller implements Unmarshaller<GetObjectRe
             }
             if (context.getHeader("Last-Modified") != null) {
                 context.setCurrentHeader("Last-Modified");
-                getObjectResult.setLastModified(com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+                getObjectResult.setLastModified(DateJsonUnmarshallerFactory.getInstance("rfc822").unmarshall(context));
             }
         }
 

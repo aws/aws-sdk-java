@@ -66,7 +66,7 @@ public class SynthesisTaskJsonUnmarshaller implements Unmarshaller<SynthesisTask
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    synthesisTask.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    synthesisTask.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RequestCharacters", targetDepth)) {
                     context.nextToken();

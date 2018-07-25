@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Collection;
@@ -33,17 +34,27 @@ public class VariableModel extends DocumentationModel {
      */
     private String variableDeclarationType;
 
+    private String timestampFormat;
+
     public VariableModel(String variableName, String variableType) {
         this(variableName, variableType, variableType);
     }
 
+    public VariableModel(String variableName, String variableType, String variableDeclarationType) {
+        this(variableName, variableType, variableDeclarationType, null);
+    }
+
+    @JsonCreator
     public VariableModel(
-            @JsonProperty("variableName") String variableName,
-            @JsonProperty("variableType") String variableType,
-            @JsonProperty("variableDeclarationType") String variableDeclarationType) {
+        @JsonProperty("variableName") String variableName,
+        @JsonProperty("variableType") String variableType,
+        @JsonProperty("variableDeclarationType") String variableDeclarationType,
+        @JsonProperty("timestampFormat") String timestampFormat) {
         setVariableName(variableName);
         setVariableType(variableType);
         setVariableDeclarationType(variableDeclarationType);
+        setTimestampFormat(timestampFormat);
+
     }
 
     public String getVariableName() {
@@ -93,6 +104,14 @@ public class VariableModel extends DocumentationModel {
 
     public void setVariableDeclarationType(String variableDeclarationType) {
         this.variableDeclarationType = variableDeclarationType;
+    }
+
+    public String getTimestampFormat() {
+        return timestampFormat;
+    }
+
+    public void setTimestampFormat(String timestampFormat) {
+        this.timestampFormat = timestampFormat;
     }
 
     @Override

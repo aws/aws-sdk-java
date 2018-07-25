@@ -102,7 +102,7 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    createDevEndpointResult.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createDevEndpointResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

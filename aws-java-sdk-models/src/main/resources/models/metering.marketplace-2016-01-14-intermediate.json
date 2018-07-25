@@ -119,6 +119,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchMeterUsageRequest",
         "variableName" : "batchMeterUsageRequest",
         "variableType" : "BatchMeterUsageRequest",
@@ -174,6 +175,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MeterUsageRequest",
         "variableName" : "meterUsageRequest",
         "variableType" : "MeterUsageRequest",
@@ -217,6 +219,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResolveCustomerRequest",
         "variableName" : "resolveCustomerRequest",
         "variableType" : "ResolveCustomerRequest",
@@ -339,6 +342,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "UsageRecord",
               "variableName" : "member",
               "variableType" : "UsageRecord",
@@ -351,6 +355,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "UsageRecord",
               "variableName" : "member",
               "variableType" : "UsageRecord",
@@ -380,6 +385,7 @@
         "setterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
         "setterMethodName" : "setUsageRecords",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UsageRecord>",
           "variableName" : "usageRecords",
           "variableType" : "java.util.List<UsageRecord>",
@@ -392,6 +398,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageRecords(java.util.Collection)} or {@link #withUsageRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UsageRecord>",
           "variableName" : "usageRecords",
           "variableType" : "java.util.List<UsageRecord>",
@@ -443,6 +450,7 @@
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -455,6 +463,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -508,6 +517,7 @@
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -520,6 +530,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -609,6 +620,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "UsageRecord",
                 "variableName" : "member",
                 "variableType" : "UsageRecord",
@@ -621,6 +633,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "UsageRecord",
                 "variableName" : "member",
                 "variableType" : "UsageRecord",
@@ -650,6 +663,7 @@
           "setterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
           "setterMethodName" : "setUsageRecords",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UsageRecord>",
             "variableName" : "usageRecords",
             "variableType" : "java.util.List<UsageRecord>",
@@ -662,6 +676,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageRecords(java.util.Collection)} or {@link #withUsageRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UsageRecord>",
             "variableName" : "usageRecords",
             "variableType" : "java.util.List<UsageRecord>",
@@ -680,6 +695,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchMeterUsageRequest",
         "variableName" : "batchMeterUsageRequest",
         "variableType" : "BatchMeterUsageRequest",
@@ -786,6 +802,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "UsageRecordResult",
               "variableName" : "member",
               "variableType" : "UsageRecordResult",
@@ -798,6 +815,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "UsageRecordResult",
               "variableName" : "member",
               "variableType" : "UsageRecordResult",
@@ -827,6 +845,7 @@
         "setterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
         "setterMethodName" : "setResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UsageRecordResult>",
           "variableName" : "results",
           "variableType" : "java.util.List<UsageRecordResult>",
@@ -839,6 +858,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResults(java.util.Collection)} or {@link #withResults(java.util.Collection)} if you want to override the existing values.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UsageRecordResult>",
           "variableName" : "results",
           "variableType" : "java.util.List<UsageRecordResult>",
@@ -927,6 +947,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "UsageRecord",
               "variableName" : "member",
               "variableType" : "UsageRecord",
@@ -939,6 +960,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "UsageRecord",
               "variableName" : "member",
               "variableType" : "UsageRecord",
@@ -968,6 +990,7 @@
         "setterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
         "setterMethodName" : "setUnprocessedRecords",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UsageRecord>",
           "variableName" : "unprocessedRecords",
           "variableType" : "java.util.List<UsageRecord>",
@@ -980,6 +1003,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedRecords(java.util.Collection)} or {@link #withUnprocessedRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<UsageRecord>",
           "variableName" : "unprocessedRecords",
           "variableType" : "java.util.List<UsageRecord>",
@@ -1070,6 +1094,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "UsageRecordResult",
                 "variableName" : "member",
                 "variableType" : "UsageRecordResult",
@@ -1082,6 +1107,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "UsageRecordResult",
                 "variableName" : "member",
                 "variableType" : "UsageRecordResult",
@@ -1111,6 +1137,7 @@
           "setterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
           "setterMethodName" : "setResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UsageRecordResult>",
             "variableName" : "results",
             "variableType" : "java.util.List<UsageRecordResult>",
@@ -1123,6 +1150,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResults(java.util.Collection)} or {@link #withResults(java.util.Collection)} if you want to override the existing values.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UsageRecordResult>",
             "variableName" : "results",
             "variableType" : "java.util.List<UsageRecordResult>",
@@ -1212,6 +1240,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "UsageRecord",
                 "variableName" : "member",
                 "variableType" : "UsageRecord",
@@ -1224,6 +1253,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "UsageRecord",
                 "variableName" : "member",
                 "variableType" : "UsageRecord",
@@ -1253,6 +1283,7 @@
           "setterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
           "setterMethodName" : "setUnprocessedRecords",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UsageRecord>",
             "variableName" : "unprocessedRecords",
             "variableType" : "java.util.List<UsageRecord>",
@@ -1265,6 +1296,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedRecords(java.util.Collection)} or {@link #withUnprocessedRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<UsageRecord>",
             "variableName" : "unprocessedRecords",
             "variableType" : "java.util.List<UsageRecord>",
@@ -1286,6 +1318,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchMeterUsageResult",
         "variableName" : "batchMeterUsageResult",
         "variableType" : "BatchMeterUsageResult",
@@ -1322,6 +1355,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DuplicateRequestException",
         "variableName" : "duplicateRequestException",
         "variableType" : "DuplicateRequestException",
@@ -1358,6 +1392,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExpiredTokenException",
         "variableName" : "expiredTokenException",
         "variableType" : "ExpiredTokenException",
@@ -1394,6 +1429,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServiceErrorException",
         "variableName" : "internalServiceErrorException",
         "variableType" : "InternalServiceErrorException",
@@ -1430,6 +1466,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidCustomerIdentifierException",
         "variableName" : "invalidCustomerIdentifierException",
         "variableType" : "InvalidCustomerIdentifierException",
@@ -1466,6 +1503,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidEndpointRegionException",
         "variableName" : "invalidEndpointRegionException",
         "variableType" : "InvalidEndpointRegionException",
@@ -1502,6 +1540,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidProductCodeException",
         "variableName" : "invalidProductCodeException",
         "variableType" : "InvalidProductCodeException",
@@ -1538,6 +1577,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidTokenException",
         "variableName" : "invalidTokenException",
         "variableType" : "InvalidTokenException",
@@ -1574,6 +1614,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidUsageDimensionException",
         "variableName" : "invalidUsageDimensionException",
         "variableType" : "InvalidUsageDimensionException",
@@ -1650,6 +1691,7 @@
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -1662,6 +1704,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -1713,6 +1756,7 @@
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
@@ -1725,6 +1769,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
@@ -1776,6 +1821,7 @@
         "setterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.*/",
         "setterMethodName" : "setUsageDimension",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "usageDimension",
           "variableType" : "String",
@@ -1788,6 +1834,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "usageDimension",
           "variableType" : "String",
@@ -1839,6 +1886,7 @@
         "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
         "setterMethodName" : "setUsageQuantity",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "usageQuantity",
           "variableType" : "Integer",
@@ -1851,6 +1899,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "usageQuantity",
           "variableType" : "Integer",
@@ -1902,6 +1951,7 @@
         "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
         "setterMethodName" : "setDryRun",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "dryRun",
           "variableType" : "Boolean",
@@ -1914,6 +1964,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "dryRun",
           "variableType" : "Boolean",
@@ -1967,6 +2018,7 @@
           "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
           "setterMethodName" : "setDryRun",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "dryRun",
             "variableType" : "Boolean",
@@ -1979,6 +2031,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "dryRun",
             "variableType" : "Boolean",
@@ -2031,6 +2084,7 @@
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -2043,6 +2097,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -2095,6 +2150,7 @@
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
@@ -2107,6 +2163,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
@@ -2159,6 +2216,7 @@
           "setterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.*/",
           "setterMethodName" : "setUsageDimension",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "usageDimension",
             "variableType" : "String",
@@ -2171,6 +2229,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "usageDimension",
             "variableType" : "String",
@@ -2223,6 +2282,7 @@
           "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
           "setterMethodName" : "setUsageQuantity",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "usageQuantity",
             "variableType" : "Integer",
@@ -2235,6 +2295,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "usageQuantity",
             "variableType" : "Integer",
@@ -2253,6 +2314,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MeterUsageRequest",
         "variableName" : "meterUsageRequest",
         "variableType" : "MeterUsageRequest",
@@ -2322,6 +2384,7 @@
         "setterDocumentation" : "/**\n@param meteringRecordId */",
         "setterMethodName" : "setMeteringRecordId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "meteringRecordId",
           "variableType" : "String",
@@ -2334,6 +2397,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "meteringRecordId",
           "variableType" : "String",
@@ -2387,6 +2451,7 @@
           "setterDocumentation" : "/**\n@param meteringRecordId */",
           "setterMethodName" : "setMeteringRecordId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "meteringRecordId",
             "variableType" : "String",
@@ -2399,6 +2464,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "meteringRecordId",
             "variableType" : "String",
@@ -2420,6 +2486,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MeterUsageResult",
         "variableName" : "meterUsageResult",
         "variableType" : "MeterUsageResult",
@@ -2496,6 +2563,7 @@
         "setterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
         "setterMethodName" : "setRegistrationToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "registrationToken",
           "variableType" : "String",
@@ -2508,6 +2576,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "registrationToken",
           "variableType" : "String",
@@ -2561,6 +2630,7 @@
           "setterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
           "setterMethodName" : "setRegistrationToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "registrationToken",
             "variableType" : "String",
@@ -2573,6 +2643,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "registrationToken",
             "variableType" : "String",
@@ -2591,6 +2662,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResolveCustomerRequest",
         "variableName" : "resolveCustomerRequest",
         "variableType" : "ResolveCustomerRequest",
@@ -2660,6 +2732,7 @@
         "setterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
         "setterMethodName" : "setCustomerIdentifier",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
           "variableType" : "String",
@@ -2672,6 +2745,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
           "variableType" : "String",
@@ -2723,6 +2797,7 @@
         "setterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
         "setterMethodName" : "setProductCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -2735,6 +2810,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
           "variableType" : "String",
@@ -2788,6 +2864,7 @@
           "setterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
           "setterMethodName" : "setCustomerIdentifier",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
             "variableType" : "String",
@@ -2800,6 +2877,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
             "variableType" : "String",
@@ -2852,6 +2930,7 @@
           "setterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
           "setterMethodName" : "setProductCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -2864,6 +2943,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
             "variableType" : "String",
@@ -2885,6 +2965,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResolveCustomerResult",
         "variableName" : "resolveCustomerResult",
         "variableType" : "ResolveCustomerResult",
@@ -2921,6 +3002,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ThrottlingException",
         "variableName" : "throttlingException",
         "variableType" : "ThrottlingException",
@@ -2957,6 +3039,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TimestampOutOfBoundsException",
         "variableName" : "timestampOutOfBoundsException",
         "variableType" : "TimestampOutOfBoundsException",
@@ -3026,6 +3109,7 @@
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
@@ -3038,6 +3122,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
@@ -3089,6 +3174,7 @@
         "setterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
         "setterMethodName" : "setCustomerIdentifier",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
           "variableType" : "String",
@@ -3101,6 +3187,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
           "variableType" : "String",
@@ -3152,6 +3239,7 @@
         "setterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
         "setterMethodName" : "setDimension",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "dimension",
           "variableType" : "String",
@@ -3164,6 +3252,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "dimension",
           "variableType" : "String",
@@ -3215,6 +3304,7 @@
         "setterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.*/",
         "setterMethodName" : "setQuantity",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "quantity",
           "variableType" : "Integer",
@@ -3227,6 +3317,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "quantity",
           "variableType" : "Integer",
@@ -3280,6 +3371,7 @@
           "setterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
           "setterMethodName" : "setCustomerIdentifier",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
             "variableType" : "String",
@@ -3292,6 +3384,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
             "variableType" : "String",
@@ -3344,6 +3437,7 @@
           "setterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
           "setterMethodName" : "setDimension",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "dimension",
             "variableType" : "String",
@@ -3356,6 +3450,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "dimension",
             "variableType" : "String",
@@ -3408,6 +3503,7 @@
           "setterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.*/",
           "setterMethodName" : "setQuantity",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "quantity",
             "variableType" : "Integer",
@@ -3420,6 +3516,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "quantity",
             "variableType" : "Integer",
@@ -3472,6 +3569,7 @@
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
@@ -3484,6 +3582,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
@@ -3505,6 +3604,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UsageRecord",
         "variableName" : "usageRecord",
         "variableType" : "UsageRecord",
@@ -3574,6 +3674,7 @@
         "setterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.*/",
         "setterMethodName" : "setUsageRecord",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "UsageRecord",
           "variableName" : "usageRecord",
           "variableType" : "UsageRecord",
@@ -3586,6 +3687,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "UsageRecord",
           "variableName" : "usageRecord",
           "variableType" : "UsageRecord",
@@ -3637,6 +3739,7 @@
         "setterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.*/",
         "setterMethodName" : "setMeteringRecordId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "meteringRecordId",
           "variableType" : "String",
@@ -3649,6 +3752,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "meteringRecordId",
           "variableType" : "String",
@@ -3700,6 +3804,7 @@
         "setterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -3712,6 +3817,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see UsageRecordResultStatus*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -3765,6 +3871,7 @@
           "setterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.*/",
           "setterMethodName" : "setMeteringRecordId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "meteringRecordId",
             "variableType" : "String",
@@ -3777,6 +3884,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "meteringRecordId",
             "variableType" : "String",
@@ -3829,6 +3937,7 @@
           "setterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -3841,6 +3950,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see UsageRecordResultStatus*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -3893,6 +4003,7 @@
           "setterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.*/",
           "setterMethodName" : "setUsageRecord",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "UsageRecord",
             "variableName" : "usageRecord",
             "variableType" : "UsageRecord",
@@ -3905,6 +4016,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "UsageRecord",
             "variableName" : "usageRecord",
             "variableType" : "UsageRecord",
@@ -3926,6 +4038,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UsageRecordResult",
         "variableName" : "usageRecordResult",
         "variableType" : "UsageRecordResult",
@@ -3974,6 +4087,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UsageRecordResultStatus",
         "variableName" : "usageRecordResultStatus",
         "variableType" : "UsageRecordResultStatus",

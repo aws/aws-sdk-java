@@ -55,7 +55,7 @@ public class GetTraceSummariesResultJsonUnmarshaller implements Unmarshaller<Get
                 }
                 if (context.testExpression("ApproximateTime", targetDepth)) {
                     context.nextToken();
-                    getTraceSummariesResult.setApproximateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTraceSummariesResult.setApproximateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TracesProcessedCount", targetDepth)) {
                     context.nextToken();

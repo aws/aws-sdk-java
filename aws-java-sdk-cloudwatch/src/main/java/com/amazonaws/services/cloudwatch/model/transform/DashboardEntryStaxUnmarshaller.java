@@ -54,7 +54,7 @@ public class DashboardEntryStaxUnmarshaller implements Unmarshaller<DashboardEnt
                 }
 
                 if (context.testExpression("LastModified", targetDepth)) {
-                    dashboardEntry.setLastModified(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dashboardEntry.setLastModified(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

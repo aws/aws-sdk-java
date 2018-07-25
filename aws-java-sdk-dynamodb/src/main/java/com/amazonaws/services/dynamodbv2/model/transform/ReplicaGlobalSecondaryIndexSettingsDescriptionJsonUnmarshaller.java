@@ -61,9 +61,19 @@ public class ReplicaGlobalSecondaryIndexSettingsDescriptionJsonUnmarshaller impl
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaGlobalSecondaryIndexSettingsDescription.setProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ProvisionedWriteCapacityUnits", targetDepth)) {
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaGlobalSecondaryIndexSettingsDescription
+                            .setProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -78,7 +78,7 @@ public class StreamInfoJsonUnmarshaller implements Unmarshaller<StreamInfo, Json
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    streamInfo.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    streamInfo.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataRetentionInHours", targetDepth)) {
                     context.nextToken();

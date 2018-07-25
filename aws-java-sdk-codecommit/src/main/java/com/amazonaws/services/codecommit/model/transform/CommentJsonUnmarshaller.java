@@ -62,11 +62,11 @@ public class CommentJsonUnmarshaller implements Unmarshaller<Comment, JsonUnmars
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    comment.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    comment.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    comment.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    comment.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("authorArn", targetDepth)) {
                     context.nextToken();

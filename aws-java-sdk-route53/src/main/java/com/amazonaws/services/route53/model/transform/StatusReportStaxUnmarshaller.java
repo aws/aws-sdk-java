@@ -49,7 +49,7 @@ public class StatusReportStaxUnmarshaller implements Unmarshaller<StatusReport, 
                 }
 
                 if (context.testExpression("CheckedTime", targetDepth)) {
-                    statusReport.setCheckedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    statusReport.setCheckedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

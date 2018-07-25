@@ -50,7 +50,7 @@ public class AssessmentRunNotificationJsonUnmarshaller implements Unmarshaller<A
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("date", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification.setDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentRunNotification.setDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("event", targetDepth)) {
                     context.nextToken();

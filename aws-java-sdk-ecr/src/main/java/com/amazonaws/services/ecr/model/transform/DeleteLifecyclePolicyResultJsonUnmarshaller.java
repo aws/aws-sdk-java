@@ -62,7 +62,7 @@ public class DeleteLifecyclePolicyResultJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("lastEvaluatedAt", targetDepth)) {
                     context.nextToken();
-                    deleteLifecyclePolicyResult.setLastEvaluatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deleteLifecyclePolicyResult.setLastEvaluatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -91,11 +91,11 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    gameSessionPlacement.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    gameSessionPlacement.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    gameSessionPlacement.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    gameSessionPlacement.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();

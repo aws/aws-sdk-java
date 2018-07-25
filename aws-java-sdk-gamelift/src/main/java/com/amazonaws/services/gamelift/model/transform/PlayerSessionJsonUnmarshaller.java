@@ -66,11 +66,11 @@ public class PlayerSessionJsonUnmarshaller implements Unmarshaller<PlayerSession
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    playerSession.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    playerSession.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    playerSession.setTerminationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    playerSession.setTerminationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

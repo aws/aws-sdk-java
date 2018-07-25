@@ -66,7 +66,7 @@ public class EnvironmentMemberJsonUnmarshaller implements Unmarshaller<Environme
                 }
                 if (context.testExpression("lastAccess", targetDepth)) {
                     context.nextToken();
-                    environmentMember.setLastAccess(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    environmentMember.setLastAccess(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

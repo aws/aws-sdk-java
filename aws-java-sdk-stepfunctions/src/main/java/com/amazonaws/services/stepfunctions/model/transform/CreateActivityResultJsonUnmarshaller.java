@@ -54,7 +54,7 @@ public class CreateActivityResultJsonUnmarshaller implements Unmarshaller<Create
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    createActivityResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createActivityResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

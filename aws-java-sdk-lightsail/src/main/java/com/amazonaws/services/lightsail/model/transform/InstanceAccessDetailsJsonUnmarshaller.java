@@ -54,7 +54,7 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
                 }
                 if (context.testExpression("expiresAt", targetDepth)) {
                     context.nextToken();
-                    instanceAccessDetails.setExpiresAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceAccessDetails.setExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
                     context.nextToken();

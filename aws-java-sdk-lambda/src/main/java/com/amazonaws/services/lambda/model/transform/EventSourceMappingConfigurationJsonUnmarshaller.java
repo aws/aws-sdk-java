@@ -66,7 +66,7 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
                     context.nextToken();
-                    eventSourceMappingConfiguration.setLastModified(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    eventSourceMappingConfiguration.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastProcessingResult", targetDepth)) {
                     context.nextToken();

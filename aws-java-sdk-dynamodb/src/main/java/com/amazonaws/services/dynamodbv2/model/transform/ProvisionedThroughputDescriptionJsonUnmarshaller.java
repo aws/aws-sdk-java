@@ -50,11 +50,11 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LastIncreaseDateTime", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription.setLastIncreaseDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    provisionedThroughputDescription.setLastIncreaseDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastDecreaseDateTime", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughputDescription.setLastDecreaseDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    provisionedThroughputDescription.setLastDecreaseDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDecreasesToday", targetDepth)) {
                     context.nextToken();

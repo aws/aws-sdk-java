@@ -89,12 +89,12 @@ public class PolicyStaxUnmarshaller implements Unmarshaller<Policy, StaxUnmarsha
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    policy.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    policy.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UpdateDate", targetDepth)) {
-                    policy.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    policy.setUpdateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

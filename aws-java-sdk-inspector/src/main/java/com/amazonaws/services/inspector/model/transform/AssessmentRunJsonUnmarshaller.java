@@ -78,19 +78,19 @@ public class AssessmentRunJsonUnmarshaller implements Unmarshaller<AssessmentRun
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentRun.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentRun.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setCompletedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentRun.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stateChangedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setStateChangedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentRun.setStateChangedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("dataCollected", targetDepth)) {
                     context.nextToken();

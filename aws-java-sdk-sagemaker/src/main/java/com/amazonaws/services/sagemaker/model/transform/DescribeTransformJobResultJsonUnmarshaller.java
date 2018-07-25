@@ -99,15 +99,15 @@ public class DescribeTransformJobResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeTransformJobResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTransformJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformStartTime", targetDepth)) {
                     context.nextToken();
-                    describeTransformJobResult.setTransformStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTransformJobResult.setTransformStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformEndTime", targetDepth)) {
                     context.nextToken();
-                    describeTransformJobResult.setTransformEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeTransformJobResult.setTransformEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

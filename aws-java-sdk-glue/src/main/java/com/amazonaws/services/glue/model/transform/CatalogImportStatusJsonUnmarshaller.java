@@ -54,7 +54,7 @@ public class CatalogImportStatusJsonUnmarshaller implements Unmarshaller<Catalog
                 }
                 if (context.testExpression("ImportTime", targetDepth)) {
                     context.nextToken();
-                    catalogImportStatus.setImportTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    catalogImportStatus.setImportTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ImportedBy", targetDepth)) {
                     context.nextToken();

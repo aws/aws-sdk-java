@@ -66,11 +66,11 @@ public class ExecutionListItemJsonUnmarshaller implements Unmarshaller<Execution
                 }
                 if (context.testExpression("startDate", targetDepth)) {
                     context.nextToken();
-                    executionListItem.setStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    executionListItem.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopDate", targetDepth)) {
                     context.nextToken();
-                    executionListItem.setStopDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    executionListItem.setStopDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

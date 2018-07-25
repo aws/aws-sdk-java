@@ -62,11 +62,11 @@ public class WorkflowTypeInfoJsonUnmarshaller implements Unmarshaller<WorkflowTy
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    workflowTypeInfo.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workflowTypeInfo.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deprecationDate", targetDepth)) {
                     context.nextToken();
-                    workflowTypeInfo.setDeprecationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workflowTypeInfo.setDeprecationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

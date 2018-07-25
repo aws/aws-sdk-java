@@ -58,7 +58,7 @@ public class SampledHTTPRequestJsonUnmarshaller implements Unmarshaller<SampledH
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    sampledHTTPRequest.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    sampledHTTPRequest.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();

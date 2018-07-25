@@ -70,7 +70,7 @@ public class DescribeStateMachineResultJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    describeStateMachineResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeStateMachineResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

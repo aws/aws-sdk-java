@@ -71,7 +71,7 @@ public class PolicyComplianceDetailJsonUnmarshaller implements Unmarshaller<Poli
                 }
                 if (context.testExpression("ExpiredAt", targetDepth)) {
                     context.nextToken();
-                    policyComplianceDetail.setExpiredAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    policyComplianceDetail.setExpiredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

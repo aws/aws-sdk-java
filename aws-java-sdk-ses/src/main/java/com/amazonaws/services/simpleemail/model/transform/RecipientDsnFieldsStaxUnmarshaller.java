@@ -71,7 +71,7 @@ public class RecipientDsnFieldsStaxUnmarshaller implements Unmarshaller<Recipien
                 }
 
                 if (context.testExpression("LastAttemptDate", targetDepth)) {
-                    recipientDsnFields.setLastAttemptDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    recipientDsnFields.setLastAttemptDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -1,3 +1,8 @@
+# __1.11.373__ __2018-07-24__
+## __Amazon DynamoDB__
+  - ### Features
+    - With this SDK update, APIs UpdateGlobalTableSettings and DescribeGlobalTableSettings now allow consistently configuring AutoScaling settings for a DynamoDB global table. Previously, they would only allow consistently setting IOPS. Now new APIs are being released, existing APIs are being extended.
+
 # __1.11.372__ __2018-07-20__
 ## __AWS Config__
   - ### Features

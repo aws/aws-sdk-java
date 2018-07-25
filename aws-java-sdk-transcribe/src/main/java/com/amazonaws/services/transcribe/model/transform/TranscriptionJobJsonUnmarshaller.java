@@ -78,11 +78,11 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    transcriptionJob.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transcriptionJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
-                    transcriptionJob.setCompletionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transcriptionJob.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();

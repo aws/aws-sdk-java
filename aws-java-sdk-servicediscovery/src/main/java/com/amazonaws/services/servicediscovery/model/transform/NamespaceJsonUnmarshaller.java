@@ -78,7 +78,7 @@ public class NamespaceJsonUnmarshaller implements Unmarshaller<Namespace, JsonUn
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
                     context.nextToken();
-                    namespace.setCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    namespace.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
                     context.nextToken();

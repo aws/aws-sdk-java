@@ -41,6 +41,8 @@ public class Member {
 
     private boolean deprecated;
 
+    private String timestampFormat;
+
     public String getShape() {
         return shape;
     }
@@ -135,5 +137,14 @@ public class Member {
 
     public void setDeprecated(boolean deprecated) {
         this.deprecated = deprecated;
+    }
+
+
+    public String getTimestampFormat() {
+        return timestampFormat;
+    }
+
+    public void setTimestampFormat(String timestampFormat) {
+        this.timestampFormat = timestampFormat;
     }
 }

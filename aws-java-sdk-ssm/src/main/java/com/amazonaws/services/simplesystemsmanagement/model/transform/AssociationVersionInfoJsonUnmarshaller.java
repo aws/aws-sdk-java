@@ -58,7 +58,7 @@ public class AssociationVersionInfoJsonUnmarshaller implements Unmarshaller<Asso
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    associationVersionInfo.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationVersionInfo.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();

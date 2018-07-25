@@ -58,7 +58,7 @@ public class StartSelectorJsonUnmarshaller implements Unmarshaller<StartSelector
                 }
                 if (context.testExpression("StartTimestamp", targetDepth)) {
                     context.nextToken();
-                    startSelector.setStartTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    startSelector.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContinuationToken", targetDepth)) {
                     context.nextToken();

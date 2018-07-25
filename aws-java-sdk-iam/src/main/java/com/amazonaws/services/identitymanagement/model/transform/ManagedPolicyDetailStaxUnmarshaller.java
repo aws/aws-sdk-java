@@ -91,12 +91,12 @@ public class ManagedPolicyDetailStaxUnmarshaller implements Unmarshaller<Managed
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    managedPolicyDetail.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    managedPolicyDetail.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UpdateDate", targetDepth)) {
-                    managedPolicyDetail.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    managedPolicyDetail.setUpdateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -62,11 +62,11 @@ public class UtteranceDataJsonUnmarshaller implements Unmarshaller<UtteranceData
                 }
                 if (context.testExpression("firstUtteredDate", targetDepth)) {
                     context.nextToken();
-                    utteranceData.setFirstUtteredDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    utteranceData.setFirstUtteredDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUtteredDate", targetDepth)) {
                     context.nextToken();
-                    utteranceData.setLastUtteredDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    utteranceData.setLastUtteredDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

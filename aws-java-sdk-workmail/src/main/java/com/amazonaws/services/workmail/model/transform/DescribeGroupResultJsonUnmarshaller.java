@@ -66,11 +66,11 @@ public class DescribeGroupResultJsonUnmarshaller implements Unmarshaller<Describ
                 }
                 if (context.testExpression("EnabledDate", targetDepth)) {
                     context.nextToken();
-                    describeGroupResult.setEnabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeGroupResult.setEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisabledDate", targetDepth)) {
                     context.nextToken();
-                    describeGroupResult.setDisabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeGroupResult.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -83,7 +83,7 @@ public class AssessmentTemplateJsonUnmarshaller implements Unmarshaller<Assessme
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    assessmentTemplate.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentTemplate.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

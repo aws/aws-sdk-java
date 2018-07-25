@@ -62,7 +62,7 @@ public class StaticIpJsonUnmarshaller implements Unmarshaller<StaticIp, JsonUnma
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    staticIp.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    staticIp.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();

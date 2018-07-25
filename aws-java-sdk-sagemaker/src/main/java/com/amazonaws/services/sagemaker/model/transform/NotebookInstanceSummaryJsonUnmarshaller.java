@@ -70,11 +70,11 @@ public class NotebookInstanceSummaryJsonUnmarshaller implements Unmarshaller<Not
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    notebookInstanceSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    notebookInstanceSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    notebookInstanceSummary.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    notebookInstanceSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceLifecycleConfigName", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,7 @@ public class DeployedImageJsonUnmarshaller implements Unmarshaller<DeployedImage
                 }
                 if (context.testExpression("ResolutionTime", targetDepth)) {
                     context.nextToken();
-                    deployedImage.setResolutionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deployedImage.setResolutionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

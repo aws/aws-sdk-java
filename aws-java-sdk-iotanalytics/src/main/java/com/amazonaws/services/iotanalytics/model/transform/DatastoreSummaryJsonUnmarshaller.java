@@ -58,11 +58,11 @@ public class DatastoreSummaryJsonUnmarshaller implements Unmarshaller<DatastoreS
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    datastoreSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    datastoreSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    datastoreSummary.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    datastoreSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

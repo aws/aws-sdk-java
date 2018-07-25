@@ -66,7 +66,7 @@ public class HITJsonUnmarshaller implements Unmarshaller<HIT, JsonUnmarshallerCo
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    hIT.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    hIT.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
                     context.nextToken();
@@ -102,7 +102,7 @@ public class HITJsonUnmarshaller implements Unmarshaller<HIT, JsonUnmarshallerCo
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
                     context.nextToken();
-                    hIT.setExpiration(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    hIT.setExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AssignmentDurationInSeconds", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,7 @@ public class UploadJsonUnmarshaller implements Unmarshaller<Upload, JsonUnmarsha
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    upload.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    upload.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

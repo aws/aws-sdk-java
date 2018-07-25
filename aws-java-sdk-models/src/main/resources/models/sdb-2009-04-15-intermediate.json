@@ -183,6 +183,7 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchDeleteAttributesRequest",
         "variableName" : "batchDeleteAttributesRequest",
         "variableType" : "BatchDeleteAttributesRequest",
@@ -246,6 +247,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchPutAttributesRequest",
         "variableName" : "batchPutAttributesRequest",
         "variableType" : "BatchPutAttributesRequest",
@@ -285,6 +287,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateDomainRequest",
         "variableName" : "createDomainRequest",
         "variableType" : "CreateDomainRequest",
@@ -328,6 +331,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteAttributesRequest",
         "variableName" : "deleteAttributesRequest",
         "variableType" : "DeleteAttributesRequest",
@@ -359,6 +363,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDomainRequest",
         "variableName" : "deleteDomainRequest",
         "variableType" : "DeleteDomainRequest",
@@ -394,6 +399,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DomainMetadataRequest",
         "variableName" : "domainMetadataRequest",
         "variableType" : "DomainMetadataRequest",
@@ -433,6 +439,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAttributesRequest",
         "variableName" : "getAttributesRequest",
         "variableType" : "GetAttributesRequest",
@@ -468,6 +475,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDomainsRequest",
         "variableName" : "listDomainsRequest",
         "variableType" : "ListDomainsRequest",
@@ -523,6 +531,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutAttributesRequest",
         "variableName" : "putAttributesRequest",
         "variableType" : "PutAttributesRequest",
@@ -586,6 +595,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "SelectRequest",
         "variableName" : "selectRequest",
         "variableType" : "SelectRequest",
@@ -664,6 +674,7 @@
         "setterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -676,6 +687,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -727,6 +739,7 @@
         "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
         "setterMethodName" : "setAlternateNameEncoding",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "alternateNameEncoding",
           "variableType" : "String",
@@ -739,6 +752,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "alternateNameEncoding",
           "variableType" : "String",
@@ -790,6 +804,7 @@
         "setterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -802,6 +817,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -853,6 +869,7 @@
         "setterDocumentation" : "/**<p></p>\n@param alternateValueEncoding */",
         "setterMethodName" : "setAlternateValueEncoding",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "alternateValueEncoding",
           "variableType" : "String",
@@ -865,6 +882,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p></p>\n@param alternateValueEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "alternateValueEncoding",
           "variableType" : "String",
@@ -918,6 +936,7 @@
           "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
           "setterMethodName" : "setAlternateNameEncoding",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "alternateNameEncoding",
             "variableType" : "String",
@@ -930,6 +949,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "alternateNameEncoding",
             "variableType" : "String",
@@ -982,6 +1002,7 @@
           "setterDocumentation" : "/**<p></p>\n@param alternateValueEncoding */",
           "setterMethodName" : "setAlternateValueEncoding",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "alternateValueEncoding",
             "variableType" : "String",
@@ -994,6 +1015,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p></p>\n@param alternateValueEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "alternateValueEncoding",
             "variableType" : "String",
@@ -1046,6 +1068,7 @@
           "setterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1058,6 +1081,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1110,6 +1134,7 @@
           "setterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -1122,6 +1147,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -1143,6 +1169,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Attribute",
         "variableName" : "attribute",
         "variableType" : "Attribute",
@@ -1212,6 +1239,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -1224,6 +1252,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -1277,6 +1306,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -1289,6 +1319,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -1307,6 +1338,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AttributeDoesNotExistException",
         "variableName" : "attributeDoesNotExistException",
         "variableType" : "AttributeDoesNotExistException",
@@ -1383,6 +1415,7 @@
         "setterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -1395,6 +1428,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -1483,6 +1517,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeletableItem",
               "variableName" : "member",
               "variableType" : "DeletableItem",
@@ -1495,6 +1530,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeletableItem",
               "variableName" : "member",
               "variableType" : "DeletableItem",
@@ -1524,6 +1560,7 @@
         "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
           "variableName" : "items",
           "variableType" : "java.util.List<DeletableItem>",
@@ -1536,6 +1573,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
           "variableName" : "items",
           "variableType" : "java.util.List<DeletableItem>",
@@ -1589,6 +1627,7 @@
           "setterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -1601,6 +1640,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -1690,6 +1730,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeletableItem",
                 "variableName" : "member",
                 "variableType" : "DeletableItem",
@@ -1702,6 +1743,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeletableItem",
                 "variableName" : "member",
                 "variableType" : "DeletableItem",
@@ -1731,6 +1773,7 @@
           "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
             "variableName" : "items",
             "variableType" : "java.util.List<DeletableItem>",
@@ -1743,6 +1786,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
             "variableName" : "items",
             "variableType" : "java.util.List<DeletableItem>",
@@ -1761,6 +1805,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchDeleteAttributesRequest",
         "variableName" : "batchDeleteAttributesRequest",
         "variableType" : "BatchDeleteAttributesRequest",
@@ -1800,6 +1845,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchDeleteAttributesResult",
         "variableName" : "batchDeleteAttributesResult",
         "variableType" : "BatchDeleteAttributesResult",
@@ -1876,6 +1922,7 @@
         "setterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -1888,6 +1935,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -1976,6 +2024,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ReplaceableItem",
               "variableName" : "member",
               "variableType" : "ReplaceableItem",
@@ -1988,6 +2037,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ReplaceableItem",
               "variableName" : "member",
               "variableType" : "ReplaceableItem",
@@ -2017,6 +2067,7 @@
         "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
           "variableName" : "items",
           "variableType" : "java.util.List<ReplaceableItem>",
@@ -2029,6 +2080,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
           "variableName" : "items",
           "variableType" : "java.util.List<ReplaceableItem>",
@@ -2082,6 +2134,7 @@
           "setterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -2094,6 +2147,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -2183,6 +2237,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ReplaceableItem",
                 "variableName" : "member",
                 "variableType" : "ReplaceableItem",
@@ -2195,6 +2250,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ReplaceableItem",
                 "variableName" : "member",
                 "variableType" : "ReplaceableItem",
@@ -2224,6 +2280,7 @@
           "setterDocumentation" : "/**A list of items on which to perform the operation.\n@param items A list of items on which to perform the operation.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
             "variableName" : "items",
             "variableType" : "java.util.List<ReplaceableItem>",
@@ -2236,6 +2293,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
             "variableName" : "items",
             "variableType" : "java.util.List<ReplaceableItem>",
@@ -2254,6 +2312,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchPutAttributesRequest",
         "variableName" : "batchPutAttributesRequest",
         "variableType" : "BatchPutAttributesRequest",
@@ -2293,6 +2352,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BatchPutAttributesResult",
         "variableName" : "batchPutAttributesResult",
         "variableType" : "BatchPutAttributesResult",
@@ -2369,6 +2429,7 @@
         "setterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -2381,6 +2442,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -2434,6 +2496,7 @@
           "setterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -2446,6 +2509,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -2464,6 +2528,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateDomainRequest",
         "variableName" : "createDomainRequest",
         "variableType" : "CreateDomainRequest",
@@ -2503,6 +2568,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateDomainResult",
         "variableName" : "createDomainResult",
         "variableType" : "CreateDomainResult",
@@ -2572,6 +2638,7 @@
         "setterDocumentation" : "/**\n@param name */",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2584,6 +2651,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2672,6 +2740,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -2684,6 +2753,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -2713,6 +2783,7 @@
         "setterDocumentation" : "/**\n@param attributes */",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -2725,6 +2796,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -2815,6 +2887,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -2827,6 +2900,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -2856,6 +2930,7 @@
           "setterDocumentation" : "/**\n@param attributes */",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -2868,6 +2943,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -2920,6 +2996,7 @@
           "setterDocumentation" : "/**\n@param name */",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2932,6 +3009,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2953,6 +3031,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletableItem",
         "variableName" : "deletableItem",
         "variableType" : "DeletableItem",
@@ -3029,6 +3108,7 @@
         "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -3041,6 +3121,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -3092,6 +3173,7 @@
         "setterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.*/",
         "setterMethodName" : "setItemName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "itemName",
           "variableType" : "String",
@@ -3104,6 +3186,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "itemName",
           "variableType" : "String",
@@ -3192,6 +3275,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -3204,6 +3288,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -3233,6 +3318,7 @@
         "setterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -3245,6 +3331,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -3296,6 +3383,7 @@
         "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.*/",
         "setterMethodName" : "setExpected",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "UpdateCondition",
           "variableName" : "expected",
           "variableType" : "UpdateCondition",
@@ -3308,6 +3396,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "UpdateCondition",
           "variableName" : "expected",
           "variableType" : "UpdateCondition",
@@ -3398,6 +3487,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -3410,6 +3500,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -3439,6 +3530,7 @@
           "setterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -3451,6 +3543,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -3503,6 +3596,7 @@
           "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -3515,6 +3609,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -3567,6 +3662,7 @@
           "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.*/",
           "setterMethodName" : "setExpected",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "UpdateCondition",
             "variableName" : "expected",
             "variableType" : "UpdateCondition",
@@ -3579,6 +3675,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "UpdateCondition",
             "variableName" : "expected",
             "variableType" : "UpdateCondition",
@@ -3631,6 +3728,7 @@
           "setterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.*/",
           "setterMethodName" : "setItemName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "itemName",
             "variableType" : "String",
@@ -3643,6 +3741,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "itemName",
             "variableType" : "String",
@@ -3661,6 +3760,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteAttributesRequest",
         "variableName" : "deleteAttributesRequest",
         "variableType" : "DeleteAttributesRequest",
@@ -3700,6 +3800,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteAttributesResult",
         "variableName" : "deleteAttributesResult",
         "variableType" : "DeleteAttributesResult",
@@ -3776,6 +3877,7 @@
         "setterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -3788,6 +3890,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -3841,6 +3944,7 @@
           "setterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -3853,6 +3957,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -3871,6 +3976,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDomainRequest",
         "variableName" : "deleteDomainRequest",
         "variableType" : "DeleteDomainRequest",
@@ -3910,6 +4016,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteDomainResult",
         "variableName" : "deleteDomainResult",
         "variableType" : "DeleteDomainResult",
@@ -3986,6 +4093,7 @@
         "setterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -3998,6 +4106,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -4051,6 +4160,7 @@
           "setterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -4063,6 +4173,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -4081,6 +4192,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DomainMetadataRequest",
         "variableName" : "domainMetadataRequest",
         "variableType" : "DomainMetadataRequest",
@@ -4150,6 +4262,7 @@
         "setterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.*/",
         "setterMethodName" : "setItemCount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "itemCount",
           "variableType" : "Integer",
@@ -4162,6 +4275,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "itemCount",
           "variableType" : "Integer",
@@ -4213,6 +4327,7 @@
         "setterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.*/",
         "setterMethodName" : "setItemNamesSizeBytes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "itemNamesSizeBytes",
           "variableType" : "Long",
@@ -4225,6 +4340,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "itemNamesSizeBytes",
           "variableType" : "Long",
@@ -4276,6 +4392,7 @@
         "setterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.*/",
         "setterMethodName" : "setAttributeNameCount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "attributeNameCount",
           "variableType" : "Integer",
@@ -4288,6 +4405,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "attributeNameCount",
           "variableType" : "Integer",
@@ -4339,6 +4457,7 @@
         "setterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.*/",
         "setterMethodName" : "setAttributeNamesSizeBytes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "attributeNamesSizeBytes",
           "variableType" : "Long",
@@ -4351,6 +4470,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "attributeNamesSizeBytes",
           "variableType" : "Long",
@@ -4402,6 +4522,7 @@
         "setterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.*/",
         "setterMethodName" : "setAttributeValueCount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "attributeValueCount",
           "variableType" : "Integer",
@@ -4414,6 +4535,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "attributeValueCount",
           "variableType" : "Integer",
@@ -4465,6 +4587,7 @@
         "setterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.*/",
         "setterMethodName" : "setAttributeValuesSizeBytes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "attributeValuesSizeBytes",
           "variableType" : "Long",
@@ -4477,6 +4600,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "attributeValuesSizeBytes",
           "variableType" : "Long",
@@ -4528,6 +4652,7 @@
         "setterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.*/",
         "setterMethodName" : "setTimestamp",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "timestamp",
           "variableType" : "Integer",
@@ -4540,6 +4665,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "timestamp",
           "variableType" : "Integer",
@@ -4593,6 +4719,7 @@
           "setterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.*/",
           "setterMethodName" : "setAttributeNameCount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "attributeNameCount",
             "variableType" : "Integer",
@@ -4605,6 +4732,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "attributeNameCount",
             "variableType" : "Integer",
@@ -4657,6 +4785,7 @@
           "setterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.*/",
           "setterMethodName" : "setAttributeNamesSizeBytes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "attributeNamesSizeBytes",
             "variableType" : "Long",
@@ -4669,6 +4798,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "attributeNamesSizeBytes",
             "variableType" : "Long",
@@ -4721,6 +4851,7 @@
           "setterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.*/",
           "setterMethodName" : "setAttributeValueCount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "attributeValueCount",
             "variableType" : "Integer",
@@ -4733,6 +4864,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "attributeValueCount",
             "variableType" : "Integer",
@@ -4785,6 +4917,7 @@
           "setterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.*/",
           "setterMethodName" : "setAttributeValuesSizeBytes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "attributeValuesSizeBytes",
             "variableType" : "Long",
@@ -4797,6 +4930,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "attributeValuesSizeBytes",
             "variableType" : "Long",
@@ -4849,6 +4983,7 @@
           "setterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.*/",
           "setterMethodName" : "setItemCount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "itemCount",
             "variableType" : "Integer",
@@ -4861,6 +4996,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "itemCount",
             "variableType" : "Integer",
@@ -4913,6 +5049,7 @@
           "setterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.*/",
           "setterMethodName" : "setItemNamesSizeBytes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "itemNamesSizeBytes",
             "variableType" : "Long",
@@ -4925,6 +5062,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "itemNamesSizeBytes",
             "variableType" : "Long",
@@ -4977,6 +5115,7 @@
           "setterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.*/",
           "setterMethodName" : "setTimestamp",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "timestamp",
             "variableType" : "Integer",
@@ -4989,6 +5128,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "timestamp",
             "variableType" : "Integer",
@@ -5010,6 +5150,7 @@
         "resultWrapper" : "DomainMetadataResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DomainMetadataResult",
         "variableName" : "domainMetadataResult",
         "variableType" : "DomainMetadataResult",
@@ -5079,6 +5220,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -5091,6 +5233,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -5144,6 +5287,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -5156,6 +5300,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -5174,6 +5319,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DuplicateItemNameException",
         "variableName" : "duplicateItemNameException",
         "variableType" : "DuplicateItemNameException",
@@ -5250,6 +5396,7 @@
         "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -5262,6 +5409,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -5313,6 +5461,7 @@
         "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
         "setterMethodName" : "setItemName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "itemName",
           "variableType" : "String",
@@ -5325,6 +5474,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "itemName",
           "variableType" : "String",
@@ -5413,6 +5563,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5425,6 +5576,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5454,6 +5606,7 @@
         "setterDocumentation" : "/**The names of the attributes.\n@param attributeNames The names of the attributes.*/",
         "setterMethodName" : "setAttributeNames",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "attributeNames",
           "variableType" : "java.util.List<String>",
@@ -5466,6 +5619,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The names of the attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The names of the attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "attributeNames",
           "variableType" : "java.util.List<String>",
@@ -5517,6 +5671,7 @@
         "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
         "setterMethodName" : "setConsistentRead",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "consistentRead",
           "variableType" : "Boolean",
@@ -5529,6 +5684,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "consistentRead",
           "variableType" : "Boolean",
@@ -5619,6 +5775,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5631,6 +5788,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5660,6 +5818,7 @@
           "setterDocumentation" : "/**The names of the attributes.\n@param attributeNames The names of the attributes.*/",
           "setterMethodName" : "setAttributeNames",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "attributeNames",
             "variableType" : "java.util.List<String>",
@@ -5672,6 +5831,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The names of the attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The names of the attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "attributeNames",
             "variableType" : "java.util.List<String>",
@@ -5724,6 +5884,7 @@
           "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
           "setterMethodName" : "setConsistentRead",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "consistentRead",
             "variableType" : "Boolean",
@@ -5736,6 +5897,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "consistentRead",
             "variableType" : "Boolean",
@@ -5788,6 +5950,7 @@
           "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -5800,6 +5963,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -5852,6 +6016,7 @@
           "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
           "setterMethodName" : "setItemName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "itemName",
             "variableType" : "String",
@@ -5864,6 +6029,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "itemName",
             "variableType" : "String",
@@ -5882,6 +6048,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAttributesRequest",
         "variableName" : "getAttributesRequest",
         "variableType" : "GetAttributesRequest",
@@ -5988,6 +6155,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -6000,6 +6168,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -6029,6 +6198,7 @@
         "setterDocumentation" : "/**The list of attributes returned by the operation.\n@param attributes The list of attributes returned by the operation.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -6041,6 +6211,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The list of attributes returned by the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes returned by the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -6131,6 +6302,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -6143,6 +6315,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -6172,6 +6345,7 @@
           "setterDocumentation" : "/**The list of attributes returned by the operation.\n@param attributes The list of attributes returned by the operation.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -6184,6 +6358,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The list of attributes returned by the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes returned by the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -6205,6 +6380,7 @@
         "resultWrapper" : "GetAttributesResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAttributesResult",
         "variableName" : "getAttributesResult",
         "variableType" : "GetAttributesResult",
@@ -6274,6 +6450,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6286,6 +6463,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6339,6 +6517,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6351,6 +6530,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6369,6 +6549,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidNextTokenException",
         "variableName" : "invalidNextTokenException",
         "variableType" : "InvalidNextTokenException",
@@ -6438,6 +6619,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6450,6 +6632,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6503,6 +6686,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6515,6 +6699,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6533,6 +6718,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidNumberPredicatesException",
         "variableName" : "invalidNumberPredicatesException",
         "variableType" : "InvalidNumberPredicatesException",
@@ -6602,6 +6788,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6614,6 +6801,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6667,6 +6855,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6679,6 +6868,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6697,6 +6887,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidNumberValueTestsException",
         "variableName" : "invalidNumberValueTestsException",
         "variableType" : "InvalidNumberValueTestsException",
@@ -6766,6 +6957,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6778,6 +6970,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6831,6 +7024,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6843,6 +7037,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -6861,6 +7056,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidParameterValueException",
         "variableName" : "invalidParameterValueException",
         "variableType" : "InvalidParameterValueException",
@@ -6930,6 +7126,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6942,6 +7139,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -6995,6 +7193,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -7007,6 +7206,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -7025,6 +7225,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidQueryExpressionException",
         "variableName" : "invalidQueryExpressionException",
         "variableType" : "InvalidQueryExpressionException",
@@ -7094,6 +7295,7 @@
         "setterDocumentation" : "/**The name of the item.\n@param name The name of the item.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -7106,6 +7308,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item.\n@param name The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -7157,6 +7360,7 @@
         "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
         "setterMethodName" : "setAlternateNameEncoding",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "alternateNameEncoding",
           "variableType" : "String",
@@ -7169,6 +7373,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "alternateNameEncoding",
           "variableType" : "String",
@@ -7257,6 +7462,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -7269,6 +7475,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Attribute",
               "variableName" : "member",
               "variableType" : "Attribute",
@@ -7298,6 +7505,7 @@
         "setterDocumentation" : "/**A list of attributes.\n@param attributes A list of attributes.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -7310,6 +7518,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
@@ -7363,6 +7572,7 @@
           "setterDocumentation" : "/**<p></p>\n@param alternateNameEncoding */",
           "setterMethodName" : "setAlternateNameEncoding",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "alternateNameEncoding",
             "variableType" : "String",
@@ -7375,6 +7585,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "alternateNameEncoding",
             "variableType" : "String",
@@ -7464,6 +7675,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -7476,6 +7688,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Attribute",
                 "variableName" : "member",
                 "variableType" : "Attribute",
@@ -7505,6 +7718,7 @@
           "setterDocumentation" : "/**A list of attributes.\n@param attributes A list of attributes.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -7517,6 +7731,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
@@ -7569,6 +7784,7 @@
           "setterDocumentation" : "/**The name of the item.\n@param name The name of the item.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -7581,6 +7797,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item.\n@param name The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -7602,6 +7819,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Item",
         "variableName" : "item",
         "variableType" : "Item",
@@ -7678,6 +7896,7 @@
         "setterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.*/",
         "setterMethodName" : "setMaxNumberOfDomains",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxNumberOfDomains",
           "variableType" : "Integer",
@@ -7690,6 +7909,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxNumberOfDomains",
           "variableType" : "Integer",
@@ -7741,6 +7961,7 @@
         "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -7753,6 +7974,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -7806,6 +8028,7 @@
           "setterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.*/",
           "setterMethodName" : "setMaxNumberOfDomains",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxNumberOfDomains",
             "variableType" : "Integer",
@@ -7818,6 +8041,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxNumberOfDomains",
             "variableType" : "Integer",
@@ -7870,6 +8094,7 @@
           "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -7882,6 +8107,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -7900,6 +8126,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDomainsRequest",
         "variableName" : "listDomainsRequest",
         "variableType" : "ListDomainsRequest",
@@ -8006,6 +8233,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -8018,6 +8246,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -8047,6 +8276,7 @@
         "setterDocumentation" : "/**A list of domain names that match the expression.\n@param domainNames A list of domain names that match the expression.*/",
         "setterMethodName" : "setDomainNames",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "domainNames",
           "variableType" : "java.util.List<String>",
@@ -8059,6 +8289,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of domain names that match the expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames A list of domain names that match the expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "domainNames",
           "variableType" : "java.util.List<String>",
@@ -8110,6 +8341,7 @@
         "setterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -8122,6 +8354,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -8212,6 +8445,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -8224,6 +8458,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -8253,6 +8488,7 @@
           "setterDocumentation" : "/**A list of domain names that match the expression.\n@param domainNames A list of domain names that match the expression.*/",
           "setterMethodName" : "setDomainNames",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "domainNames",
             "variableType" : "java.util.List<String>",
@@ -8265,6 +8501,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of domain names that match the expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames A list of domain names that match the expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "domainNames",
             "variableType" : "java.util.List<String>",
@@ -8317,6 +8554,7 @@
           "setterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -8329,6 +8567,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -8350,6 +8589,7 @@
         "resultWrapper" : "ListDomainsResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDomainsResult",
         "variableName" : "listDomainsResult",
         "variableType" : "ListDomainsResult",
@@ -8419,6 +8659,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8431,6 +8672,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8484,6 +8726,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8496,6 +8739,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8514,6 +8758,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MissingParameterException",
         "variableName" : "missingParameterException",
         "variableType" : "MissingParameterException",
@@ -8583,6 +8828,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8595,6 +8841,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8648,6 +8895,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8660,6 +8908,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8678,6 +8927,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NoSuchDomainException",
         "variableName" : "noSuchDomainException",
         "variableType" : "NoSuchDomainException",
@@ -8747,6 +8997,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8759,6 +9010,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8812,6 +9064,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8824,6 +9077,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8842,6 +9096,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NumberDomainAttributesExceededException",
         "variableName" : "numberDomainAttributesExceededException",
         "variableType" : "NumberDomainAttributesExceededException",
@@ -8911,6 +9166,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8923,6 +9179,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -8976,6 +9233,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -8988,6 +9246,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9006,6 +9265,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NumberDomainBytesExceededException",
         "variableName" : "numberDomainBytesExceededException",
         "variableType" : "NumberDomainBytesExceededException",
@@ -9075,6 +9335,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9087,6 +9348,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9140,6 +9402,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9152,6 +9415,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9170,6 +9434,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NumberDomainsExceededException",
         "variableName" : "numberDomainsExceededException",
         "variableType" : "NumberDomainsExceededException",
@@ -9239,6 +9504,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9251,6 +9517,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9304,6 +9571,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9316,6 +9584,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9334,6 +9603,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NumberItemAttributesExceededException",
         "variableName" : "numberItemAttributesExceededException",
         "variableType" : "NumberItemAttributesExceededException",
@@ -9403,6 +9673,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9415,6 +9686,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9468,6 +9740,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9480,6 +9753,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9498,6 +9772,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NumberSubmittedAttributesExceededException",
         "variableName" : "numberSubmittedAttributesExceededException",
         "variableType" : "NumberSubmittedAttributesExceededException",
@@ -9567,6 +9842,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9579,6 +9855,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -9632,6 +9909,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9644,6 +9922,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -9662,6 +9941,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NumberSubmittedItemsExceededException",
         "variableName" : "numberSubmittedItemsExceededException",
         "variableType" : "NumberSubmittedItemsExceededException",
@@ -9738,6 +10018,7 @@
         "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
         "setterMethodName" : "setDomainName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -9750,6 +10031,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "domainName",
           "variableType" : "String",
@@ -9801,6 +10083,7 @@
         "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
         "setterMethodName" : "setItemName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "itemName",
           "variableType" : "String",
@@ -9813,6 +10096,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "itemName",
           "variableType" : "String",
@@ -9901,6 +10185,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ReplaceableAttribute",
               "variableName" : "member",
               "variableType" : "ReplaceableAttribute",
@@ -9913,6 +10198,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ReplaceableAttribute",
               "variableName" : "member",
               "variableType" : "ReplaceableAttribute",
@@ -9942,6 +10228,7 @@
         "setterDocumentation" : "/**The list of attributes.\n@param attributes The list of attributes.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -9954,6 +10241,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -10005,6 +10293,7 @@
         "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.*/",
         "setterMethodName" : "setExpected",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "UpdateCondition",
           "variableName" : "expected",
           "variableType" : "UpdateCondition",
@@ -10017,6 +10306,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "UpdateCondition",
           "variableName" : "expected",
           "variableType" : "UpdateCondition",
@@ -10107,6 +10397,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "variableName" : "member",
                 "variableType" : "ReplaceableAttribute",
@@ -10119,6 +10410,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "variableName" : "member",
                 "variableType" : "ReplaceableAttribute",
@@ -10148,6 +10440,7 @@
           "setterDocumentation" : "/**The list of attributes.\n@param attributes The list of attributes.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -10160,6 +10453,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -10212,6 +10506,7 @@
           "setterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.*/",
           "setterMethodName" : "setDomainName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -10224,6 +10519,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "domainName",
             "variableType" : "String",
@@ -10276,6 +10572,7 @@
           "setterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.*/",
           "setterMethodName" : "setExpected",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "UpdateCondition",
             "variableName" : "expected",
             "variableType" : "UpdateCondition",
@@ -10288,6 +10585,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "UpdateCondition",
             "variableName" : "expected",
             "variableType" : "UpdateCondition",
@@ -10340,6 +10638,7 @@
           "setterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.*/",
           "setterMethodName" : "setItemName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "itemName",
             "variableType" : "String",
@@ -10352,6 +10651,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "itemName",
             "variableType" : "String",
@@ -10370,6 +10670,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutAttributesRequest",
         "variableName" : "putAttributesRequest",
         "variableType" : "PutAttributesRequest",
@@ -10409,6 +10710,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutAttributesResult",
         "variableName" : "putAttributesResult",
         "variableType" : "PutAttributesResult",
@@ -10478,6 +10780,7 @@
         "setterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -10490,6 +10793,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -10541,6 +10845,7 @@
         "setterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -10553,6 +10858,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -10604,6 +10910,7 @@
         "setterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.*/",
         "setterMethodName" : "setReplace",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "replace",
           "variableType" : "Boolean",
@@ -10616,6 +10923,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "replace",
           "variableType" : "Boolean",
@@ -10669,6 +10977,7 @@
           "setterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -10681,6 +10990,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -10733,6 +11043,7 @@
           "setterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.*/",
           "setterMethodName" : "setReplace",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "replace",
             "variableType" : "Boolean",
@@ -10745,6 +11056,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "replace",
             "variableType" : "Boolean",
@@ -10797,6 +11109,7 @@
           "setterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -10809,6 +11122,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -10830,6 +11144,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ReplaceableAttribute",
         "variableName" : "replaceableAttribute",
         "variableType" : "ReplaceableAttribute",
@@ -10899,6 +11214,7 @@
         "setterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -10911,6 +11227,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -10999,6 +11316,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ReplaceableAttribute",
               "variableName" : "member",
               "variableType" : "ReplaceableAttribute",
@@ -11011,6 +11329,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ReplaceableAttribute",
               "variableName" : "member",
               "variableType" : "ReplaceableAttribute",
@@ -11040,6 +11359,7 @@
         "setterDocumentation" : "/**The list of attributes for a replaceable item.\n@param attributes The list of attributes for a replaceable item.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -11052,6 +11372,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The list of attributes for a replaceable item.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes for a replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "variableName" : "attributes",
           "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -11142,6 +11463,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "variableName" : "member",
                 "variableType" : "ReplaceableAttribute",
@@ -11154,6 +11476,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "variableName" : "member",
                 "variableType" : "ReplaceableAttribute",
@@ -11183,6 +11506,7 @@
           "setterDocumentation" : "/**The list of attributes for a replaceable item.\n@param attributes The list of attributes for a replaceable item.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -11195,6 +11519,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The list of attributes for a replaceable item.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes for a replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "variableName" : "attributes",
             "variableType" : "java.util.List<ReplaceableAttribute>",
@@ -11247,6 +11572,7 @@
           "setterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -11259,6 +11585,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -11280,6 +11607,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ReplaceableItem",
         "variableName" : "replaceableItem",
         "variableType" : "ReplaceableItem",
@@ -11349,6 +11677,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -11361,6 +11690,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -11414,6 +11744,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -11426,6 +11757,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -11444,6 +11776,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "RequestTimeoutException",
         "variableName" : "requestTimeoutException",
         "variableType" : "RequestTimeoutException",
@@ -11520,6 +11853,7 @@
         "setterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.*/",
         "setterMethodName" : "setSelectExpression",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "selectExpression",
           "variableType" : "String",
@@ -11532,6 +11866,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "selectExpression",
           "variableType" : "String",
@@ -11583,6 +11918,7 @@
         "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -11595,6 +11931,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -11646,6 +11983,7 @@
         "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
         "setterMethodName" : "setConsistentRead",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "consistentRead",
           "variableType" : "Boolean",
@@ -11658,6 +11996,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "consistentRead",
           "variableType" : "Boolean",
@@ -11711,6 +12050,7 @@
           "setterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.*/",
           "setterMethodName" : "setConsistentRead",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "consistentRead",
             "variableType" : "Boolean",
@@ -11723,6 +12063,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "consistentRead",
             "variableType" : "Boolean",
@@ -11775,6 +12116,7 @@
           "setterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -11787,6 +12129,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -11839,6 +12182,7 @@
           "setterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.*/",
           "setterMethodName" : "setSelectExpression",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "selectExpression",
             "variableType" : "String",
@@ -11851,6 +12195,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "selectExpression",
             "variableType" : "String",
@@ -11869,6 +12214,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "SelectRequest",
         "variableName" : "selectRequest",
         "variableType" : "SelectRequest",
@@ -11975,6 +12321,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Item",
               "variableName" : "member",
               "variableType" : "Item",
@@ -11987,6 +12334,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Item",
               "variableName" : "member",
               "variableType" : "Item",
@@ -12016,6 +12364,7 @@
         "setterDocumentation" : "/**A list of items that match the select expression.\n@param items A list of items that match the select expression.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
           "variableName" : "items",
           "variableType" : "java.util.List<Item>",
@@ -12028,6 +12377,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of items that match the select expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items that match the select expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
           "variableName" : "items",
           "variableType" : "java.util.List<Item>",
@@ -12079,6 +12429,7 @@
         "setterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -12091,6 +12442,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -12181,6 +12533,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Item",
                 "variableName" : "member",
                 "variableType" : "Item",
@@ -12193,6 +12546,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Item",
                 "variableName" : "member",
                 "variableType" : "Item",
@@ -12222,6 +12576,7 @@
           "setterDocumentation" : "/**A list of items that match the select expression.\n@param items A list of items that match the select expression.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
             "variableName" : "items",
             "variableType" : "java.util.List<Item>",
@@ -12234,6 +12589,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of items that match the select expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items that match the select expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
             "variableName" : "items",
             "variableType" : "java.util.List<Item>",
@@ -12286,6 +12642,7 @@
           "setterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -12298,6 +12655,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -12319,6 +12677,7 @@
         "resultWrapper" : "SelectResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "SelectResult",
         "variableName" : "selectResult",
         "variableType" : "SelectResult",
@@ -12388,6 +12747,7 @@
         "setterDocumentation" : "/**\n@param boxUsage */",
         "setterMethodName" : "setBoxUsage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -12400,6 +12760,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Float",
           "variableName" : "boxUsage",
           "variableType" : "Float",
@@ -12453,6 +12814,7 @@
           "setterDocumentation" : "/**\n@param boxUsage */",
           "setterMethodName" : "setBoxUsage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -12465,6 +12827,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Float",
             "variableName" : "boxUsage",
             "variableType" : "Float",
@@ -12483,6 +12846,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TooManyRequestedAttributesException",
         "variableName" : "tooManyRequestedAttributesException",
         "variableType" : "TooManyRequestedAttributesException",
@@ -12552,6 +12916,7 @@
         "setterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -12564,6 +12929,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -12615,6 +12981,7 @@
         "setterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -12627,6 +12994,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -12678,6 +13046,7 @@
         "setterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.*/",
         "setterMethodName" : "setExists",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "exists",
           "variableType" : "Boolean",
@@ -12690,6 +13059,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "exists",
           "variableType" : "Boolean",
@@ -12743,6 +13113,7 @@
           "setterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.*/",
           "setterMethodName" : "setExists",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "exists",
             "variableType" : "Boolean",
@@ -12755,6 +13126,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "exists",
             "variableType" : "Boolean",
@@ -12807,6 +13179,7 @@
           "setterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -12819,6 +13192,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -12871,6 +13245,7 @@
           "setterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -12883,6 +13258,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -12904,6 +13280,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateCondition",
         "variableName" : "updateCondition",
         "variableType" : "UpdateCondition",

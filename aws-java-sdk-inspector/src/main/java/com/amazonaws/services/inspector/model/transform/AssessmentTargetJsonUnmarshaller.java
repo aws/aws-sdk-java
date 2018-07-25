@@ -62,11 +62,11 @@ public class AssessmentTargetJsonUnmarshaller implements Unmarshaller<Assessment
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    assessmentTarget.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentTarget.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentTarget.setUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentTarget.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -62,7 +62,7 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    backup.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    backup.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

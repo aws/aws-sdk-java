@@ -70,7 +70,7 @@ public class MetricDatapointJsonUnmarshaller implements Unmarshaller<MetricDatap
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    metricDatapoint.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    metricDatapoint.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("unit", targetDepth)) {
                     context.nextToken();

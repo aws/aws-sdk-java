@@ -66,7 +66,7 @@ public class GetBotChannelAssociationResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    getBotChannelAssociationResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBotChannelAssociationResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

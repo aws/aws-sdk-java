@@ -50,7 +50,7 @@ public class AssessmentRunStateChangeJsonUnmarshaller implements Unmarshaller<As
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("stateChangedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRunStateChange.setStateChangedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assessmentRunStateChange.setStateChangedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();

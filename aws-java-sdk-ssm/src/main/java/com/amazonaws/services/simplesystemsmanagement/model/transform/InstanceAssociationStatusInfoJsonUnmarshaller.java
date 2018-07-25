@@ -70,7 +70,7 @@ public class InstanceAssociationStatusInfoJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("ExecutionDate", targetDepth)) {
                     context.nextToken();
-                    instanceAssociationStatusInfo.setExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceAssociationStatusInfo.setExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

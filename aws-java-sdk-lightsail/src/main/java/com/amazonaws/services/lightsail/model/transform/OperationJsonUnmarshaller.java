@@ -62,7 +62,7 @@ public class OperationJsonUnmarshaller implements Unmarshaller<Operation, JsonUn
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    operation.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operation.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
@@ -86,7 +86,7 @@ public class OperationJsonUnmarshaller implements Unmarshaller<Operation, JsonUn
                 }
                 if (context.testExpression("statusChangedAt", targetDepth)) {
                     context.nextToken();
-                    operation.setStatusChangedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operation.setStatusChangedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
                     context.nextToken();

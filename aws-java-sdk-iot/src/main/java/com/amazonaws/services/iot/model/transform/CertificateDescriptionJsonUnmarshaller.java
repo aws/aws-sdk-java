@@ -78,11 +78,11 @@ public class CertificateDescriptionJsonUnmarshaller implements Unmarshaller<Cert
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    certificateDescription.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    certificateDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("customerVersion", targetDepth)) {
                     context.nextToken();

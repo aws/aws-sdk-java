@@ -66,11 +66,11 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("ExecutionStartTime", targetDepth)) {
                     context.nextToken();
-                    automationExecutionMetadata.setExecutionStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    automationExecutionMetadata.setExecutionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionEndTime", targetDepth)) {
                     context.nextToken();
-                    automationExecutionMetadata.setExecutionEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    automationExecutionMetadata.setExecutionEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutedBy", targetDepth)) {
                     context.nextToken();

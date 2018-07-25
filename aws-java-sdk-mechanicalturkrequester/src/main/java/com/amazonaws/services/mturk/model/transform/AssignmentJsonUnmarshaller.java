@@ -66,27 +66,27 @@ public class AssignmentJsonUnmarshaller implements Unmarshaller<Assignment, Json
                 }
                 if (context.testExpression("AutoApprovalTime", targetDepth)) {
                     context.nextToken();
-                    assignment.setAutoApprovalTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assignment.setAutoApprovalTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AcceptTime", targetDepth)) {
                     context.nextToken();
-                    assignment.setAcceptTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assignment.setAcceptTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
                     context.nextToken();
-                    assignment.setSubmitTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assignment.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ApprovalTime", targetDepth)) {
                     context.nextToken();
-                    assignment.setApprovalTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assignment.setApprovalTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RejectionTime", targetDepth)) {
                     context.nextToken();
-                    assignment.setRejectionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assignment.setRejectionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Deadline", targetDepth)) {
                     context.nextToken();
-                    assignment.setDeadline(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    assignment.setDeadline(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Answer", targetDepth)) {
                     context.nextToken();

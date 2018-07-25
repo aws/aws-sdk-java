@@ -62,7 +62,7 @@ public class SuiteJsonUnmarshaller implements Unmarshaller<Suite, JsonUnmarshall
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    suite.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    suite.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -74,11 +74,11 @@ public class SuiteJsonUnmarshaller implements Unmarshaller<Suite, JsonUnmarshall
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    suite.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    suite.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    suite.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    suite.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();

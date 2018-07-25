@@ -51,7 +51,7 @@ public class FleetDataStaxUnmarshaller implements Unmarshaller<FleetData, StaxUn
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    fleetData.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fleetData.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -111,12 +111,12 @@ public class FleetDataStaxUnmarshaller implements Unmarshaller<FleetData, StaxUn
                 }
 
                 if (context.testExpression("validFrom", targetDepth)) {
-                    fleetData.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fleetData.setValidFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("validUntil", targetDepth)) {
-                    fleetData.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fleetData.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

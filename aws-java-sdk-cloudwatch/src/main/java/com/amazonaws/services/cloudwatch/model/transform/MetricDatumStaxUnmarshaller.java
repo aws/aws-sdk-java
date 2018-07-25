@@ -61,7 +61,7 @@ public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, St
                 }
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    metricDatum.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricDatum.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

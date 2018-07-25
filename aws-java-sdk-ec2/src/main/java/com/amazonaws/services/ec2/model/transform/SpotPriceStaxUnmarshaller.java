@@ -64,7 +64,7 @@ public class SpotPriceStaxUnmarshaller implements Unmarshaller<SpotPrice, StaxUn
                 }
 
                 if (context.testExpression("timestamp", targetDepth)) {
-                    spotPrice.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotPrice.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

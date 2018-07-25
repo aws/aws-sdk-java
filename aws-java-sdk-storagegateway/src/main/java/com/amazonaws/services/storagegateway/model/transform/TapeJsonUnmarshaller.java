@@ -58,7 +58,7 @@ public class TapeJsonUnmarshaller implements Unmarshaller<Tape, JsonUnmarshaller
                 }
                 if (context.testExpression("TapeCreatedDate", targetDepth)) {
                     context.nextToken();
-                    tape.setTapeCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tape.setTapeCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();

@@ -64,7 +64,7 @@ public class IamInstanceProfileAssociationStaxUnmarshaller implements Unmarshall
                 }
 
                 if (context.testExpression("timestamp", targetDepth)) {
-                    iamInstanceProfileAssociation.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    iamInstanceProfileAssociation.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

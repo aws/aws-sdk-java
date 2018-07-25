@@ -31,6 +31,9 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdateMarshaller {
             .marshallLocationName("IndexName").build();
     private static final MarshallingInfo<Long> PROVISIONEDWRITECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedWriteCapacityUnits").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProvisionedWriteCapacityAutoScalingSettingsUpdate").build();
 
     private static final GlobalTableGlobalSecondaryIndexSettingsUpdateMarshaller instance = new GlobalTableGlobalSecondaryIndexSettingsUpdateMarshaller();
 
@@ -51,6 +54,8 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdateMarshaller {
             protocolMarshaller.marshall(globalTableGlobalSecondaryIndexSettingsUpdate.getIndexName(), INDEXNAME_BINDING);
             protocolMarshaller
                     .marshall(globalTableGlobalSecondaryIndexSettingsUpdate.getProvisionedWriteCapacityUnits(), PROVISIONEDWRITECAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(globalTableGlobalSecondaryIndexSettingsUpdate.getProvisionedWriteCapacityAutoScalingSettingsUpdate(),
+                    PROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

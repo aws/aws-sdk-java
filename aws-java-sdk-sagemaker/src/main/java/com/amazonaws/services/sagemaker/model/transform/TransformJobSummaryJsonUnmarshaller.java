@@ -58,15 +58,15 @@ public class TransformJobSummaryJsonUnmarshaller implements Unmarshaller<Transfo
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    transformJobSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transformJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformEndTime", targetDepth)) {
                     context.nextToken();
-                    transformJobSummary.setTransformEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transformJobSummary.setTransformEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    transformJobSummary.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transformJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TransformJobStatus", targetDepth)) {
                     context.nextToken();

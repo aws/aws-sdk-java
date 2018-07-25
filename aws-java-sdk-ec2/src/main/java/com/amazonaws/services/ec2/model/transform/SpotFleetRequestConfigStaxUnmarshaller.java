@@ -49,7 +49,7 @@ public class SpotFleetRequestConfigStaxUnmarshaller implements Unmarshaller<Spot
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    spotFleetRequestConfig.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotFleetRequestConfig.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -78,11 +78,11 @@ public class CreateBotVersionResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    createBotVersionResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createBotVersionResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    createBotVersionResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createBotVersionResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("idleSessionTTLInSeconds", targetDepth)) {
                     context.nextToken();

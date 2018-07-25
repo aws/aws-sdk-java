@@ -58,11 +58,11 @@ public class TopicsDetectionJobFilterJsonUnmarshaller implements Unmarshaller<To
                 }
                 if (context.testExpression("SubmitTimeBefore", targetDepth)) {
                     context.nextToken();
-                    topicsDetectionJobFilter.setSubmitTimeBefore(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    topicsDetectionJobFilter.setSubmitTimeBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SubmitTimeAfter", targetDepth)) {
                     context.nextToken();
-                    topicsDetectionJobFilter.setSubmitTimeAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    topicsDetectionJobFilter.setSubmitTimeAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -49,7 +49,7 @@ public class TemplateMetadataStaxUnmarshaller implements Unmarshaller<TemplateMe
                 }
 
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
-                    templateMetadata.setCreatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    templateMetadata.setCreatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

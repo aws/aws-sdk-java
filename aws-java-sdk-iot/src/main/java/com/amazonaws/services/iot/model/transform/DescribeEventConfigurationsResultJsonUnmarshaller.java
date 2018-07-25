@@ -55,11 +55,11 @@ public class DescribeEventConfigurationsResultJsonUnmarshaller implements Unmars
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    describeEventConfigurationsResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeEventConfigurationsResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    describeEventConfigurationsResult.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeEventConfigurationsResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

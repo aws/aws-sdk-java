@@ -59,12 +59,12 @@ public class CertificateStaxUnmarshaller implements Unmarshaller<Certificate, St
                 }
 
                 if (context.testExpression("ValidFrom", targetDepth)) {
-                    certificate.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    certificate.setValidFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ValidTill", targetDepth)) {
-                    certificate.setValidTill(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    certificate.setValidTill(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

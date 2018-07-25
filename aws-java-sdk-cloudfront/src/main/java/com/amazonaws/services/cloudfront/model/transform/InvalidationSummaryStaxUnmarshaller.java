@@ -49,7 +49,7 @@ public class InvalidationSummaryStaxUnmarshaller implements Unmarshaller<Invalid
                 }
 
                 if (context.testExpression("CreateTime", targetDepth)) {
-                    invalidationSummary.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    invalidationSummary.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

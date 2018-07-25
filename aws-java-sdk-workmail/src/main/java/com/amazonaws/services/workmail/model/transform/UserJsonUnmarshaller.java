@@ -74,11 +74,11 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                 }
                 if (context.testExpression("EnabledDate", targetDepth)) {
                     context.nextToken();
-                    user.setEnabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    user.setEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisabledDate", targetDepth)) {
                     context.nextToken();
-                    user.setDisabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    user.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

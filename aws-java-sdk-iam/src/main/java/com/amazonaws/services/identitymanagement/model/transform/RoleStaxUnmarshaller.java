@@ -64,7 +64,7 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    role.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    role.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

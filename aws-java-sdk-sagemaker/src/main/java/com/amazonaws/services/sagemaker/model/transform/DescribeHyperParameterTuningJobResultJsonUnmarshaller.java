@@ -72,15 +72,16 @@ public class DescribeHyperParameterTuningJobResultJsonUnmarshaller implements Un
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeHyperParameterTuningJobResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeHyperParameterTuningJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningEndTime", targetDepth)) {
                     context.nextToken();
-                    describeHyperParameterTuningJobResult.setHyperParameterTuningEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeHyperParameterTuningJobResult.setHyperParameterTuningEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
+                            context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    describeHyperParameterTuningJobResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeHyperParameterTuningJobResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobStatusCounters", targetDepth)) {
                     context.nextToken();

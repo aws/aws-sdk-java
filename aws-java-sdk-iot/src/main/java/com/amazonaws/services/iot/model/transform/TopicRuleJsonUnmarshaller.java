@@ -62,7 +62,7 @@ public class TopicRuleJsonUnmarshaller implements Unmarshaller<TopicRule, JsonUn
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    topicRule.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    topicRule.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();

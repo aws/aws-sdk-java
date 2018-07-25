@@ -58,7 +58,7 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    cluster.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    cluster.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

@@ -44,7 +44,7 @@ public class SendDataPointStaxUnmarshaller implements Unmarshaller<SendDataPoint
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    sendDataPoint.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    sendDataPoint.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

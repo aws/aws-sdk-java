@@ -62,7 +62,7 @@ public class ItemJsonUnmarshaller implements Unmarshaller<Item, JsonUnmarshaller
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
                     context.nextToken();
-                    item.setLastModified(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    item.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentType", targetDepth)) {
                     context.nextToken();

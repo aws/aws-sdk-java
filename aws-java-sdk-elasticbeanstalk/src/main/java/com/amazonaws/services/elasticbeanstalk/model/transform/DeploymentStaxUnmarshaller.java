@@ -59,7 +59,7 @@ public class DeploymentStaxUnmarshaller implements Unmarshaller<Deployment, Stax
                 }
 
                 if (context.testExpression("DeploymentTime", targetDepth)) {
-                    deployment.setDeploymentTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    deployment.setDeploymentTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -54,15 +54,15 @@ public class StepExecutionStatusDetailJsonUnmarshaller implements Unmarshaller<S
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecutionStatusDetail.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail.setStartDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecutionStatusDetail.setStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail.setEndDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecutionStatusDetail.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStateChangeReason", targetDepth)) {
                     context.nextToken();

@@ -66,7 +66,7 @@ public class UserDetailStaxUnmarshaller implements Unmarshaller<UserDetail, Stax
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    userDetail.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    userDetail.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

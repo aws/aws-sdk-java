@@ -50,7 +50,7 @@ public class DataPointJsonUnmarshaller implements Unmarshaller<DataPoint, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    dataPoint.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataPoint.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();

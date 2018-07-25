@@ -58,11 +58,11 @@ public class ProviderDescriptionJsonUnmarshaller implements Unmarshaller<Provide
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    providerDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    providerDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    providerDescription.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    providerDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

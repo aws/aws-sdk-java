@@ -90,11 +90,11 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                 }
                 if (context.testExpression("OperationStartTime", targetDepth)) {
                     context.nextToken();
-                    instancePatchState.setOperationStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instancePatchState.setOperationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OperationEndTime", targetDepth)) {
                     context.nextToken();
-                    instancePatchState.setOperationEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instancePatchState.setOperationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Operation", targetDepth)) {
                     context.nextToken();

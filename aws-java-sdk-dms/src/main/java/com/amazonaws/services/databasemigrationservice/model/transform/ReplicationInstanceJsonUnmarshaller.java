@@ -66,7 +66,7 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
                 }
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
                     context.nextToken();
-                    replicationInstance.setInstanceCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationInstance.setInstanceCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VpcSecurityGroups", targetDepth)) {
                     context.nextToken();
@@ -137,7 +137,7 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
                 }
                 if (context.testExpression("FreeUntil", targetDepth)) {
                     context.nextToken();
-                    replicationInstance.setFreeUntil(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationInstance.setFreeUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

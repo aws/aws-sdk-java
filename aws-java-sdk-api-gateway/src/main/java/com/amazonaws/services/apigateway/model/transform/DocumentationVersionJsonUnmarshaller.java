@@ -54,7 +54,7 @@ public class DocumentationVersionJsonUnmarshaller implements Unmarshaller<Docume
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    documentationVersion.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentationVersion.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();

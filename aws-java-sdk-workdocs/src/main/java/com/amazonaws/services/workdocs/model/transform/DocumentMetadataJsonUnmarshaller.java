@@ -62,11 +62,11 @@ public class DocumentMetadataJsonUnmarshaller implements Unmarshaller<DocumentMe
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentMetadata.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentMetadata.setModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestVersionMetadata", targetDepth)) {
                     context.nextToken();

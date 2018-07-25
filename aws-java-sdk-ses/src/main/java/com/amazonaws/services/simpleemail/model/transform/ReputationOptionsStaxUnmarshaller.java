@@ -54,7 +54,7 @@ public class ReputationOptionsStaxUnmarshaller implements Unmarshaller<Reputatio
                 }
 
                 if (context.testExpression("LastFreshStart", targetDepth)) {
-                    reputationOptions.setLastFreshStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reputationOptions.setLastFreshStart(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

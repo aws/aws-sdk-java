@@ -94,11 +94,11 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    project.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    project.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModified", targetDepth)) {
                     context.nextToken();
-                    project.setLastModified(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    project.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("webhook", targetDepth)) {
                     context.nextToken();

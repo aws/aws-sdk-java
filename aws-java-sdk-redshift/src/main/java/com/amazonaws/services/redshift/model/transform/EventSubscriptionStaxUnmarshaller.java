@@ -66,7 +66,7 @@ public class EventSubscriptionStaxUnmarshaller implements Unmarshaller<EventSubs
                 }
 
                 if (context.testExpression("SubscriptionCreationTime", targetDepth)) {
-                    eventSubscription.setSubscriptionCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    eventSubscription.setSubscriptionCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

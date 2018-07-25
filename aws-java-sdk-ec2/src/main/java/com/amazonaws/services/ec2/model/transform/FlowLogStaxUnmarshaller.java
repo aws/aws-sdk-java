@@ -44,7 +44,7 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("creationTime", targetDepth)) {
-                    flowLog.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    flowLog.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

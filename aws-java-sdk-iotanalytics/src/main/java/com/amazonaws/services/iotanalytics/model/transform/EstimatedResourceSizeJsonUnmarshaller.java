@@ -54,7 +54,7 @@ public class EstimatedResourceSizeJsonUnmarshaller implements Unmarshaller<Estim
                 }
                 if (context.testExpression("estimatedOn", targetDepth)) {
                     context.nextToken();
-                    estimatedResourceSize.setEstimatedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    estimatedResourceSize.setEstimatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -62,23 +62,23 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("LastSuccessfulInvocationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastSuccessfulInvocationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastSuccessfulInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailedInvocationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastFailedInvocationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastFailedInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulEvaluationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastSuccessfulEvaluationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastSuccessfulEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailedEvaluationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastFailedEvaluationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastFailedEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FirstActivatedTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setFirstActivatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setFirstActivatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
                     context.nextToken();

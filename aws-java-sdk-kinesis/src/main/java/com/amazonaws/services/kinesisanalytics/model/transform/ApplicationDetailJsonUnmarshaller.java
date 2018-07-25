@@ -66,11 +66,11 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setCreateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    applicationDetail.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
                     context.nextToken();
-                    applicationDetail.setLastUpdateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    applicationDetail.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDescriptions", targetDepth)) {
                     context.nextToken();

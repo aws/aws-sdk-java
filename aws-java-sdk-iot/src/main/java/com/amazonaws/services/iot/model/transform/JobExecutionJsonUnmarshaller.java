@@ -70,15 +70,15 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                 }
                 if (context.testExpression("queuedAt", targetDepth)) {
                     context.nextToken();
-                    jobExecution.setQueuedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobExecution.setQueuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    jobExecution.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobExecution.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    jobExecution.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobExecution.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionNumber", targetDepth)) {
                     context.nextToken();

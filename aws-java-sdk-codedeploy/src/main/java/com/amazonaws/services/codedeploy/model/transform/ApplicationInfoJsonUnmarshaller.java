@@ -58,7 +58,7 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    applicationInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    applicationInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("linkedToGitHub", targetDepth)) {
                     context.nextToken();

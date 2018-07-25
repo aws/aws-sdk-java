@@ -62,7 +62,7 @@ public class InstanceSummaryJsonUnmarshaller implements Unmarshaller<InstanceSum
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();

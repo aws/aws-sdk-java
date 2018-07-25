@@ -84,12 +84,12 @@ public class StackSetOperationStaxUnmarshaller implements Unmarshaller<StackSetO
                 }
 
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
-                    stackSetOperation.setCreationTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSetOperation.setCreationTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EndTimestamp", targetDepth)) {
-                    stackSetOperation.setEndTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSetOperation.setEndTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

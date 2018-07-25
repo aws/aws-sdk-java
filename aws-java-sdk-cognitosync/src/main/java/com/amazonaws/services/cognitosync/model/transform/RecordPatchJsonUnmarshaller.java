@@ -66,7 +66,7 @@ public class RecordPatchJsonUnmarshaller implements Unmarshaller<RecordPatch, Js
                 }
                 if (context.testExpression("DeviceLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    recordPatch.setDeviceLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    recordPatch.setDeviceLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

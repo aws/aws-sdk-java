@@ -62,7 +62,7 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    project.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    project.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

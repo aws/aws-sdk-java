@@ -58,15 +58,15 @@ public class TrainingJobSummaryJsonUnmarshaller implements Unmarshaller<Training
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    trainingJobSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    trainingJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingEndTime", targetDepth)) {
                     context.nextToken();
-                    trainingJobSummary.setTrainingEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    trainingJobSummary.setTrainingEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    trainingJobSummary.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    trainingJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TrainingJobStatus", targetDepth)) {
                     context.nextToken();

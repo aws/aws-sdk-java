@@ -44,7 +44,7 @@ public class VolumeAttachmentStaxUnmarshaller implements Unmarshaller<VolumeAtta
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("attachTime", targetDepth)) {
-                    volumeAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    volumeAttachment.setAttachTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

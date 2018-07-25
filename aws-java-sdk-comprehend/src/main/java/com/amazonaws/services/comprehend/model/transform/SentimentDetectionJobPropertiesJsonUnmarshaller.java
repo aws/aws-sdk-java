@@ -66,11 +66,11 @@ public class SentimentDetectionJobPropertiesJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
                     context.nextToken();
-                    sentimentDetectionJobProperties.setSubmitTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    sentimentDetectionJobProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    sentimentDetectionJobProperties.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    sentimentDetectionJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();

@@ -86,7 +86,7 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                 }
 
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
-                    dBInstance.setInstanceCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBInstance.setInstanceCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -151,7 +151,7 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                 }
 
                 if (context.testExpression("LatestRestorableTime", targetDepth)) {
-                    dBInstance.setLatestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBInstance.setLatestRestorableTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

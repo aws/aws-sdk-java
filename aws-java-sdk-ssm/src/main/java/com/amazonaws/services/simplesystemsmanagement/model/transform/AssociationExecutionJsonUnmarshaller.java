@@ -70,11 +70,11 @@ public class AssociationExecutionJsonUnmarshaller implements Unmarshaller<Associ
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    associationExecution.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationExecution.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastExecutionDate", targetDepth)) {
                     context.nextToken();
-                    associationExecution.setLastExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationExecution.setLastExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceCountByStatus", targetDepth)) {
                     context.nextToken();

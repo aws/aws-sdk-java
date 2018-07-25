@@ -62,7 +62,7 @@ public class ResourceIdentifierJsonUnmarshaller implements Unmarshaller<Resource
                 }
                 if (context.testExpression("resourceDeletionTime", targetDepth)) {
                     context.nextToken();
-                    resourceIdentifier.setResourceDeletionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resourceIdentifier.setResourceDeletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

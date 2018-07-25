@@ -59,7 +59,7 @@ public class PolicyVersionStaxUnmarshaller implements Unmarshaller<PolicyVersion
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    policyVersion.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    policyVersion.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

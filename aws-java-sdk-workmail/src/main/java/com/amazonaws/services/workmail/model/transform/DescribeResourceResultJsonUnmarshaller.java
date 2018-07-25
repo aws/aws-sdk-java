@@ -74,11 +74,11 @@ public class DescribeResourceResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("EnabledDate", targetDepth)) {
                     context.nextToken();
-                    describeResourceResult.setEnabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeResourceResult.setEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisabledDate", targetDepth)) {
                     context.nextToken();
-                    describeResourceResult.setDisabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeResourceResult.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

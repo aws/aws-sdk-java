@@ -94,11 +94,11 @@ public class CrawlerJsonUnmarshaller implements Unmarshaller<Crawler, JsonUnmars
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    crawler.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    crawler.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
                     context.nextToken();
-                    crawler.setLastUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    crawler.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastCrawl", targetDepth)) {
                     context.nextToken();

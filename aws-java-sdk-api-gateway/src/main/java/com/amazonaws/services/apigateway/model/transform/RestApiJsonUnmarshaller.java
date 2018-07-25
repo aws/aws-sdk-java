@@ -62,7 +62,7 @@ public class RestApiJsonUnmarshaller implements Unmarshaller<RestApi, JsonUnmars
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    restApi.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    restApi.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

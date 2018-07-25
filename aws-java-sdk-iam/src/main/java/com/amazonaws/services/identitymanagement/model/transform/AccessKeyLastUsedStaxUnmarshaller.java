@@ -44,7 +44,7 @@ public class AccessKeyLastUsedStaxUnmarshaller implements Unmarshaller<AccessKey
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("LastUsedDate", targetDepth)) {
-                    accessKeyLastUsed.setLastUsedDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    accessKeyLastUsed.setLastUsedDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

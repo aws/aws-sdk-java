@@ -66,7 +66,7 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
                 }
                 if (context.testExpression("lastModifiedSecret", targetDepth)) {
                     context.nextToken();
-                    webhook.setLastModifiedSecret(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    webhook.setLastModifiedSecret(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

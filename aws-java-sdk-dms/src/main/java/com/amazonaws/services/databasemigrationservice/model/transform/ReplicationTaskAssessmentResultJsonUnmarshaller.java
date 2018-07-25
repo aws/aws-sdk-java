@@ -58,7 +58,8 @@ public class ReplicationTaskAssessmentResultJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("ReplicationTaskLastAssessmentDate", targetDepth)) {
                     context.nextToken();
-                    replicationTaskAssessmentResult.setReplicationTaskLastAssessmentDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationTaskAssessmentResult.setReplicationTaskLastAssessmentDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
+                            context));
                 }
                 if (context.testExpression("AssessmentStatus", targetDepth)) {
                     context.nextToken();

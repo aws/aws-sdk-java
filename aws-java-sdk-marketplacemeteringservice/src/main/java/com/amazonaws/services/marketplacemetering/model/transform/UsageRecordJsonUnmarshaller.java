@@ -50,7 +50,7 @@ public class UsageRecordJsonUnmarshaller implements Unmarshaller<UsageRecord, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    usageRecord.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    usageRecord.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CustomerIdentifier", targetDepth)) {
                     context.nextToken();

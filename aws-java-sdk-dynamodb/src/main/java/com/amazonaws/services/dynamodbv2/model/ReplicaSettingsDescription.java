@@ -73,6 +73,12 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
     private Long replicaProvisionedReadCapacityUnits;
     /**
      * <p>
+     * Autoscaling settings for a global table replica's read capacity units.
+     * </p>
+     */
+    private AutoScalingSettingsDescription replicaProvisionedReadCapacityAutoScalingSettings;
+    /**
+     * <p>
      * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
@@ -80,6 +86,12 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
      * </p>
      */
     private Long replicaProvisionedWriteCapacityUnits;
+    /**
+     * <p>
+     * AutoScaling settings for a global table replica's write capacity units.
+     * </p>
+     */
+    private AutoScalingSettingsDescription replicaProvisionedWriteCapacityAutoScalingSettings;
     /**
      * <p>
      * Replica global secondary index settings for the global table.
@@ -418,6 +430,47 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * Autoscaling settings for a global table replica's read capacity units.
+     * </p>
+     * 
+     * @param replicaProvisionedReadCapacityAutoScalingSettings
+     *        Autoscaling settings for a global table replica's read capacity units.
+     */
+
+    public void setReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription replicaProvisionedReadCapacityAutoScalingSettings) {
+        this.replicaProvisionedReadCapacityAutoScalingSettings = replicaProvisionedReadCapacityAutoScalingSettings;
+    }
+
+    /**
+     * <p>
+     * Autoscaling settings for a global table replica's read capacity units.
+     * </p>
+     * 
+     * @return Autoscaling settings for a global table replica's read capacity units.
+     */
+
+    public AutoScalingSettingsDescription getReplicaProvisionedReadCapacityAutoScalingSettings() {
+        return this.replicaProvisionedReadCapacityAutoScalingSettings;
+    }
+
+    /**
+     * <p>
+     * Autoscaling settings for a global table replica's read capacity units.
+     * </p>
+     * 
+     * @param replicaProvisionedReadCapacityAutoScalingSettings
+     *        Autoscaling settings for a global table replica's read capacity units.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicaSettingsDescription withReplicaProvisionedReadCapacityAutoScalingSettings(
+            AutoScalingSettingsDescription replicaProvisionedReadCapacityAutoScalingSettings) {
+        setReplicaProvisionedReadCapacityAutoScalingSettings(replicaProvisionedReadCapacityAutoScalingSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
@@ -471,6 +524,47 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     public ReplicaSettingsDescription withReplicaProvisionedWriteCapacityUnits(Long replicaProvisionedWriteCapacityUnits) {
         setReplicaProvisionedWriteCapacityUnits(replicaProvisionedWriteCapacityUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * AutoScaling settings for a global table replica's write capacity units.
+     * </p>
+     * 
+     * @param replicaProvisionedWriteCapacityAutoScalingSettings
+     *        AutoScaling settings for a global table replica's write capacity units.
+     */
+
+    public void setReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription replicaProvisionedWriteCapacityAutoScalingSettings) {
+        this.replicaProvisionedWriteCapacityAutoScalingSettings = replicaProvisionedWriteCapacityAutoScalingSettings;
+    }
+
+    /**
+     * <p>
+     * AutoScaling settings for a global table replica's write capacity units.
+     * </p>
+     * 
+     * @return AutoScaling settings for a global table replica's write capacity units.
+     */
+
+    public AutoScalingSettingsDescription getReplicaProvisionedWriteCapacityAutoScalingSettings() {
+        return this.replicaProvisionedWriteCapacityAutoScalingSettings;
+    }
+
+    /**
+     * <p>
+     * AutoScaling settings for a global table replica's write capacity units.
+     * </p>
+     * 
+     * @param replicaProvisionedWriteCapacityAutoScalingSettings
+     *        AutoScaling settings for a global table replica's write capacity units.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicaSettingsDescription withReplicaProvisionedWriteCapacityAutoScalingSettings(
+            AutoScalingSettingsDescription replicaProvisionedWriteCapacityAutoScalingSettings) {
+        setReplicaProvisionedWriteCapacityAutoScalingSettings(replicaProvisionedWriteCapacityAutoScalingSettings);
         return this;
     }
 
@@ -565,8 +659,12 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
             sb.append("ReplicaStatus: ").append(getReplicaStatus()).append(",");
         if (getReplicaProvisionedReadCapacityUnits() != null)
             sb.append("ReplicaProvisionedReadCapacityUnits: ").append(getReplicaProvisionedReadCapacityUnits()).append(",");
+        if (getReplicaProvisionedReadCapacityAutoScalingSettings() != null)
+            sb.append("ReplicaProvisionedReadCapacityAutoScalingSettings: ").append(getReplicaProvisionedReadCapacityAutoScalingSettings()).append(",");
         if (getReplicaProvisionedWriteCapacityUnits() != null)
             sb.append("ReplicaProvisionedWriteCapacityUnits: ").append(getReplicaProvisionedWriteCapacityUnits()).append(",");
+        if (getReplicaProvisionedWriteCapacityAutoScalingSettings() != null)
+            sb.append("ReplicaProvisionedWriteCapacityAutoScalingSettings: ").append(getReplicaProvisionedWriteCapacityAutoScalingSettings()).append(",");
         if (getReplicaGlobalSecondaryIndexSettings() != null)
             sb.append("ReplicaGlobalSecondaryIndexSettings: ").append(getReplicaGlobalSecondaryIndexSettings());
         sb.append("}");
@@ -596,10 +694,20 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
         if (other.getReplicaProvisionedReadCapacityUnits() != null
                 && other.getReplicaProvisionedReadCapacityUnits().equals(this.getReplicaProvisionedReadCapacityUnits()) == false)
             return false;
+        if (other.getReplicaProvisionedReadCapacityAutoScalingSettings() == null ^ this.getReplicaProvisionedReadCapacityAutoScalingSettings() == null)
+            return false;
+        if (other.getReplicaProvisionedReadCapacityAutoScalingSettings() != null
+                && other.getReplicaProvisionedReadCapacityAutoScalingSettings().equals(this.getReplicaProvisionedReadCapacityAutoScalingSettings()) == false)
+            return false;
         if (other.getReplicaProvisionedWriteCapacityUnits() == null ^ this.getReplicaProvisionedWriteCapacityUnits() == null)
             return false;
         if (other.getReplicaProvisionedWriteCapacityUnits() != null
                 && other.getReplicaProvisionedWriteCapacityUnits().equals(this.getReplicaProvisionedWriteCapacityUnits()) == false)
+            return false;
+        if (other.getReplicaProvisionedWriteCapacityAutoScalingSettings() == null ^ this.getReplicaProvisionedWriteCapacityAutoScalingSettings() == null)
+            return false;
+        if (other.getReplicaProvisionedWriteCapacityAutoScalingSettings() != null
+                && other.getReplicaProvisionedWriteCapacityAutoScalingSettings().equals(this.getReplicaProvisionedWriteCapacityAutoScalingSettings()) == false)
             return false;
         if (other.getReplicaGlobalSecondaryIndexSettings() == null ^ this.getReplicaGlobalSecondaryIndexSettings() == null)
             return false;
@@ -617,7 +725,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getReplicaStatus() == null) ? 0 : getReplicaStatus().hashCode());
         hashCode = prime * hashCode + ((getReplicaProvisionedReadCapacityUnits() == null) ? 0 : getReplicaProvisionedReadCapacityUnits().hashCode());
+        hashCode = prime * hashCode
+                + ((getReplicaProvisionedReadCapacityAutoScalingSettings() == null) ? 0 : getReplicaProvisionedReadCapacityAutoScalingSettings().hashCode());
         hashCode = prime * hashCode + ((getReplicaProvisionedWriteCapacityUnits() == null) ? 0 : getReplicaProvisionedWriteCapacityUnits().hashCode());
+        hashCode = prime * hashCode
+                + ((getReplicaProvisionedWriteCapacityAutoScalingSettings() == null) ? 0 : getReplicaProvisionedWriteCapacityAutoScalingSettings().hashCode());
         hashCode = prime * hashCode + ((getReplicaGlobalSecondaryIndexSettings() == null) ? 0 : getReplicaGlobalSecondaryIndexSettings().hashCode());
         return hashCode;
     }

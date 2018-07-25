@@ -54,7 +54,7 @@ public class QualificationTypeJsonUnmarshaller implements Unmarshaller<Qualifica
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    qualificationType.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    qualificationType.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,7 @@ public class PullRequestEventJsonUnmarshaller implements Unmarshaller<PullReques
                 }
                 if (context.testExpression("eventDate", targetDepth)) {
                     context.nextToken();
-                    pullRequestEvent.setEventDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pullRequestEvent.setEventDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("pullRequestEventType", targetDepth)) {
                     context.nextToken();

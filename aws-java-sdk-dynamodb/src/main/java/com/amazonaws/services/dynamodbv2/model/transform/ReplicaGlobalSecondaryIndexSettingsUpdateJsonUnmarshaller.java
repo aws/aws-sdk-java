@@ -57,6 +57,11 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdateJsonUnmarshaller implement
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsUpdate.setProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ProvisionedReadCapacityAutoScalingSettingsUpdate", targetDepth)) {
+                    context.nextToken();
+                    replicaGlobalSecondaryIndexSettingsUpdate.setProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

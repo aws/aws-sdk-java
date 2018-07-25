@@ -70,11 +70,11 @@ public class AliasJsonUnmarshaller implements Unmarshaller<Alias, JsonUnmarshall
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    alias.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    alias.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    alias.setLastUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    alias.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

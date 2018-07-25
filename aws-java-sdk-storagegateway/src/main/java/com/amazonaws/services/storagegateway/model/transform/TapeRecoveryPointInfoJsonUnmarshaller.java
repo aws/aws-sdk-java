@@ -54,7 +54,7 @@ public class TapeRecoveryPointInfoJsonUnmarshaller implements Unmarshaller<TapeR
                 }
                 if (context.testExpression("TapeRecoveryPointTime", targetDepth)) {
                     context.nextToken();
-                    tapeRecoveryPointInfo.setTapeRecoveryPointTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tapeRecoveryPointInfo.setTapeRecoveryPointTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();

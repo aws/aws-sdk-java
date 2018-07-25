@@ -74,11 +74,11 @@ public class GetApiKeyResultJsonUnmarshaller implements Unmarshaller<GetApiKeyRe
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    getApiKeyResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getApiKeyResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    getApiKeyResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getApiKeyResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stageKeys", targetDepth)) {
                     context.nextToken();

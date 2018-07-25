@@ -58,7 +58,7 @@ public class ResourceErrorJsonUnmarshaller implements Unmarshaller<ResourceError
                 }
                 if (context.testExpression("ErrorTimestamp", targetDepth)) {
                     context.nextToken();
-                    resourceError.setErrorTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resourceError.setErrorTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

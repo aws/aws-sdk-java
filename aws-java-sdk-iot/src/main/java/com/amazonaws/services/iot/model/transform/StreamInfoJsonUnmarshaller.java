@@ -70,11 +70,11 @@ public class StreamInfoJsonUnmarshaller implements Unmarshaller<StreamInfo, Json
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    streamInfo.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    streamInfo.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    streamInfo.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    streamInfo.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();

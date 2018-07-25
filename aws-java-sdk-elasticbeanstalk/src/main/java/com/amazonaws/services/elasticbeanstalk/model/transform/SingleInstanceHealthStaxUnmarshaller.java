@@ -71,7 +71,7 @@ public class SingleInstanceHealthStaxUnmarshaller implements Unmarshaller<Single
                 }
 
                 if (context.testExpression("LaunchedAt", targetDepth)) {
-                    singleInstanceHealth.setLaunchedAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    singleInstanceHealth.setLaunchedAt(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

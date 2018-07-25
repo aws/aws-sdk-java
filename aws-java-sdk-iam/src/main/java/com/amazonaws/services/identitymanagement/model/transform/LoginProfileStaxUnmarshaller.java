@@ -49,7 +49,7 @@ public class LoginProfileStaxUnmarshaller implements Unmarshaller<LoginProfile, 
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    loginProfile.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    loginProfile.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

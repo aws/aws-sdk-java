@@ -58,11 +58,11 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    build.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    build.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
-                    build.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    build.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("currentPhase", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,7 @@ public class DeleteSecretResultJsonUnmarshaller implements Unmarshaller<DeleteSe
                 }
                 if (context.testExpression("DeletionDate", targetDepth)) {
                     context.nextToken();
-                    deleteSecretResult.setDeletionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deleteSecretResult.setDeletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

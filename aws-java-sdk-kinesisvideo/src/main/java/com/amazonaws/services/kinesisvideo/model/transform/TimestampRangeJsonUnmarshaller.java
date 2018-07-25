@@ -50,11 +50,11 @@ public class TimestampRangeJsonUnmarshaller implements Unmarshaller<TimestampRan
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTimestamp", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setStartTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timestampRange.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTimestamp", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setEndTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timestampRange.setEndTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

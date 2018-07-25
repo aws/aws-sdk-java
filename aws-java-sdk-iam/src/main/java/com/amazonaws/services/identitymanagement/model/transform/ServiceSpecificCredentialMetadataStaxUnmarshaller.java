@@ -59,7 +59,7 @@ public class ServiceSpecificCredentialMetadataStaxUnmarshaller implements Unmars
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    serviceSpecificCredentialMetadata.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    serviceSpecificCredentialMetadata.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -74,7 +74,7 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
                 }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setRequestedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    commandInvocation.setRequestedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

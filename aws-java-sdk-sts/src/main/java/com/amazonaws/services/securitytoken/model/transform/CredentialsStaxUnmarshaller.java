@@ -59,7 +59,7 @@ public class CredentialsStaxUnmarshaller implements Unmarshaller<Credentials, St
                 }
 
                 if (context.testExpression("Expiration", targetDepth)) {
-                    credentials.setExpiration(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    credentials.setExpiration(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

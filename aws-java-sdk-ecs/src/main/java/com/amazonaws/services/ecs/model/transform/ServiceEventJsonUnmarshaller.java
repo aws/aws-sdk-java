@@ -54,7 +54,7 @@ public class ServiceEventJsonUnmarshaller implements Unmarshaller<ServiceEvent, 
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    serviceEvent.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    serviceEvent.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();

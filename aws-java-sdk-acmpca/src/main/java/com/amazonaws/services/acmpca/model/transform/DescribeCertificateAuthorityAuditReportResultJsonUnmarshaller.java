@@ -63,7 +63,7 @@ public class DescribeCertificateAuthorityAuditReportResultJsonUnmarshaller imple
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    describeCertificateAuthorityAuditReportResult.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeCertificateAuthorityAuditReportResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

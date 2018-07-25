@@ -62,11 +62,11 @@ public class PartitionJsonUnmarshaller implements Unmarshaller<Partition, JsonUn
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    partition.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    partition.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
                     context.nextToken();
-                    partition.setLastAccessTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    partition.setLastAccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StorageDescriptor", targetDepth)) {
                     context.nextToken();
@@ -79,7 +79,7 @@ public class PartitionJsonUnmarshaller implements Unmarshaller<Partition, JsonUn
                 }
                 if (context.testExpression("LastAnalyzedTime", targetDepth)) {
                     context.nextToken();
-                    partition.setLastAnalyzedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    partition.setLastAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

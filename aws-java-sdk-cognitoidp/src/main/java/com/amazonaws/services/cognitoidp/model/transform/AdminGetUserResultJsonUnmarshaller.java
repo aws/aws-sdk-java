@@ -58,11 +58,11 @@ public class AdminGetUserResultJsonUnmarshaller implements Unmarshaller<AdminGet
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
                     context.nextToken();
-                    adminGetUserResult.setUserCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    adminGetUserResult.setUserCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UserLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    adminGetUserResult.setUserLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    adminGetUserResult.setUserLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();

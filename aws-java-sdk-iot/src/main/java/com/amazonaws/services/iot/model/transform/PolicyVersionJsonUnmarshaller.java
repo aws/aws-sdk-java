@@ -58,7 +58,7 @@ public class PolicyVersionJsonUnmarshaller implements Unmarshaller<PolicyVersion
                 }
                 if (context.testExpression("createDate", targetDepth)) {
                     context.nextToken();
-                    policyVersion.setCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    policyVersion.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

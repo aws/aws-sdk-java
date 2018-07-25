@@ -46,12 +46,12 @@ public class NatGatewayStaxUnmarshaller implements Unmarshaller<NatGateway, Stax
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    natGateway.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    natGateway.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("deleteTime", targetDepth)) {
-                    natGateway.setDeleteTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    natGateway.setDeleteTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

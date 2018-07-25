@@ -67,7 +67,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableDescription.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
                     context.nextToken();

@@ -66,7 +66,7 @@ public class EntitlementJsonUnmarshaller implements Unmarshaller<Entitlement, Js
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
                     context.nextToken();
-                    entitlement.setExpirationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    entitlement.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

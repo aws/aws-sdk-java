@@ -105,6 +105,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateLifecyclePolicyRequest",
         "variableName" : "createLifecyclePolicyRequest",
         "variableType" : "CreateLifecyclePolicyRequest",
@@ -144,6 +145,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteLifecyclePolicyRequest",
         "variableName" : "deleteLifecyclePolicyRequest",
         "variableType" : "DeleteLifecyclePolicyRequest",
@@ -187,6 +189,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetLifecyclePoliciesRequest",
         "variableName" : "getLifecyclePoliciesRequest",
         "variableType" : "GetLifecyclePoliciesRequest",
@@ -226,6 +229,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetLifecyclePolicyRequest",
         "variableName" : "getLifecyclePolicyRequest",
         "variableType" : "GetLifecyclePolicyRequest",
@@ -269,6 +273,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateLifecyclePolicyRequest",
         "variableName" : "updateLifecyclePolicyRequest",
         "variableType" : "UpdateLifecyclePolicyRequest",
@@ -354,6 +359,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
         "setterMethodName" : "setExecutionRoleArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "executionRoleArn",
           "variableType" : "String",
@@ -366,6 +372,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "executionRoleArn",
           "variableType" : "String",
@@ -417,6 +424,7 @@
         "setterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -429,6 +437,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -480,6 +489,7 @@
         "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -492,6 +502,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -543,6 +554,7 @@
         "setterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.*/",
         "setterMethodName" : "setPolicyDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyDetails",
           "variableName" : "policyDetails",
           "variableType" : "PolicyDetails",
@@ -555,6 +567,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyDetails",
           "variableName" : "policyDetails",
           "variableType" : "PolicyDetails",
@@ -608,6 +621,7 @@
           "setterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -620,6 +634,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>\n@param description A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -672,6 +687,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
           "setterMethodName" : "setExecutionRoleArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "executionRoleArn",
             "variableType" : "String",
@@ -684,6 +700,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "executionRoleArn",
             "variableType" : "String",
@@ -736,6 +753,7 @@
           "setterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.*/",
           "setterMethodName" : "setPolicyDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyDetails",
             "variableName" : "policyDetails",
             "variableType" : "PolicyDetails",
@@ -748,6 +766,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyDetails",
             "variableName" : "policyDetails",
             "variableType" : "PolicyDetails",
@@ -800,6 +819,7 @@
           "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -812,6 +832,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -830,6 +851,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateLifecyclePolicyRequest",
         "variableName" : "createLifecyclePolicyRequest",
         "variableType" : "CreateLifecyclePolicyRequest",
@@ -899,6 +921,7 @@
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -911,6 +934,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -964,6 +988,7 @@
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -976,6 +1001,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -997,6 +1023,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateLifecyclePolicyResult",
         "variableName" : "createLifecyclePolicyResult",
         "variableType" : "CreateLifecyclePolicyResult",
@@ -1066,6 +1093,7 @@
         "setterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.*/",
         "setterMethodName" : "setInterval",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "interval",
           "variableType" : "Integer",
@@ -1078,6 +1106,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "interval",
           "variableType" : "Integer",
@@ -1129,6 +1158,7 @@
         "setterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@see IntervalUnitValues*/",
         "setterMethodName" : "setIntervalUnit",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "intervalUnit",
           "variableType" : "String",
@@ -1141,6 +1171,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IntervalUnitValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "intervalUnit",
           "variableType" : "String",
@@ -1229,6 +1260,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1241,6 +1273,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1270,6 +1303,7 @@
         "setterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
         "setterMethodName" : "setTimes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "times",
           "variableType" : "java.util.List<String>",
@@ -1282,6 +1316,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "times",
           "variableType" : "java.util.List<String>",
@@ -1335,6 +1370,7 @@
           "setterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.*/",
           "setterMethodName" : "setInterval",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "interval",
             "variableType" : "Integer",
@@ -1347,6 +1383,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The interval. The supported values are 12 and 24.</p>\n@param interval The interval. The supported values are 12 and 24.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "interval",
             "variableType" : "Integer",
@@ -1399,6 +1436,7 @@
           "setterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@see IntervalUnitValues*/",
           "setterMethodName" : "setIntervalUnit",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "intervalUnit",
             "variableType" : "String",
@@ -1411,6 +1449,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The interval unit.</p>\n@param intervalUnit The interval unit.\n@return Returns a reference to this object so that method calls can be chained together.\n@see IntervalUnitValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "intervalUnit",
             "variableType" : "String",
@@ -1500,6 +1539,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -1512,6 +1552,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -1541,6 +1582,7 @@
           "setterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.*/",
           "setterMethodName" : "setTimes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "times",
             "variableType" : "java.util.List<String>",
@@ -1553,6 +1595,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTimes(java.util.Collection)} or {@link #withTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param times The time, in UTC, to start the operation.</p> <p>The operation occurs within a one-hour window following the specified time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "times",
             "variableType" : "java.util.List<String>",
@@ -1574,6 +1617,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateRule",
         "variableName" : "createRule",
         "variableType" : "CreateRule",
@@ -1650,6 +1694,7 @@
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -1662,6 +1707,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -1715,6 +1761,7 @@
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -1727,6 +1774,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -1745,6 +1793,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteLifecyclePolicyRequest",
         "variableName" : "deleteLifecyclePolicyRequest",
         "variableType" : "DeleteLifecyclePolicyRequest",
@@ -1784,6 +1833,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteLifecyclePolicyResult",
         "variableName" : "deleteLifecyclePolicyResult",
         "variableType" : "DeleteLifecyclePolicyResult",
@@ -1897,6 +1947,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1909,6 +1960,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1938,6 +1990,7 @@
         "setterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n@param policyIds The identifiers of the data lifecycle policies.*/",
         "setterMethodName" : "setPolicyIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "policyIds",
           "variableType" : "java.util.List<String>",
@@ -1950,6 +2003,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyIds(java.util.Collection)} or {@link #withPolicyIds(java.util.Collection)} if you want to override the existing values.</p>\n@param policyIds The identifiers of the data lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "policyIds",
           "variableType" : "java.util.List<String>",
@@ -2001,6 +2055,7 @@
         "setterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@see GettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -2013,6 +2068,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -2101,6 +2157,7 @@
             "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2113,6 +2170,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2142,6 +2200,7 @@
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
         "setterMethodName" : "setResourceTypes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceTypes",
           "variableType" : "java.util.List<String>",
@@ -2154,6 +2213,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceTypes",
           "variableType" : "java.util.List<String>",
@@ -2242,6 +2302,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2254,6 +2315,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2283,6 +2345,7 @@
         "setterDocumentation" : "/**<p>The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.</p>\n@param targetTags The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.*/",
         "setterMethodName" : "setTargetTags",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "targetTags",
           "variableType" : "java.util.List<String>",
@@ -2295,6 +2358,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "targetTags",
           "variableType" : "java.util.List<String>",
@@ -2383,6 +2447,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2395,6 +2460,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -2424,6 +2490,7 @@
         "setterDocumentation" : "/**<p>The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.</p>\n@param tagsToAdd The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.*/",
         "setterMethodName" : "setTagsToAdd",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagsToAdd",
           "variableType" : "java.util.List<String>",
@@ -2436,6 +2503,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagsToAdd",
           "variableType" : "java.util.List<String>",
@@ -2526,6 +2594,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2538,6 +2607,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2567,6 +2637,7 @@
           "setterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n@param policyIds The identifiers of the data lifecycle policies.*/",
           "setterMethodName" : "setPolicyIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "policyIds",
             "variableType" : "java.util.List<String>",
@@ -2579,6 +2650,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifiers of the data lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyIds(java.util.Collection)} or {@link #withPolicyIds(java.util.Collection)} if you want to override the existing values.</p>\n@param policyIds The identifiers of the data lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "policyIds",
             "variableType" : "java.util.List<String>",
@@ -2668,6 +2740,7 @@
               "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2680,6 +2753,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2709,6 +2783,7 @@
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
           "setterMethodName" : "setResourceTypes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceTypes",
             "variableType" : "java.util.List<String>",
@@ -2721,6 +2796,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceTypes",
             "variableType" : "java.util.List<String>",
@@ -2773,6 +2849,7 @@
           "setterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@see GettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -2785,6 +2862,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The activation state.</p>\n@param state The activation state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -2874,6 +2952,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2886,6 +2965,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2915,6 +2995,7 @@
           "setterDocumentation" : "/**<p>The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.</p>\n@param tagsToAdd The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.*/",
           "setterMethodName" : "setTagsToAdd",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagsToAdd",
             "variableType" : "java.util.List<String>",
@@ -2927,6 +3008,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to add to the resources.</p> <p>Tags are strings in the format <code>key:value</code>.</p> <p>These tags are added in addition to the AWS-added lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagsToAdd",
             "variableType" : "java.util.List<String>",
@@ -3016,6 +3098,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -3028,6 +3111,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -3057,6 +3141,7 @@
           "setterDocumentation" : "/**<p>The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.</p>\n@param targetTags The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.*/",
           "setterMethodName" : "setTargetTags",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "targetTags",
             "variableType" : "java.util.List<String>",
@@ -3069,6 +3154,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The target tags.</p> <p>Tags are strings in the format <code>key:value</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "targetTags",
             "variableType" : "java.util.List<String>",
@@ -3087,6 +3173,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetLifecyclePoliciesRequest",
         "variableName" : "getLifecyclePoliciesRequest",
         "variableType" : "GetLifecyclePoliciesRequest",
@@ -3193,6 +3280,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "LifecyclePolicySummary",
               "variableName" : "member",
               "variableType" : "LifecyclePolicySummary",
@@ -3205,6 +3293,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "LifecyclePolicySummary",
               "variableName" : "member",
               "variableType" : "LifecyclePolicySummary",
@@ -3234,6 +3323,7 @@
         "setterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n@param policies Summary information about the lifecycle policies.*/",
         "setterMethodName" : "setPolicies",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<LifecyclePolicySummary>",
           "variableName" : "policies",
           "variableType" : "java.util.List<LifecyclePolicySummary>",
@@ -3246,6 +3336,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override the existing values.</p>\n@param policies Summary information about the lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<LifecyclePolicySummary>",
           "variableName" : "policies",
           "variableType" : "java.util.List<LifecyclePolicySummary>",
@@ -3336,6 +3427,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "LifecyclePolicySummary",
                 "variableName" : "member",
                 "variableType" : "LifecyclePolicySummary",
@@ -3348,6 +3440,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "LifecyclePolicySummary",
                 "variableName" : "member",
                 "variableType" : "LifecyclePolicySummary",
@@ -3377,6 +3470,7 @@
           "setterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n@param policies Summary information about the lifecycle policies.*/",
           "setterMethodName" : "setPolicies",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<LifecyclePolicySummary>",
             "variableName" : "policies",
             "variableType" : "java.util.List<LifecyclePolicySummary>",
@@ -3389,6 +3483,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Summary information about the lifecycle policies.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override the existing values.</p>\n@param policies Summary information about the lifecycle policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<LifecyclePolicySummary>",
             "variableName" : "policies",
             "variableType" : "java.util.List<LifecyclePolicySummary>",
@@ -3410,6 +3505,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetLifecyclePoliciesResult",
         "variableName" : "getLifecyclePoliciesResult",
         "variableType" : "GetLifecyclePoliciesResult",
@@ -3486,6 +3582,7 @@
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -3498,6 +3595,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -3551,6 +3649,7 @@
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -3563,6 +3662,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -3581,6 +3681,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetLifecyclePolicyRequest",
         "variableName" : "getLifecyclePolicyRequest",
         "variableType" : "GetLifecyclePolicyRequest",
@@ -3650,6 +3751,7 @@
         "setterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "LifecyclePolicy",
           "variableName" : "policy",
           "variableType" : "LifecyclePolicy",
@@ -3662,6 +3764,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "LifecyclePolicy",
           "variableName" : "policy",
           "variableType" : "LifecyclePolicy",
@@ -3715,6 +3818,7 @@
           "setterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "LifecyclePolicy",
             "variableName" : "policy",
             "variableType" : "LifecyclePolicy",
@@ -3727,6 +3831,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Detailed information about the lifecycle policy.</p>\n@param policy Detailed information about the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "LifecyclePolicy",
             "variableName" : "policy",
             "variableType" : "LifecyclePolicy",
@@ -3748,6 +3853,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetLifecyclePolicyResult",
         "variableName" : "getLifecyclePolicyResult",
         "variableType" : "GetLifecyclePolicyResult",
@@ -3796,6 +3902,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GettablePolicyStateValues",
         "variableName" : "gettablePolicyStateValues",
         "variableType" : "GettablePolicyStateValues",
@@ -3865,6 +3972,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -3877,6 +3985,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -3930,6 +4039,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -3942,6 +4052,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -3960,6 +4071,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServerException",
         "variableName" : "internalServerException",
         "variableType" : "InternalServerException",
@@ -4002,6 +4114,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "IntervalUnitValues",
         "variableName" : "intervalUnitValues",
         "variableType" : "IntervalUnitValues",
@@ -4071,6 +4184,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -4083,6 +4197,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -4171,6 +4286,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4183,6 +4299,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4212,6 +4329,7 @@
         "setterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n@param requiredParameters The request omitted one or more required parameters.*/",
         "setterMethodName" : "setRequiredParameters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "requiredParameters",
           "variableType" : "java.util.List<String>",
@@ -4224,6 +4342,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequiredParameters(java.util.Collection)} or {@link #withRequiredParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param requiredParameters The request omitted one or more required parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "requiredParameters",
           "variableType" : "java.util.List<String>",
@@ -4312,6 +4431,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4324,6 +4444,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4353,6 +4474,7 @@
         "setterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.*/",
         "setterMethodName" : "setMutuallyExclusiveParameters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "mutuallyExclusiveParameters",
           "variableType" : "java.util.List<String>",
@@ -4365,6 +4487,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMutuallyExclusiveParameters(java.util.Collection)} or {@link #withMutuallyExclusiveParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "mutuallyExclusiveParameters",
           "variableType" : "java.util.List<String>",
@@ -4418,6 +4541,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -4430,6 +4554,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -4519,6 +4644,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4531,6 +4657,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4560,6 +4687,7 @@
           "setterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.*/",
           "setterMethodName" : "setMutuallyExclusiveParameters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "mutuallyExclusiveParameters",
             "variableType" : "java.util.List<String>",
@@ -4572,6 +4700,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The request included parameters that cannot be provided together.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMutuallyExclusiveParameters(java.util.Collection)} or {@link #withMutuallyExclusiveParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param mutuallyExclusiveParameters The request included parameters that cannot be provided together.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "mutuallyExclusiveParameters",
             "variableType" : "java.util.List<String>",
@@ -4661,6 +4790,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4673,6 +4803,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4702,6 +4833,7 @@
           "setterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n@param requiredParameters The request omitted one or more required parameters.*/",
           "setterMethodName" : "setRequiredParameters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "requiredParameters",
             "variableType" : "java.util.List<String>",
@@ -4714,6 +4846,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The request omitted one or more required parameters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRequiredParameters(java.util.Collection)} or {@link #withRequiredParameters(java.util.Collection)} if you want to override the existing values.</p>\n@param requiredParameters The request omitted one or more required parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "requiredParameters",
             "variableType" : "java.util.List<String>",
@@ -4732,6 +4865,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidRequestException",
         "variableName" : "invalidRequestException",
         "variableType" : "InvalidRequestException",
@@ -4801,6 +4935,7 @@
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -4813,6 +4948,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -4864,6 +5000,7 @@
         "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -4876,6 +5013,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -4927,6 +5065,7 @@
         "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -4939,6 +5078,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -4990,6 +5130,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
         "setterMethodName" : "setExecutionRoleArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "executionRoleArn",
           "variableType" : "String",
@@ -5002,6 +5143,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "executionRoleArn",
           "variableType" : "String",
@@ -5053,6 +5195,7 @@
         "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.*/",
         "setterMethodName" : "setDateCreated",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "dateCreated",
           "variableType" : "java.util.Date",
@@ -5065,6 +5208,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "dateCreated",
           "variableType" : "java.util.Date",
@@ -5116,6 +5260,7 @@
         "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.*/",
         "setterMethodName" : "setDateModified",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "dateModified",
           "variableType" : "java.util.Date",
@@ -5128,6 +5273,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "dateModified",
           "variableType" : "java.util.Date",
@@ -5179,6 +5325,7 @@
         "setterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy*/",
         "setterMethodName" : "setPolicyDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyDetails",
           "variableName" : "policyDetails",
           "variableType" : "PolicyDetails",
@@ -5191,6 +5338,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyDetails",
           "variableName" : "policyDetails",
           "variableType" : "PolicyDetails",
@@ -5244,6 +5392,7 @@
           "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.*/",
           "setterMethodName" : "setDateCreated",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "dateCreated",
             "variableType" : "java.util.Date",
@@ -5256,6 +5405,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "dateCreated",
             "variableType" : "java.util.Date",
@@ -5308,6 +5458,7 @@
           "setterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.*/",
           "setterMethodName" : "setDateModified",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "dateModified",
             "variableType" : "java.util.Date",
@@ -5320,6 +5471,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "dateModified",
             "variableType" : "java.util.Date",
@@ -5372,6 +5524,7 @@
           "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -5384,6 +5537,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -5436,6 +5590,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
           "setterMethodName" : "setExecutionRoleArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "executionRoleArn",
             "variableType" : "String",
@@ -5448,6 +5603,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "executionRoleArn",
             "variableType" : "String",
@@ -5500,6 +5656,7 @@
           "setterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy*/",
           "setterMethodName" : "setPolicyDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyDetails",
             "variableName" : "policyDetails",
             "variableType" : "PolicyDetails",
@@ -5512,6 +5669,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy</p>\n@param policyDetails The configuration of the lifecycle policy\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyDetails",
             "variableName" : "policyDetails",
             "variableType" : "PolicyDetails",
@@ -5564,6 +5722,7 @@
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -5576,6 +5735,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -5628,6 +5788,7 @@
           "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -5640,6 +5801,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -5661,6 +5823,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LifecyclePolicy",
         "variableName" : "lifecyclePolicy",
         "variableType" : "LifecyclePolicy",
@@ -5730,6 +5893,7 @@
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -5742,6 +5906,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -5793,6 +5958,7 @@
         "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -5805,6 +5971,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -5856,6 +6023,7 @@
         "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -5868,6 +6036,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -5921,6 +6090,7 @@
           "setterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -5933,6 +6103,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the lifecycle policy.</p>\n@param description The description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -5985,6 +6156,7 @@
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -5997,6 +6169,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -6049,6 +6222,7 @@
           "setterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@see GettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -6061,6 +6235,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The activation state of the lifecycle policy.</p>\n@param state The activation state of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see GettablePolicyStateValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -6082,6 +6257,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LifecyclePolicySummary",
         "variableName" : "lifecyclePolicySummary",
         "variableType" : "LifecyclePolicySummary",
@@ -6151,6 +6327,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -6163,6 +6340,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -6214,6 +6392,7 @@
         "setterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -6226,6 +6405,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -6279,6 +6459,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -6291,6 +6472,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -6343,6 +6525,7 @@
           "setterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -6355,6 +6538,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value is the type of resource for which a limit was exceeded.</p>\n@param resourceType Value is the type of resource for which a limit was exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -6373,6 +6557,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LimitExceededException",
         "variableName" : "limitExceededException",
         "variableType" : "LimitExceededException",
@@ -6479,6 +6664,7 @@
             "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6491,6 +6677,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6520,6 +6707,7 @@
         "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
         "setterMethodName" : "setResourceTypes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceTypes",
           "variableType" : "java.util.List<String>",
@@ -6532,6 +6720,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceTypes",
           "variableType" : "java.util.List<String>",
@@ -6620,6 +6809,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Tag",
               "variableName" : "member",
               "variableType" : "Tag",
@@ -6632,6 +6822,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Tag",
               "variableName" : "member",
               "variableType" : "Tag",
@@ -6661,6 +6852,7 @@
         "setterDocumentation" : "/**<p>The target tags.</p>\n@param targetTags The target tags.*/",
         "setterMethodName" : "setTargetTags",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "targetTags",
           "variableType" : "java.util.List<Tag>",
@@ -6673,6 +6865,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The target tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "targetTags",
           "variableType" : "java.util.List<Tag>",
@@ -6761,6 +6954,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Schedule",
               "variableName" : "member",
               "variableType" : "Schedule",
@@ -6773,6 +6967,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Schedule",
               "variableName" : "member",
               "variableType" : "Schedule",
@@ -6802,6 +6997,7 @@
         "setterDocumentation" : "/**<p>The schedule.</p>\n@param schedules The schedule.*/",
         "setterMethodName" : "setSchedules",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Schedule>",
           "variableName" : "schedules",
           "variableType" : "java.util.List<Schedule>",
@@ -6814,6 +7010,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The schedule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchedules(java.util.Collection)} or {@link #withSchedules(java.util.Collection)} if you want to override the existing values.</p>\n@param schedules The schedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Schedule>",
           "variableName" : "schedules",
           "variableType" : "java.util.List<Schedule>",
@@ -6904,6 +7101,7 @@
               "setterDocumentation" : "/**\n@param member \n@see ResourceTypeValues*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6916,6 +7114,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6945,6 +7144,7 @@
           "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceTypes The resource type.\n@see ResourceTypeValues*/",
           "setterMethodName" : "setResourceTypes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceTypes",
             "variableType" : "java.util.List<String>",
@@ -6957,6 +7157,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTypes The resource type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ResourceTypeValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceTypes",
             "variableType" : "java.util.List<String>",
@@ -7046,6 +7247,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Schedule",
                 "variableName" : "member",
                 "variableType" : "Schedule",
@@ -7058,6 +7260,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Schedule",
                 "variableName" : "member",
                 "variableType" : "Schedule",
@@ -7087,6 +7290,7 @@
           "setterDocumentation" : "/**<p>The schedule.</p>\n@param schedules The schedule.*/",
           "setterMethodName" : "setSchedules",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Schedule>",
             "variableName" : "schedules",
             "variableType" : "java.util.List<Schedule>",
@@ -7099,6 +7303,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The schedule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSchedules(java.util.Collection)} or {@link #withSchedules(java.util.Collection)} if you want to override the existing values.</p>\n@param schedules The schedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Schedule>",
             "variableName" : "schedules",
             "variableType" : "java.util.List<Schedule>",
@@ -7188,6 +7393,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Tag",
                 "variableName" : "member",
                 "variableType" : "Tag",
@@ -7200,6 +7406,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Tag",
                 "variableName" : "member",
                 "variableType" : "Tag",
@@ -7229,6 +7436,7 @@
           "setterDocumentation" : "/**<p>The target tags.</p>\n@param targetTags The target tags.*/",
           "setterMethodName" : "setTargetTags",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "targetTags",
             "variableType" : "java.util.List<Tag>",
@@ -7241,6 +7449,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargetTags(java.util.Collection)} or {@link #withTargetTags(java.util.Collection)} if you want to override the existing values.</p>\n@param targetTags The target tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "targetTags",
             "variableType" : "java.util.List<Tag>",
@@ -7262,6 +7471,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PolicyDetails",
         "variableName" : "policyDetails",
         "variableType" : "PolicyDetails",
@@ -7331,6 +7541,7 @@
         "setterDocumentation" : "/**\n@param code */",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7343,6 +7554,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7394,6 +7606,7 @@
         "setterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -7406,6 +7619,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -7494,6 +7708,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -7506,6 +7721,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -7535,6 +7751,7 @@
         "setterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n@param resourceIds Value is a list of resource IDs that were not found.*/",
         "setterMethodName" : "setResourceIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceIds",
           "variableType" : "java.util.List<String>",
@@ -7547,6 +7764,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIds Value is a list of resource IDs that were not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "resourceIds",
           "variableType" : "java.util.List<String>",
@@ -7600,6 +7818,7 @@
           "setterDocumentation" : "/**\n@param code */",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7612,6 +7831,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7701,6 +7921,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -7713,6 +7934,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -7742,6 +7964,7 @@
           "setterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n@param resourceIds Value is a list of resource IDs that were not found.*/",
           "setterMethodName" : "setResourceIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceIds",
             "variableType" : "java.util.List<String>",
@@ -7754,6 +7977,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value is a list of resource IDs that were not found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceIds Value is a list of resource IDs that were not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "resourceIds",
             "variableType" : "java.util.List<String>",
@@ -7806,6 +8030,7 @@
           "setterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -7818,6 +8043,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value is the type of resource that was not found.</p>\n@param resourceType Value is the type of resource that was not found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -7836,6 +8062,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceNotFoundException",
         "variableName" : "resourceNotFoundException",
         "variableType" : "ResourceNotFoundException",
@@ -7878,6 +8105,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceTypeValues",
         "variableName" : "resourceTypeValues",
         "variableType" : "ResourceTypeValues",
@@ -7947,6 +8175,7 @@
         "setterDocumentation" : "/**<p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to keep for each volume, up to a maximum of 1000.*/",
         "setterMethodName" : "setCount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "count",
           "variableType" : "Integer",
@@ -7959,6 +8188,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to keep for each volume, up to a maximum of 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "count",
           "variableType" : "Integer",
@@ -8012,6 +8242,7 @@
           "setterDocumentation" : "/**<p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to keep for each volume, up to a maximum of 1000.*/",
           "setterMethodName" : "setCount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "count",
             "variableType" : "Integer",
@@ -8024,6 +8255,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>\n@param count The number of snapshots to keep for each volume, up to a maximum of 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "count",
             "variableType" : "Integer",
@@ -8045,6 +8277,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "RetainRule",
         "variableName" : "retainRule",
         "variableType" : "RetainRule",
@@ -8114,6 +8347,7 @@
         "setterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -8126,6 +8360,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -8214,6 +8449,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Tag",
               "variableName" : "member",
               "variableType" : "Tag",
@@ -8226,6 +8462,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Tag",
               "variableName" : "member",
               "variableType" : "Tag",
@@ -8255,6 +8492,7 @@
         "setterDocumentation" : "/**<p>The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.</p>\n@param tagsToAdd The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.*/",
         "setterMethodName" : "setTagsToAdd",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tagsToAdd",
           "variableType" : "java.util.List<Tag>",
@@ -8267,6 +8505,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Tag>",
           "variableName" : "tagsToAdd",
           "variableType" : "java.util.List<Tag>",
@@ -8318,6 +8557,7 @@
         "setterDocumentation" : "/**<p>The create rule.</p>\n@param createRule The create rule.*/",
         "setterMethodName" : "setCreateRule",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CreateRule",
           "variableName" : "createRule",
           "variableType" : "CreateRule",
@@ -8330,6 +8570,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The create rule.</p>\n@param createRule The create rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CreateRule",
           "variableName" : "createRule",
           "variableType" : "CreateRule",
@@ -8381,6 +8622,7 @@
         "setterDocumentation" : "/**<p>The retain rule.</p>\n@param retainRule The retain rule.*/",
         "setterMethodName" : "setRetainRule",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "RetainRule",
           "variableName" : "retainRule",
           "variableType" : "RetainRule",
@@ -8393,6 +8635,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The retain rule.</p>\n@param retainRule The retain rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "RetainRule",
           "variableName" : "retainRule",
           "variableType" : "RetainRule",
@@ -8446,6 +8689,7 @@
           "setterDocumentation" : "/**<p>The create rule.</p>\n@param createRule The create rule.*/",
           "setterMethodName" : "setCreateRule",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CreateRule",
             "variableName" : "createRule",
             "variableType" : "CreateRule",
@@ -8458,6 +8702,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The create rule.</p>\n@param createRule The create rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CreateRule",
             "variableName" : "createRule",
             "variableType" : "CreateRule",
@@ -8510,6 +8755,7 @@
           "setterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -8522,6 +8768,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the schedule.</p>\n@param name The name of the schedule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -8574,6 +8821,7 @@
           "setterDocumentation" : "/**<p>The retain rule.</p>\n@param retainRule The retain rule.*/",
           "setterMethodName" : "setRetainRule",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "RetainRule",
             "variableName" : "retainRule",
             "variableType" : "RetainRule",
@@ -8586,6 +8834,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The retain rule.</p>\n@param retainRule The retain rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "RetainRule",
             "variableName" : "retainRule",
             "variableType" : "RetainRule",
@@ -8675,6 +8924,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Tag",
                 "variableName" : "member",
                 "variableType" : "Tag",
@@ -8687,6 +8937,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Tag",
                 "variableName" : "member",
                 "variableType" : "Tag",
@@ -8716,6 +8967,7 @@
           "setterDocumentation" : "/**<p>The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.</p>\n@param tagsToAdd The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.*/",
           "setterMethodName" : "setTagsToAdd",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tagsToAdd",
             "variableType" : "java.util.List<Tag>",
@@ -8728,6 +8980,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagsToAdd(java.util.Collection)} or {@link #withTagsToAdd(java.util.Collection)} if you want to override the existing values.</p>\n@param tagsToAdd The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Tag>",
             "variableName" : "tagsToAdd",
             "variableType" : "java.util.List<Tag>",
@@ -8749,6 +9002,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Schedule",
         "variableName" : "schedule",
         "variableType" : "Schedule",
@@ -8794,6 +9048,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "SettablePolicyStateValues",
         "variableName" : "settablePolicyStateValues",
         "variableType" : "SettablePolicyStateValues",
@@ -8863,6 +9118,7 @@
         "setterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -8875,6 +9131,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -8926,6 +9183,7 @@
         "setterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -8938,6 +9196,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -8991,6 +9250,7 @@
           "setterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -9003,6 +9263,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag key.</p>\n@param key The tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -9055,6 +9316,7 @@
           "setterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -9067,6 +9329,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag value.</p>\n@param value The tag value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -9088,6 +9351,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Tag",
         "variableName" : "tag",
         "variableType" : "Tag",
@@ -9164,6 +9428,7 @@
         "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -9176,6 +9441,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -9227,6 +9493,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
         "setterMethodName" : "setExecutionRoleArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "executionRoleArn",
           "variableType" : "String",
@@ -9239,6 +9506,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "executionRoleArn",
           "variableType" : "String",
@@ -9290,6 +9558,7 @@
         "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -9302,6 +9571,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -9353,6 +9623,7 @@
         "setterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.*/",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -9365,6 +9636,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -9416,6 +9688,7 @@
         "setterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.*/",
         "setterMethodName" : "setPolicyDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyDetails",
           "variableName" : "policyDetails",
           "variableType" : "PolicyDetails",
@@ -9428,6 +9701,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyDetails",
           "variableName" : "policyDetails",
           "variableType" : "PolicyDetails",
@@ -9481,6 +9755,7 @@
           "setterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.*/",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -9493,6 +9768,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the lifecycle policy.</p>\n@param description A description of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -9545,6 +9821,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.*/",
           "setterMethodName" : "setExecutionRoleArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "executionRoleArn",
             "variableType" : "String",
@@ -9557,6 +9834,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>\n@param executionRoleArn The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "executionRoleArn",
             "variableType" : "String",
@@ -9609,6 +9887,7 @@
           "setterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.*/",
           "setterMethodName" : "setPolicyDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyDetails",
             "variableName" : "policyDetails",
             "variableType" : "PolicyDetails",
@@ -9621,6 +9900,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>\n@param policyDetails The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyDetails",
             "variableName" : "policyDetails",
             "variableType" : "PolicyDetails",
@@ -9673,6 +9953,7 @@
           "setterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -9685,6 +9966,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the lifecycle policy.</p>\n@param policyId The identifier of the lifecycle policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -9737,6 +10019,7 @@
           "setterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@see SettablePolicyStateValues*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -9749,6 +10032,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The desired activation state of the lifecycle policy after creation.</p>\n@param state The desired activation state of the lifecycle policy after creation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SettablePolicyStateValues*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -9767,6 +10051,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateLifecyclePolicyRequest",
         "variableName" : "updateLifecyclePolicyRequest",
         "variableType" : "UpdateLifecyclePolicyRequest",
@@ -9806,6 +10091,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateLifecyclePolicyResult",
         "variableName" : "updateLifecyclePolicyResult",
         "variableType" : "UpdateLifecyclePolicyResult",

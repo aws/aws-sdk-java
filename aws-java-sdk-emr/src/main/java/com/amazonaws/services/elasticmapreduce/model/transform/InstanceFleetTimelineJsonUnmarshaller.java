@@ -50,15 +50,15 @@ public class InstanceFleetTimelineJsonUnmarshaller implements Unmarshaller<Insta
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceFleetTimeline.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceFleetTimeline.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceFleetTimeline.setReadyDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceFleetTimeline.setReadyDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceFleetTimeline.setEndDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceFleetTimeline.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

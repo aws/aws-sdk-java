@@ -62,7 +62,7 @@ public class MigrationTaskJsonUnmarshaller implements Unmarshaller<MigrationTask
                 }
                 if (context.testExpression("UpdateDateTime", targetDepth)) {
                     context.nextToken();
-                    migrationTask.setUpdateDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    migrationTask.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceAttributeList", targetDepth)) {
                     context.nextToken();

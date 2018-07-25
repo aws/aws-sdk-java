@@ -66,7 +66,7 @@ public class PortfolioDetailJsonUnmarshaller implements Unmarshaller<PortfolioDe
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    portfolioDetail.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    portfolioDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProviderName", targetDepth)) {
                     context.nextToken();

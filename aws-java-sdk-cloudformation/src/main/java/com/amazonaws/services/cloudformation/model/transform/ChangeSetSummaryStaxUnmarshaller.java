@@ -79,7 +79,7 @@ public class ChangeSetSummaryStaxUnmarshaller implements Unmarshaller<ChangeSetS
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    changeSetSummary.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    changeSetSummary.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

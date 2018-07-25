@@ -54,7 +54,7 @@ public class GetClusterCredentialsResultStaxUnmarshaller implements Unmarshaller
                 }
 
                 if (context.testExpression("Expiration", targetDepth)) {
-                    getClusterCredentialsResult.setExpiration(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getClusterCredentialsResult.setExpiration(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

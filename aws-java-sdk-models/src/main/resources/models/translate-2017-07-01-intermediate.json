@@ -121,6 +121,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TranslateTextRequest",
         "variableName" : "translateTextRequest",
         "variableType" : "TranslateTextRequest",
@@ -199,6 +200,7 @@
         "setterDocumentation" : "/**<p>Auto detected language code from Comprehend.</p>\n@param detectedLanguageCode Auto detected language code from Comprehend.*/",
         "setterMethodName" : "setDetectedLanguageCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "detectedLanguageCode",
           "variableType" : "String",
@@ -211,6 +213,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Auto detected language code from Comprehend.</p>\n@param detectedLanguageCode Auto detected language code from Comprehend.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "detectedLanguageCode",
           "variableType" : "String",
@@ -264,6 +267,7 @@
           "setterDocumentation" : "/**<p>Auto detected language code from Comprehend.</p>\n@param detectedLanguageCode Auto detected language code from Comprehend.*/",
           "setterMethodName" : "setDetectedLanguageCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "detectedLanguageCode",
             "variableType" : "String",
@@ -276,6 +280,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Auto detected language code from Comprehend.</p>\n@param detectedLanguageCode Auto detected language code from Comprehend.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "detectedLanguageCode",
             "variableType" : "String",
@@ -294,6 +299,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DetectedLanguageLowConfidenceException",
         "variableName" : "detectedLanguageLowConfidenceException",
         "variableType" : "DetectedLanguageLowConfidenceException",
@@ -330,6 +336,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServerException",
         "variableName" : "internalServerException",
         "variableType" : "InternalServerException",
@@ -366,6 +373,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidRequestException",
         "variableName" : "invalidRequestException",
         "variableType" : "InvalidRequestException",
@@ -402,6 +410,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ServiceUnavailableException",
         "variableName" : "serviceUnavailableException",
         "variableType" : "ServiceUnavailableException",
@@ -438,6 +447,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TextSizeLimitExceededException",
         "variableName" : "textSizeLimitExceededException",
         "variableType" : "TextSizeLimitExceededException",
@@ -474,6 +484,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TooManyRequestsException",
         "variableName" : "tooManyRequestsException",
         "variableType" : "TooManyRequestsException",
@@ -550,6 +561,7 @@
         "setterDocumentation" : "/**<p>The text to translate.</p>\n@param text The text to translate.*/",
         "setterMethodName" : "setText",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "text",
           "variableType" : "String",
@@ -562,6 +574,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The text to translate.</p>\n@param text The text to translate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "text",
           "variableType" : "String",
@@ -613,6 +626,7 @@
         "setterDocumentation" : "/**<p>One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.</p>\n@param sourceLanguageCode One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.*/",
         "setterMethodName" : "setSourceLanguageCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceLanguageCode",
           "variableType" : "String",
@@ -625,6 +639,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.</p>\n@param sourceLanguageCode One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceLanguageCode",
           "variableType" : "String",
@@ -676,6 +691,7 @@
         "setterDocumentation" : "/**<p>One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".</p>\n@param targetLanguageCode One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".*/",
         "setterMethodName" : "setTargetLanguageCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "targetLanguageCode",
           "variableType" : "String",
@@ -688,6 +704,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".</p>\n@param targetLanguageCode One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "targetLanguageCode",
           "variableType" : "String",
@@ -741,6 +758,7 @@
           "setterDocumentation" : "/**<p>One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.</p>\n@param sourceLanguageCode One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.*/",
           "setterMethodName" : "setSourceLanguageCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceLanguageCode",
             "variableType" : "String",
@@ -753,6 +771,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.</p>\n@param sourceLanguageCode One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not \"en\", the <code>SourceLanguageCode</code> must be \"en\".</p> <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon Comprehend to determine the source language.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceLanguageCode",
             "variableType" : "String",
@@ -805,6 +824,7 @@
           "setterDocumentation" : "/**<p>One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".</p>\n@param targetLanguageCode One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".*/",
           "setterMethodName" : "setTargetLanguageCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "targetLanguageCode",
             "variableType" : "String",
@@ -817,6 +837,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".</p>\n@param targetLanguageCode One of the supported language codes for the target text. If the <code>SourceLanguageCode</code> is not \"en\", the <code>TargetLanguageCode</code> must be \"en\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "targetLanguageCode",
             "variableType" : "String",
@@ -869,6 +890,7 @@
           "setterDocumentation" : "/**<p>The text to translate.</p>\n@param text The text to translate.*/",
           "setterMethodName" : "setText",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "text",
             "variableType" : "String",
@@ -881,6 +903,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The text to translate.</p>\n@param text The text to translate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "text",
             "variableType" : "String",
@@ -899,6 +922,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TranslateTextRequest",
         "variableName" : "translateTextRequest",
         "variableType" : "TranslateTextRequest",
@@ -968,6 +992,7 @@
         "setterDocumentation" : "/**<p>The text translated into the target language.</p>\n@param translatedText The text translated into the target language.*/",
         "setterMethodName" : "setTranslatedText",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "translatedText",
           "variableType" : "String",
@@ -980,6 +1005,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The text translated into the target language.</p>\n@param translatedText The text translated into the target language.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "translatedText",
           "variableType" : "String",
@@ -1031,6 +1057,7 @@
         "setterDocumentation" : "/**<p>The language code for the language of the input text. </p>\n@param sourceLanguageCode The language code for the language of the input text.*/",
         "setterMethodName" : "setSourceLanguageCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceLanguageCode",
           "variableType" : "String",
@@ -1043,6 +1070,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The language code for the language of the input text. </p>\n@param sourceLanguageCode The language code for the language of the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceLanguageCode",
           "variableType" : "String",
@@ -1094,6 +1122,7 @@
         "setterDocumentation" : "/**<p>The language code for the language of the translated text. </p>\n@param targetLanguageCode The language code for the language of the translated text.*/",
         "setterMethodName" : "setTargetLanguageCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "targetLanguageCode",
           "variableType" : "String",
@@ -1106,6 +1135,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The language code for the language of the translated text. </p>\n@param targetLanguageCode The language code for the language of the translated text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "targetLanguageCode",
           "variableType" : "String",
@@ -1159,6 +1189,7 @@
           "setterDocumentation" : "/**<p>The language code for the language of the input text. </p>\n@param sourceLanguageCode The language code for the language of the input text.*/",
           "setterMethodName" : "setSourceLanguageCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceLanguageCode",
             "variableType" : "String",
@@ -1171,6 +1202,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The language code for the language of the input text. </p>\n@param sourceLanguageCode The language code for the language of the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceLanguageCode",
             "variableType" : "String",
@@ -1223,6 +1255,7 @@
           "setterDocumentation" : "/**<p>The language code for the language of the translated text. </p>\n@param targetLanguageCode The language code for the language of the translated text.*/",
           "setterMethodName" : "setTargetLanguageCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "targetLanguageCode",
             "variableType" : "String",
@@ -1235,6 +1268,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The language code for the language of the translated text. </p>\n@param targetLanguageCode The language code for the language of the translated text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "targetLanguageCode",
             "variableType" : "String",
@@ -1287,6 +1321,7 @@
           "setterDocumentation" : "/**<p>The text translated into the target language.</p>\n@param translatedText The text translated into the target language.*/",
           "setterMethodName" : "setTranslatedText",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "translatedText",
             "variableType" : "String",
@@ -1299,6 +1334,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The text translated into the target language.</p>\n@param translatedText The text translated into the target language.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "translatedText",
             "variableType" : "String",
@@ -1320,6 +1356,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TranslateTextResult",
         "variableName" : "translateTextResult",
         "variableType" : "TranslateTextResult",
@@ -1356,6 +1393,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnsupportedLanguagePairException",
         "variableName" : "unsupportedLanguagePairException",
         "variableType" : "UnsupportedLanguagePairException",

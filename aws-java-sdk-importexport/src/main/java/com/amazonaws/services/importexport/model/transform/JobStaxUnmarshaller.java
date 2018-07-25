@@ -49,7 +49,7 @@ public class JobStaxUnmarshaller implements Unmarshaller<Job, StaxUnmarshallerCo
                 }
 
                 if (context.testExpression("CreationDate", targetDepth)) {
-                    job.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    job.setCreationDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

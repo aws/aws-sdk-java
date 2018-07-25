@@ -58,7 +58,7 @@ public class CommentMetadataJsonUnmarshaller implements Unmarshaller<CommentMeta
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    commentMetadata.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    commentMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CommentStatus", targetDepth)) {
                     context.nextToken();

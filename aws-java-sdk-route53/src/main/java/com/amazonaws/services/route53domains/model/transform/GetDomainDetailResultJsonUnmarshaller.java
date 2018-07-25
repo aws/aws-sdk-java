@@ -110,15 +110,15 @@ public class GetDomainDetailResultJsonUnmarshaller implements Unmarshaller<GetDo
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainDetailResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainDetailResult.setUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setExpirationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainDetailResult.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Reseller", targetDepth)) {
                     context.nextToken();

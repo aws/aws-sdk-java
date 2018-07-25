@@ -58,11 +58,11 @@ public class AggregateEvaluationResultJsonUnmarshaller implements Unmarshaller<A
                 }
                 if (context.testExpression("ResultRecordedTime", targetDepth)) {
                     context.nextToken();
-                    aggregateEvaluationResult.setResultRecordedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    aggregateEvaluationResult.setResultRecordedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleInvokedTime", targetDepth)) {
                     context.nextToken();
-                    aggregateEvaluationResult.setConfigRuleInvokedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    aggregateEvaluationResult.setConfigRuleInvokedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Annotation", targetDepth)) {
                     context.nextToken();

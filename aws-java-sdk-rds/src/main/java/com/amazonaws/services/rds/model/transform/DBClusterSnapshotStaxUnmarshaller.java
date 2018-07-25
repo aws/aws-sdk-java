@@ -66,7 +66,7 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    dBClusterSnapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterSnapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -96,7 +96,7 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    dBClusterSnapshot.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterSnapshot.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

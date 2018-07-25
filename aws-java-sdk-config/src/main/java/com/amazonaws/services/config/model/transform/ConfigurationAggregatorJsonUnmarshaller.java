@@ -67,11 +67,11 @@ public class ConfigurationAggregatorJsonUnmarshaller implements Unmarshaller<Con
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    configurationAggregator.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configurationAggregator.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    configurationAggregator.setLastUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configurationAggregator.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

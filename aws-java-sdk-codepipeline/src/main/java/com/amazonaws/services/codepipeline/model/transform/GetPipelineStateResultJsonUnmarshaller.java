@@ -62,11 +62,11 @@ public class GetPipelineStateResultJsonUnmarshaller implements Unmarshaller<GetP
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getPipelineStateResult.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updated", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getPipelineStateResult.setUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

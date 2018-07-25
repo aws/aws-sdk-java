@@ -70,11 +70,11 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription.setCreateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deliveryStreamDescription.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription.setLastUpdateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deliveryStreamDescription.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
                     context.nextToken();

@@ -70,11 +70,11 @@ public class MatchmakingTicketJsonUnmarshaller implements Unmarshaller<Matchmaki
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    matchmakingTicket.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    matchmakingTicket.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    matchmakingTicket.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    matchmakingTicket.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Players", targetDepth)) {
                     context.nextToken();

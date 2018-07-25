@@ -74,11 +74,11 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fleetAttributes.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setTerminationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fleetAttributes.setTerminationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

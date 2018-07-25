@@ -58,7 +58,7 @@ public class ConfigurationItemJsonUnmarshaller implements Unmarshaller<Configura
                 }
                 if (context.testExpression("configurationItemCaptureTime", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setConfigurationItemCaptureTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configurationItem.setConfigurationItemCaptureTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("configurationItemStatus", targetDepth)) {
                     context.nextToken();
@@ -98,7 +98,7 @@ public class ConfigurationItemJsonUnmarshaller implements Unmarshaller<Configura
                 }
                 if (context.testExpression("resourceCreationTime", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setResourceCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configurationItem.setResourceCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

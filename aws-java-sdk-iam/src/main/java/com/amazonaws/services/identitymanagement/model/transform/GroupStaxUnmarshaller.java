@@ -64,7 +64,7 @@ public class GroupStaxUnmarshaller implements Unmarshaller<Group, StaxUnmarshall
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    group.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    group.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

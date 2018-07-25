@@ -96,12 +96,12 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                 }
 
                 if (context.testExpression("allocationTime", targetDepth)) {
-                    host.setAllocationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    host.setAllocationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("releaseTime", targetDepth)) {
-                    host.setReleaseTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    host.setReleaseTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

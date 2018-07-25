@@ -44,7 +44,7 @@ public class IdFormatStaxUnmarshaller implements Unmarshaller<IdFormat, StaxUnma
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("deadline", targetDepth)) {
-                    idFormat.setDeadline(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    idFormat.setDeadline(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

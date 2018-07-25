@@ -136,7 +136,7 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                 }
 
                 if (context.testExpression("CreatedTime", targetDepth)) {
-                    autoScalingGroup.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    autoScalingGroup.setCreatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

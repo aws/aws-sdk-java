@@ -59,7 +59,7 @@ public class TableRestoreStatusStaxUnmarshaller implements Unmarshaller<TableRes
                 }
 
                 if (context.testExpression("RequestTime", targetDepth)) {
-                    tableRestoreStatus.setRequestTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    tableRestoreStatus.setRequestTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

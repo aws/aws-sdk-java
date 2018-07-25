@@ -81,12 +81,12 @@ public class ConfigurationSettingsDescriptionStaxUnmarshaller implements Unmarsh
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    configurationSettingsDescription.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    configurationSettingsDescription.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    configurationSettingsDescription.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    configurationSettingsDescription.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

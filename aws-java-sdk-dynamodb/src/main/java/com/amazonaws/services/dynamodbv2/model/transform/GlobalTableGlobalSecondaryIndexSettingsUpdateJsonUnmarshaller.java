@@ -57,6 +57,11 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdateJsonUnmarshaller imple
                     context.nextToken();
                     globalTableGlobalSecondaryIndexSettingsUpdate.setProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ProvisionedWriteCapacityAutoScalingSettingsUpdate", targetDepth)) {
+                    context.nextToken();
+                    globalTableGlobalSecondaryIndexSettingsUpdate
+                            .setProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

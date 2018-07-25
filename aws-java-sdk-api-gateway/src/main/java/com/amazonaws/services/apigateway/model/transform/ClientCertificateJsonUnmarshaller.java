@@ -62,11 +62,11 @@ public class ClientCertificateJsonUnmarshaller implements Unmarshaller<ClientCer
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    clientCertificate.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    clientCertificate.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("expirationDate", targetDepth)) {
                     context.nextToken();
-                    clientCertificate.setExpirationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    clientCertificate.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,7 +58,7 @@ public class AuthEventTypeJsonUnmarshaller implements Unmarshaller<AuthEventType
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    authEventType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    authEventType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventResponse", targetDepth)) {
                     context.nextToken();

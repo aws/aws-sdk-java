@@ -101,7 +101,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
 
                 if (context.testExpression("CacheClusterCreateTime", targetDepth)) {
-                    snapshot.setCacheClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    snapshot.setCacheClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

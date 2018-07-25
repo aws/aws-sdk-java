@@ -70,7 +70,7 @@ public class ReviewActionDetailJsonUnmarshaller implements Unmarshaller<ReviewAc
                 }
                 if (context.testExpression("CompleteTime", targetDepth)) {
                     context.nextToken();
-                    reviewActionDetail.setCompleteTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    reviewActionDetail.setCompleteTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Result", targetDepth)) {
                     context.nextToken();

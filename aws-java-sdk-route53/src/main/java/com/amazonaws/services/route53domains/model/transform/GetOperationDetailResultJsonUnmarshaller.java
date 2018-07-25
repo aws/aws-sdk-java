@@ -70,7 +70,7 @@ public class GetOperationDetailResultJsonUnmarshaller implements Unmarshaller<Ge
                 }
                 if (context.testExpression("SubmittedDate", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult.setSubmittedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getOperationDetailResult.setSubmittedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -29,7 +29,7 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
             if (context.getHeader("${memberModel.http.unmarshallLocationName}") != null) {
                 context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
                 <#if memberModel.variable.simpleType == "Date">
-                    ${shape.variable.variableName}.${memberModel.setterMethodName}(com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+                    ${shape.variable.variableName}.${memberModel.setterMethodName}(DateJsonUnmarshallerFactory.getInstance("${memberModel.variable.timestampFormat}").unmarshall(context));
                 <#else>
                     ${shape.variable.variableName}.${memberModel.setterMethodName}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));
                 </#if>

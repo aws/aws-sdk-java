@@ -66,7 +66,7 @@ public class ReplicationJobJsonUnmarshaller implements Unmarshaller<ReplicationJ
                 }
                 if (context.testExpression("seedReplicationTime", targetDepth)) {
                     context.nextToken();
-                    replicationJob.setSeedReplicationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationJob.setSeedReplicationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("frequency", targetDepth)) {
                     context.nextToken();
@@ -74,7 +74,7 @@ public class ReplicationJobJsonUnmarshaller implements Unmarshaller<ReplicationJ
                 }
                 if (context.testExpression("nextReplicationRunStartTime", targetDepth)) {
                     context.nextToken();
-                    replicationJob.setNextReplicationRunStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationJob.setNextReplicationRunStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("licenseType", targetDepth)) {
                     context.nextToken();

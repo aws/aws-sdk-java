@@ -62,7 +62,7 @@ public class GetParametersForImportResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("ParametersValidTo", targetDepth)) {
                     context.nextToken();
-                    getParametersForImportResult.setParametersValidTo(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getParametersForImportResult.setParametersValidTo(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -88,7 +88,7 @@ public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUn
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    datapoint.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    datapoint.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

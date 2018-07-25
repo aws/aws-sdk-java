@@ -58,7 +58,7 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
                 }
                 if (context.testExpression("NodeCreateTime", targetDepth)) {
                     context.nextToken();
-                    node.setNodeCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    node.setNodeCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();

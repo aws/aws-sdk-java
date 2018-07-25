@@ -76,17 +76,17 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    stack.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stack.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DeletionTime", targetDepth)) {
-                    stack.setDeletionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stack.setDeletionTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
-                    stack.setLastUpdatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stack.setLastUpdatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

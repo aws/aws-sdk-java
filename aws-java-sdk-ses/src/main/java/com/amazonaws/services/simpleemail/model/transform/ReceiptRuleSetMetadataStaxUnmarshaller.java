@@ -49,7 +49,7 @@ public class ReceiptRuleSetMetadataStaxUnmarshaller implements Unmarshaller<Rece
                 }
 
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
-                    receiptRuleSetMetadata.setCreatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    receiptRuleSetMetadata.setCreatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

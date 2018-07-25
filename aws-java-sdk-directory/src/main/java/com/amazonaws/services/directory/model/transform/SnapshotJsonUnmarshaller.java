@@ -70,7 +70,7 @@ public class SnapshotJsonUnmarshaller implements Unmarshaller<Snapshot, JsonUnma
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    snapshot.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    snapshot.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

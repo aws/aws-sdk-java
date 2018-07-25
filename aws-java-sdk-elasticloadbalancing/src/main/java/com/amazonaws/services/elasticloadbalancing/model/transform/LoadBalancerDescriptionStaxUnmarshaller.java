@@ -146,7 +146,7 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
                 }
 
                 if (context.testExpression("CreatedTime", targetDepth)) {
-                    loadBalancerDescription.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    loadBalancerDescription.setCreatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -136,7 +136,7 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                 }
 
                 if (context.testExpression("CreatedTime", targetDepth)) {
-                    launchConfiguration.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    launchConfiguration.setCreatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

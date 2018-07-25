@@ -56,7 +56,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    snapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    snapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -76,7 +76,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    snapshot.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    snapshot.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

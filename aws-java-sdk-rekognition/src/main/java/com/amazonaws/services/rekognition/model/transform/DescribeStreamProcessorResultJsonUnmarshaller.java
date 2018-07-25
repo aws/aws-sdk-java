@@ -66,11 +66,11 @@ public class DescribeStreamProcessorResultJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
                     context.nextToken();
-                    describeStreamProcessorResult.setCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeStreamProcessorResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
                     context.nextToken();
-                    describeStreamProcessorResult.setLastUpdateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeStreamProcessorResult.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Input", targetDepth)) {
                     context.nextToken();

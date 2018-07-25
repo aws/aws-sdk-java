@@ -66,11 +66,11 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("CreatedOn", targetDepth)) {
                     context.nextToken();
-                    job.setCreatedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
                     context.nextToken();
-                    job.setLastModifiedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionProperty", targetDepth)) {
                     context.nextToken();

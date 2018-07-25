@@ -94,12 +94,12 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
                 }
 
                 if (context.testExpression("startTime", targetDepth)) {
-                    volumeModification.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    volumeModification.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("endTime", targetDepth)) {
-                    volumeModification.setEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    volumeModification.setEndTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

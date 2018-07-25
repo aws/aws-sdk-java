@@ -70,11 +70,11 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                 }
                 if (context.testExpression("ExecutionStartTime", targetDepth)) {
                     context.nextToken();
-                    stepExecution.setExecutionStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecution.setExecutionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionEndTime", targetDepth)) {
                     context.nextToken();
-                    stepExecution.setExecutionEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecution.setExecutionEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StepStatus", targetDepth)) {
                     context.nextToken();

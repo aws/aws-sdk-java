@@ -66,11 +66,11 @@ public class ProjectDetailsJsonUnmarshaller implements Unmarshaller<ProjectDetai
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    projectDetails.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    projectDetails.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    projectDetails.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    projectDetails.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("consoleUrl", targetDepth)) {
                     context.nextToken();

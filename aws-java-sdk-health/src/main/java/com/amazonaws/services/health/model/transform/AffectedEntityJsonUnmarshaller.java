@@ -66,7 +66,7 @@ public class AffectedEntityJsonUnmarshaller implements Unmarshaller<AffectedEnti
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    affectedEntity.setLastUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    affectedEntity.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
                     context.nextToken();

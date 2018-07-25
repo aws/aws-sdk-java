@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -109,6 +109,7 @@
       } ],
       "hasBlobMemberAsPayload" : true,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvokeEndpointRequest",
         "variableName" : "invokeEndpointRequest",
         "variableType" : "InvokeEndpointRequest",
@@ -154,6 +155,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalFailureException",
         "variableName" : "internalFailureException",
         "variableType" : "InternalFailureException",
@@ -230,6 +232,7 @@
         "setterDocumentation" : "/**<p>The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API. </p>\n@param endpointName The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API.*/",
         "setterMethodName" : "setEndpointName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "endpointName",
           "variableType" : "String",
@@ -242,6 +245,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API. </p>\n@param endpointName The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "endpointName",
           "variableType" : "String",
@@ -293,6 +297,7 @@
         "setterDocumentation" : "/**<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "body",
           "variableType" : "java.nio.ByteBuffer",
@@ -305,6 +310,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p>\n@param body Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "body",
           "variableType" : "java.nio.ByteBuffer",
@@ -356,6 +362,7 @@
         "setterDocumentation" : "/**<p>The MIME type of the input data in the request body.</p>\n@param contentType The MIME type of the input data in the request body.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -368,6 +375,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The MIME type of the input data in the request body.</p>\n@param contentType The MIME type of the input data in the request body.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -419,6 +427,7 @@
         "setterDocumentation" : "/**<p>The desired MIME type of the inference in the response.</p>\n@param accept The desired MIME type of the inference in the response.*/",
         "setterMethodName" : "setAccept",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "accept",
           "variableType" : "String",
@@ -431,6 +440,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The desired MIME type of the inference in the response.</p>\n@param accept The desired MIME type of the inference in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "accept",
           "variableType" : "String",
@@ -484,6 +494,7 @@
           "setterDocumentation" : "/**<p>The desired MIME type of the inference in the response.</p>\n@param accept The desired MIME type of the inference in the response.*/",
           "setterMethodName" : "setAccept",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "accept",
             "variableType" : "String",
@@ -496,6 +507,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The desired MIME type of the inference in the response.</p>\n@param accept The desired MIME type of the inference in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "accept",
             "variableType" : "String",
@@ -548,6 +560,7 @@
           "setterDocumentation" : "/**<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "body",
             "variableType" : "java.nio.ByteBuffer",
@@ -560,6 +573,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p>\n@param body Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "body",
             "variableType" : "java.nio.ByteBuffer",
@@ -612,6 +626,7 @@
           "setterDocumentation" : "/**<p>The MIME type of the input data in the request body.</p>\n@param contentType The MIME type of the input data in the request body.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -624,6 +639,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The MIME type of the input data in the request body.</p>\n@param contentType The MIME type of the input data in the request body.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -676,6 +692,7 @@
           "setterDocumentation" : "/**<p>The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API. </p>\n@param endpointName The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API.*/",
           "setterMethodName" : "setEndpointName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "endpointName",
             "variableType" : "String",
@@ -688,6 +705,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API. </p>\n@param endpointName The name of the endpoint that you specified when you created the endpoint using the <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html\">CreateEndpoint</a> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "endpointName",
             "variableType" : "String",
@@ -706,6 +724,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvokeEndpointRequest",
         "variableName" : "invokeEndpointRequest",
         "variableType" : "InvokeEndpointRequest",
@@ -775,6 +794,7 @@
         "setterDocumentation" : "/**<p>Includes the inference provided by the model.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Includes the inference provided by the model.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "body",
           "variableType" : "java.nio.ByteBuffer",
@@ -787,6 +807,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Includes the inference provided by the model.</p>\n@param body Includes the inference provided by the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "body",
           "variableType" : "java.nio.ByteBuffer",
@@ -838,6 +859,7 @@
         "setterDocumentation" : "/**<p>The MIME type of the inference returned in the response body.</p>\n@param contentType The MIME type of the inference returned in the response body.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -850,6 +872,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The MIME type of the inference returned in the response body.</p>\n@param contentType The MIME type of the inference returned in the response body.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -901,6 +924,7 @@
         "setterDocumentation" : "/**<p>Identifies the production variant that was invoked.</p>\n@param invokedProductionVariant Identifies the production variant that was invoked.*/",
         "setterMethodName" : "setInvokedProductionVariant",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "invokedProductionVariant",
           "variableType" : "String",
@@ -913,6 +937,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies the production variant that was invoked.</p>\n@param invokedProductionVariant Identifies the production variant that was invoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "invokedProductionVariant",
           "variableType" : "String",
@@ -966,6 +991,7 @@
           "setterDocumentation" : "/**<p>Includes the inference provided by the model.</p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param body Includes the inference provided by the model.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "body",
             "variableType" : "java.nio.ByteBuffer",
@@ -978,6 +1004,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Includes the inference provided by the model.</p>\n@param body Includes the inference provided by the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "body",
             "variableType" : "java.nio.ByteBuffer",
@@ -1030,6 +1057,7 @@
           "setterDocumentation" : "/**<p>The MIME type of the inference returned in the response body.</p>\n@param contentType The MIME type of the inference returned in the response body.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -1042,6 +1070,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The MIME type of the inference returned in the response body.</p>\n@param contentType The MIME type of the inference returned in the response body.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -1094,6 +1123,7 @@
           "setterDocumentation" : "/**<p>Identifies the production variant that was invoked.</p>\n@param invokedProductionVariant Identifies the production variant that was invoked.*/",
           "setterMethodName" : "setInvokedProductionVariant",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "invokedProductionVariant",
             "variableType" : "String",
@@ -1106,6 +1136,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies the production variant that was invoked.</p>\n@param invokedProductionVariant Identifies the production variant that was invoked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "invokedProductionVariant",
             "variableType" : "String",
@@ -1127,6 +1158,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvokeEndpointResult",
         "variableName" : "invokeEndpointResult",
         "variableType" : "InvokeEndpointResult",
@@ -1196,6 +1228,7 @@
         "setterDocumentation" : "/**<p> Original status code. </p>\n@param originalStatusCode Original status code.*/",
         "setterMethodName" : "setOriginalStatusCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "originalStatusCode",
           "variableType" : "Integer",
@@ -1208,6 +1241,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Original status code. </p>\n@param originalStatusCode Original status code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "originalStatusCode",
           "variableType" : "Integer",
@@ -1259,6 +1293,7 @@
         "setterDocumentation" : "/**<p> Original message. </p>\n@param originalMessage Original message.*/",
         "setterMethodName" : "setOriginalMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "originalMessage",
           "variableType" : "String",
@@ -1271,6 +1306,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Original message. </p>\n@param originalMessage Original message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "originalMessage",
           "variableType" : "String",
@@ -1322,6 +1358,7 @@
         "setterDocumentation" : "/**<p> Amazon Resource Name (ARN) of the log stream. </p>\n@param logStreamArn Amazon Resource Name (ARN) of the log stream.*/",
         "setterMethodName" : "setLogStreamArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "logStreamArn",
           "variableType" : "String",
@@ -1334,6 +1371,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Amazon Resource Name (ARN) of the log stream. </p>\n@param logStreamArn Amazon Resource Name (ARN) of the log stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "logStreamArn",
           "variableType" : "String",
@@ -1387,6 +1425,7 @@
           "setterDocumentation" : "/**<p> Amazon Resource Name (ARN) of the log stream. </p>\n@param logStreamArn Amazon Resource Name (ARN) of the log stream.*/",
           "setterMethodName" : "setLogStreamArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "logStreamArn",
             "variableType" : "String",
@@ -1399,6 +1438,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Amazon Resource Name (ARN) of the log stream. </p>\n@param logStreamArn Amazon Resource Name (ARN) of the log stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "logStreamArn",
             "variableType" : "String",
@@ -1451,6 +1491,7 @@
           "setterDocumentation" : "/**<p> Original message. </p>\n@param originalMessage Original message.*/",
           "setterMethodName" : "setOriginalMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "originalMessage",
             "variableType" : "String",
@@ -1463,6 +1504,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Original message. </p>\n@param originalMessage Original message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "originalMessage",
             "variableType" : "String",
@@ -1515,6 +1557,7 @@
           "setterDocumentation" : "/**<p> Original status code. </p>\n@param originalStatusCode Original status code.*/",
           "setterMethodName" : "setOriginalStatusCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "originalStatusCode",
             "variableType" : "Integer",
@@ -1527,6 +1570,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Original status code. </p>\n@param originalStatusCode Original status code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "originalStatusCode",
             "variableType" : "Integer",
@@ -1545,6 +1589,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ModelErrorException",
         "variableName" : "modelErrorException",
         "variableType" : "ModelErrorException",
@@ -1581,6 +1626,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ServiceUnavailableException",
         "variableName" : "serviceUnavailableException",
         "variableType" : "ServiceUnavailableException",
@@ -1617,6 +1663,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ValidationErrorException",
         "variableName" : "validationErrorException",
         "variableType" : "ValidationErrorException",

@@ -62,11 +62,11 @@ public class MLModelJsonUnmarshaller implements Unmarshaller<MLModel, JsonUnmars
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    mLModel.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    mLModel.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
@@ -107,7 +107,7 @@ public class MLModelJsonUnmarshaller implements Unmarshaller<MLModel, JsonUnmars
                 }
                 if (context.testExpression("ScoreThresholdLastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setScoreThresholdLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    mLModel.setScoreThresholdLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
@@ -119,11 +119,11 @@ public class MLModelJsonUnmarshaller implements Unmarshaller<MLModel, JsonUnmars
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setFinishedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    mLModel.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    mLModel.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

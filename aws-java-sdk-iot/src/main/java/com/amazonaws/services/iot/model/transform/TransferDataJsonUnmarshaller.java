@@ -58,15 +58,15 @@ public class TransferDataJsonUnmarshaller implements Unmarshaller<TransferData, 
                 }
                 if (context.testExpression("transferDate", targetDepth)) {
                     context.nextToken();
-                    transferData.setTransferDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transferData.setTransferDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("acceptDate", targetDepth)) {
                     context.nextToken();
-                    transferData.setAcceptDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transferData.setAcceptDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("rejectDate", targetDepth)) {
                     context.nextToken();
-                    transferData.setRejectDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transferData.setRejectDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

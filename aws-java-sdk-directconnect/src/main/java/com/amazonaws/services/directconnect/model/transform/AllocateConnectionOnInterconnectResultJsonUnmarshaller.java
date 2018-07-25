@@ -86,7 +86,7 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    allocateConnectionOnInterconnectResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    allocateConnectionOnInterconnectResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
                     context.nextToken();

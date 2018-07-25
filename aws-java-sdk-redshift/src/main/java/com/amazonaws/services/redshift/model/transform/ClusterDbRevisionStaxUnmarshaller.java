@@ -56,7 +56,7 @@ public class ClusterDbRevisionStaxUnmarshaller implements Unmarshaller<ClusterDb
                 }
 
                 if (context.testExpression("DatabaseRevisionReleaseDate", targetDepth)) {
-                    clusterDbRevision.setDatabaseRevisionReleaseDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    clusterDbRevision.setDatabaseRevisionReleaseDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

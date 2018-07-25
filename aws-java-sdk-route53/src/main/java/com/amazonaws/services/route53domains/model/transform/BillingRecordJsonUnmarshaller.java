@@ -62,7 +62,7 @@ public class BillingRecordJsonUnmarshaller implements Unmarshaller<BillingRecord
                 }
                 if (context.testExpression("BillDate", targetDepth)) {
                     context.nextToken();
-                    billingRecord.setBillDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    billingRecord.setBillDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Price", targetDepth)) {
                     context.nextToken();

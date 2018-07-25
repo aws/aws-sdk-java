@@ -66,11 +66,11 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
                 }
                 if (context.testExpression("EnabledDate", targetDepth)) {
                     context.nextToken();
-                    member.setEnabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    member.setEnabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DisabledDate", targetDepth)) {
                     context.nextToken();
-                    member.setDisabledDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    member.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

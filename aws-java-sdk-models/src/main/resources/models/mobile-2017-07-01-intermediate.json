@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -121,6 +121,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectRequest",
         "variableName" : "createProjectRequest",
         "variableType" : "CreateProjectRequest",
@@ -168,6 +169,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectRequest",
         "variableName" : "deleteProjectRequest",
         "variableType" : "DeleteProjectRequest",
@@ -219,6 +221,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBundleRequest",
         "variableName" : "describeBundleRequest",
         "variableType" : "DescribeBundleRequest",
@@ -270,6 +273,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectRequest",
         "variableName" : "describeProjectRequest",
         "variableType" : "DescribeProjectRequest",
@@ -321,6 +325,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExportBundleRequest",
         "variableName" : "exportBundleRequest",
         "variableType" : "ExportBundleRequest",
@@ -372,6 +377,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExportProjectRequest",
         "variableName" : "exportProjectRequest",
         "variableType" : "ExportProjectRequest",
@@ -419,6 +425,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListBundlesRequest",
         "variableName" : "listBundlesRequest",
         "variableType" : "ListBundlesRequest",
@@ -466,6 +473,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsRequest",
         "variableName" : "listProjectsRequest",
         "variableType" : "ListProjectsRequest",
@@ -525,6 +533,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectRequest",
         "variableName" : "updateProjectRequest",
         "variableType" : "UpdateProjectRequest",
@@ -570,6 +579,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AccountActionRequiredException",
         "variableName" : "accountActionRequiredException",
         "variableType" : "AccountActionRequiredException",
@@ -606,6 +616,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BadRequestException",
         "variableName" : "badRequestException",
         "variableType" : "BadRequestException",
@@ -675,6 +686,7 @@
         "setterDocumentation" : "/**\n@param bundleId */",
         "setterMethodName" : "setBundleId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bundleId",
           "variableType" : "String",
@@ -687,6 +699,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param bundleId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bundleId",
           "variableType" : "String",
@@ -738,6 +751,7 @@
         "setterDocumentation" : "/**\n@param title */",
         "setterMethodName" : "setTitle",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "title",
           "variableType" : "String",
@@ -750,6 +764,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param title \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "title",
           "variableType" : "String",
@@ -801,6 +816,7 @@
         "setterDocumentation" : "/**\n@param version */",
         "setterMethodName" : "setVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
@@ -813,6 +829,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param version \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
@@ -864,6 +881,7 @@
         "setterDocumentation" : "/**\n@param description */",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -876,6 +894,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -927,6 +946,7 @@
         "setterDocumentation" : "/**\n@param iconUrl */",
         "setterMethodName" : "setIconUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "iconUrl",
           "variableType" : "String",
@@ -939,6 +959,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param iconUrl \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "iconUrl",
           "variableType" : "String",
@@ -1027,6 +1048,7 @@
             "setterDocumentation" : "/**\n@param member \n@see Platform*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1039,6 +1061,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1068,6 +1091,7 @@
         "setterDocumentation" : "/**\n@param availablePlatforms \n@see Platform*/",
         "setterMethodName" : "setAvailablePlatforms",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "availablePlatforms",
           "variableType" : "java.util.List<String>",
@@ -1080,6 +1104,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailablePlatforms(java.util.Collection)} or {@link #withAvailablePlatforms(java.util.Collection)} if you want to override the existing values.</p>\n@param availablePlatforms \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "availablePlatforms",
           "variableType" : "java.util.List<String>",
@@ -1170,6 +1195,7 @@
               "setterDocumentation" : "/**\n@param member \n@see Platform*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -1182,6 +1208,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -1211,6 +1238,7 @@
           "setterDocumentation" : "/**\n@param availablePlatforms \n@see Platform*/",
           "setterMethodName" : "setAvailablePlatforms",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "availablePlatforms",
             "variableType" : "java.util.List<String>",
@@ -1223,6 +1251,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailablePlatforms(java.util.Collection)} or {@link #withAvailablePlatforms(java.util.Collection)} if you want to override the existing values.</p>\n@param availablePlatforms \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "availablePlatforms",
             "variableType" : "java.util.List<String>",
@@ -1275,6 +1304,7 @@
           "setterDocumentation" : "/**\n@param bundleId */",
           "setterMethodName" : "setBundleId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bundleId",
             "variableType" : "String",
@@ -1287,6 +1317,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param bundleId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bundleId",
             "variableType" : "String",
@@ -1339,6 +1370,7 @@
           "setterDocumentation" : "/**\n@param description */",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -1351,6 +1383,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -1403,6 +1436,7 @@
           "setterDocumentation" : "/**\n@param iconUrl */",
           "setterMethodName" : "setIconUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "iconUrl",
             "variableType" : "String",
@@ -1415,6 +1449,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param iconUrl \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "iconUrl",
             "variableType" : "String",
@@ -1467,6 +1502,7 @@
           "setterDocumentation" : "/**\n@param title */",
           "setterMethodName" : "setTitle",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "title",
             "variableType" : "String",
@@ -1479,6 +1515,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param title \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "title",
             "variableType" : "String",
@@ -1531,6 +1568,7 @@
           "setterDocumentation" : "/**\n@param version */",
           "setterMethodName" : "setVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
@@ -1543,6 +1581,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param version \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
@@ -1564,6 +1603,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BundleDetails",
         "variableName" : "bundleDetails",
         "variableType" : "BundleDetails",
@@ -1640,6 +1680,7 @@
         "setterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -1652,6 +1693,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -1703,6 +1745,7 @@
         "setterDocumentation" : "/**<p> Default region where project resources should be created. </p>\n@param region Default region where project resources should be created.*/",
         "setterMethodName" : "setRegion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "region",
           "variableType" : "String",
@@ -1715,6 +1758,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Default region where project resources should be created. </p>\n@param region Default region where project resources should be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "region",
           "variableType" : "String",
@@ -1766,6 +1810,7 @@
         "setterDocumentation" : "/**<p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param contents ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.*/",
         "setterMethodName" : "setContents",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "contents",
           "variableType" : "java.nio.ByteBuffer",
@@ -1778,6 +1823,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "contents",
           "variableType" : "java.nio.ByteBuffer",
@@ -1829,6 +1875,7 @@
         "setterDocumentation" : "/**<p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>\n@param snapshotId Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.*/",
         "setterMethodName" : "setSnapshotId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snapshotId",
           "variableType" : "String",
@@ -1841,6 +1888,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>\n@param snapshotId Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snapshotId",
           "variableType" : "String",
@@ -1894,6 +1942,7 @@
           "setterDocumentation" : "/**<p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param contents ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.*/",
           "setterMethodName" : "setContents",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "contents",
             "variableType" : "java.nio.ByteBuffer",
@@ -1906,6 +1955,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "contents",
             "variableType" : "java.nio.ByteBuffer",
@@ -1958,6 +2008,7 @@
           "setterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1970,6 +2021,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2022,6 +2074,7 @@
           "setterDocumentation" : "/**<p> Default region where project resources should be created. </p>\n@param region Default region where project resources should be created.*/",
           "setterMethodName" : "setRegion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "region",
             "variableType" : "String",
@@ -2034,6 +2087,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Default region where project resources should be created. </p>\n@param region Default region where project resources should be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "region",
             "variableType" : "String",
@@ -2086,6 +2140,7 @@
           "setterDocumentation" : "/**<p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>\n@param snapshotId Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.*/",
           "setterMethodName" : "setSnapshotId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snapshotId",
             "variableType" : "String",
@@ -2098,6 +2153,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>\n@param snapshotId Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snapshotId",
             "variableType" : "String",
@@ -2116,6 +2172,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectRequest",
         "variableName" : "createProjectRequest",
         "variableType" : "CreateProjectRequest",
@@ -2185,6 +2242,7 @@
         "setterDocumentation" : "/**<p> Detailed information about the created AWS Mobile Hub project. </p>\n@param details Detailed information about the created AWS Mobile Hub project.*/",
         "setterMethodName" : "setDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDetails",
           "variableName" : "details",
           "variableType" : "ProjectDetails",
@@ -2197,6 +2255,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Detailed information about the created AWS Mobile Hub project. </p>\n@param details Detailed information about the created AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDetails",
           "variableName" : "details",
           "variableType" : "ProjectDetails",
@@ -2250,6 +2309,7 @@
           "setterDocumentation" : "/**<p> Detailed information about the created AWS Mobile Hub project. </p>\n@param details Detailed information about the created AWS Mobile Hub project.*/",
           "setterMethodName" : "setDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDetails",
             "variableName" : "details",
             "variableType" : "ProjectDetails",
@@ -2262,6 +2322,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Detailed information about the created AWS Mobile Hub project. </p>\n@param details Detailed information about the created AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDetails",
             "variableName" : "details",
             "variableType" : "ProjectDetails",
@@ -2283,6 +2344,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateProjectResult",
         "variableName" : "createProjectResult",
         "variableType" : "CreateProjectResult",
@@ -2359,6 +2421,7 @@
         "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -2371,6 +2434,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -2424,6 +2488,7 @@
           "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -2436,6 +2501,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -2454,6 +2520,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectRequest",
         "variableName" : "deleteProjectRequest",
         "variableType" : "DeleteProjectRequest",
@@ -2560,6 +2627,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Resource",
               "variableName" : "member",
               "variableType" : "Resource",
@@ -2572,6 +2640,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Resource",
               "variableName" : "member",
               "variableType" : "Resource",
@@ -2601,6 +2670,7 @@
         "setterDocumentation" : "/**<p> Resources which were deleted. </p>\n@param deletedResources Resources which were deleted.*/",
         "setterMethodName" : "setDeletedResources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Resource>",
           "variableName" : "deletedResources",
           "variableType" : "java.util.List<Resource>",
@@ -2613,6 +2683,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Resources which were deleted. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeletedResources(java.util.Collection)} or {@link #withDeletedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param deletedResources Resources which were deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Resource>",
           "variableName" : "deletedResources",
           "variableType" : "java.util.List<Resource>",
@@ -2701,6 +2772,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Resource",
               "variableName" : "member",
               "variableType" : "Resource",
@@ -2713,6 +2785,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Resource",
               "variableName" : "member",
               "variableType" : "Resource",
@@ -2742,6 +2815,7 @@
         "setterDocumentation" : "/**<p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>\n@param orphanedResources Resources which were not deleted, due to a risk of losing potentially important data or files.*/",
         "setterMethodName" : "setOrphanedResources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Resource>",
           "variableName" : "orphanedResources",
           "variableType" : "java.util.List<Resource>",
@@ -2754,6 +2828,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOrphanedResources(java.util.Collection)} or {@link #withOrphanedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param orphanedResources Resources which were not deleted, due to a risk of losing potentially important data or files.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Resource>",
           "variableName" : "orphanedResources",
           "variableType" : "java.util.List<Resource>",
@@ -2844,6 +2919,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Resource",
                 "variableName" : "member",
                 "variableType" : "Resource",
@@ -2856,6 +2932,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Resource",
                 "variableName" : "member",
                 "variableType" : "Resource",
@@ -2885,6 +2962,7 @@
           "setterDocumentation" : "/**<p> Resources which were deleted. </p>\n@param deletedResources Resources which were deleted.*/",
           "setterMethodName" : "setDeletedResources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Resource>",
             "variableName" : "deletedResources",
             "variableType" : "java.util.List<Resource>",
@@ -2897,6 +2975,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Resources which were deleted. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeletedResources(java.util.Collection)} or {@link #withDeletedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param deletedResources Resources which were deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Resource>",
             "variableName" : "deletedResources",
             "variableType" : "java.util.List<Resource>",
@@ -2986,6 +3065,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Resource",
                 "variableName" : "member",
                 "variableType" : "Resource",
@@ -2998,6 +3078,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Resource",
                 "variableName" : "member",
                 "variableType" : "Resource",
@@ -3027,6 +3108,7 @@
           "setterDocumentation" : "/**<p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>\n@param orphanedResources Resources which were not deleted, due to a risk of losing potentially important data or files.*/",
           "setterMethodName" : "setOrphanedResources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Resource>",
             "variableName" : "orphanedResources",
             "variableType" : "java.util.List<Resource>",
@@ -3039,6 +3121,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOrphanedResources(java.util.Collection)} or {@link #withOrphanedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param orphanedResources Resources which were not deleted, due to a risk of losing potentially important data or files.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Resource>",
             "variableName" : "orphanedResources",
             "variableType" : "java.util.List<Resource>",
@@ -3060,6 +3143,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteProjectResult",
         "variableName" : "deleteProjectResult",
         "variableType" : "DeleteProjectResult",
@@ -3136,6 +3220,7 @@
         "setterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.*/",
         "setterMethodName" : "setBundleId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bundleId",
           "variableType" : "String",
@@ -3148,6 +3233,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bundleId",
           "variableType" : "String",
@@ -3201,6 +3287,7 @@
           "setterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.*/",
           "setterMethodName" : "setBundleId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bundleId",
             "variableType" : "String",
@@ -3213,6 +3300,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bundleId",
             "variableType" : "String",
@@ -3231,6 +3319,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBundleRequest",
         "variableName" : "describeBundleRequest",
         "variableType" : "DescribeBundleRequest",
@@ -3300,6 +3389,7 @@
         "setterDocumentation" : "/**<p> The details of the bundle. </p>\n@param details The details of the bundle.*/",
         "setterMethodName" : "setDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "BundleDetails",
           "variableName" : "details",
           "variableType" : "BundleDetails",
@@ -3312,6 +3402,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The details of the bundle. </p>\n@param details The details of the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "BundleDetails",
           "variableName" : "details",
           "variableType" : "BundleDetails",
@@ -3365,6 +3456,7 @@
           "setterDocumentation" : "/**<p> The details of the bundle. </p>\n@param details The details of the bundle.*/",
           "setterMethodName" : "setDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "BundleDetails",
             "variableName" : "details",
             "variableType" : "BundleDetails",
@@ -3377,6 +3469,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The details of the bundle. </p>\n@param details The details of the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "BundleDetails",
             "variableName" : "details",
             "variableType" : "BundleDetails",
@@ -3398,6 +3491,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeBundleResult",
         "variableName" : "describeBundleResult",
         "variableType" : "DescribeBundleResult",
@@ -3474,6 +3568,7 @@
         "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -3486,6 +3581,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -3537,6 +3633,7 @@
         "setterDocumentation" : "/**<p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>\n@param syncFromResources If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.*/",
         "setterMethodName" : "setSyncFromResources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "syncFromResources",
           "variableType" : "Boolean",
@@ -3549,6 +3646,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>\n@param syncFromResources If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "syncFromResources",
           "variableType" : "Boolean",
@@ -3602,6 +3700,7 @@
           "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -3614,6 +3713,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -3666,6 +3766,7 @@
           "setterDocumentation" : "/**<p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>\n@param syncFromResources If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.*/",
           "setterMethodName" : "setSyncFromResources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "syncFromResources",
             "variableType" : "Boolean",
@@ -3678,6 +3779,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>\n@param syncFromResources If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "syncFromResources",
             "variableType" : "Boolean",
@@ -3696,6 +3798,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectRequest",
         "variableName" : "describeProjectRequest",
         "variableType" : "DescribeProjectRequest",
@@ -3765,6 +3868,7 @@
         "setterDocumentation" : "/**\n@param details */",
         "setterMethodName" : "setDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDetails",
           "variableName" : "details",
           "variableType" : "ProjectDetails",
@@ -3777,6 +3881,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param details \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDetails",
           "variableName" : "details",
           "variableType" : "ProjectDetails",
@@ -3830,6 +3935,7 @@
           "setterDocumentation" : "/**\n@param details */",
           "setterMethodName" : "setDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDetails",
             "variableName" : "details",
             "variableType" : "ProjectDetails",
@@ -3842,6 +3948,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param details \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDetails",
             "variableName" : "details",
             "variableType" : "ProjectDetails",
@@ -3863,6 +3970,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeProjectResult",
         "variableName" : "describeProjectResult",
         "variableType" : "DescribeProjectResult",
@@ -3939,6 +4047,7 @@
         "setterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.*/",
         "setterMethodName" : "setBundleId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bundleId",
           "variableType" : "String",
@@ -3951,6 +4060,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bundleId",
           "variableType" : "String",
@@ -4002,6 +4112,7 @@
         "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -4014,6 +4125,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -4065,6 +4177,7 @@
         "setterDocumentation" : "/**<p> Developer desktop or target application platform. </p>\n@param platform Developer desktop or target application platform.\n@see Platform*/",
         "setterMethodName" : "setPlatform",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "platform",
           "variableType" : "String",
@@ -4077,6 +4190,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Developer desktop or target application platform. </p>\n@param platform Developer desktop or target application platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "platform",
           "variableType" : "String",
@@ -4130,6 +4244,7 @@
           "setterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.*/",
           "setterMethodName" : "setBundleId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bundleId",
             "variableType" : "String",
@@ -4142,6 +4257,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bundleId",
             "variableType" : "String",
@@ -4194,6 +4310,7 @@
           "setterDocumentation" : "/**<p> Developer desktop or target application platform. </p>\n@param platform Developer desktop or target application platform.\n@see Platform*/",
           "setterMethodName" : "setPlatform",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "platform",
             "variableType" : "String",
@@ -4206,6 +4323,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Developer desktop or target application platform. </p>\n@param platform Developer desktop or target application platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "platform",
             "variableType" : "String",
@@ -4258,6 +4376,7 @@
           "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -4270,6 +4389,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -4288,6 +4408,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExportBundleRequest",
         "variableName" : "exportBundleRequest",
         "variableType" : "ExportBundleRequest",
@@ -4357,6 +4478,7 @@
         "setterDocumentation" : "/**<p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>\n@param downloadUrl URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.*/",
         "setterMethodName" : "setDownloadUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "downloadUrl",
           "variableType" : "String",
@@ -4369,6 +4491,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>\n@param downloadUrl URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "downloadUrl",
           "variableType" : "String",
@@ -4422,6 +4545,7 @@
           "setterDocumentation" : "/**<p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>\n@param downloadUrl URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.*/",
           "setterMethodName" : "setDownloadUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "downloadUrl",
             "variableType" : "String",
@@ -4434,6 +4558,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>\n@param downloadUrl URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "downloadUrl",
             "variableType" : "String",
@@ -4455,6 +4580,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExportBundleResult",
         "variableName" : "exportBundleResult",
         "variableType" : "ExportBundleResult",
@@ -4531,6 +4657,7 @@
         "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -4543,6 +4670,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -4596,6 +4724,7 @@
           "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -4608,6 +4737,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -4626,6 +4756,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExportProjectRequest",
         "variableName" : "exportProjectRequest",
         "variableType" : "ExportProjectRequest",
@@ -4695,6 +4826,7 @@
         "setterDocumentation" : "/**<p> URL which can be used to download the exported project configuation file(s). </p>\n@param downloadUrl URL which can be used to download the exported project configuation file(s).*/",
         "setterMethodName" : "setDownloadUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "downloadUrl",
           "variableType" : "String",
@@ -4707,6 +4839,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> URL which can be used to download the exported project configuation file(s). </p>\n@param downloadUrl URL which can be used to download the exported project configuation file(s).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "downloadUrl",
           "variableType" : "String",
@@ -4758,6 +4891,7 @@
         "setterDocumentation" : "/**<p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>\n@param shareUrl URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.*/",
         "setterMethodName" : "setShareUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "shareUrl",
           "variableType" : "String",
@@ -4770,6 +4904,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>\n@param shareUrl URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "shareUrl",
           "variableType" : "String",
@@ -4821,6 +4956,7 @@
         "setterDocumentation" : "/**<p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>\n@param snapshotId Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.*/",
         "setterMethodName" : "setSnapshotId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snapshotId",
           "variableType" : "String",
@@ -4833,6 +4969,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>\n@param snapshotId Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snapshotId",
           "variableType" : "String",
@@ -4886,6 +5023,7 @@
           "setterDocumentation" : "/**<p> URL which can be used to download the exported project configuation file(s). </p>\n@param downloadUrl URL which can be used to download the exported project configuation file(s).*/",
           "setterMethodName" : "setDownloadUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "downloadUrl",
             "variableType" : "String",
@@ -4898,6 +5036,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> URL which can be used to download the exported project configuation file(s). </p>\n@param downloadUrl URL which can be used to download the exported project configuation file(s).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "downloadUrl",
             "variableType" : "String",
@@ -4950,6 +5089,7 @@
           "setterDocumentation" : "/**<p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>\n@param shareUrl URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.*/",
           "setterMethodName" : "setShareUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "shareUrl",
             "variableType" : "String",
@@ -4962,6 +5102,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>\n@param shareUrl URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "shareUrl",
             "variableType" : "String",
@@ -5014,6 +5155,7 @@
           "setterDocumentation" : "/**<p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>\n@param snapshotId Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.*/",
           "setterMethodName" : "setSnapshotId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snapshotId",
             "variableType" : "String",
@@ -5026,6 +5168,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>\n@param snapshotId Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snapshotId",
             "variableType" : "String",
@@ -5047,6 +5190,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExportProjectResult",
         "variableName" : "exportProjectResult",
         "variableType" : "ExportProjectResult",
@@ -5083,6 +5227,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalFailureException",
         "variableName" : "internalFailureException",
         "variableType" : "InternalFailureException",
@@ -5152,6 +5297,7 @@
         "setterDocumentation" : "/**\n@param retryAfterSeconds */",
         "setterMethodName" : "setRetryAfterSeconds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "retryAfterSeconds",
           "variableType" : "String",
@@ -5164,6 +5310,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "retryAfterSeconds",
           "variableType" : "String",
@@ -5217,6 +5364,7 @@
           "setterDocumentation" : "/**\n@param retryAfterSeconds */",
           "setterMethodName" : "setRetryAfterSeconds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "retryAfterSeconds",
             "variableType" : "String",
@@ -5229,6 +5377,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "retryAfterSeconds",
             "variableType" : "String",
@@ -5247,6 +5396,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LimitExceededException",
         "variableName" : "limitExceededException",
         "variableType" : "LimitExceededException",
@@ -5323,6 +5473,7 @@
         "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5335,6 +5486,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5386,6 +5538,7 @@
         "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>\n@param nextToken Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5398,6 +5551,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>\n@param nextToken Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5451,6 +5605,7 @@
           "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5463,6 +5618,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5515,6 +5671,7 @@
           "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>\n@param nextToken Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5527,6 +5684,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>\n@param nextToken Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5545,6 +5703,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListBundlesRequest",
         "variableName" : "listBundlesRequest",
         "variableType" : "ListBundlesRequest",
@@ -5651,6 +5810,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "BundleDetails",
               "variableName" : "member",
               "variableType" : "BundleDetails",
@@ -5663,6 +5823,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "BundleDetails",
               "variableName" : "member",
               "variableType" : "BundleDetails",
@@ -5692,6 +5853,7 @@
         "setterDocumentation" : "/**<p> A list of bundles. </p>\n@param bundleList A list of bundles.*/",
         "setterMethodName" : "setBundleList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<BundleDetails>",
           "variableName" : "bundleList",
           "variableType" : "java.util.List<BundleDetails>",
@@ -5704,6 +5866,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> A list of bundles. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleList(java.util.Collection)} or {@link #withBundleList(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleList A list of bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<BundleDetails>",
           "variableName" : "bundleList",
           "variableType" : "java.util.List<BundleDetails>",
@@ -5755,6 +5918,7 @@
         "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5767,6 +5931,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5857,6 +6022,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "BundleDetails",
                 "variableName" : "member",
                 "variableType" : "BundleDetails",
@@ -5869,6 +6035,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "BundleDetails",
                 "variableName" : "member",
                 "variableType" : "BundleDetails",
@@ -5898,6 +6065,7 @@
           "setterDocumentation" : "/**<p> A list of bundles. </p>\n@param bundleList A list of bundles.*/",
           "setterMethodName" : "setBundleList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<BundleDetails>",
             "variableName" : "bundleList",
             "variableType" : "java.util.List<BundleDetails>",
@@ -5910,6 +6078,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> A list of bundles. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleList(java.util.Collection)} or {@link #withBundleList(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleList A list of bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<BundleDetails>",
             "variableName" : "bundleList",
             "variableType" : "java.util.List<BundleDetails>",
@@ -5962,6 +6131,7 @@
           "setterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5974,6 +6144,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5995,6 +6166,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListBundlesResult",
         "variableName" : "listBundlesResult",
         "variableType" : "ListBundlesResult",
@@ -6071,6 +6243,7 @@
         "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -6083,6 +6256,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -6134,6 +6308,7 @@
         "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6146,6 +6321,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6199,6 +6375,7 @@
           "setterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6211,6 +6388,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6263,6 +6441,7 @@
           "setterDocumentation" : "/**<p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6275,6 +6454,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6293,6 +6473,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsRequest",
         "variableName" : "listProjectsRequest",
         "variableType" : "ListProjectsRequest",
@@ -6399,6 +6580,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ProjectSummary",
               "variableName" : "member",
               "variableType" : "ProjectSummary",
@@ -6411,6 +6593,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ProjectSummary",
               "variableName" : "member",
               "variableType" : "ProjectSummary",
@@ -6440,6 +6623,7 @@
         "setterDocumentation" : "/**\n@param projects */",
         "setterMethodName" : "setProjects",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ProjectSummary>",
           "variableName" : "projects",
           "variableType" : "java.util.List<ProjectSummary>",
@@ -6452,6 +6636,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ProjectSummary>",
           "variableName" : "projects",
           "variableType" : "java.util.List<ProjectSummary>",
@@ -6503,6 +6688,7 @@
         "setterDocumentation" : "/**\n@param nextToken */",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6515,6 +6701,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6568,6 +6755,7 @@
           "setterDocumentation" : "/**\n@param nextToken */",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6580,6 +6768,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6669,6 +6858,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ProjectSummary",
                 "variableName" : "member",
                 "variableType" : "ProjectSummary",
@@ -6681,6 +6871,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ProjectSummary",
                 "variableName" : "member",
                 "variableType" : "ProjectSummary",
@@ -6710,6 +6901,7 @@
           "setterDocumentation" : "/**\n@param projects */",
           "setterMethodName" : "setProjects",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ProjectSummary>",
             "variableName" : "projects",
             "variableType" : "java.util.List<ProjectSummary>",
@@ -6722,6 +6914,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ProjectSummary>",
             "variableName" : "projects",
             "variableType" : "java.util.List<ProjectSummary>",
@@ -6743,6 +6936,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListProjectsResult",
         "variableName" : "listProjectsResult",
         "variableType" : "ListProjectsResult",
@@ -6779,6 +6973,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NotFoundException",
         "variableName" : "notFoundException",
         "variableType" : "NotFoundException",
@@ -6839,6 +7034,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Platform",
         "variableName" : "platform",
         "variableType" : "Platform",
@@ -6908,6 +7104,7 @@
         "setterDocumentation" : "/**\n@param name */",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -6920,6 +7117,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -6971,6 +7169,7 @@
         "setterDocumentation" : "/**\n@param projectId */",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -6983,6 +7182,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param projectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -7034,6 +7234,7 @@
         "setterDocumentation" : "/**\n@param region */",
         "setterMethodName" : "setRegion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "region",
           "variableType" : "String",
@@ -7046,6 +7247,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "region",
           "variableType" : "String",
@@ -7097,6 +7299,7 @@
         "setterDocumentation" : "/**\n@param state \n@see ProjectState*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -7109,6 +7312,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ProjectState*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -7160,6 +7364,7 @@
         "setterDocumentation" : "/**<p> Date the project was created. </p>\n@param createdDate Date the project was created.*/",
         "setterMethodName" : "setCreatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -7172,6 +7377,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Date the project was created. </p>\n@param createdDate Date the project was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdDate",
           "variableType" : "java.util.Date",
@@ -7223,6 +7429,7 @@
         "setterDocumentation" : "/**<p> Date of the last modification of the project. </p>\n@param lastUpdatedDate Date of the last modification of the project.*/",
         "setterMethodName" : "setLastUpdatedDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastUpdatedDate",
           "variableType" : "java.util.Date",
@@ -7235,6 +7442,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Date of the last modification of the project. </p>\n@param lastUpdatedDate Date of the last modification of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastUpdatedDate",
           "variableType" : "java.util.Date",
@@ -7286,6 +7494,7 @@
         "setterDocumentation" : "/**<p> Website URL for this project in the AWS Mobile Hub console. </p>\n@param consoleUrl Website URL for this project in the AWS Mobile Hub console.*/",
         "setterMethodName" : "setConsoleUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "consoleUrl",
           "variableType" : "String",
@@ -7298,6 +7507,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Website URL for this project in the AWS Mobile Hub console. </p>\n@param consoleUrl Website URL for this project in the AWS Mobile Hub console.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "consoleUrl",
           "variableType" : "String",
@@ -7386,6 +7596,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Resource",
               "variableName" : "member",
               "variableType" : "Resource",
@@ -7398,6 +7609,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Resource",
               "variableName" : "member",
               "variableType" : "Resource",
@@ -7427,6 +7639,7 @@
         "setterDocumentation" : "/**\n@param resources */",
         "setterMethodName" : "setResources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Resource>",
           "variableName" : "resources",
           "variableType" : "java.util.List<Resource>",
@@ -7439,6 +7652,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Resource>",
           "variableName" : "resources",
           "variableType" : "java.util.List<Resource>",
@@ -7492,6 +7706,7 @@
           "setterDocumentation" : "/**<p> Website URL for this project in the AWS Mobile Hub console. </p>\n@param consoleUrl Website URL for this project in the AWS Mobile Hub console.*/",
           "setterMethodName" : "setConsoleUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "consoleUrl",
             "variableType" : "String",
@@ -7504,6 +7719,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Website URL for this project in the AWS Mobile Hub console. </p>\n@param consoleUrl Website URL for this project in the AWS Mobile Hub console.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "consoleUrl",
             "variableType" : "String",
@@ -7556,6 +7772,7 @@
           "setterDocumentation" : "/**<p> Date the project was created. </p>\n@param createdDate Date the project was created.*/",
           "setterMethodName" : "setCreatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -7568,6 +7785,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Date the project was created. </p>\n@param createdDate Date the project was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdDate",
             "variableType" : "java.util.Date",
@@ -7620,6 +7838,7 @@
           "setterDocumentation" : "/**<p> Date of the last modification of the project. </p>\n@param lastUpdatedDate Date of the last modification of the project.*/",
           "setterMethodName" : "setLastUpdatedDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastUpdatedDate",
             "variableType" : "java.util.Date",
@@ -7632,6 +7851,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Date of the last modification of the project. </p>\n@param lastUpdatedDate Date of the last modification of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastUpdatedDate",
             "variableType" : "java.util.Date",
@@ -7684,6 +7904,7 @@
           "setterDocumentation" : "/**\n@param name */",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -7696,6 +7917,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -7748,6 +7970,7 @@
           "setterDocumentation" : "/**\n@param projectId */",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -7760,6 +7983,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param projectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -7812,6 +8036,7 @@
           "setterDocumentation" : "/**\n@param region */",
           "setterMethodName" : "setRegion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "region",
             "variableType" : "String",
@@ -7824,6 +8049,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "region",
             "variableType" : "String",
@@ -7913,6 +8139,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Resource",
                 "variableName" : "member",
                 "variableType" : "Resource",
@@ -7925,6 +8152,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Resource",
                 "variableName" : "member",
                 "variableType" : "Resource",
@@ -7954,6 +8182,7 @@
           "setterDocumentation" : "/**\n@param resources */",
           "setterMethodName" : "setResources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Resource>",
             "variableName" : "resources",
             "variableType" : "java.util.List<Resource>",
@@ -7966,6 +8195,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Resource>",
             "variableName" : "resources",
             "variableType" : "java.util.List<Resource>",
@@ -8018,6 +8248,7 @@
           "setterDocumentation" : "/**\n@param state \n@see ProjectState*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -8030,6 +8261,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ProjectState*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -8051,6 +8283,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ProjectDetails",
         "variableName" : "projectDetails",
         "variableType" : "ProjectDetails",
@@ -8099,6 +8332,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ProjectState",
         "variableName" : "projectState",
         "variableType" : "ProjectState",
@@ -8168,6 +8402,7 @@
         "setterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -8180,6 +8415,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -8231,6 +8467,7 @@
         "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -8243,6 +8480,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -8296,6 +8534,7 @@
           "setterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -8308,6 +8547,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -8360,6 +8600,7 @@
           "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -8372,6 +8613,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -8393,6 +8635,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ProjectSummary",
         "variableName" : "projectSummary",
         "variableType" : "ProjectSummary",
@@ -8462,6 +8705,7 @@
         "setterDocumentation" : "/**\n@param type */",
         "setterMethodName" : "setType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -8474,6 +8718,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -8525,6 +8770,7 @@
         "setterDocumentation" : "/**\n@param name */",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -8537,6 +8783,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -8588,6 +8835,7 @@
         "setterDocumentation" : "/**\n@param arn */",
         "setterMethodName" : "setArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "arn",
           "variableType" : "String",
@@ -8600,6 +8848,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param arn \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "arn",
           "variableType" : "String",
@@ -8651,6 +8900,7 @@
         "setterDocumentation" : "/**\n@param feature */",
         "setterMethodName" : "setFeature",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "feature",
           "variableType" : "String",
@@ -8663,6 +8913,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param feature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "feature",
           "variableType" : "String",
@@ -8757,6 +9008,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -8769,6 +9021,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -8792,6 +9045,7 @@
         "setterDocumentation" : "/**\n@param attributes */",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -8804,6 +9058,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -8857,6 +9112,7 @@
           "setterDocumentation" : "/**\n@param arn */",
           "setterMethodName" : "setArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "arn",
             "variableType" : "String",
@@ -8869,6 +9125,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param arn \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "arn",
             "variableType" : "String",
@@ -8964,6 +9221,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -8976,6 +9234,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -8999,6 +9258,7 @@
           "setterDocumentation" : "/**\n@param attributes */",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -9011,6 +9271,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -9063,6 +9324,7 @@
           "setterDocumentation" : "/**\n@param feature */",
           "setterMethodName" : "setFeature",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "feature",
             "variableType" : "String",
@@ -9075,6 +9337,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param feature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "feature",
             "variableType" : "String",
@@ -9127,6 +9390,7 @@
           "setterDocumentation" : "/**\n@param name */",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -9139,6 +9403,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -9191,6 +9456,7 @@
           "setterDocumentation" : "/**\n@param type */",
           "setterMethodName" : "setType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -9203,6 +9469,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -9224,6 +9491,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Resource",
         "variableName" : "resource",
         "variableType" : "Resource",
@@ -9293,6 +9561,7 @@
         "setterDocumentation" : "/**\n@param retryAfterSeconds */",
         "setterMethodName" : "setRetryAfterSeconds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "retryAfterSeconds",
           "variableType" : "String",
@@ -9305,6 +9574,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "retryAfterSeconds",
           "variableType" : "String",
@@ -9358,6 +9628,7 @@
           "setterDocumentation" : "/**\n@param retryAfterSeconds */",
           "setterMethodName" : "setRetryAfterSeconds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "retryAfterSeconds",
             "variableType" : "String",
@@ -9370,6 +9641,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "retryAfterSeconds",
             "variableType" : "String",
@@ -9388,6 +9660,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ServiceUnavailableException",
         "variableName" : "serviceUnavailableException",
         "variableType" : "ServiceUnavailableException",
@@ -9457,6 +9730,7 @@
         "setterDocumentation" : "/**\n@param retryAfterSeconds */",
         "setterMethodName" : "setRetryAfterSeconds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "retryAfterSeconds",
           "variableType" : "String",
@@ -9469,6 +9743,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "retryAfterSeconds",
           "variableType" : "String",
@@ -9522,6 +9797,7 @@
           "setterDocumentation" : "/**\n@param retryAfterSeconds */",
           "setterMethodName" : "setRetryAfterSeconds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "retryAfterSeconds",
             "variableType" : "String",
@@ -9534,6 +9810,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "retryAfterSeconds",
             "variableType" : "String",
@@ -9552,6 +9829,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TooManyRequestsException",
         "variableName" : "tooManyRequestsException",
         "variableType" : "TooManyRequestsException",
@@ -9588,6 +9866,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnauthorizedException",
         "variableName" : "unauthorizedException",
         "variableType" : "UnauthorizedException",
@@ -9664,6 +9943,7 @@
         "setterDocumentation" : "/**<p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param contents ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.*/",
         "setterMethodName" : "setContents",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "contents",
           "variableType" : "java.nio.ByteBuffer",
@@ -9676,6 +9956,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "variableName" : "contents",
           "variableType" : "java.nio.ByteBuffer",
@@ -9727,6 +10008,7 @@
         "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
         "setterMethodName" : "setProjectId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -9739,6 +10021,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "projectId",
           "variableType" : "String",
@@ -9792,6 +10075,7 @@
           "setterDocumentation" : "/**<p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p><p>\nThe AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param contents ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.*/",
           "setterMethodName" : "setContents",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "contents",
             "variableType" : "java.nio.ByteBuffer",
@@ -9804,6 +10088,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "variableName" : "contents",
             "variableType" : "java.nio.ByteBuffer",
@@ -9856,6 +10141,7 @@
           "setterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.*/",
           "setterMethodName" : "setProjectId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -9868,6 +10154,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "projectId",
             "variableType" : "String",
@@ -9886,6 +10173,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectRequest",
         "variableName" : "updateProjectRequest",
         "variableType" : "UpdateProjectRequest",
@@ -9955,6 +10243,7 @@
         "setterDocumentation" : "/**<p> Detailed information about the updated AWS Mobile Hub project. </p>\n@param details Detailed information about the updated AWS Mobile Hub project.*/",
         "setterMethodName" : "setDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDetails",
           "variableName" : "details",
           "variableType" : "ProjectDetails",
@@ -9967,6 +10256,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Detailed information about the updated AWS Mobile Hub project. </p>\n@param details Detailed information about the updated AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ProjectDetails",
           "variableName" : "details",
           "variableType" : "ProjectDetails",
@@ -10020,6 +10310,7 @@
           "setterDocumentation" : "/**<p> Detailed information about the updated AWS Mobile Hub project. </p>\n@param details Detailed information about the updated AWS Mobile Hub project.*/",
           "setterMethodName" : "setDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDetails",
             "variableName" : "details",
             "variableType" : "ProjectDetails",
@@ -10032,6 +10323,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Detailed information about the updated AWS Mobile Hub project. </p>\n@param details Detailed information about the updated AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ProjectDetails",
             "variableName" : "details",
             "variableType" : "ProjectDetails",
@@ -10053,6 +10345,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateProjectResult",
         "variableName" : "updateProjectResult",
         "variableType" : "UpdateProjectResult",

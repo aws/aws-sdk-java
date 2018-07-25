@@ -81,7 +81,7 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    cluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

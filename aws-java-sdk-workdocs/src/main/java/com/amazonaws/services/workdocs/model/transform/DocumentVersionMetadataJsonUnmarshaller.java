@@ -74,19 +74,19 @@ public class DocumentVersionMetadataJsonUnmarshaller implements Unmarshaller<Doc
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentCreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setContentCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setContentCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setContentModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setContentModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorId", targetDepth)) {
                     context.nextToken();

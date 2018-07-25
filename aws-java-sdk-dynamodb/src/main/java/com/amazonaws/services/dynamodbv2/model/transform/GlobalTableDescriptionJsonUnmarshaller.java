@@ -59,7 +59,7 @@ public class GlobalTableDescriptionJsonUnmarshaller implements Unmarshaller<Glob
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    globalTableDescription.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    globalTableDescription.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GlobalTableStatus", targetDepth)) {
                     context.nextToken();

@@ -54,11 +54,11 @@ public class GetBulkPublishDetailsResultJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("BulkPublishStartTime", targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setBulkPublishStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBulkPublishDetailsResult.setBulkPublishStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BulkPublishCompleteTime", targetDepth)) {
                     context.nextToken();
-                    getBulkPublishDetailsResult.setBulkPublishCompleteTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBulkPublishDetailsResult.setBulkPublishCompleteTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BulkPublishStatus", targetDepth)) {
                     context.nextToken();

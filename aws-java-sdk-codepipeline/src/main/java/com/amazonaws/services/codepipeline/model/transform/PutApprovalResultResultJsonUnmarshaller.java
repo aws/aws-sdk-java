@@ -50,7 +50,7 @@ public class PutApprovalResultResultJsonUnmarshaller implements Unmarshaller<Put
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("approvedAt", targetDepth)) {
                     context.nextToken();
-                    putApprovalResultResult.setApprovedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    putApprovalResultResult.setApprovedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

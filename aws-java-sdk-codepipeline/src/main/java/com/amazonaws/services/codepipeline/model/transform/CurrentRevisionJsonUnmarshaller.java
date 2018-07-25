@@ -58,7 +58,7 @@ public class CurrentRevisionJsonUnmarshaller implements Unmarshaller<CurrentRevi
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    currentRevision.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    currentRevision.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("revisionSummary", targetDepth)) {
                     context.nextToken();

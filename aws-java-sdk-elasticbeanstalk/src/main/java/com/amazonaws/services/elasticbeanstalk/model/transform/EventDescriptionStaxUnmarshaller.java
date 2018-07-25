@@ -44,7 +44,7 @@ public class EventDescriptionStaxUnmarshaller implements Unmarshaller<EventDescr
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("EventDate", targetDepth)) {
-                    eventDescription.setEventDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    eventDescription.setEventDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

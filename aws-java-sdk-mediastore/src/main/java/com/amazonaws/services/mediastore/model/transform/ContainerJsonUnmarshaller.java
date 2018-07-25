@@ -54,7 +54,7 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    container.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    container.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
                     context.nextToken();

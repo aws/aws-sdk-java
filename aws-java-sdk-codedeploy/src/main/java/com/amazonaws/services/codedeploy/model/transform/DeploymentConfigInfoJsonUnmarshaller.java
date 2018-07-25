@@ -62,7 +62,7 @@ public class DeploymentConfigInfoJsonUnmarshaller implements Unmarshaller<Deploy
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    deploymentConfigInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deploymentConfigInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("computePlatform", targetDepth)) {
                     context.nextToken();

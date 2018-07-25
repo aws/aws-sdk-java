@@ -51,7 +51,7 @@ public class ReservedInstancesListingStaxUnmarshaller implements Unmarshaller<Re
                 }
 
                 if (context.testExpression("createDate", targetDepth)) {
-                    reservedInstancesListing.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesListing.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -106,7 +106,7 @@ public class ReservedInstancesListingStaxUnmarshaller implements Unmarshaller<Re
                 }
 
                 if (context.testExpression("updateDate", targetDepth)) {
-                    reservedInstancesListing.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesListing.setUpdateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

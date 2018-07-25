@@ -62,11 +62,11 @@ public class RecordDetailJsonUnmarshaller implements Unmarshaller<RecordDetail, 
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    recordDetail.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    recordDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
                     context.nextToken();
-                    recordDetail.setUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    recordDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedProductType", targetDepth)) {
                     context.nextToken();

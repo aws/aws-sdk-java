@@ -66,11 +66,11 @@ public class TopicsDetectionJobPropertiesJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
                     context.nextToken();
-                    topicsDetectionJobProperties.setSubmitTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    topicsDetectionJobProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    topicsDetectionJobProperties.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    topicsDetectionJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();

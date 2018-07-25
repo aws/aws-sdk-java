@@ -58,11 +58,11 @@ public class ResourceDataSyncItemJsonUnmarshaller implements Unmarshaller<Resour
                 }
                 if (context.testExpression("LastSyncTime", targetDepth)) {
                     context.nextToken();
-                    resourceDataSyncItem.setLastSyncTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resourceDataSyncItem.setLastSyncTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulSyncTime", targetDepth)) {
                     context.nextToken();
-                    resourceDataSyncItem.setLastSuccessfulSyncTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resourceDataSyncItem.setLastSuccessfulSyncTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStatus", targetDepth)) {
                     context.nextToken();
@@ -70,7 +70,7 @@ public class ResourceDataSyncItemJsonUnmarshaller implements Unmarshaller<Resour
                 }
                 if (context.testExpression("SyncCreatedTime", targetDepth)) {
                     context.nextToken();
-                    resourceDataSyncItem.setSyncCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resourceDataSyncItem.setSyncCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSyncStatusMessage", targetDepth)) {
                     context.nextToken();

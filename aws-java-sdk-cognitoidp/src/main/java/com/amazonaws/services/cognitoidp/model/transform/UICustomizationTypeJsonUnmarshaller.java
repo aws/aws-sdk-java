@@ -70,11 +70,11 @@ public class UICustomizationTypeJsonUnmarshaller implements Unmarshaller<UICusto
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    uICustomizationType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    uICustomizationType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    uICustomizationType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    uICustomizationType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

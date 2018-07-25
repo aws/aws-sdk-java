@@ -90,15 +90,15 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    job.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    job.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
                     context.nextToken();
-                    job.setCompletedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setCompletedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("jobProcessDetails", targetDepth)) {
                     context.nextToken();

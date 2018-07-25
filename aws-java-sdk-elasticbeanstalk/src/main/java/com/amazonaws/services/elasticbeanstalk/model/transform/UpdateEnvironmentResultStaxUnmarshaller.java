@@ -96,12 +96,12 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    updateEnvironmentResult.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    updateEnvironmentResult.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    updateEnvironmentResult.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    updateEnvironmentResult.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

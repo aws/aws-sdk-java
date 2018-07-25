@@ -66,11 +66,11 @@ public class HandshakeJsonUnmarshaller implements Unmarshaller<Handshake, JsonUn
                 }
                 if (context.testExpression("RequestedTimestamp", targetDepth)) {
                     context.nextToken();
-                    handshake.setRequestedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    handshake.setRequestedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTimestamp", targetDepth)) {
                     context.nextToken();
-                    handshake.setExpirationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    handshake.setExpirationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();

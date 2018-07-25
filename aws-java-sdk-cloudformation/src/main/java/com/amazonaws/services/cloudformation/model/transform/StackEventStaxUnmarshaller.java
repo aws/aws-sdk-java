@@ -74,7 +74,7 @@ public class StackEventStaxUnmarshaller implements Unmarshaller<StackEvent, Stax
                 }
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    stackEvent.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackEvent.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

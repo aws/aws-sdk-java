@@ -58,11 +58,11 @@ public class XMLClassifierJsonUnmarshaller implements Unmarshaller<XMLClassifier
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    xMLClassifier.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    xMLClassifier.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
                     context.nextToken();
-                    xMLClassifier.setLastUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    xMLClassifier.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

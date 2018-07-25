@@ -62,7 +62,7 @@ public class KeyMetadataJsonUnmarshaller implements Unmarshaller<KeyMetadata, Js
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    keyMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
@@ -82,11 +82,11 @@ public class KeyMetadataJsonUnmarshaller implements Unmarshaller<KeyMetadata, Js
                 }
                 if (context.testExpression("DeletionDate", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setDeletionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    keyMetadata.setDeletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ValidTo", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setValidTo(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    keyMetadata.setValidTo(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Origin", targetDepth)) {
                     context.nextToken();

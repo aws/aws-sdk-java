@@ -62,7 +62,7 @@ public class WorkflowExecutionDetailJsonUnmarshaller implements Unmarshaller<Wor
                 }
                 if (context.testExpression("latestActivityTaskTimestamp", targetDepth)) {
                     context.nextToken();
-                    workflowExecutionDetail.setLatestActivityTaskTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workflowExecutionDetail.setLatestActivityTaskTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("latestExecutionContext", targetDepth)) {
                     context.nextToken();

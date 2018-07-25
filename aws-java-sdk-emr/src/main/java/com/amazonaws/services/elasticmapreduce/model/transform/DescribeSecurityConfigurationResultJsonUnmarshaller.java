@@ -58,7 +58,7 @@ public class DescribeSecurityConfigurationResultJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    describeSecurityConfigurationResult.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeSecurityConfigurationResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

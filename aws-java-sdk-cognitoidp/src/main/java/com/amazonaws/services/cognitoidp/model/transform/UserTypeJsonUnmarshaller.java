@@ -58,11 +58,11 @@ public class UserTypeJsonUnmarshaller implements Unmarshaller<UserType, JsonUnma
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
                     context.nextToken();
-                    userType.setUserCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userType.setUserCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UserLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    userType.setUserLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userType.setUserLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();

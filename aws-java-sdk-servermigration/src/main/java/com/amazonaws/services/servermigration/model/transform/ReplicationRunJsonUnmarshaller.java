@@ -70,11 +70,11 @@ public class ReplicationRunJsonUnmarshaller implements Unmarshaller<ReplicationR
                 }
                 if (context.testExpression("scheduledStartTime", targetDepth)) {
                     context.nextToken();
-                    replicationRun.setScheduledStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationRun.setScheduledStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedTime", targetDepth)) {
                     context.nextToken();
-                    replicationRun.setCompletedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationRun.setCompletedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();

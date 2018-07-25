@@ -66,11 +66,11 @@ public class UserPoolDescriptionTypeJsonUnmarshaller implements Unmarshaller<Use
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    userPoolDescriptionType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userPoolDescriptionType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    userPoolDescriptionType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userPoolDescriptionType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

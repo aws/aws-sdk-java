@@ -51,7 +51,7 @@ public class VpcPeeringConnectionStaxUnmarshaller implements Unmarshaller<VpcPee
                 }
 
                 if (context.testExpression("expirationTime", targetDepth)) {
-                    vpcPeeringConnection.setExpirationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    vpcPeeringConnection.setExpirationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

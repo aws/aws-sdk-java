@@ -50,7 +50,7 @@ public class UpdateStateMachineResultJsonUnmarshaller implements Unmarshaller<Up
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("updateDate", targetDepth)) {
                     context.nextToken();
-                    updateStateMachineResult.setUpdateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updateStateMachineResult.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

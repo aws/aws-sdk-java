@@ -90,11 +90,11 @@ public class ReplicationTaskJsonUnmarshaller implements Unmarshaller<Replication
                 }
                 if (context.testExpression("ReplicationTaskCreationDate", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationTask.setReplicationTaskCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskStartDate", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setReplicationTaskStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationTask.setReplicationTaskStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CdcStartPosition", targetDepth)) {
                     context.nextToken();

@@ -66,7 +66,7 @@ public class ReservedElasticsearchInstanceJsonUnmarshaller implements Unmarshall
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    reservedElasticsearchInstance.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    reservedElasticsearchInstance.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
                     context.nextToken();

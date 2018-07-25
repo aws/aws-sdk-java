@@ -54,7 +54,7 @@ public class CacheNodeStaxUnmarshaller implements Unmarshaller<CacheNode, StaxUn
                 }
 
                 if (context.testExpression("CacheNodeCreateTime", targetDepth)) {
-                    cacheNode.setCacheNodeCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    cacheNode.setCacheNodeCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

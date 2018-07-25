@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -93,6 +93,7 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePlaybackConfigurationRequest",
         "variableName" : "deletePlaybackConfigurationRequest",
         "variableType" : "DeletePlaybackConfigurationRequest",
@@ -120,6 +121,7 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPlaybackConfigurationRequest",
         "variableName" : "getPlaybackConfigurationRequest",
         "variableType" : "GetPlaybackConfigurationRequest",
@@ -147,6 +149,7 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPlaybackConfigurationsRequest",
         "variableName" : "listPlaybackConfigurationsRequest",
         "variableType" : "ListPlaybackConfigurationsRequest",
@@ -174,6 +177,7 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutPlaybackConfigurationRequest",
         "variableName" : "putPlaybackConfigurationRequest",
         "variableType" : "PutPlaybackConfigurationRequest",
@@ -252,6 +256,7 @@
         "setterDocumentation" : "/**<p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>\n@param adSegmentUrlPrefix A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.*/",
         "setterMethodName" : "setAdSegmentUrlPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adSegmentUrlPrefix",
           "variableType" : "String",
@@ -264,6 +269,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>\n@param adSegmentUrlPrefix A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adSegmentUrlPrefix",
           "variableType" : "String",
@@ -315,6 +321,7 @@
         "setterDocumentation" : "/**<p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>\n@param contentSegmentUrlPrefix A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.*/",
         "setterMethodName" : "setContentSegmentUrlPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentSegmentUrlPrefix",
           "variableType" : "String",
@@ -327,6 +334,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>\n@param contentSegmentUrlPrefix A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentSegmentUrlPrefix",
           "variableType" : "String",
@@ -380,6 +388,7 @@
           "setterDocumentation" : "/**<p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>\n@param adSegmentUrlPrefix A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.*/",
           "setterMethodName" : "setAdSegmentUrlPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adSegmentUrlPrefix",
             "variableType" : "String",
@@ -392,6 +401,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>\n@param adSegmentUrlPrefix A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adSegmentUrlPrefix",
             "variableType" : "String",
@@ -444,6 +454,7 @@
           "setterDocumentation" : "/**<p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>\n@param contentSegmentUrlPrefix A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.*/",
           "setterMethodName" : "setContentSegmentUrlPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentSegmentUrlPrefix",
             "variableType" : "String",
@@ -456,6 +467,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>\n@param contentSegmentUrlPrefix A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentSegmentUrlPrefix",
             "variableType" : "String",
@@ -477,6 +489,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CdnConfiguration",
         "variableName" : "cdnConfiguration",
         "variableType" : "CdnConfiguration",
@@ -553,6 +566,7 @@
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -565,6 +579,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -618,6 +633,7 @@
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -630,6 +646,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -648,6 +665,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePlaybackConfigurationRequest",
         "variableName" : "deletePlaybackConfigurationRequest",
         "variableType" : "DeletePlaybackConfigurationRequest",
@@ -687,6 +705,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePlaybackConfigurationResult",
         "variableName" : "deletePlaybackConfigurationResult",
         "variableType" : "DeletePlaybackConfigurationResult",
@@ -763,6 +782,7 @@
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -775,6 +795,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -828,6 +849,7 @@
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -840,6 +862,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -858,6 +881,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPlaybackConfigurationRequest",
         "variableName" : "getPlaybackConfigurationRequest",
         "variableType" : "GetPlaybackConfigurationRequest",
@@ -927,6 +951,7 @@
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -939,6 +964,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -990,6 +1016,7 @@
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -1002,6 +1029,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -1053,6 +1081,7 @@
         "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
         "setterMethodName" : "setHlsConfiguration",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "HlsConfiguration",
           "variableName" : "hlsConfiguration",
           "variableType" : "HlsConfiguration",
@@ -1065,6 +1094,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "HlsConfiguration",
           "variableName" : "hlsConfiguration",
           "variableType" : "HlsConfiguration",
@@ -1116,6 +1146,7 @@
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -1128,6 +1159,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -1179,6 +1211,7 @@
         "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
         "setterMethodName" : "setPlaybackEndpointPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "playbackEndpointPrefix",
           "variableType" : "String",
@@ -1191,6 +1224,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "playbackEndpointPrefix",
           "variableType" : "String",
@@ -1242,6 +1276,7 @@
         "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
         "setterMethodName" : "setSessionInitializationEndpointPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sessionInitializationEndpointPrefix",
           "variableType" : "String",
@@ -1254,6 +1289,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sessionInitializationEndpointPrefix",
           "variableType" : "String",
@@ -1305,6 +1341,7 @@
         "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -1317,6 +1354,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -1368,6 +1406,7 @@
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -1380,6 +1419,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -1433,6 +1473,7 @@
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -1445,6 +1486,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -1497,6 +1539,7 @@
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -1509,6 +1552,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -1561,6 +1605,7 @@
           "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
           "setterMethodName" : "setHlsConfiguration",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "HlsConfiguration",
             "variableName" : "hlsConfiguration",
             "variableType" : "HlsConfiguration",
@@ -1573,6 +1618,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "HlsConfiguration",
             "variableName" : "hlsConfiguration",
             "variableType" : "HlsConfiguration",
@@ -1625,6 +1671,7 @@
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1637,6 +1684,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1689,6 +1737,7 @@
           "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
           "setterMethodName" : "setPlaybackEndpointPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "playbackEndpointPrefix",
             "variableType" : "String",
@@ -1701,6 +1750,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "playbackEndpointPrefix",
             "variableType" : "String",
@@ -1753,6 +1803,7 @@
           "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
           "setterMethodName" : "setSessionInitializationEndpointPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sessionInitializationEndpointPrefix",
             "variableType" : "String",
@@ -1765,6 +1816,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sessionInitializationEndpointPrefix",
             "variableType" : "String",
@@ -1817,6 +1869,7 @@
           "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -1829,6 +1882,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -1881,6 +1935,7 @@
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -1893,6 +1948,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -1914,6 +1970,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPlaybackConfigurationResult",
         "variableName" : "getPlaybackConfigurationResult",
         "variableType" : "GetPlaybackConfigurationResult",
@@ -1983,6 +2040,7 @@
         "setterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.*/",
         "setterMethodName" : "setManifestEndpointPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifestEndpointPrefix",
           "variableType" : "String",
@@ -1995,6 +2053,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifestEndpointPrefix",
           "variableType" : "String",
@@ -2048,6 +2107,7 @@
           "setterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.*/",
           "setterMethodName" : "setManifestEndpointPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifestEndpointPrefix",
             "variableType" : "String",
@@ -2060,6 +2120,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>\n@param manifestEndpointPrefix The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifestEndpointPrefix",
             "variableType" : "String",
@@ -2081,6 +2142,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "HlsConfiguration",
         "variableName" : "hlsConfiguration",
         "variableType" : "HlsConfiguration",
@@ -2157,6 +2219,7 @@
         "setterDocumentation" : "/**<p>Maximum number of records to return. </p>\n@param maxResults Maximum number of records to return.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -2169,6 +2232,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Maximum number of records to return. </p>\n@param maxResults Maximum number of records to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -2220,6 +2284,7 @@
         "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2232,6 +2297,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2285,6 +2351,7 @@
           "setterDocumentation" : "/**<p>Maximum number of records to return. </p>\n@param maxResults Maximum number of records to return.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -2297,6 +2364,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Maximum number of records to return. </p>\n@param maxResults Maximum number of records to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -2349,6 +2417,7 @@
           "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2361,6 +2430,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2379,6 +2449,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPlaybackConfigurationsRequest",
         "variableName" : "listPlaybackConfigurationsRequest",
         "variableType" : "ListPlaybackConfigurationsRequest",
@@ -2485,6 +2556,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PlaybackConfiguration",
               "variableName" : "member",
               "variableType" : "PlaybackConfiguration",
@@ -2497,6 +2569,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PlaybackConfiguration",
               "variableName" : "member",
               "variableType" : "PlaybackConfiguration",
@@ -2526,6 +2599,7 @@
         "setterDocumentation" : "/**<p>Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored. </p>\n@param items Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PlaybackConfiguration>",
           "variableName" : "items",
           "variableType" : "java.util.List<PlaybackConfiguration>",
@@ -2538,6 +2612,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PlaybackConfiguration>",
           "variableName" : "items",
           "variableType" : "java.util.List<PlaybackConfiguration>",
@@ -2589,6 +2664,7 @@
         "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2601,6 +2677,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -2691,6 +2768,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PlaybackConfiguration",
                 "variableName" : "member",
                 "variableType" : "PlaybackConfiguration",
@@ -2703,6 +2781,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PlaybackConfiguration",
                 "variableName" : "member",
                 "variableType" : "PlaybackConfiguration",
@@ -2732,6 +2811,7 @@
           "setterDocumentation" : "/**<p>Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored. </p>\n@param items Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PlaybackConfiguration>",
             "variableName" : "items",
             "variableType" : "java.util.List<PlaybackConfiguration>",
@@ -2744,6 +2824,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items Array of playback configurations. This may be all of the available configurations or a subset, depending on the settings you provide and on the total number of configurations stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PlaybackConfiguration>",
             "variableName" : "items",
             "variableType" : "java.util.List<PlaybackConfiguration>",
@@ -2796,6 +2877,7 @@
           "setterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2808,6 +2890,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.</p>\n@param nextToken Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to fetch the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -2829,6 +2912,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPlaybackConfigurationsResult",
         "variableName" : "listPlaybackConfigurationsResult",
         "variableType" : "ListPlaybackConfigurationsResult",
@@ -2898,6 +2982,7 @@
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -2910,6 +2995,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -2961,6 +3047,7 @@
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -2973,6 +3060,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -3024,6 +3112,7 @@
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3036,6 +3125,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3087,6 +3177,7 @@
         "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -3099,6 +3190,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -3150,6 +3242,7 @@
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -3162,6 +3255,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -3215,6 +3309,7 @@
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -3227,6 +3322,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -3279,6 +3375,7 @@
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -3291,6 +3388,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -3343,6 +3441,7 @@
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -3355,6 +3454,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -3407,6 +3507,7 @@
           "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -3419,6 +3520,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -3471,6 +3573,7 @@
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -3483,6 +3586,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -3504,6 +3608,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PlaybackConfiguration",
         "variableName" : "playbackConfiguration",
         "variableType" : "PlaybackConfiguration",
@@ -3580,6 +3685,7 @@
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -3592,6 +3698,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -3643,6 +3750,7 @@
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -3655,6 +3763,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -3706,6 +3815,7 @@
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3718,6 +3828,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3769,6 +3880,7 @@
         "setterDocumentation" : "/**<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -3781,6 +3893,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -3832,6 +3945,7 @@
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -3844,6 +3958,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -3897,6 +4012,7 @@
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -3909,6 +4025,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -3961,6 +4078,7 @@
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -3973,6 +4091,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -4025,6 +4144,7 @@
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -4037,6 +4157,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -4089,6 +4210,7 @@
           "setterDocumentation" : "/**<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -4101,6 +4223,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -4153,6 +4276,7 @@
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -4165,6 +4289,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -4183,6 +4308,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutPlaybackConfigurationRequest",
         "variableName" : "putPlaybackConfigurationRequest",
         "variableType" : "PutPlaybackConfigurationRequest",
@@ -4252,6 +4378,7 @@
         "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
         "setterMethodName" : "setAdDecisionServerUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -4264,6 +4391,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adDecisionServerUrl",
           "variableType" : "String",
@@ -4315,6 +4443,7 @@
         "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
         "setterMethodName" : "setCdnConfiguration",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -4327,6 +4456,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "CdnConfiguration",
           "variableName" : "cdnConfiguration",
           "variableType" : "CdnConfiguration",
@@ -4378,6 +4508,7 @@
         "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
         "setterMethodName" : "setHlsConfiguration",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "HlsConfiguration",
           "variableName" : "hlsConfiguration",
           "variableType" : "HlsConfiguration",
@@ -4390,6 +4521,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "HlsConfiguration",
           "variableName" : "hlsConfiguration",
           "variableType" : "HlsConfiguration",
@@ -4441,6 +4573,7 @@
         "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -4453,6 +4586,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -4504,6 +4638,7 @@
         "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
         "setterMethodName" : "setPlaybackEndpointPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "playbackEndpointPrefix",
           "variableType" : "String",
@@ -4516,6 +4651,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "playbackEndpointPrefix",
           "variableType" : "String",
@@ -4567,6 +4703,7 @@
         "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
         "setterMethodName" : "setSessionInitializationEndpointPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sessionInitializationEndpointPrefix",
           "variableType" : "String",
@@ -4579,6 +4716,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sessionInitializationEndpointPrefix",
           "variableType" : "String",
@@ -4630,6 +4768,7 @@
         "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
         "setterMethodName" : "setSlateAdUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -4642,6 +4781,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "slateAdUrl",
           "variableType" : "String",
@@ -4693,6 +4833,7 @@
         "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
         "setterMethodName" : "setVideoContentSourceUrl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -4705,6 +4846,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "videoContentSourceUrl",
           "variableType" : "String",
@@ -4758,6 +4900,7 @@
           "setterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.*/",
           "setterMethodName" : "setAdDecisionServerUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -4770,6 +4913,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.</p>\n@param adDecisionServerUrl The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adDecisionServerUrl",
             "variableType" : "String",
@@ -4822,6 +4966,7 @@
           "setterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.*/",
           "setterMethodName" : "setCdnConfiguration",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -4834,6 +4979,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. </p>\n@param cdnConfiguration The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "CdnConfiguration",
             "variableName" : "cdnConfiguration",
             "variableType" : "CdnConfiguration",
@@ -4886,6 +5032,7 @@
           "setterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.*/",
           "setterMethodName" : "setHlsConfiguration",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "HlsConfiguration",
             "variableName" : "hlsConfiguration",
             "variableType" : "HlsConfiguration",
@@ -4898,6 +5045,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration for HLS content. </p>\n@param hlsConfiguration The configuration for HLS content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "HlsConfiguration",
             "variableName" : "hlsConfiguration",
             "variableType" : "HlsConfiguration",
@@ -4950,6 +5098,7 @@
           "setterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -4962,6 +5111,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the configuration.</p>\n@param name The identifier for the configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -5014,6 +5164,7 @@
           "setterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.*/",
           "setterMethodName" : "setPlaybackEndpointPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "playbackEndpointPrefix",
             "variableType" : "String",
@@ -5026,6 +5177,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. </p>\n@param playbackEndpointPrefix The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "playbackEndpointPrefix",
             "variableType" : "String",
@@ -5078,6 +5230,7 @@
           "setterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.*/",
           "setterMethodName" : "setSessionInitializationEndpointPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sessionInitializationEndpointPrefix",
             "variableType" : "String",
@@ -5090,6 +5243,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL that the player uses to initialize a session that uses client-side reporting. </p>\n@param sessionInitializationEndpointPrefix The URL that the player uses to initialize a session that uses client-side reporting.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sessionInitializationEndpointPrefix",
             "variableType" : "String",
@@ -5142,6 +5296,7 @@
           "setterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.*/",
           "setterMethodName" : "setSlateAdUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -5154,6 +5309,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. </p>\n@param slateAdUrl URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "slateAdUrl",
             "variableType" : "String",
@@ -5206,6 +5362,7 @@
           "setterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.*/",
           "setterMethodName" : "setVideoContentSourceUrl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -5218,6 +5375,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.</p>\n@param videoContentSourceUrl The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "videoContentSourceUrl",
             "variableType" : "String",
@@ -5239,6 +5397,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutPlaybackConfigurationResult",
         "variableName" : "putPlaybackConfigurationResult",
         "variableType" : "PutPlaybackConfigurationResult",

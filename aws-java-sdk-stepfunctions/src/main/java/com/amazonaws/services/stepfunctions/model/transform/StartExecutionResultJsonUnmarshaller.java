@@ -54,7 +54,7 @@ public class StartExecutionResultJsonUnmarshaller implements Unmarshaller<StartE
                 }
                 if (context.testExpression("startDate", targetDepth)) {
                     context.nextToken();
-                    startExecutionResult.setStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    startExecutionResult.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

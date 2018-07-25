@@ -66,7 +66,7 @@ public class StreamDescriptionSummaryJsonUnmarshaller implements Unmarshaller<St
                 }
                 if (context.testExpression("StreamCreationTimestamp", targetDepth)) {
                     context.nextToken();
-                    streamDescriptionSummary.setStreamCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    streamDescriptionSummary.setStreamCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
                     context.nextToken();

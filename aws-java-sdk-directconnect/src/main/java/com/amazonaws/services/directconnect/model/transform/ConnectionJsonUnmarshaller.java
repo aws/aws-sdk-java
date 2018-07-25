@@ -86,7 +86,7 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    connection.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    connection.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
                     context.nextToken();

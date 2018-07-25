@@ -64,12 +64,12 @@ public class ServerCertificateMetadataStaxUnmarshaller implements Unmarshaller<S
                 }
 
                 if (context.testExpression("UploadDate", targetDepth)) {
-                    serverCertificateMetadata.setUploadDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    serverCertificateMetadata.setUploadDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Expiration", targetDepth)) {
-                    serverCertificateMetadata.setExpiration(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    serverCertificateMetadata.setExpiration(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

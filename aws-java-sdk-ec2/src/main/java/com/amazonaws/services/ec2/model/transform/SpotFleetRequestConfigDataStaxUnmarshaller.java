@@ -121,12 +121,12 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                 }
 
                 if (context.testExpression("validFrom", targetDepth)) {
-                    spotFleetRequestConfigData.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotFleetRequestConfigData.setValidFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("validUntil", targetDepth)) {
-                    spotFleetRequestConfigData.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotFleetRequestConfigData.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

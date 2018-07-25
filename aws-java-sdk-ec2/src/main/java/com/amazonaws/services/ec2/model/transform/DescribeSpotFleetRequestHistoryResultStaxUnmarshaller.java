@@ -56,7 +56,7 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Un
                 }
 
                 if (context.testExpression("lastEvaluatedTime", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setLastEvaluatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeSpotFleetRequestHistoryResult.setLastEvaluatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -71,7 +71,7 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Un
                 }
 
                 if (context.testExpression("startTime", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeSpotFleetRequestHistoryResult.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

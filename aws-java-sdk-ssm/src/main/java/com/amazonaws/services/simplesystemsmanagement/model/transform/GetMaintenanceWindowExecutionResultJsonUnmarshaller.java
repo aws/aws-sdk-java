@@ -66,11 +66,11 @@ public class GetMaintenanceWindowExecutionResultJsonUnmarshaller implements Unma
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    getMaintenanceWindowExecutionResult.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMaintenanceWindowExecutionResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    getMaintenanceWindowExecutionResult.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMaintenanceWindowExecutionResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

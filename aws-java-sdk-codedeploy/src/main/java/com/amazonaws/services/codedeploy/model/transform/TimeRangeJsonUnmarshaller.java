@@ -50,11 +50,11 @@ public class TimeRangeJsonUnmarshaller implements Unmarshaller<TimeRange, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("start", targetDepth)) {
                     context.nextToken();
-                    timeRange.setStart(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timeRange.setStart(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("end", targetDepth)) {
                     context.nextToken();
-                    timeRange.setEnd(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timeRange.setEnd(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

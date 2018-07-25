@@ -62,7 +62,7 @@ public class FileSystemDescriptionJsonUnmarshaller implements Unmarshaller<FileS
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    fileSystemDescription.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fileSystemDescription.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
                     context.nextToken();

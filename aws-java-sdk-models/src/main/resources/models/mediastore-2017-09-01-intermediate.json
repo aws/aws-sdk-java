@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -105,6 +105,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateContainerRequest",
         "variableName" : "createContainerRequest",
         "variableType" : "CreateContainerRequest",
@@ -144,6 +145,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContainerRequest",
         "variableName" : "deleteContainerRequest",
         "variableType" : "DeleteContainerRequest",
@@ -187,6 +189,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContainerPolicyRequest",
         "variableName" : "deleteContainerPolicyRequest",
         "variableType" : "DeleteContainerPolicyRequest",
@@ -230,6 +233,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteCorsPolicyRequest",
         "variableName" : "deleteCorsPolicyRequest",
         "variableType" : "DeleteCorsPolicyRequest",
@@ -265,6 +269,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeContainerRequest",
         "variableName" : "describeContainerRequest",
         "variableType" : "DescribeContainerRequest",
@@ -308,6 +313,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetContainerPolicyRequest",
         "variableName" : "getContainerPolicyRequest",
         "variableType" : "GetContainerPolicyRequest",
@@ -351,6 +357,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetCorsPolicyRequest",
         "variableName" : "getCorsPolicyRequest",
         "variableType" : "GetCorsPolicyRequest",
@@ -382,6 +389,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListContainersRequest",
         "variableName" : "listContainersRequest",
         "variableType" : "ListContainersRequest",
@@ -421,6 +429,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutContainerPolicyRequest",
         "variableName" : "putContainerPolicyRequest",
         "variableType" : "PutContainerPolicyRequest",
@@ -460,6 +469,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutCorsPolicyRequest",
         "variableName" : "putCorsPolicyRequest",
         "variableType" : "PutCorsPolicyRequest",
@@ -538,6 +548,7 @@
         "setterDocumentation" : "/**<p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>\n@param endpoint The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.*/",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "endpoint",
           "variableType" : "String",
@@ -550,6 +561,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>\n@param endpoint The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "endpoint",
           "variableType" : "String",
@@ -601,6 +613,7 @@
         "setterDocumentation" : "/**<p>Unix timestamp.</p>\n@param creationTime Unix timestamp.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
@@ -613,6 +626,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unix timestamp.</p>\n@param creationTime Unix timestamp.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
@@ -664,6 +678,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>\n@param aRN The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies*/",
         "setterMethodName" : "setARN",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aRN",
           "variableType" : "String",
@@ -676,6 +691,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>\n@param aRN The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aRN",
           "variableType" : "String",
@@ -727,6 +743,7 @@
         "setterDocumentation" : "/**<p>The name of the container.</p>\n@param name The name of the container.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -739,6 +756,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container.</p>\n@param name The name of the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -790,6 +808,7 @@
         "setterDocumentation" : "/**<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>\n@param status The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.\n@see ContainerStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -802,6 +821,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>\n@param status The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ContainerStatus*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -855,6 +875,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>\n@param aRN The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies*/",
           "setterMethodName" : "setARN",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aRN",
             "variableType" : "String",
@@ -867,6 +888,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>\n@param aRN The Amazon Resource Name (ARN) of the container. The ARN has the following format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt; </p> <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aRN",
             "variableType" : "String",
@@ -919,6 +941,7 @@
           "setterDocumentation" : "/**<p>Unix timestamp.</p>\n@param creationTime Unix timestamp.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
@@ -931,6 +954,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unix timestamp.</p>\n@param creationTime Unix timestamp.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
@@ -983,6 +1007,7 @@
           "setterDocumentation" : "/**<p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>\n@param endpoint The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.*/",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "endpoint",
             "variableType" : "String",
@@ -995,6 +1020,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.</p>\n@param endpoint The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "endpoint",
             "variableType" : "String",
@@ -1047,6 +1073,7 @@
           "setterDocumentation" : "/**<p>The name of the container.</p>\n@param name The name of the container.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1059,6 +1086,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container.</p>\n@param name The name of the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1111,6 +1139,7 @@
           "setterDocumentation" : "/**<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>\n@param status The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.\n@see ContainerStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -1123,6 +1152,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>\n@param status The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ContainerStatus*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -1144,6 +1174,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Container",
         "variableName" : "container",
         "variableType" : "Container",
@@ -1180,6 +1211,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ContainerInUseException",
         "variableName" : "containerInUseException",
         "variableType" : "ContainerInUseException",
@@ -1216,6 +1248,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ContainerNotFoundException",
         "variableName" : "containerNotFoundException",
         "variableType" : "ContainerNotFoundException",
@@ -1264,6 +1297,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ContainerStatus",
         "variableName" : "containerStatus",
         "variableType" : "ContainerStatus",
@@ -1300,6 +1334,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CorsPolicyNotFoundException",
         "variableName" : "corsPolicyNotFoundException",
         "variableType" : "CorsPolicyNotFoundException",
@@ -1406,6 +1441,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1418,6 +1454,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1447,6 +1484,7 @@
         "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
         "setterMethodName" : "setAllowedOrigins",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedOrigins",
           "variableType" : "java.util.List<String>",
@@ -1459,6 +1497,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedOrigins(java.util.Collection)} or {@link #withAllowedOrigins(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedOrigins",
           "variableType" : "java.util.List<String>",
@@ -1547,6 +1586,7 @@
             "setterDocumentation" : "/**\n@param member \n@see MethodName*/",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1559,6 +1599,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1588,6 +1629,7 @@
         "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
         "setterMethodName" : "setAllowedMethods",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedMethods",
           "variableType" : "java.util.List<String>",
@@ -1600,6 +1642,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedMethods(java.util.Collection)} or {@link #withAllowedMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedMethods",
           "variableType" : "java.util.List<String>",
@@ -1688,6 +1731,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1700,6 +1744,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1729,6 +1774,7 @@
         "setterDocumentation" : "/**<p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).</p>\n@param allowedHeaders Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).*/",
         "setterMethodName" : "setAllowedHeaders",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedHeaders",
           "variableType" : "java.util.List<String>",
@@ -1741,6 +1787,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedHeaders(java.util.Collection)} or {@link #withAllowedHeaders(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedHeaders Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "allowedHeaders",
           "variableType" : "java.util.List<String>",
@@ -1792,6 +1839,7 @@
         "setterDocumentation" : "/**<p>The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>\n@param maxAgeSeconds The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.*/",
         "setterMethodName" : "setMaxAgeSeconds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxAgeSeconds",
           "variableType" : "Integer",
@@ -1804,6 +1852,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>\n@param maxAgeSeconds The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxAgeSeconds",
           "variableType" : "Integer",
@@ -1892,6 +1941,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1904,6 +1954,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -1933,6 +1984,7 @@
         "setterDocumentation" : "/**<p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.</p>\n@param exposeHeaders One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.*/",
         "setterMethodName" : "setExposeHeaders",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "exposeHeaders",
           "variableType" : "java.util.List<String>",
@@ -1945,6 +1997,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExposeHeaders(java.util.Collection)} or {@link #withExposeHeaders(java.util.Collection)} if you want to override the existing values.</p>\n@param exposeHeaders One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "exposeHeaders",
           "variableType" : "java.util.List<String>",
@@ -2035,6 +2088,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2047,6 +2101,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2076,6 +2131,7 @@
           "setterDocumentation" : "/**<p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).</p>\n@param allowedHeaders Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).*/",
           "setterMethodName" : "setAllowedHeaders",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedHeaders",
             "variableType" : "java.util.List<String>",
@@ -2088,6 +2144,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedHeaders(java.util.Collection)} or {@link #withAllowedHeaders(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedHeaders Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through the <code>Access-Control-Request-Headers</code> header. Each header name that is specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in the rule. Only the headers that were requested are sent back. </p> <p>This element can contain only one wildcard character (*).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedHeaders",
             "variableType" : "java.util.List<String>",
@@ -2177,6 +2234,7 @@
               "setterDocumentation" : "/**\n@param member \n@see MethodName*/",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2189,6 +2247,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2218,6 +2277,7 @@
           "setterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@see MethodName*/",
           "setterMethodName" : "setAllowedMethods",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedMethods",
             "variableType" : "java.util.List<String>",
@@ -2230,6 +2290,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedMethods(java.util.Collection)} or {@link #withAllowedMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedMethods Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MethodName*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedMethods",
             "variableType" : "java.util.List<String>",
@@ -2319,6 +2380,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2331,6 +2393,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2360,6 +2423,7 @@
           "setterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.*/",
           "setterMethodName" : "setAllowedOrigins",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedOrigins",
             "variableType" : "java.util.List<String>",
@@ -2372,6 +2436,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAllowedOrigins(java.util.Collection)} or {@link #withAllowedOrigins(java.util.Collection)} if you want to override the existing values.</p>\n@param allowedOrigins One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "allowedOrigins",
             "variableType" : "java.util.List<String>",
@@ -2461,6 +2526,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2473,6 +2539,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -2502,6 +2569,7 @@
           "setterDocumentation" : "/**<p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.</p>\n@param exposeHeaders One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.*/",
           "setterMethodName" : "setExposeHeaders",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "exposeHeaders",
             "variableType" : "java.util.List<String>",
@@ -2514,6 +2582,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExposeHeaders(java.util.Collection)} or {@link #withExposeHeaders(java.util.Collection)} if you want to override the existing values.</p>\n@param exposeHeaders One or more headers in the response that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>This element is optional for each rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "exposeHeaders",
             "variableType" : "java.util.List<String>",
@@ -2566,6 +2635,7 @@
           "setterDocumentation" : "/**<p>The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>\n@param maxAgeSeconds The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.*/",
           "setterMethodName" : "setMaxAgeSeconds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxAgeSeconds",
             "variableType" : "Integer",
@@ -2578,6 +2648,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>\n@param maxAgeSeconds The time in seconds that your browser caches the preflight response for the specified resource.</p> <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxAgeSeconds",
             "variableType" : "Integer",
@@ -2599,6 +2670,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CorsRule",
         "variableName" : "corsRule",
         "variableType" : "CorsRule",
@@ -2675,6 +2747,7 @@
         "setterDocumentation" : "/**<p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>\n@param containerName The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -2687,6 +2760,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>\n@param containerName The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -2740,6 +2814,7 @@
           "setterDocumentation" : "/**<p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>\n@param containerName The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -2752,6 +2827,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>\n@param containerName The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -2770,6 +2846,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateContainerRequest",
         "variableName" : "createContainerRequest",
         "variableType" : "CreateContainerRequest",
@@ -2839,6 +2916,7 @@
         "setterDocumentation" : "/**<p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>\n@param container ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.*/",
         "setterMethodName" : "setContainer",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Container",
           "variableName" : "container",
           "variableType" : "Container",
@@ -2851,6 +2929,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>\n@param container ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Container",
           "variableName" : "container",
           "variableType" : "Container",
@@ -2904,6 +2983,7 @@
           "setterDocumentation" : "/**<p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>\n@param container ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.*/",
           "setterMethodName" : "setContainer",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Container",
             "variableName" : "container",
             "variableType" : "Container",
@@ -2916,6 +2996,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>\n@param container ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:&lt;region&gt;:&lt;account that owns this container&gt;:container/&lt;name of container&gt;. For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p> <p>ContainerName: The container name as specified in the request.</p> <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Container",
             "variableName" : "container",
             "variableType" : "Container",
@@ -2937,6 +3018,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateContainerResult",
         "variableName" : "createContainerResult",
         "variableType" : "CreateContainerResult",
@@ -3013,6 +3095,7 @@
         "setterDocumentation" : "/**<p>The name of the container that holds the policy.</p>\n@param containerName The name of the container that holds the policy.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3025,6 +3108,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container that holds the policy.</p>\n@param containerName The name of the container that holds the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3078,6 +3162,7 @@
           "setterDocumentation" : "/**<p>The name of the container that holds the policy.</p>\n@param containerName The name of the container that holds the policy.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3090,6 +3175,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container that holds the policy.</p>\n@param containerName The name of the container that holds the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3108,6 +3194,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContainerPolicyRequest",
         "variableName" : "deleteContainerPolicyRequest",
         "variableType" : "DeleteContainerPolicyRequest",
@@ -3147,6 +3234,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContainerPolicyResult",
         "variableName" : "deleteContainerPolicyResult",
         "variableType" : "DeleteContainerPolicyResult",
@@ -3223,6 +3311,7 @@
         "setterDocumentation" : "/**<p>The name of the container to delete. </p>\n@param containerName The name of the container to delete.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3235,6 +3324,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container to delete. </p>\n@param containerName The name of the container to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3288,6 +3378,7 @@
           "setterDocumentation" : "/**<p>The name of the container to delete. </p>\n@param containerName The name of the container to delete.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3300,6 +3391,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container to delete. </p>\n@param containerName The name of the container to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3318,6 +3410,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContainerRequest",
         "variableName" : "deleteContainerRequest",
         "variableType" : "DeleteContainerRequest",
@@ -3357,6 +3450,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteContainerResult",
         "variableName" : "deleteContainerResult",
         "variableType" : "DeleteContainerResult",
@@ -3433,6 +3527,7 @@
         "setterDocumentation" : "/**<p>The name of the container to remove the policy from.</p>\n@param containerName The name of the container to remove the policy from.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3445,6 +3540,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container to remove the policy from.</p>\n@param containerName The name of the container to remove the policy from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3498,6 +3594,7 @@
           "setterDocumentation" : "/**<p>The name of the container to remove the policy from.</p>\n@param containerName The name of the container to remove the policy from.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3510,6 +3607,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container to remove the policy from.</p>\n@param containerName The name of the container to remove the policy from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3528,6 +3626,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteCorsPolicyRequest",
         "variableName" : "deleteCorsPolicyRequest",
         "variableType" : "DeleteCorsPolicyRequest",
@@ -3567,6 +3666,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteCorsPolicyResult",
         "variableName" : "deleteCorsPolicyResult",
         "variableType" : "DeleteCorsPolicyResult",
@@ -3643,6 +3743,7 @@
         "setterDocumentation" : "/**<p>The name of the container to query.</p>\n@param containerName The name of the container to query.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3655,6 +3756,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container to query.</p>\n@param containerName The name of the container to query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3708,6 +3810,7 @@
           "setterDocumentation" : "/**<p>The name of the container to query.</p>\n@param containerName The name of the container to query.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3720,6 +3823,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container to query.</p>\n@param containerName The name of the container to query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -3738,6 +3842,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeContainerRequest",
         "variableName" : "describeContainerRequest",
         "variableType" : "DescribeContainerRequest",
@@ -3807,6 +3912,7 @@
         "setterDocumentation" : "/**<p>The name of the queried container.</p>\n@param container The name of the queried container.*/",
         "setterMethodName" : "setContainer",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Container",
           "variableName" : "container",
           "variableType" : "Container",
@@ -3819,6 +3925,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the queried container.</p>\n@param container The name of the queried container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Container",
           "variableName" : "container",
           "variableType" : "Container",
@@ -3872,6 +3979,7 @@
           "setterDocumentation" : "/**<p>The name of the queried container.</p>\n@param container The name of the queried container.*/",
           "setterMethodName" : "setContainer",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Container",
             "variableName" : "container",
             "variableType" : "Container",
@@ -3884,6 +3992,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the queried container.</p>\n@param container The name of the queried container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Container",
             "variableName" : "container",
             "variableType" : "Container",
@@ -3905,6 +4014,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeContainerResult",
         "variableName" : "describeContainerResult",
         "variableType" : "DescribeContainerResult",
@@ -3981,6 +4091,7 @@
         "setterDocumentation" : "/**<p>The name of the container. </p>\n@param containerName The name of the container.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -3993,6 +4104,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container. </p>\n@param containerName The name of the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -4046,6 +4158,7 @@
           "setterDocumentation" : "/**<p>The name of the container. </p>\n@param containerName The name of the container.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -4058,6 +4171,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container. </p>\n@param containerName The name of the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -4076,6 +4190,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetContainerPolicyRequest",
         "variableName" : "getContainerPolicyRequest",
         "variableType" : "GetContainerPolicyRequest",
@@ -4145,6 +4260,7 @@
         "setterDocumentation" : "/**<p>The contents of the access policy.</p>\n@param policy The contents of the access policy.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policy",
           "variableType" : "String",
@@ -4157,6 +4273,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contents of the access policy.</p>\n@param policy The contents of the access policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policy",
           "variableType" : "String",
@@ -4210,6 +4327,7 @@
           "setterDocumentation" : "/**<p>The contents of the access policy.</p>\n@param policy The contents of the access policy.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policy",
             "variableType" : "String",
@@ -4222,6 +4340,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contents of the access policy.</p>\n@param policy The contents of the access policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policy",
             "variableType" : "String",
@@ -4243,6 +4362,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetContainerPolicyResult",
         "variableName" : "getContainerPolicyResult",
         "variableType" : "GetContainerPolicyResult",
@@ -4319,6 +4439,7 @@
         "setterDocumentation" : "/**<p>The name of the container that the policy is assigned to.</p>\n@param containerName The name of the container that the policy is assigned to.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -4331,6 +4452,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container that the policy is assigned to.</p>\n@param containerName The name of the container that the policy is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -4384,6 +4506,7 @@
           "setterDocumentation" : "/**<p>The name of the container that the policy is assigned to.</p>\n@param containerName The name of the container that the policy is assigned to.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -4396,6 +4519,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container that the policy is assigned to.</p>\n@param containerName The name of the container that the policy is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -4414,6 +4538,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetCorsPolicyRequest",
         "variableName" : "getCorsPolicyRequest",
         "variableType" : "GetCorsPolicyRequest",
@@ -4520,6 +4645,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "CorsRule",
               "variableName" : "member",
               "variableType" : "CorsRule",
@@ -4532,6 +4658,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "CorsRule",
               "variableName" : "member",
               "variableType" : "CorsRule",
@@ -4561,6 +4688,7 @@
         "setterDocumentation" : "/**\n@param corsPolicy */",
         "setterMethodName" : "setCorsPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<CorsRule>",
           "variableName" : "corsPolicy",
           "variableType" : "java.util.List<CorsRule>",
@@ -4573,6 +4701,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<CorsRule>",
           "variableName" : "corsPolicy",
           "variableType" : "java.util.List<CorsRule>",
@@ -4663,6 +4792,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "CorsRule",
                 "variableName" : "member",
                 "variableType" : "CorsRule",
@@ -4675,6 +4805,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "CorsRule",
                 "variableName" : "member",
                 "variableType" : "CorsRule",
@@ -4704,6 +4835,7 @@
           "setterDocumentation" : "/**\n@param corsPolicy */",
           "setterMethodName" : "setCorsPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<CorsRule>",
             "variableName" : "corsPolicy",
             "variableType" : "java.util.List<CorsRule>",
@@ -4716,6 +4848,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<CorsRule>",
             "variableName" : "corsPolicy",
             "variableType" : "java.util.List<CorsRule>",
@@ -4737,6 +4870,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetCorsPolicyResult",
         "variableName" : "getCorsPolicyResult",
         "variableType" : "GetCorsPolicyResult",
@@ -4773,6 +4907,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServerErrorException",
         "variableName" : "internalServerErrorException",
         "variableType" : "InternalServerErrorException",
@@ -4809,6 +4944,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LimitExceededException",
         "variableName" : "limitExceededException",
         "variableType" : "LimitExceededException",
@@ -4885,6 +5021,7 @@
         "setterDocumentation" : "/**<p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>\n@param nextToken Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4897,6 +5034,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>\n@param nextToken Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4948,6 +5086,7 @@
         "setterDocumentation" : "/**<p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>\n@param maxResults Enter the maximum number of containers in the response. Use from 1 to 255 characters.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -4960,6 +5099,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>\n@param maxResults Enter the maximum number of containers in the response. Use from 1 to 255 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5013,6 +5153,7 @@
           "setterDocumentation" : "/**<p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>\n@param maxResults Enter the maximum number of containers in the response. Use from 1 to 255 characters.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5025,6 +5166,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>\n@param maxResults Enter the maximum number of containers in the response. Use from 1 to 255 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5077,6 +5219,7 @@
           "setterDocumentation" : "/**<p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>\n@param nextToken Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5089,6 +5232,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>\n@param nextToken Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5107,6 +5251,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListContainersRequest",
         "variableName" : "listContainersRequest",
         "variableType" : "ListContainersRequest",
@@ -5213,6 +5358,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Container",
               "variableName" : "member",
               "variableType" : "Container",
@@ -5225,6 +5371,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Container",
               "variableName" : "member",
               "variableType" : "Container",
@@ -5254,6 +5401,7 @@
         "setterDocumentation" : "/**<p>The names of the containers.</p>\n@param containers The names of the containers.*/",
         "setterMethodName" : "setContainers",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Container>",
           "variableName" : "containers",
           "variableType" : "java.util.List<Container>",
@@ -5266,6 +5414,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The names of the containers.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setContainers(java.util.Collection)} or {@link #withContainers(java.util.Collection)} if you want to override the existing values.</p>\n@param containers The names of the containers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Container>",
           "variableName" : "containers",
           "variableType" : "java.util.List<Container>",
@@ -5317,6 +5466,7 @@
         "setterDocumentation" : "/**<p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>\n@param nextToken <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5329,6 +5479,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>\n@param nextToken <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5419,6 +5570,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Container",
                 "variableName" : "member",
                 "variableType" : "Container",
@@ -5431,6 +5583,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Container",
                 "variableName" : "member",
                 "variableType" : "Container",
@@ -5460,6 +5613,7 @@
           "setterDocumentation" : "/**<p>The names of the containers.</p>\n@param containers The names of the containers.*/",
           "setterMethodName" : "setContainers",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Container>",
             "variableName" : "containers",
             "variableType" : "java.util.List<Container>",
@@ -5472,6 +5626,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The names of the containers.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setContainers(java.util.Collection)} or {@link #withContainers(java.util.Collection)} if you want to override the existing values.</p>\n@param containers The names of the containers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Container>",
             "variableName" : "containers",
             "variableType" : "java.util.List<Container>",
@@ -5524,6 +5679,7 @@
           "setterDocumentation" : "/**<p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>\n@param nextToken <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5536,6 +5692,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>\n@param nextToken <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5557,6 +5714,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListContainersResult",
         "variableName" : "listContainersResult",
         "variableType" : "ListContainersResult",
@@ -5608,6 +5766,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MethodName",
         "variableName" : "methodName",
         "variableType" : "MethodName",
@@ -5644,6 +5803,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PolicyNotFoundException",
         "variableName" : "policyNotFoundException",
         "variableType" : "PolicyNotFoundException",
@@ -5720,6 +5880,7 @@
         "setterDocumentation" : "/**<p>The name of the container.</p>\n@param containerName The name of the container.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -5732,6 +5893,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container.</p>\n@param containerName The name of the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -5783,6 +5945,7 @@
         "setterDocumentation" : "/**<p>The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li> </ul>\n@param policy The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policy",
           "variableType" : "String",
@@ -5795,6 +5958,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li> </ul>\n@param policy The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policy",
           "variableType" : "String",
@@ -5848,6 +6012,7 @@
           "setterDocumentation" : "/**<p>The name of the container.</p>\n@param containerName The name of the container.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -5860,6 +6025,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container.</p>\n@param containerName The name of the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -5912,6 +6078,7 @@
           "setterDocumentation" : "/**<p>The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li> </ul>\n@param policy The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policy",
             "variableType" : "String",
@@ -5924,6 +6091,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li> </ul>\n@param policy The contents of the policy, which includes the following: </p> <ul> <li> <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policy",
             "variableType" : "String",
@@ -5942,6 +6110,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutContainerPolicyRequest",
         "variableName" : "putContainerPolicyRequest",
         "variableType" : "PutContainerPolicyRequest",
@@ -5981,6 +6150,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutContainerPolicyResult",
         "variableName" : "putContainerPolicyResult",
         "variableType" : "PutContainerPolicyResult",
@@ -6057,6 +6227,7 @@
         "setterDocumentation" : "/**<p>The name of the container that you want to assign the CORS policy to.</p>\n@param containerName The name of the container that you want to assign the CORS policy to.*/",
         "setterMethodName" : "setContainerName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -6069,6 +6240,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the container that you want to assign the CORS policy to.</p>\n@param containerName The name of the container that you want to assign the CORS policy to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "containerName",
           "variableType" : "String",
@@ -6157,6 +6329,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "CorsRule",
               "variableName" : "member",
               "variableType" : "CorsRule",
@@ -6169,6 +6342,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "CorsRule",
               "variableName" : "member",
               "variableType" : "CorsRule",
@@ -6198,6 +6372,7 @@
         "setterDocumentation" : "/**<p>The CORS policy to apply to the container. </p>\n@param corsPolicy The CORS policy to apply to the container.*/",
         "setterMethodName" : "setCorsPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<CorsRule>",
           "variableName" : "corsPolicy",
           "variableType" : "java.util.List<CorsRule>",
@@ -6210,6 +6385,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The CORS policy to apply to the container. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy The CORS policy to apply to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<CorsRule>",
           "variableName" : "corsPolicy",
           "variableType" : "java.util.List<CorsRule>",
@@ -6263,6 +6439,7 @@
           "setterDocumentation" : "/**<p>The name of the container that you want to assign the CORS policy to.</p>\n@param containerName The name of the container that you want to assign the CORS policy to.*/",
           "setterMethodName" : "setContainerName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -6275,6 +6452,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the container that you want to assign the CORS policy to.</p>\n@param containerName The name of the container that you want to assign the CORS policy to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "containerName",
             "variableType" : "String",
@@ -6364,6 +6542,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "CorsRule",
                 "variableName" : "member",
                 "variableType" : "CorsRule",
@@ -6376,6 +6555,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "CorsRule",
                 "variableName" : "member",
                 "variableType" : "CorsRule",
@@ -6405,6 +6585,7 @@
           "setterDocumentation" : "/**<p>The CORS policy to apply to the container. </p>\n@param corsPolicy The CORS policy to apply to the container.*/",
           "setterMethodName" : "setCorsPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<CorsRule>",
             "variableName" : "corsPolicy",
             "variableType" : "java.util.List<CorsRule>",
@@ -6417,6 +6598,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The CORS policy to apply to the container. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCorsPolicy(java.util.Collection)} or {@link #withCorsPolicy(java.util.Collection)} if you want to override the existing values.</p>\n@param corsPolicy The CORS policy to apply to the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<CorsRule>",
             "variableName" : "corsPolicy",
             "variableType" : "java.util.List<CorsRule>",
@@ -6435,6 +6617,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutCorsPolicyRequest",
         "variableName" : "putCorsPolicyRequest",
         "variableType" : "PutCorsPolicyRequest",
@@ -6474,6 +6657,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutCorsPolicyResult",
         "variableName" : "putCorsPolicyResult",
         "variableType" : "PutCorsPolicyResult",

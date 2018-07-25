@@ -58,7 +58,7 @@ public class DocumentVersionInfoJsonUnmarshaller implements Unmarshaller<Documen
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    documentVersionInfo.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionInfo.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IsDefaultVersion", targetDepth)) {
                     context.nextToken();

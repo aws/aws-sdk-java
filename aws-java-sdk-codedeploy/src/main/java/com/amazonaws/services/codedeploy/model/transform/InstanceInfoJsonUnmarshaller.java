@@ -66,11 +66,11 @@ public class InstanceInfoJsonUnmarshaller implements Unmarshaller<InstanceInfo, 
                 }
                 if (context.testExpression("registerTime", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setRegisterTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInfo.setRegisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deregisterTime", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setDeregisterTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInfo.setDeregisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

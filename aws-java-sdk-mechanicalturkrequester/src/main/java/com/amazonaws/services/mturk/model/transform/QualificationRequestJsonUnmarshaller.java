@@ -70,7 +70,7 @@ public class QualificationRequestJsonUnmarshaller implements Unmarshaller<Qualif
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
                     context.nextToken();
-                    qualificationRequest.setSubmitTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    qualificationRequest.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

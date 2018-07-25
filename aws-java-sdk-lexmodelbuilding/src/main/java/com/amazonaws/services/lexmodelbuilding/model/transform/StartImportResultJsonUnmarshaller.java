@@ -70,7 +70,7 @@ public class StartImportResultJsonUnmarshaller implements Unmarshaller<StartImpo
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    startImportResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    startImportResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

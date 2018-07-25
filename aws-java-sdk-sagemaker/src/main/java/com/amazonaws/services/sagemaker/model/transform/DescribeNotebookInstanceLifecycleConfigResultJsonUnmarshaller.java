@@ -71,11 +71,12 @@ public class DescribeNotebookInstanceLifecycleConfigResultJsonUnmarshaller imple
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceLifecycleConfigResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeNotebookInstanceLifecycleConfigResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
+                            context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceLifecycleConfigResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeNotebookInstanceLifecycleConfigResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

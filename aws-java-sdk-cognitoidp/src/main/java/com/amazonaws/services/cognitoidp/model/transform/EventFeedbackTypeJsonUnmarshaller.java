@@ -58,7 +58,7 @@ public class EventFeedbackTypeJsonUnmarshaller implements Unmarshaller<EventFeed
                 }
                 if (context.testExpression("FeedbackDate", targetDepth)) {
                     context.nextToken();
-                    eventFeedbackType.setFeedbackDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    eventFeedbackType.setFeedbackDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

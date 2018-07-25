@@ -54,7 +54,7 @@ public class GetCredentialReportResultStaxUnmarshaller implements Unmarshaller<G
                 }
 
                 if (context.testExpression("GeneratedTime", targetDepth)) {
-                    getCredentialReportResult.setGeneratedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getCredentialReportResult.setGeneratedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

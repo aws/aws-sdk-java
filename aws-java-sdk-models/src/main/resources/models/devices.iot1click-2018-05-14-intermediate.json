@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -105,6 +105,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClaimDevicesByClaimCodeRequest",
         "variableName" : "claimDevicesByClaimCodeRequest",
         "variableType" : "ClaimDevicesByClaimCodeRequest",
@@ -144,6 +145,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeDeviceRequest",
         "variableName" : "describeDeviceRequest",
         "variableType" : "DescribeDeviceRequest",
@@ -191,6 +193,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "FinalizeDeviceClaimRequest",
         "variableName" : "finalizeDeviceClaimRequest",
         "variableType" : "FinalizeDeviceClaimRequest",
@@ -230,6 +233,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetDeviceMethodsRequest",
         "variableName" : "getDeviceMethodsRequest",
         "variableType" : "GetDeviceMethodsRequest",
@@ -273,6 +277,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InitiateDeviceClaimRequest",
         "variableName" : "initiateDeviceClaimRequest",
         "variableType" : "InitiateDeviceClaimRequest",
@@ -324,6 +329,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvokeDeviceMethodRequest",
         "variableName" : "invokeDeviceMethodRequest",
         "variableType" : "InvokeDeviceMethodRequest",
@@ -367,6 +373,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDeviceEventsRequest",
         "variableName" : "listDeviceEventsRequest",
         "variableType" : "ListDeviceEventsRequest",
@@ -406,6 +413,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDevicesRequest",
         "variableName" : "listDevicesRequest",
         "variableType" : "ListDevicesRequest",
@@ -445,6 +453,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnclaimDeviceRequest",
         "variableName" : "unclaimDeviceRequest",
         "variableType" : "UnclaimDeviceRequest",
@@ -484,6 +493,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDeviceStateRequest",
         "variableName" : "updateDeviceStateRequest",
         "variableType" : "UpdateDeviceStateRequest",
@@ -532,6 +542,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Attributes",
         "variableName" : "attributes",
         "variableType" : "Attributes",
@@ -608,6 +619,7 @@
         "setterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.*/",
         "setterMethodName" : "setClaimCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "claimCode",
           "variableType" : "String",
@@ -620,6 +632,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "claimCode",
           "variableType" : "String",
@@ -673,6 +686,7 @@
           "setterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.*/",
           "setterMethodName" : "setClaimCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "claimCode",
             "variableType" : "String",
@@ -685,6 +699,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "claimCode",
             "variableType" : "String",
@@ -703,6 +718,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClaimDevicesByClaimCodeRequest",
         "variableName" : "claimDevicesByClaimCodeRequest",
         "variableType" : "ClaimDevicesByClaimCodeRequest",
@@ -772,6 +788,7 @@
         "setterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.*/",
         "setterMethodName" : "setClaimCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "claimCode",
           "variableType" : "String",
@@ -784,6 +801,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "claimCode",
           "variableType" : "String",
@@ -835,6 +853,7 @@
         "setterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed\n in the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed\n in the claim request.*/",
         "setterMethodName" : "setTotal",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "total",
           "variableType" : "Integer",
@@ -847,6 +866,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed\n in the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed\n in the claim request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "total",
           "variableType" : "Integer",
@@ -900,6 +920,7 @@
           "setterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.*/",
           "setterMethodName" : "setClaimCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "claimCode",
             "variableType" : "String",
@@ -912,6 +933,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "claimCode",
             "variableType" : "String",
@@ -964,6 +986,7 @@
           "setterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed\n in the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed\n in the claim request.*/",
           "setterMethodName" : "setTotal",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "total",
             "variableType" : "Integer",
@@ -976,6 +999,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed\n in the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed\n in the claim request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "total",
             "variableType" : "Integer",
@@ -997,6 +1021,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClaimDevicesByClaimCodeResult",
         "variableName" : "claimDevicesByClaimCodeResult",
         "variableType" : "ClaimDevicesByClaimCodeResult",
@@ -1073,6 +1098,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -1085,6 +1111,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -1138,6 +1165,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -1150,6 +1178,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -1168,6 +1197,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeDeviceRequest",
         "variableName" : "describeDeviceRequest",
         "variableType" : "DescribeDeviceRequest",
@@ -1237,6 +1267,7 @@
         "setterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.*/",
         "setterMethodName" : "setDeviceDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "DeviceDescription",
           "variableName" : "deviceDescription",
           "variableType" : "DeviceDescription",
@@ -1249,6 +1280,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "DeviceDescription",
           "variableName" : "deviceDescription",
           "variableType" : "DeviceDescription",
@@ -1302,6 +1334,7 @@
           "setterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.*/",
           "setterMethodName" : "setDeviceDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "DeviceDescription",
             "variableName" : "deviceDescription",
             "variableType" : "DeviceDescription",
@@ -1314,6 +1347,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "DeviceDescription",
             "variableName" : "deviceDescription",
             "variableType" : "DeviceDescription",
@@ -1335,6 +1369,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeDeviceResult",
         "variableName" : "describeDeviceResult",
         "variableType" : "DescribeDeviceResult",
@@ -1404,6 +1439,7 @@
         "setterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Attributes",
           "variableName" : "attributes",
           "variableType" : "Attributes",
@@ -1416,6 +1452,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Attributes",
           "variableName" : "attributes",
           "variableType" : "Attributes",
@@ -1467,6 +1504,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -1479,6 +1517,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -1530,6 +1569,7 @@
         "setterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".*/",
         "setterMethodName" : "setType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -1542,6 +1582,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -1595,6 +1636,7 @@
           "setterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Attributes",
             "variableName" : "attributes",
             "variableType" : "Attributes",
@@ -1607,6 +1649,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Attributes",
             "variableName" : "attributes",
             "variableType" : "Attributes",
@@ -1659,6 +1702,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -1671,6 +1715,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -1723,6 +1768,7 @@
           "setterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".*/",
           "setterMethodName" : "setType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -1735,6 +1781,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -1756,6 +1803,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Device",
         "variableName" : "device",
         "variableType" : "Device",
@@ -1868,6 +1916,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -1880,6 +1929,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -1903,6 +1953,7 @@
         "setterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.*/",
         "setterMethodName" : "setAttributes",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -1915,6 +1966,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "attributes",
           "variableType" : "java.util.Map<String,String>",
@@ -1966,6 +2018,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -1978,6 +2031,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -2029,6 +2083,7 @@
         "setterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "enabled",
           "variableType" : "Boolean",
@@ -2041,6 +2096,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "enabled",
           "variableType" : "Boolean",
@@ -2092,6 +2148,7 @@
         "setterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.*/",
         "setterMethodName" : "setRemainingLife",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Double",
           "variableName" : "remainingLife",
           "variableType" : "Double",
@@ -2104,6 +2161,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Double",
           "variableName" : "remainingLife",
           "variableType" : "Double",
@@ -2155,6 +2213,7 @@
         "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".*/",
         "setterMethodName" : "setType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -2167,6 +2226,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -2263,6 +2323,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -2275,6 +2336,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -2298,6 +2360,7 @@
           "setterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.*/",
           "setterMethodName" : "setAttributes",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -2310,6 +2373,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects\n providing user specified device attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "attributes",
             "variableType" : "java.util.Map<String,String>",
@@ -2362,6 +2426,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -2374,6 +2439,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -2426,6 +2492,7 @@
           "setterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "enabled",
             "variableType" : "Boolean",
@@ -2438,6 +2505,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "enabled",
             "variableType" : "Boolean",
@@ -2490,6 +2558,7 @@
           "setterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.*/",
           "setterMethodName" : "setRemainingLife",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Double",
             "variableName" : "remainingLife",
             "variableType" : "Double",
@@ -2502,6 +2571,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for\n the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Double",
             "variableName" : "remainingLife",
             "variableType" : "Double",
@@ -2554,6 +2624,7 @@
           "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".*/",
           "setterMethodName" : "setType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -2566,6 +2637,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -2587,6 +2659,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeviceDescription",
         "variableName" : "deviceDescription",
         "variableType" : "DeviceDescription",
@@ -2656,6 +2729,7 @@
         "setterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.*/",
         "setterMethodName" : "setDevice",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Device",
           "variableName" : "device",
           "variableType" : "Device",
@@ -2668,6 +2742,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Device",
           "variableName" : "device",
           "variableType" : "Device",
@@ -2719,6 +2794,7 @@
         "setterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.*/",
         "setterMethodName" : "setStdEvent",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "stdEvent",
           "variableType" : "String",
@@ -2731,6 +2807,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "stdEvent",
           "variableType" : "String",
@@ -2784,6 +2861,7 @@
           "setterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.*/",
           "setterMethodName" : "setDevice",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Device",
             "variableName" : "device",
             "variableType" : "Device",
@@ -2796,6 +2874,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Device",
             "variableName" : "device",
             "variableType" : "Device",
@@ -2848,6 +2927,7 @@
           "setterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.*/",
           "setterMethodName" : "setStdEvent",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "stdEvent",
             "variableType" : "String",
@@ -2860,6 +2940,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "stdEvent",
             "variableType" : "String",
@@ -2881,6 +2962,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeviceEvent",
         "variableName" : "deviceEvent",
         "variableType" : "DeviceEvent",
@@ -2950,6 +3032,7 @@
         "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
         "setterMethodName" : "setDeviceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceType",
           "variableType" : "String",
@@ -2962,6 +3045,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceType",
           "variableType" : "String",
@@ -3013,6 +3097,7 @@
         "setterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.*/",
         "setterMethodName" : "setMethodName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "methodName",
           "variableType" : "String",
@@ -3025,6 +3110,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "methodName",
           "variableType" : "String",
@@ -3078,6 +3164,7 @@
           "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
           "setterMethodName" : "setDeviceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceType",
             "variableType" : "String",
@@ -3090,6 +3177,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceType",
             "variableType" : "String",
@@ -3142,6 +3230,7 @@
           "setterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.*/",
           "setterMethodName" : "setMethodName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "methodName",
             "variableType" : "String",
@@ -3154,6 +3243,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "methodName",
             "variableType" : "String",
@@ -3175,6 +3265,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeviceMethod",
         "variableName" : "deviceMethod",
         "variableType" : "DeviceMethod",
@@ -3251,6 +3342,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -3263,6 +3355,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -3316,6 +3409,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -3328,6 +3422,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -3346,6 +3441,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "FinalizeDeviceClaimRequest",
         "variableName" : "finalizeDeviceClaimRequest",
         "variableType" : "FinalizeDeviceClaimRequest",
@@ -3415,6 +3511,7 @@
         "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -3427,6 +3524,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -3480,6 +3578,7 @@
           "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -3492,6 +3591,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -3513,6 +3613,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "FinalizeDeviceClaimResult",
         "variableName" : "finalizeDeviceClaimResult",
         "variableType" : "FinalizeDeviceClaimResult",
@@ -3582,6 +3683,7 @@
         "setterDocumentation" : "/**<p>403</p>\n@param code 403*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -3594,6 +3696,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>403</p>\n@param code 403\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -3647,6 +3750,7 @@
           "setterDocumentation" : "/**<p>403</p>\n@param code 403*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -3659,6 +3763,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>403</p>\n@param code 403\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -3677,6 +3782,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ForbiddenException",
         "variableName" : "forbiddenException",
         "variableType" : "ForbiddenException",
@@ -3753,6 +3859,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -3765,6 +3872,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -3818,6 +3926,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -3830,6 +3939,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -3848,6 +3958,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetDeviceMethodsRequest",
         "variableName" : "getDeviceMethodsRequest",
         "variableType" : "GetDeviceMethodsRequest",
@@ -3954,6 +4065,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceMethod",
               "variableName" : "member",
               "variableType" : "DeviceMethod",
@@ -3966,6 +4078,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceMethod",
               "variableName" : "member",
               "variableType" : "DeviceMethod",
@@ -3995,6 +4108,7 @@
         "setterDocumentation" : "/**<p>List of available device APIs.</p>\n@param deviceMethods List of available device APIs.*/",
         "setterMethodName" : "setDeviceMethods",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<DeviceMethod>",
           "variableName" : "deviceMethods",
           "variableType" : "java.util.List<DeviceMethod>",
@@ -4007,6 +4121,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of available device APIs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeviceMethods(java.util.Collection)} or {@link #withDeviceMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param deviceMethods List of available device APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<DeviceMethod>",
           "variableName" : "deviceMethods",
           "variableType" : "java.util.List<DeviceMethod>",
@@ -4097,6 +4212,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceMethod",
                 "variableName" : "member",
                 "variableType" : "DeviceMethod",
@@ -4109,6 +4225,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceMethod",
                 "variableName" : "member",
                 "variableType" : "DeviceMethod",
@@ -4138,6 +4255,7 @@
           "setterDocumentation" : "/**<p>List of available device APIs.</p>\n@param deviceMethods List of available device APIs.*/",
           "setterMethodName" : "setDeviceMethods",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<DeviceMethod>",
             "variableName" : "deviceMethods",
             "variableType" : "java.util.List<DeviceMethod>",
@@ -4150,6 +4268,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of available device APIs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeviceMethods(java.util.Collection)} or {@link #withDeviceMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param deviceMethods List of available device APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<DeviceMethod>",
             "variableName" : "deviceMethods",
             "variableType" : "java.util.List<DeviceMethod>",
@@ -4171,6 +4290,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetDeviceMethodsResult",
         "variableName" : "getDeviceMethodsResult",
         "variableType" : "GetDeviceMethodsResult",
@@ -4247,6 +4367,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -4259,6 +4380,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -4312,6 +4434,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -4324,6 +4447,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -4342,6 +4466,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InitiateDeviceClaimRequest",
         "variableName" : "initiateDeviceClaimRequest",
         "variableType" : "InitiateDeviceClaimRequest",
@@ -4411,6 +4536,7 @@
         "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -4423,6 +4549,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -4476,6 +4603,7 @@
           "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -4488,6 +4616,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -4509,6 +4638,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InitiateDeviceClaimResult",
         "variableName" : "initiateDeviceClaimResult",
         "variableType" : "InitiateDeviceClaimResult",
@@ -4578,6 +4708,7 @@
         "setterDocumentation" : "/**<p>500</p>\n@param code 500*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -4590,6 +4721,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>500</p>\n@param code 500\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -4643,6 +4775,7 @@
           "setterDocumentation" : "/**<p>500</p>\n@param code 500*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -4655,6 +4788,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>500</p>\n@param code 500\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -4673,6 +4807,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalFailureException",
         "variableName" : "internalFailureException",
         "variableType" : "InternalFailureException",
@@ -4742,6 +4877,7 @@
         "setterDocumentation" : "/**<p>400</p>\n@param code 400*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -4754,6 +4890,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>400</p>\n@param code 400\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -4807,6 +4944,7 @@
           "setterDocumentation" : "/**<p>400</p>\n@param code 400*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -4819,6 +4957,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>400</p>\n@param code 400\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -4837,6 +4976,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidRequestException",
         "variableName" : "invalidRequestException",
         "variableType" : "InvalidRequestException",
@@ -4913,6 +5053,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -4925,6 +5066,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -4976,6 +5118,7 @@
         "setterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.*/",
         "setterMethodName" : "setDeviceMethod",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "DeviceMethod",
           "variableName" : "deviceMethod",
           "variableType" : "DeviceMethod",
@@ -4988,6 +5131,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "DeviceMethod",
           "variableName" : "deviceMethod",
           "variableType" : "DeviceMethod",
@@ -5039,6 +5183,7 @@
         "setterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.*/",
         "setterMethodName" : "setDeviceMethodParameters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceMethodParameters",
           "variableType" : "String",
@@ -5051,6 +5196,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceMethodParameters",
           "variableType" : "String",
@@ -5104,6 +5250,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -5116,6 +5263,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -5168,6 +5316,7 @@
           "setterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.*/",
           "setterMethodName" : "setDeviceMethod",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "DeviceMethod",
             "variableName" : "deviceMethod",
             "variableType" : "DeviceMethod",
@@ -5180,6 +5329,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "DeviceMethod",
             "variableName" : "deviceMethod",
             "variableType" : "DeviceMethod",
@@ -5232,6 +5382,7 @@
           "setterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.*/",
           "setterMethodName" : "setDeviceMethodParameters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceMethodParameters",
             "variableType" : "String",
@@ -5244,6 +5395,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceMethodParameters",
             "variableType" : "String",
@@ -5262,6 +5414,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvokeDeviceMethodRequest",
         "variableName" : "invokeDeviceMethodRequest",
         "variableType" : "InvokeDeviceMethodRequest",
@@ -5331,6 +5484,7 @@
         "setterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.*/",
         "setterMethodName" : "setDeviceMethodResponse",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceMethodResponse",
           "variableType" : "String",
@@ -5343,6 +5497,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceMethodResponse",
           "variableType" : "String",
@@ -5396,6 +5551,7 @@
           "setterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.*/",
           "setterMethodName" : "setDeviceMethodResponse",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceMethodResponse",
             "variableType" : "String",
@@ -5408,6 +5564,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceMethodResponse",
             "variableType" : "String",
@@ -5429,6 +5586,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvokeDeviceMethodResult",
         "variableName" : "invokeDeviceMethodResult",
         "variableType" : "InvokeDeviceMethodResult",
@@ -5505,6 +5663,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -5517,6 +5676,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -5568,6 +5728,7 @@
         "setterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
         "setterMethodName" : "setFromTimeStamp",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "fromTimeStamp",
           "variableType" : "java.util.Date",
@@ -5580,6 +5741,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "fromTimeStamp",
           "variableType" : "java.util.Date",
@@ -5631,6 +5793,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5643,6 +5806,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5694,6 +5858,7 @@
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5706,6 +5871,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5757,6 +5923,7 @@
         "setterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
         "setterMethodName" : "setToTimeStamp",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "toTimeStamp",
           "variableType" : "java.util.Date",
@@ -5769,6 +5936,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "toTimeStamp",
           "variableType" : "java.util.Date",
@@ -5822,6 +5990,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -5834,6 +6003,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -5886,6 +6056,7 @@
           "setterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
           "setterMethodName" : "setFromTimeStamp",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "fromTimeStamp",
             "variableType" : "java.util.Date",
@@ -5898,6 +6069,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "fromTimeStamp",
             "variableType" : "java.util.Date",
@@ -5950,6 +6122,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5962,6 +6135,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6014,6 +6188,7 @@
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6026,6 +6201,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6078,6 +6254,7 @@
           "setterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z*/",
           "setterMethodName" : "setToTimeStamp",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "toTimeStamp",
             "variableType" : "java.util.Date",
@@ -6090,6 +6267,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "toTimeStamp",
             "variableType" : "java.util.Date",
@@ -6108,6 +6286,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDeviceEventsRequest",
         "variableName" : "listDeviceEventsRequest",
         "variableType" : "ListDeviceEventsRequest",
@@ -6214,6 +6393,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceEvent",
               "variableName" : "member",
               "variableType" : "DeviceEvent",
@@ -6226,6 +6406,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceEvent",
               "variableName" : "member",
               "variableType" : "DeviceEvent",
@@ -6255,6 +6436,7 @@
         "setterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.*/",
         "setterMethodName" : "setEvents",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<DeviceEvent>",
           "variableName" : "events",
           "variableType" : "java.util.List<DeviceEvent>",
@@ -6267,6 +6449,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<DeviceEvent>",
           "variableName" : "events",
           "variableType" : "java.util.List<DeviceEvent>",
@@ -6318,6 +6501,7 @@
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6330,6 +6514,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6420,6 +6605,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceEvent",
                 "variableName" : "member",
                 "variableType" : "DeviceEvent",
@@ -6432,6 +6618,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceEvent",
                 "variableName" : "member",
                 "variableType" : "DeviceEvent",
@@ -6461,6 +6648,7 @@
           "setterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.*/",
           "setterMethodName" : "setEvents",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<DeviceEvent>",
             "variableName" : "events",
             "variableType" : "java.util.List<DeviceEvent>",
@@ -6473,6 +6661,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<DeviceEvent>",
             "variableName" : "events",
             "variableType" : "java.util.List<DeviceEvent>",
@@ -6525,6 +6714,7 @@
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6537,6 +6727,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6558,6 +6749,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDeviceEventsResult",
         "variableName" : "listDeviceEventsResult",
         "variableType" : "ListDeviceEventsResult",
@@ -6634,6 +6826,7 @@
         "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
         "setterMethodName" : "setDeviceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceType",
           "variableType" : "String",
@@ -6646,6 +6839,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceType",
           "variableType" : "String",
@@ -6697,6 +6891,7 @@
         "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -6709,6 +6904,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -6760,6 +6956,7 @@
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6772,6 +6969,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -6825,6 +7023,7 @@
           "setterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".*/",
           "setterMethodName" : "setDeviceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceType",
             "variableType" : "String",
@@ -6837,6 +7036,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceType",
             "variableType" : "String",
@@ -6889,6 +7089,7 @@
           "setterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6901,6 +7102,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value\n of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value\n of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -6953,6 +7155,7 @@
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6965,6 +7168,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -6983,6 +7187,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDevicesRequest",
         "variableName" : "listDevicesRequest",
         "variableType" : "ListDevicesRequest",
@@ -7089,6 +7294,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceDescription",
               "variableName" : "member",
               "variableType" : "DeviceDescription",
@@ -7101,6 +7307,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "DeviceDescription",
               "variableName" : "member",
               "variableType" : "DeviceDescription",
@@ -7130,6 +7337,7 @@
         "setterDocumentation" : "/**<p>A list of devices.</p>\n@param devices A list of devices.*/",
         "setterMethodName" : "setDevices",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<DeviceDescription>",
           "variableName" : "devices",
           "variableType" : "java.util.List<DeviceDescription>",
@@ -7142,6 +7350,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of devices.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override the existing values.</p>\n@param devices A list of devices.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<DeviceDescription>",
           "variableName" : "devices",
           "variableType" : "java.util.List<DeviceDescription>",
@@ -7193,6 +7402,7 @@
         "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -7205,6 +7415,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -7295,6 +7506,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceDescription",
                 "variableName" : "member",
                 "variableType" : "DeviceDescription",
@@ -7307,6 +7519,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "DeviceDescription",
                 "variableName" : "member",
                 "variableType" : "DeviceDescription",
@@ -7336,6 +7549,7 @@
           "setterDocumentation" : "/**<p>A list of devices.</p>\n@param devices A list of devices.*/",
           "setterMethodName" : "setDevices",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<DeviceDescription>",
             "variableName" : "devices",
             "variableType" : "java.util.List<DeviceDescription>",
@@ -7348,6 +7562,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of devices.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override the existing values.</p>\n@param devices A list of devices.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<DeviceDescription>",
             "variableName" : "devices",
             "variableType" : "java.util.List<DeviceDescription>",
@@ -7400,6 +7615,7 @@
           "setterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -7412,6 +7628,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -7433,6 +7650,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListDevicesResult",
         "variableName" : "listDevicesResult",
         "variableType" : "ListDevicesResult",
@@ -7502,6 +7720,7 @@
         "setterDocumentation" : "/**<p>412</p>\n@param code 412*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7514,6 +7733,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>412</p>\n@param code 412\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7567,6 +7787,7 @@
           "setterDocumentation" : "/**<p>412</p>\n@param code 412*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7579,6 +7800,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>412</p>\n@param code 412\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7597,6 +7819,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PreconditionFailedException",
         "variableName" : "preconditionFailedException",
         "variableType" : "PreconditionFailedException",
@@ -7666,6 +7889,7 @@
         "setterDocumentation" : "/**<p>416</p>\n@param code 416*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7678,6 +7902,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>416</p>\n@param code 416\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7731,6 +7956,7 @@
           "setterDocumentation" : "/**<p>416</p>\n@param code 416*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7743,6 +7969,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>416</p>\n@param code 416\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7761,6 +7988,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "RangeNotSatisfiableException",
         "variableName" : "rangeNotSatisfiableException",
         "variableType" : "RangeNotSatisfiableException",
@@ -7830,6 +8058,7 @@
         "setterDocumentation" : "/**<p>409</p>\n@param code 409*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7842,6 +8071,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>409</p>\n@param code 409\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -7895,6 +8125,7 @@
           "setterDocumentation" : "/**<p>409</p>\n@param code 409*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7907,6 +8138,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>409</p>\n@param code 409\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -7925,6 +8157,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceConflictException",
         "variableName" : "resourceConflictException",
         "variableType" : "ResourceConflictException",
@@ -7994,6 +8227,7 @@
         "setterDocumentation" : "/**<p>404</p>\n@param code 404*/",
         "setterMethodName" : "setCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -8006,6 +8240,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>404</p>\n@param code 404\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "code",
           "variableType" : "String",
@@ -8059,6 +8294,7 @@
           "setterDocumentation" : "/**<p>404</p>\n@param code 404*/",
           "setterMethodName" : "setCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -8071,6 +8307,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>404</p>\n@param code 404\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "code",
             "variableType" : "String",
@@ -8089,6 +8326,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceNotFoundException",
         "variableName" : "resourceNotFoundException",
         "variableType" : "ResourceNotFoundException",
@@ -8165,6 +8403,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -8177,6 +8416,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -8230,6 +8470,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -8242,6 +8483,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -8260,6 +8502,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnclaimDeviceRequest",
         "variableName" : "unclaimDeviceRequest",
         "variableType" : "UnclaimDeviceRequest",
@@ -8329,6 +8572,7 @@
         "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
         "setterMethodName" : "setState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -8341,6 +8585,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "state",
           "variableType" : "String",
@@ -8394,6 +8639,7 @@
           "setterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.*/",
           "setterMethodName" : "setState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -8406,6 +8652,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "state",
             "variableType" : "String",
@@ -8427,6 +8674,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnclaimDeviceResult",
         "variableName" : "unclaimDeviceResult",
         "variableType" : "UnclaimDeviceResult",
@@ -8503,6 +8751,7 @@
         "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
         "setterMethodName" : "setDeviceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -8515,6 +8764,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "deviceId",
           "variableType" : "String",
@@ -8566,6 +8816,7 @@
         "setterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.*/",
         "setterMethodName" : "setEnabled",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "enabled",
           "variableType" : "Boolean",
@@ -8578,6 +8829,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "enabled",
           "variableType" : "Boolean",
@@ -8631,6 +8883,7 @@
           "setterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.*/",
           "setterMethodName" : "setDeviceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -8643,6 +8896,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "deviceId",
             "variableType" : "String",
@@ -8695,6 +8949,7 @@
           "setterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.*/",
           "setterMethodName" : "setEnabled",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "enabled",
             "variableType" : "Boolean",
@@ -8707,6 +8962,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "enabled",
             "variableType" : "Boolean",
@@ -8725,6 +8981,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDeviceStateRequest",
         "variableName" : "updateDeviceStateRequest",
         "variableType" : "UpdateDeviceStateRequest",
@@ -8764,6 +9021,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateDeviceStateResult",
         "variableName" : "updateDeviceStateResult",
         "variableType" : "UpdateDeviceStateResult",

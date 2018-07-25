@@ -86,7 +86,7 @@ public class DescribeEnvironmentHealthResultStaxUnmarshaller implements Unmarsha
                 }
 
                 if (context.testExpression("RefreshedAt", targetDepth)) {
-                    describeEnvironmentHealthResult.setRefreshedAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeEnvironmentHealthResult.setRefreshedAt(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

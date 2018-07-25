@@ -66,7 +66,7 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    run.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    run.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -78,11 +78,11 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    run.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    run.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    run.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    run.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();

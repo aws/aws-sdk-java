@@ -74,7 +74,7 @@ public class ProvisionedProductDetailJsonUnmarshaller implements Unmarshaller<Pr
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    provisionedProductDetail.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    provisionedProductDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IdempotencyToken", targetDepth)) {
                     context.nextToken();

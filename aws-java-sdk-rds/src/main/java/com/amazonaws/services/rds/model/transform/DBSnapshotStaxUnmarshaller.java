@@ -56,7 +56,7 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    dBSnapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBSnapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -91,7 +91,7 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                 }
 
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
-                    dBSnapshot.setInstanceCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBSnapshot.setInstanceCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -54,12 +54,12 @@ public class InstanceStatusEventStaxUnmarshaller implements Unmarshaller<Instanc
                 }
 
                 if (context.testExpression("notAfter", targetDepth)) {
-                    instanceStatusEvent.setNotAfter(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceStatusEvent.setNotAfter(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("notBefore", targetDepth)) {
-                    instanceStatusEvent.setNotBefore(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceStatusEvent.setNotBefore(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

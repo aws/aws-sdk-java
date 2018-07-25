@@ -58,7 +58,7 @@ public class ActionExecutionJsonUnmarshaller implements Unmarshaller<ActionExecu
                 }
                 if (context.testExpression("lastStatusChange", targetDepth)) {
                     context.nextToken();
-                    actionExecution.setLastStatusChange(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    actionExecution.setLastStatusChange(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("token", targetDepth)) {
                     context.nextToken();

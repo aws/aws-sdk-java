@@ -66,11 +66,11 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    dataSource.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataSource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    dataSource.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataSource.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DataSizeInBytes", targetDepth)) {
                     context.nextToken();
@@ -114,11 +114,11 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
                     context.nextToken();
-                    dataSource.setFinishedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataSource.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
                     context.nextToken();
-                    dataSource.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataSource.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

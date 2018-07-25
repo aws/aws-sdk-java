@@ -70,7 +70,7 @@ public class JobListEntryJsonUnmarshaller implements Unmarshaller<JobListEntry, 
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    jobListEntry.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,7 @@ public class ComplianceExecutionSummaryJsonUnmarshaller implements Unmarshaller<
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ExecutionTime", targetDepth)) {
                     context.nextToken();
-                    complianceExecutionSummary.setExecutionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    complianceExecutionSummary.setExecutionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionId", targetDepth)) {
                     context.nextToken();

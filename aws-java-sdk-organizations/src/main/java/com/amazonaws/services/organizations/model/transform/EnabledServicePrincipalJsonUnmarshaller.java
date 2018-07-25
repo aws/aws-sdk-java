@@ -54,7 +54,7 @@ public class EnabledServicePrincipalJsonUnmarshaller implements Unmarshaller<Ena
                 }
                 if (context.testExpression("DateEnabled", targetDepth)) {
                     context.nextToken();
-                    enabledServicePrincipal.setDateEnabled(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    enabledServicePrincipal.setDateEnabled(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

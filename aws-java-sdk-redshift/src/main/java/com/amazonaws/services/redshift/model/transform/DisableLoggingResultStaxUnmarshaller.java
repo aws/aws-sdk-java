@@ -59,12 +59,12 @@ public class DisableLoggingResultStaxUnmarshaller implements Unmarshaller<Disabl
                 }
 
                 if (context.testExpression("LastSuccessfulDeliveryTime", targetDepth)) {
-                    disableLoggingResult.setLastSuccessfulDeliveryTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    disableLoggingResult.setLastSuccessfulDeliveryTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastFailureTime", targetDepth)) {
-                    disableLoggingResult.setLastFailureTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    disableLoggingResult.setLastFailureTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

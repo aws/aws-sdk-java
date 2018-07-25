@@ -49,7 +49,7 @@ public class ClientDataStaxUnmarshaller implements Unmarshaller<ClientData, Stax
                 }
 
                 if (context.testExpression("UploadEnd", targetDepth)) {
-                    clientData.setUploadEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    clientData.setUploadEnd(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -59,7 +59,7 @@ public class ClientDataStaxUnmarshaller implements Unmarshaller<ClientData, Stax
                 }
 
                 if (context.testExpression("UploadStart", targetDepth)) {
-                    clientData.setUploadStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    clientData.setUploadStart(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

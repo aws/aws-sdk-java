@@ -59,7 +59,7 @@ public class DistributionStaxUnmarshaller implements Unmarshaller<Distribution, 
                 }
 
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
-                    distribution.setLastModifiedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    distribution.setLastModifiedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

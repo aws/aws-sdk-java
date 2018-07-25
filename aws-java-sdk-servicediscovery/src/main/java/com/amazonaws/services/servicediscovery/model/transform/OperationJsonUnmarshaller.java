@@ -70,11 +70,11 @@ public class OperationJsonUnmarshaller implements Unmarshaller<Operation, JsonUn
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
                     context.nextToken();
-                    operation.setCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operation.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdateDate", targetDepth)) {
                     context.nextToken();
-                    operation.setUpdateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operation.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();

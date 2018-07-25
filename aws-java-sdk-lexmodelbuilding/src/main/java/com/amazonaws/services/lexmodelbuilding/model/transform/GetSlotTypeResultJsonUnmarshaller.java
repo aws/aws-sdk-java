@@ -63,11 +63,11 @@ public class GetSlotTypeResultJsonUnmarshaller implements Unmarshaller<GetSlotTy
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    getSlotTypeResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getSlotTypeResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    getSlotTypeResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getSlotTypeResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

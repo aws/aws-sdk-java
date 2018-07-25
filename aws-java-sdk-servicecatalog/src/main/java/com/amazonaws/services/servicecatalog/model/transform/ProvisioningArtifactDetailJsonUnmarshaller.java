@@ -66,7 +66,7 @@ public class ProvisioningArtifactDetailJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifactDetail.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    provisioningArtifactDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Active", targetDepth)) {
                     context.nextToken();

@@ -56,7 +56,8 @@ public class GetReservedInstancesExchangeQuoteResultStaxUnmarshaller implements 
                 }
 
                 if (context.testExpression("outputReservedInstancesWillExpireAt", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setOutputReservedInstancesWillExpireAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getReservedInstancesExchangeQuoteResult.setOutputReservedInstancesWillExpireAt(DateStaxUnmarshallerFactory.getInstance("iso8601")
+                            .unmarshall(context));
                     continue;
                 }
 

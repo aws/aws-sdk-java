@@ -58,11 +58,11 @@ public class IntentMetadataJsonUnmarshaller implements Unmarshaller<IntentMetada
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    intentMetadata.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    intentMetadata.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    intentMetadata.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    intentMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

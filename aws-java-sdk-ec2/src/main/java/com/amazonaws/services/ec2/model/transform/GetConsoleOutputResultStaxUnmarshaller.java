@@ -54,7 +54,7 @@ public class GetConsoleOutputResultStaxUnmarshaller implements Unmarshaller<GetC
                 }
 
                 if (context.testExpression("timestamp", targetDepth)) {
-                    getConsoleOutputResult.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getConsoleOutputResult.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

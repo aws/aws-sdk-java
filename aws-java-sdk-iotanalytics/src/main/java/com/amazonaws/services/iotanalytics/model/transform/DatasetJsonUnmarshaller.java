@@ -70,11 +70,11 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    dataset.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataset.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    dataset.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataset.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

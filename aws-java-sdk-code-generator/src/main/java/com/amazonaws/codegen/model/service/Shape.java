@@ -64,6 +64,8 @@ public class Shape {
 
     private boolean deprecated;
 
+    private String timestampFormat;
+
     public boolean isFault() {
         return fault;
     }
@@ -218,5 +220,13 @@ public class Shape {
 
     public void setDeprecated(boolean deprecated) {
         this.deprecated = deprecated;
+    }
+
+    public String getTimestampFormat() {
+        return timestampFormat;
+    }
+
+    public void setTimestampFormat(String timestampFormat) {
+        this.timestampFormat = timestampFormat;
     }
 }

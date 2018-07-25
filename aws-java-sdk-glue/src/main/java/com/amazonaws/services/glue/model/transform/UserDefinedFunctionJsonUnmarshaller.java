@@ -66,7 +66,7 @@ public class UserDefinedFunctionJsonUnmarshaller implements Unmarshaller<UserDef
                 }
                 if (context.testExpression("CreateTime", targetDepth)) {
                     context.nextToken();
-                    userDefinedFunction.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userDefinedFunction.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceUris", targetDepth)) {
                     context.nextToken();

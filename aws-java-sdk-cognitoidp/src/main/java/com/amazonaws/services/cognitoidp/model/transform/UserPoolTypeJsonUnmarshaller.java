@@ -70,11 +70,11 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    userPoolType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userPoolType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    userPoolType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userPoolType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SchemaAttributes", targetDepth)) {
                     context.nextToken();

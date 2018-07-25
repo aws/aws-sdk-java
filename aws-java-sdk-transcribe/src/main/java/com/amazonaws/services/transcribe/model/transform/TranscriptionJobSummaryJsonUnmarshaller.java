@@ -54,11 +54,11 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    transcriptionJobSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transcriptionJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
-                    transcriptionJobSummary.setCompletionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transcriptionJobSummary.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
                     context.nextToken();

@@ -74,7 +74,7 @@ public class AccountJsonUnmarshaller implements Unmarshaller<Account, JsonUnmars
                 }
                 if (context.testExpression("JoinedTimestamp", targetDepth)) {
                     context.nextToken();
-                    account.setJoinedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    account.setJoinedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

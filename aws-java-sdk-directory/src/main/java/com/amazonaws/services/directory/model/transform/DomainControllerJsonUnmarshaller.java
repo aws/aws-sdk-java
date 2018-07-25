@@ -82,11 +82,11 @@ public class DomainControllerJsonUnmarshaller implements Unmarshaller<DomainCont
                 }
                 if (context.testExpression("LaunchTime", targetDepth)) {
                     context.nextToken();
-                    domainController.setLaunchTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    domainController.setLaunchTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StatusLastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
-                    domainController.setStatusLastUpdatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    domainController.setStatusLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

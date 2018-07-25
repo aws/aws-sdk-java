@@ -62,7 +62,7 @@ public class PutRestApiResultJsonUnmarshaller implements Unmarshaller<PutRestApi
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    putRestApiResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    putRestApiResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

@@ -62,11 +62,11 @@ public class CreateAccountStatusJsonUnmarshaller implements Unmarshaller<CreateA
                 }
                 if (context.testExpression("RequestedTimestamp", targetDepth)) {
                     context.nextToken();
-                    createAccountStatus.setRequestedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createAccountStatus.setRequestedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedTimestamp", targetDepth)) {
                     context.nextToken();
-                    createAccountStatus.setCompletedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createAccountStatus.setCompletedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
                     context.nextToken();

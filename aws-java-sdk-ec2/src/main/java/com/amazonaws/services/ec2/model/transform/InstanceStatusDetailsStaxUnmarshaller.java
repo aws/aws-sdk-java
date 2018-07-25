@@ -44,7 +44,7 @@ public class InstanceStatusDetailsStaxUnmarshaller implements Unmarshaller<Insta
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("impairedSince", targetDepth)) {
-                    instanceStatusDetails.setImpairedSince(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceStatusDetails.setImpairedSince(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

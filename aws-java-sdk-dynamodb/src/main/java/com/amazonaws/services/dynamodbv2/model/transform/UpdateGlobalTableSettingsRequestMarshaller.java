@@ -32,6 +32,9 @@ public class UpdateGlobalTableSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableName").build();
     private static final MarshallingInfo<Long> GLOBALTABLEPROVISIONEDWRITECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableProvisionedWriteCapacityUnits").build();
+    private static final MarshallingInfo<StructuredPojo> GLOBALTABLEPROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate").build();
     private static final MarshallingInfo<List> GLOBALTABLEGLOBALSECONDARYINDEXSETTINGSUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableGlobalSecondaryIndexSettingsUpdate").build();
     private static final MarshallingInfo<List> REPLICASETTINGSUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -56,6 +59,8 @@ public class UpdateGlobalTableSettingsRequestMarshaller {
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableName(), GLOBALTABLENAME_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableProvisionedWriteCapacityUnits(),
                     GLOBALTABLEPROVISIONEDWRITECAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(),
+                    GLOBALTABLEPROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableGlobalSecondaryIndexSettingsUpdate(),
                     GLOBALTABLEGLOBALSECONDARYINDEXSETTINGSUPDATE_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getReplicaSettingsUpdate(), REPLICASETTINGSUPDATE_BINDING);

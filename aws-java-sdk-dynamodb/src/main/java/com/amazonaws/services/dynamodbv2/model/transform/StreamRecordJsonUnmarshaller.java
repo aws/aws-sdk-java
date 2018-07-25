@@ -50,7 +50,7 @@ public class StreamRecordJsonUnmarshaller implements Unmarshaller<StreamRecord, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ApproximateCreationDateTime", targetDepth)) {
                     context.nextToken();
-                    streamRecord.setApproximateCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    streamRecord.setApproximateCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Keys", targetDepth)) {
                     context.nextToken();

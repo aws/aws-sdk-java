@@ -66,7 +66,7 @@ public class ConfigurationTagJsonUnmarshaller implements Unmarshaller<Configurat
                 }
                 if (context.testExpression("timeOfCreation", targetDepth)) {
                     context.nextToken();
-                    configurationTag.setTimeOfCreation(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configurationTag.setTimeOfCreation(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

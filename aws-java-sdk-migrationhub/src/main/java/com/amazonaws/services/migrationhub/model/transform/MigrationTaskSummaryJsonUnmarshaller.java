@@ -70,7 +70,7 @@ public class MigrationTaskSummaryJsonUnmarshaller implements Unmarshaller<Migrat
                 }
                 if (context.testExpression("UpdateDateTime", targetDepth)) {
                     context.nextToken();
-                    migrationTaskSummary.setUpdateDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    migrationTaskSummary.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -94,11 +94,11 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeNotebookInstanceResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeNotebookInstanceResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotebookInstanceLifecycleConfigName", targetDepth)) {
                     context.nextToken();

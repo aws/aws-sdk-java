@@ -70,7 +70,7 @@ public class BackupSummaryJsonUnmarshaller implements Unmarshaller<BackupSummary
                 }
                 if (context.testExpression("BackupCreationDateTime", targetDepth)) {
                     context.nextToken();
-                    backupSummary.setBackupCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    backupSummary.setBackupCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BackupStatus", targetDepth)) {
                     context.nextToken();

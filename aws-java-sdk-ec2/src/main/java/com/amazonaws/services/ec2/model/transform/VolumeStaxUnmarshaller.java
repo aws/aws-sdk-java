@@ -61,7 +61,7 @@ public class VolumeStaxUnmarshaller implements Unmarshaller<Volume, StaxUnmarsha
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    volume.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    volume.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

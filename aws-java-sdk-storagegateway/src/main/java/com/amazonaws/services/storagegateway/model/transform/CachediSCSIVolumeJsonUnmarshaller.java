@@ -82,7 +82,7 @@ public class CachediSCSIVolumeJsonUnmarshaller implements Unmarshaller<CachediSC
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    cachediSCSIVolume.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsedInBytes", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,7 @@ public class DescribeObjectResultJsonUnmarshaller implements Unmarshaller<Descri
             }
             if (context.getHeader("Last-Modified") != null) {
                 context.setCurrentHeader("Last-Modified");
-                describeObjectResult.setLastModified(com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+                describeObjectResult.setLastModified(DateJsonUnmarshallerFactory.getInstance("rfc822").unmarshall(context));
             }
         }
 

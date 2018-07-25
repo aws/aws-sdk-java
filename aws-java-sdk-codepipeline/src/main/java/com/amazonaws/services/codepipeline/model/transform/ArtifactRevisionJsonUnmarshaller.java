@@ -66,7 +66,7 @@ public class ArtifactRevisionJsonUnmarshaller implements Unmarshaller<ArtifactRe
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    artifactRevision.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    artifactRevision.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("revisionUrl", targetDepth)) {
                     context.nextToken();

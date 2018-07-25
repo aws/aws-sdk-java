@@ -62,7 +62,7 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    record.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    record.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
                     context.nextToken();
@@ -70,7 +70,7 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                 }
                 if (context.testExpression("DeviceLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    record.setDeviceLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    record.setDeviceLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -54,7 +54,7 @@ public class GetDatasetContentResultJsonUnmarshaller implements Unmarshaller<Get
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    getDatasetContentResult.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDatasetContentResult.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

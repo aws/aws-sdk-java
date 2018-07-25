@@ -58,7 +58,7 @@ public class InventoryDeletionStatusItemJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("DeletionStartTime", targetDepth)) {
                     context.nextToken();
-                    inventoryDeletionStatusItem.setDeletionStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    inventoryDeletionStatusItem.setDeletionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStatus", targetDepth)) {
                     context.nextToken();
@@ -74,7 +74,7 @@ public class InventoryDeletionStatusItemJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("LastStatusUpdateTime", targetDepth)) {
                     context.nextToken();
-                    inventoryDeletionStatusItem.setLastStatusUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    inventoryDeletionStatusItem.setLastStatusUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -70,11 +70,11 @@ public class GroupTypeJsonUnmarshaller implements Unmarshaller<GroupType, JsonUn
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    groupType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    groupType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    groupType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    groupType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

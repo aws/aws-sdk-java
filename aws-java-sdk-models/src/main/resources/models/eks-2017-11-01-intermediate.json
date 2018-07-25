@@ -121,6 +121,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateClusterRequest",
         "variableName" : "createClusterRequest",
         "variableType" : "CreateClusterRequest",
@@ -168,6 +169,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteClusterRequest",
         "variableName" : "deleteClusterRequest",
         "variableType" : "DeleteClusterRequest",
@@ -211,6 +213,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeClusterRequest",
         "variableName" : "describeClusterRequest",
         "variableType" : "DescribeClusterRequest",
@@ -254,6 +257,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListClustersRequest",
         "variableName" : "listClustersRequest",
         "variableType" : "ListClustersRequest",
@@ -332,6 +336,7 @@
         "setterDocumentation" : "/**<p>The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>\n@param data The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.*/",
         "setterMethodName" : "setData",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "data",
           "variableType" : "String",
@@ -344,6 +349,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>\n@param data The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "data",
           "variableType" : "String",
@@ -397,6 +403,7 @@
           "setterDocumentation" : "/**<p>The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>\n@param data The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.*/",
           "setterMethodName" : "setData",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "data",
             "variableType" : "String",
@@ -409,6 +416,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>\n@param data The base64 encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "data",
             "variableType" : "String",
@@ -430,6 +438,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Certificate",
         "variableName" : "certificate",
         "variableType" : "Certificate",
@@ -499,6 +508,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -511,6 +521,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -564,6 +575,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -576,6 +588,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -594,6 +607,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClientException",
         "variableName" : "clientException",
         "variableType" : "ClientException",
@@ -663,6 +677,7 @@
         "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param name The name of the cluster.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -675,6 +690,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the cluster.</p>\n@param name The name of the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -726,6 +742,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param arn The Amazon Resource Name (ARN) of the cluster.*/",
         "setterMethodName" : "setArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "arn",
           "variableType" : "String",
@@ -738,6 +755,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param arn The Amazon Resource Name (ARN) of the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "arn",
           "variableType" : "String",
@@ -789,6 +807,7 @@
         "setterDocumentation" : "/**<p>The Unix epoch time stamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch time stamp in seconds for when the cluster was created.*/",
         "setterMethodName" : "setCreatedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -801,6 +820,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Unix epoch time stamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch time stamp in seconds for when the cluster was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -852,6 +872,7 @@
         "setterDocumentation" : "/**<p>The Kubernetes server version for the cluster.</p>\n@param version The Kubernetes server version for the cluster.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
@@ -864,6 +885,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Kubernetes server version for the cluster.</p>\n@param version The Kubernetes server version for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
@@ -915,6 +937,7 @@
         "setterDocumentation" : "/**<p>The endpoint for your Kubernetes API server.</p>\n@param endpoint The endpoint for your Kubernetes API server.*/",
         "setterMethodName" : "setEndpoint",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "endpoint",
           "variableType" : "String",
@@ -927,6 +950,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint for your Kubernetes API server.</p>\n@param endpoint The endpoint for your Kubernetes API server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "endpoint",
           "variableType" : "String",
@@ -978,6 +1002,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "roleArn",
           "variableType" : "String",
@@ -990,6 +1015,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "roleArn",
           "variableType" : "String",
@@ -1041,6 +1067,7 @@
         "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.*/",
         "setterMethodName" : "setResourcesVpcConfig",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "VpcConfigResponse",
           "variableName" : "resourcesVpcConfig",
           "variableType" : "VpcConfigResponse",
@@ -1053,6 +1080,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "VpcConfigResponse",
           "variableName" : "resourcesVpcConfig",
           "variableType" : "VpcConfigResponse",
@@ -1104,6 +1132,7 @@
         "setterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.\n@see ClusterStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -1116,6 +1145,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterStatus*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -1167,6 +1197,7 @@
         "setterDocumentation" : "/**<p>The <code>certificate-authority-data</code> for your cluster.</p>\n@param certificateAuthority The <code>certificate-authority-data</code> for your cluster.*/",
         "setterMethodName" : "setCertificateAuthority",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Certificate",
           "variableName" : "certificateAuthority",
           "variableType" : "Certificate",
@@ -1179,6 +1210,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>certificate-authority-data</code> for your cluster.</p>\n@param certificateAuthority The <code>certificate-authority-data</code> for your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Certificate",
           "variableName" : "certificateAuthority",
           "variableType" : "Certificate",
@@ -1230,6 +1262,7 @@
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clientRequestToken",
           "variableType" : "String",
@@ -1242,6 +1275,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clientRequestToken",
           "variableType" : "String",
@@ -1295,6 +1329,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param arn The Amazon Resource Name (ARN) of the cluster.*/",
           "setterMethodName" : "setArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "arn",
             "variableType" : "String",
@@ -1307,6 +1342,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the cluster.</p>\n@param arn The Amazon Resource Name (ARN) of the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "arn",
             "variableType" : "String",
@@ -1359,6 +1395,7 @@
           "setterDocumentation" : "/**<p>The <code>certificate-authority-data</code> for your cluster.</p>\n@param certificateAuthority The <code>certificate-authority-data</code> for your cluster.*/",
           "setterMethodName" : "setCertificateAuthority",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Certificate",
             "variableName" : "certificateAuthority",
             "variableType" : "Certificate",
@@ -1371,6 +1408,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>certificate-authority-data</code> for your cluster.</p>\n@param certificateAuthority The <code>certificate-authority-data</code> for your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Certificate",
             "variableName" : "certificateAuthority",
             "variableType" : "Certificate",
@@ -1423,6 +1461,7 @@
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clientRequestToken",
             "variableType" : "String",
@@ -1435,6 +1474,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clientRequestToken",
             "variableType" : "String",
@@ -1487,6 +1527,7 @@
           "setterDocumentation" : "/**<p>The Unix epoch time stamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch time stamp in seconds for when the cluster was created.*/",
           "setterMethodName" : "setCreatedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -1499,6 +1540,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Unix epoch time stamp in seconds for when the cluster was created.</p>\n@param createdAt The Unix epoch time stamp in seconds for when the cluster was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -1551,6 +1593,7 @@
           "setterDocumentation" : "/**<p>The endpoint for your Kubernetes API server.</p>\n@param endpoint The endpoint for your Kubernetes API server.*/",
           "setterMethodName" : "setEndpoint",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "endpoint",
             "variableType" : "String",
@@ -1563,6 +1606,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint for your Kubernetes API server.</p>\n@param endpoint The endpoint for your Kubernetes API server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "endpoint",
             "variableType" : "String",
@@ -1615,6 +1659,7 @@
           "setterDocumentation" : "/**<p>The name of the cluster.</p>\n@param name The name of the cluster.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1627,6 +1672,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the cluster.</p>\n@param name The name of the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -1679,6 +1725,7 @@
           "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.*/",
           "setterMethodName" : "setResourcesVpcConfig",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "VpcConfigResponse",
             "variableName" : "resourcesVpcConfig",
             "variableType" : "VpcConfigResponse",
@@ -1691,6 +1738,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "VpcConfigResponse",
             "variableName" : "resourcesVpcConfig",
             "variableType" : "VpcConfigResponse",
@@ -1743,6 +1791,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "roleArn",
             "variableType" : "String",
@@ -1755,6 +1804,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "roleArn",
             "variableType" : "String",
@@ -1807,6 +1857,7 @@
           "setterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.\n@see ClusterStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -1819,6 +1870,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the cluster.</p>\n@param status The current status of the cluster.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClusterStatus*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -1871,6 +1923,7 @@
           "setterDocumentation" : "/**<p>The Kubernetes server version for the cluster.</p>\n@param version The Kubernetes server version for the cluster.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
@@ -1883,6 +1936,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Kubernetes server version for the cluster.</p>\n@param version The Kubernetes server version for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
@@ -1904,6 +1958,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Cluster",
         "variableName" : "cluster",
         "variableType" : "Cluster",
@@ -1955,6 +2010,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClusterStatus",
         "variableName" : "clusterStatus",
         "variableType" : "ClusterStatus",
@@ -2031,6 +2087,7 @@
         "setterDocumentation" : "/**<p>The unique name to give to your cluster.</p>\n@param name The unique name to give to your cluster.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2043,6 +2100,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique name to give to your cluster.</p>\n@param name The unique name to give to your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2094,6 +2152,7 @@
         "setterDocumentation" : "/**<p>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</p>\n@param version The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.*/",
         "setterMethodName" : "setVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
@@ -2106,6 +2165,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</p>\n@param version The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "version",
           "variableType" : "String",
@@ -2157,6 +2217,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>*/",
         "setterMethodName" : "setRoleArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "roleArn",
           "variableType" : "String",
@@ -2169,6 +2230,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "roleArn",
           "variableType" : "String",
@@ -2220,6 +2282,7 @@
         "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.*/",
         "setterMethodName" : "setResourcesVpcConfig",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "VpcConfigRequest",
           "variableName" : "resourcesVpcConfig",
           "variableType" : "VpcConfigRequest",
@@ -2232,6 +2295,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "VpcConfigRequest",
           "variableName" : "resourcesVpcConfig",
           "variableType" : "VpcConfigRequest",
@@ -2283,6 +2347,7 @@
         "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
         "setterMethodName" : "setClientRequestToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clientRequestToken",
           "variableType" : "String",
@@ -2295,6 +2360,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clientRequestToken",
           "variableType" : "String",
@@ -2348,6 +2414,7 @@
           "setterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.*/",
           "setterMethodName" : "setClientRequestToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clientRequestToken",
             "variableType" : "String",
@@ -2360,6 +2427,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n@param clientRequestToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clientRequestToken",
             "variableType" : "String",
@@ -2412,6 +2480,7 @@
           "setterDocumentation" : "/**<p>The unique name to give to your cluster.</p>\n@param name The unique name to give to your cluster.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2424,6 +2493,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique name to give to your cluster.</p>\n@param name The unique name to give to your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2476,6 +2546,7 @@
           "setterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.*/",
           "setterMethodName" : "setResourcesVpcConfig",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "VpcConfigRequest",
             "variableName" : "resourcesVpcConfig",
             "variableType" : "VpcConfigRequest",
@@ -2488,6 +2559,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>\n@param resourcesVpcConfig The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "VpcConfigRequest",
             "variableName" : "resourcesVpcConfig",
             "variableType" : "VpcConfigRequest",
@@ -2540,6 +2612,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>*/",
           "setterMethodName" : "setRoleArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "roleArn",
             "variableType" : "String",
@@ -2552,6 +2625,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "roleArn",
             "variableType" : "String",
@@ -2604,6 +2678,7 @@
           "setterDocumentation" : "/**<p>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</p>\n@param version The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.*/",
           "setterMethodName" : "setVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
@@ -2616,6 +2691,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</p>\n@param version The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "version",
             "variableType" : "String",
@@ -2634,6 +2710,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateClusterRequest",
         "variableName" : "createClusterRequest",
         "variableType" : "CreateClusterRequest",
@@ -2703,6 +2780,7 @@
         "setterDocumentation" : "/**<p>The full description of your new cluster.</p>\n@param cluster The full description of your new cluster.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Cluster",
           "variableName" : "cluster",
           "variableType" : "Cluster",
@@ -2715,6 +2793,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The full description of your new cluster.</p>\n@param cluster The full description of your new cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Cluster",
           "variableName" : "cluster",
           "variableType" : "Cluster",
@@ -2768,6 +2847,7 @@
           "setterDocumentation" : "/**<p>The full description of your new cluster.</p>\n@param cluster The full description of your new cluster.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Cluster",
             "variableName" : "cluster",
             "variableType" : "Cluster",
@@ -2780,6 +2860,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The full description of your new cluster.</p>\n@param cluster The full description of your new cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Cluster",
             "variableName" : "cluster",
             "variableType" : "Cluster",
@@ -2801,6 +2882,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateClusterResult",
         "variableName" : "createClusterResult",
         "variableType" : "CreateClusterResult",
@@ -2877,6 +2959,7 @@
         "setterDocumentation" : "/**<p>The name of the cluster to delete.</p>\n@param name The name of the cluster to delete.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2889,6 +2972,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the cluster to delete.</p>\n@param name The name of the cluster to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2942,6 +3026,7 @@
           "setterDocumentation" : "/**<p>The name of the cluster to delete.</p>\n@param name The name of the cluster to delete.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2954,6 +3039,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the cluster to delete.</p>\n@param name The name of the cluster to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -2972,6 +3058,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteClusterRequest",
         "variableName" : "deleteClusterRequest",
         "variableType" : "DeleteClusterRequest",
@@ -3041,6 +3128,7 @@
         "setterDocumentation" : "/**<p>The full description of the cluster to delete.</p>\n@param cluster The full description of the cluster to delete.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Cluster",
           "variableName" : "cluster",
           "variableType" : "Cluster",
@@ -3053,6 +3141,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The full description of the cluster to delete.</p>\n@param cluster The full description of the cluster to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Cluster",
           "variableName" : "cluster",
           "variableType" : "Cluster",
@@ -3106,6 +3195,7 @@
           "setterDocumentation" : "/**<p>The full description of the cluster to delete.</p>\n@param cluster The full description of the cluster to delete.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Cluster",
             "variableName" : "cluster",
             "variableType" : "Cluster",
@@ -3118,6 +3208,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The full description of the cluster to delete.</p>\n@param cluster The full description of the cluster to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Cluster",
             "variableName" : "cluster",
             "variableType" : "Cluster",
@@ -3139,6 +3230,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteClusterResult",
         "variableName" : "deleteClusterResult",
         "variableType" : "DeleteClusterResult",
@@ -3215,6 +3307,7 @@
         "setterDocumentation" : "/**<p>The name of the cluster to describe.</p>\n@param name The name of the cluster to describe.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3227,6 +3320,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the cluster to describe.</p>\n@param name The name of the cluster to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3280,6 +3374,7 @@
           "setterDocumentation" : "/**<p>The name of the cluster to describe.</p>\n@param name The name of the cluster to describe.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -3292,6 +3387,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the cluster to describe.</p>\n@param name The name of the cluster to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -3310,6 +3406,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeClusterRequest",
         "variableName" : "describeClusterRequest",
         "variableType" : "DescribeClusterRequest",
@@ -3379,6 +3476,7 @@
         "setterDocumentation" : "/**<p>The full description of your specified cluster.</p>\n@param cluster The full description of your specified cluster.*/",
         "setterMethodName" : "setCluster",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Cluster",
           "variableName" : "cluster",
           "variableType" : "Cluster",
@@ -3391,6 +3489,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The full description of your specified cluster.</p>\n@param cluster The full description of your specified cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Cluster",
           "variableName" : "cluster",
           "variableType" : "Cluster",
@@ -3444,6 +3543,7 @@
           "setterDocumentation" : "/**<p>The full description of your specified cluster.</p>\n@param cluster The full description of your specified cluster.*/",
           "setterMethodName" : "setCluster",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Cluster",
             "variableName" : "cluster",
             "variableType" : "Cluster",
@@ -3456,6 +3556,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The full description of your specified cluster.</p>\n@param cluster The full description of your specified cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Cluster",
             "variableName" : "cluster",
             "variableType" : "Cluster",
@@ -3477,6 +3578,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeClusterResult",
         "variableName" : "describeClusterResult",
         "variableType" : "DescribeClusterResult",
@@ -3546,6 +3648,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -3558,6 +3661,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -3611,6 +3715,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -3623,6 +3728,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -3641,6 +3747,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidParameterException",
         "variableName" : "invalidParameterException",
         "variableType" : "InvalidParameterException",
@@ -3717,6 +3824,7 @@
         "setterDocumentation" : "/**<p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>\n@param maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3729,6 +3837,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>\n@param maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3780,6 +3889,7 @@
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3792,6 +3902,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3845,6 +3956,7 @@
           "setterDocumentation" : "/**<p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>\n@param maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3857,6 +3969,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>\n@param maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3909,6 +4022,7 @@
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3921,6 +4035,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>\n@param nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3939,6 +4054,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListClustersRequest",
         "variableName" : "listClustersRequest",
         "variableType" : "ListClustersRequest",
@@ -4045,6 +4161,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4057,6 +4174,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -4086,6 +4204,7 @@
         "setterDocumentation" : "/**<p>A list of all of the clusters for your account in the specified region.</p>\n@param clusters A list of all of the clusters for your account in the specified region.*/",
         "setterMethodName" : "setClusters",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "clusters",
           "variableType" : "java.util.List<String>",
@@ -4098,6 +4217,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of all of the clusters for your account in the specified region.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClusters(java.util.Collection)} or {@link #withClusters(java.util.Collection)} if you want to override the existing values.</p>\n@param clusters A list of all of the clusters for your account in the specified region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "clusters",
           "variableType" : "java.util.List<String>",
@@ -4149,6 +4269,7 @@
         "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4161,6 +4282,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4251,6 +4373,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4263,6 +4386,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4292,6 +4416,7 @@
           "setterDocumentation" : "/**<p>A list of all of the clusters for your account in the specified region.</p>\n@param clusters A list of all of the clusters for your account in the specified region.*/",
           "setterMethodName" : "setClusters",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "clusters",
             "variableType" : "java.util.List<String>",
@@ -4304,6 +4429,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of all of the clusters for your account in the specified region.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClusters(java.util.Collection)} or {@link #withClusters(java.util.Collection)} if you want to override the existing values.</p>\n@param clusters A list of all of the clusters for your account in the specified region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "clusters",
             "variableType" : "java.util.List<String>",
@@ -4356,6 +4482,7 @@
           "setterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4368,6 +4495,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n@param nextToken The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4389,6 +4517,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListClustersResult",
         "variableName" : "listClustersResult",
         "variableType" : "ListClustersResult",
@@ -4458,6 +4587,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4470,6 +4600,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4523,6 +4654,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -4535,6 +4667,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -4553,6 +4686,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceInUseException",
         "variableName" : "resourceInUseException",
         "variableType" : "ResourceInUseException",
@@ -4622,6 +4756,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4634,6 +4769,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4687,6 +4823,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -4699,6 +4836,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -4717,6 +4855,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceLimitExceededException",
         "variableName" : "resourceLimitExceededException",
         "variableType" : "ResourceLimitExceededException",
@@ -4786,6 +4925,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4798,6 +4938,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4851,6 +4992,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -4863,6 +5005,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -4881,6 +5024,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceNotFoundException",
         "variableName" : "resourceNotFoundException",
         "variableType" : "ResourceNotFoundException",
@@ -4950,6 +5094,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -4962,6 +5107,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -5015,6 +5161,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -5027,6 +5174,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -5045,6 +5193,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ServerException",
         "variableName" : "serverException",
         "variableType" : "ServerException",
@@ -5081,6 +5230,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ServiceUnavailableException",
         "variableName" : "serviceUnavailableException",
         "variableType" : "ServiceUnavailableException",
@@ -5150,6 +5300,7 @@
         "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
         "setterMethodName" : "setClusterName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -5162,6 +5313,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "clusterName",
           "variableType" : "String",
@@ -5250,6 +5402,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5262,6 +5415,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5291,6 +5445,7 @@
         "setterDocumentation" : "/**<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>\n@param validZones The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.*/",
         "setterMethodName" : "setValidZones",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "validZones",
           "variableType" : "java.util.List<String>",
@@ -5303,6 +5458,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidZones(java.util.Collection)} or {@link #withValidZones(java.util.Collection)} if you want to override the existing values.</p>\n@param validZones The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "validZones",
           "variableType" : "java.util.List<String>",
@@ -5356,6 +5512,7 @@
           "setterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.*/",
           "setterMethodName" : "setClusterName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -5368,6 +5525,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon EKS cluster associated with the exception.</p>\n@param clusterName The Amazon EKS cluster associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "clusterName",
             "variableType" : "String",
@@ -5457,6 +5615,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5469,6 +5628,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5498,6 +5658,7 @@
           "setterDocumentation" : "/**<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>\n@param validZones The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.*/",
           "setterMethodName" : "setValidZones",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "validZones",
             "variableType" : "java.util.List<String>",
@@ -5510,6 +5671,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidZones(java.util.Collection)} or {@link #withValidZones(java.util.Collection)} if you want to override the existing values.</p>\n@param validZones The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "validZones",
             "variableType" : "java.util.List<String>",
@@ -5528,6 +5690,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnsupportedAvailabilityZoneException",
         "variableName" : "unsupportedAvailabilityZoneException",
         "variableType" : "UnsupportedAvailabilityZoneException",
@@ -5634,6 +5797,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5646,6 +5810,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5675,6 +5840,7 @@
         "setterDocumentation" : "/**<p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param subnetIds Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "subnetIds",
           "variableType" : "java.util.List<String>",
@@ -5687,6 +5853,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "subnetIds",
           "variableType" : "java.util.List<String>",
@@ -5775,6 +5942,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5787,6 +5955,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -5816,6 +5985,7 @@
         "setterDocumentation" : "/**<p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "securityGroupIds",
           "variableType" : "java.util.List<String>",
@@ -5828,6 +5998,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroupIds Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "securityGroupIds",
           "variableType" : "java.util.List<String>",
@@ -5918,6 +6089,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5930,6 +6102,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -5959,6 +6132,7 @@
           "setterDocumentation" : "/**<p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "securityGroupIds",
             "variableType" : "java.util.List<String>",
@@ -5971,6 +6145,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroupIds Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to use to allow communication between your worker nodes and the Kubernetes control plane.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "securityGroupIds",
             "variableType" : "java.util.List<String>",
@@ -6060,6 +6235,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6072,6 +6248,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6101,6 +6278,7 @@
           "setterDocumentation" : "/**<p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param subnetIds Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "subnetIds",
             "variableType" : "java.util.List<String>",
@@ -6113,6 +6291,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your worker nodes and the Kubernetes control plane.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "subnetIds",
             "variableType" : "java.util.List<String>",
@@ -6134,6 +6313,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "VpcConfigRequest",
         "variableName" : "vpcConfigRequest",
         "variableType" : "VpcConfigRequest",
@@ -6240,6 +6420,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6252,6 +6433,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6281,6 +6463,7 @@
         "setterDocumentation" : "/**<p>The subnets associated with your cluster.</p>\n@param subnetIds The subnets associated with your cluster.*/",
         "setterMethodName" : "setSubnetIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "subnetIds",
           "variableType" : "java.util.List<String>",
@@ -6293,6 +6476,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subnets associated with your cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds The subnets associated with your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "subnetIds",
           "variableType" : "java.util.List<String>",
@@ -6381,6 +6565,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6393,6 +6578,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -6422,6 +6608,7 @@
         "setterDocumentation" : "/**<p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.*/",
         "setterMethodName" : "setSecurityGroupIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "securityGroupIds",
           "variableType" : "java.util.List<String>",
@@ -6434,6 +6621,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroupIds The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "securityGroupIds",
           "variableType" : "java.util.List<String>",
@@ -6485,6 +6673,7 @@
         "setterDocumentation" : "/**<p>The VPC associated with your cluster.</p>\n@param vpcId The VPC associated with your cluster.*/",
         "setterMethodName" : "setVpcId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "vpcId",
           "variableType" : "String",
@@ -6497,6 +6686,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The VPC associated with your cluster.</p>\n@param vpcId The VPC associated with your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "vpcId",
           "variableType" : "String",
@@ -6587,6 +6777,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6599,6 +6790,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6628,6 +6820,7 @@
           "setterDocumentation" : "/**<p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>\n@param securityGroupIds The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.*/",
           "setterMethodName" : "setSecurityGroupIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "securityGroupIds",
             "variableType" : "java.util.List<String>",
@@ -6640,6 +6833,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroupIds The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "securityGroupIds",
             "variableType" : "java.util.List<String>",
@@ -6729,6 +6923,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6741,6 +6936,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -6770,6 +6966,7 @@
           "setterDocumentation" : "/**<p>The subnets associated with your cluster.</p>\n@param subnetIds The subnets associated with your cluster.*/",
           "setterMethodName" : "setSubnetIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "subnetIds",
             "variableType" : "java.util.List<String>",
@@ -6782,6 +6979,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subnets associated with your cluster.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds The subnets associated with your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "subnetIds",
             "variableType" : "java.util.List<String>",
@@ -6834,6 +7032,7 @@
           "setterDocumentation" : "/**<p>The VPC associated with your cluster.</p>\n@param vpcId The VPC associated with your cluster.*/",
           "setterMethodName" : "setVpcId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "vpcId",
             "variableType" : "String",
@@ -6846,6 +7045,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The VPC associated with your cluster.</p>\n@param vpcId The VPC associated with your cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "vpcId",
             "variableType" : "String",
@@ -6867,6 +7067,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "VpcConfigResponse",
         "variableName" : "vpcConfigResponse",
         "variableType" : "VpcConfigResponse",

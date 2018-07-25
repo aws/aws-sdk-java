@@ -50,11 +50,11 @@ public class GetResourceMetricsResultJsonUnmarshaller implements Unmarshaller<Ge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlignedStartTime", targetDepth)) {
                     context.nextToken();
-                    getResourceMetricsResult.setAlignedStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getResourceMetricsResult.setAlignedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AlignedEndTime", targetDepth)) {
                     context.nextToken();
-                    getResourceMetricsResult.setAlignedEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getResourceMetricsResult.setAlignedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Identifier", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,7 @@ public class MFADeviceStaxUnmarshaller implements Unmarshaller<MFADevice, StaxUn
                 }
 
                 if (context.testExpression("EnableDate", targetDepth)) {
-                    mFADevice.setEnableDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    mFADevice.setEnableDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

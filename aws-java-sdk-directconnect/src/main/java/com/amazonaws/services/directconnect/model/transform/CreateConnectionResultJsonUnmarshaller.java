@@ -86,7 +86,7 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    createConnectionResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createConnectionResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
                     context.nextToken();

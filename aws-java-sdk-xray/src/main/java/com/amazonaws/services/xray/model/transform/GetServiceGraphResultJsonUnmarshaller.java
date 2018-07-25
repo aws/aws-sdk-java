@@ -50,11 +50,11 @@ public class GetServiceGraphResultJsonUnmarshaller implements Unmarshaller<GetSe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    getServiceGraphResult.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getServiceGraphResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    getServiceGraphResult.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getServiceGraphResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,7 @@ public class UpdateVocabularyResultJsonUnmarshaller implements Unmarshaller<Upda
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    updateVocabularyResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updateVocabularyResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VocabularyState", targetDepth)) {
                     context.nextToken();

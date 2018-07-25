@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -109,6 +109,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateAdminAccountRequest",
         "variableName" : "associateAdminAccountRequest",
         "variableType" : "AssociateAdminAccountRequest",
@@ -148,6 +149,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteNotificationChannelRequest",
         "variableName" : "deleteNotificationChannelRequest",
         "variableType" : "DeleteNotificationChannelRequest",
@@ -187,6 +189,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePolicyRequest",
         "variableName" : "deletePolicyRequest",
         "variableType" : "DeletePolicyRequest",
@@ -226,6 +229,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateAdminAccountRequest",
         "variableName" : "disassociateAdminAccountRequest",
         "variableType" : "DisassociateAdminAccountRequest",
@@ -265,6 +269,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAdminAccountRequest",
         "variableName" : "getAdminAccountRequest",
         "variableType" : "GetAdminAccountRequest",
@@ -300,6 +305,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetComplianceDetailRequest",
         "variableName" : "getComplianceDetailRequest",
         "variableType" : "GetComplianceDetailRequest",
@@ -339,6 +345,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetNotificationChannelRequest",
         "variableName" : "getNotificationChannelRequest",
         "variableType" : "GetNotificationChannelRequest",
@@ -378,6 +385,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPolicyRequest",
         "variableName" : "getPolicyRequest",
         "variableType" : "GetPolicyRequest",
@@ -413,6 +421,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListComplianceStatusRequest",
         "variableName" : "listComplianceStatusRequest",
         "variableType" : "ListComplianceStatusRequest",
@@ -456,6 +465,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPoliciesRequest",
         "variableName" : "listPoliciesRequest",
         "variableType" : "ListPoliciesRequest",
@@ -495,6 +505,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutNotificationChannelRequest",
         "variableName" : "putNotificationChannelRequest",
         "variableType" : "PutNotificationChannelRequest",
@@ -538,6 +549,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutPolicyRequest",
         "variableName" : "putPolicyRequest",
         "variableType" : "PutPolicyRequest",
@@ -623,6 +635,7 @@
         "setterDocumentation" : "/**<p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n@param adminAccount The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.*/",
         "setterMethodName" : "setAdminAccount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adminAccount",
           "variableType" : "String",
@@ -635,6 +648,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n@param adminAccount The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adminAccount",
           "variableType" : "String",
@@ -688,6 +702,7 @@
           "setterDocumentation" : "/**<p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n@param adminAccount The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.*/",
           "setterMethodName" : "setAdminAccount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adminAccount",
             "variableType" : "String",
@@ -700,6 +715,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n@param adminAccount The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adminAccount",
             "variableType" : "String",
@@ -718,6 +734,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateAdminAccountRequest",
         "variableName" : "associateAdminAccountRequest",
         "variableType" : "AssociateAdminAccountRequest",
@@ -757,6 +774,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateAdminAccountResult",
         "variableName" : "associateAdminAccountResult",
         "variableType" : "AssociateAdminAccountResult",
@@ -826,6 +844,7 @@
         "setterDocumentation" : "/**<p>The resource ID.</p>\n@param resourceId The resource ID.*/",
         "setterMethodName" : "setResourceId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceId",
           "variableType" : "String",
@@ -838,6 +857,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ID.</p>\n@param resourceId The resource ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceId",
           "variableType" : "String",
@@ -889,6 +909,7 @@
         "setterDocumentation" : "/**<p>The reason that the resource is not protected by the policy.</p>\n@param violationReason The reason that the resource is not protected by the policy.\n@see ViolationReason*/",
         "setterMethodName" : "setViolationReason",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "violationReason",
           "variableType" : "String",
@@ -901,6 +922,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The reason that the resource is not protected by the policy.</p>\n@param violationReason The reason that the resource is not protected by the policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ViolationReason*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "violationReason",
           "variableType" : "String",
@@ -952,6 +974,7 @@
         "setterDocumentation" : "/**<p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -964,6 +987,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -1017,6 +1041,7 @@
           "setterDocumentation" : "/**<p>The resource ID.</p>\n@param resourceId The resource ID.*/",
           "setterMethodName" : "setResourceId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceId",
             "variableType" : "String",
@@ -1029,6 +1054,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ID.</p>\n@param resourceId The resource ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceId",
             "variableType" : "String",
@@ -1081,6 +1107,7 @@
           "setterDocumentation" : "/**<p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -1093,6 +1120,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -1145,6 +1173,7 @@
           "setterDocumentation" : "/**<p>The reason that the resource is not protected by the policy.</p>\n@param violationReason The reason that the resource is not protected by the policy.\n@see ViolationReason*/",
           "setterMethodName" : "setViolationReason",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "violationReason",
             "variableType" : "String",
@@ -1157,6 +1186,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The reason that the resource is not protected by the policy.</p>\n@param violationReason The reason that the resource is not protected by the policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ViolationReason*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "violationReason",
             "variableType" : "String",
@@ -1178,6 +1208,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ComplianceViolator",
         "variableName" : "complianceViolator",
         "variableType" : "ComplianceViolator",
@@ -1221,6 +1252,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteNotificationChannelRequest",
         "variableName" : "deleteNotificationChannelRequest",
         "variableType" : "DeleteNotificationChannelRequest",
@@ -1260,6 +1292,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteNotificationChannelResult",
         "variableName" : "deleteNotificationChannelResult",
         "variableType" : "DeleteNotificationChannelResult",
@@ -1336,6 +1369,7 @@
         "setterDocumentation" : "/**<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -1348,6 +1382,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -1401,6 +1436,7 @@
           "setterDocumentation" : "/**<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -1413,6 +1449,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -1431,6 +1468,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePolicyRequest",
         "variableName" : "deletePolicyRequest",
         "variableType" : "DeletePolicyRequest",
@@ -1470,6 +1508,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeletePolicyResult",
         "variableName" : "deletePolicyResult",
         "variableType" : "DeletePolicyResult",
@@ -1513,6 +1552,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateAdminAccountRequest",
         "variableName" : "disassociateAdminAccountRequest",
         "variableType" : "DisassociateAdminAccountRequest",
@@ -1552,6 +1592,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateAdminAccountResult",
         "variableName" : "disassociateAdminAccountResult",
         "variableType" : "DisassociateAdminAccountResult",
@@ -1621,6 +1662,7 @@
         "setterDocumentation" : "/**<p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n@param complianceStatus Describes an AWS account's compliance with the AWS Firewall Manager policy.\n@see PolicyComplianceStatusType*/",
         "setterMethodName" : "setComplianceStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "complianceStatus",
           "variableType" : "String",
@@ -1633,6 +1675,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n@param complianceStatus Describes an AWS account's compliance with the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyComplianceStatusType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "complianceStatus",
           "variableType" : "String",
@@ -1684,6 +1727,7 @@
         "setterDocumentation" : "/**<p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n@param violatorCount Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.*/",
         "setterMethodName" : "setViolatorCount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "violatorCount",
           "variableType" : "Long",
@@ -1696,6 +1740,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n@param violatorCount Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "violatorCount",
           "variableType" : "Long",
@@ -1747,6 +1792,7 @@
         "setterDocumentation" : "/**<p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setEvaluationLimitExceeded",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "evaluationLimitExceeded",
           "variableType" : "Boolean",
@@ -1759,6 +1805,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "evaluationLimitExceeded",
           "variableType" : "Boolean",
@@ -1812,6 +1859,7 @@
           "setterDocumentation" : "/**<p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n@param complianceStatus Describes an AWS account's compliance with the AWS Firewall Manager policy.\n@see PolicyComplianceStatusType*/",
           "setterMethodName" : "setComplianceStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "complianceStatus",
             "variableType" : "String",
@@ -1824,6 +1872,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n@param complianceStatus Describes an AWS account's compliance with the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyComplianceStatusType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "complianceStatus",
             "variableType" : "String",
@@ -1876,6 +1925,7 @@
           "setterDocumentation" : "/**<p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setEvaluationLimitExceeded",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "evaluationLimitExceeded",
             "variableType" : "Boolean",
@@ -1888,6 +1938,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "evaluationLimitExceeded",
             "variableType" : "Boolean",
@@ -1940,6 +1991,7 @@
           "setterDocumentation" : "/**<p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n@param violatorCount Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.*/",
           "setterMethodName" : "setViolatorCount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "violatorCount",
             "variableType" : "Long",
@@ -1952,6 +2004,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n@param violatorCount Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "violatorCount",
             "variableType" : "Long",
@@ -1973,6 +2026,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "EvaluationResult",
         "variableName" : "evaluationResult",
         "variableType" : "EvaluationResult",
@@ -2016,6 +2070,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAdminAccountRequest",
         "variableName" : "getAdminAccountRequest",
         "variableType" : "GetAdminAccountRequest",
@@ -2085,6 +2140,7 @@
         "setterDocumentation" : "/**<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n@param adminAccount The AWS account that is set as the AWS Firewall Manager administrator.*/",
         "setterMethodName" : "setAdminAccount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adminAccount",
           "variableType" : "String",
@@ -2097,6 +2153,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n@param adminAccount The AWS account that is set as the AWS Firewall Manager administrator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "adminAccount",
           "variableType" : "String",
@@ -2150,6 +2207,7 @@
           "setterDocumentation" : "/**<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n@param adminAccount The AWS account that is set as the AWS Firewall Manager administrator.*/",
           "setterMethodName" : "setAdminAccount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adminAccount",
             "variableType" : "String",
@@ -2162,6 +2220,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n@param adminAccount The AWS account that is set as the AWS Firewall Manager administrator.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "adminAccount",
             "variableType" : "String",
@@ -2183,6 +2242,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetAdminAccountResult",
         "variableName" : "getAdminAccountResult",
         "variableType" : "GetAdminAccountResult",
@@ -2259,6 +2319,7 @@
         "setterDocumentation" : "/**<p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -2271,6 +2332,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -2322,6 +2384,7 @@
         "setterDocumentation" : "/**<p>The AWS account that owns the resources that you want to get the details for.</p>\n@param memberAccount The AWS account that owns the resources that you want to get the details for.*/",
         "setterMethodName" : "setMemberAccount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccount",
           "variableType" : "String",
@@ -2334,6 +2397,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account that owns the resources that you want to get the details for.</p>\n@param memberAccount The AWS account that owns the resources that you want to get the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccount",
           "variableType" : "String",
@@ -2387,6 +2451,7 @@
           "setterDocumentation" : "/**<p>The AWS account that owns the resources that you want to get the details for.</p>\n@param memberAccount The AWS account that owns the resources that you want to get the details for.*/",
           "setterMethodName" : "setMemberAccount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccount",
             "variableType" : "String",
@@ -2399,6 +2464,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account that owns the resources that you want to get the details for.</p>\n@param memberAccount The AWS account that owns the resources that you want to get the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccount",
             "variableType" : "String",
@@ -2451,6 +2517,7 @@
           "setterDocumentation" : "/**<p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -2463,6 +2530,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n@param policyId The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -2481,6 +2549,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetComplianceDetailRequest",
         "variableName" : "getComplianceDetailRequest",
         "variableType" : "GetComplianceDetailRequest",
@@ -2550,6 +2619,7 @@
         "setterDocumentation" : "/**<p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n@param policyComplianceDetail Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.*/",
         "setterMethodName" : "setPolicyComplianceDetail",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyComplianceDetail",
           "variableName" : "policyComplianceDetail",
           "variableType" : "PolicyComplianceDetail",
@@ -2562,6 +2632,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n@param policyComplianceDetail Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "PolicyComplianceDetail",
           "variableName" : "policyComplianceDetail",
           "variableType" : "PolicyComplianceDetail",
@@ -2615,6 +2686,7 @@
           "setterDocumentation" : "/**<p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n@param policyComplianceDetail Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.*/",
           "setterMethodName" : "setPolicyComplianceDetail",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyComplianceDetail",
             "variableName" : "policyComplianceDetail",
             "variableType" : "PolicyComplianceDetail",
@@ -2627,6 +2699,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n@param policyComplianceDetail Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "PolicyComplianceDetail",
             "variableName" : "policyComplianceDetail",
             "variableType" : "PolicyComplianceDetail",
@@ -2648,6 +2721,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetComplianceDetailResult",
         "variableName" : "getComplianceDetailResult",
         "variableType" : "GetComplianceDetailResult",
@@ -2691,6 +2765,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetNotificationChannelRequest",
         "variableName" : "getNotificationChannelRequest",
         "variableType" : "GetNotificationChannelRequest",
@@ -2760,6 +2835,7 @@
         "setterDocumentation" : "/**<p>The SNS topic that records AWS Firewall Manager activity. </p>\n@param snsTopicArn The SNS topic that records AWS Firewall Manager activity.*/",
         "setterMethodName" : "setSnsTopicArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsTopicArn",
           "variableType" : "String",
@@ -2772,6 +2848,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SNS topic that records AWS Firewall Manager activity. </p>\n@param snsTopicArn The SNS topic that records AWS Firewall Manager activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsTopicArn",
           "variableType" : "String",
@@ -2823,6 +2900,7 @@
         "setterDocumentation" : "/**<p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n@param snsRoleName The IAM role that is used by AWS Firewall Manager to record activity to SNS.*/",
         "setterMethodName" : "setSnsRoleName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsRoleName",
           "variableType" : "String",
@@ -2835,6 +2913,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n@param snsRoleName The IAM role that is used by AWS Firewall Manager to record activity to SNS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsRoleName",
           "variableType" : "String",
@@ -2888,6 +2967,7 @@
           "setterDocumentation" : "/**<p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n@param snsRoleName The IAM role that is used by AWS Firewall Manager to record activity to SNS.*/",
           "setterMethodName" : "setSnsRoleName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsRoleName",
             "variableType" : "String",
@@ -2900,6 +2980,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n@param snsRoleName The IAM role that is used by AWS Firewall Manager to record activity to SNS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsRoleName",
             "variableType" : "String",
@@ -2952,6 +3033,7 @@
           "setterDocumentation" : "/**<p>The SNS topic that records AWS Firewall Manager activity. </p>\n@param snsTopicArn The SNS topic that records AWS Firewall Manager activity.*/",
           "setterMethodName" : "setSnsTopicArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsTopicArn",
             "variableType" : "String",
@@ -2964,6 +3046,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SNS topic that records AWS Firewall Manager activity. </p>\n@param snsTopicArn The SNS topic that records AWS Firewall Manager activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsTopicArn",
             "variableType" : "String",
@@ -2985,6 +3068,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetNotificationChannelResult",
         "variableName" : "getNotificationChannelResult",
         "variableType" : "GetNotificationChannelResult",
@@ -3061,6 +3145,7 @@
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -3073,6 +3158,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -3126,6 +3212,7 @@
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -3138,6 +3225,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -3156,6 +3244,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPolicyRequest",
         "variableName" : "getPolicyRequest",
         "variableType" : "GetPolicyRequest",
@@ -3225,6 +3314,7 @@
         "setterDocumentation" : "/**<p>Information about the specified AWS Firewall Manager policy.</p>\n@param policy Information about the specified AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Policy",
           "variableName" : "policy",
           "variableType" : "Policy",
@@ -3237,6 +3327,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the specified AWS Firewall Manager policy.</p>\n@param policy Information about the specified AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Policy",
           "variableName" : "policy",
           "variableType" : "Policy",
@@ -3288,6 +3379,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
         "setterMethodName" : "setPolicyArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyArn",
           "variableType" : "String",
@@ -3300,6 +3392,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyArn",
           "variableType" : "String",
@@ -3353,6 +3446,7 @@
           "setterDocumentation" : "/**<p>Information about the specified AWS Firewall Manager policy.</p>\n@param policy Information about the specified AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Policy",
             "variableName" : "policy",
             "variableType" : "Policy",
@@ -3365,6 +3459,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the specified AWS Firewall Manager policy.</p>\n@param policy Information about the specified AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Policy",
             "variableName" : "policy",
             "variableType" : "Policy",
@@ -3417,6 +3512,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
           "setterMethodName" : "setPolicyArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyArn",
             "variableType" : "String",
@@ -3429,6 +3525,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyArn",
             "variableType" : "String",
@@ -3450,6 +3547,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPolicyResult",
         "variableName" : "getPolicyResult",
         "variableType" : "GetPolicyResult",
@@ -3486,6 +3584,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalErrorException",
         "variableName" : "internalErrorException",
         "variableType" : "InternalErrorException",
@@ -3522,6 +3621,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidInputException",
         "variableName" : "invalidInputException",
         "variableType" : "InvalidInputException",
@@ -3558,6 +3658,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidOperationException",
         "variableName" : "invalidOperationException",
         "variableType" : "InvalidOperationException",
@@ -3594,6 +3695,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LimitExceededException",
         "variableName" : "limitExceededException",
         "variableType" : "LimitExceededException",
@@ -3670,6 +3772,7 @@
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -3682,6 +3785,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -3733,6 +3837,7 @@
         "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3745,6 +3850,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3796,6 +3902,7 @@
         "setterDocumentation" : "/**<p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3808,6 +3915,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3861,6 +3969,7 @@
           "setterDocumentation" : "/**<p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3873,6 +3982,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3925,6 +4035,7 @@
           "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3937,6 +4048,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3989,6 +4101,7 @@
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -4001,6 +4114,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n@param policyId The ID of the AWS Firewall Manager policy that you want the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -4019,6 +4133,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListComplianceStatusRequest",
         "variableName" : "listComplianceStatusRequest",
         "variableType" : "ListComplianceStatusRequest",
@@ -4125,6 +4240,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PolicyComplianceStatus",
               "variableName" : "member",
               "variableType" : "PolicyComplianceStatus",
@@ -4137,6 +4253,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PolicyComplianceStatus",
               "variableName" : "member",
               "variableType" : "PolicyComplianceStatus",
@@ -4166,6 +4283,7 @@
         "setterDocumentation" : "/**<p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n@param policyComplianceStatusList An array of <code>PolicyComplianceStatus</code> objects.*/",
         "setterMethodName" : "setPolicyComplianceStatusList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PolicyComplianceStatus>",
           "variableName" : "policyComplianceStatusList",
           "variableType" : "java.util.List<PolicyComplianceStatus>",
@@ -4178,6 +4296,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyComplianceStatusList(java.util.Collection)} or {@link #withPolicyComplianceStatusList(java.util.Collection)} if you want to override the existing values.</p>\n@param policyComplianceStatusList An array of <code>PolicyComplianceStatus</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PolicyComplianceStatus>",
           "variableName" : "policyComplianceStatusList",
           "variableType" : "java.util.List<PolicyComplianceStatus>",
@@ -4229,6 +4348,7 @@
         "setterDocumentation" : "/**<p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4241,6 +4361,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4294,6 +4415,7 @@
           "setterDocumentation" : "/**<p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4306,6 +4428,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4395,6 +4518,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PolicyComplianceStatus",
                 "variableName" : "member",
                 "variableType" : "PolicyComplianceStatus",
@@ -4407,6 +4531,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PolicyComplianceStatus",
                 "variableName" : "member",
                 "variableType" : "PolicyComplianceStatus",
@@ -4436,6 +4561,7 @@
           "setterDocumentation" : "/**<p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n@param policyComplianceStatusList An array of <code>PolicyComplianceStatus</code> objects.*/",
           "setterMethodName" : "setPolicyComplianceStatusList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PolicyComplianceStatus>",
             "variableName" : "policyComplianceStatusList",
             "variableType" : "java.util.List<PolicyComplianceStatus>",
@@ -4448,6 +4574,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyComplianceStatusList(java.util.Collection)} or {@link #withPolicyComplianceStatusList(java.util.Collection)} if you want to override the existing values.</p>\n@param policyComplianceStatusList An array of <code>PolicyComplianceStatus</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PolicyComplianceStatus>",
             "variableName" : "policyComplianceStatusList",
             "variableType" : "java.util.List<PolicyComplianceStatus>",
@@ -4469,6 +4596,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListComplianceStatusResult",
         "variableName" : "listComplianceStatusResult",
         "variableType" : "ListComplianceStatusResult",
@@ -4545,6 +4673,7 @@
         "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4557,6 +4686,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4608,6 +4738,7 @@
         "setterDocumentation" : "/**<p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -4620,6 +4751,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -4673,6 +4805,7 @@
           "setterDocumentation" : "/**<p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -4685,6 +4818,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n@param maxResults Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -4737,6 +4871,7 @@
           "setterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4749,6 +4884,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4767,6 +4903,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPoliciesRequest",
         "variableName" : "listPoliciesRequest",
         "variableType" : "ListPoliciesRequest",
@@ -4873,6 +5010,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PolicySummary",
               "variableName" : "member",
               "variableType" : "PolicySummary",
@@ -4885,6 +5023,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "PolicySummary",
               "variableName" : "member",
               "variableType" : "PolicySummary",
@@ -4914,6 +5053,7 @@
         "setterDocumentation" : "/**<p>An array of <code>PolicySummary</code> objects.</p>\n@param policyList An array of <code>PolicySummary</code> objects.*/",
         "setterMethodName" : "setPolicyList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PolicySummary>",
           "variableName" : "policyList",
           "variableType" : "java.util.List<PolicySummary>",
@@ -4926,6 +5066,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>PolicySummary</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyList(java.util.Collection)} or {@link #withPolicyList(java.util.Collection)} if you want to override the existing values.</p>\n@param policyList An array of <code>PolicySummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<PolicySummary>",
           "variableName" : "policyList",
           "variableType" : "java.util.List<PolicySummary>",
@@ -4977,6 +5118,7 @@
         "setterDocumentation" : "/**<p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4989,6 +5131,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5042,6 +5185,7 @@
           "setterDocumentation" : "/**<p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5054,6 +5198,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>\n@param nextToken If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5143,6 +5288,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PolicySummary",
                 "variableName" : "member",
                 "variableType" : "PolicySummary",
@@ -5155,6 +5301,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "PolicySummary",
                 "variableName" : "member",
                 "variableType" : "PolicySummary",
@@ -5184,6 +5331,7 @@
           "setterDocumentation" : "/**<p>An array of <code>PolicySummary</code> objects.</p>\n@param policyList An array of <code>PolicySummary</code> objects.*/",
           "setterMethodName" : "setPolicyList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PolicySummary>",
             "variableName" : "policyList",
             "variableType" : "java.util.List<PolicySummary>",
@@ -5196,6 +5344,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>PolicySummary</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPolicyList(java.util.Collection)} or {@link #withPolicyList(java.util.Collection)} if you want to override the existing values.</p>\n@param policyList An array of <code>PolicySummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<PolicySummary>",
             "variableName" : "policyList",
             "variableType" : "java.util.List<PolicySummary>",
@@ -5217,6 +5366,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListPoliciesResult",
         "variableName" : "listPoliciesResult",
         "variableType" : "ListPoliciesResult",
@@ -5286,6 +5436,7 @@
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -5298,6 +5449,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -5349,6 +5501,7 @@
         "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyName",
           "variableType" : "String",
@@ -5361,6 +5514,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyName",
           "variableType" : "String",
@@ -5412,6 +5566,7 @@
         "setterDocumentation" : "/**<p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n@param policyUpdateToken A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.*/",
         "setterMethodName" : "setPolicyUpdateToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyUpdateToken",
           "variableType" : "String",
@@ -5424,6 +5579,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n@param policyUpdateToken A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyUpdateToken",
           "variableType" : "String",
@@ -5475,6 +5631,7 @@
         "setterDocumentation" : "/**<p>Details about the security service that is being used to protect the resources.</p>\n@param securityServicePolicyData Details about the security service that is being used to protect the resources.*/",
         "setterMethodName" : "setSecurityServicePolicyData",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "SecurityServicePolicyData",
           "variableName" : "securityServicePolicyData",
           "variableType" : "SecurityServicePolicyData",
@@ -5487,6 +5644,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Details about the security service that is being used to protect the resources.</p>\n@param securityServicePolicyData Details about the security service that is being used to protect the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "SecurityServicePolicyData",
           "variableName" : "securityServicePolicyData",
           "variableType" : "SecurityServicePolicyData",
@@ -5538,6 +5696,7 @@
         "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -5550,6 +5709,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -5638,6 +5798,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ResourceTag",
               "variableName" : "member",
               "variableType" : "ResourceTag",
@@ -5650,6 +5811,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ResourceTag",
               "variableName" : "member",
               "variableType" : "ResourceTag",
@@ -5679,6 +5841,7 @@
         "setterDocumentation" : "/**<p>An array of <code>ResourceTag</code> objects.</p>\n@param resourceTags An array of <code>ResourceTag</code> objects.*/",
         "setterMethodName" : "setResourceTags",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ResourceTag>",
           "variableName" : "resourceTags",
           "variableType" : "java.util.List<ResourceTag>",
@@ -5691,6 +5854,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>ResourceTag</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTags(java.util.Collection)} or {@link #withResourceTags(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTags An array of <code>ResourceTag</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ResourceTag>",
           "variableName" : "resourceTags",
           "variableType" : "java.util.List<ResourceTag>",
@@ -5742,6 +5906,7 @@
         "setterDocumentation" : "/**<p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.</p>\n@param excludeResourceTags If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.*/",
         "setterMethodName" : "setExcludeResourceTags",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "excludeResourceTags",
           "variableType" : "Boolean",
@@ -5754,6 +5919,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.</p>\n@param excludeResourceTags If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "excludeResourceTags",
           "variableType" : "Boolean",
@@ -5805,6 +5971,7 @@
         "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
         "setterMethodName" : "setRemediationEnabled",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "remediationEnabled",
           "variableType" : "Boolean",
@@ -5817,6 +5984,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "remediationEnabled",
           "variableType" : "Boolean",
@@ -5870,6 +6038,7 @@
           "setterDocumentation" : "/**<p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.</p>\n@param excludeResourceTags If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.*/",
           "setterMethodName" : "setExcludeResourceTags",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "excludeResourceTags",
             "variableType" : "Boolean",
@@ -5882,6 +6051,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.</p>\n@param excludeResourceTags If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are associated with the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "excludeResourceTags",
             "variableType" : "Boolean",
@@ -5934,6 +6104,7 @@
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -5946,6 +6117,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -5998,6 +6170,7 @@
           "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyName",
             "variableType" : "String",
@@ -6010,6 +6183,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyName",
             "variableType" : "String",
@@ -6062,6 +6236,7 @@
           "setterDocumentation" : "/**<p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n@param policyUpdateToken A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.*/",
           "setterMethodName" : "setPolicyUpdateToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyUpdateToken",
             "variableType" : "String",
@@ -6074,6 +6249,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n@param policyUpdateToken A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyUpdateToken",
             "variableType" : "String",
@@ -6126,6 +6302,7 @@
           "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
           "setterMethodName" : "setRemediationEnabled",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "remediationEnabled",
             "variableType" : "Boolean",
@@ -6138,6 +6315,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "remediationEnabled",
             "variableType" : "Boolean",
@@ -6227,6 +6405,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ResourceTag",
                 "variableName" : "member",
                 "variableType" : "ResourceTag",
@@ -6239,6 +6418,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ResourceTag",
                 "variableName" : "member",
                 "variableType" : "ResourceTag",
@@ -6268,6 +6448,7 @@
           "setterDocumentation" : "/**<p>An array of <code>ResourceTag</code> objects.</p>\n@param resourceTags An array of <code>ResourceTag</code> objects.*/",
           "setterMethodName" : "setResourceTags",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ResourceTag>",
             "variableName" : "resourceTags",
             "variableType" : "java.util.List<ResourceTag>",
@@ -6280,6 +6461,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>ResourceTag</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceTags(java.util.Collection)} or {@link #withResourceTags(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceTags An array of <code>ResourceTag</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ResourceTag>",
             "variableName" : "resourceTags",
             "variableType" : "java.util.List<ResourceTag>",
@@ -6332,6 +6514,7 @@
           "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -6344,6 +6527,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -6396,6 +6580,7 @@
           "setterDocumentation" : "/**<p>Details about the security service that is being used to protect the resources.</p>\n@param securityServicePolicyData Details about the security service that is being used to protect the resources.*/",
           "setterMethodName" : "setSecurityServicePolicyData",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "SecurityServicePolicyData",
             "variableName" : "securityServicePolicyData",
             "variableType" : "SecurityServicePolicyData",
@@ -6408,6 +6593,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Details about the security service that is being used to protect the resources.</p>\n@param securityServicePolicyData Details about the security service that is being used to protect the resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "SecurityServicePolicyData",
             "variableName" : "securityServicePolicyData",
             "variableType" : "SecurityServicePolicyData",
@@ -6429,6 +6615,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Policy",
         "variableName" : "policy",
         "variableType" : "Policy",
@@ -6498,6 +6685,7 @@
         "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyOwner",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyOwner",
           "variableType" : "String",
@@ -6510,6 +6698,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyOwner",
           "variableType" : "String",
@@ -6561,6 +6750,7 @@
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -6573,6 +6763,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -6624,6 +6815,7 @@
         "setterDocumentation" : "/**<p>The AWS account ID.</p>\n@param memberAccount The AWS account ID.*/",
         "setterMethodName" : "setMemberAccount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccount",
           "variableType" : "String",
@@ -6636,6 +6828,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account ID.</p>\n@param memberAccount The AWS account ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccount",
           "variableType" : "String",
@@ -6724,6 +6917,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ComplianceViolator",
               "variableName" : "member",
               "variableType" : "ComplianceViolator",
@@ -6736,6 +6930,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "ComplianceViolator",
               "variableName" : "member",
               "variableType" : "ComplianceViolator",
@@ -6765,6 +6960,7 @@
         "setterDocumentation" : "/**<p>An array of resources that are not protected by the policy.</p>\n@param violators An array of resources that are not protected by the policy.*/",
         "setterMethodName" : "setViolators",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ComplianceViolator>",
           "variableName" : "violators",
           "variableType" : "java.util.List<ComplianceViolator>",
@@ -6777,6 +6973,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of resources that are not protected by the policy.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setViolators(java.util.Collection)} or {@link #withViolators(java.util.Collection)} if you want to override the existing values.</p>\n@param violators An array of resources that are not protected by the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ComplianceViolator>",
           "variableName" : "violators",
           "variableType" : "java.util.List<ComplianceViolator>",
@@ -6828,6 +7025,7 @@
         "setterDocumentation" : "/**<p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setEvaluationLimitExceeded",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "evaluationLimitExceeded",
           "variableType" : "Boolean",
@@ -6840,6 +7038,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "evaluationLimitExceeded",
           "variableType" : "Boolean",
@@ -6891,6 +7090,7 @@
         "setterDocumentation" : "/**<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>\n@param expiredAt A time stamp that indicates when the returned information should be considered out-of-date.*/",
         "setterMethodName" : "setExpiredAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "expiredAt",
           "variableType" : "java.util.Date",
@@ -6903,6 +7103,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>\n@param expiredAt A time stamp that indicates when the returned information should be considered out-of-date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "expiredAt",
           "variableType" : "java.util.Date",
@@ -6956,6 +7157,7 @@
           "setterDocumentation" : "/**<p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setEvaluationLimitExceeded",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "evaluationLimitExceeded",
             "variableType" : "Boolean",
@@ -6968,6 +7170,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.</p>\n@param evaluationLimitExceeded Indicates if over 100 resources are non-compliant with the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "evaluationLimitExceeded",
             "variableType" : "Boolean",
@@ -7020,6 +7223,7 @@
           "setterDocumentation" : "/**<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>\n@param expiredAt A time stamp that indicates when the returned information should be considered out-of-date.*/",
           "setterMethodName" : "setExpiredAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "expiredAt",
             "variableType" : "java.util.Date",
@@ -7032,6 +7236,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>\n@param expiredAt A time stamp that indicates when the returned information should be considered out-of-date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "expiredAt",
             "variableType" : "java.util.Date",
@@ -7084,6 +7289,7 @@
           "setterDocumentation" : "/**<p>The AWS account ID.</p>\n@param memberAccount The AWS account ID.*/",
           "setterMethodName" : "setMemberAccount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccount",
             "variableType" : "String",
@@ -7096,6 +7302,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account ID.</p>\n@param memberAccount The AWS account ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccount",
             "variableType" : "String",
@@ -7148,6 +7355,7 @@
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -7160,6 +7368,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -7212,6 +7421,7 @@
           "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyOwner",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyOwner",
             "variableType" : "String",
@@ -7224,6 +7434,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyOwner",
             "variableType" : "String",
@@ -7313,6 +7524,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ComplianceViolator",
                 "variableName" : "member",
                 "variableType" : "ComplianceViolator",
@@ -7325,6 +7537,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "ComplianceViolator",
                 "variableName" : "member",
                 "variableType" : "ComplianceViolator",
@@ -7354,6 +7567,7 @@
           "setterDocumentation" : "/**<p>An array of resources that are not protected by the policy.</p>\n@param violators An array of resources that are not protected by the policy.*/",
           "setterMethodName" : "setViolators",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ComplianceViolator>",
             "variableName" : "violators",
             "variableType" : "java.util.List<ComplianceViolator>",
@@ -7366,6 +7580,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of resources that are not protected by the policy.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setViolators(java.util.Collection)} or {@link #withViolators(java.util.Collection)} if you want to override the existing values.</p>\n@param violators An array of resources that are not protected by the policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ComplianceViolator>",
             "variableName" : "violators",
             "variableType" : "java.util.List<ComplianceViolator>",
@@ -7387,6 +7602,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PolicyComplianceDetail",
         "variableName" : "policyComplianceDetail",
         "variableType" : "PolicyComplianceDetail",
@@ -7456,6 +7672,7 @@
         "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyOwner",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyOwner",
           "variableType" : "String",
@@ -7468,6 +7685,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyOwner",
           "variableType" : "String",
@@ -7519,6 +7737,7 @@
         "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -7531,6 +7750,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -7582,6 +7802,7 @@
         "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
         "setterMethodName" : "setPolicyName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyName",
           "variableType" : "String",
@@ -7594,6 +7815,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyName",
           "variableType" : "String",
@@ -7645,6 +7867,7 @@
         "setterDocumentation" : "/**<p>The member account ID.</p>\n@param memberAccount The member account ID.*/",
         "setterMethodName" : "setMemberAccount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccount",
           "variableType" : "String",
@@ -7657,6 +7880,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The member account ID.</p>\n@param memberAccount The member account ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccount",
           "variableType" : "String",
@@ -7745,6 +7969,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "EvaluationResult",
               "variableName" : "member",
               "variableType" : "EvaluationResult",
@@ -7757,6 +7982,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "EvaluationResult",
               "variableName" : "member",
               "variableType" : "EvaluationResult",
@@ -7786,6 +8012,7 @@
         "setterDocumentation" : "/**<p>An array of <code>EvaluationResult</code> objects.</p>\n@param evaluationResults An array of <code>EvaluationResult</code> objects.*/",
         "setterMethodName" : "setEvaluationResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<EvaluationResult>",
           "variableName" : "evaluationResults",
           "variableType" : "java.util.List<EvaluationResult>",
@@ -7798,6 +8025,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>EvaluationResult</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvaluationResults(java.util.Collection)} or {@link #withEvaluationResults(java.util.Collection)} if you want to override the existing values.</p>\n@param evaluationResults An array of <code>EvaluationResult</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<EvaluationResult>",
           "variableName" : "evaluationResults",
           "variableType" : "java.util.List<EvaluationResult>",
@@ -7849,6 +8077,7 @@
         "setterDocumentation" : "/**<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n@param lastUpdated Time stamp of the last update to the <code>EvaluationResult</code> objects.*/",
         "setterMethodName" : "setLastUpdated",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastUpdated",
           "variableType" : "java.util.Date",
@@ -7861,6 +8090,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n@param lastUpdated Time stamp of the last update to the <code>EvaluationResult</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastUpdated",
           "variableType" : "java.util.Date",
@@ -7951,6 +8181,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "EvaluationResult",
                 "variableName" : "member",
                 "variableType" : "EvaluationResult",
@@ -7963,6 +8194,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "EvaluationResult",
                 "variableName" : "member",
                 "variableType" : "EvaluationResult",
@@ -7992,6 +8224,7 @@
           "setterDocumentation" : "/**<p>An array of <code>EvaluationResult</code> objects.</p>\n@param evaluationResults An array of <code>EvaluationResult</code> objects.*/",
           "setterMethodName" : "setEvaluationResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<EvaluationResult>",
             "variableName" : "evaluationResults",
             "variableType" : "java.util.List<EvaluationResult>",
@@ -8004,6 +8237,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>EvaluationResult</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvaluationResults(java.util.Collection)} or {@link #withEvaluationResults(java.util.Collection)} if you want to override the existing values.</p>\n@param evaluationResults An array of <code>EvaluationResult</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<EvaluationResult>",
             "variableName" : "evaluationResults",
             "variableType" : "java.util.List<EvaluationResult>",
@@ -8056,6 +8290,7 @@
           "setterDocumentation" : "/**<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n@param lastUpdated Time stamp of the last update to the <code>EvaluationResult</code> objects.*/",
           "setterMethodName" : "setLastUpdated",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastUpdated",
             "variableType" : "java.util.Date",
@@ -8068,6 +8303,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n@param lastUpdated Time stamp of the last update to the <code>EvaluationResult</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastUpdated",
             "variableType" : "java.util.Date",
@@ -8120,6 +8356,7 @@
           "setterDocumentation" : "/**<p>The member account ID.</p>\n@param memberAccount The member account ID.*/",
           "setterMethodName" : "setMemberAccount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccount",
             "variableType" : "String",
@@ -8132,6 +8369,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The member account ID.</p>\n@param memberAccount The member account ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccount",
             "variableType" : "String",
@@ -8184,6 +8422,7 @@
           "setterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -8196,6 +8435,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Firewall Manager policy.</p>\n@param policyId The ID of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -8248,6 +8488,7 @@
           "setterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyName",
             "variableType" : "String",
@@ -8260,6 +8501,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the AWS Firewall Manager policy.</p>\n@param policyName The friendly name of the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyName",
             "variableType" : "String",
@@ -8312,6 +8554,7 @@
           "setterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.*/",
           "setterMethodName" : "setPolicyOwner",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyOwner",
             "variableType" : "String",
@@ -8324,6 +8567,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account that created the AWS Firewall Manager policy.</p>\n@param policyOwner The AWS account that created the AWS Firewall Manager policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyOwner",
             "variableType" : "String",
@@ -8345,6 +8589,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PolicyComplianceStatus",
         "variableName" : "policyComplianceStatus",
         "variableType" : "PolicyComplianceStatus",
@@ -8390,6 +8635,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PolicyComplianceStatusType",
         "variableName" : "policyComplianceStatusType",
         "variableType" : "PolicyComplianceStatusType",
@@ -8459,6 +8705,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
         "setterMethodName" : "setPolicyArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyArn",
           "variableType" : "String",
@@ -8471,6 +8718,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyArn",
           "variableType" : "String",
@@ -8522,6 +8770,7 @@
         "setterDocumentation" : "/**<p>The ID of the specified policy.</p>\n@param policyId The ID of the specified policy.*/",
         "setterMethodName" : "setPolicyId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -8534,6 +8783,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the specified policy.</p>\n@param policyId The ID of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyId",
           "variableType" : "String",
@@ -8585,6 +8835,7 @@
         "setterDocumentation" : "/**<p>The friendly name of the specified policy.</p>\n@param policyName The friendly name of the specified policy.*/",
         "setterMethodName" : "setPolicyName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyName",
           "variableType" : "String",
@@ -8597,6 +8848,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the specified policy.</p>\n@param policyName The friendly name of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyName",
           "variableType" : "String",
@@ -8648,6 +8900,7 @@
         "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -8660,6 +8913,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -8711,6 +8965,7 @@
         "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param securityServiceType The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
         "setterMethodName" : "setSecurityServiceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "securityServiceType",
           "variableType" : "String",
@@ -8723,6 +8978,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param securityServiceType The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SecurityServiceType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "securityServiceType",
           "variableType" : "String",
@@ -8774,6 +9030,7 @@
         "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
         "setterMethodName" : "setRemediationEnabled",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "remediationEnabled",
           "variableType" : "Boolean",
@@ -8786,6 +9043,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "remediationEnabled",
           "variableType" : "Boolean",
@@ -8839,6 +9097,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.*/",
           "setterMethodName" : "setPolicyArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyArn",
             "variableType" : "String",
@@ -8851,6 +9110,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the specified policy.</p>\n@param policyArn The Amazon Resource Name (ARN) of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyArn",
             "variableType" : "String",
@@ -8903,6 +9163,7 @@
           "setterDocumentation" : "/**<p>The ID of the specified policy.</p>\n@param policyId The ID of the specified policy.*/",
           "setterMethodName" : "setPolicyId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -8915,6 +9176,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the specified policy.</p>\n@param policyId The ID of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyId",
             "variableType" : "String",
@@ -8967,6 +9229,7 @@
           "setterDocumentation" : "/**<p>The friendly name of the specified policy.</p>\n@param policyName The friendly name of the specified policy.*/",
           "setterMethodName" : "setPolicyName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyName",
             "variableType" : "String",
@@ -8979,6 +9242,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the specified policy.</p>\n@param policyName The friendly name of the specified policy.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyName",
             "variableType" : "String",
@@ -9031,6 +9295,7 @@
           "setterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.*/",
           "setterMethodName" : "setRemediationEnabled",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "remediationEnabled",
             "variableType" : "Boolean",
@@ -9043,6 +9308,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates if the policy should be automatically applied to new resources.</p>\n@param remediationEnabled Indicates if the policy should be automatically applied to new resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "remediationEnabled",
             "variableType" : "Boolean",
@@ -9095,6 +9361,7 @@
           "setterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -9107,6 +9374,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n@param resourceType The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -9159,6 +9427,7 @@
           "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param securityServiceType The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
           "setterMethodName" : "setSecurityServiceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "securityServiceType",
             "variableType" : "String",
@@ -9171,6 +9440,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param securityServiceType The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SecurityServiceType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "securityServiceType",
             "variableType" : "String",
@@ -9192,6 +9462,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PolicySummary",
         "variableName" : "policySummary",
         "variableType" : "PolicySummary",
@@ -9268,6 +9539,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.</p>\n@param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.*/",
         "setterMethodName" : "setSnsTopicArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsTopicArn",
           "variableType" : "String",
@@ -9280,6 +9552,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.</p>\n@param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsTopicArn",
           "variableType" : "String",
@@ -9331,6 +9604,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n@param snsRoleName The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.*/",
         "setterMethodName" : "setSnsRoleName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsRoleName",
           "variableType" : "String",
@@ -9343,6 +9617,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n@param snsRoleName The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "snsRoleName",
           "variableType" : "String",
@@ -9396,6 +9671,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n@param snsRoleName The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.*/",
           "setterMethodName" : "setSnsRoleName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsRoleName",
             "variableType" : "String",
@@ -9408,6 +9684,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n@param snsRoleName The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsRoleName",
             "variableType" : "String",
@@ -9460,6 +9737,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.</p>\n@param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.*/",
           "setterMethodName" : "setSnsTopicArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsTopicArn",
             "variableType" : "String",
@@ -9472,6 +9750,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.</p>\n@param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "snsTopicArn",
             "variableType" : "String",
@@ -9490,6 +9769,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutNotificationChannelRequest",
         "variableName" : "putNotificationChannelRequest",
         "variableType" : "PutNotificationChannelRequest",
@@ -9529,6 +9809,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutNotificationChannelResult",
         "variableName" : "putNotificationChannelResult",
         "variableType" : "PutNotificationChannelResult",
@@ -9605,6 +9886,7 @@
         "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy to be created.</p>\n@param policy The details of the AWS Firewall Manager policy to be created.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Policy",
           "variableName" : "policy",
           "variableType" : "Policy",
@@ -9617,6 +9899,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy to be created.</p>\n@param policy The details of the AWS Firewall Manager policy to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Policy",
           "variableName" : "policy",
           "variableType" : "Policy",
@@ -9670,6 +9953,7 @@
           "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy to be created.</p>\n@param policy The details of the AWS Firewall Manager policy to be created.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Policy",
             "variableName" : "policy",
             "variableType" : "Policy",
@@ -9682,6 +9966,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy to be created.</p>\n@param policy The details of the AWS Firewall Manager policy to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Policy",
             "variableName" : "policy",
             "variableType" : "Policy",
@@ -9700,6 +9985,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutPolicyRequest",
         "variableName" : "putPolicyRequest",
         "variableType" : "PutPolicyRequest",
@@ -9769,6 +10055,7 @@
         "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy that was created.</p>\n@param policy The details of the AWS Firewall Manager policy that was created.*/",
         "setterMethodName" : "setPolicy",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Policy",
           "variableName" : "policy",
           "variableType" : "Policy",
@@ -9781,6 +10068,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy that was created.</p>\n@param policy The details of the AWS Firewall Manager policy that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Policy",
           "variableName" : "policy",
           "variableType" : "Policy",
@@ -9832,6 +10120,7 @@
         "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy that was created.*/",
         "setterMethodName" : "setPolicyArn",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyArn",
           "variableType" : "String",
@@ -9844,6 +10133,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "policyArn",
           "variableType" : "String",
@@ -9897,6 +10187,7 @@
           "setterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy that was created.</p>\n@param policy The details of the AWS Firewall Manager policy that was created.*/",
           "setterMethodName" : "setPolicy",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Policy",
             "variableName" : "policy",
             "variableType" : "Policy",
@@ -9909,6 +10200,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The details of the AWS Firewall Manager policy that was created.</p>\n@param policy The details of the AWS Firewall Manager policy that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Policy",
             "variableName" : "policy",
             "variableType" : "Policy",
@@ -9961,6 +10253,7 @@
           "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy that was created.*/",
           "setterMethodName" : "setPolicyArn",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyArn",
             "variableType" : "String",
@@ -9973,6 +10266,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n@param policyArn The Amazon Resource Name (ARN) of the policy that was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "policyArn",
             "variableType" : "String",
@@ -9994,6 +10288,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutPolicyResult",
         "variableName" : "putPolicyResult",
         "variableType" : "PutPolicyResult",
@@ -10030,6 +10325,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceNotFoundException",
         "variableName" : "resourceNotFoundException",
         "variableType" : "ResourceNotFoundException",
@@ -10099,6 +10395,7 @@
         "setterDocumentation" : "/**<p>The resource tag key.</p>\n@param key The resource tag key.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -10111,6 +10408,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource tag key.</p>\n@param key The resource tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
@@ -10162,6 +10460,7 @@
         "setterDocumentation" : "/**<p>The resource tag value.</p>\n@param value The resource tag value.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -10174,6 +10473,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource tag value.</p>\n@param value The resource tag value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "value",
           "variableType" : "String",
@@ -10227,6 +10527,7 @@
           "setterDocumentation" : "/**<p>The resource tag key.</p>\n@param key The resource tag key.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -10239,6 +10540,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource tag key.</p>\n@param key The resource tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
@@ -10291,6 +10593,7 @@
           "setterDocumentation" : "/**<p>The resource tag value.</p>\n@param value The resource tag value.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -10303,6 +10606,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource tag value.</p>\n@param value The resource tag value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "value",
             "variableType" : "String",
@@ -10324,6 +10628,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceTag",
         "variableName" : "resourceTag",
         "variableType" : "ResourceTag",
@@ -10393,6 +10698,7 @@
         "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param type The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -10405,6 +10711,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param type The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SecurityServiceType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -10456,6 +10763,7 @@
         "setterDocumentation" : "/**<p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code> </p>\n@param managedServiceData Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>*/",
         "setterMethodName" : "setManagedServiceData",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "managedServiceData",
           "variableType" : "String",
@@ -10468,6 +10776,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code> </p>\n@param managedServiceData Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "managedServiceData",
           "variableType" : "String",
@@ -10521,6 +10830,7 @@
           "setterDocumentation" : "/**<p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code> </p>\n@param managedServiceData Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>*/",
           "setterMethodName" : "setManagedServiceData",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "managedServiceData",
             "variableType" : "String",
@@ -10533,6 +10843,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code> </p>\n@param managedServiceData Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:</p> <p> <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\": \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}], \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "managedServiceData",
             "variableType" : "String",
@@ -10585,6 +10896,7 @@
           "setterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param type The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@see SecurityServiceType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -10597,6 +10909,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The service that the policy is using to protect the resources. This value is <code>WAF</code>.</p>\n@param type The service that the policy is using to protect the resources. This value is <code>WAF</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SecurityServiceType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -10618,6 +10931,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "SecurityServicePolicyData",
         "variableName" : "securityServicePolicyData",
         "variableType" : "SecurityServicePolicyData",
@@ -10660,6 +10974,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "SecurityServiceType",
         "variableName" : "securityServiceType",
         "variableType" : "SecurityServiceType",
@@ -10708,6 +11023,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ViolationReason",
         "variableName" : "violationReason",
         "variableType" : "ViolationReason",

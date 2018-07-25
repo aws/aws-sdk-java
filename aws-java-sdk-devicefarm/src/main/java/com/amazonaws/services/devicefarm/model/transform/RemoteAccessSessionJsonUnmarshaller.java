@@ -58,7 +58,7 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    remoteAccessSession.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    remoteAccessSession.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -74,11 +74,11 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    remoteAccessSession.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    remoteAccessSession.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    remoteAccessSession.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    remoteAccessSession.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("device", targetDepth)) {
                     context.nextToken();

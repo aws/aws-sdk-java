@@ -61,7 +61,7 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                 }
 
                 if (context.testExpression("end", targetDepth)) {
-                    hostReservation.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    hostReservation.setEnd(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -101,7 +101,7 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                 }
 
                 if (context.testExpression("start", targetDepth)) {
-                    hostReservation.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    hostReservation.setStart(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

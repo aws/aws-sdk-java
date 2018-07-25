@@ -56,7 +56,7 @@ public class LaunchTemplateStaxUnmarshaller implements Unmarshaller<LaunchTempla
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    launchTemplate.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    launchTemplate.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -44,7 +44,7 @@ public class ServiceSpecificCredentialStaxUnmarshaller implements Unmarshaller<S
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    serviceSpecificCredential.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    serviceSpecificCredential.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

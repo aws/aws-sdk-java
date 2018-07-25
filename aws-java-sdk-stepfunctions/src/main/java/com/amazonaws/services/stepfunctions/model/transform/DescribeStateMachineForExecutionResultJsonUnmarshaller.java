@@ -66,7 +66,7 @@ public class DescribeStateMachineForExecutionResultJsonUnmarshaller implements U
                 }
                 if (context.testExpression("updateDate", targetDepth)) {
                     context.nextToken();
-                    describeStateMachineForExecutionResult.setUpdateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeStateMachineForExecutionResult.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

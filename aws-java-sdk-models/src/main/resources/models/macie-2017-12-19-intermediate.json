@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -105,6 +105,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateMemberAccountRequest",
         "variableName" : "associateMemberAccountRequest",
         "variableType" : "AssociateMemberAccountRequest",
@@ -148,6 +149,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateS3ResourcesRequest",
         "variableName" : "associateS3ResourcesRequest",
         "variableType" : "AssociateS3ResourcesRequest",
@@ -183,6 +185,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateMemberAccountRequest",
         "variableName" : "disassociateMemberAccountRequest",
         "variableType" : "DisassociateMemberAccountRequest",
@@ -222,6 +225,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateS3ResourcesRequest",
         "variableName" : "disassociateS3ResourcesRequest",
         "variableType" : "DisassociateS3ResourcesRequest",
@@ -257,6 +261,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListMemberAccountsRequest",
         "variableName" : "listMemberAccountsRequest",
         "variableType" : "ListMemberAccountsRequest",
@@ -296,6 +301,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListS3ResourcesRequest",
         "variableName" : "listS3ResourcesRequest",
         "variableType" : "ListS3ResourcesRequest",
@@ -335,6 +341,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateS3ResourcesRequest",
         "variableName" : "updateS3ResourcesRequest",
         "variableType" : "UpdateS3ResourcesRequest",
@@ -413,6 +420,7 @@
         "setterDocumentation" : "/**\n@param resourceType */",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -425,6 +433,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -478,6 +487,7 @@
           "setterDocumentation" : "/**\n@param resourceType */",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -490,6 +500,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -508,6 +519,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AccessDeniedException",
         "variableName" : "accessDeniedException",
         "variableType" : "AccessDeniedException",
@@ -584,6 +596,7 @@
         "setterDocumentation" : "/**<p>The ID of the AWS account that you want to associate with Amazon Macie as a member account.</p>\n@param memberAccountId The ID of the AWS account that you want to associate with Amazon Macie as a member account.*/",
         "setterMethodName" : "setMemberAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -596,6 +609,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS account that you want to associate with Amazon Macie as a member account.</p>\n@param memberAccountId The ID of the AWS account that you want to associate with Amazon Macie as a member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -649,6 +663,7 @@
           "setterDocumentation" : "/**<p>The ID of the AWS account that you want to associate with Amazon Macie as a member account.</p>\n@param memberAccountId The ID of the AWS account that you want to associate with Amazon Macie as a member account.*/",
           "setterMethodName" : "setMemberAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -661,6 +676,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS account that you want to associate with Amazon Macie as a member account.</p>\n@param memberAccountId The ID of the AWS account that you want to associate with Amazon Macie as a member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -679,6 +695,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateMemberAccountRequest",
         "variableName" : "associateMemberAccountRequest",
         "variableType" : "AssociateMemberAccountRequest",
@@ -718,6 +735,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateMemberAccountResult",
         "variableName" : "associateMemberAccountResult",
         "variableType" : "AssociateMemberAccountResult",
@@ -794,6 +812,7 @@
         "setterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to associate with Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to associate with Macie.*/",
         "setterMethodName" : "setMemberAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -806,6 +825,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to associate with Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to associate with Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -894,6 +914,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3ResourceClassification",
               "variableName" : "member",
               "variableType" : "S3ResourceClassification",
@@ -906,6 +927,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3ResourceClassification",
               "variableName" : "member",
               "variableType" : "S3ResourceClassification",
@@ -935,6 +957,7 @@
         "setterDocumentation" : "/**<p>The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. </p>\n@param s3Resources The S3 resources that you want to associate with Amazon Macie for monitoring and data classification.*/",
         "setterMethodName" : "setS3Resources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
           "variableName" : "s3Resources",
           "variableType" : "java.util.List<S3ResourceClassification>",
@@ -947,6 +970,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources The S3 resources that you want to associate with Amazon Macie for monitoring and data classification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
           "variableName" : "s3Resources",
           "variableType" : "java.util.List<S3ResourceClassification>",
@@ -1000,6 +1024,7 @@
           "setterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to associate with Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to associate with Macie.*/",
           "setterMethodName" : "setMemberAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -1012,6 +1037,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to associate with Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to associate with Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -1101,6 +1127,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3ResourceClassification",
                 "variableName" : "member",
                 "variableType" : "S3ResourceClassification",
@@ -1113,6 +1140,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3ResourceClassification",
                 "variableName" : "member",
                 "variableType" : "S3ResourceClassification",
@@ -1142,6 +1170,7 @@
           "setterDocumentation" : "/**<p>The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. </p>\n@param s3Resources The S3 resources that you want to associate with Amazon Macie for monitoring and data classification.*/",
           "setterMethodName" : "setS3Resources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
             "variableName" : "s3Resources",
             "variableType" : "java.util.List<S3ResourceClassification>",
@@ -1154,6 +1183,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources The S3 resources that you want to associate with Amazon Macie for monitoring and data classification.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
             "variableName" : "s3Resources",
             "variableType" : "java.util.List<S3ResourceClassification>",
@@ -1172,6 +1202,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateS3ResourcesRequest",
         "variableName" : "associateS3ResourcesRequest",
         "variableType" : "AssociateS3ResourcesRequest",
@@ -1278,6 +1309,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailedS3Resource",
               "variableName" : "member",
               "variableType" : "FailedS3Resource",
@@ -1290,6 +1322,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailedS3Resource",
               "variableName" : "member",
               "variableType" : "FailedS3Resource",
@@ -1319,6 +1352,7 @@
         "setterDocumentation" : "/**<p>S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item. </p>\n@param failedS3Resources S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item.*/",
         "setterMethodName" : "setFailedS3Resources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<FailedS3Resource>",
           "variableName" : "failedS3Resources",
           "variableType" : "java.util.List<FailedS3Resource>",
@@ -1331,6 +1365,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<FailedS3Resource>",
           "variableName" : "failedS3Resources",
           "variableType" : "java.util.List<FailedS3Resource>",
@@ -1421,6 +1456,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailedS3Resource",
                 "variableName" : "member",
                 "variableType" : "FailedS3Resource",
@@ -1433,6 +1469,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailedS3Resource",
                 "variableName" : "member",
                 "variableType" : "FailedS3Resource",
@@ -1462,6 +1499,7 @@
           "setterDocumentation" : "/**<p>S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item. </p>\n@param failedS3Resources S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item.*/",
           "setterMethodName" : "setFailedS3Resources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<FailedS3Resource>",
             "variableName" : "failedS3Resources",
             "variableType" : "java.util.List<FailedS3Resource>",
@@ -1474,6 +1512,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be associated with Amazon Macie. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<FailedS3Resource>",
             "variableName" : "failedS3Resources",
             "variableType" : "java.util.List<FailedS3Resource>",
@@ -1495,6 +1534,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "AssociateS3ResourcesResult",
         "variableName" : "associateS3ResourcesResult",
         "variableType" : "AssociateS3ResourcesResult",
@@ -1564,6 +1604,7 @@
         "setterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@see S3OneTimeClassificationType*/",
         "setterMethodName" : "setOneTime",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "oneTime",
           "variableType" : "String",
@@ -1576,6 +1617,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "oneTime",
           "variableType" : "String",
@@ -1627,6 +1669,7 @@
         "setterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@see S3ContinuousClassificationType*/",
         "setterMethodName" : "setContinuous",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "continuous",
           "variableType" : "String",
@@ -1639,6 +1682,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "continuous",
           "variableType" : "String",
@@ -1692,6 +1736,7 @@
           "setterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@see S3ContinuousClassificationType*/",
           "setterMethodName" : "setContinuous",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "continuous",
             "variableType" : "String",
@@ -1704,6 +1749,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "continuous",
             "variableType" : "String",
@@ -1756,6 +1802,7 @@
           "setterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@see S3OneTimeClassificationType*/",
           "setterMethodName" : "setOneTime",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "oneTime",
             "variableType" : "String",
@@ -1768,6 +1815,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "oneTime",
             "variableType" : "String",
@@ -1789,6 +1837,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClassificationType",
         "variableName" : "classificationType",
         "variableType" : "ClassificationType",
@@ -1858,6 +1907,7 @@
         "setterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@see S3OneTimeClassificationType*/",
         "setterMethodName" : "setOneTime",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "oneTime",
           "variableType" : "String",
@@ -1870,6 +1920,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "oneTime",
           "variableType" : "String",
@@ -1921,6 +1972,7 @@
         "setterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@see S3ContinuousClassificationType*/",
         "setterMethodName" : "setContinuous",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "continuous",
           "variableType" : "String",
@@ -1933,6 +1985,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "continuous",
           "variableType" : "String",
@@ -1986,6 +2039,7 @@
           "setterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@see S3ContinuousClassificationType*/",
           "setterMethodName" : "setContinuous",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "continuous",
             "variableType" : "String",
@@ -1998,6 +2052,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie. </p>\n@param continuous A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie begins performing continuous classification after a bucket is successfully associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3ContinuousClassificationType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "continuous",
             "variableType" : "String",
@@ -2050,6 +2105,7 @@
           "setterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@see S3OneTimeClassificationType*/",
           "setterMethodName" : "setOneTime",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "oneTime",
             "variableType" : "String",
@@ -2062,6 +2118,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A one-time classification of all of the existing objects in a specified S3 bucket. </p>\n@param oneTime A one-time classification of all of the existing objects in a specified S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.\n@see S3OneTimeClassificationType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "oneTime",
             "variableType" : "String",
@@ -2083,6 +2140,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ClassificationTypeUpdate",
         "variableName" : "classificationTypeUpdate",
         "variableType" : "ClassificationTypeUpdate",
@@ -2159,6 +2217,7 @@
         "setterDocumentation" : "/**<p>The ID of the member account that you want to remove from Amazon Macie.</p>\n@param memberAccountId The ID of the member account that you want to remove from Amazon Macie.*/",
         "setterMethodName" : "setMemberAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -2171,6 +2230,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the member account that you want to remove from Amazon Macie.</p>\n@param memberAccountId The ID of the member account that you want to remove from Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -2224,6 +2284,7 @@
           "setterDocumentation" : "/**<p>The ID of the member account that you want to remove from Amazon Macie.</p>\n@param memberAccountId The ID of the member account that you want to remove from Amazon Macie.*/",
           "setterMethodName" : "setMemberAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -2236,6 +2297,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the member account that you want to remove from Amazon Macie.</p>\n@param memberAccountId The ID of the member account that you want to remove from Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -2254,6 +2316,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateMemberAccountRequest",
         "variableName" : "disassociateMemberAccountRequest",
         "variableType" : "DisassociateMemberAccountRequest",
@@ -2293,6 +2356,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateMemberAccountResult",
         "variableName" : "disassociateMemberAccountResult",
         "variableType" : "DisassociateMemberAccountResult",
@@ -2369,6 +2433,7 @@
         "setterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie.*/",
         "setterMethodName" : "setMemberAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -2381,6 +2446,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -2469,6 +2535,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3Resource",
               "variableName" : "member",
               "variableType" : "S3Resource",
@@ -2481,6 +2548,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3Resource",
               "variableName" : "member",
               "variableType" : "S3Resource",
@@ -2510,6 +2578,7 @@
         "setterDocumentation" : "/**<p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. </p>\n@param associatedS3Resources The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie.*/",
         "setterMethodName" : "setAssociatedS3Resources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3Resource>",
           "variableName" : "associatedS3Resources",
           "variableType" : "java.util.List<S3Resource>",
@@ -2522,6 +2591,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAssociatedS3Resources(java.util.Collection)} or {@link #withAssociatedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param associatedS3Resources The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3Resource>",
           "variableName" : "associatedS3Resources",
           "variableType" : "java.util.List<S3Resource>",
@@ -2612,6 +2682,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3Resource",
                 "variableName" : "member",
                 "variableType" : "S3Resource",
@@ -2624,6 +2695,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3Resource",
                 "variableName" : "member",
                 "variableType" : "S3Resource",
@@ -2653,6 +2725,7 @@
           "setterDocumentation" : "/**<p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. </p>\n@param associatedS3Resources The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie.*/",
           "setterMethodName" : "setAssociatedS3Resources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3Resource>",
             "variableName" : "associatedS3Resources",
             "variableType" : "java.util.List<S3Resource>",
@@ -2665,6 +2738,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAssociatedS3Resources(java.util.Collection)} or {@link #withAssociatedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param associatedS3Resources The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3Resource>",
             "variableName" : "associatedS3Resources",
             "variableType" : "java.util.List<S3Resource>",
@@ -2717,6 +2791,7 @@
           "setterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie.*/",
           "setterMethodName" : "setMemberAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -2729,6 +2804,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie. </p>\n@param memberAccountId The ID of the Amazon Macie member account whose resources you want to remove from being monitored by Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -2747,6 +2823,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateS3ResourcesRequest",
         "variableName" : "disassociateS3ResourcesRequest",
         "variableType" : "DisassociateS3ResourcesRequest",
@@ -2853,6 +2930,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailedS3Resource",
               "variableName" : "member",
               "variableType" : "FailedS3Resource",
@@ -2865,6 +2943,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailedS3Resource",
               "variableName" : "member",
               "variableType" : "FailedS3Resource",
@@ -2894,6 +2973,7 @@
         "setterDocumentation" : "/**<p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item. </p>\n@param failedS3Resources S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item.*/",
         "setterMethodName" : "setFailedS3Resources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<FailedS3Resource>",
           "variableName" : "failedS3Resources",
           "variableType" : "java.util.List<FailedS3Resource>",
@@ -2906,6 +2986,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<FailedS3Resource>",
           "variableName" : "failedS3Resources",
           "variableType" : "java.util.List<FailedS3Resource>",
@@ -2996,6 +3077,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailedS3Resource",
                 "variableName" : "member",
                 "variableType" : "FailedS3Resource",
@@ -3008,6 +3090,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailedS3Resource",
                 "variableName" : "member",
                 "variableType" : "FailedS3Resource",
@@ -3037,6 +3120,7 @@
           "setterDocumentation" : "/**<p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item. </p>\n@param failedS3Resources S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item.*/",
           "setterMethodName" : "setFailedS3Resources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<FailedS3Resource>",
             "variableName" : "failedS3Resources",
             "variableType" : "java.util.List<FailedS3Resource>",
@@ -3049,6 +3133,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources S3 resources that couldn't be removed from being monitored and classified by Amazon Macie. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<FailedS3Resource>",
             "variableName" : "failedS3Resources",
             "variableType" : "java.util.List<FailedS3Resource>",
@@ -3070,6 +3155,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DisassociateS3ResourcesResult",
         "variableName" : "disassociateS3ResourcesResult",
         "variableType" : "DisassociateS3ResourcesResult",
@@ -3139,6 +3225,7 @@
         "setterDocumentation" : "/**<p>The failed S3 resources.</p>\n@param failedItem The failed S3 resources.*/",
         "setterMethodName" : "setFailedItem",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "S3Resource",
           "variableName" : "failedItem",
           "variableType" : "S3Resource",
@@ -3151,6 +3238,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The failed S3 resources.</p>\n@param failedItem The failed S3 resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "S3Resource",
           "variableName" : "failedItem",
           "variableType" : "S3Resource",
@@ -3202,6 +3290,7 @@
         "setterDocumentation" : "/**<p>The status code of a failed item.</p>\n@param errorCode The status code of a failed item.*/",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -3214,6 +3303,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status code of a failed item.</p>\n@param errorCode The status code of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -3265,6 +3355,7 @@
         "setterDocumentation" : "/**<p>The error message of a failed item.</p>\n@param errorMessage The error message of a failed item.*/",
         "setterMethodName" : "setErrorMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorMessage",
           "variableType" : "String",
@@ -3277,6 +3368,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message of a failed item.</p>\n@param errorMessage The error message of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorMessage",
           "variableType" : "String",
@@ -3330,6 +3422,7 @@
           "setterDocumentation" : "/**<p>The status code of a failed item.</p>\n@param errorCode The status code of a failed item.*/",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -3342,6 +3435,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status code of a failed item.</p>\n@param errorCode The status code of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -3394,6 +3488,7 @@
           "setterDocumentation" : "/**<p>The error message of a failed item.</p>\n@param errorMessage The error message of a failed item.*/",
           "setterMethodName" : "setErrorMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorMessage",
             "variableType" : "String",
@@ -3406,6 +3501,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message of a failed item.</p>\n@param errorMessage The error message of a failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorMessage",
             "variableType" : "String",
@@ -3458,6 +3554,7 @@
           "setterDocumentation" : "/**<p>The failed S3 resources.</p>\n@param failedItem The failed S3 resources.*/",
           "setterMethodName" : "setFailedItem",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "S3Resource",
             "variableName" : "failedItem",
             "variableType" : "S3Resource",
@@ -3470,6 +3567,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The failed S3 resources.</p>\n@param failedItem The failed S3 resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "S3Resource",
             "variableName" : "failedItem",
             "variableType" : "S3Resource",
@@ -3491,6 +3589,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "FailedS3Resource",
         "variableName" : "failedS3Resource",
         "variableType" : "FailedS3Resource",
@@ -3560,6 +3659,7 @@
         "setterDocumentation" : "/**\n@param errorCode */",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -3572,6 +3672,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -3625,6 +3726,7 @@
           "setterDocumentation" : "/**\n@param errorCode */",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -3637,6 +3739,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -3655,6 +3758,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalException",
         "variableName" : "internalException",
         "variableType" : "InternalException",
@@ -3724,6 +3828,7 @@
         "setterDocumentation" : "/**\n@param errorCode */",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -3736,6 +3841,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -3787,6 +3893,7 @@
         "setterDocumentation" : "/**\n@param fieldName */",
         "setterMethodName" : "setFieldName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "fieldName",
           "variableType" : "String",
@@ -3799,6 +3906,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param fieldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "fieldName",
           "variableType" : "String",
@@ -3852,6 +3960,7 @@
           "setterDocumentation" : "/**\n@param errorCode */",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -3864,6 +3973,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -3916,6 +4026,7 @@
           "setterDocumentation" : "/**\n@param fieldName */",
           "setterMethodName" : "setFieldName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "fieldName",
             "variableType" : "String",
@@ -3928,6 +4039,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param fieldName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "fieldName",
             "variableType" : "String",
@@ -3946,6 +4058,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidInputException",
         "variableName" : "invalidInputException",
         "variableType" : "InvalidInputException",
@@ -4015,6 +4128,7 @@
         "setterDocumentation" : "/**\n@param errorCode */",
         "setterMethodName" : "setErrorCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -4027,6 +4141,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "errorCode",
           "variableType" : "String",
@@ -4078,6 +4193,7 @@
         "setterDocumentation" : "/**\n@param resourceType */",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -4090,6 +4206,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
@@ -4143,6 +4260,7 @@
           "setterDocumentation" : "/**\n@param errorCode */",
           "setterMethodName" : "setErrorCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -4155,6 +4273,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "errorCode",
             "variableType" : "String",
@@ -4207,6 +4326,7 @@
           "setterDocumentation" : "/**\n@param resourceType */",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -4219,6 +4339,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
@@ -4237,6 +4358,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "LimitExceededException",
         "variableName" : "limitExceededException",
         "variableType" : "LimitExceededException",
@@ -4313,6 +4435,7 @@
         "setterDocumentation" : "/**<p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4325,6 +4448,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4376,6 +4500,7 @@
         "setterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -4388,6 +4513,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -4441,6 +4567,7 @@
           "setterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -4453,6 +4580,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -4505,6 +4633,7 @@
           "setterDocumentation" : "/**<p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4517,6 +4646,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4535,6 +4665,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListMemberAccountsRequest",
         "variableName" : "listMemberAccountsRequest",
         "variableType" : "ListMemberAccountsRequest",
@@ -4641,6 +4772,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "MemberAccount",
               "variableName" : "member",
               "variableType" : "MemberAccount",
@@ -4653,6 +4785,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "MemberAccount",
               "variableName" : "member",
               "variableType" : "MemberAccount",
@@ -4682,6 +4815,7 @@
         "setterDocumentation" : "/**<p>A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list. </p>\n@param memberAccounts A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list.*/",
         "setterMethodName" : "setMemberAccounts",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<MemberAccount>",
           "variableName" : "memberAccounts",
           "variableType" : "java.util.List<MemberAccount>",
@@ -4694,6 +4828,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberAccounts(java.util.Collection)} or {@link #withMemberAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param memberAccounts A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<MemberAccount>",
           "variableName" : "memberAccounts",
           "variableType" : "java.util.List<MemberAccount>",
@@ -4745,6 +4880,7 @@
         "setterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4757,6 +4893,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4847,6 +4984,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "MemberAccount",
                 "variableName" : "member",
                 "variableType" : "MemberAccount",
@@ -4859,6 +4997,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "MemberAccount",
                 "variableName" : "member",
                 "variableType" : "MemberAccount",
@@ -4888,6 +5027,7 @@
           "setterDocumentation" : "/**<p>A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list. </p>\n@param memberAccounts A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list.*/",
           "setterMethodName" : "setMemberAccounts",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<MemberAccount>",
             "variableName" : "memberAccounts",
             "variableType" : "java.util.List<MemberAccount>",
@@ -4900,6 +5040,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMemberAccounts(java.util.Collection)} or {@link #withMemberAccounts(java.util.Collection)} if you want to override the existing values.</p>\n@param memberAccounts A list of the Amazon Macie member accounts returned by the action. The current master account is also included in this list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<MemberAccount>",
             "variableName" : "memberAccounts",
             "variableType" : "java.util.List<MemberAccount>",
@@ -4952,6 +5093,7 @@
           "setterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4964,6 +5106,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4985,6 +5128,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListMemberAccountsResult",
         "variableName" : "listMemberAccountsResult",
         "variableType" : "ListMemberAccountsResult",
@@ -5061,6 +5205,7 @@
         "setterDocumentation" : "/**<p>The Amazon Macie member account ID whose associated S3 resources you want to list. </p>\n@param memberAccountId The Amazon Macie member account ID whose associated S3 resources you want to list.*/",
         "setterMethodName" : "setMemberAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -5073,6 +5218,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Macie member account ID whose associated S3 resources you want to list. </p>\n@param memberAccountId The Amazon Macie member account ID whose associated S3 resources you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -5124,6 +5270,7 @@
         "setterDocumentation" : "/**<p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5136,6 +5283,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5187,6 +5335,7 @@
         "setterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5199,6 +5348,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -5252,6 +5402,7 @@
           "setterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5264,6 +5415,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>\n@param maxResults Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -5316,6 +5468,7 @@
           "setterDocumentation" : "/**<p>The Amazon Macie member account ID whose associated S3 resources you want to list. </p>\n@param memberAccountId The Amazon Macie member account ID whose associated S3 resources you want to list.*/",
           "setterMethodName" : "setMemberAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -5328,6 +5481,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Macie member account ID whose associated S3 resources you want to list. </p>\n@param memberAccountId The Amazon Macie member account ID whose associated S3 resources you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -5380,6 +5534,7 @@
           "setterDocumentation" : "/**<p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5392,6 +5547,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>\n@param nextToken Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5410,6 +5566,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListS3ResourcesRequest",
         "variableName" : "listS3ResourcesRequest",
         "variableType" : "ListS3ResourcesRequest",
@@ -5516,6 +5673,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3ResourceClassification",
               "variableName" : "member",
               "variableType" : "S3ResourceClassification",
@@ -5528,6 +5686,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3ResourceClassification",
               "variableName" : "member",
               "variableType" : "S3ResourceClassification",
@@ -5557,6 +5716,7 @@
         "setterDocumentation" : "/**<p>A list of the associated S3 resources returned by the action.</p>\n@param s3Resources A list of the associated S3 resources returned by the action.*/",
         "setterMethodName" : "setS3Resources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
           "variableName" : "s3Resources",
           "variableType" : "java.util.List<S3ResourceClassification>",
@@ -5569,6 +5729,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the associated S3 resources returned by the action.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources A list of the associated S3 resources returned by the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
           "variableName" : "s3Resources",
           "variableType" : "java.util.List<S3ResourceClassification>",
@@ -5620,6 +5781,7 @@
         "setterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5632,6 +5794,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -5685,6 +5848,7 @@
           "setterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5697,6 +5861,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>\n@param nextToken When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -5786,6 +5951,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3ResourceClassification",
                 "variableName" : "member",
                 "variableType" : "S3ResourceClassification",
@@ -5798,6 +5964,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3ResourceClassification",
                 "variableName" : "member",
                 "variableType" : "S3ResourceClassification",
@@ -5827,6 +5994,7 @@
           "setterDocumentation" : "/**<p>A list of the associated S3 resources returned by the action.</p>\n@param s3Resources A list of the associated S3 resources returned by the action.*/",
           "setterMethodName" : "setS3Resources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
             "variableName" : "s3Resources",
             "variableType" : "java.util.List<S3ResourceClassification>",
@@ -5839,6 +6007,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the associated S3 resources returned by the action.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3Resources(java.util.Collection)} or {@link #withS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param s3Resources A list of the associated S3 resources returned by the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3ResourceClassification>",
             "variableName" : "s3Resources",
             "variableType" : "java.util.List<S3ResourceClassification>",
@@ -5860,6 +6029,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListS3ResourcesResult",
         "variableName" : "listS3ResourcesResult",
         "variableType" : "ListS3ResourcesResult",
@@ -5929,6 +6099,7 @@
         "setterDocumentation" : "/**<p>The AWS account ID of the Amazon Macie member account.</p>\n@param accountId The AWS account ID of the Amazon Macie member account.*/",
         "setterMethodName" : "setAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "accountId",
           "variableType" : "String",
@@ -5941,6 +6112,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS account ID of the Amazon Macie member account.</p>\n@param accountId The AWS account ID of the Amazon Macie member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "accountId",
           "variableType" : "String",
@@ -5994,6 +6166,7 @@
           "setterDocumentation" : "/**<p>The AWS account ID of the Amazon Macie member account.</p>\n@param accountId The AWS account ID of the Amazon Macie member account.*/",
           "setterMethodName" : "setAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "accountId",
             "variableType" : "String",
@@ -6006,6 +6179,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS account ID of the Amazon Macie member account.</p>\n@param accountId The AWS account ID of the Amazon Macie member account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "accountId",
             "variableType" : "String",
@@ -6027,6 +6201,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MemberAccount",
         "variableName" : "memberAccount",
         "variableType" : "MemberAccount",
@@ -6069,6 +6244,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "S3ContinuousClassificationType",
         "variableName" : "s3ContinuousClassificationType",
         "variableType" : "S3ContinuousClassificationType",
@@ -6114,6 +6290,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "S3OneTimeClassificationType",
         "variableName" : "s3OneTimeClassificationType",
         "variableType" : "S3OneTimeClassificationType",
@@ -6183,6 +6360,7 @@
         "setterDocumentation" : "/**<p>The name of the S3 bucket.</p>\n@param bucketName The name of the S3 bucket.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bucketName",
           "variableType" : "String",
@@ -6195,6 +6373,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the S3 bucket.</p>\n@param bucketName The name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bucketName",
           "variableType" : "String",
@@ -6246,6 +6425,7 @@
         "setterDocumentation" : "/**<p>The prefix of the S3 bucket. </p>\n@param prefix The prefix of the S3 bucket.*/",
         "setterMethodName" : "setPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "prefix",
           "variableType" : "String",
@@ -6258,6 +6438,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket. </p>\n@param prefix The prefix of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "prefix",
           "variableType" : "String",
@@ -6311,6 +6492,7 @@
           "setterDocumentation" : "/**<p>The name of the S3 bucket.</p>\n@param bucketName The name of the S3 bucket.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bucketName",
             "variableType" : "String",
@@ -6323,6 +6505,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the S3 bucket.</p>\n@param bucketName The name of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bucketName",
             "variableType" : "String",
@@ -6375,6 +6558,7 @@
           "setterDocumentation" : "/**<p>The prefix of the S3 bucket. </p>\n@param prefix The prefix of the S3 bucket.*/",
           "setterMethodName" : "setPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "prefix",
             "variableType" : "String",
@@ -6387,6 +6571,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket. </p>\n@param prefix The prefix of the S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "prefix",
             "variableType" : "String",
@@ -6408,6 +6593,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "S3Resource",
         "variableName" : "s3Resource",
         "variableType" : "S3Resource",
@@ -6477,6 +6663,7 @@
         "setterDocumentation" : "/**<p>The name of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param bucketName The name of the S3 bucket that you want to associate with Amazon Macie.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bucketName",
           "variableType" : "String",
@@ -6489,6 +6676,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param bucketName The name of the S3 bucket that you want to associate with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bucketName",
           "variableType" : "String",
@@ -6540,6 +6728,7 @@
         "setterDocumentation" : "/**<p>The prefix of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param prefix The prefix of the S3 bucket that you want to associate with Amazon Macie.*/",
         "setterMethodName" : "setPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "prefix",
           "variableType" : "String",
@@ -6552,6 +6741,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param prefix The prefix of the S3 bucket that you want to associate with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "prefix",
           "variableType" : "String",
@@ -6603,6 +6793,7 @@
         "setterDocumentation" : "/**<p>The classification type that you want to specify for the resource associated with Amazon Macie. </p>\n@param classificationType The classification type that you want to specify for the resource associated with Amazon Macie.*/",
         "setterMethodName" : "setClassificationType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ClassificationType",
           "variableName" : "classificationType",
           "variableType" : "ClassificationType",
@@ -6615,6 +6806,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The classification type that you want to specify for the resource associated with Amazon Macie. </p>\n@param classificationType The classification type that you want to specify for the resource associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ClassificationType",
           "variableName" : "classificationType",
           "variableType" : "ClassificationType",
@@ -6668,6 +6860,7 @@
           "setterDocumentation" : "/**<p>The name of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param bucketName The name of the S3 bucket that you want to associate with Amazon Macie.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bucketName",
             "variableType" : "String",
@@ -6680,6 +6873,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param bucketName The name of the S3 bucket that you want to associate with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bucketName",
             "variableType" : "String",
@@ -6732,6 +6926,7 @@
           "setterDocumentation" : "/**<p>The classification type that you want to specify for the resource associated with Amazon Macie. </p>\n@param classificationType The classification type that you want to specify for the resource associated with Amazon Macie.*/",
           "setterMethodName" : "setClassificationType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ClassificationType",
             "variableName" : "classificationType",
             "variableType" : "ClassificationType",
@@ -6744,6 +6939,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The classification type that you want to specify for the resource associated with Amazon Macie. </p>\n@param classificationType The classification type that you want to specify for the resource associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ClassificationType",
             "variableName" : "classificationType",
             "variableType" : "ClassificationType",
@@ -6796,6 +6992,7 @@
           "setterDocumentation" : "/**<p>The prefix of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param prefix The prefix of the S3 bucket that you want to associate with Amazon Macie.*/",
           "setterMethodName" : "setPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "prefix",
             "variableType" : "String",
@@ -6808,6 +7005,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket that you want to associate with Amazon Macie.</p>\n@param prefix The prefix of the S3 bucket that you want to associate with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "prefix",
             "variableType" : "String",
@@ -6829,6 +7027,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "S3ResourceClassification",
         "variableName" : "s3ResourceClassification",
         "variableType" : "S3ResourceClassification",
@@ -6898,6 +7097,7 @@
         "setterDocumentation" : "/**<p>The name of the S3 bucket whose classification types you want to update.</p>\n@param bucketName The name of the S3 bucket whose classification types you want to update.*/",
         "setterMethodName" : "setBucketName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bucketName",
           "variableType" : "String",
@@ -6910,6 +7110,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the S3 bucket whose classification types you want to update.</p>\n@param bucketName The name of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "bucketName",
           "variableType" : "String",
@@ -6961,6 +7162,7 @@
         "setterDocumentation" : "/**<p>The prefix of the S3 bucket whose classification types you want to update.</p>\n@param prefix The prefix of the S3 bucket whose classification types you want to update.*/",
         "setterMethodName" : "setPrefix",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "prefix",
           "variableType" : "String",
@@ -6973,6 +7175,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket whose classification types you want to update.</p>\n@param prefix The prefix of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "prefix",
           "variableType" : "String",
@@ -7024,6 +7227,7 @@
         "setterDocumentation" : "/**<p>The classification type that you want to update for the resource associated with Amazon Macie. </p>\n@param classificationTypeUpdate The classification type that you want to update for the resource associated with Amazon Macie.*/",
         "setterMethodName" : "setClassificationTypeUpdate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ClassificationTypeUpdate",
           "variableName" : "classificationTypeUpdate",
           "variableType" : "ClassificationTypeUpdate",
@@ -7036,6 +7240,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The classification type that you want to update for the resource associated with Amazon Macie. </p>\n@param classificationTypeUpdate The classification type that you want to update for the resource associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "ClassificationTypeUpdate",
           "variableName" : "classificationTypeUpdate",
           "variableType" : "ClassificationTypeUpdate",
@@ -7089,6 +7294,7 @@
           "setterDocumentation" : "/**<p>The name of the S3 bucket whose classification types you want to update.</p>\n@param bucketName The name of the S3 bucket whose classification types you want to update.*/",
           "setterMethodName" : "setBucketName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bucketName",
             "variableType" : "String",
@@ -7101,6 +7307,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the S3 bucket whose classification types you want to update.</p>\n@param bucketName The name of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "bucketName",
             "variableType" : "String",
@@ -7153,6 +7360,7 @@
           "setterDocumentation" : "/**<p>The classification type that you want to update for the resource associated with Amazon Macie. </p>\n@param classificationTypeUpdate The classification type that you want to update for the resource associated with Amazon Macie.*/",
           "setterMethodName" : "setClassificationTypeUpdate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ClassificationTypeUpdate",
             "variableName" : "classificationTypeUpdate",
             "variableType" : "ClassificationTypeUpdate",
@@ -7165,6 +7373,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The classification type that you want to update for the resource associated with Amazon Macie. </p>\n@param classificationTypeUpdate The classification type that you want to update for the resource associated with Amazon Macie.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "ClassificationTypeUpdate",
             "variableName" : "classificationTypeUpdate",
             "variableType" : "ClassificationTypeUpdate",
@@ -7217,6 +7426,7 @@
           "setterDocumentation" : "/**<p>The prefix of the S3 bucket whose classification types you want to update.</p>\n@param prefix The prefix of the S3 bucket whose classification types you want to update.*/",
           "setterMethodName" : "setPrefix",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "prefix",
             "variableType" : "String",
@@ -7229,6 +7439,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix of the S3 bucket whose classification types you want to update.</p>\n@param prefix The prefix of the S3 bucket whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "prefix",
             "variableType" : "String",
@@ -7250,6 +7461,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "S3ResourceClassificationUpdate",
         "variableName" : "s3ResourceClassificationUpdate",
         "variableType" : "S3ResourceClassificationUpdate",
@@ -7326,6 +7538,7 @@
         "setterDocumentation" : "/**<p>The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. </p>\n@param memberAccountId The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.*/",
         "setterMethodName" : "setMemberAccountId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -7338,6 +7551,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. </p>\n@param memberAccountId The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "memberAccountId",
           "variableType" : "String",
@@ -7426,6 +7640,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3ResourceClassificationUpdate",
               "variableName" : "member",
               "variableType" : "S3ResourceClassificationUpdate",
@@ -7438,6 +7653,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "S3ResourceClassificationUpdate",
               "variableName" : "member",
               "variableType" : "S3ResourceClassificationUpdate",
@@ -7467,6 +7683,7 @@
         "setterDocumentation" : "/**<p>The S3 resources whose classification types you want to update.</p>\n@param s3ResourcesUpdate The S3 resources whose classification types you want to update.*/",
         "setterMethodName" : "setS3ResourcesUpdate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3ResourceClassificationUpdate>",
           "variableName" : "s3ResourcesUpdate",
           "variableType" : "java.util.List<S3ResourceClassificationUpdate>",
@@ -7479,6 +7696,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types you want to update.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3ResourcesUpdate(java.util.Collection)} or {@link #withS3ResourcesUpdate(java.util.Collection)} if you want to override the existing values.</p>\n@param s3ResourcesUpdate The S3 resources whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<S3ResourceClassificationUpdate>",
           "variableName" : "s3ResourcesUpdate",
           "variableType" : "java.util.List<S3ResourceClassificationUpdate>",
@@ -7532,6 +7750,7 @@
           "setterDocumentation" : "/**<p>The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. </p>\n@param memberAccountId The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.*/",
           "setterMethodName" : "setMemberAccountId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -7544,6 +7763,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update. </p>\n@param memberAccountId The AWS ID of the Amazon Macie member account whose S3 resources' classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "memberAccountId",
             "variableType" : "String",
@@ -7633,6 +7853,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3ResourceClassificationUpdate",
                 "variableName" : "member",
                 "variableType" : "S3ResourceClassificationUpdate",
@@ -7645,6 +7866,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "S3ResourceClassificationUpdate",
                 "variableName" : "member",
                 "variableType" : "S3ResourceClassificationUpdate",
@@ -7674,6 +7896,7 @@
           "setterDocumentation" : "/**<p>The S3 resources whose classification types you want to update.</p>\n@param s3ResourcesUpdate The S3 resources whose classification types you want to update.*/",
           "setterMethodName" : "setS3ResourcesUpdate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3ResourceClassificationUpdate>",
             "variableName" : "s3ResourcesUpdate",
             "variableType" : "java.util.List<S3ResourceClassificationUpdate>",
@@ -7686,6 +7909,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types you want to update.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setS3ResourcesUpdate(java.util.Collection)} or {@link #withS3ResourcesUpdate(java.util.Collection)} if you want to override the existing values.</p>\n@param s3ResourcesUpdate The S3 resources whose classification types you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<S3ResourceClassificationUpdate>",
             "variableName" : "s3ResourcesUpdate",
             "variableType" : "java.util.List<S3ResourceClassificationUpdate>",
@@ -7704,6 +7928,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateS3ResourcesRequest",
         "variableName" : "updateS3ResourcesRequest",
         "variableType" : "UpdateS3ResourcesRequest",
@@ -7810,6 +8035,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailedS3Resource",
               "variableName" : "member",
               "variableType" : "FailedS3Resource",
@@ -7822,6 +8048,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "FailedS3Resource",
               "variableName" : "member",
               "variableType" : "FailedS3Resource",
@@ -7851,6 +8078,7 @@
         "setterDocumentation" : "/**<p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>\n@param failedS3Resources The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.*/",
         "setterMethodName" : "setFailedS3Resources",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<FailedS3Resource>",
           "variableName" : "failedS3Resources",
           "variableType" : "java.util.List<FailedS3Resource>",
@@ -7863,6 +8091,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<FailedS3Resource>",
           "variableName" : "failedS3Resources",
           "variableType" : "java.util.List<FailedS3Resource>",
@@ -7953,6 +8182,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailedS3Resource",
                 "variableName" : "member",
                 "variableType" : "FailedS3Resource",
@@ -7965,6 +8195,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "FailedS3Resource",
                 "variableName" : "member",
                 "variableType" : "FailedS3Resource",
@@ -7994,6 +8225,7 @@
           "setterDocumentation" : "/**<p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>\n@param failedS3Resources The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.*/",
           "setterMethodName" : "setFailedS3Resources",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<FailedS3Resource>",
             "variableName" : "failedS3Resources",
             "variableType" : "java.util.List<FailedS3Resource>",
@@ -8006,6 +8238,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedS3Resources(java.util.Collection)} or {@link #withFailedS3Resources(java.util.Collection)} if you want to override the existing values.</p>\n@param failedS3Resources The S3 resources whose classification types can't be updated. An error code and an error message are provided for each failed item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<FailedS3Resource>",
             "variableName" : "failedS3Resources",
             "variableType" : "java.util.List<FailedS3Resource>",
@@ -8027,6 +8260,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateS3ResourcesResult",
         "variableName" : "updateS3ResourcesResult",
         "variableType" : "UpdateS3ResourcesResult",

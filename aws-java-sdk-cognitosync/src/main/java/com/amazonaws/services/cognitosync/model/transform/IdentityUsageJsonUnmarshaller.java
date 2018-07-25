@@ -58,7 +58,7 @@ public class IdentityUsageJsonUnmarshaller implements Unmarshaller<IdentityUsage
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    identityUsage.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    identityUsage.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DatasetCount", targetDepth)) {
                     context.nextToken();

@@ -54,11 +54,11 @@ public class EdgeJsonUnmarshaller implements Unmarshaller<Edge, JsonUnmarshaller
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    edge.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    edge.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    edge.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    edge.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SummaryStatistics", targetDepth)) {
                     context.nextToken();

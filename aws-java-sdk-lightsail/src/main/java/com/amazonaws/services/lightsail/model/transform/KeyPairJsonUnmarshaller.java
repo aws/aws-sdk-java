@@ -62,7 +62,7 @@ public class KeyPairJsonUnmarshaller implements Unmarshaller<KeyPair, JsonUnmars
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    keyPair.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    keyPair.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();

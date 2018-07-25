@@ -44,7 +44,7 @@ public class ProvisionedBandwidthStaxUnmarshaller implements Unmarshaller<Provis
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("provisionTime", targetDepth)) {
-                    provisionedBandwidth.setProvisionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    provisionedBandwidth.setProvisionTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -54,7 +54,7 @@ public class ProvisionedBandwidthStaxUnmarshaller implements Unmarshaller<Provis
                 }
 
                 if (context.testExpression("requestTime", targetDepth)) {
-                    provisionedBandwidth.setRequestTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    provisionedBandwidth.setRequestTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -49,12 +49,12 @@ public class GetSAMLProviderResultStaxUnmarshaller implements Unmarshaller<GetSA
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    getSAMLProviderResult.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getSAMLProviderResult.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ValidUntil", targetDepth)) {
-                    getSAMLProviderResult.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getSAMLProviderResult.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

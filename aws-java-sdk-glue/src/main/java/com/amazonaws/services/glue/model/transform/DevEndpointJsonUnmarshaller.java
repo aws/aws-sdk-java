@@ -114,11 +114,11 @@ public class DevEndpointJsonUnmarshaller implements Unmarshaller<DevEndpoint, Js
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    devEndpoint.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    devEndpoint.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    devEndpoint.setLastModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    devEndpoint.setLastModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PublicKey", targetDepth)) {
                     context.nextToken();

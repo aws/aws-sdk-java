@@ -62,7 +62,7 @@ public class OfferingStatusJsonUnmarshaller implements Unmarshaller<OfferingStat
                 }
                 if (context.testExpression("effectiveOn", targetDepth)) {
                     context.nextToken();
-                    offeringStatus.setEffectiveOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    offeringStatus.setEffectiveOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -62,7 +62,7 @@ public class ProductViewDetailJsonUnmarshaller implements Unmarshaller<ProductVi
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    productViewDetail.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    productViewDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -66,7 +66,7 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                 }
                 if (context.testExpression("ExpiresAfter", targetDepth)) {
                     context.nextToken();
-                    command.setExpiresAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    command.setExpiresAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
@@ -83,7 +83,7 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                 }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
                     context.nextToken();
-                    command.setRequestedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    command.setRequestedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

@@ -74,7 +74,7 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    instance.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instance.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

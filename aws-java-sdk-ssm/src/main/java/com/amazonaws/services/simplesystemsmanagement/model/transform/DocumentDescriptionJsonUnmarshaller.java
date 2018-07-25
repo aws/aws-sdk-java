@@ -70,7 +70,7 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentDescription.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

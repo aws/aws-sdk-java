@@ -59,7 +59,7 @@ public class LaunchTemplateSpotMarketOptionsStaxUnmarshaller implements Unmarsha
                 }
 
                 if (context.testExpression("validUntil", targetDepth)) {
-                    launchTemplateSpotMarketOptions.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    launchTemplateSpotMarketOptions.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

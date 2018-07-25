@@ -79,15 +79,15 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IssuedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setIssuedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setIssuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ImportedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setImportedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setImportedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -95,7 +95,7 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("RevokedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setRevokedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setRevokedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RevocationReason", targetDepth)) {
                     context.nextToken();
@@ -103,11 +103,11 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("NotBefore", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setNotBefore(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setNotBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotAfter", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setNotAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setNotAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("KeyAlgorithm", targetDepth)) {
                     context.nextToken();

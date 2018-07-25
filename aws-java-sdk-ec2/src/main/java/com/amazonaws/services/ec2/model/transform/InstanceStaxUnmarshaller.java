@@ -76,7 +76,7 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                 }
 
                 if (context.testExpression("launchTime", targetDepth)) {
-                    instance.setLaunchTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instance.setLaunchTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

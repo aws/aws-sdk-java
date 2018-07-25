@@ -66,11 +66,11 @@ public class KeyPhrasesDetectionJobPropertiesJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
                     context.nextToken();
-                    keyPhrasesDetectionJobProperties.setSubmitTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    keyPhrasesDetectionJobProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    keyPhrasesDetectionJobProperties.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    keyPhrasesDetectionJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();

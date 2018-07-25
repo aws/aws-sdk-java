@@ -64,7 +64,7 @@ public class VpcEndpointConnectionStaxUnmarshaller implements Unmarshaller<VpcEn
                 }
 
                 if (context.testExpression("creationTimestamp", targetDepth)) {
-                    vpcEndpointConnection.setCreationTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    vpcEndpointConnection.setCreationTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

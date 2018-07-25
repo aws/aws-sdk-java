@@ -62,11 +62,11 @@ public class PullRequestJsonUnmarshaller implements Unmarshaller<PullRequest, Js
                 }
                 if (context.testExpression("lastActivityDate", targetDepth)) {
                     context.nextToken();
-                    pullRequest.setLastActivityDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pullRequest.setLastActivityDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    pullRequest.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pullRequest.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("pullRequestStatus", targetDepth)) {
                     context.nextToken();

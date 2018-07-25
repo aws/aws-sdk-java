@@ -54,11 +54,11 @@ public class ThingTypeMetadataJsonUnmarshaller implements Unmarshaller<ThingType
                 }
                 if (context.testExpression("deprecationDate", targetDepth)) {
                     context.nextToken();
-                    thingTypeMetadata.setDeprecationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    thingTypeMetadata.setDeprecationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    thingTypeMetadata.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    thingTypeMetadata.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

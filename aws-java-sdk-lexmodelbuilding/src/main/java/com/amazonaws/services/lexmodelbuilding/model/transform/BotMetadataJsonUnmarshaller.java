@@ -62,11 +62,11 @@ public class BotMetadataJsonUnmarshaller implements Unmarshaller<BotMetadata, Js
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    botMetadata.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    botMetadata.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    botMetadata.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    botMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

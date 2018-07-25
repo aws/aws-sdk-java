@@ -70,7 +70,7 @@ public class ImageDetailJsonUnmarshaller implements Unmarshaller<ImageDetail, Js
                 }
                 if (context.testExpression("imagePushedAt", targetDepth)) {
                     context.nextToken();
-                    imageDetail.setImagePushedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    imageDetail.setImagePushedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

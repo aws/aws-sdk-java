@@ -62,7 +62,7 @@ public class GrantListEntryJsonUnmarshaller implements Unmarshaller<GrantListEnt
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    grantListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GranteePrincipal", targetDepth)) {
                     context.nextToken();

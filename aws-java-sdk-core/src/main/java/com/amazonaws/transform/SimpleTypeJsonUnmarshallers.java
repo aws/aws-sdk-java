@@ -17,6 +17,7 @@ package com.amazonaws.transform;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.TimestampFormat;
 import com.fasterxml.jackson.core.JsonToken;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -201,6 +202,38 @@ public class SimpleTypeJsonUnmarshallers {
             return instance;
         }
     }
+
+    public static class DateJsonUnmarshallerFactory implements Unmarshaller<Date, JsonUnmarshallerContext> {
+
+        private final String dateFormatType;
+
+        private DateJsonUnmarshallerFactory(String dateFormatType) {
+            this.dateFormatType = dateFormatType;
+        }
+
+        @Override
+        public Date unmarshall(JsonUnmarshallerContext unmarshallerContext) throws Exception {
+            String dateString = unmarshallerContext.readText();
+            if (dateString == null) {
+                return null;
+            }
+
+            if (TimestampFormat.RFC_822.getFormat().equals(dateFormatType)) {
+                return DateUtils.parseRFC822Date(dateString);
+            }
+
+            if (TimestampFormat.UNIX_TIMESTAMP.getFormat().equals(dateFormatType)) {
+                return DateUtils.parseServiceSpecificDate(dateString);
+            }
+
+            return DateUtils.parseISO8601Date(dateString);
+        }
+
+        public static DateJsonUnmarshallerFactory getInstance(String dateFormatType) {
+            return new DateJsonUnmarshallerFactory(dateFormatType);
+        }
+    }
+
 
     /**
      * Unmarshaller for ByteBuffer values.

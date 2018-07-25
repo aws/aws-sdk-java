@@ -44,7 +44,7 @@ public class NetworkInterfaceAttachmentStaxUnmarshaller implements Unmarshaller<
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("attachTime", targetDepth)) {
-                    networkInterfaceAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    networkInterfaceAttachment.setAttachTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -62,7 +62,7 @@ public class ParameterHistoryJsonUnmarshaller implements Unmarshaller<ParameterH
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    parameterHistory.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    parameterHistory.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedUser", targetDepth)) {
                     context.nextToken();

@@ -50,7 +50,7 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTimestamp", targetDepth)) {
                     context.nextToken();
-                    historyEvent.setEventTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    historyEvent.setEventTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("eventType", targetDepth)) {
                     context.nextToken();

@@ -58,11 +58,11 @@ public class GrokClassifierJsonUnmarshaller implements Unmarshaller<GrokClassifi
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    grokClassifier.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    grokClassifier.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdated", targetDepth)) {
                     context.nextToken();
-                    grokClassifier.setLastUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    grokClassifier.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

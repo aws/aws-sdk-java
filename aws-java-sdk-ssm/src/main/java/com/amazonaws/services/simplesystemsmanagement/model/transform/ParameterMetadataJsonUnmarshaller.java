@@ -62,7 +62,7 @@ public class ParameterMetadataJsonUnmarshaller implements Unmarshaller<Parameter
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    parameterMetadata.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    parameterMetadata.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedUser", targetDepth)) {
                     context.nextToken();

@@ -90,7 +90,7 @@ public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSC
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    storediSCSIVolume.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsedInBytes", targetDepth)) {
                     context.nextToken();

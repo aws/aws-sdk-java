@@ -61,7 +61,7 @@ public class ReservedDBInstanceStaxUnmarshaller implements Unmarshaller<Reserved
                 }
 
                 if (context.testExpression("StartTime", targetDepth)) {
-                    reservedDBInstance.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedDBInstance.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

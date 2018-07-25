@@ -58,7 +58,7 @@ public class TransitionStateJsonUnmarshaller implements Unmarshaller<TransitionS
                 }
                 if (context.testExpression("lastChangedAt", targetDepth)) {
                     context.nextToken();
-                    transitionState.setLastChangedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transitionState.setLastChangedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("disabledReason", targetDepth)) {
                     context.nextToken();

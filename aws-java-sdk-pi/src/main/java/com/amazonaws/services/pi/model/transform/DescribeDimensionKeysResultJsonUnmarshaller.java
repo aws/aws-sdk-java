@@ -50,11 +50,11 @@ public class DescribeDimensionKeysResultJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AlignedStartTime", targetDepth)) {
                     context.nextToken();
-                    describeDimensionKeysResult.setAlignedStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeDimensionKeysResult.setAlignedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AlignedEndTime", targetDepth)) {
                     context.nextToken();
-                    describeDimensionKeysResult.setAlignedEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeDimensionKeysResult.setAlignedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
                     context.nextToken();

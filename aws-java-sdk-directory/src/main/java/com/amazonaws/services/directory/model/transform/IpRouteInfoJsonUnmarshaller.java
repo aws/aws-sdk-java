@@ -62,7 +62,7 @@ public class IpRouteInfoJsonUnmarshaller implements Unmarshaller<IpRouteInfo, Js
                 }
                 if (context.testExpression("AddedDateTime", targetDepth)) {
                     context.nextToken();
-                    ipRouteInfo.setAddedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    ipRouteInfo.setAddedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IpRouteStatusReason", targetDepth)) {
                     context.nextToken();

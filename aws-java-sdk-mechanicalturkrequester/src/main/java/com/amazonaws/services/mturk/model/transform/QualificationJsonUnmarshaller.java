@@ -58,7 +58,7 @@ public class QualificationJsonUnmarshaller implements Unmarshaller<Qualification
                 }
                 if (context.testExpression("GrantTime", targetDepth)) {
                     context.nextToken();
-                    qualification.setGrantTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    qualification.setGrantTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IntegerValue", targetDepth)) {
                     context.nextToken();

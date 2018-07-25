@@ -66,7 +66,7 @@ public class ResourceDetailJsonUnmarshaller implements Unmarshaller<ResourceDeta
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    resourceDetail.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    resourceDetail.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

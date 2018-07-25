@@ -66,11 +66,11 @@ public class DominantLanguageDetectionJobPropertiesJsonUnmarshaller implements U
                 }
                 if (context.testExpression("SubmitTime", targetDepth)) {
                     context.nextToken();
-                    dominantLanguageDetectionJobProperties.setSubmitTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dominantLanguageDetectionJobProperties.setSubmitTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    dominantLanguageDetectionJobProperties.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dominantLanguageDetectionJobProperties.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();

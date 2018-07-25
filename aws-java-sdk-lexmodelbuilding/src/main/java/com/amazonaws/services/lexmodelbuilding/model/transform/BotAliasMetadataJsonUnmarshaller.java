@@ -66,11 +66,11 @@ public class BotAliasMetadataJsonUnmarshaller implements Unmarshaller<BotAliasMe
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    botAliasMetadata.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    botAliasMetadata.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    botAliasMetadata.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    botAliasMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("checksum", targetDepth)) {
                     context.nextToken();

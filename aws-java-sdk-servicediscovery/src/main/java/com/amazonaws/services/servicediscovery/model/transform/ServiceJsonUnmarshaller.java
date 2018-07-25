@@ -82,7 +82,7 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
                     context.nextToken();
-                    service.setCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    service.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorRequestId", targetDepth)) {
                     context.nextToken();

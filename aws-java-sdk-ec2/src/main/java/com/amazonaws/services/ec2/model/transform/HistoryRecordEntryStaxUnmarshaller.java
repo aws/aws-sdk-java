@@ -54,7 +54,7 @@ public class HistoryRecordEntryStaxUnmarshaller implements Unmarshaller<HistoryR
                 }
 
                 if (context.testExpression("timestamp", targetDepth)) {
-                    historyRecordEntry.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    historyRecordEntry.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

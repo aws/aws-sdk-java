@@ -60,9 +60,19 @@ public class ReplicaSettingsDescriptionJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsDescription.setReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ReplicaProvisionedWriteCapacityUnits", targetDepth)) {
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsDescription.setReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaGlobalSecondaryIndexSettings", targetDepth)) {
                     context.nextToken();

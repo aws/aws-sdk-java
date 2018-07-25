@@ -58,7 +58,7 @@ public class LexiconAttributesJsonUnmarshaller implements Unmarshaller<LexiconAt
                 }
                 if (context.testExpression("LastModified", targetDepth)) {
                     context.nextToken();
-                    lexiconAttributes.setLastModified(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lexiconAttributes.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LexiconArn", targetDepth)) {
                     context.nextToken();

@@ -54,7 +54,7 @@ public class SpotInstanceStatusStaxUnmarshaller implements Unmarshaller<SpotInst
                 }
 
                 if (context.testExpression("updateTime", targetDepth)) {
-                    spotInstanceStatus.setUpdateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotInstanceStatus.setUpdateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

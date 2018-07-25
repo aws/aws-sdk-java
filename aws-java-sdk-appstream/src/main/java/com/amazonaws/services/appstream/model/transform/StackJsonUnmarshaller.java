@@ -66,7 +66,7 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    stack.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stack.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StorageConnectors", targetDepth)) {
                     context.nextToken();

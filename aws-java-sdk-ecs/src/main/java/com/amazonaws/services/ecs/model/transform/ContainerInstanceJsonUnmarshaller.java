@@ -98,7 +98,7 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                 }
                 if (context.testExpression("registeredAt", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setRegisteredAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    containerInstance.setRegisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("attachments", targetDepth)) {
                     context.nextToken();

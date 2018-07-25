@@ -54,11 +54,11 @@ public class PointInTimeRecoveryDescriptionJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("EarliestRestorableDateTime", targetDepth)) {
                     context.nextToken();
-                    pointInTimeRecoveryDescription.setEarliestRestorableDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pointInTimeRecoveryDescription.setEarliestRestorableDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestRestorableDateTime", targetDepth)) {
                     context.nextToken();
-                    pointInTimeRecoveryDescription.setLatestRestorableDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pointInTimeRecoveryDescription.setLatestRestorableDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

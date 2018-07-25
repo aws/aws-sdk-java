@@ -75,11 +75,11 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    connection.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    connection.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    connection.setLastUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    connection.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedBy", targetDepth)) {
                     context.nextToken();

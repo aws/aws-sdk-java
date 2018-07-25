@@ -101,7 +101,7 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                 }
 
                 if (context.testExpression("EarliestRestorableTime", targetDepth)) {
-                    dBCluster.setEarliestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setEarliestRestorableTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -131,7 +131,7 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                 }
 
                 if (context.testExpression("LatestRestorableTime", targetDepth)) {
-                    dBCluster.setLatestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setLatestRestorableTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -246,12 +246,12 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    dBCluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EarliestBacktrackTime", targetDepth)) {
-                    dBCluster.setEarliestBacktrackTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setEarliestBacktrackTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

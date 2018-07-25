@@ -44,12 +44,12 @@ public class OptionStatusStaxUnmarshaller implements Unmarshaller<OptionStatus, 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("CreationDate", targetDepth)) {
-                    optionStatus.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    optionStatus.setCreationDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UpdateDate", targetDepth)) {
-                    optionStatus.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    optionStatus.setUpdateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

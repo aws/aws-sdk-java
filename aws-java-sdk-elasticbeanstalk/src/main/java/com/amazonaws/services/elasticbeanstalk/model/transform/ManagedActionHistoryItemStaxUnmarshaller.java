@@ -74,12 +74,12 @@ public class ManagedActionHistoryItemStaxUnmarshaller implements Unmarshaller<Ma
                 }
 
                 if (context.testExpression("ExecutedTime", targetDepth)) {
-                    managedActionHistoryItem.setExecutedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    managedActionHistoryItem.setExecutedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("FinishedTime", targetDepth)) {
-                    managedActionHistoryItem.setFinishedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    managedActionHistoryItem.setFinishedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

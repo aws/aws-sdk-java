@@ -66,11 +66,11 @@ public class FolderMetadataJsonUnmarshaller implements Unmarshaller<FolderMetada
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    folderMetadata.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    folderMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    folderMetadata.setModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    folderMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceState", targetDepth)) {
                     context.nextToken();

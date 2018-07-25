@@ -54,17 +54,17 @@ public class DBClusterBacktrackStaxUnmarshaller implements Unmarshaller<DBCluste
                 }
 
                 if (context.testExpression("BacktrackTo", targetDepth)) {
-                    dBClusterBacktrack.setBacktrackTo(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterBacktrack.setBacktrackTo(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BacktrackedFrom", targetDepth)) {
-                    dBClusterBacktrack.setBacktrackedFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterBacktrack.setBacktrackedFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BacktrackRequestCreationTime", targetDepth)) {
-                    dBClusterBacktrack.setBacktrackRequestCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterBacktrack.setBacktrackRequestCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

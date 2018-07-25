@@ -128,6 +128,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CancelJobRequest",
         "variableName" : "cancelJobRequest",
         "variableType" : "CancelJobRequest",
@@ -219,6 +220,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateJobRequest",
         "variableName" : "createJobRequest",
         "variableType" : "CreateJobRequest",
@@ -274,6 +276,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetShippingLabelRequest",
         "variableName" : "getShippingLabelRequest",
         "variableType" : "GetShippingLabelRequest",
@@ -321,6 +324,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetStatusRequest",
         "variableName" : "getStatusRequest",
         "variableType" : "GetStatusRequest",
@@ -360,6 +364,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListJobsRequest",
         "variableName" : "listJobsRequest",
         "variableType" : "ListJobsRequest",
@@ -459,6 +464,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateJobRequest",
         "variableName" : "updateJobRequest",
         "variableType" : "UpdateJobRequest",
@@ -537,6 +543,7 @@
         "setterDocumentation" : "/**\n@param description */",
         "setterMethodName" : "setDescription",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -549,6 +556,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "description",
           "variableType" : "String",
@@ -600,6 +608,7 @@
         "setterDocumentation" : "/**\n@param uRL */",
         "setterMethodName" : "setURL",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "uRL",
           "variableType" : "String",
@@ -612,6 +621,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "uRL",
           "variableType" : "String",
@@ -665,6 +675,7 @@
           "setterDocumentation" : "/**\n@param description */",
           "setterMethodName" : "setDescription",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -677,6 +688,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "description",
             "variableType" : "String",
@@ -729,6 +741,7 @@
           "setterDocumentation" : "/**\n@param uRL */",
           "setterMethodName" : "setURL",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "uRL",
             "variableType" : "String",
@@ -741,6 +754,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "uRL",
             "variableType" : "String",
@@ -762,6 +776,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Artifact",
         "variableName" : "artifact",
         "variableType" : "Artifact",
@@ -798,6 +813,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "BucketPermissionException",
         "variableName" : "bucketPermissionException",
         "variableType" : "BucketPermissionException",
@@ -874,6 +890,7 @@
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -886,6 +903,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -937,6 +955,7 @@
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -949,6 +968,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -1002,6 +1022,7 @@
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -1014,6 +1035,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -1066,6 +1088,7 @@
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -1078,6 +1101,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -1096,6 +1120,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CancelJobRequest",
         "variableName" : "cancelJobRequest",
         "variableType" : "CancelJobRequest",
@@ -1165,6 +1190,7 @@
         "setterDocumentation" : "/**\n@param success */",
         "setterMethodName" : "setSuccess",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "success",
           "variableType" : "Boolean",
@@ -1177,6 +1203,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "success",
           "variableType" : "Boolean",
@@ -1230,6 +1257,7 @@
           "setterDocumentation" : "/**\n@param success */",
           "setterMethodName" : "setSuccess",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "success",
             "variableType" : "Boolean",
@@ -1242,6 +1270,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "success",
             "variableType" : "Boolean",
@@ -1263,6 +1292,7 @@
         "resultWrapper" : "CancelJobResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CancelJobResult",
         "variableName" : "cancelJobResult",
         "variableType" : "CancelJobResult",
@@ -1299,6 +1329,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CanceledJobIdException",
         "variableName" : "canceledJobIdException",
         "variableType" : "CanceledJobIdException",
@@ -1335,6 +1366,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateJobQuotaExceededException",
         "variableName" : "createJobQuotaExceededException",
         "variableType" : "CreateJobQuotaExceededException",
@@ -1411,6 +1443,7 @@
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -1423,6 +1456,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -1474,6 +1508,7 @@
         "setterDocumentation" : "/**\n@param manifest */",
         "setterMethodName" : "setManifest",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifest",
           "variableType" : "String",
@@ -1486,6 +1521,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifest",
           "variableType" : "String",
@@ -1537,6 +1573,7 @@
         "setterDocumentation" : "/**\n@param manifestAddendum */",
         "setterMethodName" : "setManifestAddendum",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifestAddendum",
           "variableType" : "String",
@@ -1549,6 +1586,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifestAddendum",
           "variableType" : "String",
@@ -1600,6 +1638,7 @@
         "setterDocumentation" : "/**\n@param validateOnly */",
         "setterMethodName" : "setValidateOnly",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "validateOnly",
           "variableType" : "Boolean",
@@ -1612,6 +1651,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "validateOnly",
           "variableType" : "Boolean",
@@ -1663,6 +1703,7 @@
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -1675,6 +1716,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -1728,6 +1770,7 @@
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -1740,6 +1783,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -1792,6 +1836,7 @@
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -1804,6 +1849,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -1856,6 +1902,7 @@
           "setterDocumentation" : "/**\n@param manifest */",
           "setterMethodName" : "setManifest",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifest",
             "variableType" : "String",
@@ -1868,6 +1915,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifest",
             "variableType" : "String",
@@ -1920,6 +1968,7 @@
           "setterDocumentation" : "/**\n@param manifestAddendum */",
           "setterMethodName" : "setManifestAddendum",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifestAddendum",
             "variableType" : "String",
@@ -1932,6 +1981,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifestAddendum",
             "variableType" : "String",
@@ -1984,6 +2034,7 @@
           "setterDocumentation" : "/**\n@param validateOnly */",
           "setterMethodName" : "setValidateOnly",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "validateOnly",
             "variableType" : "Boolean",
@@ -1996,6 +2047,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "validateOnly",
             "variableType" : "Boolean",
@@ -2014,6 +2066,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateJobRequest",
         "variableName" : "createJobRequest",
         "variableType" : "CreateJobRequest",
@@ -2083,6 +2136,7 @@
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -2095,6 +2149,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -2146,6 +2201,7 @@
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -2158,6 +2214,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -2209,6 +2266,7 @@
         "setterDocumentation" : "/**\n@param signature */",
         "setterMethodName" : "setSignature",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signature",
           "variableType" : "String",
@@ -2221,6 +2279,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signature",
           "variableType" : "String",
@@ -2272,6 +2331,7 @@
         "setterDocumentation" : "/**\n@param signatureFileContents */",
         "setterMethodName" : "setSignatureFileContents",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signatureFileContents",
           "variableType" : "String",
@@ -2284,6 +2344,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signatureFileContents",
           "variableType" : "String",
@@ -2335,6 +2396,7 @@
         "setterDocumentation" : "/**\n@param warningMessage */",
         "setterMethodName" : "setWarningMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "warningMessage",
           "variableType" : "String",
@@ -2347,6 +2409,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "warningMessage",
           "variableType" : "String",
@@ -2435,6 +2498,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Artifact",
               "variableName" : "member",
               "variableType" : "Artifact",
@@ -2447,6 +2511,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Artifact",
               "variableName" : "member",
               "variableType" : "Artifact",
@@ -2476,6 +2541,7 @@
         "setterDocumentation" : "/**\n@param artifactList */",
         "setterMethodName" : "setArtifactList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
@@ -2488,6 +2554,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
@@ -2578,6 +2645,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Artifact",
                 "variableName" : "member",
                 "variableType" : "Artifact",
@@ -2590,6 +2658,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Artifact",
                 "variableName" : "member",
                 "variableType" : "Artifact",
@@ -2619,6 +2688,7 @@
           "setterDocumentation" : "/**\n@param artifactList */",
           "setterMethodName" : "setArtifactList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
@@ -2631,6 +2701,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
@@ -2683,6 +2754,7 @@
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -2695,6 +2767,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -2747,6 +2820,7 @@
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -2759,6 +2833,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -2811,6 +2886,7 @@
           "setterDocumentation" : "/**\n@param signature */",
           "setterMethodName" : "setSignature",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signature",
             "variableType" : "String",
@@ -2823,6 +2899,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signature",
             "variableType" : "String",
@@ -2875,6 +2952,7 @@
           "setterDocumentation" : "/**\n@param signatureFileContents */",
           "setterMethodName" : "setSignatureFileContents",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signatureFileContents",
             "variableType" : "String",
@@ -2887,6 +2965,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signatureFileContents",
             "variableType" : "String",
@@ -2939,6 +3018,7 @@
           "setterDocumentation" : "/**\n@param warningMessage */",
           "setterMethodName" : "setWarningMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "warningMessage",
             "variableType" : "String",
@@ -2951,6 +3031,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "warningMessage",
             "variableType" : "String",
@@ -2972,6 +3053,7 @@
         "resultWrapper" : "CreateJobResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CreateJobResult",
         "variableName" : "createJobResult",
         "variableType" : "CreateJobResult",
@@ -3008,6 +3090,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ExpiredJobIdException",
         "variableName" : "expiredJobIdException",
         "variableType" : "ExpiredJobIdException",
@@ -3121,6 +3204,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -3133,6 +3217,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "member",
               "variableType" : "String",
@@ -3162,6 +3247,7 @@
         "setterDocumentation" : "/**\n@param jobIds */",
         "setterMethodName" : "setJobIds",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "jobIds",
           "variableType" : "java.util.List<String>",
@@ -3174,6 +3260,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "variableName" : "jobIds",
           "variableType" : "java.util.List<String>",
@@ -3225,6 +3312,7 @@
         "setterDocumentation" : "/**\n@param name */",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3237,6 +3325,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -3288,6 +3377,7 @@
         "setterDocumentation" : "/**\n@param company */",
         "setterMethodName" : "setCompany",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "company",
           "variableType" : "String",
@@ -3300,6 +3390,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "company",
           "variableType" : "String",
@@ -3351,6 +3442,7 @@
         "setterDocumentation" : "/**\n@param phoneNumber */",
         "setterMethodName" : "setPhoneNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "phoneNumber",
           "variableType" : "String",
@@ -3363,6 +3455,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "phoneNumber",
           "variableType" : "String",
@@ -3414,6 +3507,7 @@
         "setterDocumentation" : "/**\n@param country */",
         "setterMethodName" : "setCountry",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "country",
           "variableType" : "String",
@@ -3426,6 +3520,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "country",
           "variableType" : "String",
@@ -3477,6 +3572,7 @@
         "setterDocumentation" : "/**\n@param stateOrProvince */",
         "setterMethodName" : "setStateOrProvince",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "stateOrProvince",
           "variableType" : "String",
@@ -3489,6 +3585,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "stateOrProvince",
           "variableType" : "String",
@@ -3540,6 +3637,7 @@
         "setterDocumentation" : "/**\n@param city */",
         "setterMethodName" : "setCity",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "city",
           "variableType" : "String",
@@ -3552,6 +3650,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "city",
           "variableType" : "String",
@@ -3603,6 +3702,7 @@
         "setterDocumentation" : "/**\n@param postalCode */",
         "setterMethodName" : "setPostalCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "postalCode",
           "variableType" : "String",
@@ -3615,6 +3715,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "postalCode",
           "variableType" : "String",
@@ -3666,6 +3767,7 @@
         "setterDocumentation" : "/**\n@param street1 */",
         "setterMethodName" : "setStreet1",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "street1",
           "variableType" : "String",
@@ -3678,6 +3780,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "street1",
           "variableType" : "String",
@@ -3729,6 +3832,7 @@
         "setterDocumentation" : "/**\n@param street2 */",
         "setterMethodName" : "setStreet2",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "street2",
           "variableType" : "String",
@@ -3741,6 +3845,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "street2",
           "variableType" : "String",
@@ -3792,6 +3897,7 @@
         "setterDocumentation" : "/**\n@param street3 */",
         "setterMethodName" : "setStreet3",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "street3",
           "variableType" : "String",
@@ -3804,6 +3910,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "street3",
           "variableType" : "String",
@@ -3855,6 +3962,7 @@
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -3867,6 +3975,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -3920,6 +4029,7 @@
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -3932,6 +4042,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -3984,6 +4095,7 @@
           "setterDocumentation" : "/**\n@param city */",
           "setterMethodName" : "setCity",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "city",
             "variableType" : "String",
@@ -3996,6 +4108,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "city",
             "variableType" : "String",
@@ -4048,6 +4161,7 @@
           "setterDocumentation" : "/**\n@param company */",
           "setterMethodName" : "setCompany",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "company",
             "variableType" : "String",
@@ -4060,6 +4174,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "company",
             "variableType" : "String",
@@ -4112,6 +4227,7 @@
           "setterDocumentation" : "/**\n@param country */",
           "setterMethodName" : "setCountry",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "country",
             "variableType" : "String",
@@ -4124,6 +4240,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "country",
             "variableType" : "String",
@@ -4213,6 +4330,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4225,6 +4343,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "member",
                 "variableType" : "String",
@@ -4254,6 +4373,7 @@
           "setterDocumentation" : "/**\n@param jobIds */",
           "setterMethodName" : "setJobIds",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "jobIds",
             "variableType" : "java.util.List<String>",
@@ -4266,6 +4386,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "variableName" : "jobIds",
             "variableType" : "java.util.List<String>",
@@ -4318,6 +4439,7 @@
           "setterDocumentation" : "/**\n@param name */",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -4330,6 +4452,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -4382,6 +4505,7 @@
           "setterDocumentation" : "/**\n@param phoneNumber */",
           "setterMethodName" : "setPhoneNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "phoneNumber",
             "variableType" : "String",
@@ -4394,6 +4518,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "phoneNumber",
             "variableType" : "String",
@@ -4446,6 +4571,7 @@
           "setterDocumentation" : "/**\n@param postalCode */",
           "setterMethodName" : "setPostalCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "postalCode",
             "variableType" : "String",
@@ -4458,6 +4584,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "postalCode",
             "variableType" : "String",
@@ -4510,6 +4637,7 @@
           "setterDocumentation" : "/**\n@param stateOrProvince */",
           "setterMethodName" : "setStateOrProvince",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "stateOrProvince",
             "variableType" : "String",
@@ -4522,6 +4650,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "stateOrProvince",
             "variableType" : "String",
@@ -4574,6 +4703,7 @@
           "setterDocumentation" : "/**\n@param street1 */",
           "setterMethodName" : "setStreet1",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "street1",
             "variableType" : "String",
@@ -4586,6 +4716,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "street1",
             "variableType" : "String",
@@ -4638,6 +4769,7 @@
           "setterDocumentation" : "/**\n@param street2 */",
           "setterMethodName" : "setStreet2",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "street2",
             "variableType" : "String",
@@ -4650,6 +4782,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "street2",
             "variableType" : "String",
@@ -4702,6 +4835,7 @@
           "setterDocumentation" : "/**\n@param street3 */",
           "setterMethodName" : "setStreet3",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "street3",
             "variableType" : "String",
@@ -4714,6 +4848,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "street3",
             "variableType" : "String",
@@ -4732,6 +4867,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetShippingLabelRequest",
         "variableName" : "getShippingLabelRequest",
         "variableType" : "GetShippingLabelRequest",
@@ -4801,6 +4937,7 @@
         "setterDocumentation" : "/**\n@param shippingLabelURL */",
         "setterMethodName" : "setShippingLabelURL",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "shippingLabelURL",
           "variableType" : "String",
@@ -4813,6 +4950,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "shippingLabelURL",
           "variableType" : "String",
@@ -4864,6 +5002,7 @@
         "setterDocumentation" : "/**\n@param warning */",
         "setterMethodName" : "setWarning",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "warning",
           "variableType" : "String",
@@ -4876,6 +5015,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "warning",
           "variableType" : "String",
@@ -4929,6 +5069,7 @@
           "setterDocumentation" : "/**\n@param shippingLabelURL */",
           "setterMethodName" : "setShippingLabelURL",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "shippingLabelURL",
             "variableType" : "String",
@@ -4941,6 +5082,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "shippingLabelURL",
             "variableType" : "String",
@@ -4993,6 +5135,7 @@
           "setterDocumentation" : "/**\n@param warning */",
           "setterMethodName" : "setWarning",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "warning",
             "variableType" : "String",
@@ -5005,6 +5148,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "warning",
             "variableType" : "String",
@@ -5026,6 +5170,7 @@
         "resultWrapper" : "GetShippingLabelResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetShippingLabelResult",
         "variableName" : "getShippingLabelResult",
         "variableType" : "GetShippingLabelResult",
@@ -5102,6 +5247,7 @@
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -5114,6 +5260,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -5165,6 +5312,7 @@
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -5177,6 +5325,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -5230,6 +5379,7 @@
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -5242,6 +5392,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -5294,6 +5445,7 @@
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -5306,6 +5458,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -5324,6 +5477,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetStatusRequest",
         "variableName" : "getStatusRequest",
         "variableType" : "GetStatusRequest",
@@ -5393,6 +5547,7 @@
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -5405,6 +5560,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -5456,6 +5612,7 @@
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -5468,6 +5625,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -5519,6 +5677,7 @@
         "setterDocumentation" : "/**\n@param locationCode */",
         "setterMethodName" : "setLocationCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "locationCode",
           "variableType" : "String",
@@ -5531,6 +5690,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "locationCode",
           "variableType" : "String",
@@ -5582,6 +5742,7 @@
         "setterDocumentation" : "/**\n@param locationMessage */",
         "setterMethodName" : "setLocationMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "locationMessage",
           "variableType" : "String",
@@ -5594,6 +5755,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "locationMessage",
           "variableType" : "String",
@@ -5645,6 +5807,7 @@
         "setterDocumentation" : "/**\n@param progressCode */",
         "setterMethodName" : "setProgressCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "progressCode",
           "variableType" : "String",
@@ -5657,6 +5820,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "progressCode",
           "variableType" : "String",
@@ -5708,6 +5872,7 @@
         "setterDocumentation" : "/**\n@param progressMessage */",
         "setterMethodName" : "setProgressMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "progressMessage",
           "variableType" : "String",
@@ -5720,6 +5885,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "progressMessage",
           "variableType" : "String",
@@ -5771,6 +5937,7 @@
         "setterDocumentation" : "/**\n@param carrier */",
         "setterMethodName" : "setCarrier",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "carrier",
           "variableType" : "String",
@@ -5783,6 +5950,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "carrier",
           "variableType" : "String",
@@ -5834,6 +6002,7 @@
         "setterDocumentation" : "/**\n@param trackingNumber */",
         "setterMethodName" : "setTrackingNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "trackingNumber",
           "variableType" : "String",
@@ -5846,6 +6015,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "trackingNumber",
           "variableType" : "String",
@@ -5897,6 +6067,7 @@
         "setterDocumentation" : "/**\n@param logBucket */",
         "setterMethodName" : "setLogBucket",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "logBucket",
           "variableType" : "String",
@@ -5909,6 +6080,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "logBucket",
           "variableType" : "String",
@@ -5960,6 +6132,7 @@
         "setterDocumentation" : "/**\n@param logKey */",
         "setterMethodName" : "setLogKey",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "logKey",
           "variableType" : "String",
@@ -5972,6 +6145,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "logKey",
           "variableType" : "String",
@@ -6023,6 +6197,7 @@
         "setterDocumentation" : "/**\n@param errorCount */",
         "setterMethodName" : "setErrorCount",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "errorCount",
           "variableType" : "Integer",
@@ -6035,6 +6210,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "errorCount",
           "variableType" : "Integer",
@@ -6086,6 +6262,7 @@
         "setterDocumentation" : "/**\n@param signature */",
         "setterMethodName" : "setSignature",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signature",
           "variableType" : "String",
@@ -6098,6 +6275,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signature",
           "variableType" : "String",
@@ -6149,6 +6327,7 @@
         "setterDocumentation" : "/**\n@param signatureFileContents */",
         "setterMethodName" : "setSignatureFileContents",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signatureFileContents",
           "variableType" : "String",
@@ -6161,6 +6340,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "signatureFileContents",
           "variableType" : "String",
@@ -6212,6 +6392,7 @@
         "setterDocumentation" : "/**\n@param currentManifest */",
         "setterMethodName" : "setCurrentManifest",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "currentManifest",
           "variableType" : "String",
@@ -6224,6 +6405,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "currentManifest",
           "variableType" : "String",
@@ -6275,6 +6457,7 @@
         "setterDocumentation" : "/**\n@param creationDate */",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
@@ -6287,6 +6470,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
@@ -6375,6 +6559,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Artifact",
               "variableName" : "member",
               "variableType" : "Artifact",
@@ -6387,6 +6572,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Artifact",
               "variableName" : "member",
               "variableType" : "Artifact",
@@ -6416,6 +6602,7 @@
         "setterDocumentation" : "/**\n@param artifactList */",
         "setterMethodName" : "setArtifactList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
@@ -6428,6 +6615,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
@@ -6518,6 +6706,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Artifact",
                 "variableName" : "member",
                 "variableType" : "Artifact",
@@ -6530,6 +6719,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Artifact",
                 "variableName" : "member",
                 "variableType" : "Artifact",
@@ -6559,6 +6749,7 @@
           "setterDocumentation" : "/**\n@param artifactList */",
           "setterMethodName" : "setArtifactList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
@@ -6571,6 +6762,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
@@ -6623,6 +6815,7 @@
           "setterDocumentation" : "/**\n@param carrier */",
           "setterMethodName" : "setCarrier",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "carrier",
             "variableType" : "String",
@@ -6635,6 +6828,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "carrier",
             "variableType" : "String",
@@ -6687,6 +6881,7 @@
           "setterDocumentation" : "/**\n@param creationDate */",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
@@ -6699,6 +6894,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
@@ -6751,6 +6947,7 @@
           "setterDocumentation" : "/**\n@param currentManifest */",
           "setterMethodName" : "setCurrentManifest",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "currentManifest",
             "variableType" : "String",
@@ -6763,6 +6960,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "currentManifest",
             "variableType" : "String",
@@ -6815,6 +7013,7 @@
           "setterDocumentation" : "/**\n@param errorCount */",
           "setterMethodName" : "setErrorCount",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "errorCount",
             "variableType" : "Integer",
@@ -6827,6 +7026,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "errorCount",
             "variableType" : "Integer",
@@ -6879,6 +7079,7 @@
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -6891,6 +7092,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -6943,6 +7145,7 @@
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -6955,6 +7158,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -7007,6 +7211,7 @@
           "setterDocumentation" : "/**\n@param locationCode */",
           "setterMethodName" : "setLocationCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "locationCode",
             "variableType" : "String",
@@ -7019,6 +7224,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "locationCode",
             "variableType" : "String",
@@ -7071,6 +7277,7 @@
           "setterDocumentation" : "/**\n@param locationMessage */",
           "setterMethodName" : "setLocationMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "locationMessage",
             "variableType" : "String",
@@ -7083,6 +7290,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "locationMessage",
             "variableType" : "String",
@@ -7135,6 +7343,7 @@
           "setterDocumentation" : "/**\n@param logBucket */",
           "setterMethodName" : "setLogBucket",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "logBucket",
             "variableType" : "String",
@@ -7147,6 +7356,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "logBucket",
             "variableType" : "String",
@@ -7199,6 +7409,7 @@
           "setterDocumentation" : "/**\n@param logKey */",
           "setterMethodName" : "setLogKey",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "logKey",
             "variableType" : "String",
@@ -7211,6 +7422,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "logKey",
             "variableType" : "String",
@@ -7263,6 +7475,7 @@
           "setterDocumentation" : "/**\n@param progressCode */",
           "setterMethodName" : "setProgressCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "progressCode",
             "variableType" : "String",
@@ -7275,6 +7488,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "progressCode",
             "variableType" : "String",
@@ -7327,6 +7541,7 @@
           "setterDocumentation" : "/**\n@param progressMessage */",
           "setterMethodName" : "setProgressMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "progressMessage",
             "variableType" : "String",
@@ -7339,6 +7554,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "progressMessage",
             "variableType" : "String",
@@ -7391,6 +7607,7 @@
           "setterDocumentation" : "/**\n@param signature */",
           "setterMethodName" : "setSignature",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signature",
             "variableType" : "String",
@@ -7403,6 +7620,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signature",
             "variableType" : "String",
@@ -7455,6 +7673,7 @@
           "setterDocumentation" : "/**\n@param signatureFileContents */",
           "setterMethodName" : "setSignatureFileContents",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signatureFileContents",
             "variableType" : "String",
@@ -7467,6 +7686,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "signatureFileContents",
             "variableType" : "String",
@@ -7519,6 +7739,7 @@
           "setterDocumentation" : "/**\n@param trackingNumber */",
           "setterMethodName" : "setTrackingNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "trackingNumber",
             "variableType" : "String",
@@ -7531,6 +7752,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "trackingNumber",
             "variableType" : "String",
@@ -7552,6 +7774,7 @@
         "resultWrapper" : "GetStatusResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetStatusResult",
         "variableName" : "getStatusResult",
         "variableType" : "GetStatusResult",
@@ -7588,6 +7811,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidAccessKeyIdException",
         "variableName" : "invalidAccessKeyIdException",
         "variableType" : "InvalidAccessKeyIdException",
@@ -7624,6 +7848,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidAddressException",
         "variableName" : "invalidAddressException",
         "variableType" : "InvalidAddressException",
@@ -7660,6 +7885,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidCustomsException",
         "variableName" : "invalidCustomsException",
         "variableType" : "InvalidCustomsException",
@@ -7696,6 +7922,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidFileSystemException",
         "variableName" : "invalidFileSystemException",
         "variableType" : "InvalidFileSystemException",
@@ -7732,6 +7959,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidJobIdException",
         "variableName" : "invalidJobIdException",
         "variableType" : "InvalidJobIdException",
@@ -7768,6 +7996,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidManifestFieldException",
         "variableName" : "invalidManifestFieldException",
         "variableType" : "InvalidManifestFieldException",
@@ -7804,6 +8033,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidParameterException",
         "variableName" : "invalidParameterException",
         "variableType" : "InvalidParameterException",
@@ -7840,6 +8070,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidVersionException",
         "variableName" : "invalidVersionException",
         "variableType" : "InvalidVersionException",
@@ -7909,6 +8140,7 @@
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -7921,6 +8153,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -7972,6 +8205,7 @@
         "setterDocumentation" : "/**\n@param creationDate */",
         "setterMethodName" : "setCreationDate",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
@@ -7984,6 +8218,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationDate",
           "variableType" : "java.util.Date",
@@ -8035,6 +8270,7 @@
         "setterDocumentation" : "/**\n@param isCanceled */",
         "setterMethodName" : "setIsCanceled",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "isCanceled",
           "variableType" : "Boolean",
@@ -8047,6 +8283,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "isCanceled",
           "variableType" : "Boolean",
@@ -8098,6 +8335,7 @@
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -8110,6 +8348,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -8163,6 +8402,7 @@
           "setterDocumentation" : "/**\n@param creationDate */",
           "setterMethodName" : "setCreationDate",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
@@ -8175,6 +8415,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationDate",
             "variableType" : "java.util.Date",
@@ -8227,6 +8468,7 @@
           "setterDocumentation" : "/**\n@param isCanceled */",
           "setterMethodName" : "setIsCanceled",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "isCanceled",
             "variableType" : "Boolean",
@@ -8239,6 +8481,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "isCanceled",
             "variableType" : "Boolean",
@@ -8291,6 +8534,7 @@
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -8303,6 +8547,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -8355,6 +8600,7 @@
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -8367,6 +8613,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -8388,6 +8635,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Job",
         "variableName" : "job",
         "variableType" : "Job",
@@ -8433,6 +8681,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "JobType",
         "variableName" : "jobType",
         "variableType" : "JobType",
@@ -8509,6 +8758,7 @@
         "setterDocumentation" : "/**\n@param maxJobs */",
         "setterMethodName" : "setMaxJobs",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxJobs",
           "variableType" : "Integer",
@@ -8521,6 +8771,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxJobs",
           "variableType" : "Integer",
@@ -8572,6 +8823,7 @@
         "setterDocumentation" : "/**\n@param marker */",
         "setterMethodName" : "setMarker",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "marker",
           "variableType" : "String",
@@ -8584,6 +8836,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "marker",
           "variableType" : "String",
@@ -8635,6 +8888,7 @@
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -8647,6 +8901,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -8700,6 +8955,7 @@
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -8712,6 +8968,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -8764,6 +9021,7 @@
           "setterDocumentation" : "/**\n@param marker */",
           "setterMethodName" : "setMarker",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "marker",
             "variableType" : "String",
@@ -8776,6 +9034,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "marker",
             "variableType" : "String",
@@ -8828,6 +9087,7 @@
           "setterDocumentation" : "/**\n@param maxJobs */",
           "setterMethodName" : "setMaxJobs",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxJobs",
             "variableType" : "Integer",
@@ -8840,6 +9100,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxJobs",
             "variableType" : "Integer",
@@ -8858,6 +9119,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListJobsRequest",
         "variableName" : "listJobsRequest",
         "variableType" : "ListJobsRequest",
@@ -8964,6 +9226,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Job",
               "variableName" : "member",
               "variableType" : "Job",
@@ -8976,6 +9239,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Job",
               "variableName" : "member",
               "variableType" : "Job",
@@ -9005,6 +9269,7 @@
         "setterDocumentation" : "/**\n@param jobs */",
         "setterMethodName" : "setJobs",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
           "variableName" : "jobs",
           "variableType" : "java.util.List<Job>",
@@ -9017,6 +9282,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
           "variableName" : "jobs",
           "variableType" : "java.util.List<Job>",
@@ -9068,6 +9334,7 @@
         "setterDocumentation" : "/**\n@param isTruncated */",
         "setterMethodName" : "setIsTruncated",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "isTruncated",
           "variableType" : "Boolean",
@@ -9080,6 +9347,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "isTruncated",
           "variableType" : "Boolean",
@@ -9133,6 +9401,7 @@
           "setterDocumentation" : "/**\n@param isTruncated */",
           "setterMethodName" : "setIsTruncated",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "isTruncated",
             "variableType" : "Boolean",
@@ -9145,6 +9414,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "isTruncated",
             "variableType" : "Boolean",
@@ -9234,6 +9504,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Job",
                 "variableName" : "member",
                 "variableType" : "Job",
@@ -9246,6 +9517,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Job",
                 "variableName" : "member",
                 "variableType" : "Job",
@@ -9275,6 +9547,7 @@
           "setterDocumentation" : "/**\n@param jobs */",
           "setterMethodName" : "setJobs",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
             "variableName" : "jobs",
             "variableType" : "java.util.List<Job>",
@@ -9287,6 +9560,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
             "variableName" : "jobs",
             "variableType" : "java.util.List<Job>",
@@ -9308,6 +9582,7 @@
         "resultWrapper" : "ListJobsResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListJobsResult",
         "variableName" : "listJobsResult",
         "variableType" : "ListJobsResult",
@@ -9344,6 +9619,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MalformedManifestException",
         "variableName" : "malformedManifestException",
         "variableType" : "MalformedManifestException",
@@ -9380,6 +9656,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MissingCustomsException",
         "variableName" : "missingCustomsException",
         "variableType" : "MissingCustomsException",
@@ -9416,6 +9693,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MissingManifestFieldException",
         "variableName" : "missingManifestFieldException",
         "variableType" : "MissingManifestFieldException",
@@ -9452,6 +9730,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MissingParameterException",
         "variableName" : "missingParameterException",
         "variableType" : "MissingParameterException",
@@ -9488,6 +9767,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "MultipleRegionsException",
         "variableName" : "multipleRegionsException",
         "variableType" : "MultipleRegionsException",
@@ -9524,6 +9804,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "NoSuchBucketException",
         "variableName" : "noSuchBucketException",
         "variableType" : "NoSuchBucketException",
@@ -9560,6 +9841,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnableToCancelJobIdException",
         "variableName" : "unableToCancelJobIdException",
         "variableType" : "UnableToCancelJobIdException",
@@ -9596,6 +9878,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UnableToUpdateJobIdException",
         "variableName" : "unableToUpdateJobIdException",
         "variableType" : "UnableToUpdateJobIdException",
@@ -9672,6 +9955,7 @@
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -9684,6 +9968,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -9735,6 +10020,7 @@
         "setterDocumentation" : "/**\n@param manifest */",
         "setterMethodName" : "setManifest",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifest",
           "variableType" : "String",
@@ -9747,6 +10033,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "manifest",
           "variableType" : "String",
@@ -9798,6 +10085,7 @@
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -9810,6 +10098,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobType",
           "variableType" : "String",
@@ -9861,6 +10150,7 @@
         "setterDocumentation" : "/**\n@param validateOnly */",
         "setterMethodName" : "setValidateOnly",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "validateOnly",
           "variableType" : "Boolean",
@@ -9873,6 +10163,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "validateOnly",
           "variableType" : "Boolean",
@@ -9924,6 +10215,7 @@
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -9936,6 +10228,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "aPIVersion",
           "variableType" : "String",
@@ -9989,6 +10282,7 @@
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -10001,6 +10295,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "aPIVersion",
             "variableType" : "String",
@@ -10053,6 +10348,7 @@
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -10065,6 +10361,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -10117,6 +10414,7 @@
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -10129,6 +10427,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobType",
             "variableType" : "String",
@@ -10181,6 +10480,7 @@
           "setterDocumentation" : "/**\n@param manifest */",
           "setterMethodName" : "setManifest",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifest",
             "variableType" : "String",
@@ -10193,6 +10493,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "manifest",
             "variableType" : "String",
@@ -10245,6 +10546,7 @@
           "setterDocumentation" : "/**\n@param validateOnly */",
           "setterMethodName" : "setValidateOnly",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "validateOnly",
             "variableType" : "Boolean",
@@ -10257,6 +10559,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "validateOnly",
             "variableType" : "Boolean",
@@ -10275,6 +10578,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateJobRequest",
         "variableName" : "updateJobRequest",
         "variableType" : "UpdateJobRequest",
@@ -10344,6 +10648,7 @@
         "setterDocumentation" : "/**\n@param success */",
         "setterMethodName" : "setSuccess",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "success",
           "variableType" : "Boolean",
@@ -10356,6 +10661,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "success",
           "variableType" : "Boolean",
@@ -10407,6 +10713,7 @@
         "setterDocumentation" : "/**\n@param warningMessage */",
         "setterMethodName" : "setWarningMessage",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "warningMessage",
           "variableType" : "String",
@@ -10419,6 +10726,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "warningMessage",
           "variableType" : "String",
@@ -10507,6 +10815,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Artifact",
               "variableName" : "member",
               "variableType" : "Artifact",
@@ -10519,6 +10828,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Artifact",
               "variableName" : "member",
               "variableType" : "Artifact",
@@ -10548,6 +10858,7 @@
         "setterDocumentation" : "/**\n@param artifactList */",
         "setterMethodName" : "setArtifactList",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
@@ -10560,6 +10871,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
           "variableName" : "artifactList",
           "variableType" : "java.util.List<Artifact>",
@@ -10650,6 +10962,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Artifact",
                 "variableName" : "member",
                 "variableType" : "Artifact",
@@ -10662,6 +10975,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Artifact",
                 "variableName" : "member",
                 "variableType" : "Artifact",
@@ -10691,6 +11005,7 @@
           "setterDocumentation" : "/**\n@param artifactList */",
           "setterMethodName" : "setArtifactList",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
@@ -10703,6 +11018,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
             "variableName" : "artifactList",
             "variableType" : "java.util.List<Artifact>",
@@ -10755,6 +11071,7 @@
           "setterDocumentation" : "/**\n@param success */",
           "setterMethodName" : "setSuccess",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "success",
             "variableType" : "Boolean",
@@ -10767,6 +11084,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "success",
             "variableType" : "Boolean",
@@ -10819,6 +11137,7 @@
           "setterDocumentation" : "/**\n@param warningMessage */",
           "setterMethodName" : "setWarningMessage",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "warningMessage",
             "variableType" : "String",
@@ -10831,6 +11150,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "warningMessage",
             "variableType" : "String",
@@ -10852,6 +11172,7 @@
         "resultWrapper" : "UpdateJobResult"
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateJobResult",
         "variableName" : "updateJobResult",
         "variableType" : "UpdateJobResult",

@@ -64,7 +64,7 @@ public class AccessKeyStaxUnmarshaller implements Unmarshaller<AccessKey, StaxUn
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    accessKey.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    accessKey.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -50,15 +50,15 @@ public class InstanceGroupTimelineJsonUnmarshaller implements Unmarshaller<Insta
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupTimeline.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupTimeline.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupTimeline.setReadyDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupTimeline.setReadyDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupTimeline.setEndDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupTimeline.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -64,7 +64,7 @@ public class VirtualMFADeviceStaxUnmarshaller implements Unmarshaller<VirtualMFA
                 }
 
                 if (context.testExpression("EnableDate", targetDepth)) {
-                    virtualMFADevice.setEnableDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    virtualMFADevice.setEnableDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

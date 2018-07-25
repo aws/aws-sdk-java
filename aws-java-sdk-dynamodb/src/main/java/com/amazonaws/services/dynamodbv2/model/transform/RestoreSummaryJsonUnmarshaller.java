@@ -58,7 +58,7 @@ public class RestoreSummaryJsonUnmarshaller implements Unmarshaller<RestoreSumma
                 }
                 if (context.testExpression("RestoreDateTime", targetDepth)) {
                     context.nextToken();
-                    restoreSummary.setRestoreDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    restoreSummary.setRestoreDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RestoreInProgress", targetDepth)) {
                     context.nextToken();

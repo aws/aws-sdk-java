@@ -69,7 +69,7 @@ public class StackResourceStaxUnmarshaller implements Unmarshaller<StackResource
                 }
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    stackResource.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackResource.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

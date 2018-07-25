@@ -62,7 +62,7 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    server.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    server.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CloudFormationStackArn", targetDepth)) {
                     context.nextToken();

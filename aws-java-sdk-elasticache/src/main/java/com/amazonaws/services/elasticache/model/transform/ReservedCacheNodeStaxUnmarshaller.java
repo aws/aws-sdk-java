@@ -61,7 +61,7 @@ public class ReservedCacheNodeStaxUnmarshaller implements Unmarshaller<ReservedC
                 }
 
                 if (context.testExpression("StartTime", targetDepth)) {
-                    reservedCacheNode.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedCacheNode.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

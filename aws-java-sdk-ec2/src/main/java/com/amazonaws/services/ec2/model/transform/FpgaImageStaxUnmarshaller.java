@@ -81,12 +81,12 @@ public class FpgaImageStaxUnmarshaller implements Unmarshaller<FpgaImage, StaxUn
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    fpgaImage.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fpgaImage.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("updateTime", targetDepth)) {
-                    fpgaImage.setUpdateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fpgaImage.setUpdateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

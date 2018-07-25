@@ -49,7 +49,7 @@ public class VgwTelemetryStaxUnmarshaller implements Unmarshaller<VgwTelemetry, 
                 }
 
                 if (context.testExpression("lastStatusChange", targetDepth)) {
-                    vgwTelemetry.setLastStatusChange(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    vgwTelemetry.setLastStatusChange(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

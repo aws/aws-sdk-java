@@ -61,7 +61,7 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                 }
 
                 if (context.testExpression("AlarmConfigurationUpdatedTimestamp", targetDepth)) {
-                    metricAlarm.setAlarmConfigurationUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricAlarm.setAlarmConfigurationUpdatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -116,7 +116,7 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                 }
 
                 if (context.testExpression("StateUpdatedTimestamp", targetDepth)) {
-                    metricAlarm.setStateUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricAlarm.setStateUpdatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

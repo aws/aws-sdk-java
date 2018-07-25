@@ -90,7 +90,7 @@ public class MatchmakingConfigurationJsonUnmarshaller implements Unmarshaller<Ma
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    matchmakingConfiguration.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    matchmakingConfiguration.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();

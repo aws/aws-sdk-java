@@ -62,7 +62,7 @@ public class OperationSummaryJsonUnmarshaller implements Unmarshaller<OperationS
                 }
                 if (context.testExpression("SubmittedDate", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setSubmittedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operationSummary.setSubmittedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

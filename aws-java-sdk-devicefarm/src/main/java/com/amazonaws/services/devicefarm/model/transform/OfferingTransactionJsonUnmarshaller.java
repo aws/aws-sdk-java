@@ -62,7 +62,7 @@ public class OfferingTransactionJsonUnmarshaller implements Unmarshaller<Offerin
                 }
                 if (context.testExpression("createdOn", targetDepth)) {
                     context.nextToken();
-                    offeringTransaction.setCreatedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    offeringTransaction.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("cost", targetDepth)) {
                     context.nextToken();

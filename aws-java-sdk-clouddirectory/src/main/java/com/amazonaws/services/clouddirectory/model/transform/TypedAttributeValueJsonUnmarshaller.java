@@ -66,7 +66,7 @@ public class TypedAttributeValueJsonUnmarshaller implements Unmarshaller<TypedAt
                 }
                 if (context.testExpression("DatetimeValue", targetDepth)) {
                     context.nextToken();
-                    typedAttributeValue.setDatetimeValue(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    typedAttributeValue.setDatetimeValue(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

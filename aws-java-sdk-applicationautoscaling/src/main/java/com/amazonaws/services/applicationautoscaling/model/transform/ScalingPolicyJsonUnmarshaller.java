@@ -87,7 +87,7 @@ public class ScalingPolicyJsonUnmarshaller implements Unmarshaller<ScalingPolicy
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    scalingPolicy.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

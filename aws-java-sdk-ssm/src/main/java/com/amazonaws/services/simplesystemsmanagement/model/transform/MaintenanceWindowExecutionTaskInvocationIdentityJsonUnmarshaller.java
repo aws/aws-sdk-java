@@ -83,11 +83,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentityJsonUnmarshaller im
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowExecutionTaskInvocationIdentity.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    maintenanceWindowExecutionTaskInvocationIdentity.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowExecutionTaskInvocationIdentity.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    maintenanceWindowExecutionTaskInvocationIdentity.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
                     context.nextToken();

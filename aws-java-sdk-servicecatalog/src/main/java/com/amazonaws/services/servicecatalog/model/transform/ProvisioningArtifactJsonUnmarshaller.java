@@ -62,7 +62,7 @@ public class ProvisioningArtifactJsonUnmarshaller implements Unmarshaller<Provis
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    provisioningArtifact.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    provisioningArtifact.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -70,7 +70,7 @@ public class DescribeProjectResultJsonUnmarshaller implements Unmarshaller<Descr
                 }
                 if (context.testExpression("createdTimeStamp", targetDepth)) {
                     context.nextToken();
-                    describeProjectResult.setCreatedTimeStamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeProjectResult.setCreatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stackId", targetDepth)) {
                     context.nextToken();

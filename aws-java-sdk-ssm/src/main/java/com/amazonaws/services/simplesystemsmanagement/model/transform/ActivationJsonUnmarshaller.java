@@ -74,7 +74,7 @@ public class ActivationJsonUnmarshaller implements Unmarshaller<Activation, Json
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
                     context.nextToken();
-                    activation.setExpirationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    activation.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Expired", targetDepth)) {
                     context.nextToken();
@@ -82,7 +82,7 @@ public class ActivationJsonUnmarshaller implements Unmarshaller<Activation, Json
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    activation.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    activation.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

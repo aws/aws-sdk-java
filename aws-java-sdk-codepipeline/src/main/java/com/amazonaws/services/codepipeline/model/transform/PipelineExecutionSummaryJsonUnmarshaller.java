@@ -58,11 +58,11 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    pipelineExecutionSummary.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pipelineExecutionSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    pipelineExecutionSummary.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pipelineExecutionSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("sourceRevisions", targetDepth)) {
                     context.nextToken();

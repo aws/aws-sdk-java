@@ -62,7 +62,7 @@ public class CreateVocabularyResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    createVocabularyResult.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createVocabularyResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();

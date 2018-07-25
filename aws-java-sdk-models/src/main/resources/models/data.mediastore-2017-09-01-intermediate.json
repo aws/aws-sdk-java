@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -105,6 +105,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteObjectRequest",
         "variableName" : "deleteObjectRequest",
         "variableType" : "DeleteObjectRequest",
@@ -144,6 +145,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeObjectRequest",
         "variableName" : "describeObjectRequest",
         "variableType" : "DescribeObjectRequest",
@@ -187,6 +189,7 @@
       } ],
       "hasBlobMemberAsPayload" : true,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetObjectRequest",
         "variableName" : "getObjectRequest",
         "variableType" : "GetObjectRequest",
@@ -222,6 +225,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListItemsRequest",
         "variableName" : "listItemsRequest",
         "variableType" : "ListItemsRequest",
@@ -257,6 +261,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutObjectRequest",
         "variableName" : "putObjectRequest",
         "variableType" : "PutObjectRequest",
@@ -302,6 +307,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ContainerNotFoundException",
         "variableName" : "containerNotFoundException",
         "variableType" : "ContainerNotFoundException",
@@ -378,6 +384,7 @@
         "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;*/",
         "setterMethodName" : "setPath",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -390,6 +397,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -443,6 +451,7 @@
           "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;*/",
           "setterMethodName" : "setPath",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -455,6 +464,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -473,6 +483,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteObjectRequest",
         "variableName" : "deleteObjectRequest",
         "variableType" : "DeleteObjectRequest",
@@ -512,6 +523,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DeleteObjectResult",
         "variableName" : "deleteObjectResult",
         "variableType" : "DeleteObjectResult",
@@ -588,6 +600,7 @@
         "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;*/",
         "setterMethodName" : "setPath",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -600,6 +613,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -653,6 +667,7 @@
           "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;*/",
           "setterMethodName" : "setPath",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -665,6 +680,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -683,6 +699,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeObjectRequest",
         "variableName" : "describeObjectRequest",
         "variableType" : "DescribeObjectRequest",
@@ -752,6 +769,7 @@
         "setterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.*/",
         "setterMethodName" : "setETag",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -764,6 +782,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -815,6 +834,7 @@
         "setterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -827,6 +847,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -878,6 +899,7 @@
         "setterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.*/",
         "setterMethodName" : "setContentLength",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "contentLength",
           "variableType" : "Long",
@@ -890,6 +912,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "contentLength",
           "variableType" : "Long",
@@ -941,6 +964,7 @@
         "setterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.*/",
         "setterMethodName" : "setCacheControl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "cacheControl",
           "variableType" : "String",
@@ -953,6 +977,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "cacheControl",
           "variableType" : "String",
@@ -1004,6 +1029,7 @@
         "setterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.*/",
         "setterMethodName" : "setLastModified",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastModified",
           "variableType" : "java.util.Date",
@@ -1016,6 +1042,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "rfc822",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastModified",
           "variableType" : "java.util.Date",
@@ -1069,6 +1096,7 @@
           "setterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.*/",
           "setterMethodName" : "setCacheControl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "cacheControl",
             "variableType" : "String",
@@ -1081,6 +1109,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "cacheControl",
             "variableType" : "String",
@@ -1133,6 +1162,7 @@
           "setterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.*/",
           "setterMethodName" : "setContentLength",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "contentLength",
             "variableType" : "Long",
@@ -1145,6 +1175,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "contentLength",
             "variableType" : "Long",
@@ -1197,6 +1228,7 @@
           "setterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -1209,6 +1241,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -1261,6 +1294,7 @@
           "setterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.*/",
           "setterMethodName" : "setETag",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -1273,6 +1307,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -1325,6 +1360,7 @@
           "setterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.*/",
           "setterMethodName" : "setLastModified",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastModified",
             "variableType" : "java.util.Date",
@@ -1337,6 +1373,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "rfc822",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastModified",
             "variableType" : "java.util.Date",
@@ -1358,6 +1395,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeObjectResult",
         "variableName" : "describeObjectResult",
         "variableType" : "DescribeObjectResult",
@@ -1434,6 +1472,7 @@
         "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.*/",
         "setterMethodName" : "setPath",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -1446,6 +1485,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -1497,6 +1537,7 @@
         "setterDocumentation" : "/**<p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>\n@param range The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.*/",
         "setterMethodName" : "setRange",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "range",
           "variableType" : "String",
@@ -1509,6 +1550,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>\n@param range The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "range",
           "variableType" : "String",
@@ -1562,6 +1604,7 @@
           "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.*/",
           "setterMethodName" : "setPath",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -1574,6 +1617,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -1626,6 +1670,7 @@
           "setterDocumentation" : "/**<p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>\n@param range The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.*/",
           "setterMethodName" : "setRange",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "range",
             "variableType" : "String",
@@ -1638,6 +1683,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>\n@param range The range bytes of an object to retrieve. For more information about the <code>Range</code> header, go to <a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35\">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "range",
             "variableType" : "String",
@@ -1656,6 +1702,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetObjectRequest",
         "variableName" : "getObjectRequest",
         "variableType" : "GetObjectRequest",
@@ -1725,6 +1772,7 @@
         "setterDocumentation" : "/**<p>The bytes of the object. </p>\n@param body The bytes of the object.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.io.InputStream",
           "variableName" : "body",
           "variableType" : "java.io.InputStream",
@@ -1737,6 +1785,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The bytes of the object. </p>\n@param body The bytes of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.io.InputStream",
           "variableName" : "body",
           "variableType" : "java.io.InputStream",
@@ -1788,6 +1837,7 @@
         "setterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.*/",
         "setterMethodName" : "setCacheControl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "cacheControl",
           "variableType" : "String",
@@ -1800,6 +1850,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "cacheControl",
           "variableType" : "String",
@@ -1851,6 +1902,7 @@
         "setterDocumentation" : "/**<p>The range of bytes to retrieve.</p>\n@param contentRange The range of bytes to retrieve.*/",
         "setterMethodName" : "setContentRange",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentRange",
           "variableType" : "String",
@@ -1863,6 +1915,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The range of bytes to retrieve.</p>\n@param contentRange The range of bytes to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentRange",
           "variableType" : "String",
@@ -1914,6 +1967,7 @@
         "setterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.*/",
         "setterMethodName" : "setContentLength",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "contentLength",
           "variableType" : "Long",
@@ -1926,6 +1980,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "contentLength",
           "variableType" : "Long",
@@ -1977,6 +2032,7 @@
         "setterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -1989,6 +2045,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -2040,6 +2097,7 @@
         "setterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.*/",
         "setterMethodName" : "setETag",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -2052,6 +2110,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -2103,6 +2162,7 @@
         "setterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.*/",
         "setterMethodName" : "setLastModified",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastModified",
           "variableType" : "java.util.Date",
@@ -2115,6 +2175,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "rfc822",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastModified",
           "variableType" : "java.util.Date",
@@ -2166,6 +2227,7 @@
         "setterDocumentation" : "/**<p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>\n@param statusCode The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.*/",
         "setterMethodName" : "setStatusCode",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "statusCode",
           "variableType" : "Integer",
@@ -2178,6 +2240,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>\n@param statusCode The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "statusCode",
           "variableType" : "Integer",
@@ -2231,6 +2294,7 @@
           "setterDocumentation" : "/**<p>The bytes of the object. </p>\n@param body The bytes of the object.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.io.InputStream",
             "variableName" : "body",
             "variableType" : "java.io.InputStream",
@@ -2243,6 +2307,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The bytes of the object. </p>\n@param body The bytes of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.io.InputStream",
             "variableName" : "body",
             "variableType" : "java.io.InputStream",
@@ -2295,6 +2360,7 @@
           "setterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.*/",
           "setterMethodName" : "setCacheControl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "cacheControl",
             "variableType" : "String",
@@ -2307,6 +2373,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "cacheControl",
             "variableType" : "String",
@@ -2359,6 +2426,7 @@
           "setterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.*/",
           "setterMethodName" : "setContentLength",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "contentLength",
             "variableType" : "Long",
@@ -2371,6 +2439,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The length of the object in bytes.</p>\n@param contentLength The length of the object in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "contentLength",
             "variableType" : "Long",
@@ -2423,6 +2492,7 @@
           "setterDocumentation" : "/**<p>The range of bytes to retrieve.</p>\n@param contentRange The range of bytes to retrieve.*/",
           "setterMethodName" : "setContentRange",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentRange",
             "variableType" : "String",
@@ -2435,6 +2505,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The range of bytes to retrieve.</p>\n@param contentRange The range of bytes to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentRange",
             "variableType" : "String",
@@ -2487,6 +2558,7 @@
           "setterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -2499,6 +2571,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -2551,6 +2624,7 @@
           "setterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.*/",
           "setterMethodName" : "setETag",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -2563,6 +2637,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ETag that represents a unique instance of the object.</p>\n@param eTag The ETag that represents a unique instance of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -2615,6 +2690,7 @@
           "setterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.*/",
           "setterMethodName" : "setLastModified",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastModified",
             "variableType" : "java.util.Date",
@@ -2627,6 +2703,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the object was last modified.</p>\n@param lastModified The date and time that the object was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "rfc822",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastModified",
             "variableType" : "java.util.Date",
@@ -2679,6 +2756,7 @@
           "setterDocumentation" : "/**<p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>\n@param statusCode The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.*/",
           "setterMethodName" : "setStatusCode",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "statusCode",
             "variableType" : "Integer",
@@ -2691,6 +2769,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>\n@param statusCode The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "statusCode",
             "variableType" : "Integer",
@@ -2712,6 +2791,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetObjectResult",
         "variableName" : "getObjectResult",
         "variableType" : "GetObjectResult",
@@ -2748,6 +2828,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InternalServerErrorException",
         "variableName" : "internalServerErrorException",
         "variableType" : "InternalServerErrorException",
@@ -2817,6 +2898,7 @@
         "setterDocumentation" : "/**<p>The name of the item.</p>\n@param name The name of the item.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2829,6 +2911,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the item.</p>\n@param name The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
@@ -2880,6 +2963,7 @@
         "setterDocumentation" : "/**<p>The item type (folder or object).</p>\n@param type The item type (folder or object).\n@see ItemType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -2892,6 +2976,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The item type (folder or object).</p>\n@param type The item type (folder or object).\n@return Returns a reference to this object so that method calls can be chained together.\n@see ItemType*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
@@ -2943,6 +3028,7 @@
         "setterDocumentation" : "/**<p>The ETag that represents a unique instance of the item.</p>\n@param eTag The ETag that represents a unique instance of the item.*/",
         "setterMethodName" : "setETag",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -2955,6 +3041,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ETag that represents a unique instance of the item.</p>\n@param eTag The ETag that represents a unique instance of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -3006,6 +3093,7 @@
         "setterDocumentation" : "/**<p>The date and time that the item was last modified.</p>\n@param lastModified The date and time that the item was last modified.*/",
         "setterMethodName" : "setLastModified",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastModified",
           "variableType" : "java.util.Date",
@@ -3018,6 +3106,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the item was last modified.</p>\n@param lastModified The date and time that the item was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastModified",
           "variableType" : "java.util.Date",
@@ -3069,6 +3158,7 @@
         "setterDocumentation" : "/**<p>The content type of the item.</p>\n@param contentType The content type of the item.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -3081,6 +3171,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content type of the item.</p>\n@param contentType The content type of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -3132,6 +3223,7 @@
         "setterDocumentation" : "/**<p>The length of the item in bytes.</p>\n@param contentLength The length of the item in bytes.*/",
         "setterMethodName" : "setContentLength",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "contentLength",
           "variableType" : "Long",
@@ -3144,6 +3236,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The length of the item in bytes.</p>\n@param contentLength The length of the item in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "contentLength",
           "variableType" : "Long",
@@ -3197,6 +3290,7 @@
           "setterDocumentation" : "/**<p>The length of the item in bytes.</p>\n@param contentLength The length of the item in bytes.*/",
           "setterMethodName" : "setContentLength",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "contentLength",
             "variableType" : "Long",
@@ -3209,6 +3303,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The length of the item in bytes.</p>\n@param contentLength The length of the item in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "contentLength",
             "variableType" : "Long",
@@ -3261,6 +3356,7 @@
           "setterDocumentation" : "/**<p>The content type of the item.</p>\n@param contentType The content type of the item.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -3273,6 +3369,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content type of the item.</p>\n@param contentType The content type of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -3325,6 +3422,7 @@
           "setterDocumentation" : "/**<p>The ETag that represents a unique instance of the item.</p>\n@param eTag The ETag that represents a unique instance of the item.*/",
           "setterMethodName" : "setETag",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -3337,6 +3435,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ETag that represents a unique instance of the item.</p>\n@param eTag The ETag that represents a unique instance of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -3389,6 +3488,7 @@
           "setterDocumentation" : "/**<p>The date and time that the item was last modified.</p>\n@param lastModified The date and time that the item was last modified.*/",
           "setterMethodName" : "setLastModified",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastModified",
             "variableType" : "java.util.Date",
@@ -3401,6 +3501,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the item was last modified.</p>\n@param lastModified The date and time that the item was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastModified",
             "variableType" : "java.util.Date",
@@ -3453,6 +3554,7 @@
           "setterDocumentation" : "/**<p>The name of the item.</p>\n@param name The name of the item.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -3465,6 +3567,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the item.</p>\n@param name The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
@@ -3517,6 +3620,7 @@
           "setterDocumentation" : "/**<p>The item type (folder or object).</p>\n@param type The item type (folder or object).\n@see ItemType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -3529,6 +3633,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The item type (folder or object).</p>\n@param type The item type (folder or object).\n@return Returns a reference to this object so that method calls can be chained together.\n@see ItemType*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
@@ -3550,6 +3655,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "Item",
         "variableName" : "item",
         "variableType" : "Item",
@@ -3595,6 +3701,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ItemType",
         "variableName" : "itemType",
         "variableType" : "ItemType",
@@ -3671,6 +3778,7 @@
         "setterDocumentation" : "/**<p>The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;*/",
         "setterMethodName" : "setPath",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -3683,6 +3791,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -3734,6 +3843,7 @@
         "setterDocumentation" : "/**<p>The maximum results to return. The service might return fewer results.</p>\n@param maxResults The maximum results to return. The service might return fewer results.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3746,6 +3856,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum results to return. The service might return fewer results.</p>\n@param maxResults The maximum results to return. The service might return fewer results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
@@ -3797,6 +3908,7 @@
         "setterDocumentation" : "/**<p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.</p>\n@param nextToken The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3809,6 +3921,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.</p>\n@param nextToken The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -3862,6 +3975,7 @@
           "setterDocumentation" : "/**<p>The maximum results to return. The service might return fewer results.</p>\n@param maxResults The maximum results to return. The service might return fewer results.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3874,6 +3988,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum results to return. The service might return fewer results.</p>\n@param maxResults The maximum results to return. The service might return fewer results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
@@ -3926,6 +4041,7 @@
           "setterDocumentation" : "/**<p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.</p>\n@param nextToken The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3938,6 +4054,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.</p>\n@param nextToken The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -3990,6 +4107,7 @@
           "setterDocumentation" : "/**<p>The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;*/",
           "setterMethodName" : "setPath",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -4002,6 +4120,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>\n@param path The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -4020,6 +4139,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListItemsRequest",
         "variableName" : "listItemsRequest",
         "variableType" : "ListItemsRequest",
@@ -4126,6 +4246,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Item",
               "variableName" : "member",
               "variableType" : "Item",
@@ -4138,6 +4259,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "Item",
               "variableName" : "member",
               "variableType" : "Item",
@@ -4167,6 +4289,7 @@
         "setterDocumentation" : "/**<p>Metadata entries for the folders and objects at the requested path.</p>\n@param items Metadata entries for the folders and objects at the requested path.*/",
         "setterMethodName" : "setItems",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Item>",
           "variableName" : "items",
           "variableType" : "java.util.List<Item>",
@@ -4179,6 +4302,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Metadata entries for the folders and objects at the requested path.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items Metadata entries for the folders and objects at the requested path.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<Item>",
           "variableName" : "items",
           "variableType" : "java.util.List<Item>",
@@ -4230,6 +4354,7 @@
         "setterDocumentation" : "/**<p>The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.</p>\n@param nextToken The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4242,6 +4367,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.</p>\n@param nextToken The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
@@ -4332,6 +4458,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Item",
                 "variableName" : "member",
                 "variableType" : "Item",
@@ -4344,6 +4471,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "Item",
                 "variableName" : "member",
                 "variableType" : "Item",
@@ -4373,6 +4501,7 @@
           "setterDocumentation" : "/**<p>Metadata entries for the folders and objects at the requested path.</p>\n@param items Metadata entries for the folders and objects at the requested path.*/",
           "setterMethodName" : "setItems",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Item>",
             "variableName" : "items",
             "variableType" : "java.util.List<Item>",
@@ -4385,6 +4514,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Metadata entries for the folders and objects at the requested path.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items Metadata entries for the folders and objects at the requested path.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<Item>",
             "variableName" : "items",
             "variableType" : "java.util.List<Item>",
@@ -4437,6 +4567,7 @@
           "setterDocumentation" : "/**<p>The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.</p>\n@param nextToken The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4449,6 +4580,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.</p>\n@param nextToken The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
@@ -4470,6 +4602,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ListItemsResult",
         "variableName" : "listItemsResult",
         "variableType" : "ListItemsResult",
@@ -4506,6 +4639,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ObjectNotFoundException",
         "variableName" : "objectNotFoundException",
         "variableType" : "ObjectNotFoundException",
@@ -4582,6 +4716,7 @@
         "setterDocumentation" : "/**<p>The bytes to be stored. </p>\n@param body The bytes to be stored.*/",
         "setterMethodName" : "setBody",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.io.InputStream",
           "variableName" : "body",
           "variableType" : "java.io.InputStream",
@@ -4594,6 +4729,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The bytes to be stored. </p>\n@param body The bytes to be stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.io.InputStream",
           "variableName" : "body",
           "variableType" : "java.io.InputStream",
@@ -4645,6 +4781,7 @@
         "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.*/",
         "setterMethodName" : "setPath",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -4657,6 +4794,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "path",
           "variableType" : "String",
@@ -4708,6 +4846,7 @@
         "setterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -4720,6 +4859,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
@@ -4771,6 +4911,7 @@
         "setterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.*/",
         "setterMethodName" : "setCacheControl",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "cacheControl",
           "variableType" : "String",
@@ -4783,6 +4924,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "cacheControl",
           "variableType" : "String",
@@ -4834,6 +4976,7 @@
         "setterDocumentation" : "/**<p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>\n@param storageClass Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.\n@see StorageClass*/",
         "setterMethodName" : "setStorageClass",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "storageClass",
           "variableType" : "String",
@@ -4846,6 +4989,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>\n@param storageClass Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StorageClass*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "storageClass",
           "variableType" : "String",
@@ -4899,6 +5043,7 @@
           "setterDocumentation" : "/**<p>The bytes to be stored. </p>\n@param body The bytes to be stored.*/",
           "setterMethodName" : "setBody",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.io.InputStream",
             "variableName" : "body",
             "variableType" : "java.io.InputStream",
@@ -4911,6 +5056,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The bytes to be stored. </p>\n@param body The bytes to be stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.io.InputStream",
             "variableName" : "body",
             "variableType" : "java.io.InputStream",
@@ -4963,6 +5109,7 @@
           "setterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.*/",
           "setterMethodName" : "setCacheControl",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "cacheControl",
             "variableType" : "String",
@@ -4975,6 +5122,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.</p>\n@param cacheControl An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9\">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> <p>Headers with a custom user-defined value are also accepted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "cacheControl",
             "variableType" : "String",
@@ -5027,6 +5175,7 @@
           "setterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -5039,6 +5188,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content type of the object.</p>\n@param contentType The content type of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
@@ -5091,6 +5241,7 @@
           "setterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.*/",
           "setterMethodName" : "setPath",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -5103,6 +5254,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>\n@param path The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href=\"http://docs.aws.amazon.com/mediastore/latest/ug/\">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "path",
             "variableType" : "String",
@@ -5155,6 +5307,7 @@
           "setterDocumentation" : "/**<p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>\n@param storageClass Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.\n@see StorageClass*/",
           "setterMethodName" : "setStorageClass",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "storageClass",
             "variableType" : "String",
@@ -5167,6 +5320,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>\n@param storageClass Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StorageClass*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "storageClass",
             "variableType" : "String",
@@ -5185,6 +5339,7 @@
       "signerType" : "AWS4UnsignedPayloadSignerType",
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutObjectRequest",
         "variableName" : "putObjectRequest",
         "variableType" : "PutObjectRequest",
@@ -5254,6 +5409,7 @@
         "setterDocumentation" : "/**<p>The SHA256 digest of the object that is persisted.</p>\n@param contentSHA256 The SHA256 digest of the object that is persisted.*/",
         "setterMethodName" : "setContentSHA256",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentSHA256",
           "variableType" : "String",
@@ -5266,6 +5422,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SHA256 digest of the object that is persisted.</p>\n@param contentSHA256 The SHA256 digest of the object that is persisted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "contentSHA256",
           "variableType" : "String",
@@ -5317,6 +5474,7 @@
         "setterDocumentation" : "/**<p>Unique identifier of the object in the container.</p>\n@param eTag Unique identifier of the object in the container.*/",
         "setterMethodName" : "setETag",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -5329,6 +5487,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier of the object in the container.</p>\n@param eTag Unique identifier of the object in the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "eTag",
           "variableType" : "String",
@@ -5380,6 +5539,7 @@
         "setterDocumentation" : "/**<p>The storage class where the object was persisted. Should be “Temporal”.</p>\n@param storageClass The storage class where the object was persisted. Should be “Temporal”.\n@see StorageClass*/",
         "setterMethodName" : "setStorageClass",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "storageClass",
           "variableType" : "String",
@@ -5392,6 +5552,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The storage class where the object was persisted. Should be “Temporal”.</p>\n@param storageClass The storage class where the object was persisted. Should be “Temporal”.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StorageClass*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "storageClass",
           "variableType" : "String",
@@ -5445,6 +5606,7 @@
           "setterDocumentation" : "/**<p>The SHA256 digest of the object that is persisted.</p>\n@param contentSHA256 The SHA256 digest of the object that is persisted.*/",
           "setterMethodName" : "setContentSHA256",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentSHA256",
             "variableType" : "String",
@@ -5457,6 +5619,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SHA256 digest of the object that is persisted.</p>\n@param contentSHA256 The SHA256 digest of the object that is persisted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "contentSHA256",
             "variableType" : "String",
@@ -5509,6 +5672,7 @@
           "setterDocumentation" : "/**<p>Unique identifier of the object in the container.</p>\n@param eTag Unique identifier of the object in the container.*/",
           "setterMethodName" : "setETag",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -5521,6 +5685,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier of the object in the container.</p>\n@param eTag Unique identifier of the object in the container.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "eTag",
             "variableType" : "String",
@@ -5573,6 +5738,7 @@
           "setterDocumentation" : "/**<p>The storage class where the object was persisted. Should be “Temporal”.</p>\n@param storageClass The storage class where the object was persisted. Should be “Temporal”.\n@see StorageClass*/",
           "setterMethodName" : "setStorageClass",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "storageClass",
             "variableType" : "String",
@@ -5585,6 +5751,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The storage class where the object was persisted. Should be “Temporal”.</p>\n@param storageClass The storage class where the object was persisted. Should be “Temporal”.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StorageClass*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "storageClass",
             "variableType" : "String",
@@ -5606,6 +5773,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "PutObjectResult",
         "variableName" : "putObjectResult",
         "variableType" : "PutObjectResult",
@@ -5642,6 +5810,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "RequestedRangeNotSatisfiableException",
         "variableName" : "requestedRangeNotSatisfiableException",
         "variableType" : "RequestedRangeNotSatisfiableException",
@@ -5684,6 +5853,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "StorageClass",
         "variableName" : "storageClass",
         "variableType" : "StorageClass",

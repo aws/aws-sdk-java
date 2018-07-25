@@ -58,7 +58,7 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                 }
                 if (context.testExpression("TapeCreatedDate", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setTapeCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tapeArchive.setTapeCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();
@@ -66,7 +66,7 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setCompletionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tapeArchive.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RetrievedTo", targetDepth)) {
                     context.nextToken();

@@ -44,7 +44,7 @@ public class EbsInstanceBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsI
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("attachTime", targetDepth)) {
-                    ebsInstanceBlockDevice.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    ebsInstanceBlockDevice.setAttachTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

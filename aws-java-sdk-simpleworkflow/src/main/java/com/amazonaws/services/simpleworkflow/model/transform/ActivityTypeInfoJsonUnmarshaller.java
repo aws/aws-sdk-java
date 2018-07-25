@@ -62,11 +62,11 @@ public class ActivityTypeInfoJsonUnmarshaller implements Unmarshaller<ActivityTy
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    activityTypeInfo.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    activityTypeInfo.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deprecationDate", targetDepth)) {
                     context.nextToken();
-                    activityTypeInfo.setDeprecationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    activityTypeInfo.setDeprecationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

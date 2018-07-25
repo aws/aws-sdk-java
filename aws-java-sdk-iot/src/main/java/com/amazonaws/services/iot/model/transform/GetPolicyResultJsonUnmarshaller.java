@@ -66,11 +66,11 @@ public class GetPolicyResultJsonUnmarshaller implements Unmarshaller<GetPolicyRe
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    getPolicyResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getPolicyResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    getPolicyResult.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getPolicyResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("generationId", targetDepth)) {
                     context.nextToken();

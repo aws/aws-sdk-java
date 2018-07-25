@@ -66,7 +66,7 @@ public class AggregatedSourceStatusJsonUnmarshaller implements Unmarshaller<Aggr
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    aggregatedSourceStatus.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    aggregatedSourceStatus.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
                     context.nextToken();

@@ -59,11 +59,11 @@ public class PipelineSummaryJsonUnmarshaller implements Unmarshaller<PipelineSum
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    pipelineSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pipelineSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    pipelineSummary.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    pipelineSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

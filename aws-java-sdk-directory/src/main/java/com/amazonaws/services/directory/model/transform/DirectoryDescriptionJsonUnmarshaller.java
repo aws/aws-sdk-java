@@ -90,11 +90,11 @@ public class DirectoryDescriptionJsonUnmarshaller implements Unmarshaller<Direct
                 }
                 if (context.testExpression("LaunchTime", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setLaunchTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    directoryDescription.setLaunchTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StageLastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setStageLastUpdatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    directoryDescription.setStageLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();

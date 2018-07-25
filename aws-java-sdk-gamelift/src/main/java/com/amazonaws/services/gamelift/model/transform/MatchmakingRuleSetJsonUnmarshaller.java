@@ -58,7 +58,7 @@ public class MatchmakingRuleSetJsonUnmarshaller implements Unmarshaller<Matchmak
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    matchmakingRuleSet.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    matchmakingRuleSet.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

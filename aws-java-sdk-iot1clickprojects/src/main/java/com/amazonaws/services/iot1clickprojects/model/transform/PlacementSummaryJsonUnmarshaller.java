@@ -58,11 +58,11 @@ public class PlacementSummaryJsonUnmarshaller implements Unmarshaller<PlacementS
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    placementSummary.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    placementSummary.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedDate", targetDepth)) {
                     context.nextToken();
-                    placementSummary.setUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    placementSummary.setUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

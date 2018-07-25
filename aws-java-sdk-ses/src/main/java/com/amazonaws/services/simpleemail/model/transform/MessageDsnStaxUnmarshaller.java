@@ -51,7 +51,7 @@ public class MessageDsnStaxUnmarshaller implements Unmarshaller<MessageDsn, Stax
                 }
 
                 if (context.testExpression("ArrivalDate", targetDepth)) {
-                    messageDsn.setArrivalDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    messageDsn.setArrivalDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

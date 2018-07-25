@@ -116,7 +116,7 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
                 }
 
                 if (context.testExpression("CreationDate", targetDepth)) {
-                    getStatusResult.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    getStatusResult.setCreationDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

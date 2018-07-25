@@ -49,12 +49,12 @@ public class PendingMaintenanceActionStaxUnmarshaller implements Unmarshaller<Pe
                 }
 
                 if (context.testExpression("AutoAppliedAfterDate", targetDepth)) {
-                    pendingMaintenanceAction.setAutoAppliedAfterDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    pendingMaintenanceAction.setAutoAppliedAfterDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ForcedApplyDate", targetDepth)) {
-                    pendingMaintenanceAction.setForcedApplyDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    pendingMaintenanceAction.setForcedApplyDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -64,7 +64,7 @@ public class PendingMaintenanceActionStaxUnmarshaller implements Unmarshaller<Pe
                 }
 
                 if (context.testExpression("CurrentApplyDate", targetDepth)) {
-                    pendingMaintenanceAction.setCurrentApplyDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    pendingMaintenanceAction.setCurrentApplyDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -64,12 +64,12 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    user.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    user.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PasswordLastUsed", targetDepth)) {
-                    user.setPasswordLastUsed(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    user.setPasswordLastUsed(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

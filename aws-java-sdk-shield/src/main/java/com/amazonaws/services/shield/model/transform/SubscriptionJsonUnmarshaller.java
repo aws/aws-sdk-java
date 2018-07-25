@@ -50,11 +50,11 @@ public class SubscriptionJsonUnmarshaller implements Unmarshaller<Subscription, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    subscription.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    subscription.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    subscription.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    subscription.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TimeCommitmentInSeconds", targetDepth)) {
                     context.nextToken();

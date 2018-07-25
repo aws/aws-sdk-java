@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -117,6 +117,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeJobExecutionRequest",
         "variableName" : "describeJobExecutionRequest",
         "variableType" : "DescribeJobExecutionRequest",
@@ -164,6 +165,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPendingJobExecutionsRequest",
         "variableName" : "getPendingJobExecutionsRequest",
         "variableType" : "GetPendingJobExecutionsRequest",
@@ -211,6 +213,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "StartNextPendingJobExecutionRequest",
         "variableName" : "startNextPendingJobExecutionRequest",
         "variableType" : "StartNextPendingJobExecutionRequest",
@@ -262,6 +265,7 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateJobExecutionRequest",
         "variableName" : "updateJobExecutionRequest",
         "variableType" : "UpdateJobExecutionRequest",
@@ -307,6 +311,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "CertificateValidationException",
         "variableName" : "certificateValidationException",
         "variableType" : "CertificateValidationException",
@@ -383,6 +388,7 @@
         "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -395,6 +401,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -446,6 +453,7 @@
         "setterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -458,6 +466,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -509,6 +518,7 @@
         "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
         "setterMethodName" : "setIncludeJobDocument",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeJobDocument",
           "variableType" : "Boolean",
@@ -521,6 +531,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeJobDocument",
           "variableType" : "Boolean",
@@ -572,6 +583,7 @@
         "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -584,6 +596,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -637,6 +650,7 @@
           "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -649,6 +663,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -701,6 +716,7 @@
           "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
           "setterMethodName" : "setIncludeJobDocument",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeJobDocument",
             "variableType" : "Boolean",
@@ -713,6 +729,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeJobDocument",
             "variableType" : "Boolean",
@@ -765,6 +782,7 @@
           "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -777,6 +795,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -829,6 +848,7 @@
           "setterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -841,6 +861,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -859,6 +880,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeJobExecutionRequest",
         "variableName" : "describeJobExecutionRequest",
         "variableType" : "DescribeJobExecutionRequest",
@@ -928,6 +950,7 @@
         "setterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.*/",
         "setterMethodName" : "setExecution",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "JobExecution",
           "variableName" : "execution",
           "variableType" : "JobExecution",
@@ -940,6 +963,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "JobExecution",
           "variableName" : "execution",
           "variableType" : "JobExecution",
@@ -993,6 +1017,7 @@
           "setterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.*/",
           "setterMethodName" : "setExecution",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "JobExecution",
             "variableName" : "execution",
             "variableType" : "JobExecution",
@@ -1005,6 +1030,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "JobExecution",
             "variableName" : "execution",
             "variableType" : "JobExecution",
@@ -1026,6 +1052,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "DescribeJobExecutionResult",
         "variableName" : "describeJobExecutionResult",
         "variableType" : "DescribeJobExecutionResult",
@@ -1102,6 +1129,7 @@
         "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -1114,6 +1142,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -1167,6 +1196,7 @@
           "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -1179,6 +1209,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -1197,6 +1228,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPendingJobExecutionsRequest",
         "variableName" : "getPendingJobExecutionsRequest",
         "variableType" : "GetPendingJobExecutionsRequest",
@@ -1303,6 +1335,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "JobExecutionSummary",
               "variableName" : "member",
               "variableType" : "JobExecutionSummary",
@@ -1315,6 +1348,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "JobExecutionSummary",
               "variableName" : "member",
               "variableType" : "JobExecutionSummary",
@@ -1344,6 +1378,7 @@
         "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.*/",
         "setterMethodName" : "setInProgressJobs",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
           "variableName" : "inProgressJobs",
           "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1356,6 +1391,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInProgressJobs(java.util.Collection)} or {@link #withInProgressJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
           "variableName" : "inProgressJobs",
           "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1444,6 +1480,7 @@
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "JobExecutionSummary",
               "variableName" : "member",
               "variableType" : "JobExecutionSummary",
@@ -1456,6 +1493,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "JobExecutionSummary",
               "variableName" : "member",
               "variableType" : "JobExecutionSummary",
@@ -1485,6 +1523,7 @@
         "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.*/",
         "setterMethodName" : "setQueuedJobs",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
           "variableName" : "queuedJobs",
           "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1497,6 +1536,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueuedJobs(java.util.Collection)} or {@link #withQueuedJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
           "variableName" : "queuedJobs",
           "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1587,6 +1627,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "JobExecutionSummary",
                 "variableName" : "member",
                 "variableType" : "JobExecutionSummary",
@@ -1599,6 +1640,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "JobExecutionSummary",
                 "variableName" : "member",
                 "variableType" : "JobExecutionSummary",
@@ -1628,6 +1670,7 @@
           "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.*/",
           "setterMethodName" : "setInProgressJobs",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
             "variableName" : "inProgressJobs",
             "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1640,6 +1683,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInProgressJobs(java.util.Collection)} or {@link #withInProgressJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
             "variableName" : "inProgressJobs",
             "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1729,6 +1773,7 @@
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "JobExecutionSummary",
                 "variableName" : "member",
                 "variableType" : "JobExecutionSummary",
@@ -1741,6 +1786,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "JobExecutionSummary",
                 "variableName" : "member",
                 "variableType" : "JobExecutionSummary",
@@ -1770,6 +1816,7 @@
           "setterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.*/",
           "setterMethodName" : "setQueuedJobs",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
             "variableName" : "queuedJobs",
             "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1782,6 +1829,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueuedJobs(java.util.Collection)} or {@link #withQueuedJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<JobExecutionSummary>",
             "variableName" : "queuedJobs",
             "variableType" : "java.util.List<JobExecutionSummary>",
@@ -1803,6 +1851,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "GetPendingJobExecutionsResult",
         "variableName" : "getPendingJobExecutionsResult",
         "variableType" : "GetPendingJobExecutionsResult",
@@ -1839,6 +1888,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidRequestException",
         "variableName" : "invalidRequestException",
         "variableType" : "InvalidRequestException",
@@ -1875,6 +1925,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "InvalidStateTransitionException",
         "variableName" : "invalidStateTransitionException",
         "variableType" : "InvalidStateTransitionException",
@@ -1944,6 +1995,7 @@
         "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -1956,6 +2008,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -2007,6 +2060,7 @@
         "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -2019,6 +2073,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -2070,6 +2125,7 @@
         "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -2082,6 +2138,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -2176,6 +2233,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -2188,6 +2246,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -2211,6 +2270,7 @@
         "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -2223,6 +2283,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -2274,6 +2335,7 @@
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
         "setterMethodName" : "setQueuedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "queuedAt",
           "variableType" : "Long",
@@ -2286,6 +2348,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "queuedAt",
           "variableType" : "Long",
@@ -2337,6 +2400,7 @@
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.*/",
         "setterMethodName" : "setStartedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "startedAt",
           "variableType" : "Long",
@@ -2349,6 +2413,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "startedAt",
           "variableType" : "Long",
@@ -2400,6 +2465,7 @@
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
         "setterMethodName" : "setLastUpdatedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "lastUpdatedAt",
           "variableType" : "Long",
@@ -2412,6 +2478,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "lastUpdatedAt",
           "variableType" : "Long",
@@ -2463,6 +2530,7 @@
         "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
         "setterMethodName" : "setVersionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "versionNumber",
           "variableType" : "Long",
@@ -2475,6 +2543,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "versionNumber",
           "variableType" : "Long",
@@ -2526,6 +2595,7 @@
         "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -2538,6 +2608,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -2589,6 +2660,7 @@
         "setterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.*/",
         "setterMethodName" : "setJobDocument",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobDocument",
           "variableType" : "String",
@@ -2601,6 +2673,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobDocument",
           "variableType" : "String",
@@ -2654,6 +2727,7 @@
           "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -2666,6 +2740,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -2718,6 +2793,7 @@
           "setterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.*/",
           "setterMethodName" : "setJobDocument",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobDocument",
             "variableType" : "String",
@@ -2730,6 +2806,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobDocument",
             "variableType" : "String",
@@ -2782,6 +2859,7 @@
           "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -2794,6 +2872,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -2846,6 +2925,7 @@
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
           "setterMethodName" : "setLastUpdatedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "lastUpdatedAt",
             "variableType" : "Long",
@@ -2858,6 +2938,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "lastUpdatedAt",
             "variableType" : "Long",
@@ -2910,6 +2991,7 @@
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
           "setterMethodName" : "setQueuedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "queuedAt",
             "variableType" : "Long",
@@ -2922,6 +3004,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "queuedAt",
             "variableType" : "Long",
@@ -2974,6 +3057,7 @@
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.*/",
           "setterMethodName" : "setStartedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "startedAt",
             "variableType" : "Long",
@@ -2986,6 +3070,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "startedAt",
             "variableType" : "Long",
@@ -3038,6 +3123,7 @@
           "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -3050,6 +3136,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -3145,6 +3232,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -3157,6 +3245,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -3180,6 +3269,7 @@
           "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -3192,6 +3282,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -3244,6 +3335,7 @@
           "setterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -3256,6 +3348,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -3308,6 +3401,7 @@
           "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
           "setterMethodName" : "setVersionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "versionNumber",
             "variableType" : "Long",
@@ -3320,6 +3414,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "versionNumber",
             "variableType" : "Long",
@@ -3341,6 +3436,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "JobExecution",
         "variableName" : "jobExecution",
         "variableType" : "JobExecution",
@@ -3410,6 +3506,7 @@
         "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -3422,6 +3519,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -3516,6 +3614,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -3528,6 +3627,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -3551,6 +3651,7 @@
         "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -3563,6 +3664,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -3614,6 +3716,7 @@
         "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
         "setterMethodName" : "setVersionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "versionNumber",
           "variableType" : "Long",
@@ -3626,6 +3729,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "versionNumber",
           "variableType" : "Long",
@@ -3679,6 +3783,7 @@
           "setterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@see JobExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -3691,6 +3796,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -3786,6 +3892,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -3798,6 +3905,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -3821,6 +3929,7 @@
           "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -3833,6 +3942,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -3885,6 +3995,7 @@
           "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.*/",
           "setterMethodName" : "setVersionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "versionNumber",
             "variableType" : "Long",
@@ -3897,6 +4008,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "versionNumber",
             "variableType" : "Long",
@@ -3918,6 +4030,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "JobExecutionState",
         "variableName" : "jobExecutionState",
         "variableType" : "JobExecutionState",
@@ -3978,6 +4091,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "JobExecutionStatus",
         "variableName" : "jobExecutionStatus",
         "variableType" : "JobExecutionStatus",
@@ -4047,6 +4161,7 @@
         "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -4059,6 +4174,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -4110,6 +4226,7 @@
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
         "setterMethodName" : "setQueuedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "queuedAt",
           "variableType" : "Long",
@@ -4122,6 +4239,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "queuedAt",
           "variableType" : "Long",
@@ -4173,6 +4291,7 @@
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.*/",
         "setterMethodName" : "setStartedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "startedAt",
           "variableType" : "Long",
@@ -4185,6 +4304,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "startedAt",
           "variableType" : "Long",
@@ -4236,6 +4356,7 @@
         "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
         "setterMethodName" : "setLastUpdatedAt",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "lastUpdatedAt",
           "variableType" : "Long",
@@ -4248,6 +4369,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "lastUpdatedAt",
           "variableType" : "Long",
@@ -4299,6 +4421,7 @@
         "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.*/",
         "setterMethodName" : "setVersionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "versionNumber",
           "variableType" : "Long",
@@ -4311,6 +4434,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "versionNumber",
           "variableType" : "Long",
@@ -4362,6 +4486,7 @@
         "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -4374,6 +4499,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -4427,6 +4553,7 @@
           "setterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -4439,6 +4566,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -4491,6 +4619,7 @@
           "setterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -4503,6 +4632,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -4555,6 +4685,7 @@
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.*/",
           "setterMethodName" : "setLastUpdatedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "lastUpdatedAt",
             "variableType" : "Long",
@@ -4567,6 +4698,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "lastUpdatedAt",
             "variableType" : "Long",
@@ -4619,6 +4751,7 @@
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.*/",
           "setterMethodName" : "setQueuedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "queuedAt",
             "variableType" : "Long",
@@ -4631,6 +4764,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "queuedAt",
             "variableType" : "Long",
@@ -4683,6 +4817,7 @@
           "setterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.*/",
           "setterMethodName" : "setStartedAt",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "startedAt",
             "variableType" : "Long",
@@ -4695,6 +4830,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "startedAt",
             "variableType" : "Long",
@@ -4747,6 +4883,7 @@
           "setterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.*/",
           "setterMethodName" : "setVersionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "versionNumber",
             "variableType" : "Long",
@@ -4759,6 +4896,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "versionNumber",
             "variableType" : "Long",
@@ -4780,6 +4918,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "JobExecutionSummary",
         "variableName" : "jobExecutionSummary",
         "variableType" : "JobExecutionSummary",
@@ -4816,6 +4955,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ResourceNotFoundException",
         "variableName" : "resourceNotFoundException",
         "variableType" : "ResourceNotFoundException",
@@ -4852,6 +4992,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ServiceUnavailableException",
         "variableName" : "serviceUnavailableException",
         "variableType" : "ServiceUnavailableException",
@@ -4928,6 +5069,7 @@
         "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -4940,6 +5082,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -5034,6 +5177,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -5046,6 +5190,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -5069,6 +5214,7 @@
         "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -5081,6 +5227,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -5177,6 +5324,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -5189,6 +5337,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -5212,6 +5361,7 @@
           "setterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -5224,6 +5374,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -5276,6 +5427,7 @@
           "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -5288,6 +5440,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -5306,6 +5459,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "StartNextPendingJobExecutionRequest",
         "variableName" : "startNextPendingJobExecutionRequest",
         "variableType" : "StartNextPendingJobExecutionRequest",
@@ -5375,6 +5529,7 @@
         "setterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.*/",
         "setterMethodName" : "setExecution",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "JobExecution",
           "variableName" : "execution",
           "variableType" : "JobExecution",
@@ -5387,6 +5542,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "JobExecution",
           "variableName" : "execution",
           "variableType" : "JobExecution",
@@ -5440,6 +5596,7 @@
           "setterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.*/",
           "setterMethodName" : "setExecution",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "JobExecution",
             "variableName" : "execution",
             "variableType" : "JobExecution",
@@ -5452,6 +5609,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "JobExecution",
             "variableName" : "execution",
             "variableType" : "JobExecution",
@@ -5473,6 +5631,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "StartNextPendingJobExecutionResult",
         "variableName" : "startNextPendingJobExecutionResult",
         "variableType" : "StartNextPendingJobExecutionResult",
@@ -5509,6 +5668,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "TerminalStateException",
         "variableName" : "terminalStateException",
         "variableType" : "TerminalStateException",
@@ -5545,6 +5705,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "ThrottlingException",
         "variableName" : "throttlingException",
         "variableType" : "ThrottlingException",
@@ -5621,6 +5782,7 @@
         "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
         "setterMethodName" : "setJobId",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -5633,6 +5795,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobId",
           "variableType" : "String",
@@ -5684,6 +5847,7 @@
         "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
         "setterMethodName" : "setThingName",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -5696,6 +5860,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "thingName",
           "variableType" : "String",
@@ -5747,6 +5912,7 @@
         "setterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@see JobExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -5759,6 +5925,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
@@ -5853,6 +6020,7 @@
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
             "setterModel" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -5865,6 +6033,7 @@
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
+              "timestampFormat" : null,
               "variableDeclarationType" : "String",
               "variableName" : "value",
               "variableType" : "String",
@@ -5888,6 +6057,7 @@
         "setterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
         "setterMethodName" : "setStatusDetails",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -5900,6 +6070,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "statusDetails",
           "variableType" : "java.util.Map<String,String>",
@@ -5951,6 +6122,7 @@
         "setterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)*/",
         "setterMethodName" : "setExpectedVersion",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "expectedVersion",
           "variableType" : "Long",
@@ -5963,6 +6135,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "expectedVersion",
           "variableType" : "Long",
@@ -6014,6 +6187,7 @@
         "setterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.*/",
         "setterMethodName" : "setIncludeJobExecutionState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeJobExecutionState",
           "variableType" : "Boolean",
@@ -6026,6 +6200,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeJobExecutionState",
           "variableType" : "Boolean",
@@ -6077,6 +6252,7 @@
         "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
         "setterMethodName" : "setIncludeJobDocument",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeJobDocument",
           "variableType" : "Boolean",
@@ -6089,6 +6265,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "includeJobDocument",
           "variableType" : "Boolean",
@@ -6140,6 +6317,7 @@
         "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.*/",
         "setterMethodName" : "setExecutionNumber",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -6152,6 +6330,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "executionNumber",
           "variableType" : "Long",
@@ -6205,6 +6384,7 @@
           "setterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.*/",
           "setterMethodName" : "setExecutionNumber",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -6217,6 +6397,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "executionNumber",
             "variableType" : "Long",
@@ -6269,6 +6450,7 @@
           "setterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)*/",
           "setterMethodName" : "setExpectedVersion",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "expectedVersion",
             "variableType" : "Long",
@@ -6281,6 +6463,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "expectedVersion",
             "variableType" : "Long",
@@ -6333,6 +6516,7 @@
           "setterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.*/",
           "setterMethodName" : "setIncludeJobDocument",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeJobDocument",
             "variableType" : "Boolean",
@@ -6345,6 +6529,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeJobDocument",
             "variableType" : "Boolean",
@@ -6397,6 +6582,7 @@
           "setterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.*/",
           "setterMethodName" : "setIncludeJobExecutionState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeJobExecutionState",
             "variableType" : "Boolean",
@@ -6409,6 +6595,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "includeJobExecutionState",
             "variableType" : "Boolean",
@@ -6461,6 +6648,7 @@
           "setterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.*/",
           "setterMethodName" : "setJobId",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -6473,6 +6661,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobId",
             "variableType" : "String",
@@ -6525,6 +6714,7 @@
           "setterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@see JobExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -6537,6 +6727,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
@@ -6632,6 +6823,7 @@
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
               "setterModel" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -6644,6 +6836,7 @@
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
+                "timestampFormat" : null,
                 "variableDeclarationType" : "String",
                 "variableName" : "value",
                 "variableType" : "String",
@@ -6667,6 +6860,7 @@
           "setterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.*/",
           "setterMethodName" : "setStatusDetails",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -6679,6 +6873,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "statusDetails",
             "variableType" : "java.util.Map<String,String>",
@@ -6731,6 +6926,7 @@
           "setterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.*/",
           "setterMethodName" : "setThingName",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -6743,6 +6939,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "thingName",
             "variableType" : "String",
@@ -6761,6 +6958,7 @@
       "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateJobExecutionRequest",
         "variableName" : "updateJobExecutionRequest",
         "variableType" : "UpdateJobExecutionRequest",
@@ -6830,6 +7028,7 @@
         "setterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.*/",
         "setterMethodName" : "setExecutionState",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "JobExecutionState",
           "variableName" : "executionState",
           "variableType" : "JobExecutionState",
@@ -6842,6 +7041,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "JobExecutionState",
           "variableName" : "executionState",
           "variableType" : "JobExecutionState",
@@ -6893,6 +7093,7 @@
         "setterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.*/",
         "setterMethodName" : "setJobDocument",
         "setterModel" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobDocument",
           "variableType" : "String",
@@ -6905,6 +7106,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
+          "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "jobDocument",
           "variableType" : "String",
@@ -6958,6 +7160,7 @@
           "setterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.*/",
           "setterMethodName" : "setExecutionState",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "JobExecutionState",
             "variableName" : "executionState",
             "variableType" : "JobExecutionState",
@@ -6970,6 +7173,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "JobExecutionState",
             "variableName" : "executionState",
             "variableType" : "JobExecutionState",
@@ -7022,6 +7226,7 @@
           "setterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.*/",
           "setterMethodName" : "setJobDocument",
           "setterModel" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobDocument",
             "variableType" : "String",
@@ -7034,6 +7239,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
+            "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "jobDocument",
             "variableType" : "String",
@@ -7055,6 +7261,7 @@
         "resultWrapper" : null
       },
       "variable" : {
+        "timestampFormat" : null,
         "variableDeclarationType" : "UpdateJobExecutionResult",
         "variableName" : "updateJobExecutionResult",
         "variableType" : "UpdateJobExecutionResult",

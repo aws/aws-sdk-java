@@ -61,12 +61,12 @@ public class ApplicationDescriptionStaxUnmarshaller implements Unmarshaller<Appl
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    applicationDescription.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    applicationDescription.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    applicationDescription.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    applicationDescription.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

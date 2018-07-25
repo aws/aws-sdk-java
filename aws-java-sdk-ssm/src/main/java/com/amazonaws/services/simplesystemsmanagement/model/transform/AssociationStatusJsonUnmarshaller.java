@@ -50,7 +50,7 @@ public class AssociationStatusJsonUnmarshaller implements Unmarshaller<Associati
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();
-                    associationStatus.setDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationStatus.setDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();

@@ -56,7 +56,7 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                 }
 
                 if (context.testExpression("end", targetDepth)) {
-                    reservedInstances.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstances.setEnd(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -86,7 +86,7 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                 }
 
                 if (context.testExpression("start", targetDepth)) {
-                    reservedInstances.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstances.setStart(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

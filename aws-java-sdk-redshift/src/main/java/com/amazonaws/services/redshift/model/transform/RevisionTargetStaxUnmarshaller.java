@@ -54,7 +54,7 @@ public class RevisionTargetStaxUnmarshaller implements Unmarshaller<RevisionTarg
                 }
 
                 if (context.testExpression("DatabaseRevisionReleaseDate", targetDepth)) {
-                    revisionTarget.setDatabaseRevisionReleaseDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    revisionTarget.setDatabaseRevisionReleaseDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

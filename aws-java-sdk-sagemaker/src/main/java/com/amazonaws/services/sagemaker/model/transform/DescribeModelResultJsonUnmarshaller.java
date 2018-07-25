@@ -66,7 +66,7 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeModelResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeModelResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModelArn", targetDepth)) {
                     context.nextToken();

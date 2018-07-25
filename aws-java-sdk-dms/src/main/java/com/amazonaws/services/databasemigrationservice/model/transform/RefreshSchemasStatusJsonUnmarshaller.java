@@ -62,7 +62,7 @@ public class RefreshSchemasStatusJsonUnmarshaller implements Unmarshaller<Refres
                 }
                 if (context.testExpression("LastRefreshDate", targetDepth)) {
                     context.nextToken();
-                    refreshSchemasStatus.setLastRefreshDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    refreshSchemasStatus.setLastRefreshDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
                     context.nextToken();

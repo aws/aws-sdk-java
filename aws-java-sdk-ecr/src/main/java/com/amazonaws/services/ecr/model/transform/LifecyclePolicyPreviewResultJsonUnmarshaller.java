@@ -58,7 +58,7 @@ public class LifecyclePolicyPreviewResultJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("imagePushedAt", targetDepth)) {
                     context.nextToken();
-                    lifecyclePolicyPreviewResult.setImagePushedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lifecyclePolicyPreviewResult.setImagePushedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("action", targetDepth)) {
                     context.nextToken();

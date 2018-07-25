@@ -54,7 +54,7 @@ public class EvaluationResultIdentifierJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("OrderingTimestamp", targetDepth)) {
                     context.nextToken();
-                    evaluationResultIdentifier.setOrderingTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    evaluationResultIdentifier.setOrderingTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

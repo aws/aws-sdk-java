@@ -58,7 +58,7 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 }
                 if (context.testExpression("EventTime", targetDepth)) {
                     context.nextToken();
-                    event.setEventTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    event.setEventTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EventSource", targetDepth)) {
                     context.nextToken();

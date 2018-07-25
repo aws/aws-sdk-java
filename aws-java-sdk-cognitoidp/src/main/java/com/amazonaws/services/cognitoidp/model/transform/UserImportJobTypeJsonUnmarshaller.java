@@ -66,15 +66,15 @@ public class UserImportJobTypeJsonUnmarshaller implements Unmarshaller<UserImpor
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    userImportJobType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userImportJobType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDate", targetDepth)) {
                     context.nextToken();
-                    userImportJobType.setStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userImportJobType.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionDate", targetDepth)) {
                     context.nextToken();
-                    userImportJobType.setCompletionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userImportJobType.setCompletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

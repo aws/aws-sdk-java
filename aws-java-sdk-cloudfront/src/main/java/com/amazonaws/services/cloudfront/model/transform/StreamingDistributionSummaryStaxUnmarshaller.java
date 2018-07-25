@@ -59,7 +59,7 @@ public class StreamingDistributionSummaryStaxUnmarshaller implements Unmarshalle
                 }
 
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
-                    streamingDistributionSummary.setLastModifiedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionSummary.setLastModifiedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -58,11 +58,11 @@ public class EntitiesDetectionJobFilterJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("SubmitTimeBefore", targetDepth)) {
                     context.nextToken();
-                    entitiesDetectionJobFilter.setSubmitTimeBefore(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    entitiesDetectionJobFilter.setSubmitTimeBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SubmitTimeAfter", targetDepth)) {
                     context.nextToken();
-                    entitiesDetectionJobFilter.setSubmitTimeAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    entitiesDetectionJobFilter.setSubmitTimeAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

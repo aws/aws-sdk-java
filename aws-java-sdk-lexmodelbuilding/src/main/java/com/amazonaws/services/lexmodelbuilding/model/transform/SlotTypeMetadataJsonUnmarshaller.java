@@ -58,11 +58,11 @@ public class SlotTypeMetadataJsonUnmarshaller implements Unmarshaller<SlotTypeMe
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    slotTypeMetadata.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    slotTypeMetadata.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    slotTypeMetadata.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    slotTypeMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

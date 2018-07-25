@@ -58,11 +58,11 @@ public class EndpointSummaryJsonUnmarshaller implements Unmarshaller<EndpointSum
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    endpointSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    endpointSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    endpointSummary.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    endpointSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
                     context.nextToken();

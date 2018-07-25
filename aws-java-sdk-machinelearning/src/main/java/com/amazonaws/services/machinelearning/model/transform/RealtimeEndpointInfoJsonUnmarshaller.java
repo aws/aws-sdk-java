@@ -54,7 +54,7 @@ public class RealtimeEndpointInfoJsonUnmarshaller implements Unmarshaller<Realti
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    realtimeEndpointInfo.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    realtimeEndpointInfo.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndpointUrl", targetDepth)) {
                     context.nextToken();

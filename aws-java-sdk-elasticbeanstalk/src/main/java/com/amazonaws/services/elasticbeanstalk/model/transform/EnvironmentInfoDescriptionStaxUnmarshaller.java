@@ -54,7 +54,7 @@ public class EnvironmentInfoDescriptionStaxUnmarshaller implements Unmarshaller<
                 }
 
                 if (context.testExpression("SampleTimestamp", targetDepth)) {
-                    environmentInfoDescription.setSampleTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentInfoDescription.setSampleTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

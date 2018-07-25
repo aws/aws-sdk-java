@@ -54,7 +54,7 @@ public class CertificateJsonUnmarshaller implements Unmarshaller<Certificate, Js
                 }
                 if (context.testExpression("CertificateCreationDate", targetDepth)) {
                     context.nextToken();
-                    certificate.setCertificateCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificate.setCertificateCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CertificatePem", targetDepth)) {
                     context.nextToken();
@@ -74,11 +74,11 @@ public class CertificateJsonUnmarshaller implements Unmarshaller<Certificate, Js
                 }
                 if (context.testExpression("ValidFromDate", targetDepth)) {
                     context.nextToken();
-                    certificate.setValidFromDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificate.setValidFromDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ValidToDate", targetDepth)) {
                     context.nextToken();
-                    certificate.setValidToDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificate.setValidToDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SigningAlgorithm", targetDepth)) {
                     context.nextToken();

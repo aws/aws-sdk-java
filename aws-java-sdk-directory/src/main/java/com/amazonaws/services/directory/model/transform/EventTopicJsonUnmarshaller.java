@@ -62,7 +62,7 @@ public class EventTopicJsonUnmarshaller implements Unmarshaller<EventTopic, Json
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
                     context.nextToken();
-                    eventTopic.setCreatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    eventTopic.setCreatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

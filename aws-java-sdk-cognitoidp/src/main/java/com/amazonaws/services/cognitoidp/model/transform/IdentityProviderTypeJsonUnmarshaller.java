@@ -76,11 +76,11 @@ public class IdentityProviderTypeJsonUnmarshaller implements Unmarshaller<Identi
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    identityProviderType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    identityProviderType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    identityProviderType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    identityProviderType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -58,7 +58,7 @@ public class ClusterListEntryJsonUnmarshaller implements Unmarshaller<ClusterLis
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    clusterListEntry.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    clusterListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

@@ -58,7 +58,7 @@ public class ActivityListItemJsonUnmarshaller implements Unmarshaller<ActivityLi
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    activityListItem.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    activityListItem.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

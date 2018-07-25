@@ -62,7 +62,7 @@ public class DirectoryJsonUnmarshaller implements Unmarshaller<Directory, JsonUn
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    directory.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    directory.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

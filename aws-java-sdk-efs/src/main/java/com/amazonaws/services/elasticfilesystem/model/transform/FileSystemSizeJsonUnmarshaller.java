@@ -54,7 +54,7 @@ public class FileSystemSizeJsonUnmarshaller implements Unmarshaller<FileSystemSi
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    fileSystemSize.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fileSystemSize.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

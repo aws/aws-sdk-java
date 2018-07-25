@@ -70,15 +70,15 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
                     context.nextToken();
-                    jobRun.setStartedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobRun.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
                     context.nextToken();
-                    jobRun.setLastModifiedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobRun.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
                     context.nextToken();
-                    jobRun.setCompletedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobRun.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobRunState", targetDepth)) {
                     context.nextToken();

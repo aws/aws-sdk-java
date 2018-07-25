@@ -58,11 +58,11 @@ public class ProjectDescriptionJsonUnmarshaller implements Unmarshaller<ProjectD
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    projectDescription.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    projectDescription.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedDate", targetDepth)) {
                     context.nextToken();
-                    projectDescription.setUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    projectDescription.setUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("placementTemplate", targetDepth)) {
                     context.nextToken();

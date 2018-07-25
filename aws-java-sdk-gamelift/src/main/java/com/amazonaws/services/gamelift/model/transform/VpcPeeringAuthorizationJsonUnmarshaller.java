@@ -62,11 +62,11 @@ public class VpcPeeringAuthorizationJsonUnmarshaller implements Unmarshaller<Vpc
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    vpcPeeringAuthorization.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    vpcPeeringAuthorization.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationTime", targetDepth)) {
                     context.nextToken();
-                    vpcPeeringAuthorization.setExpirationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    vpcPeeringAuthorization.setExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

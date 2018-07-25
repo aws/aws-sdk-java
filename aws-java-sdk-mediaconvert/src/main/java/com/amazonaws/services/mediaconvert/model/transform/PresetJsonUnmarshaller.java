@@ -58,7 +58,7 @@ public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarsha
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    preset.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    preset.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -66,7 +66,7 @@ public class PresetJsonUnmarshaller implements Unmarshaller<Preset, JsonUnmarsha
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
-                    preset.setLastUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    preset.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

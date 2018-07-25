@@ -59,7 +59,7 @@ public class SpotMarketOptionsStaxUnmarshaller implements Unmarshaller<SpotMarke
                 }
 
                 if (context.testExpression("ValidUntil", targetDepth)) {
-                    spotMarketOptions.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotMarketOptions.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

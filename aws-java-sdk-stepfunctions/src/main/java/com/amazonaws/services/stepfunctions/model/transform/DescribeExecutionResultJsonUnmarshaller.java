@@ -66,11 +66,11 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
                 }
                 if (context.testExpression("startDate", targetDepth)) {
                     context.nextToken();
-                    describeExecutionResult.setStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeExecutionResult.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopDate", targetDepth)) {
                     context.nextToken();
-                    describeExecutionResult.setStopDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeExecutionResult.setStopDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();

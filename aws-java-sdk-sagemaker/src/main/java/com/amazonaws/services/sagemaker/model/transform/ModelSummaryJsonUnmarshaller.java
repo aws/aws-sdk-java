@@ -58,7 +58,7 @@ public class ModelSummaryJsonUnmarshaller implements Unmarshaller<ModelSummary, 
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    modelSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    modelSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

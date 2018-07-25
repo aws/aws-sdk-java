@@ -81,7 +81,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
 
                 if (context.testExpression("startTime", targetDepth)) {
-                    snapshot.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    snapshot.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

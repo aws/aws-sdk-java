@@ -58,11 +58,11 @@ public class SentimentDetectionJobFilterJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("SubmitTimeBefore", targetDepth)) {
                     context.nextToken();
-                    sentimentDetectionJobFilter.setSubmitTimeBefore(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    sentimentDetectionJobFilter.setSubmitTimeBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("SubmitTimeAfter", targetDepth)) {
                     context.nextToken();
-                    sentimentDetectionJobFilter.setSubmitTimeAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    sentimentDetectionJobFilter.setSubmitTimeAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

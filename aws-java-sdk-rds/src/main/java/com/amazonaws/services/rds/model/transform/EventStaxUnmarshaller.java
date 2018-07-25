@@ -71,7 +71,7 @@ public class EventStaxUnmarshaller implements Unmarshaller<Event, StaxUnmarshall
                 }
 
                 if (context.testExpression("Date", targetDepth)) {
-                    event.setDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    event.setDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

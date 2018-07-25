@@ -54,11 +54,11 @@ public class PublicKeyJsonUnmarshaller implements Unmarshaller<PublicKey, JsonUn
                 }
                 if (context.testExpression("ValidityStartTime", targetDepth)) {
                     context.nextToken();
-                    publicKey.setValidityStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    publicKey.setValidityStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ValidityEndTime", targetDepth)) {
                     context.nextToken();
-                    publicKey.setValidityEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    publicKey.setValidityEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Fingerprint", targetDepth)) {
                     context.nextToken();

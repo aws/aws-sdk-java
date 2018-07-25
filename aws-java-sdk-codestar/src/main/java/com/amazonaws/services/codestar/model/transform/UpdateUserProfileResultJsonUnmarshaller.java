@@ -66,11 +66,11 @@ public class UpdateUserProfileResultJsonUnmarshaller implements Unmarshaller<Upd
                 }
                 if (context.testExpression("createdTimestamp", targetDepth)) {
                     context.nextToken();
-                    updateUserProfileResult.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updateUserProfileResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    updateUserProfileResult.setLastModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updateUserProfileResult.setLastModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -74,7 +74,7 @@ public class AssociationJsonUnmarshaller implements Unmarshaller<Association, Js
                 }
                 if (context.testExpression("LastExecutionDate", targetDepth)) {
                     context.nextToken();
-                    association.setLastExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    association.setLastExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Overview", targetDepth)) {
                     context.nextToken();

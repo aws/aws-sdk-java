@@ -58,7 +58,7 @@ public class VocabularyInfoJsonUnmarshaller implements Unmarshaller<VocabularyIn
                 }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
-                    vocabularyInfo.setLastModifiedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    vocabularyInfo.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("VocabularyState", targetDepth)) {
                     context.nextToken();

@@ -69,12 +69,12 @@ public class NodeSnapshotStaxUnmarshaller implements Unmarshaller<NodeSnapshot, 
                 }
 
                 if (context.testExpression("CacheNodeCreateTime", targetDepth)) {
-                    nodeSnapshot.setCacheNodeCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    nodeSnapshot.setCacheNodeCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    nodeSnapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    nodeSnapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

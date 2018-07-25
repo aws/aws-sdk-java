@@ -70,7 +70,7 @@ public class CACertificateDescriptionJsonUnmarshaller implements Unmarshaller<CA
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    cACertificateDescription.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    cACertificateDescription.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("autoRegistrationStatus", targetDepth)) {
                     context.nextToken();
@@ -78,7 +78,7 @@ public class CACertificateDescriptionJsonUnmarshaller implements Unmarshaller<CA
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    cACertificateDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    cACertificateDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("customerVersion", targetDepth)) {
                     context.nextToken();

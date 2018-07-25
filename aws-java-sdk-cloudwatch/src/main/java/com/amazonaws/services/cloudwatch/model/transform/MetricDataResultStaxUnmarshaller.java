@@ -61,7 +61,7 @@ public class MetricDataResultStaxUnmarshaller implements Unmarshaller<MetricData
                 }
 
                 if (context.testExpression("Timestamps/member", targetDepth)) {
-                    metricDataResult.withTimestamps(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricDataResult.withTimestamps(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

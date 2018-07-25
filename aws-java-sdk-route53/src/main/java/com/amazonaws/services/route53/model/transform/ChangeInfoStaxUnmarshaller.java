@@ -54,7 +54,7 @@ public class ChangeInfoStaxUnmarshaller implements Unmarshaller<ChangeInfo, Stax
                 }
 
                 if (context.testExpression("SubmittedAt", targetDepth)) {
-                    changeInfo.setSubmittedAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    changeInfo.setSubmittedAt(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
