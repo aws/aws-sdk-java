@@ -59,6 +59,14 @@ public class ValueToStringConverters {
         }
     };
 
+    public static final ValueToString<Short> FROM_SHORT = new ValueToString<Short>() {
+        @Override
+        public String convert(Short val) {
+            return StringUtils.fromShort(val);
+        }
+    };
+
+
     public static final ValueToString<Float> FROM_FLOAT = new ValueToString<Float>() {
         @Override
         public String convert(Float val) {

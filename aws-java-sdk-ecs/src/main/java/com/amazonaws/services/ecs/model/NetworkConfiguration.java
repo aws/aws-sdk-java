@@ -32,6 +32,11 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * <p>
      * The VPC subnets and security groups associated with a task.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets and security groups must be from the same VPC.
+     * </p>
+     * </note>
      */
     private AwsVpcConfiguration awsvpcConfiguration;
 
@@ -39,9 +44,17 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * <p>
      * The VPC subnets and security groups associated with a task.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets and security groups must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @param awsvpcConfiguration
-     *        The VPC subnets and security groups associated with a task.
+     *        The VPC subnets and security groups associated with a task.</p> <note>
+     *        <p>
+     *        All specified subnets and security groups must be from the same VPC.
+     *        </p>
      */
 
     public void setAwsvpcConfiguration(AwsVpcConfiguration awsvpcConfiguration) {
@@ -52,8 +65,16 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * <p>
      * The VPC subnets and security groups associated with a task.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets and security groups must be from the same VPC.
+     * </p>
+     * </note>
      * 
-     * @return The VPC subnets and security groups associated with a task.
+     * @return The VPC subnets and security groups associated with a task.</p> <note>
+     *         <p>
+     *         All specified subnets and security groups must be from the same VPC.
+     *         </p>
      */
 
     public AwsVpcConfiguration getAwsvpcConfiguration() {
@@ -64,9 +85,17 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * <p>
      * The VPC subnets and security groups associated with a task.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets and security groups must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @param awsvpcConfiguration
-     *        The VPC subnets and security groups associated with a task.
+     *        The VPC subnets and security groups associated with a task.</p> <note>
+     *        <p>
+     *        All specified subnets and security groups must be from the same VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

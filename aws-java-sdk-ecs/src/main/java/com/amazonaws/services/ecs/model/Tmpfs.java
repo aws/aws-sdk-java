@@ -29,7 +29,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume will be mounted.
+     * The absolute file path where the tmpfs volume is to be mounted.
      * </p>
      */
     private String containerPath;
@@ -52,11 +52,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume will be mounted.
+     * The absolute file path where the tmpfs volume is to be mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path where the tmpfs volume will be mounted.
+     *        The absolute file path where the tmpfs volume is to be mounted.
      */
 
     public void setContainerPath(String containerPath) {
@@ -65,10 +65,10 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume will be mounted.
+     * The absolute file path where the tmpfs volume is to be mounted.
      * </p>
      * 
-     * @return The absolute file path where the tmpfs volume will be mounted.
+     * @return The absolute file path where the tmpfs volume is to be mounted.
      */
 
     public String getContainerPath() {
@@ -77,11 +77,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The absolute file path where the tmpfs volume will be mounted.
+     * The absolute file path where the tmpfs volume is to be mounted.
      * </p>
      * 
      * @param containerPath
-     *        The absolute file path where the tmpfs volume will be mounted.
+     *        The absolute file path where the tmpfs volume is to be mounted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

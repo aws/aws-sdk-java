@@ -38,7 +38,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -63,9 +63,9 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -161,7 +161,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -186,9 +186,9 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -222,7 +222,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *         any of the following characters. Note that you can include up to three wildcard characters.
+     *         any of the following characters. You can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -248,8 +248,8 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *         case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *         Note that you can include up to three wildcard characters.
+     *         case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *         You can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -290,7 +290,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -315,9 +315,9 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -352,7 +352,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -378,8 +378,8 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        Note that you can include up to three wildcard characters.
+     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *        You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -425,7 +425,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -450,9 +450,9 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -492,7 +492,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -518,8 +518,8 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        Note that you can include up to three wildcard characters.
+     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *        You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -567,7 +567,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -592,9 +592,9 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -629,7 +629,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -655,8 +655,8 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        Note that you can include up to three wildcard characters.
+     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *        You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>

@@ -40,7 +40,7 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
     private String type;
     /**
      * <p>
-     * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
+     * A cluster query language expression to apply to the constraint. You cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -143,15 +143,15 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
+     * A cluster query language expression to apply to the constraint. You cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
-     *        A cluster query language expression to apply to the constraint. Note you cannot specify an expression if
-     *        the constraint type is <code>distinctInstance</code>. For more information, see <a
+     *        A cluster query language expression to apply to the constraint. You cannot specify an expression if the
+     *        constraint type is <code>distinctInstance</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -162,14 +162,14 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
+     * A cluster query language expression to apply to the constraint. You cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return A cluster query language expression to apply to the constraint. Note you cannot specify an expression if
-     *         the constraint type is <code>distinctInstance</code>. For more information, see <a
+     * @return A cluster query language expression to apply to the constraint. You cannot specify an expression if the
+     *         constraint type is <code>distinctInstance</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -180,15 +180,15 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A cluster query language expression to apply to the constraint. Note you cannot specify an expression if the
+     * A cluster query language expression to apply to the constraint. You cannot specify an expression if the
      * constraint type is <code>distinctInstance</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
-     *        A cluster query language expression to apply to the constraint. Note you cannot specify an expression if
-     *        the constraint type is <code>distinctInstance</code>. For more information, see <a
+     *        A cluster query language expression to apply to the constraint. You cannot specify an expression if the
+     *        constraint type is <code>distinctInstance</code>. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

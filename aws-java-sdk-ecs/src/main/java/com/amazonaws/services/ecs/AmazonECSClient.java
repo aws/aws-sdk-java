@@ -497,7 +497,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws PlatformUnknownException
      *         The specified platform version does not exist.
      * @throws PlatformTaskDefinitionIncompatibilityException
-     *         The specified platform version does not satisfy the task definition’s required capabilities.
+     *         The specified platform version does not satisfy the task definition's required capabilities.
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
      * @sample AmazonECS.CreateService
@@ -1885,8 +1885,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * You can specify a Docker networking mode for the containers in your task definition with the
      * <code>networkMode</code> parameter. The available network modes correspond to those described in <a
      * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run
-     * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an Elastic Network
-     * Interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
+     * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1973,7 +1973,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks command using an
      * exponential backoff algorithm to ensure that you allow enough time for the previous command to propagate through
-     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time,
+     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time
      * and increasing gradually up to five minutes of wait time.
      * </p>
      * </li>
@@ -2004,7 +2004,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws PlatformUnknownException
      *         The specified platform version does not exist.
      * @throws PlatformTaskDefinitionIncompatibilityException
-     *         The specified platform version does not satisfy the task definition’s required capabilities.
+     *         The specified platform version does not satisfy the task definition's required capabilities.
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
      * @throws BlockedException
@@ -2647,7 +2647,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws PlatformUnknownException
      *         The specified platform version does not exist.
      * @throws PlatformTaskDefinitionIncompatibilityException
-     *         The specified platform version does not satisfy the task definition’s required capabilities.
+     *         The specified platform version does not satisfy the task definition's required capabilities.
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
      * @sample AmazonECS.UpdateService

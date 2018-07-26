@@ -80,16 +80,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
-     * The default is 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds. The
+     * default is 30 seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
      * The amount of time, in seconds, during which no response from a target means a failed health check. For
-     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
-     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
+     * Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load Balancers,
+     * this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
@@ -118,8 +118,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
      * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
-     * instance IDs and IP addresses.
+     * address). The default is <code>instance</code>. You can't specify targets for a target group using both instance
+     * IDs and IP addresses.
      * </p>
      * <p>
      * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
@@ -548,14 +548,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
-     * The default is 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds. The
+     * default is 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
      *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
-     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
-     *        30 seconds. The default is 30 seconds.
+     *        Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30
+     *        seconds. The default is 30 seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -565,13 +565,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
-     * The default is 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds. The
+     * default is 30 seconds.
      * </p>
      * 
      * @return The approximate amount of time, in seconds, between health checks of an individual target. For
-     *         Application Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported
-     *         values are 10 or 30 seconds. The default is 30 seconds.
+     *         Application Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values
+     *         are 10 or 30 seconds. The default is 30 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -581,14 +581,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
-     * The default is 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds. The
+     * default is 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
      *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
-     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
-     *        30 seconds. The default is 30 seconds.
+     *        Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30
+     *        seconds. The default is 30 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,13 +600,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The amount of time, in seconds, during which no response from a target means a failed health check. For
-     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
-     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
+     * Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load Balancers,
+     * this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
      *        The amount of time, in seconds, during which no response from a target means a failed health check. For
-     *        Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     *        Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load
      *        Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      */
 
@@ -617,12 +617,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The amount of time, in seconds, during which no response from a target means a failed health check. For
-     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
-     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
+     * Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load Balancers,
+     * this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      * 
      * @return The amount of time, in seconds, during which no response from a target means a failed health check. For
-     *         Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     *         Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load
      *         Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      */
 
@@ -633,13 +633,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The amount of time, in seconds, during which no response from a target means a failed health check. For
-     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
-     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
+     * Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load Balancers,
+     * this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
      *        The amount of time, in seconds, during which no response from a target means a failed health check. For
-     *        Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     *        Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load
      *        Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -791,8 +791,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
      * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
-     * instance IDs and IP addresses.
+     * address). The default is <code>instance</code>. You can't specify targets for a target group using both instance
+     * IDs and IP addresses.
      * </p>
      * <p>
      * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
@@ -803,8 +803,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
      *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
-     *        target group using both instance IDs and IP addresses.</p>
+     *        specified by IP address). The default is <code>instance</code>. You can't specify targets for a target
+     *        group using both instance IDs and IP addresses.</p>
      *        <p>
      *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
      *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
@@ -820,8 +820,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
      * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
-     * instance IDs and IP addresses.
+     * address). The default is <code>instance</code>. You can't specify targets for a target group using both instance
+     * IDs and IP addresses.
      * </p>
      * <p>
      * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
@@ -831,8 +831,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return The type of target that you must specify when registering targets with this target group. The possible
      *         values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *         specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
-     *         target group using both instance IDs and IP addresses.</p>
+     *         specified by IP address). The default is <code>instance</code>. You can't specify targets for a target
+     *         group using both instance IDs and IP addresses.</p>
      *         <p>
      *         If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
      *         (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
@@ -848,8 +848,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
      * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
-     * instance IDs and IP addresses.
+     * address). The default is <code>instance</code>. You can't specify targets for a target group using both instance
+     * IDs and IP addresses.
      * </p>
      * <p>
      * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
@@ -860,8 +860,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
      *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
-     *        target group using both instance IDs and IP addresses.</p>
+     *        specified by IP address). The default is <code>instance</code>. You can't specify targets for a target
+     *        group using both instance IDs and IP addresses.</p>
      *        <p>
      *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
      *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
@@ -879,8 +879,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
      * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
-     * instance IDs and IP addresses.
+     * address). The default is <code>instance</code>. You can't specify targets for a target group using both instance
+     * IDs and IP addresses.
      * </p>
      * <p>
      * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
@@ -891,8 +891,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
      *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
-     *        target group using both instance IDs and IP addresses.</p>
+     *        specified by IP address). The default is <code>instance</code>. You can't specify targets for a target
+     *        group using both instance IDs and IP addresses.</p>
      *        <p>
      *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
      *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
@@ -908,8 +908,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The type of target that you must specify when registering targets with this target group. The possible values are
      * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
-     * instance IDs and IP addresses.
+     * address). The default is <code>instance</code>. You can't specify targets for a target group using both instance
+     * IDs and IP addresses.
      * </p>
      * <p>
      * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
@@ -920,8 +920,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param targetType
      *        The type of target that you must specify when registering targets with this target group. The possible
      *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
-     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
-     *        target group using both instance IDs and IP addresses.</p>
+     *        specified by IP address). The default is <code>instance</code>. You can't specify targets for a target
+     *        group using both instance IDs and IP addresses.</p>
      *        <p>
      *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
      *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the

@@ -55,7 +55,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
      * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
-     * that grants Elastic Load Balancing permission to write to the bucket.
+     * that grants Elastic Load Balancing permissions to write to the bucket.
      * </p>
      * </li>
      * <li>
@@ -125,7 +125,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
      * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
-     * that grants Elastic Load Balancing permission to write to the bucket.
+     * that grants Elastic Load Balancing permissions to write to the bucket.
      * </p>
      * </li>
      * <li>
@@ -185,7 +185,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is
      *        required if access logs are enabled. The bucket must exist in the same region as the load balancer and
-     *        have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
+     *        have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -251,7 +251,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
      * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
-     * that grants Elastic Load Balancing permission to write to the bucket.
+     * that grants Elastic Load Balancing permissions to write to the bucket.
      * </p>
      * </li>
      * <li>
@@ -310,7 +310,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is
      *         required if access logs are enabled. The bucket must exist in the same region as the load balancer and
-     *         have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
+     *         have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
      *         </p>
      *         </li>
      *         <li>
@@ -376,7 +376,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
      * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
-     * that grants Elastic Load Balancing permission to write to the bucket.
+     * that grants Elastic Load Balancing permissions to write to the bucket.
      * </p>
      * </li>
      * <li>
@@ -436,7 +436,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is
      *        required if access logs are enabled. The bucket must exist in the same region as the load balancer and
-     *        have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
+     *        have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
      *        </p>
      *        </li>
      *        <li>

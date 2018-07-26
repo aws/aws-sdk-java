@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified platform version does not satisfy the task definition’s required capabilities.
+ * The specified platform version does not satisfy the task definition's required capabilities.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

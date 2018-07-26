@@ -65,6 +65,10 @@ public class StringUtils {
         return Long.toString(value);
     }
 
+    public static String fromShort(Short value) {
+        return Short.toString(value);
+    }
+
     public static String fromString(String value) {
         return value;
     }

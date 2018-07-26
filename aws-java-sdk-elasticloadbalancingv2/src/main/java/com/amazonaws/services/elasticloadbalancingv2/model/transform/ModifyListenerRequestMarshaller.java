@@ -233,6 +233,59 @@ public class ModifyListenerRequestMarshaller implements Marshaller<Request<Modif
                         request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".Order",
                                 StringUtils.fromInteger(defaultActionsListValue.getOrder()));
                     }
+
+                    RedirectActionConfig redirectConfig = defaultActionsListValue.getRedirectConfig();
+                    if (redirectConfig != null) {
+
+                        if (redirectConfig.getProtocol() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".RedirectConfig.Protocol",
+                                    StringUtils.fromString(redirectConfig.getProtocol()));
+                        }
+
+                        if (redirectConfig.getPort() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".RedirectConfig.Port",
+                                    StringUtils.fromString(redirectConfig.getPort()));
+                        }
+
+                        if (redirectConfig.getHost() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".RedirectConfig.Host",
+                                    StringUtils.fromString(redirectConfig.getHost()));
+                        }
+
+                        if (redirectConfig.getPath() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".RedirectConfig.Path",
+                                    StringUtils.fromString(redirectConfig.getPath()));
+                        }
+
+                        if (redirectConfig.getQuery() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".RedirectConfig.Query",
+                                    StringUtils.fromString(redirectConfig.getQuery()));
+                        }
+
+                        if (redirectConfig.getStatusCode() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".RedirectConfig.StatusCode",
+                                    StringUtils.fromString(redirectConfig.getStatusCode()));
+                        }
+                    }
+
+                    FixedResponseActionConfig fixedResponseConfig = defaultActionsListValue.getFixedResponseConfig();
+                    if (fixedResponseConfig != null) {
+
+                        if (fixedResponseConfig.getMessageBody() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".FixedResponseConfig.MessageBody",
+                                    StringUtils.fromString(fixedResponseConfig.getMessageBody()));
+                        }
+
+                        if (fixedResponseConfig.getStatusCode() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".FixedResponseConfig.StatusCode",
+                                    StringUtils.fromString(fixedResponseConfig.getStatusCode()));
+                        }
+
+                        if (fixedResponseConfig.getContentType() != null) {
+                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".FixedResponseConfig.ContentType",
+                                    StringUtils.fromString(fixedResponseConfig.getContentType()));
+                        }
+                    }
                     defaultActionsListIndex++;
                 }
             }

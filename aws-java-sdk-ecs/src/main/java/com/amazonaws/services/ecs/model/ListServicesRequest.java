@@ -59,7 +59,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Integer maxResults;
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      */
     private String launchType;
@@ -270,11 +270,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for the services to list.
      * @see LaunchType
      */
 
@@ -284,10 +284,10 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
-     * @return The launch type for services you want to list.
+     * @return The launch type for the services to list.
      * @see LaunchType
      */
 
@@ -297,11 +297,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for the services to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -313,11 +313,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for the services to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */

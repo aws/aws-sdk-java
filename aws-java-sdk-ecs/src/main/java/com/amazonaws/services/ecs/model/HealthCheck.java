@@ -58,14 +58,14 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time period in seconds to wait for a health check to succeed before it is considered a failure. You may
-     * specify between 2 and 60 seconds. The default value is 5 seconds.
+     * specify between 2 and 60 seconds. The default value is 5.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
      * The number of times to retry a failed health check before the container is considered unhealthy. You may specify
-     * between 1 and 10 retries. The default value is 3 retries.
+     * between 1 and 10 retries. The default value is 3.
      * </p>
      */
     private Integer retries;
@@ -298,12 +298,12 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time period in seconds to wait for a health check to succeed before it is considered a failure. You may
-     * specify between 2 and 60 seconds. The default value is 5 seconds.
+     * specify between 2 and 60 seconds. The default value is 5.
      * </p>
      * 
      * @param timeout
      *        The time period in seconds to wait for a health check to succeed before it is considered a failure. You
-     *        may specify between 2 and 60 seconds. The default value is 5 seconds.
+     *        may specify between 2 and 60 seconds. The default value is 5.
      */
 
     public void setTimeout(Integer timeout) {
@@ -313,11 +313,11 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time period in seconds to wait for a health check to succeed before it is considered a failure. You may
-     * specify between 2 and 60 seconds. The default value is 5 seconds.
+     * specify between 2 and 60 seconds. The default value is 5.
      * </p>
      * 
      * @return The time period in seconds to wait for a health check to succeed before it is considered a failure. You
-     *         may specify between 2 and 60 seconds. The default value is 5 seconds.
+     *         may specify between 2 and 60 seconds. The default value is 5.
      */
 
     public Integer getTimeout() {
@@ -327,12 +327,12 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time period in seconds to wait for a health check to succeed before it is considered a failure. You may
-     * specify between 2 and 60 seconds. The default value is 5 seconds.
+     * specify between 2 and 60 seconds. The default value is 5.
      * </p>
      * 
      * @param timeout
      *        The time period in seconds to wait for a health check to succeed before it is considered a failure. You
-     *        may specify between 2 and 60 seconds. The default value is 5 seconds.
+     *        may specify between 2 and 60 seconds. The default value is 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,12 +344,12 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to retry a failed health check before the container is considered unhealthy. You may specify
-     * between 1 and 10 retries. The default value is 3 retries.
+     * between 1 and 10 retries. The default value is 3.
      * </p>
      * 
      * @param retries
      *        The number of times to retry a failed health check before the container is considered unhealthy. You may
-     *        specify between 1 and 10 retries. The default value is 3 retries.
+     *        specify between 1 and 10 retries. The default value is 3.
      */
 
     public void setRetries(Integer retries) {
@@ -359,11 +359,11 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to retry a failed health check before the container is considered unhealthy. You may specify
-     * between 1 and 10 retries. The default value is 3 retries.
+     * between 1 and 10 retries. The default value is 3.
      * </p>
      * 
      * @return The number of times to retry a failed health check before the container is considered unhealthy. You may
-     *         specify between 1 and 10 retries. The default value is 3 retries.
+     *         specify between 1 and 10 retries. The default value is 3.
      */
 
     public Integer getRetries() {
@@ -373,12 +373,12 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of times to retry a failed health check before the container is considered unhealthy. You may specify
-     * between 1 and 10 retries. The default value is 3 retries.
+     * between 1 and 10 retries. The default value is 3.
      * </p>
      * 
      * @param retries
      *        The number of times to retry a failed health check before the container is considered unhealthy. You may
-     *        specify between 1 and 10 retries. The default value is 3 retries.
+     *        specify between 1 and 10 retries. The default value is 3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

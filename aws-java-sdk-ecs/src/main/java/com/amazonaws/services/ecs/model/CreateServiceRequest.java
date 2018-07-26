@@ -36,7 +36,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -76,7 +76,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
-     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * The details of the service discovery registries to assign to this service. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
@@ -176,7 +176,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
      * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
      * as unhealthy and stopping them before they have time to come up.
      * </p>
@@ -264,13 +264,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
      *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
      *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a region or across multiple regions.
+     *        multiple clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -281,12 +281,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
      *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *         multiple clusters within a region or across multiple regions.
+     *         multiple clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -297,13 +297,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
      *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
      *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a region or across multiple regions.
+     *        multiple clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -607,7 +607,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * The details of the service discovery registries to assign to this service. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
@@ -618,8 +618,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * 
-     * @return The details of the service discovery registries you want to assign to this service. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * @return The details of the service discovery registries to assign to this service. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.</p> <note>
      *         <p>
      *         Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
@@ -638,7 +638,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * The details of the service discovery registries to assign to this service. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
@@ -650,8 +650,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries you want to assign to this service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
      *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
@@ -672,7 +672,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * The details of the service discovery registries to assign to this service. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
@@ -689,8 +689,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries you want to assign to this service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
      *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
@@ -713,7 +713,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * The details of the service discovery registries to assign to this service. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
@@ -725,8 +725,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries you want to assign to this service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
      *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
@@ -1374,7 +1374,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
      * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
      * as unhealthy and stopping them before they have time to come up.
      * </p>
@@ -1383,7 +1383,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *        Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during
      *        which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service
      *        scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      */
@@ -1397,7 +1397,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
      * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
      * as unhealthy and stopping them before they have time to come up.
      * </p>
@@ -1405,7 +1405,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
      *         Load Balancing target health checks after a task has first started. This is only valid if your service is
      *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *         Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *         Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during
      *         which the ECS service scheduler ignores health check status. This grace period can prevent the ECS
      *         service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      */
@@ -1419,7 +1419,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service
      * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
      * as unhealthy and stopping them before they have time to come up.
      * </p>
@@ -1428,7 +1428,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *        Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during
      *        which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service
      *        scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * @return Returns a reference to this object so that method calls can be chained together.

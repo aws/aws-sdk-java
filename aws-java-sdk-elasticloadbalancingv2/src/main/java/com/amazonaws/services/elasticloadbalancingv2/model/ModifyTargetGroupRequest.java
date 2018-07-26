@@ -53,7 +53,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
@@ -289,13 +289,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
      *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
-     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
-     *        30 seconds.
+     *        Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30
+     *        seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -305,12 +305,12 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      * 
      * @return The approximate amount of time, in seconds, between health checks of an individual target. For
-     *         Application Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported
-     *         values are 10 or 30 seconds.
+     *         Application Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values
+     *         are 10 or 30 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -320,13 +320,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
      *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
-     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
-     *        30 seconds.
+     *        Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30
+     *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

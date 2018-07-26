@@ -30,7 +30,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
      * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      */
@@ -39,7 +39,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -159,7 +159,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      */
@@ -204,13 +204,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
      * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      * 
      * @param serviceArn
      *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     *        the region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
+     *        the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
      *        and then the service name. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      */
@@ -222,12 +222,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
      * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      * 
      * @return The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     *         the region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
+     *         the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
      *         and then the service name. For example,
      *         <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      */
@@ -239,13 +239,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
-     * region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
+     * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
      * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * </p>
      * 
      * @param serviceArn
      *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     *        the region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
+     *        the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
      *        and then the service name. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -260,13 +260,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
      *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
      *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a region or across multiple regions.
+     *        multiple clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -277,12 +277,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
      *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *         multiple clusters within a region or across multiple regions.
+     *         multiple clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -293,13 +293,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
      * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a region or across multiple regions.
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
      *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
      *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a region or across multiple regions.
+     *        multiple clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1312,12 +1312,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      * 
      * @param networkConfiguration
-     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
      *        by using the <code>awsvpc</code> networking mode.
      */
 
@@ -1327,12 +1327,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      * 
-     * @return The VPC subnet and security group configuration for tasks that receive their own Elastic Network
-     *         Interface by using the <code>awsvpc</code> networking mode.
+     * @return The VPC subnet and security group configuration for tasks that receive their own elastic network
+     *         interface by using the <code>awsvpc</code> networking mode.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -1341,12 +1341,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      * 
      * @param networkConfiguration
-     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
      *        by using the <code>awsvpc</code> networking mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

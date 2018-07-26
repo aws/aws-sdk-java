@@ -67,6 +67,16 @@ public class ActionStaxUnmarshaller implements Unmarshaller<Action, StaxUnmarsha
                     action.setOrder(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("RedirectConfig", targetDepth)) {
+                    action.setRedirectConfig(RedirectActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("FixedResponseConfig", targetDepth)) {
+                    action.setFixedResponseConfig(FixedResponseActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return action;

@@ -38,7 +38,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -63,9 +63,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -104,18 +104,27 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer priority;
     /**
      * <p>
-     * The actions. Each rule must include one forward action.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you can specify a single target group.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID Connect
-     * (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
+     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users as they
-     * access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     * authenticate users as they access your application.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
+     * response.
      * </p>
      */
     private java.util.List<Action> actions;
@@ -167,7 +176,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -192,9 +201,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -228,7 +237,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *         any of the following characters. Note that you can include up to three wildcard characters.
+     *         any of the following characters. You can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -254,8 +263,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *         case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *         Note that you can include up to three wildcard characters.
+     *         case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *         You can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -296,7 +305,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -321,9 +330,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -358,7 +367,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -384,8 +393,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        Note that you can include up to three wildcard characters.
+     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *        You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -431,7 +440,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -456,9 +465,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -498,7 +507,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -524,8 +533,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        Note that you can include up to three wildcard characters.
+     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *        You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -573,7 +582,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -598,9 +607,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is case
-     * sensitive, can be up to 128 characters in length, and can contain any of the following characters. Note that you
-     * can include up to three wildcard characters.
+     * If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
+     * case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can
+     * include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -635,7 +644,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -661,8 +670,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern. A path pattern is
-     *        case sensitive, can be up to 128 characters in length, and can contain any of the following characters.
-     *        Note that you can include up to three wildcard characters.
+     *        case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
+     *        You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -740,31 +749,49 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include one forward action.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you can specify a single target group.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID Connect
-     * (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
+     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users as they
-     * access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     * authenticate users as they access your application.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
+     * response.
      * </p>
      * 
-     * @return The actions. Each rule must include one forward action.</p>
+     * @return The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *         <code>fixed-response</code>, or <code>redirect</code>.</p>
      *         <p>
      *         If the action type is <code>forward</code>, you can specify a single target group.
      *         </p>
      *         <p>
-     *         If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
-     *         Connect (OIDC) compliant to authenticate users as they access your application.
+     *         [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
+     *         that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      *         </p>
      *         <p>
-     *         If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users
-     *         as they access your application.
+     *         [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     *         authenticate users as they access your application.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     *         requests.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
+     *         HTTP response.
      */
 
     public java.util.List<Action> getActions() {
@@ -773,32 +800,50 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include one forward action.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you can specify a single target group.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID Connect
-     * (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
+     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users as they
-     * access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     * authenticate users as they access your application.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
+     * response.
      * </p>
      * 
      * @param actions
-     *        The actions. Each rule must include one forward action.</p>
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you can specify a single target group.
      *        </p>
      *        <p>
-     *        If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
-     *        Connect (OIDC) compliant to authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
+     *        that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      *        </p>
      *        <p>
-     *        If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users
-     *        as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     *        authenticate users as they access your application.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     *        requests.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
+     *        HTTP response.
      */
 
     public void setActions(java.util.Collection<Action> actions) {
@@ -812,18 +857,27 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include one forward action.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you can specify a single target group.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID Connect
-     * (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
+     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users as they
-     * access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     * authenticate users as they access your application.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
+     * response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -832,17 +886,26 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param actions
-     *        The actions. Each rule must include one forward action.</p>
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you can specify a single target group.
      *        </p>
      *        <p>
-     *        If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
-     *        Connect (OIDC) compliant to authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
+     *        that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      *        </p>
      *        <p>
-     *        If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users
-     *        as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     *        authenticate users as they access your application.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     *        requests.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
+     *        HTTP response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -858,32 +921,50 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include one forward action.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you can specify a single target group.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID Connect
-     * (OIDC) compliant to authenticate users as they access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is
+     * OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      * </p>
      * <p>
-     * If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users as they
-     * access your application.
+     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     * authenticate users as they access your application.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom HTTP
+     * response.
      * </p>
      * 
      * @param actions
-     *        The actions. Each rule must include one forward action.</p>
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you can specify a single target group.
      *        </p>
      *        <p>
-     *        If the action type is <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
-     *        Connect (OIDC) compliant to authenticate users as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use an identity provider
+     *        that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
      *        </p>
      *        <p>
-     *        If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate users
-     *        as they access your application.
+     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito to
+     *        authenticate users as they access your application.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     *        requests.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you can return a custom
+     *        HTTP response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the Elastic Network Interface for tasks that use the <code>awsvpc</code> network mode.
+ * An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkInterface" target="_top">AWS API

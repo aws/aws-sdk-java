@@ -1,3 +1,16 @@
+# __1.11.374__ __2018-07-25__
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for private registry authentication using AWS Secrets Manager. With private registry authentication, private Docker images can be used in a task definition.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - R5 is the successor to R4 in EC2's memory-optimized instance family. R5d is a variant of R5 that has local NVMe SSD. Z1d instances deliver both high compute and high memory. Z1d instances use custom Intel Xeon Scalable Processors running at up to 4.0 GHz, powered by sustained all-core Turbo Boost. They are available in 6 sizes, with up to 48 vCPUs, 384 GiB of memory, and 1.8 TB of local NVMe storage.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - We are introducing two new actions in Application Load Balancer. Redirects and Fixed Response. These features will allow you to improve user experience and security posture. By using redirect actions in your Application Load Balancer, you can improve the security of your user requests and by using fixed-response, you can enhance the customer experience by displaying branded error pages during application maintenance or outages.
+
 # __1.11.373__ __2018-07-24__
 ## __Amazon DynamoDB__
   - ### Features

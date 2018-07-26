@@ -95,6 +95,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     */
+    private RepositoryCredentials repositoryCredentials;
+    /**
+     * <p>
      * The number of <code>cpu</code> units reserved for the container. This parameter maps to <code>CpuShares</code> in
      * the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -274,7 +280,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
      * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
-     * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
+     * ECS console. The assignments are also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.
      * </p>
      * </note>
      */
@@ -502,7 +509,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
+     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -1019,6 +1026,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     public ContainerDefinition withImage(String image) {
         setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     * 
+     * @param repositoryCredentials
+     *        The private repository authentication credentials to use.
+     */
+
+    public void setRepositoryCredentials(RepositoryCredentials repositoryCredentials) {
+        this.repositoryCredentials = repositoryCredentials;
+    }
+
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     * 
+     * @return The private repository authentication credentials to use.
+     */
+
+    public RepositoryCredentials getRepositoryCredentials() {
+        return this.repositoryCredentials;
+    }
+
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     * 
+     * @param repositoryCredentials
+     *        The private repository authentication credentials to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withRepositoryCredentials(RepositoryCredentials repositoryCredentials) {
+        setRepositoryCredentials(repositoryCredentials);
         return this;
     }
 
@@ -2064,7 +2111,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
      * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
-     * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
+     * ECS console. The assignments are also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.
      * </p>
      * </note>
      * 
@@ -2094,8 +2142,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <p>
      *         After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
      *         assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
-     *         task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
-     *         responses.
+     *         task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code>
+     *         section <a>DescribeTasks</a> responses.
      *         </p>
      */
 
@@ -2134,7 +2182,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
      * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
-     * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
+     * ECS console. The assignments are also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.
      * </p>
      * </note>
      * 
@@ -2165,8 +2214,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
      *        assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
-     *        task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
-     *        responses.
+     *        task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code>
+     *        section <a>DescribeTasks</a> responses.
      *        </p>
      */
 
@@ -2207,7 +2256,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
      * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
-     * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
+     * ECS console. The assignments are also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.
      * </p>
      * </note>
      * <p>
@@ -2243,8 +2293,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
      *        assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
-     *        task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
-     *        responses.
+     *        task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code>
+     *        section <a>DescribeTasks</a> responses.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2287,7 +2337,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
      * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
-     * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
+     * ECS console. The assignments are also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+     * responses.
      * </p>
      * </note>
      * 
@@ -2318,8 +2369,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
      *        assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
-     *        task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
-     *        responses.
+     *        task in the Amazon ECS console. The assignments are also visible in the <code>networkBindings</code>
+     *        section <a>DescribeTasks</a> responses.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4169,7 +4220,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
+     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -4183,8 +4234,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @return A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *         container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
-     *         container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
+     *         container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
+     *         container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
@@ -4205,7 +4256,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
+     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -4220,8 +4271,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
-     *        container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
+     *        container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -4244,7 +4295,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
+     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -4264,8 +4315,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
-     *        container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
+     *        container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -4290,7 +4341,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
-     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
+     * using the Fargate launch type, this may be used to list non-Fargate hosts to which the container can talk. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -4305,8 +4356,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
-     *        container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts to which the
+     *        container can talk. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -5182,6 +5233,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("Name: ").append(getName()).append(",");
         if (getImage() != null)
             sb.append("Image: ").append(getImage()).append(",");
+        if (getRepositoryCredentials() != null)
+            sb.append("RepositoryCredentials: ").append(getRepositoryCredentials()).append(",");
         if (getCpu() != null)
             sb.append("Cpu: ").append(getCpu()).append(",");
         if (getMemory() != null)
@@ -5255,6 +5308,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (other.getImage() == null ^ this.getImage() == null)
             return false;
         if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
+            return false;
+        if (other.getRepositoryCredentials() == null ^ this.getRepositoryCredentials() == null)
+            return false;
+        if (other.getRepositoryCredentials() != null && other.getRepositoryCredentials().equals(this.getRepositoryCredentials()) == false)
             return false;
         if (other.getCpu() == null ^ this.getCpu() == null)
             return false;
@@ -5370,6 +5427,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryCredentials() == null) ? 0 : getRepositoryCredentials().hashCode());
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());

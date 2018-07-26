@@ -56,6 +56,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("repositoryCredentials", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setRepositoryCredentials(RepositoryCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));

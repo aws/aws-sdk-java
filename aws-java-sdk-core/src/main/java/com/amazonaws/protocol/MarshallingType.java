@@ -46,6 +46,8 @@ public interface MarshallingType<T> {
 
     MarshallingType<Long> LONG = new DefaultMarshallingType<Long>(Long.class);
 
+    MarshallingType<Short> SHORT = new DefaultMarshallingType<Short>(Short.class);
+
     MarshallingType<Float> FLOAT = new DefaultMarshallingType<Float>(Float.class);
 
     MarshallingType<Double> DOUBLE = new DefaultMarshallingType<Double>(Double.class);

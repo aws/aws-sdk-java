@@ -73,7 +73,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
@@ -119,7 +120,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional.
@@ -233,7 +234,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date startedAt;
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      */
@@ -267,7 +268,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String platformVersion;
     /**
      * <p>
-     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
@@ -574,7 +575,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
@@ -618,8 +620,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @param cpu
      *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *        a task definition but is converted to an integer indicating the CPU units when the task definition is
-     *        registered.</p>
+     *        a task definition. String values are converted to an integer indicating the CPU units when the task
+     *        definition is registered.</p>
      *        <p>
      *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
@@ -667,7 +669,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
@@ -710,8 +713,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      *         <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *         a task definition but is converted to an integer indicating the CPU units when the task definition is
-     *         registered.</p>
+     *         a task definition. String values are converted to an integer indicating the CPU units when the task
+     *         definition is registered.</p>
      *         <p>
      *         If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      *         units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
@@ -759,7 +762,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
@@ -803,8 +807,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @param cpu
      *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *        a task definition but is converted to an integer indicating the CPU units when the task definition is
-     *        registered.</p>
+     *        a task definition. String values are converted to an integer indicating the CPU units when the task
+     *        definition is registered.</p>
      *        <p>
      *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
      *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
@@ -854,7 +858,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional.
@@ -897,7 +901,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @param memory
      *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *        definition but is converted to an integer indicating the MiB when the task definition is registered.</p>
+     *        definition. String values are converted to an integer indicating the MiB when the task definition is
+     *        registered.</p>
      *        <p>
      *        If using the EC2 launch type, this field is optional.
      *        </p>
@@ -944,7 +949,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional.
@@ -986,7 +991,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      *         <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *         definition but is converted to an integer indicating the MiB when the task definition is registered.</p>
+     *         definition. String values are converted to an integer indicating the MiB when the task definition is
+     *         registered.</p>
      *         <p>
      *         If using the EC2 launch type, this field is optional.
      *         </p>
@@ -1033,7 +1039,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <p>
      * If using the EC2 launch type, this field is optional.
@@ -1076,7 +1082,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @param memory
      *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *        definition but is converted to an integer indicating the MiB when the task definition is registered.</p>
+     *        definition. String values are converted to an integer indicating the MiB when the task definition is
+     *        registered.</p>
      *        <p>
      *        If using the EC2 launch type, this field is optional.
      *        </p>
@@ -1648,12 +1655,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      * 
      * @param stoppingAt
-     *        The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     *        The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      *        <code>STOPPED</code>).
      */
 
@@ -1663,11 +1670,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      * 
-     * @return The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * @return The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      *         <code>STOPPED</code>).
      */
 
@@ -1677,12 +1684,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      * 
      * @param stoppingAt
-     *        The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     *        The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code> state to
      *        <code>STOPPED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1891,10 +1898,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
      * </p>
      * 
-     * @return The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     * @return The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network
      *         mode.
      */
 
@@ -1907,11 +1914,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
      * </p>
      * 
      * @param attachments
-     *        The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *        The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network
      *        mode.
      */
 
@@ -1926,7 +1933,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1935,7 +1942,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attachments
-     *        The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *        The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network
      *        mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1952,11 +1959,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
      * </p>
      * 
      * @param attachments
-     *        The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *        The elastic network adapter associated with the task if the task uses the <code>awsvpc</code> network
      *        mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

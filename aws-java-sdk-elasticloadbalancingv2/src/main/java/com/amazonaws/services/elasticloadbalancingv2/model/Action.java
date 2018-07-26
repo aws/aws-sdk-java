@@ -28,17 +28,14 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include one forward action.
+     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code>.
-     * </p>
-     * <p>
-     * For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load Balancer or
-     * TCP for a Network Load Balancer.
      * </p>
      */
     private String targetGroupArn;
@@ -59,18 +56,35 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The forward action must be performed last.
+     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.
      * </p>
      */
     private Integer order;
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is
+     * <code>redirect</code>.
+     * </p>
+     */
+    private RedirectActionConfig redirectConfig;
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only
+     * when <code>Type</code> is <code>fixed-response</code>.
+     * </p>
+     */
+    private FixedResponseActionConfig fixedResponseConfig;
 
     /**
      * <p>
-     * The type of action. Each rule must include one forward action.
+     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include one forward action.
+     *        The type of action. Each rule must include exactly one of the following types of actions:
+     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * @see ActionTypeEnum
      */
 
@@ -80,10 +94,12 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include one forward action.
+     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
-     * @return The type of action. Each rule must include one forward action.
+     * @return The type of action. Each rule must include exactly one of the following types of actions:
+     *         <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * @see ActionTypeEnum
      */
 
@@ -93,11 +109,13 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include one forward action.
+     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include one forward action.
+     *        The type of action. Each rule must include exactly one of the following types of actions:
+     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionTypeEnum
      */
@@ -109,11 +127,13 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include one forward action.
+     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include one forward action.
+     *        The type of action. Each rule must include exactly one of the following types of actions:
+     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * @see ActionTypeEnum
      */
 
@@ -123,11 +143,13 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include one forward action.
+     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include one forward action.
+     *        The type of action. Each rule must include exactly one of the following types of actions:
+     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionTypeEnum
      */
@@ -141,17 +163,10 @@ public class Action implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code>.
      * </p>
-     * <p>
-     * For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load Balancer or
-     * TCP for a Network Load Balancer.
-     * </p>
      * 
      * @param targetGroupArn
      *        The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-     *        <code>forward</code>.</p>
-     *        <p>
-     *        For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load
-     *        Balancer or TCP for a Network Load Balancer.
+     *        <code>forward</code>.
      */
 
     public void setTargetGroupArn(String targetGroupArn) {
@@ -162,16 +177,9 @@ public class Action implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code>.
      * </p>
-     * <p>
-     * For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load Balancer or
-     * TCP for a Network Load Balancer.
-     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-     *         <code>forward</code>.</p>
-     *         <p>
-     *         For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load
-     *         Balancer or TCP for a Network Load Balancer.
+     *         <code>forward</code>.
      */
 
     public String getTargetGroupArn() {
@@ -182,17 +190,10 @@ public class Action implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code>.
      * </p>
-     * <p>
-     * For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load Balancer or
-     * TCP for a Network Load Balancer.
-     * </p>
      * 
      * @param targetGroupArn
      *        The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-     *        <code>forward</code>.</p>
-     *        <p>
-     *        For a default rule, the protocol of the target group must be HTTP or HTTPS for an Application Load
-     *        Balancer or TCP for a Network Load Balancer.
+     *        <code>forward</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,12 +297,14 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The forward action must be performed last.
+     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.
      * </p>
      * 
      * @param order
      *        The order for the action. This value is required for rules with multiple actions. The action with the
-     *        lowest value for order is performed first. The forward action must be performed last.
+     *        lowest value for order is performed first. The final action to be performed must be a <code>forward</code>
+     *        or a <code>fixed-response</code> action.
      */
 
     public void setOrder(Integer order) {
@@ -311,11 +314,13 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The forward action must be performed last.
+     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.
      * </p>
      * 
      * @return The order for the action. This value is required for rules with multiple actions. The action with the
-     *         lowest value for order is performed first. The forward action must be performed last.
+     *         lowest value for order is performed first. The final action to be performed must be a
+     *         <code>forward</code> or a <code>fixed-response</code> action.
      */
 
     public Integer getOrder() {
@@ -325,17 +330,111 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The forward action must be performed last.
+     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.
      * </p>
      * 
      * @param order
      *        The order for the action. This value is required for rules with multiple actions. The action with the
-     *        lowest value for order is performed first. The forward action must be performed last.
+     *        lowest value for order is performed first. The final action to be performed must be a <code>forward</code>
+     *        or a <code>fixed-response</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Action withOrder(Integer order) {
         setOrder(order);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is
+     * <code>redirect</code>.
+     * </p>
+     * 
+     * @param redirectConfig
+     *        [Application Load Balancer] Information for creating a redirect action. Specify only when
+     *        <code>Type</code> is <code>redirect</code>.
+     */
+
+    public void setRedirectConfig(RedirectActionConfig redirectConfig) {
+        this.redirectConfig = redirectConfig;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is
+     * <code>redirect</code>.
+     * </p>
+     * 
+     * @return [Application Load Balancer] Information for creating a redirect action. Specify only when
+     *         <code>Type</code> is <code>redirect</code>.
+     */
+
+    public RedirectActionConfig getRedirectConfig() {
+        return this.redirectConfig;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is
+     * <code>redirect</code>.
+     * </p>
+     * 
+     * @param redirectConfig
+     *        [Application Load Balancer] Information for creating a redirect action. Specify only when
+     *        <code>Type</code> is <code>redirect</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withRedirectConfig(RedirectActionConfig redirectConfig) {
+        setRedirectConfig(redirectConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only
+     * when <code>Type</code> is <code>fixed-response</code>.
+     * </p>
+     * 
+     * @param fixedResponseConfig
+     *        [Application Load Balancer] Information for creating an action that returns a custom HTTP response.
+     *        Specify only when <code>Type</code> is <code>fixed-response</code>.
+     */
+
+    public void setFixedResponseConfig(FixedResponseActionConfig fixedResponseConfig) {
+        this.fixedResponseConfig = fixedResponseConfig;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only
+     * when <code>Type</code> is <code>fixed-response</code>.
+     * </p>
+     * 
+     * @return [Application Load Balancer] Information for creating an action that returns a custom HTTP response.
+     *         Specify only when <code>Type</code> is <code>fixed-response</code>.
+     */
+
+    public FixedResponseActionConfig getFixedResponseConfig() {
+        return this.fixedResponseConfig;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only
+     * when <code>Type</code> is <code>fixed-response</code>.
+     * </p>
+     * 
+     * @param fixedResponseConfig
+     *        [Application Load Balancer] Information for creating an action that returns a custom HTTP response.
+     *        Specify only when <code>Type</code> is <code>fixed-response</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withFixedResponseConfig(FixedResponseActionConfig fixedResponseConfig) {
+        setFixedResponseConfig(fixedResponseConfig);
         return this;
     }
 
@@ -359,7 +458,11 @@ public class Action implements Serializable, Cloneable {
         if (getAuthenticateCognitoConfig() != null)
             sb.append("AuthenticateCognitoConfig: ").append(getAuthenticateCognitoConfig()).append(",");
         if (getOrder() != null)
-            sb.append("Order: ").append(getOrder());
+            sb.append("Order: ").append(getOrder()).append(",");
+        if (getRedirectConfig() != null)
+            sb.append("RedirectConfig: ").append(getRedirectConfig()).append(",");
+        if (getFixedResponseConfig() != null)
+            sb.append("FixedResponseConfig: ").append(getFixedResponseConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -394,6 +497,14 @@ public class Action implements Serializable, Cloneable {
             return false;
         if (other.getOrder() != null && other.getOrder().equals(this.getOrder()) == false)
             return false;
+        if (other.getRedirectConfig() == null ^ this.getRedirectConfig() == null)
+            return false;
+        if (other.getRedirectConfig() != null && other.getRedirectConfig().equals(this.getRedirectConfig()) == false)
+            return false;
+        if (other.getFixedResponseConfig() == null ^ this.getFixedResponseConfig() == null)
+            return false;
+        if (other.getFixedResponseConfig() != null && other.getFixedResponseConfig().equals(this.getFixedResponseConfig()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +518,8 @@ public class Action implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthenticateOidcConfig() == null) ? 0 : getAuthenticateOidcConfig().hashCode());
         hashCode = prime * hashCode + ((getAuthenticateCognitoConfig() == null) ? 0 : getAuthenticateCognitoConfig().hashCode());
         hashCode = prime * hashCode + ((getOrder() == null) ? 0 : getOrder().hashCode());
+        hashCode = prime * hashCode + ((getRedirectConfig() == null) ? 0 : getRedirectConfig().hashCode());
+        hashCode = prime * hashCode + ((getFixedResponseConfig() == null) ? 0 : getFixedResponseConfig().hashCode());
         return hashCode;
     }
 

@@ -481,7 +481,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Deletes the specified listener.
      * </p>
      * <p>
-     * Alternatively, your listener is deleted when you delete the load balancer it is attached to using
+     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached, using
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * 
@@ -498,7 +498,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Deletes the specified listener.
      * </p>
      * <p>
-     * Alternatively, your listener is deleted when you delete the load balancer it is attached to using
+     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached, using
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * 
@@ -1462,7 +1462,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Balancer.
      * </p>
      * <p>
-     * Note that Network Load Balancers must use <code>ipv4</code>.
+     * Network Load Balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param setIpAddressTypeRequest
@@ -1479,7 +1479,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Balancer.
      * </p>
      * <p>
-     * Note that Network Load Balancers must use <code>ipv4</code>.
+     * Network Load Balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param setIpAddressTypeRequest
@@ -1540,7 +1540,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * groups override the previously associated security groups.
      * </p>
      * <p>
-     * Note that you can't specify a security group for a Network Load Balancer.
+     * You can't specify a security group for a Network Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -1557,7 +1557,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * groups override the previously associated security groups.
      * </p>
      * <p>
-     * Note that you can't specify a security group for a Network Load Balancer.
+     * You can't specify a security group for a Network Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -1579,7 +1579,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * Note that you can't change the subnets for a Network Load Balancer.
+     * You can't change the subnets for a Network Load Balancer.
      * </p>
      * 
      * @param setSubnetsRequest
@@ -1596,7 +1596,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * Note that you can't change the subnets for a Network Load Balancer.
+     * You can't change the subnets for a Network Load Balancer.
      * </p>
      * 
      * @param setSubnetsRequest

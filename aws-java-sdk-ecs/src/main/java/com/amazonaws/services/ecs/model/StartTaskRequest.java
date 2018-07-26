@@ -86,7 +86,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String group;
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      */
@@ -499,12 +499,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      * 
      * @param networkConfiguration
-     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
      *        by using the <code>awsvpc</code> networking mode.
      */
 
@@ -514,12 +514,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      * 
-     * @return The VPC subnet and security group configuration for tasks that receive their own Elastic Network
-     *         Interface by using the <code>awsvpc</code> networking mode.
+     * @return The VPC subnet and security group configuration for tasks that receive their own elastic network
+     *         interface by using the <code>awsvpc</code> networking mode.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -528,12 +528,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
      * using the <code>awsvpc</code> networking mode.
      * </p>
      * 
      * @param networkConfiguration
-     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
      *        by using the <code>awsvpc</code> networking mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

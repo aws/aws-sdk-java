@@ -79,7 +79,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version that your service should run.
      * </p>
      */
     private String platformVersion;
@@ -439,11 +439,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version that your service should run.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version you want to update your service to run.
+     *        The platform version that your service should run.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -452,10 +452,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version that your service should run.
      * </p>
      * 
-     * @return The platform version you want to update your service to run.
+     * @return The platform version that your service should run.
      */
 
     public String getPlatformVersion() {
@@ -464,11 +464,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version that your service should run.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version you want to update your service to run.
+     *        The platform version that your service should run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

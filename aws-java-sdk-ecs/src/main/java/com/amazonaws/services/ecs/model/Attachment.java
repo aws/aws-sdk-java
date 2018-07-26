@@ -50,7 +50,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     * Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      * address, the subnet ID, and the private IPv4 address.
      * </p>
      */
@@ -190,11 +190,11 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     * Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      * address, the subnet ID, and the private IPv4 address.
      * </p>
      * 
-     * @return Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the
+     * @return Details of the attachment. For elastic network interfaces, this includes the network interface ID, the
      *         MAC address, the subnet ID, and the private IPv4 address.
      */
 
@@ -207,12 +207,12 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     * Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      * address, the subnet ID, and the private IPv4 address.
      * </p>
      * 
      * @param details
-     *        Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     *        Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      *        address, the subnet ID, and the private IPv4 address.
      */
 
@@ -227,7 +227,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     * Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      * address, the subnet ID, and the private IPv4 address.
      * </p>
      * <p>
@@ -237,7 +237,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param details
-     *        Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     *        Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      *        address, the subnet ID, and the private IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -254,12 +254,12 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     * Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      * address, the subnet ID, and the private IPv4 address.
      * </p>
      * 
      * @param details
-     *        Details of the attachment. For Elastic Network Interfaces, this includes the network interface ID, the MAC
+     *        Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC
      *        address, the subnet ID, and the private IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

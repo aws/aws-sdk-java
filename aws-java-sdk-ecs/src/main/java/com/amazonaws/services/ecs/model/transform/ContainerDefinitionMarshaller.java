@@ -33,6 +33,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("image").build();
+    private static final MarshallingInfo<StructuredPojo> REPOSITORYCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryCredentials").build();
     private static final MarshallingInfo<Integer> CPU_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("cpu").build();
     private static final MarshallingInfo<Integer> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -104,6 +106,7 @@ public class ContainerDefinitionMarshaller {
         try {
             protocolMarshaller.marshall(containerDefinition.getName(), NAME_BINDING);
             protocolMarshaller.marshall(containerDefinition.getImage(), IMAGE_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getRepositoryCredentials(), REPOSITORYCREDENTIALS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getCpu(), CPU_BINDING);
             protocolMarshaller.marshall(containerDefinition.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(containerDefinition.getMemoryReservation(), MEMORYRESERVATION_BINDING);

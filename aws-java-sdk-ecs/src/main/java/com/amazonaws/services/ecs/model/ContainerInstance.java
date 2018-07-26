@@ -31,7 +31,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the container instance, the AWS account ID of the container instance owner,
+     * namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container instance ID. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
      * </p>
@@ -93,8 +93,8 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
-     * accept placement requests.
+     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * placement requests.
      * </p>
      */
     private Boolean agentConnected;
@@ -132,7 +132,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private java.util.Date registeredAt;
     /**
      * <p>
-     * The Elastic Network Interfaces associated with the container instance.
+     * The elastic network interfaces associated with the container instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
@@ -140,14 +140,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the container instance, the AWS account ID of the container instance owner,
+     * namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container instance ID. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
      * </p>
      * 
      * @param containerInstanceArn
      *        The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the container instance, the AWS account ID of the container instance
+     *        namespace, followed by the Region of the container instance, the AWS account ID of the container instance
      *        owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
      *        .
@@ -160,13 +160,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the container instance, the AWS account ID of the container instance owner,
+     * namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container instance ID. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     *         namespace, followed by the region of the container instance, the AWS account ID of the container instance
+     *         namespace, followed by the Region of the container instance, the AWS account ID of the container instance
      *         owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
      *         <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
      *         .
@@ -179,14 +179,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the container instance, the AWS account ID of the container instance owner,
+     * namespace, followed by the Region of the container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container instance ID. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
      * </p>
      * 
      * @param containerInstanceArn
      *        The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the container instance, the AWS account ID of the container instance
+     *        namespace, followed by the Region of the container instance, the AWS account ID of the container instance
      *        owner, the <code>container-instance</code> namespace, and then the container instance ID. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
      *        .
@@ -632,14 +632,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
-     * accept placement requests.
+     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * placement requests.
      * </p>
      * 
      * @param agentConnected
      *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *        with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
-     *        agent can't accept placement requests.
+     *        with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
+     *        agent can accept placement requests.
      */
 
     public void setAgentConnected(Boolean agentConnected) {
@@ -649,13 +649,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
-     * accept placement requests.
+     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * placement requests.
      * </p>
      * 
      * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *         with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
-     *         agent can't accept placement requests.
+     *         with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
+     *         agent can accept placement requests.
      */
 
     public Boolean getAgentConnected() {
@@ -665,14 +665,14 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
-     * accept placement requests.
+     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * placement requests.
      * </p>
      * 
      * @param agentConnected
      *        This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *        with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
-     *        agent can't accept placement requests.
+     *        with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
+     *        agent can accept placement requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,13 +684,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances with an
-     * agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected agent can't
-     * accept placement requests.
+     * agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept
+     * placement requests.
      * </p>
      * 
      * @return This parameter returns <code>true</code> if the agent is connected to Amazon ECS. Registered instances
-     *         with an agent that may be unhealthy or stopped return <code>false</code>. Instances without a connected
-     *         agent can't accept placement requests.
+     *         with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an
+     *         agent can accept placement requests.
      */
 
     public Boolean isAgentConnected() {
@@ -983,10 +983,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Elastic Network Interfaces associated with the container instance.
+     * The elastic network interfaces associated with the container instance.
      * </p>
      * 
-     * @return The Elastic Network Interfaces associated with the container instance.
+     * @return The elastic network interfaces associated with the container instance.
      */
 
     public java.util.List<Attachment> getAttachments() {
@@ -998,11 +998,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Elastic Network Interfaces associated with the container instance.
+     * The elastic network interfaces associated with the container instance.
      * </p>
      * 
      * @param attachments
-     *        The Elastic Network Interfaces associated with the container instance.
+     *        The elastic network interfaces associated with the container instance.
      */
 
     public void setAttachments(java.util.Collection<Attachment> attachments) {
@@ -1016,7 +1016,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Elastic Network Interfaces associated with the container instance.
+     * The elastic network interfaces associated with the container instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1025,7 +1025,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param attachments
-     *        The Elastic Network Interfaces associated with the container instance.
+     *        The elastic network interfaces associated with the container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1041,11 +1041,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Elastic Network Interfaces associated with the container instance.
+     * The elastic network interfaces associated with the container instance.
      * </p>
      * 
      * @param attachments
-     *        The Elastic Network Interfaces associated with the container instance.
+     *        The elastic network interfaces associated with the container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,7 +35,7 @@ public class Matcher implements Serializable, Cloneable {
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200 to 399.
+     * For Network Load Balancers, this is 200–399.
      * </p>
      */
     private String httpCode;
@@ -49,7 +49,7 @@ public class Matcher implements Serializable, Cloneable {
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200 to 399.
+     * For Network Load Balancers, this is 200–399.
      * </p>
      * 
      * @param httpCode
@@ -59,7 +59,7 @@ public class Matcher implements Serializable, Cloneable {
      *        You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      *        </p>
      *        <p>
-     *        For Network Load Balancers, this is 200 to 399.
+     *        For Network Load Balancers, this is 200–399.
      */
 
     public void setHttpCode(String httpCode) {
@@ -75,7 +75,7 @@ public class Matcher implements Serializable, Cloneable {
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200 to 399.
+     * For Network Load Balancers, this is 200–399.
      * </p>
      * 
      * @return The HTTP codes.</p>
@@ -84,7 +84,7 @@ public class Matcher implements Serializable, Cloneable {
      *         You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      *         </p>
      *         <p>
-     *         For Network Load Balancers, this is 200 to 399.
+     *         For Network Load Balancers, this is 200–399.
      */
 
     public String getHttpCode() {
@@ -100,7 +100,7 @@ public class Matcher implements Serializable, Cloneable {
      * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers, this is 200 to 399.
+     * For Network Load Balancers, this is 200–399.
      * </p>
      * 
      * @param httpCode
@@ -110,7 +110,7 @@ public class Matcher implements Serializable, Cloneable {
      *        You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      *        </p>
      *        <p>
-     *        For Network Load Balancers, this is 200 to 399.
+     *        For Network Load Balancers, this is 200–399.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

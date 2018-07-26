@@ -114,7 +114,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <note>
      * <p>
@@ -166,7 +167,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1089,7 +1090,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <note>
      * <p>
@@ -1139,8 +1141,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param cpu
      *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *        a task definition but will be converted to an integer indicating the CPU units when the task definition is
-     *        registered.</p> <note>
+     *        a task definition. String values are converted to an integer indicating the CPU units when the task
+     *        definition is registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *        container-level resources for Windows containers.
@@ -1193,7 +1195,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <note>
      * <p>
@@ -1242,8 +1245,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      *         <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *         a task definition but will be converted to an integer indicating the CPU units when the task definition
-     *         is registered.</p> <note>
+     *         a task definition. String values are converted to an integer indicating the CPU units when the task
+     *         definition is registered.</p> <note>
      *         <p>
      *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *         container-level resources for Windows containers.
@@ -1296,7 +1299,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
+     * definition. String values are converted to an integer indicating the CPU units when the task definition is
+     * registered.
      * </p>
      * <note>
      * <p>
@@ -1346,8 +1350,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param cpu
      *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
      *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *        a task definition but will be converted to an integer indicating the CPU units when the task definition is
-     *        registered.</p> <note>
+     *        a task definition. String values are converted to an integer indicating the CPU units when the task
+     *        definition is registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *        container-level resources for Windows containers.
@@ -1402,7 +1406,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1451,7 +1455,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param memory
      *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *        definition but will be converted to an integer indicating the MiB when the task definition is
+     *        definition. String values are converted to an integer indicating the MiB when the task definition is
      *        registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
@@ -1504,7 +1508,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1552,7 +1556,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      *         <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *         definition but will be converted to an integer indicating the MiB when the task definition is
+     *         definition. String values are converted to an integer indicating the MiB when the task definition is
      *         registered.</p> <note>
      *         <p>
      *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
@@ -1605,7 +1609,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
+     * definition. String values are converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1654,7 +1658,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @param memory
      *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
      *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *        definition but will be converted to an integer indicating the MiB when the task definition is
+     *        definition. String values are converted to an integer indicating the MiB when the task definition is
      *        registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying

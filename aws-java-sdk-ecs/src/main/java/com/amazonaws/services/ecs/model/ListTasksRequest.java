@@ -105,7 +105,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String desiredStatus;
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for services to list.
      * </p>
      */
     private String launchType;
@@ -673,11 +673,11 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for services to list.
      * @see LaunchType
      */
 
@@ -687,10 +687,10 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for services to list.
      * </p>
      * 
-     * @return The launch type for services you want to list.
+     * @return The launch type for services to list.
      * @see LaunchType
      */
 
@@ -700,11 +700,11 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for services to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -716,11 +716,11 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for services to list.
      * @see LaunchType
      */
 
@@ -730,11 +730,11 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for services to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
