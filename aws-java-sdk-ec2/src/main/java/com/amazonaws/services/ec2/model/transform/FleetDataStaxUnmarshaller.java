@@ -130,6 +130,11 @@ public class FleetDataStaxUnmarshaller implements Unmarshaller<FleetData, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("onDemandOptions", targetDepth)) {
+                    fleetData.setOnDemandOptions(OnDemandOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     fleetData.withTags(new ArrayList<Tag>());
                     continue;

@@ -1,3 +1,28 @@
+# __1.11.375__ __2018-07-26__
+## __AWS CodeBuild__
+  - ### Features
+    - Add artifacts encryptionDisabled and build encryptionKey.
+
+## __AWS Greengrass__
+  - ### Features
+    - Documentation updates for Greengrass Local Resource Access feature
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This change provides the EC2/Spot customers with two new allocation strategies -- LowestN for Spot instances, and OD priority for on-demand instances.
+
+## __Amazon Inspector__
+  - ### Features
+    - inspector will return ServiceTemporarilyUnavailableException when service is under stress
+
+## __Amazon Redshift__
+  - ### Features
+    - When we make a new version of Amazon Redshift available, we update your cluster during its maintenance window. By selecting a maintenance track, you control whether we update your cluster with the most recent approved release, or with the previous release. The two values for maintenance track are current and trailing. If you choose the current track, your cluster is updated with the latest approved release. If you choose the trailing track, your cluster is updated with the release that was approved previously.The new API operation for managing maintenance tracks for a cluster is DescribeClusterTracks. In addition, the following API operations have new MaintenanceTrackName parameters:  Cluster,  PendingModifiedValues,  ModifyCluster,  RestoreFromClusterSnapshot,  CreateCluster,  Snapshot
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates AWS Systems Manager APIs to allow customers to attach labels to history parameter records and reference history parameter records via labels.  It also adds Parameter Store integration with AWS Secrets Manager to allow referencing and retrieving AWS Secrets Manager's secrets from Parameter Store.
+
 # __1.11.374__ __2018-07-25__
 ## __Amazon EC2 Container Service__
   - ### Features

@@ -274,6 +274,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
@@ -711,6 +712,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
      * @sample AmazonRedshift.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -2385,6 +2388,59 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns a list of all the available maintenance tracks.
+     * </p>
+     * 
+     * @param describeClusterTracksRequest
+     * @return Result of the DescribeClusterTracks operation returned by the service.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.DescribeClusterTracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeClusterTracksResult describeClusterTracks(DescribeClusterTracksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusterTracks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterTracksResult executeDescribeClusterTracks(DescribeClusterTracksRequest describeClusterTracksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClusterTracksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterTracksRequest> request = null;
+        Response<DescribeClusterTracksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterTracksRequestMarshaller().marshall(super.beforeMarshalling(describeClusterTracksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClusterTracksResult> responseHandler = new StaxResponseHandler<DescribeClusterTracksResult>(
+                    new DescribeClusterTracksResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before
      * creating any clusters to learn more about the Amazon Redshift versions. For more information about managing
      * clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -3727,7 +3783,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given
+     * DC1 reserved node.
      * </p>
      * 
      * @param getReservedNodeExchangeOfferingsRequest
@@ -3842,6 +3899,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TableLimitExceededException
      *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
@@ -4494,6 +4553,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"
      *      target="_top">AWS API Documentation</a>

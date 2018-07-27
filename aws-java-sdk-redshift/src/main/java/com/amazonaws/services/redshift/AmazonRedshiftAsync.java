@@ -1539,6 +1539,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Returns a list of all the available maintenance tracks.
+     * </p>
+     * 
+     * @param describeClusterTracksRequest
+     * @return A Java Future containing the result of the DescribeClusterTracks operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeClusterTracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterTracksResult> describeClusterTracksAsync(DescribeClusterTracksRequest describeClusterTracksRequest);
+
+    /**
+     * <p>
+     * Returns a list of all the available maintenance tracks.
+     * </p>
+     * 
+     * @param describeClusterTracksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeClusterTracks operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeClusterTracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterTracksResult> describeClusterTracksAsync(DescribeClusterTracksRequest describeClusterTracksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterTracksRequest, DescribeClusterTracksResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before
      * creating any clusters to learn more about the Amazon Redshift versions. For more information about managing
      * clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -2721,7 +2752,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given
+     * DC1 reserved node.
      * </p>
      * 
      * @param getReservedNodeExchangeOfferingsRequest
@@ -2736,7 +2768,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given
+     * DC1 reserved node.
      * </p>
      * 
      * @param getReservedNodeExchangeOfferingsRequest

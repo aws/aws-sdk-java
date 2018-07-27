@@ -1792,6 +1792,24 @@ public interface AWSSimpleSystemsManagement {
     GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest);
 
     /**
+     * @param labelParameterVersionRequest
+     * @return Result of the LabelParameterVersion operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
+     * @throws ParameterVersionLabelLimitExceededException
+     * @sample AWSSimpleSystemsManagement.LabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    LabelParameterVersionResult labelParameterVersion(LabelParameterVersionRequest labelParameterVersionRequest);
+
+    /**
      * <p>
      * Retrieves all versions of an association for a specific association ID.
      * </p>

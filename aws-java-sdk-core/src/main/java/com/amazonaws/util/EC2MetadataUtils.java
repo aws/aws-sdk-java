@@ -404,7 +404,7 @@ public class EC2MetadataUtils {
                 items = Arrays.asList(response.split("\n"));
             return items;
         } catch (AmazonClientException ace) {
-            log.warn("Unable to retrieve the requested metadata.");
+            log.warn("Unable to retrieve the requested metadata (" + path + "). " + ace.getMessage(), ace);
             return null;
         } catch (Exception e) {
             // Retry on any other exceptions

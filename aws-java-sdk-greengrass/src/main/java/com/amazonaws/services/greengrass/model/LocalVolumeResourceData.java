@@ -32,7 +32,7 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     private GroupOwnerSetting groupOwnerSetting;
     /**
      * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
-     * start with ''/proc'' or ''/sys''.
+     * start with ''/sys''.
      */
     private String sourcePath;
 
@@ -106,11 +106,11 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
 
     /**
      * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
-     * start with ''/proc'' or ''/sys''.
+     * start with ''/sys''.
      * 
      * @param sourcePath
      *        The local absolute path of the volume resource on the host. The source path for a volume resource type
-     *        cannot start with ''/proc'' or ''/sys''.
+     *        cannot start with ''/sys''.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -119,10 +119,10 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
 
     /**
      * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
-     * start with ''/proc'' or ''/sys''.
+     * start with ''/sys''.
      * 
      * @return The local absolute path of the volume resource on the host. The source path for a volume resource type
-     *         cannot start with ''/proc'' or ''/sys''.
+     *         cannot start with ''/sys''.
      */
 
     public String getSourcePath() {
@@ -131,11 +131,11 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
 
     /**
      * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
-     * start with ''/proc'' or ''/sys''.
+     * start with ''/sys''.
      * 
      * @param sourcePath
      *        The local absolute path of the volume resource on the host. The source path for a volume resource type
-     *        cannot start with ''/proc'' or ''/sys''.
+     *        cannot start with ''/sys''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

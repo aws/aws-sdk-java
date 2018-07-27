@@ -27,7 +27,7 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String clientToken;
@@ -52,7 +52,7 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
     private String totalHourlyPrice;
     /**
      * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
+     * The total amount charged to your account when you purchase the reservation.
      * </p>
      */
     private String totalUpfrontPrice;
@@ -61,13 +61,13 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
      *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -78,12 +78,12 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
      *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getClientToken() {
@@ -94,13 +94,13 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
      *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,11 +307,11 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
+     * The total amount charged to your account when you purchase the reservation.
      * </p>
      * 
      * @param totalUpfrontPrice
-     *        The total amount that will be charged to your account when you purchase the reservation.
+     *        The total amount charged to your account when you purchase the reservation.
      */
 
     public void setTotalUpfrontPrice(String totalUpfrontPrice) {
@@ -320,10 +320,10 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
+     * The total amount charged to your account when you purchase the reservation.
      * </p>
      * 
-     * @return The total amount that will be charged to your account when you purchase the reservation.
+     * @return The total amount charged to your account when you purchase the reservation.
      */
 
     public String getTotalUpfrontPrice() {
@@ -332,11 +332,11 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
+     * The total amount charged to your account when you purchase the reservation.
      * </p>
      * 
      * @param totalUpfrontPrice
-     *        The total amount that will be charged to your account when you purchase the reservation.
+     *        The total amount charged to your account when you purchase the reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

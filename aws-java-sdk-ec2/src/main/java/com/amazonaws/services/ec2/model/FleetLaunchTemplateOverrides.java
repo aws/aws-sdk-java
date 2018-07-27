@@ -56,6 +56,15 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      */
     private Double weightedCapacity;
+    /**
+     * <p>
+     * The priority for the launch template override. If <b>AllocationStrategy</b> is set to <code>prioritized</code>,
+     * EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand
+     * capacity. The highest priority is launched first. Valid values are whole numbers starting at <code>0</code>. The
+     * lower the number, the higher the priority. If no number is set, the override has the lowest priority.
+     * </p>
+     */
+    private Double priority;
 
     /**
      * <p>
@@ -277,6 +286,67 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The priority for the launch template override. If <b>AllocationStrategy</b> is set to <code>prioritized</code>,
+     * EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand
+     * capacity. The highest priority is launched first. Valid values are whole numbers starting at <code>0</code>. The
+     * lower the number, the higher the priority. If no number is set, the override has the lowest priority.
+     * </p>
+     * 
+     * @param priority
+     *        The priority for the launch template override. If <b>AllocationStrategy</b> is set to
+     *        <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use first
+     *        in fulfilling On-Demand capacity. The highest priority is launched first. Valid values are whole numbers
+     *        starting at <code>0</code>. The lower the number, the higher the priority. If no number is set, the
+     *        override has the lowest priority.
+     */
+
+    public void setPriority(Double priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * The priority for the launch template override. If <b>AllocationStrategy</b> is set to <code>prioritized</code>,
+     * EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand
+     * capacity. The highest priority is launched first. Valid values are whole numbers starting at <code>0</code>. The
+     * lower the number, the higher the priority. If no number is set, the override has the lowest priority.
+     * </p>
+     * 
+     * @return The priority for the launch template override. If <b>AllocationStrategy</b> is set to
+     *         <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use
+     *         first in fulfilling On-Demand capacity. The highest priority is launched first. Valid values are whole
+     *         numbers starting at <code>0</code>. The lower the number, the higher the priority. If no number is set,
+     *         the override has the lowest priority.
+     */
+
+    public Double getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * The priority for the launch template override. If <b>AllocationStrategy</b> is set to <code>prioritized</code>,
+     * EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand
+     * capacity. The highest priority is launched first. Valid values are whole numbers starting at <code>0</code>. The
+     * lower the number, the higher the priority. If no number is set, the override has the lowest priority.
+     * </p>
+     * 
+     * @param priority
+     *        The priority for the launch template override. If <b>AllocationStrategy</b> is set to
+     *        <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use first
+     *        in fulfilling On-Demand capacity. The highest priority is launched first. Valid values are whole numbers
+     *        starting at <code>0</code>. The lower the number, the higher the priority. If no number is set, the
+     *        override has the lowest priority.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetLaunchTemplateOverrides withPriority(Double priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -296,7 +366,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getWeightedCapacity() != null)
-            sb.append("WeightedCapacity: ").append(getWeightedCapacity());
+            sb.append("WeightedCapacity: ").append(getWeightedCapacity()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +403,10 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
             return false;
         if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         return true;
     }
 
@@ -344,6 +420,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         return hashCode;
     }
 

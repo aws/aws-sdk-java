@@ -512,6 +512,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeClusterTracksResult> describeClusterTracksAsync(DescribeClusterTracksRequest request) {
+
+        return describeClusterTracksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterTracksResult> describeClusterTracksAsync(DescribeClusterTracksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterTracksRequest, DescribeClusterTracksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterVersionsResult> describeClusterVersionsAsync(DescribeClusterVersionsRequest request) {
 
         return describeClusterVersionsAsync(request, null);

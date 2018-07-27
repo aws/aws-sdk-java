@@ -931,6 +931,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest request) {
+
+        return labelParameterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<LabelParameterVersionRequest, LabelParameterVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssociationVersionsResult> listAssociationVersionsAsync(ListAssociationVersionsRequest request) {
 
         return listAssociationVersionsAsync(request, null);

@@ -33,7 +33,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -60,8 +60,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      */
     private Integer maxResults;
@@ -79,7 +79,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -100,7 +100,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *         <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -131,7 +131,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -153,7 +153,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -186,7 +186,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -213,7 +213,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -248,7 +248,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -270,7 +270,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -369,14 +369,14 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *        5 and 500.If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -386,13 +386,13 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @return The maximum number of results to return for the request in a single page. The remaining results can be
      *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *         5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *         5 and 500.If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public Integer getMaxResults() {
@@ -402,14 +402,14 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *        5 and 500.If <code>maxResults</code> is given a larger value than 500, you receive an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

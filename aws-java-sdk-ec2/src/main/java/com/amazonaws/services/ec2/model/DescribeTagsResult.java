@@ -28,7 +28,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      */
     private String nextToken;
@@ -42,12 +42,12 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      * 
      * @param nextToken
      *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return..
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -57,11 +57,11 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      * 
      * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return..
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -71,12 +71,12 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      * 
      * @param nextToken
      *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return..
+     *        more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

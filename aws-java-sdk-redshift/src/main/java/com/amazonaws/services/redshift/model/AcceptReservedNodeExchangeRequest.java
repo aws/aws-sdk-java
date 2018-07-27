@@ -27,24 +27,25 @@ public class AcceptReservedNodeExchangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string representing the identifier of the Reserved Node to be exchanged.
+     * A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      * </p>
      */
     private String reservedNodeId;
     /**
      * <p>
-     * The unique identifier of the Reserved Node offering to be used for the exchange.
+     * The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for
+     * the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      * </p>
      */
     private String targetReservedNodeOfferingId;
 
     /**
      * <p>
-     * A string representing the identifier of the Reserved Node to be exchanged.
+     * A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      * </p>
      * 
      * @param reservedNodeId
-     *        A string representing the identifier of the Reserved Node to be exchanged.
+     *        A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      */
 
     public void setReservedNodeId(String reservedNodeId) {
@@ -53,10 +54,10 @@ public class AcceptReservedNodeExchangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string representing the identifier of the Reserved Node to be exchanged.
+     * A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      * </p>
      * 
-     * @return A string representing the identifier of the Reserved Node to be exchanged.
+     * @return A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      */
 
     public String getReservedNodeId() {
@@ -65,11 +66,11 @@ public class AcceptReservedNodeExchangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string representing the identifier of the Reserved Node to be exchanged.
+     * A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      * </p>
      * 
      * @param reservedNodeId
-     *        A string representing the identifier of the Reserved Node to be exchanged.
+     *        A string representing the node identifier of the DC1 Reserved Node to be exchanged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +81,13 @@ public class AcceptReservedNodeExchangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique identifier of the Reserved Node offering to be used for the exchange.
+     * The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for
+     * the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      * </p>
      * 
      * @param targetReservedNodeOfferingId
-     *        The unique identifier of the Reserved Node offering to be used for the exchange.
+     *        The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the
+     *        value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      */
 
     public void setTargetReservedNodeOfferingId(String targetReservedNodeOfferingId) {
@@ -93,10 +96,12 @@ public class AcceptReservedNodeExchangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique identifier of the Reserved Node offering to be used for the exchange.
+     * The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for
+     * the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      * </p>
      * 
-     * @return The unique identifier of the Reserved Node offering to be used for the exchange.
+     * @return The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the
+     *         value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      */
 
     public String getTargetReservedNodeOfferingId() {
@@ -105,11 +110,13 @@ public class AcceptReservedNodeExchangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique identifier of the Reserved Node offering to be used for the exchange.
+     * The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for
+     * the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      * </p>
      * 
      * @param targetReservedNodeOfferingId
-     *        The unique identifier of the Reserved Node offering to be used for the exchange.
+     *        The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the
+     *        value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

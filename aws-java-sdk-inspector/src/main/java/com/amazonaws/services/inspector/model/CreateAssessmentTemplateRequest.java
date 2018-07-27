@@ -41,7 +41,7 @@ public class CreateAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
     private String assessmentTemplateName;
     /**
      * <p>
-     * The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     * The duration of the assessment run in seconds.
      * </p>
      */
     private Integer durationInSeconds;
@@ -154,11 +154,11 @@ public class CreateAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     * The duration of the assessment run in seconds.
      * </p>
      * 
      * @param durationInSeconds
-     *        The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     *        The duration of the assessment run in seconds.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -167,10 +167,10 @@ public class CreateAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     * The duration of the assessment run in seconds.
      * </p>
      * 
-     * @return The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     * @return The duration of the assessment run in seconds.
      */
 
     public Integer getDurationInSeconds() {
@@ -179,11 +179,11 @@ public class CreateAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     * The duration of the assessment run in seconds.
      * </p>
      * 
      * @param durationInSeconds
-     *        The duration of the assessment run in seconds. The default value is 3600 seconds (one hour).
+     *        The duration of the assessment run in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

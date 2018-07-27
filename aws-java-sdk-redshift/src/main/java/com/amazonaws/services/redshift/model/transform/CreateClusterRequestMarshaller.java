@@ -192,6 +192,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             }
         }
 
+        if (createClusterRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(createClusterRequest.getMaintenanceTrackName()));
+        }
+
         return request;
     }
 

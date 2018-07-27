@@ -209,6 +209,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public DescribeClusterTracksResult describeClusterTracks(DescribeClusterTracksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeClusterVersionsResult describeClusterVersions(DescribeClusterVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -45,8 +45,8 @@ public class Host implements Serializable, Cloneable {
     private AvailableCapacity availableCapacity;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -256,15 +256,16 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -273,14 +274,15 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getClientToken() {
@@ -289,15 +291,16 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information,
+     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

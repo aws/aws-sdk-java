@@ -28,7 +28,7 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
@@ -41,10 +41,10 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
      * </p>
      * 
-     * @return The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * @return The IDs of the Dedicated Hosts with which the reservation is associated.
      */
 
     public java.util.List<String> getHostIdSet() {
@@ -56,11 +56,11 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
      * </p>
      * 
      * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     *        The IDs of the Dedicated Hosts with which the reservation is associated.
      */
 
     public void setHostIdSet(java.util.Collection<String> hostIdSet) {
@@ -74,7 +74,7 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
      * </p>
      * 
      * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     *        The IDs of the Dedicated Hosts with which the reservation is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
      * </p>
      * 
      * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     *        The IDs of the Dedicated Hosts with which the reservation is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,6 +68,8 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKINTERFACE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterface").build();
+    private static final MarshallingInfo<String> ENCRYPTIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionKey").build();
 
     private static final BuildMarshaller instance = new BuildMarshaller();
 
@@ -105,6 +107,7 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getInitiator(), INITIATOR_BINDING);
             protocolMarshaller.marshall(build.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(build.getNetworkInterface(), NETWORKINTERFACE_BINDING);
+            protocolMarshaller.marshall(build.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

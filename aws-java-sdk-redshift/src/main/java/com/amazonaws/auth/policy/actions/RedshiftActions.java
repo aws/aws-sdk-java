@@ -85,6 +85,8 @@ public enum RedshiftActions implements Action {
     DescribeClusterSnapshots("redshift:DescribeClusterSnapshots"),
     /** Action for the DescribeClusterSubnetGroups operation. */
     DescribeClusterSubnetGroups("redshift:DescribeClusterSubnetGroups"),
+    /** Action for the DescribeClusterTracks operation. */
+    DescribeClusterTracks("redshift:DescribeClusterTracks"),
     /** Action for the DescribeClusterVersions operation. */
     DescribeClusterVersions("redshift:DescribeClusterVersions"),
     /** Action for the DescribeClusters operation. */

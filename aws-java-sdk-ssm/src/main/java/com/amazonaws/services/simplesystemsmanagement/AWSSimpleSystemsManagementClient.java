@@ -293,6 +293,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("ParameterNotFound").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterVersionLabelLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionLabelLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentPermissionLimit").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
                     .addErrorMetadata(
@@ -4720,6 +4723,61 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<GetPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetPatchBaselineForPatchGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param labelParameterVersionRequest
+     * @return Result of the LabelParameterVersion operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
+     * @throws ParameterVersionLabelLimitExceededException
+     * @sample AWSSimpleSystemsManagement.LabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public LabelParameterVersionResult labelParameterVersion(LabelParameterVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeLabelParameterVersion(request);
+    }
+
+    @SdkInternalApi
+    final LabelParameterVersionResult executeLabelParameterVersion(LabelParameterVersionRequest labelParameterVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(labelParameterVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<LabelParameterVersionRequest> request = null;
+        Response<LabelParameterVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new LabelParameterVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(labelParameterVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<LabelParameterVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new LabelParameterVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

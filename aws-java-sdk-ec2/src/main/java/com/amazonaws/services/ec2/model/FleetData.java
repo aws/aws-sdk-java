@@ -144,6 +144,12 @@ public class FleetData implements Serializable, Cloneable {
     private SpotOptions spotOptions;
     /**
      * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     */
+    private OnDemandOptions onDemandOptions;
+    /**
+     * <p>
      * The tags for an EC2 Fleet resource.
      * </p>
      */
@@ -1065,6 +1071,46 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     * 
+     * @param onDemandOptions
+     *        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     */
+
+    public void setOnDemandOptions(OnDemandOptions onDemandOptions) {
+        this.onDemandOptions = onDemandOptions;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     * 
+     * @return The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     */
+
+    public OnDemandOptions getOnDemandOptions() {
+        return this.onDemandOptions;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     * 
+     * @param onDemandOptions
+     *        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetData withOnDemandOptions(OnDemandOptions onDemandOptions) {
+        setOnDemandOptions(onDemandOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags for an EC2 Fleet resource.
      * </p>
      * 
@@ -1179,6 +1225,8 @@ public class FleetData implements Serializable, Cloneable {
             sb.append("ReplaceUnhealthyInstances: ").append(getReplaceUnhealthyInstances()).append(",");
         if (getSpotOptions() != null)
             sb.append("SpotOptions: ").append(getSpotOptions()).append(",");
+        if (getOnDemandOptions() != null)
+            sb.append("OnDemandOptions: ").append(getOnDemandOptions()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1261,6 +1309,10 @@ public class FleetData implements Serializable, Cloneable {
             return false;
         if (other.getSpotOptions() != null && other.getSpotOptions().equals(this.getSpotOptions()) == false)
             return false;
+        if (other.getOnDemandOptions() == null ^ this.getOnDemandOptions() == null)
+            return false;
+        if (other.getOnDemandOptions() != null && other.getOnDemandOptions().equals(this.getOnDemandOptions()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1289,6 +1341,7 @@ public class FleetData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
         hashCode = prime * hashCode + ((getReplaceUnhealthyInstances() == null) ? 0 : getReplaceUnhealthyInstances().hashCode());
         hashCode = prime * hashCode + ((getSpotOptions() == null) ? 0 : getSpotOptions().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandOptions() == null) ? 0 : getOnDemandOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

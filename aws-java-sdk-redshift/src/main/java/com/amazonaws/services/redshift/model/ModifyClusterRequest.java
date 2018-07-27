@@ -341,6 +341,15 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean enhancedVpcRouting;
+    /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     */
+    private String maintenanceTrackName;
 
     /**
      * <p>
@@ -2439,6 +2448,65 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name for the maintenance track that you want to assign for the cluster. This name change is
+     *        asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the
+     *        next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster
+     *        release available for the maintenance track. At this point, the maintenance track name is applied.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     * 
+     * @return The name for the maintenance track that you want to assign for the cluster. This name change is
+     *         asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until
+     *         the next maintenance window. When the maintenance track changes, the cluster is switched to the latest
+     *         cluster release available for the maintenance track. At this point, the maintenance track name is
+     *         applied.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name for the maintenance track that you want to assign for the cluster. This name change is
+     *        asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the
+     *        next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster
+     *        release available for the maintenance track. At this point, the maintenance track name is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2484,7 +2552,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getElasticIp() != null)
             sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting());
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
         sb.append("}");
         return sb.toString();
     }
@@ -2573,6 +2643,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
         return true;
     }
 
@@ -2599,6 +2673,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         return hashCode;
     }
 

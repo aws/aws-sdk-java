@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class ParameterHistoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedPattern").build();
     private static final MarshallingInfo<Long> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
+    private static final MarshallingInfo<List> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Labels").build();
 
     private static final ParameterHistoryMarshaller instance = new ParameterHistoryMarshaller();
 
@@ -71,6 +74,7 @@ public class ParameterHistoryMarshaller {
             protocolMarshaller.marshall(parameterHistory.getValue(), VALUE_BINDING);
             protocolMarshaller.marshall(parameterHistory.getAllowedPattern(), ALLOWEDPATTERN_BINDING);
             protocolMarshaller.marshall(parameterHistory.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(parameterHistory.getLabels(), LABELS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

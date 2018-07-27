@@ -64,6 +64,22 @@ public class ParameterJsonUnmarshaller implements Unmarshaller<Parameter, JsonUn
                     context.nextToken();
                     parameter.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("Selector", targetDepth)) {
+                    context.nextToken();
+                    parameter.setSelector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceResult", targetDepth)) {
+                    context.nextToken();
+                    parameter.setSourceResult(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    context.nextToken();
+                    parameter.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ARN", targetDepth)) {
+                    context.nextToken();
+                    parameter.setARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

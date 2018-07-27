@@ -33,7 +33,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -47,17 +47,17 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
      * </p>
      */
     private Integer maxDuration;
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      */
     private Integer maxResults;
@@ -89,7 +89,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -104,7 +104,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     *         <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -129,7 +129,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -145,7 +145,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -172,7 +172,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -193,7 +193,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -222,7 +222,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -238,7 +238,7 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -257,16 +257,16 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
      * </p>
      * 
      * @param maxDuration
-     *        This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations
-     *        are available in one-year and three-year terms. The number of seconds specified must be the number of
-     *        seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify
-     *        94608000 for three years.
+     *        This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are
+     *        available in one-year and three-year terms. The number of seconds specified must be the number of seconds
+     *        in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for
+     *        three years.
      */
 
     public void setMaxDuration(Integer maxDuration) {
@@ -275,15 +275,15 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
      * </p>
      * 
-     * @return This is the maximum duration of the reservation you'd like to purchase, specified in seconds.
-     *         Reservations are available in one-year and three-year terms. The number of seconds specified must be the
-     *         number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example,
-     *         specify 94608000 for three years.
+     * @return This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are
+     *         available in one-year and three-year terms. The number of seconds specified must be the number of seconds
+     *         in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for
+     *         three years.
      */
 
     public Integer getMaxDuration() {
@@ -292,16 +292,16 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
      * </p>
      * 
      * @param maxDuration
-     *        This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations
-     *        are available in one-year and three-year terms. The number of seconds specified must be the number of
-     *        seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify
-     *        94608000 for three years.
+     *        This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are
+     *        available in one-year and three-year terms. The number of seconds specified must be the number of seconds
+     *        in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for
+     *        three years.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,14 +313,14 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -330,13 +330,13 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @return The maximum number of results to return for the request in a single page. The remaining results can be
      *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *         5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *         5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public Integer getMaxResults() {
@@ -346,14 +346,14 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -62,6 +62,12 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String md5sum;
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    private Boolean encryptionDisabled;
 
     /**
      * <p>
@@ -280,6 +286,58 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @param encryptionDisabled
+     *        Information that tells you if encryption for build artifacts is disabled.
+     */
+
+    public void setEncryptionDisabled(Boolean encryptionDisabled) {
+        this.encryptionDisabled = encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @return Information that tells you if encryption for build artifacts is disabled.
+     */
+
+    public Boolean getEncryptionDisabled() {
+        return this.encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @param encryptionDisabled
+     *        Information that tells you if encryption for build artifacts is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BuildArtifacts withEncryptionDisabled(Boolean encryptionDisabled) {
+        setEncryptionDisabled(encryptionDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @return Information that tells you if encryption for build artifacts is disabled.
+     */
+
+    public Boolean isEncryptionDisabled() {
+        return this.encryptionDisabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -295,7 +353,9 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
         if (getSha256sum() != null)
             sb.append("Sha256sum: ").append(getSha256sum()).append(",");
         if (getMd5sum() != null)
-            sb.append("Md5sum: ").append(getMd5sum());
+            sb.append("Md5sum: ").append(getMd5sum()).append(",");
+        if (getEncryptionDisabled() != null)
+            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled());
         sb.append("}");
         return sb.toString();
     }
@@ -322,6 +382,10 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMd5sum() != null && other.getMd5sum().equals(this.getMd5sum()) == false)
             return false;
+        if (other.getEncryptionDisabled() == null ^ this.getEncryptionDisabled() == null)
+            return false;
+        if (other.getEncryptionDisabled() != null && other.getEncryptionDisabled().equals(this.getEncryptionDisabled()) == false)
+            return false;
         return true;
     }
 
@@ -333,6 +397,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getSha256sum() == null) ? 0 : getSha256sum().hashCode());
         hashCode = prime * hashCode + ((getMd5sum() == null) ? 0 : getMd5sum().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
         return hashCode;
     }
 

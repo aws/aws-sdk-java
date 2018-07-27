@@ -39,6 +39,14 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * </p>
      */
     private String instanceInterruptionBehavior;
+    /**
+     * <p>
+     * The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and
+     * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     * </p>
+     */
+    private Integer instancePoolsToUseCount;
 
     /**
      * <p>
@@ -167,6 +175,58 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and
+     * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     * </p>
+     * 
+     * @param instancePoolsToUseCount
+     *        The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     *        <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools
+     *        and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     */
+
+    public void setInstancePoolsToUseCount(Integer instancePoolsToUseCount) {
+        this.instancePoolsToUseCount = instancePoolsToUseCount;
+    }
+
+    /**
+     * <p>
+     * The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and
+     * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     * </p>
+     * 
+     * @return The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     *         <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools
+     *         and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     */
+
+    public Integer getInstancePoolsToUseCount() {
+        return this.instancePoolsToUseCount;
+    }
+
+    /**
+     * <p>
+     * The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools and
+     * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     * </p>
+     * 
+     * @param instancePoolsToUseCount
+     *        The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
+     *        <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet selects the cheapest Spot pools
+     *        and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotOptionsRequest withInstancePoolsToUseCount(Integer instancePoolsToUseCount) {
+        setInstancePoolsToUseCount(instancePoolsToUseCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -180,7 +240,9 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
         if (getAllocationStrategy() != null)
             sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
         if (getInstanceInterruptionBehavior() != null)
-            sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior());
+            sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior()).append(",");
+        if (getInstancePoolsToUseCount() != null)
+            sb.append("InstancePoolsToUseCount: ").append(getInstancePoolsToUseCount());
         sb.append("}");
         return sb.toString();
     }
@@ -203,6 +265,10 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
             return false;
         if (other.getInstanceInterruptionBehavior() != null && other.getInstanceInterruptionBehavior().equals(this.getInstanceInterruptionBehavior()) == false)
             return false;
+        if (other.getInstancePoolsToUseCount() == null ^ this.getInstancePoolsToUseCount() == null)
+            return false;
+        if (other.getInstancePoolsToUseCount() != null && other.getInstancePoolsToUseCount().equals(this.getInstancePoolsToUseCount()) == false)
+            return false;
         return true;
     }
 
@@ -213,6 +279,7 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
+        hashCode = prime * hashCode + ((getInstancePoolsToUseCount() == null) ? 0 : getInstancePoolsToUseCount().hashCode());
         return hashCode;
     }
 

@@ -314,6 +314,8 @@ public interface AmazonRedshift {
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
      * @sample AmazonRedshift.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1070,6 +1072,23 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns a list of all the available maintenance tracks.
+     * </p>
+     * 
+     * @param describeClusterTracksRequest
+     * @return Result of the DescribeClusterTracks operation returned by the service.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.DescribeClusterTracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeClusterTracksResult describeClusterTracks(DescribeClusterTracksRequest describeClusterTracksRequest);
+
+    /**
+     * <p>
      * Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before
      * creating any clusters to learn more about the Amazon Redshift versions. For more information about managing
      * clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -1685,7 +1704,8 @@ public interface AmazonRedshift {
 
     /**
      * <p>
-     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given
+     * DC1 reserved node.
      * </p>
      * 
      * @param getReservedNodeExchangeOfferingsRequest
@@ -1763,6 +1783,8 @@ public interface AmazonRedshift {
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TableLimitExceededException
      *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
@@ -2063,6 +2085,8 @@ public interface AmazonRedshift {
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"
      *      target="_top">AWS API Documentation</a>

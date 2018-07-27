@@ -33,7 +33,7 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
     private String currencyCode;
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Purchase> purchase;
@@ -135,10 +135,10 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * </p>
      * 
-     * @return The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * @return The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      */
 
     public java.util.List<Purchase> getPurchase() {
@@ -150,11 +150,11 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * </p>
      * 
      * @param purchase
-     *        The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     *        The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      */
 
     public void setPurchase(java.util.Collection<Purchase> purchase) {
@@ -168,7 +168,7 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -177,7 +177,7 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param purchase
-     *        The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     *        The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     * The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * </p>
      * 
      * @param purchase
-     *        The purchase information of the Dedicated Host Reservation and the Dedicated Hosts associated with it.
+     *        The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

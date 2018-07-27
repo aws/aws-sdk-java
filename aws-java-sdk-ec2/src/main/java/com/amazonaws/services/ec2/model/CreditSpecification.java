@@ -28,18 +28,21 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance.
+     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>.
      * </p>
      */
     private String cpuCredits;
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance.
+     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2 instance.
+     *        The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     *        <code>unlimited</code>.
      */
 
     public void setCpuCredits(String cpuCredits) {
@@ -48,10 +51,12 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance.
+     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>.
      * </p>
      * 
-     * @return The credit option for CPU usage of a T2 instance.
+     * @return The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     *         <code>unlimited</code>.
      */
 
     public String getCpuCredits() {
@@ -60,11 +65,13 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance.
+     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2 instance.
+     *        The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     *        <code>unlimited</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

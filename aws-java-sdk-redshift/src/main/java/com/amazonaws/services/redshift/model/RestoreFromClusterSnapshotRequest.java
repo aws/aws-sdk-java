@@ -301,6 +301,16 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> iamRoles;
+    /**
+     * <p>
+     * The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the
+     * <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster
+     * that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the
+     * current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source
+     * cluster are on different tracks.
+     * </p>
+     */
+    private String maintenanceTrackName;
 
     /**
      * <p>
@@ -2195,6 +2205,70 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the
+     * <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster
+     * that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the
+     * current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source
+     * cluster are on different tracks.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot
+     *        inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different
+     *        track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot
+     *        of a cluster that is on the current track and then change the cluster to be on the trailing track. In this
+     *        case, the snapshot and the source cluster are on different tracks.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the
+     * <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster
+     * that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the
+     * current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source
+     * cluster are on different tracks.
+     * </p>
+     * 
+     * @return The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot
+     *         inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different
+     *         track than the cluster that was the source for the snapshot. For example, suppose that you take a
+     *         snapshot of a cluster that is on the current track and then change the cluster to be on the trailing
+     *         track. In this case, the snapshot and the source cluster are on different tracks.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the
+     * <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster
+     * that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the
+     * current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source
+     * cluster are on different tracks.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot
+     *        inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different
+     *        track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot
+     *        of a cluster that is on the current track and then change the cluster to be on the trailing track. In this
+     *        case, the snapshot and the source cluster are on different tracks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2248,7 +2322,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         if (getAdditionalInfo() != null)
             sb.append("AdditionalInfo: ").append(getAdditionalInfo()).append(",");
         if (getIamRoles() != null)
-            sb.append("IamRoles: ").append(getIamRoles());
+            sb.append("IamRoles: ").append(getIamRoles()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
         sb.append("}");
         return sb.toString();
     }
@@ -2353,6 +2429,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getIamRoles() != null && other.getIamRoles().equals(this.getIamRoles()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
         return true;
     }
 
@@ -2383,6 +2463,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         return hashCode;
     }
 

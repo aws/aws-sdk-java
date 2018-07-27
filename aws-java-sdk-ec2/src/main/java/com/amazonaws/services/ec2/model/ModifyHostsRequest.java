@@ -35,7 +35,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     private String autoPlacement;
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
+     * The IDs of the Dedicated Hosts to modify.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIds;
@@ -115,10 +115,10 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
+     * The IDs of the Dedicated Hosts to modify.
      * </p>
      * 
-     * @return The host IDs of the Dedicated Hosts you want to modify.
+     * @return The IDs of the Dedicated Hosts to modify.
      */
 
     public java.util.List<String> getHostIds() {
@@ -130,11 +130,11 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
+     * The IDs of the Dedicated Hosts to modify.
      * </p>
      * 
      * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
+     *        The IDs of the Dedicated Hosts to modify.
      */
 
     public void setHostIds(java.util.Collection<String> hostIds) {
@@ -148,7 +148,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
+     * The IDs of the Dedicated Hosts to modify.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -157,7 +157,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
+     *        The IDs of the Dedicated Hosts to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +173,11 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
+     * The IDs of the Dedicated Hosts to modify.
      * </p>
      * 
      * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
+     *        The IDs of the Dedicated Hosts to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

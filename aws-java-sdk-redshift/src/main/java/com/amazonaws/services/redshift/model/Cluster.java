@@ -343,6 +343,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> pendingActions;
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     */
+    private String maintenanceTrackName;
 
     /**
      * <p>
@@ -2693,6 +2699,46 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the cluster.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     * 
+     * @return The name of the maintenance track for the cluster.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2770,7 +2816,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getIamRoles() != null)
             sb.append("IamRoles: ").append(getIamRoles()).append(",");
         if (getPendingActions() != null)
-            sb.append("PendingActions: ").append(getPendingActions());
+            sb.append("PendingActions: ").append(getPendingActions()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
         sb.append("}");
         return sb.toString();
     }
@@ -2922,6 +2970,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getPendingActions() != null && other.getPendingActions().equals(this.getPendingActions()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
         return true;
     }
 
@@ -2964,6 +3016,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getPendingActions() == null) ? 0 : getPendingActions().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         return hashCode;
     }
 

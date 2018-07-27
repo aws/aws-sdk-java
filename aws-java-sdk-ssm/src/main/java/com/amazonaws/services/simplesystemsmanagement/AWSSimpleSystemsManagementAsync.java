@@ -2476,6 +2476,29 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
             com.amazonaws.handlers.AsyncHandler<GetPatchBaselineForPatchGroupRequest, GetPatchBaselineForPatchGroupResult> asyncHandler);
 
     /**
+     * @param labelParameterVersionRequest
+     * @return A Java Future containing the result of the LabelParameterVersion operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.LabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest labelParameterVersionRequest);
+
+    /**
+     * @param labelParameterVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the LabelParameterVersion operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.LabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest labelParameterVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<LabelParameterVersionRequest, LabelParameterVersionResult> asyncHandler);
+
+    /**
      * <p>
      * Retrieves all versions of an association for a specific association ID.
      * </p>

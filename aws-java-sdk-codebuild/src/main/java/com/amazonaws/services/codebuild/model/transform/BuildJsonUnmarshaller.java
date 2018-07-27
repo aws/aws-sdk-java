@@ -128,6 +128,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setNetworkInterface(NetworkInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("encryptionKey", targetDepth)) {
+                    context.nextToken();
+                    build.setEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

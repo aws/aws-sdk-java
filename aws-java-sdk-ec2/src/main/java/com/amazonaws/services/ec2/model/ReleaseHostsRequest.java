@@ -29,17 +29,17 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the Dedicated Hosts you want to release.
+     * The IDs of the Dedicated Hosts to release.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIds;
 
     /**
      * <p>
-     * The IDs of the Dedicated Hosts you want to release.
+     * The IDs of the Dedicated Hosts to release.
      * </p>
      * 
-     * @return The IDs of the Dedicated Hosts you want to release.
+     * @return The IDs of the Dedicated Hosts to release.
      */
 
     public java.util.List<String> getHostIds() {
@@ -51,11 +51,11 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the Dedicated Hosts you want to release.
+     * The IDs of the Dedicated Hosts to release.
      * </p>
      * 
      * @param hostIds
-     *        The IDs of the Dedicated Hosts you want to release.
+     *        The IDs of the Dedicated Hosts to release.
      */
 
     public void setHostIds(java.util.Collection<String> hostIds) {
@@ -69,7 +69,7 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the Dedicated Hosts you want to release.
+     * The IDs of the Dedicated Hosts to release.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param hostIds
-     *        The IDs of the Dedicated Hosts you want to release.
+     *        The IDs of the Dedicated Hosts to release.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the Dedicated Hosts you want to release.
+     * The IDs of the Dedicated Hosts to release.
      * </p>
      * 
      * @param hostIds
-     *        The IDs of the Dedicated Hosts you want to release.
+     *        The IDs of the Dedicated Hosts to release.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

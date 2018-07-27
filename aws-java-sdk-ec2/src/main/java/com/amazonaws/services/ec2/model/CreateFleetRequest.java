@@ -35,11 +35,16 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private String clientToken;
     /**
      * <p>
-     * Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside this
-     * structure.
+     * Describes the configuration of Spot Instances in an EC2 Fleet.
      * </p>
      */
     private SpotOptionsRequest spotOptions;
+    /**
+     * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     */
+    private OnDemandOptionsRequest onDemandOptions;
     /**
      * <p>
      * Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
@@ -168,13 +173,11 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside this
-     * structure.
+     * Describes the configuration of Spot Instances in an EC2 Fleet.
      * </p>
      * 
      * @param spotOptions
-     *        Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside this
-     *        structure.
+     *        Describes the configuration of Spot Instances in an EC2 Fleet.
      */
 
     public void setSpotOptions(SpotOptionsRequest spotOptions) {
@@ -183,12 +186,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside this
-     * structure.
+     * Describes the configuration of Spot Instances in an EC2 Fleet.
      * </p>
      * 
-     * @return Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside
-     *         this structure.
+     * @return Describes the configuration of Spot Instances in an EC2 Fleet.
      */
 
     public SpotOptionsRequest getSpotOptions() {
@@ -197,18 +198,56 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside this
-     * structure.
+     * Describes the configuration of Spot Instances in an EC2 Fleet.
      * </p>
      * 
      * @param spotOptions
-     *        Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code> inside this
-     *        structure.
+     *        Describes the configuration of Spot Instances in an EC2 Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withSpotOptions(SpotOptionsRequest spotOptions) {
         setSpotOptions(spotOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     * 
+     * @param onDemandOptions
+     *        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     */
+
+    public void setOnDemandOptions(OnDemandOptionsRequest onDemandOptions) {
+        this.onDemandOptions = onDemandOptions;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     * 
+     * @return The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     */
+
+    public OnDemandOptionsRequest getOnDemandOptions() {
+        return this.onDemandOptions;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * </p>
+     * 
+     * @param onDemandOptions
+     *        The allocation strategy of On-Demand Instances in an EC2 Fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withOnDemandOptions(OnDemandOptionsRequest onDemandOptions) {
+        setOnDemandOptions(onDemandOptions);
         return this;
     }
 
@@ -848,6 +887,8 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSpotOptions() != null)
             sb.append("SpotOptions: ").append(getSpotOptions()).append(",");
+        if (getOnDemandOptions() != null)
+            sb.append("OnDemandOptions: ").append(getOnDemandOptions()).append(",");
         if (getExcessCapacityTerminationPolicy() != null)
             sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy()).append(",");
         if (getLaunchTemplateConfigs() != null)
@@ -887,6 +928,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
         if (other.getSpotOptions() == null ^ this.getSpotOptions() == null)
             return false;
         if (other.getSpotOptions() != null && other.getSpotOptions().equals(this.getSpotOptions()) == false)
+            return false;
+        if (other.getOnDemandOptions() == null ^ this.getOnDemandOptions() == null)
+            return false;
+        if (other.getOnDemandOptions() != null && other.getOnDemandOptions().equals(this.getOnDemandOptions()) == false)
             return false;
         if (other.getExcessCapacityTerminationPolicy() == null ^ this.getExcessCapacityTerminationPolicy() == null)
             return false;
@@ -936,6 +981,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSpotOptions() == null) ? 0 : getSpotOptions().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandOptions() == null) ? 0 : getOnDemandOptions().hashCode());
         hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplateConfigs() == null) ? 0 : getLaunchTemplateConfigs().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacitySpecification() == null) ? 0 : getTargetCapacitySpecification().hashCode());

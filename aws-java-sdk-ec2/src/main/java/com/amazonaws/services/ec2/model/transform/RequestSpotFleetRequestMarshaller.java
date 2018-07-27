@@ -47,6 +47,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                 request.addParameter("SpotFleetRequestConfig.AllocationStrategy", StringUtils.fromString(spotFleetRequestConfig.getAllocationStrategy()));
             }
 
+            if (spotFleetRequestConfig.getOnDemandAllocationStrategy() != null) {
+                request.addParameter("SpotFleetRequestConfig.OnDemandAllocationStrategy",
+                        StringUtils.fromString(spotFleetRequestConfig.getOnDemandAllocationStrategy()));
+            }
+
             if (spotFleetRequestConfig.getClientToken() != null) {
                 request.addParameter("SpotFleetRequestConfig.ClientToken", StringUtils.fromString(spotFleetRequestConfig.getClientToken()));
             }
@@ -497,6 +502,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         + overridesListIndex + ".WeightedCapacity",
                                         StringUtils.fromDouble(launchTemplateConfigOverridesListValue.getWeightedCapacity()));
                             }
+
+                            if (launchTemplateConfigOverridesListValue.getPriority() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides."
+                                        + overridesListIndex + ".Priority", StringUtils.fromDouble(launchTemplateConfigOverridesListValue.getPriority()));
+                            }
                             overridesListIndex++;
                         }
                     }
@@ -585,6 +595,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                         }
                     }
                 }
+            }
+
+            if (spotFleetRequestConfig.getInstancePoolsToUseCount() != null) {
+                request.addParameter("SpotFleetRequestConfig.InstancePoolsToUseCount",
+                        StringUtils.fromInteger(spotFleetRequestConfig.getInstancePoolsToUseCount()));
             }
         }
 

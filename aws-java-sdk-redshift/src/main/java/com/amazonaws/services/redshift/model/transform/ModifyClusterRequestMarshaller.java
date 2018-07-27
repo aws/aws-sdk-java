@@ -134,6 +134,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("EnhancedVpcRouting", StringUtils.fromBoolean(modifyClusterRequest.getEnhancedVpcRouting()));
         }
 
+        if (modifyClusterRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(modifyClusterRequest.getMaintenanceTrackName()));
+        }
+
         return request;
     }
 

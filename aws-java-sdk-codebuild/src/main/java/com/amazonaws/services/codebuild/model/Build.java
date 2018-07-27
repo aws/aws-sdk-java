@@ -203,6 +203,17 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkInterface networkInterface;
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
+     * </p>
+     * <p>
+     * This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     */
+    private String encryptionKey;
 
     /**
      * <p>
@@ -1535,6 +1546,73 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
+     * </p>
+     * <p>
+     * This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     * 
+     * @param encryptionKey
+     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
+     *        output artifacts.</p>
+     *        <p>
+     *        This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
+     */
+
+    public void setEncryptionKey(String encryptionKey) {
+        this.encryptionKey = encryptionKey;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
+     * </p>
+     * <p>
+     * This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     * 
+     * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
+     *         output artifacts.</p>
+     *         <p>
+     *         This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     *         the format <code>alias/<i>alias-name</i> </code>).
+     */
+
+    public String getEncryptionKey() {
+        return this.encryptionKey;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
+     * </p>
+     * <p>
+     * This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     * 
+     * @param encryptionKey
+     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
+     *        output artifacts.</p>
+     *        <p>
+     *        This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withEncryptionKey(String encryptionKey) {
+        setEncryptionKey(encryptionKey);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1584,7 +1662,9 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getNetworkInterface() != null)
-            sb.append("NetworkInterface: ").append(getNetworkInterface());
+            sb.append("NetworkInterface: ").append(getNetworkInterface()).append(",");
+        if (getEncryptionKey() != null)
+            sb.append("EncryptionKey: ").append(getEncryptionKey());
         sb.append("}");
         return sb.toString();
     }
@@ -1679,6 +1759,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkInterface() != null && other.getNetworkInterface().equals(this.getNetworkInterface()) == false)
             return false;
+        if (other.getEncryptionKey() == null ^ this.getEncryptionKey() == null)
+            return false;
+        if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
+            return false;
         return true;
     }
 
@@ -1707,6 +1791,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInitiator() == null) ? 0 : getInitiator().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterface() == null) ? 0 : getNetworkInterface().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         return hashCode;
     }
 

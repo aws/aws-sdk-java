@@ -469,6 +469,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> iamRoles;
+    /**
+     * <p>
+     * An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance
+     * track name, the cluster is assigned to the <code>current</code> track.
+     * </p>
+     */
+    private String maintenanceTrackName;
 
     /**
      * <p>
@@ -3421,6 +3428,52 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance
+     * track name, the cluster is assigned to the <code>current</code> track.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        An optional parameter for the name of the maintenance track for the cluster. If you don't provide a
+     *        maintenance track name, the cluster is assigned to the <code>current</code> track.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance
+     * track name, the cluster is assigned to the <code>current</code> track.
+     * </p>
+     * 
+     * @return An optional parameter for the name of the maintenance track for the cluster. If you don't provide a
+     *         maintenance track name, the cluster is assigned to the <code>current</code> track.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance
+     * track name, the cluster is assigned to the <code>current</code> track.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        An optional parameter for the name of the maintenance track for the cluster. If you don't provide a
+     *        maintenance track name, the cluster is assigned to the <code>current</code> track.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3484,7 +3537,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAdditionalInfo() != null)
             sb.append("AdditionalInfo: ").append(getAdditionalInfo()).append(",");
         if (getIamRoles() != null)
-            sb.append("IamRoles: ").append(getIamRoles());
+            sb.append("IamRoles: ").append(getIamRoles()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
         sb.append("}");
         return sb.toString();
     }
@@ -3609,6 +3664,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getIamRoles() != null && other.getIamRoles().equals(this.getIamRoles()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
         return true;
     }
 
@@ -3644,6 +3703,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         return hashCode;
     }
 

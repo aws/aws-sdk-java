@@ -250,6 +250,10 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("MaintenanceTrackName", targetDepth)) {
+                    cluster.setMaintenanceTrackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cluster;

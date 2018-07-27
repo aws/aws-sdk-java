@@ -163,6 +163,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             }
         }
 
+        if (restoreFromClusterSnapshotRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(restoreFromClusterSnapshotRequest.getMaintenanceTrackName()));
+        }
+
         return request;
     }
 

@@ -282,6 +282,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The market (purchasing) option for the instances.
      * </p>
+     * <p>
+     * For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * </p>
      */
     private InstanceMarketOptionsRequest instanceMarketOptions;
     /**
@@ -2345,9 +2349,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The market (purchasing) option for the instances.
      * </p>
+     * <p>
+     * For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * </p>
      * 
      * @param instanceMarketOptions
-     *        The market (purchasing) option for the instances.
+     *        The market (purchasing) option for the instances.</p>
+     *        <p>
+     *        For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     *        <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
      */
 
     public void setInstanceMarketOptions(InstanceMarketOptionsRequest instanceMarketOptions) {
@@ -2358,8 +2369,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The market (purchasing) option for the instances.
      * </p>
+     * <p>
+     * For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * </p>
      * 
-     * @return The market (purchasing) option for the instances.
+     * @return The market (purchasing) option for the instances.</p>
+     *         <p>
+     *         For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     *         <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
      */
 
     public InstanceMarketOptionsRequest getInstanceMarketOptions() {
@@ -2370,9 +2388,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The market (purchasing) option for the instances.
      * </p>
+     * <p>
+     * For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * </p>
      * 
      * @param instanceMarketOptions
-     *        The market (purchasing) option for the instances.
+     *        The market (purchasing) option for the instances.</p>
+     *        <p>
+     *        For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     *        <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

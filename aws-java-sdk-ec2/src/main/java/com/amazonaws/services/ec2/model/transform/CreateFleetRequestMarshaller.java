@@ -54,6 +54,18 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
             if (spotOptions.getInstanceInterruptionBehavior() != null) {
                 request.addParameter("SpotOptions.InstanceInterruptionBehavior", StringUtils.fromString(spotOptions.getInstanceInterruptionBehavior()));
             }
+
+            if (spotOptions.getInstancePoolsToUseCount() != null) {
+                request.addParameter("SpotOptions.InstancePoolsToUseCount", StringUtils.fromInteger(spotOptions.getInstancePoolsToUseCount()));
+            }
+        }
+
+        OnDemandOptionsRequest onDemandOptions = createFleetRequest.getOnDemandOptions();
+        if (onDemandOptions != null) {
+
+            if (onDemandOptions.getAllocationStrategy() != null) {
+                request.addParameter("OnDemandOptions.AllocationStrategy", StringUtils.fromString(onDemandOptions.getAllocationStrategy()));
+            }
         }
 
         if (createFleetRequest.getExcessCapacityTerminationPolicy() != null) {
@@ -117,6 +129,11 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                         if (fleetLaunchTemplateConfigRequestOverridesListValue.getWeightedCapacity() != null) {
                             request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
                                     + ".WeightedCapacity", StringUtils.fromDouble(fleetLaunchTemplateConfigRequestOverridesListValue.getWeightedCapacity()));
+                        }
+
+                        if (fleetLaunchTemplateConfigRequestOverridesListValue.getPriority() != null) {
+                            request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".Priority",
+                                    StringUtils.fromDouble(fleetLaunchTemplateConfigRequestOverridesListValue.getPriority()));
                         }
                         overridesListIndex++;
                     }

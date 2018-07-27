@@ -129,32 +129,27 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, java.util.List<String>> overriddenParameters;
     /**
      * <p>
-     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
-     * if the step execution failed or succeeded.
+     * The flag which can be used to end automation no matter whether the step succeeds or fails.
      * </p>
      */
     private Boolean isEnd;
     /**
      * <p>
-     * Specifies which step in an Automation to process next after successfully completing a step.
+     * The next step after the step succeeds.
      * </p>
      */
     private String nextStep;
     /**
      * <p>
-     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
-     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * The flag which can be used to help decide whether the failure of current step leads to the Automation failure.
      * </p>
      */
     private Boolean isCritical;
     /**
      * <p>
-     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
-     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
-     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
-     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
-     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
-     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
+     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> validNextSteps;
@@ -919,13 +914,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
-     * if the step execution failed or succeeded.
+     * The flag which can be used to end automation no matter whether the step succeeds or fails.
      * </p>
      * 
      * @param isEnd
-     *        Enable this option to stop an Automation execution at the end of a specific step. The Automation execution
-     *        stops if the step execution failed or succeeded.
+     *        The flag which can be used to end automation no matter whether the step succeeds or fails.
      */
 
     public void setIsEnd(Boolean isEnd) {
@@ -934,12 +927,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
-     * if the step execution failed or succeeded.
+     * The flag which can be used to end automation no matter whether the step succeeds or fails.
      * </p>
      * 
-     * @return Enable this option to stop an Automation execution at the end of a specific step. The Automation
-     *         execution stops if the step execution failed or succeeded.
+     * @return The flag which can be used to end automation no matter whether the step succeeds or fails.
      */
 
     public Boolean getIsEnd() {
@@ -948,13 +939,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
-     * if the step execution failed or succeeded.
+     * The flag which can be used to end automation no matter whether the step succeeds or fails.
      * </p>
      * 
      * @param isEnd
-     *        Enable this option to stop an Automation execution at the end of a specific step. The Automation execution
-     *        stops if the step execution failed or succeeded.
+     *        The flag which can be used to end automation no matter whether the step succeeds or fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,12 +954,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
-     * if the step execution failed or succeeded.
+     * The flag which can be used to end automation no matter whether the step succeeds or fails.
      * </p>
      * 
-     * @return Enable this option to stop an Automation execution at the end of a specific step. The Automation
-     *         execution stops if the step execution failed or succeeded.
+     * @return The flag which can be used to end automation no matter whether the step succeeds or fails.
      */
 
     public Boolean isEnd() {
@@ -979,11 +966,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which step in an Automation to process next after successfully completing a step.
+     * The next step after the step succeeds.
      * </p>
      * 
      * @param nextStep
-     *        Specifies which step in an Automation to process next after successfully completing a step.
+     *        The next step after the step succeeds.
      */
 
     public void setNextStep(String nextStep) {
@@ -992,10 +979,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which step in an Automation to process next after successfully completing a step.
+     * The next step after the step succeeds.
      * </p>
      * 
-     * @return Specifies which step in an Automation to process next after successfully completing a step.
+     * @return The next step after the step succeeds.
      */
 
     public String getNextStep() {
@@ -1004,11 +991,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which step in an Automation to process next after successfully completing a step.
+     * The next step after the step succeeds.
      * </p>
      * 
      * @param nextStep
-     *        Specifies which step in an Automation to process next after successfully completing a step.
+     *        The next step after the step succeeds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1019,13 +1006,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
-     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * The flag which can be used to help decide whether the failure of current step leads to the Automation failure.
      * </p>
      * 
      * @param isCritical
-     *        Enable this option to designate a step as critical for the successful completion of the Automation. If a
-     *        step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     *        The flag which can be used to help decide whether the failure of current step leads to the Automation
+     *        failure.
      */
 
     public void setIsCritical(Boolean isCritical) {
@@ -1034,12 +1020,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
-     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * The flag which can be used to help decide whether the failure of current step leads to the Automation failure.
      * </p>
      * 
-     * @return Enable this option to designate a step as critical for the successful completion of the Automation. If a
-     *         step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * @return The flag which can be used to help decide whether the failure of current step leads to the Automation
+     *         failure.
      */
 
     public Boolean getIsCritical() {
@@ -1048,13 +1033,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
-     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * The flag which can be used to help decide whether the failure of current step leads to the Automation failure.
      * </p>
      * 
      * @param isCritical
-     *        Enable this option to designate a step as critical for the successful completion of the Automation. If a
-     *        step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     *        The flag which can be used to help decide whether the failure of current step leads to the Automation
+     *        failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1065,12 +1049,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
-     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * The flag which can be used to help decide whether the failure of current step leads to the Automation failure.
      * </p>
      * 
-     * @return Enable this option to designate a step as critical for the successful completion of the Automation. If a
-     *         step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * @return The flag which can be used to help decide whether the failure of current step leads to the Automation
+     *         failure.
      */
 
     public Boolean isCritical() {
@@ -1079,21 +1062,15 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
-     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
-     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
-     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
-     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
-     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
+     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * 
-     * @return ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
-     *         Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
-     *         <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the
-     *         failure of the current step and allow Automation to continue processing the next step. You can also
-     *         specify <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The
-     *         result of the current step dynamically determines the ValidNextSteps. If a step finishes and no
-     *         ValidNextStep is designated, then the Automation stops.
+     * @return Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
+     *         step fails. Continue will ignore the failure of current step and allow automation to execute the next
+     *         step. With conditional branching, we add step:stepName to support the automation to go to another
+     *         specific step.
      */
 
     public java.util.List<String> getValidNextSteps() {
@@ -1105,22 +1082,16 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
-     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
-     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
-     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
-     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
-     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
+     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * 
      * @param validNextSteps
-     *        ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
-     *        Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
-     *        <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the failure
-     *        of the current step and allow Automation to continue processing the next step. You can also specify
-     *        <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The result of the
-     *        current step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep is
-     *        designated, then the Automation stops.
+     *        Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
+     *        step fails. Continue will ignore the failure of current step and allow automation to execute the next
+     *        step. With conditional branching, we add step:stepName to support the automation to go to another specific
+     *        step.
      */
 
     public void setValidNextSteps(java.util.Collection<String> validNextSteps) {
@@ -1134,12 +1105,9 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
-     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
-     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
-     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
-     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
-     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
+     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1148,13 +1116,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param validNextSteps
-     *        ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
-     *        Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
-     *        <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the failure
-     *        of the current step and allow Automation to continue processing the next step. You can also specify
-     *        <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The result of the
-     *        current step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep is
-     *        designated, then the Automation stops.
+     *        Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
+     *        step fails. Continue will ignore the failure of current step and allow automation to execute the next
+     *        step. With conditional branching, we add step:stepName to support the automation to go to another specific
+     *        step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1170,22 +1135,16 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
-     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
-     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
-     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
-     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
-     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step
+     * fails. Continue will ignore the failure of current step and allow automation to execute the next step. With
+     * conditional branching, we add step:stepName to support the automation to go to another specific step.
      * </p>
      * 
      * @param validNextSteps
-     *        ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
-     *        Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
-     *        <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the failure
-     *        of the current step and allow Automation to continue processing the next step. You can also specify
-     *        <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The result of the
-     *        current step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep is
-     *        designated, then the Automation stops.
+     *        Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the
+     *        step fails. Continue will ignore the failure of current step and allow automation to execute the next
+     *        step. With conditional branching, we add step:stepName to support the automation to go to another specific
+     *        step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,7 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is an opaque internal value and should be ignored.
+     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
      * </p>
      * <ul>
      * <li>
@@ -73,7 +73,7 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is an opaque internal value and should be ignored.
+     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
      * </p>
      * <ul>
      * <li>
@@ -109,7 +109,7 @@ public class InstanceState implements Serializable, Cloneable {
      * </ul>
      * 
      * @param code
-     *        The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p>
+     *        The low byte represents the state. The high byte is used for internal purposes and should be ignored.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -149,7 +149,7 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is an opaque internal value and should be ignored.
+     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
      * </p>
      * <ul>
      * <li>
@@ -184,7 +184,7 @@ public class InstanceState implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p>
+     * @return The low byte represents the state. The high byte is used for internal purposes and should be ignored.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -224,7 +224,7 @@ public class InstanceState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The low byte represents the state. The high byte is an opaque internal value and should be ignored.
+     * The low byte represents the state. The high byte is used for internal purposes and should be ignored.
      * </p>
      * <ul>
      * <li>
@@ -260,7 +260,7 @@ public class InstanceState implements Serializable, Cloneable {
      * </ul>
      * 
      * @param code
-     *        The low byte represents the state. The high byte is an opaque internal value and should be ignored.</p>
+     *        The low byte represents the state. The high byte is used for internal purposes and should be ignored.</p>
      *        <ul>
      *        <li>
      *        <p>

@@ -242,6 +242,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </ul>
      */
     private String packaging;
+    /**
+     * <p>
+     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * </p>
+     */
+    private Boolean encryptionDisabled;
 
     /**
      * <p>
@@ -1978,6 +1985,70 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * </p>
+     * 
+     * @param encryptionDisabled
+     *        Set to true if you do not want your output artifacts encrypted. This option is only valid if your
+     *        artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
+     *        thrown.
+     */
+
+    public void setEncryptionDisabled(Boolean encryptionDisabled) {
+        this.encryptionDisabled = encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * </p>
+     * 
+     * @return Set to true if you do not want your output artifacts encrypted. This option is only valid if your
+     *         artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
+     *         thrown.
+     */
+
+    public Boolean getEncryptionDisabled() {
+        return this.encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * </p>
+     * 
+     * @param encryptionDisabled
+     *        Set to true if you do not want your output artifacts encrypted. This option is only valid if your
+     *        artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
+     *        thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectArtifacts withEncryptionDisabled(Boolean encryptionDisabled) {
+        setEncryptionDisabled(encryptionDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
+     * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
+     * </p>
+     * 
+     * @return Set to true if you do not want your output artifacts encrypted. This option is only valid if your
+     *         artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException will be
+     *         thrown.
+     */
+
+    public Boolean isEncryptionDisabled() {
+        return this.encryptionDisabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1999,7 +2070,9 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPackaging() != null)
-            sb.append("Packaging: ").append(getPackaging());
+            sb.append("Packaging: ").append(getPackaging()).append(",");
+        if (getEncryptionDisabled() != null)
+            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled());
         sb.append("}");
         return sb.toString();
     }
@@ -2038,6 +2111,10 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getPackaging() != null && other.getPackaging().equals(this.getPackaging()) == false)
             return false;
+        if (other.getEncryptionDisabled() == null ^ this.getEncryptionDisabled() == null)
+            return false;
+        if (other.getEncryptionDisabled() != null && other.getEncryptionDisabled().equals(this.getEncryptionDisabled()) == false)
+            return false;
         return true;
     }
 
@@ -2052,6 +2129,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getNamespaceType() == null) ? 0 : getNamespaceType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPackaging() == null) ? 0 : getPackaging().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
         return hashCode;
     }
 

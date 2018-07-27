@@ -28,7 +28,7 @@ public class GetReservedNodeExchangeOfferingsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A string representing the node identifier for the Reserved Node to be exchanged.
+     * A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      * </p>
      */
     private String reservedNodeId;
@@ -47,11 +47,11 @@ public class GetReservedNodeExchangeOfferingsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A string representing the node identifier for the Reserved Node to be exchanged.
+     * A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      * </p>
      * 
      * @param reservedNodeId
-     *        A string representing the node identifier for the Reserved Node to be exchanged.
+     *        A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      */
 
     public void setReservedNodeId(String reservedNodeId) {
@@ -60,10 +60,10 @@ public class GetReservedNodeExchangeOfferingsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A string representing the node identifier for the Reserved Node to be exchanged.
+     * A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      * </p>
      * 
-     * @return A string representing the node identifier for the Reserved Node to be exchanged.
+     * @return A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      */
 
     public String getReservedNodeId() {
@@ -72,11 +72,11 @@ public class GetReservedNodeExchangeOfferingsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A string representing the node identifier for the Reserved Node to be exchanged.
+     * A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      * </p>
      * 
      * @param reservedNodeId
-     *        A string representing the node identifier for the Reserved Node to be exchanged.
+     *        A string representing the node identifier for the DC1 Reserved Node to be exchanged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

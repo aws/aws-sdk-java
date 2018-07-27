@@ -76,9 +76,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
@@ -158,9 +159,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
@@ -218,10 +220,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *         Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *         for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *         filter value.
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
      *         </p>
      *         </li>
      *         <li>
@@ -288,9 +290,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
@@ -348,10 +351,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
@@ -420,9 +423,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
@@ -485,10 +489,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
@@ -559,9 +563,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
@@ -619,10 +624,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>

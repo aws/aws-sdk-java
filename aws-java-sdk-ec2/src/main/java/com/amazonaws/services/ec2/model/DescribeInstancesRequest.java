@@ -130,8 +130,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an
-     * opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used
+     * for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
@@ -460,14 +460,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have
      * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
@@ -618,8 +619,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an
-     * opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used
+     * for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
@@ -948,14 +949,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have
      * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
@@ -1080,7 +1082,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte
-     *         is an opaque internal value and should be ignored. The low byte is set based on the state represented.
+     *         is used for internal purposes and should be ignored. The low byte is set based on the state represented.
      *         The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and
      *         80 (stopped).
      *         </p>
@@ -1416,16 +1418,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *         Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *         for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *         filter value.
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *         assigned a tag with a specific key, regardless of the tag value.
+     *         that have a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      *         <li>
@@ -1557,8 +1559,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an
-     * opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used
+     * for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
@@ -1887,14 +1889,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have
      * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
@@ -2020,9 +2023,9 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte
-     *        is an opaque internal value and should be ignored. The low byte is set based on the state represented. The
-     *        valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80
-     *        (stopped).
+     *        is used for internal purposes and should be ignored. The low byte is set based on the state represented.
+     *        The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and
+     *        80 (stopped).
      *        </p>
      *        </li>
      *        <li>
@@ -2355,16 +2358,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *        assigned a tag with a specific key, regardless of the tag value.
+     *        that have a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -2498,8 +2501,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an
-     * opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used
+     * for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
@@ -2828,14 +2831,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have
      * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
@@ -2966,9 +2970,9 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte
-     *        is an opaque internal value and should be ignored. The low byte is set based on the state represented. The
-     *        valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80
-     *        (stopped).
+     *        is used for internal purposes and should be ignored. The low byte is set based on the state represented.
+     *        The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and
+     *        80 (stopped).
      *        </p>
      *        </li>
      *        <li>
@@ -3301,16 +3305,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *        assigned a tag with a specific key, regardless of the tag value.
+     *        that have a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -3446,8 +3450,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is an
-     * opaque internal value and should be ignored. The low byte is set based on the state represented. The valid values
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte is used
+     * for internal purposes and should be ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
@@ -3776,14 +3780,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have
      * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
@@ -3909,9 +3914,9 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned integer. The high byte
-     *        is an opaque internal value and should be ignored. The low byte is set based on the state represented. The
-     *        valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80
-     *        (stopped).
+     *        is used for internal purposes and should be ignored. The low byte is set based on the state represented.
+     *        The valid values are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and
+     *        80 (stopped).
      *        </p>
      *        </li>
      *        <li>
@@ -4244,16 +4249,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *        assigned a tag with a specific key, regardless of the tag value.
+     *        that have a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>

@@ -236,6 +236,12 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      */
     private Boolean enhancedVpcRouting;
+    /**
+     * <p>
+     * The name of the maintenance track for the snapshot.
+     * </p>
+     */
+    private String maintenanceTrackName;
 
     /**
      * <p>
@@ -1767,6 +1773,46 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the maintenance track for the snapshot.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the snapshot.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the snapshot.
+     * </p>
+     * 
+     * @return The name of the maintenance track for the snapshot.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the snapshot.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1834,7 +1880,9 @@ public class Snapshot implements Serializable, Cloneable {
         if (getRestorableNodeTypes() != null)
             sb.append("RestorableNodeTypes: ").append(getRestorableNodeTypes()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting());
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
         sb.append("}");
         return sb.toString();
     }
@@ -1967,6 +2015,10 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
         return true;
     }
 
@@ -2004,6 +2056,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getRestorableNodeTypes() == null) ? 0 : getRestorableNodeTypes().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         return hashCode;
     }
 

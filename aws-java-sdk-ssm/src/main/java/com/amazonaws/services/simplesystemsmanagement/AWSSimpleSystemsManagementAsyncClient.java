@@ -2512,6 +2512,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest request) {
+
+        return labelParameterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(final LabelParameterVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<LabelParameterVersionRequest, LabelParameterVersionResult> asyncHandler) {
+        final LabelParameterVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<LabelParameterVersionResult>() {
+            @Override
+            public LabelParameterVersionResult call() throws Exception {
+                LabelParameterVersionResult result = null;
+
+                try {
+                    result = executeLabelParameterVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssociationVersionsResult> listAssociationVersionsAsync(ListAssociationVersionsRequest request) {
 
         return listAssociationVersionsAsync(request, null);

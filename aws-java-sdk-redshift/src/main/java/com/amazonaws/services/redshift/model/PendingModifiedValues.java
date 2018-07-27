@@ -90,6 +90,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private Boolean enhancedVpcRouting;
+    /**
+     * <p>
+     * The name of the maintenance track that the cluster will change to during the next maintenance window.
+     * </p>
+     */
+    private String maintenanceTrackName;
 
     /**
      * <p>
@@ -544,6 +550,46 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the maintenance track that the cluster will change to during the next maintenance window.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track that the cluster will change to during the next maintenance window.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track that the cluster will change to during the next maintenance window.
+     * </p>
+     * 
+     * @return The name of the maintenance track that the cluster will change to during the next maintenance window.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track that the cluster will change to during the next maintenance window.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track that the cluster will change to during the next maintenance window.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -571,7 +617,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting());
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
         sb.append("}");
         return sb.toString();
     }
@@ -623,6 +671,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
         return true;
     }
 
@@ -640,6 +692,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         return hashCode;
     }
 
