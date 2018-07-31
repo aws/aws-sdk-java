@@ -88,6 +88,10 @@ public class DeleteLagResultJsonUnmarshaller implements Unmarshaller<DeleteLagRe
                     context.nextToken();
                     deleteLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    deleteLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
                     deleteLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));

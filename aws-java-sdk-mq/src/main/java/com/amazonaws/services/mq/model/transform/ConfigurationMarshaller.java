@@ -29,6 +29,8 @@ public class ConfigurationMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,7 @@ public class ConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(configuration.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(configuration.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(configuration.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(configuration.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(configuration.getEngineVersion(), ENGINEVERSION_BINDING);

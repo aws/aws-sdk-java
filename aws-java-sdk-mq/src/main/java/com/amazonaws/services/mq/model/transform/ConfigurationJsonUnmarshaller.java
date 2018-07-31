@@ -52,6 +52,10 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                     context.nextToken();
                     configuration.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("created", targetDepth)) {
+                    context.nextToken();
+                    configuration.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     configuration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

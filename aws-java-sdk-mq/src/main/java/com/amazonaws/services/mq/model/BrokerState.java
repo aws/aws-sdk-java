@@ -15,8 +15,7 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING,
- * REBOOT_IN_PROGRESS
+ * The status of the broker.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BrokerState {

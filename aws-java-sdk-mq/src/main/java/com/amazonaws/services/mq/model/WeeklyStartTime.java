@@ -27,7 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo {
 
-    /** Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY */
+    /** Required. The day of the week. */
     private String dayOfWeek;
     /** Required. The time, in 24-hour format. */
     private String timeOfDay;
@@ -35,11 +35,10 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     private String timeZone;
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      * 
      * @param dayOfWeek
-     *        Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
-     *        SUNDAY
+     *        Required. The day of the week.
      * @see DayOfWeek
      */
 
@@ -48,10 +47,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      * 
-     * @return Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
-     *         SUNDAY
+     * @return Required. The day of the week.
      * @see DayOfWeek
      */
 
@@ -60,11 +58,10 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      * 
      * @param dayOfWeek
-     *        Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
-     *        SUNDAY
+     *        Required. The day of the week.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */
@@ -75,11 +72,10 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+     * Required. The day of the week.
      * 
      * @param dayOfWeek
-     *        Required. The day of the week. Possible values: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY,
-     *        SUNDAY
+     *        Required. The day of the week.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */

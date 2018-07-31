@@ -125,6 +125,14 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                     context.nextToken();
                     virtualInterface.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

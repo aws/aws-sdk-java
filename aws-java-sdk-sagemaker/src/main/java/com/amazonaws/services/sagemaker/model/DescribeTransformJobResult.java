@@ -69,8 +69,8 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private Integer maxPayloadInMB;
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means batches
-     * contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
+     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
      */
     private String batchStrategy;
@@ -430,13 +430,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means batches
-     * contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
+     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
      * 
      * @param batchStrategy
-     *        SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means
-     *        batches contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     *        SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
+     *        as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * @see BatchStrategy
      */
 
@@ -446,12 +446,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means batches
-     * contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
+     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
      * 
-     * @return SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means
-     *         batches contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * @return SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
+     *         as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * @see BatchStrategy
      */
 
@@ -461,13 +461,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means batches
-     * contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
+     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
      * 
      * @param batchStrategy
-     *        SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means
-     *        batches contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     *        SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
+     *        as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */
@@ -479,13 +479,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means batches
-     * contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
+     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
      * 
      * @param batchStrategy
-     *        SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt; means
-     *        batches contained as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     *        SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
+     *        as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */

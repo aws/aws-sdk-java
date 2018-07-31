@@ -77,6 +77,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setConfigurations(ConfigurationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("created", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("deploymentMode", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setDeploymentMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -92,6 +96,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("hostInstanceType", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("logs", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setLogs(LogsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("maintenanceWindowStartTime", targetDepth)) {
                     context.nextToken();

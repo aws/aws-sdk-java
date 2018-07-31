@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ConfigurationRevisionMarshaller {
 
+    private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Integer> REVISION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +50,7 @@ public class ConfigurationRevisionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(configurationRevision.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(configurationRevision.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(configurationRevision.getRevision(), REVISION_BINDING);
         } catch (Exception e) {

@@ -72,12 +72,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private JobExecutionsRolloutConfig jobExecutionsRolloutConfig;
-    /**
-     * <p>
-     * Parameters for the job document.
-     * </p>
-     */
-    private java.util.Map<String, String> documentParameters;
 
     /**
      * <p>
@@ -479,67 +473,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * <p>
-     * Parameters for the job document.
-     * </p>
-     * 
-     * @return Parameters for the job document.
-     */
-
-    public java.util.Map<String, String> getDocumentParameters() {
-        return documentParameters;
-    }
-
-    /**
-     * <p>
-     * Parameters for the job document.
-     * </p>
-     * 
-     * @param documentParameters
-     *        Parameters for the job document.
-     */
-
-    public void setDocumentParameters(java.util.Map<String, String> documentParameters) {
-        this.documentParameters = documentParameters;
-    }
-
-    /**
-     * <p>
-     * Parameters for the job document.
-     * </p>
-     * 
-     * @param documentParameters
-     *        Parameters for the job document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateJobRequest withDocumentParameters(java.util.Map<String, String> documentParameters) {
-        setDocumentParameters(documentParameters);
-        return this;
-    }
-
-    public CreateJobRequest addDocumentParametersEntry(String key, String value) {
-        if (null == this.documentParameters) {
-            this.documentParameters = new java.util.HashMap<String, String>();
-        }
-        if (this.documentParameters.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.documentParameters.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into DocumentParameters.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateJobRequest clearDocumentParametersEntries() {
-        this.documentParameters = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -565,9 +498,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTargetSelection() != null)
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
         if (getJobExecutionsRolloutConfig() != null)
-            sb.append("JobExecutionsRolloutConfig: ").append(getJobExecutionsRolloutConfig()).append(",");
-        if (getDocumentParameters() != null)
-            sb.append("DocumentParameters: ").append(getDocumentParameters());
+            sb.append("JobExecutionsRolloutConfig: ").append(getJobExecutionsRolloutConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -614,10 +545,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getJobExecutionsRolloutConfig() != null && other.getJobExecutionsRolloutConfig().equals(this.getJobExecutionsRolloutConfig()) == false)
             return false;
-        if (other.getDocumentParameters() == null ^ this.getDocumentParameters() == null)
-            return false;
-        if (other.getDocumentParameters() != null && other.getDocumentParameters().equals(this.getDocumentParameters()) == false)
-            return false;
         return true;
     }
 
@@ -634,7 +561,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getPresignedUrlConfig() == null) ? 0 : getPresignedUrlConfig().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRolloutConfig() == null) ? 0 : getJobExecutionsRolloutConfig().hashCode());
-        hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
         return hashCode;
     }
 

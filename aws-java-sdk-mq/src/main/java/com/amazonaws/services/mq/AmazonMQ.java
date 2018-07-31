@@ -49,10 +49,10 @@ public interface AmazonMQ {
      * @return Result of the CreateBroker operation returned by the service.
      * @throws BadRequestException
      *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
-     * @throws InternalServerErrorException
-     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws UnauthorizedException
      *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
      *         HTTP Status Code 409: Conflict. This Broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
@@ -65,13 +65,11 @@ public interface AmazonMQ {
 
     /**
      * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the
-     * engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     * configuration.
+     * engine type and version).
      * 
      * @param createConfigurationRequest
      *        Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
-     *        (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     *        configuration.
+     *        (the engine type and version).
      * @return Result of the CreateConfiguration operation returned by the service.
      * @throws BadRequestException
      *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.

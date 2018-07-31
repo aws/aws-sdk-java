@@ -22,7 +22,7 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The role ARN that allows IoT to write to Cloudwatch logs.
+     * The ARN of the role that allows IoT to write to Cloudwatch logs.
      * </p>
      */
     private String roleArn;
@@ -34,18 +34,18 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String defaultLogLevel;
     /**
      * <p>
-     * Set to true to disable all logs, otherwise set to false.
+     * If true all logs are disabled. The default is false.
      * </p>
      */
     private Boolean disableAllLogs;
 
     /**
      * <p>
-     * The role ARN that allows IoT to write to Cloudwatch logs.
+     * The ARN of the role that allows IoT to write to Cloudwatch logs.
      * </p>
      * 
      * @param roleArn
-     *        The role ARN that allows IoT to write to Cloudwatch logs.
+     *        The ARN of the role that allows IoT to write to Cloudwatch logs.
      */
 
     public void setRoleArn(String roleArn) {
@@ -54,10 +54,10 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The role ARN that allows IoT to write to Cloudwatch logs.
+     * The ARN of the role that allows IoT to write to Cloudwatch logs.
      * </p>
      * 
-     * @return The role ARN that allows IoT to write to Cloudwatch logs.
+     * @return The ARN of the role that allows IoT to write to Cloudwatch logs.
      */
 
     public String getRoleArn() {
@@ -66,11 +66,11 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The role ARN that allows IoT to write to Cloudwatch logs.
+     * The ARN of the role that allows IoT to write to Cloudwatch logs.
      * </p>
      * 
      * @param roleArn
-     *        The role ARN that allows IoT to write to Cloudwatch logs.
+     *        The ARN of the role that allows IoT to write to Cloudwatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Set to true to disable all logs, otherwise set to false.
+     * If true all logs are disabled. The default is false.
      * </p>
      * 
      * @param disableAllLogs
-     *        Set to true to disable all logs, otherwise set to false.
+     *        If true all logs are disabled. The default is false.
      */
 
     public void setDisableAllLogs(Boolean disableAllLogs) {
@@ -153,10 +153,10 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Set to true to disable all logs, otherwise set to false.
+     * If true all logs are disabled. The default is false.
      * </p>
      * 
-     * @return Set to true to disable all logs, otherwise set to false.
+     * @return If true all logs are disabled. The default is false.
      */
 
     public Boolean getDisableAllLogs() {
@@ -165,11 +165,11 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Set to true to disable all logs, otherwise set to false.
+     * If true all logs are disabled. The default is false.
      * </p>
      * 
      * @param disableAllLogs
-     *        Set to true to disable all logs, otherwise set to false.
+     *        If true all logs are disabled. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,10 +180,10 @@ public class SetV2LoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Set to true to disable all logs, otherwise set to false.
+     * If true all logs are disabled. The default is false.
      * </p>
      * 
-     * @return Set to true to disable all logs, otherwise set to false.
+     * @return If true all logs are disabled. The default is false.
      */
 
     public Boolean isDisableAllLogs() {

@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -45,8 +44,6 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSelection").build();
     private static final MarshallingInfo<StructuredPojo> JOBEXECUTIONSROLLOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobExecutionsRolloutConfig").build();
-    private static final MarshallingInfo<Map> DOCUMENTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentParameters").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -72,7 +69,6 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getPresignedUrlConfig(), PRESIGNEDURLCONFIG_BINDING);
             protocolMarshaller.marshall(createJobRequest.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(createJobRequest.getJobExecutionsRolloutConfig(), JOBEXECUTIONSROLLOUTCONFIG_BINDING);
-            protocolMarshaller.marshall(createJobRequest.getDocumentParameters(), DOCUMENTPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

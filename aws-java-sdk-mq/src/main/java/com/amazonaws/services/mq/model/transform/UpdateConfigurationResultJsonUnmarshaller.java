@@ -52,6 +52,10 @@ public class UpdateConfigurationResultJsonUnmarshaller implements Unmarshaller<U
                     context.nextToken();
                     updateConfigurationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("created", targetDepth)) {
+                    context.nextToken();
+                    updateConfigurationResult.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     updateConfigurationResult.setId(context.getUnmarshaller(String.class).unmarshall(context));

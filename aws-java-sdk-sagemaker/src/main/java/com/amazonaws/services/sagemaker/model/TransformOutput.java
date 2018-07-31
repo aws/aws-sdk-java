@@ -35,7 +35,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For every S3 object used as input for the transform job, the transformed data is stored in a corresponding
-     * subfolder in the location under the output prefix.For example, the input data
+     * subfolder in the location under the output prefix. For example, the input data
      * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored at
      * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of .part files
      * (.part0001, part0002, etc).
@@ -52,7 +52,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
-     * is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To add a
+     * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
      * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
      * </p>
@@ -89,7 +89,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For every S3 object used as input for the transform job, the transformed data is stored in a corresponding
-     * subfolder in the location under the output prefix.For example, the input data
+     * subfolder in the location under the output prefix. For example, the input data
      * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored at
      * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of .part files
      * (.part0001, part0002, etc).
@@ -100,7 +100,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *        <code>s3://bucket-name/key-name-prefix</code>.</p>
      *        <p>
      *        For every S3 object used as input for the transform job, the transformed data is stored in a corresponding
-     *        subfolder in the location under the output prefix.For example, the input data
+     *        subfolder in the location under the output prefix. For example, the input data
      *        <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored
      *        at <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of
      *        .part files (.part0001, part0002, etc).
@@ -117,7 +117,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For every S3 object used as input for the transform job, the transformed data is stored in a corresponding
-     * subfolder in the location under the output prefix.For example, the input data
+     * subfolder in the location under the output prefix. For example, the input data
      * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored at
      * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of .part files
      * (.part0001, part0002, etc).
@@ -127,7 +127,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *         example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      *         <p>
      *         For every S3 object used as input for the transform job, the transformed data is stored in a
-     *         corresponding subfolder in the location under the output prefix.For example, the input data
+     *         corresponding subfolder in the location under the output prefix. For example, the input data
      *         <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored
      *         at <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of
      *         .part files (.part0001, part0002, etc).
@@ -144,7 +144,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For every S3 object used as input for the transform job, the transformed data is stored in a corresponding
-     * subfolder in the location under the output prefix.For example, the input data
+     * subfolder in the location under the output prefix. For example, the input data
      * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored at
      * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of .part files
      * (.part0001, part0002, etc).
@@ -155,7 +155,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *        <code>s3://bucket-name/key-name-prefix</code>.</p>
      *        <p>
      *        For every S3 object used as input for the transform job, the transformed data is stored in a corresponding
-     *        subfolder in the location under the output prefix.For example, the input data
+     *        subfolder in the location under the output prefix. For example, the input data
      *        <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the transformed data stored
      *        at <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original name, as a series of
      *        .part files (.part0001, part0002, etc).
@@ -216,7 +216,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
-     * is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To add a
+     * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
      * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
      * </p>
@@ -227,7 +227,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param assembleWith
      *        Defines how to assemble the results of the transform job as a single S3 object. You should select a format
-     *        that is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To
+     *        that is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To
      *        add a newline character at the end of every transformed record, specify <code>Line</code>. To assemble the
      *        output in RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.</p>
      *        <p>
@@ -243,7 +243,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
-     * is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To add a
+     * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
      * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
      * </p>
@@ -253,7 +253,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @return Defines how to assemble the results of the transform job as a single S3 object. You should select a
-     *         format that is most convienant to you. To concatenate the results in binary format, specify
+     *         format that is most convenient to you. To concatenate the results in binary format, specify
      *         <code>None</code>. To add a newline character at the end of every transformed record, specify
      *         <code>Line</code>. To assemble the output in RecordIO format, specify <code>RecordIO</code>. The default
      *         value is <code>None</code>.</p>
@@ -270,7 +270,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
-     * is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To add a
+     * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
      * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
      * </p>
@@ -281,7 +281,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param assembleWith
      *        Defines how to assemble the results of the transform job as a single S3 object. You should select a format
-     *        that is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To
+     *        that is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To
      *        add a newline character at the end of every transformed record, specify <code>Line</code>. To assemble the
      *        output in RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.</p>
      *        <p>
@@ -299,7 +299,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines how to assemble the results of the transform job as a single S3 object. You should select a format that
-     * is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To add a
+     * is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify <code>Line</code>. To assemble the output in
      * RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
      * </p>
@@ -310,7 +310,7 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param assembleWith
      *        Defines how to assemble the results of the transform job as a single S3 object. You should select a format
-     *        that is most convienant to you. To concatenate the results in binary format, specify <code>None</code>. To
+     *        that is most convenient to you. To concatenate the results in binary format, specify <code>None</code>. To
      *        add a newline character at the end of every transformed record, specify <code>Line</code>. To assemble the
      *        output in RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.</p>
      *        <p>

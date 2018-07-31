@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class UpdateDevEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointName").build();
     private static final MarshallingInfo<String> PUBLICKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PublicKey").build();
+    private static final MarshallingInfo<List> ADDPUBLICKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AddPublicKeys").build();
+    private static final MarshallingInfo<List> DELETEPUBLICKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletePublicKeys").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMLIBRARIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomLibraries").build();
     private static final MarshallingInfo<Boolean> UPDATEETLLIBRARIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -54,6 +59,8 @@ public class UpdateDevEndpointRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateDevEndpointRequest.getEndpointName(), ENDPOINTNAME_BINDING);
             protocolMarshaller.marshall(updateDevEndpointRequest.getPublicKey(), PUBLICKEY_BINDING);
+            protocolMarshaller.marshall(updateDevEndpointRequest.getAddPublicKeys(), ADDPUBLICKEYS_BINDING);
+            protocolMarshaller.marshall(updateDevEndpointRequest.getDeletePublicKeys(), DELETEPUBLICKEYS_BINDING);
             protocolMarshaller.marshall(updateDevEndpointRequest.getCustomLibraries(), CUSTOMLIBRARIES_BINDING);
             protocolMarshaller.marshall(updateDevEndpointRequest.getUpdateEtlLibraries(), UPDATEETLLIBRARIES_BINDING);
         } catch (Exception e) {

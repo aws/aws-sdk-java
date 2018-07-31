@@ -21,7 +21,7 @@ import javax.annotation.Generated;
 public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQException {
     private static final long serialVersionUID = 1L;
 
-    /** The error attribute. */
+    /** The attribute which caused the error. */
     private String errorAttribute;
 
     /**
@@ -35,10 +35,10 @@ public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQE
     }
 
     /**
-     * The error attribute.
+     * The attribute which caused the error.
      * 
      * @param errorAttribute
-     *        The error attribute.
+     *        The attribute which caused the error.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("errorAttribute")
@@ -47,9 +47,9 @@ public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQE
     }
 
     /**
-     * The error attribute.
+     * The attribute which caused the error.
      * 
-     * @return The error attribute.
+     * @return The attribute which caused the error.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("errorAttribute")
@@ -58,10 +58,10 @@ public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQE
     }
 
     /**
-     * The error attribute.
+     * The attribute which caused the error.
      * 
      * @param errorAttribute
-     *        The error attribute.
+     *        The attribute which caused the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

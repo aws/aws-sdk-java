@@ -66,6 +66,10 @@ public class VirtualInterfaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("routeFilterPrefixes").build();
     private static final MarshallingInfo<List> BGPPEERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bgpPeers").build();
+    private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("region").build();
+    private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
 
     private static final VirtualInterfaceMarshaller instance = new VirtualInterfaceMarshaller();
 
@@ -102,6 +106,8 @@ public class VirtualInterfaceMarshaller {
             protocolMarshaller.marshall(virtualInterface.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
             protocolMarshaller.marshall(virtualInterface.getRouteFilterPrefixes(), ROUTEFILTERPREFIXES_BINDING);
             protocolMarshaller.marshall(virtualInterface.getBgpPeers(), BGPPEERS_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getRegion(), REGION_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

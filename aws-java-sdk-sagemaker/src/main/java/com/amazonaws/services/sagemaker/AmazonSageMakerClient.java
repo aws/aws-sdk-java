@@ -796,8 +796,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Starts a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that
-     * you specify.
+     * Starts a transform job. A transform job uses a trained model to get inferences on a dataset and saves these
+     * results to an Amazon S3 location that you specify.
      * </p>
      * <p>
      * To perform batch transformations, you create a transform job and use the data that you have readily available.
@@ -814,7 +814,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </li>
      * <li>
      * <p>
-     * <code>ModelName</code> - Identifies the model to use.
+     * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing
+     * Amazon SageMaker model within an AWS Region in an AWS account.
      * </p>
      * </li>
      * <li>
@@ -893,6 +894,10 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the endpoint was
      * created.
+     * </p>
+     * <p>
+     * Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't need to use
+     * the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.
      * </p>
      * 
      * @param deleteEndpointRequest

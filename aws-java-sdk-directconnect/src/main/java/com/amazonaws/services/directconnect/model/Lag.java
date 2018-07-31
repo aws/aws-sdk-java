@@ -77,10 +77,19 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private Integer minimumLinks;
     /**
      * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
      * The AWS Direct Connection endpoint that hosts the LAG.
      * </p>
      */
     private String awsDevice;
+    /**
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     */
+    private String awsDeviceV2;
     /**
      * <p>
      * A list of connections bundled by this LAG.
@@ -461,15 +470,70 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
      * The AWS Direct Connection endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDevice
+     *        Deprecated in favor of awsDeviceV2.</p>
+     *        <p>
      *        The AWS Direct Connection endpoint that hosts the LAG.
      */
 
     public void setAwsDevice(String awsDevice) {
         this.awsDevice = awsDevice;
+    }
+
+    /**
+     * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     * 
+     * @return Deprecated in favor of awsDeviceV2.</p>
+     *         <p>
+     *         The AWS Direct Connection endpoint that hosts the LAG.
+     */
+
+    public String getAwsDevice() {
+        return this.awsDevice;
+    }
+
+    /**
+     * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     * 
+     * @param awsDevice
+     *        Deprecated in favor of awsDeviceV2.</p>
+     *        <p>
+     *        The AWS Direct Connection endpoint that hosts the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lag withAwsDevice(String awsDevice) {
+        setAwsDevice(awsDevice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The AWS Direct Connection endpoint that hosts the LAG.
+     */
+
+    public void setAwsDeviceV2(String awsDeviceV2) {
+        this.awsDeviceV2 = awsDeviceV2;
     }
 
     /**
@@ -480,8 +544,8 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * @return The AWS Direct Connection endpoint that hosts the LAG.
      */
 
-    public String getAwsDevice() {
-        return this.awsDevice;
+    public String getAwsDeviceV2() {
+        return this.awsDeviceV2;
     }
 
     /**
@@ -489,13 +553,13 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * The AWS Direct Connection endpoint that hosts the LAG.
      * </p>
      * 
-     * @param awsDevice
+     * @param awsDeviceV2
      *        The AWS Direct Connection endpoint that hosts the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Lag withAwsDevice(String awsDevice) {
-        setAwsDevice(awsDevice);
+    public Lag withAwsDeviceV2(String awsDeviceV2) {
+        setAwsDeviceV2(awsDeviceV2);
         return this;
     }
 
@@ -687,6 +751,8 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
             sb.append("MinimumLinks: ").append(getMinimumLinks()).append(",");
         if (getAwsDevice() != null)
             sb.append("AwsDevice: ").append(getAwsDevice()).append(",");
+        if (getAwsDeviceV2() != null)
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
         if (getConnections() != null)
             sb.append("Connections: ").append(getConnections()).append(",");
         if (getAllowsHostedConnections() != null)
@@ -745,6 +811,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsDevice() != null && other.getAwsDevice().equals(this.getAwsDevice()) == false)
             return false;
+        if (other.getAwsDeviceV2() == null ^ this.getAwsDeviceV2() == null)
+            return false;
+        if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
+            return false;
         if (other.getConnections() == null ^ this.getConnections() == null)
             return false;
         if (other.getConnections() != null && other.getConnections().equals(this.getConnections()) == false)
@@ -771,6 +841,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getMinimumLinks() == null) ? 0 : getMinimumLinks().hashCode());
         hashCode = prime * hashCode + ((getAwsDevice() == null) ? 0 : getAwsDevice().hashCode());
+        hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         hashCode = prime * hashCode + ((getAllowsHostedConnections() == null) ? 0 : getAllowsHostedConnections().hashCode());
         return hashCode;

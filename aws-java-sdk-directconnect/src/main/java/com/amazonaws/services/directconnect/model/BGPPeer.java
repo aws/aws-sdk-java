@@ -41,6 +41,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     private String bgpPeerState;
 
     private String bgpStatus;
+    /**
+     * <p>
+     * The Direct Connection endpoint which the BGP peer terminates on.
+     * </p>
+     */
+    private String awsDeviceV2;
 
     /**
      * @param asn
@@ -294,6 +300,46 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Direct Connection endpoint which the BGP peer terminates on.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The Direct Connection endpoint which the BGP peer terminates on.
+     */
+
+    public void setAwsDeviceV2(String awsDeviceV2) {
+        this.awsDeviceV2 = awsDeviceV2;
+    }
+
+    /**
+     * <p>
+     * The Direct Connection endpoint which the BGP peer terminates on.
+     * </p>
+     * 
+     * @return The Direct Connection endpoint which the BGP peer terminates on.
+     */
+
+    public String getAwsDeviceV2() {
+        return this.awsDeviceV2;
+    }
+
+    /**
+     * <p>
+     * The Direct Connection endpoint which the BGP peer terminates on.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The Direct Connection endpoint which the BGP peer terminates on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BGPPeer withAwsDeviceV2(String awsDeviceV2) {
+        setAwsDeviceV2(awsDeviceV2);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -317,7 +363,9 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
         if (getBgpPeerState() != null)
             sb.append("BgpPeerState: ").append(getBgpPeerState()).append(",");
         if (getBgpStatus() != null)
-            sb.append("BgpStatus: ").append(getBgpStatus());
+            sb.append("BgpStatus: ").append(getBgpStatus()).append(",");
+        if (getAwsDeviceV2() != null)
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2());
         sb.append("}");
         return sb.toString();
     }
@@ -360,6 +408,10 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBgpStatus() != null && other.getBgpStatus().equals(this.getBgpStatus()) == false)
             return false;
+        if (other.getAwsDeviceV2() == null ^ this.getAwsDeviceV2() == null)
+            return false;
+        if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
+            return false;
         return true;
     }
 
@@ -375,6 +427,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
         hashCode = prime * hashCode + ((getBgpPeerState() == null) ? 0 : getBgpPeerState().hashCode());
         hashCode = prime * hashCode + ((getBgpStatus() == null) ? 0 : getBgpStatus().hashCode());
+        hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         return hashCode;
     }
 

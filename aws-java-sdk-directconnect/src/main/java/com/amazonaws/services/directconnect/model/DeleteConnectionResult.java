@@ -72,10 +72,19 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
     private String lagId;
     /**
      * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
      * The Direct Connection endpoint which the physical connection terminates on.
      * </p>
      */
     private String awsDevice;
+    /**
+     * <p>
+     * The Direct Connection endpoint which the physical connection terminates on.
+     * </p>
+     */
+    private String awsDeviceV2;
 
     /**
      * <p>
@@ -477,15 +486,70 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
      * The Direct Connection endpoint which the physical connection terminates on.
      * </p>
      * 
      * @param awsDevice
+     *        Deprecated in favor of awsDeviceV2.</p>
+     *        <p>
      *        The Direct Connection endpoint which the physical connection terminates on.
      */
 
     public void setAwsDevice(String awsDevice) {
         this.awsDevice = awsDevice;
+    }
+
+    /**
+     * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
+     * The Direct Connection endpoint which the physical connection terminates on.
+     * </p>
+     * 
+     * @return Deprecated in favor of awsDeviceV2.</p>
+     *         <p>
+     *         The Direct Connection endpoint which the physical connection terminates on.
+     */
+
+    public String getAwsDevice() {
+        return this.awsDevice;
+    }
+
+    /**
+     * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
+     * The Direct Connection endpoint which the physical connection terminates on.
+     * </p>
+     * 
+     * @param awsDevice
+     *        Deprecated in favor of awsDeviceV2.</p>
+     *        <p>
+     *        The Direct Connection endpoint which the physical connection terminates on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteConnectionResult withAwsDevice(String awsDevice) {
+        setAwsDevice(awsDevice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Direct Connection endpoint which the physical connection terminates on.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The Direct Connection endpoint which the physical connection terminates on.
+     */
+
+    public void setAwsDeviceV2(String awsDeviceV2) {
+        this.awsDeviceV2 = awsDeviceV2;
     }
 
     /**
@@ -496,8 +560,8 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * @return The Direct Connection endpoint which the physical connection terminates on.
      */
 
-    public String getAwsDevice() {
-        return this.awsDevice;
+    public String getAwsDeviceV2() {
+        return this.awsDeviceV2;
     }
 
     /**
@@ -505,13 +569,13 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * The Direct Connection endpoint which the physical connection terminates on.
      * </p>
      * 
-     * @param awsDevice
+     * @param awsDeviceV2
      *        The Direct Connection endpoint which the physical connection terminates on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteConnectionResult withAwsDevice(String awsDevice) {
-        setAwsDevice(awsDevice);
+    public DeleteConnectionResult withAwsDeviceV2(String awsDeviceV2) {
+        setAwsDeviceV2(awsDeviceV2);
         return this;
     }
 
@@ -549,7 +613,9 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
         if (getLagId() != null)
             sb.append("LagId: ").append(getLagId()).append(",");
         if (getAwsDevice() != null)
-            sb.append("AwsDevice: ").append(getAwsDevice());
+            sb.append("AwsDevice: ").append(getAwsDevice()).append(",");
+        if (getAwsDeviceV2() != null)
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2());
         sb.append("}");
         return sb.toString();
     }
@@ -612,6 +678,10 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getAwsDevice() != null && other.getAwsDevice().equals(this.getAwsDevice()) == false)
             return false;
+        if (other.getAwsDeviceV2() == null ^ this.getAwsDeviceV2() == null)
+            return false;
+        if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
+            return false;
         return true;
     }
 
@@ -632,6 +702,7 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getLoaIssueTime() == null) ? 0 : getLoaIssueTime().hashCode());
         hashCode = prime * hashCode + ((getLagId() == null) ? 0 : getLagId().hashCode());
         hashCode = prime * hashCode + ((getAwsDevice() == null) ? 0 : getAwsDevice().hashCode());
+        hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         return hashCode;
     }
 

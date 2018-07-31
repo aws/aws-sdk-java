@@ -41,6 +41,18 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String locationName;
+    /**
+     * <p>
+     * The AWS region where the AWS Direct connect location is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     */
+    private String region;
 
     /**
      * <p>
@@ -129,6 +141,79 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The AWS region where the AWS Direct connect location is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @param region
+     *        The AWS region where the AWS Direct connect location is located.</p>
+     *        <p>
+     *        Example: us-east-1
+     *        </p>
+     *        <p>
+     *        Default: None
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * The AWS region where the AWS Direct connect location is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @return The AWS region where the AWS Direct connect location is located.</p>
+     *         <p>
+     *         Example: us-east-1
+     *         </p>
+     *         <p>
+     *         Default: None
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * The AWS region where the AWS Direct connect location is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @param region
+     *        The AWS region where the AWS Direct connect location is located.</p>
+     *        <p>
+     *        Example: us-east-1
+     *        </p>
+     *        <p>
+     *        Default: None
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -142,7 +227,9 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
         if (getLocationCode() != null)
             sb.append("LocationCode: ").append(getLocationCode()).append(",");
         if (getLocationName() != null)
-            sb.append("LocationName: ").append(getLocationName());
+            sb.append("LocationName: ").append(getLocationName()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +252,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLocationName() != null && other.getLocationName().equals(this.getLocationName()) == false)
             return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +266,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getLocationCode() == null) ? 0 : getLocationCode().hashCode());
         hashCode = prime * hashCode + ((getLocationName() == null) ? 0 : getLocationName().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         return hashCode;
     }
 

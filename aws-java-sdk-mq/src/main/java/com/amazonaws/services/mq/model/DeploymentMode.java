@@ -15,9 +15,7 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates
- * a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates an active/standby broker for
- * high availability.
+ * The deployment mode of the broker.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeploymentMode {

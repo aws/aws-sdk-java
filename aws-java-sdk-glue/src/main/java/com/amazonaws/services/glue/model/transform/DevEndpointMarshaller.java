@@ -66,6 +66,8 @@ public class DevEndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimestamp").build();
     private static final MarshallingInfo<String> PUBLICKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PublicKey").build();
+    private static final MarshallingInfo<List> PUBLICKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PublicKeys").build();
 
     private static final DevEndpointMarshaller instance = new DevEndpointMarshaller();
 
@@ -102,6 +104,7 @@ public class DevEndpointMarshaller {
             protocolMarshaller.marshall(devEndpoint.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(devEndpoint.getLastModifiedTimestamp(), LASTMODIFIEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(devEndpoint.getPublicKey(), PUBLICKEY_BINDING);
+            protocolMarshaller.marshall(devEndpoint.getPublicKeys(), PUBLICKEYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

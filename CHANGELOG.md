@@ -1,3 +1,32 @@
+# __1.11.376__ __2018-07-30__
+## __AWS CloudHSM V2__
+  - ### Features
+    - This update  to the AWS CloudHSM API adds copy-backup-to-region, which allows you to copy a backup of a cluster from one region to another. The copied backup can be used in the destination region to create a new AWS CloudHSM cluster as a clone of the original cluster. 
+
+## __AWS Direct Connect__
+  - ### Features
+    - 1. awsDeviceV2 field is introduced for Connection/Lag/Interconnect/VirtualInterface/Bgp Objects, while deprecating the awsDevice field for Connection/Lag/Interconnect Objects. 2. region field is introduced for VirtualInterface/Location objects 
+
+## __AWS Glue__
+  - ### Features
+    - Glue Development Endpoints now support association of multiple SSH public keys with a development endpoint.
+
+## __AWS IoT__
+  - ### Features
+    - get rid of documentParameters field from CreateJob API
+
+## __Amazon Glacier__
+  - ### Features
+    - Documentation updates for glacier
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Added SecondaryStatusTransitions to DescribeTrainingJob to provide more visibility into SageMaker training job progress and lifecycle.
+
+## __AmazonMQ__
+  - ### Features
+    - Modified the CreateBroker, UpdateBroker, and DescribeBroker operations to support integration with Amazon CloudWatch Logs. Added a field to indicate the IP address(es) that correspond to wire-level endpoints of broker instances. While a single-instance broker has one IP address, an active/standby broker for high availability has 2 IP addresses. Added fields to indicate the time when resources were created. Updated documentation for Amazon MQ.
+
 # __1.11.375__ __2018-07-26__
 ## __AWS CodeBuild__
   - ### Features

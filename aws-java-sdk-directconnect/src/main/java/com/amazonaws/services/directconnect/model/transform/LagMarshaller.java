@@ -48,6 +48,8 @@ public class LagMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumLinks").build();
     private static final MarshallingInfo<String> AWSDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("awsDevice").build();
+    private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
     private static final MarshallingInfo<List> CONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("connections").build();
     private static final MarshallingInfo<Boolean> ALLOWSHOSTEDCONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -79,6 +81,7 @@ public class LagMarshaller {
             protocolMarshaller.marshall(lag.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(lag.getMinimumLinks(), MINIMUMLINKS_BINDING);
             protocolMarshaller.marshall(lag.getAwsDevice(), AWSDEVICE_BINDING);
+            protocolMarshaller.marshall(lag.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
             protocolMarshaller.marshall(lag.getConnections(), CONNECTIONS_BINDING);
             protocolMarshaller.marshall(lag.getAllowsHostedConnections(), ALLOWSHOSTEDCONNECTIONS_BINDING);
         } catch (Exception e) {

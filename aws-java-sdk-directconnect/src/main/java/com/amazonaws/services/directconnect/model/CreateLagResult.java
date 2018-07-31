@@ -75,10 +75,19 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private Integer minimumLinks;
     /**
      * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
      * The AWS Direct Connection endpoint that hosts the LAG.
      * </p>
      */
     private String awsDevice;
+    /**
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     */
+    private String awsDeviceV2;
     /**
      * <p>
      * A list of connections bundled by this LAG.
@@ -459,15 +468,70 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
      * The AWS Direct Connection endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDevice
+     *        Deprecated in favor of awsDeviceV2.</p>
+     *        <p>
      *        The AWS Direct Connection endpoint that hosts the LAG.
      */
 
     public void setAwsDevice(String awsDevice) {
         this.awsDevice = awsDevice;
+    }
+
+    /**
+     * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     * 
+     * @return Deprecated in favor of awsDeviceV2.</p>
+     *         <p>
+     *         The AWS Direct Connection endpoint that hosts the LAG.
+     */
+
+    public String getAwsDevice() {
+        return this.awsDevice;
+    }
+
+    /**
+     * <p>
+     * Deprecated in favor of awsDeviceV2.
+     * </p>
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     * 
+     * @param awsDevice
+     *        Deprecated in favor of awsDeviceV2.</p>
+     *        <p>
+     *        The AWS Direct Connection endpoint that hosts the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagResult withAwsDevice(String awsDevice) {
+        setAwsDevice(awsDevice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Direct Connection endpoint that hosts the LAG.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The AWS Direct Connection endpoint that hosts the LAG.
+     */
+
+    public void setAwsDeviceV2(String awsDeviceV2) {
+        this.awsDeviceV2 = awsDeviceV2;
     }
 
     /**
@@ -478,8 +542,8 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @return The AWS Direct Connection endpoint that hosts the LAG.
      */
 
-    public String getAwsDevice() {
-        return this.awsDevice;
+    public String getAwsDeviceV2() {
+        return this.awsDeviceV2;
     }
 
     /**
@@ -487,13 +551,13 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * The AWS Direct Connection endpoint that hosts the LAG.
      * </p>
      * 
-     * @param awsDevice
+     * @param awsDeviceV2
      *        The AWS Direct Connection endpoint that hosts the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateLagResult withAwsDevice(String awsDevice) {
-        setAwsDevice(awsDevice);
+    public CreateLagResult withAwsDeviceV2(String awsDeviceV2) {
+        setAwsDeviceV2(awsDeviceV2);
         return this;
     }
 
@@ -685,6 +749,8 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
             sb.append("MinimumLinks: ").append(getMinimumLinks()).append(",");
         if (getAwsDevice() != null)
             sb.append("AwsDevice: ").append(getAwsDevice()).append(",");
+        if (getAwsDeviceV2() != null)
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
         if (getConnections() != null)
             sb.append("Connections: ").append(getConnections()).append(",");
         if (getAllowsHostedConnections() != null)
@@ -743,6 +809,10 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getAwsDevice() != null && other.getAwsDevice().equals(this.getAwsDevice()) == false)
             return false;
+        if (other.getAwsDeviceV2() == null ^ this.getAwsDeviceV2() == null)
+            return false;
+        if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
+            return false;
         if (other.getConnections() == null ^ this.getConnections() == null)
             return false;
         if (other.getConnections() != null && other.getConnections().equals(this.getConnections()) == false)
@@ -769,6 +839,7 @@ public class CreateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getMinimumLinks() == null) ? 0 : getMinimumLinks().hashCode());
         hashCode = prime * hashCode + ((getAwsDevice() == null) ? 0 : getAwsDevice().hashCode());
+        hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         hashCode = prime * hashCode + ((getAllowsHostedConnections() == null) ? 0 : getAllowsHostedConnections().hashCode());
         return hashCode;

@@ -28,6 +28,19 @@ public class AbstractAWSCloudHSMV2Async extends AbstractAWSCloudHSMV2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest request) {
+
+        return copyBackupToRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyBackupToRegionRequest, CopyBackupToRegionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);

@@ -42,7 +42,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String vaultName;
     /**
      * <p>
-     * The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might be fewer
+     * The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer
      * than the specified limit, but the number of returned jobs never exceeds the limit.
      * </p>
      */
@@ -204,12 +204,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might be fewer
+     * The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer
      * than the specified limit, but the number of returned jobs never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might be
+     *        The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be
      *        fewer than the specified limit, but the number of returned jobs never exceeds the limit.
      */
 
@@ -219,12 +219,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might be fewer
+     * The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer
      * than the specified limit, but the number of returned jobs never exceeds the limit.
      * </p>
      * 
-     * @return The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might
-     *         be fewer than the specified limit, but the number of returned jobs never exceeds the limit.
+     * @return The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be
+     *         fewer than the specified limit, but the number of returned jobs never exceeds the limit.
      */
 
     public String getLimit() {
@@ -233,12 +233,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might be fewer
+     * The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer
      * than the specified limit, but the number of returned jobs never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of jobs to be returned. The default limit is 1000. The number of jobs returned might be
+     *        The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be
      *        fewer than the specified limit, but the number of returned jobs never exceeds the limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

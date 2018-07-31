@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum SecondaryStatus {
 
     Starting("Starting"),
+    LaunchingMLInstances("LaunchingMLInstances"),
+    PreparingTrainingStack("PreparingTrainingStack"),
     Downloading("Downloading"),
+    DownloadingTrainingImage("DownloadingTrainingImage"),
     Training("Training"),
     Uploading("Uploading"),
     Stopping("Stopping"),

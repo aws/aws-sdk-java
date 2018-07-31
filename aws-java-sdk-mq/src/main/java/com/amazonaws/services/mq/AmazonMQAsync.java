@@ -63,13 +63,11 @@ public interface AmazonMQAsync extends AmazonMQ {
 
     /**
      * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the
-     * engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     * configuration.
+     * engine type and version).
      * 
      * @param createConfigurationRequest
      *        Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
-     *        (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     *        configuration.
+     *        (the engine type and version).
      * @return A Java Future containing the result of the CreateConfiguration operation returned by the service.
      * @sample AmazonMQAsync.CreateConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration" target="_top">AWS API
@@ -79,13 +77,11 @@ public interface AmazonMQAsync extends AmazonMQ {
 
     /**
      * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the
-     * engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     * configuration.
+     * engine type and version).
      * 
      * @param createConfigurationRequest
      *        Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
-     *        (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     *        configuration.
+     *        (the engine type and version).
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

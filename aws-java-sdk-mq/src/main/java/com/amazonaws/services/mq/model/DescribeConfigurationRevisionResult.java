@@ -26,6 +26,8 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /** Required. The unique ID that Amazon MQ generates for the configuration. */
     private String configurationId;
+    /** Required. The date and time of the configuration. */
+    private java.util.Date created;
     /** Required. The base64-encoded XML configuration. */
     private String data;
     /** The description of the configuration. */
@@ -62,6 +64,40 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     public DescribeConfigurationRevisionResult withConfigurationId(String configurationId) {
         setConfigurationId(configurationId);
+        return this;
+    }
+
+    /**
+     * Required. The date and time of the configuration.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * Required. The date and time of the configuration.
+     * 
+     * @return Required. The date and time of the configuration.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * Required. The date and time of the configuration.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationRevisionResult withCreated(java.util.Date created) {
+        setCreated(created);
         return this;
     }
 
@@ -146,6 +182,8 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
         sb.append("{");
         if (getConfigurationId() != null)
             sb.append("ConfigurationId: ").append(getConfigurationId()).append(",");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
         if (getDescription() != null)
@@ -168,6 +206,10 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getConfigurationId() != null && other.getConfigurationId().equals(this.getConfigurationId()) == false)
             return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
+            return false;
         if (other.getData() == null ^ this.getData() == null)
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
@@ -185,6 +227,7 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfigurationId() == null) ? 0 : getConfigurationId().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;

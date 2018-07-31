@@ -15,11 +15,7 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The reason for which the XML elements or attributes were sanitized. Possible values: DISALLOWED_ELEMENT_REMOVED,
- * DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED DISALLOWED_ELEMENT_REMOVED shows that the provided
- * element isn't allowed and has been removed. DISALLOWED_ATTRIBUTE_REMOVED shows that the provided attribute isn't
- * allowed and has been removed. INVALID_ATTRIBUTE_VALUE_REMOVED shows that the provided value for the attribute isn't
- * allowed and has been removed.
+ * The reason for which the XML elements or attributes were sanitized.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SanitizationWarningReason {

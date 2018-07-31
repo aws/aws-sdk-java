@@ -121,6 +121,62 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
     }
 
     /**
+     * @param copyBackupToRegionRequest
+     * @return Result of the CopyBackupToRegion operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.CopyBackupToRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CopyBackupToRegionResult copyBackupToRegion(CopyBackupToRegionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyBackupToRegion(request);
+    }
+
+    @SdkInternalApi
+    final CopyBackupToRegionResult executeCopyBackupToRegion(CopyBackupToRegionRequest copyBackupToRegionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyBackupToRegionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyBackupToRegionRequest> request = null;
+        Response<CopyBackupToRegionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyBackupToRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyBackupToRegionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CopyBackupToRegionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyBackupToRegionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Creates a new AWS CloudHSM cluster.
      * </p>

@@ -38,6 +38,11 @@ import com.amazonaws.services.iot.model.*;
  * For more information about how AWS IoT works, see the <a
  * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.
  * </p>
+ * <p>
+ * For information about how to use the credentials provider for AWS IoT, see <a
+ * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing Direct Calls to
+ * AWS Services</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIot {
@@ -660,6 +665,13 @@ public interface AWSIot {
      * <p>
      * Creates a thing record in the registry.
      * </p>
+     * <note>
+     * <p>
+     * This is a control plane operation. See <a
+     * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a> for information
+     * about authorizing control plane actions.
+     * </p>
+     * </note>
      * 
      * @param createThingRequest
      *        The input for the CreateThing operation.
@@ -686,6 +698,13 @@ public interface AWSIot {
      * <p>
      * Create a thing group.
      * </p>
+     * <note>
+     * <p>
+     * This is a control plane operation. See <a
+     * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a> for information
+     * about authorizing control plane actions.
+     * </p>
+     * </note>
      * 
      * @param createThingGroupRequest
      * @return Result of the CreateThingGroup operation returned by the service.
@@ -1689,6 +1708,9 @@ public interface AWSIot {
     /**
      * <p>
      * Gets the logging options.
+     * </p>
+     * <p>
+     * NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code> instead.
      * </p>
      * 
      * @param getLoggingOptionsRequest
@@ -2718,6 +2740,9 @@ public interface AWSIot {
     /**
      * <p>
      * Sets the logging options.
+     * </p>
+     * <p>
+     * NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code> instead.
      * </p>
      * 
      * @param setLoggingOptionsRequest

@@ -52,7 +52,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The method to use to split the transform job's data into smaller batches. The default value is <code>None</code>.
-     * If you don't want to split the data, specify (<code>None</code>). If you want to split records on a newline
+     * If you don't want to split the data, specify <code>None</code>. If you want to split records on a newline
      * character boundary, specify <code>Line</code>. To split records according to the RecordIO format, specify
      * <code>RecordIO</code>.
      * </p>
@@ -237,7 +237,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The method to use to split the transform job's data into smaller batches. The default value is <code>None</code>.
-     * If you don't want to split the data, specify (<code>None</code>). If you want to split records on a newline
+     * If you don't want to split the data, specify <code>None</code>. If you want to split records on a newline
      * character boundary, specify <code>Line</code>. To split records according to the RecordIO format, specify
      * <code>RecordIO</code>.
      * </p>
@@ -255,7 +255,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param splitType
      *        The method to use to split the transform job's data into smaller batches. The default value is
-     *        <code>None</code>. If you don't want to split the data, specify (<code>None</code>). If you want to split
+     *        <code>None</code>. If you don't want to split the data, specify <code>None</code>. If you want to split
      *        records on a newline character boundary, specify <code>Line</code>. To split records according to the
      *        RecordIO format, specify <code>RecordIO</code>.</p>
      *        <p>
@@ -278,7 +278,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The method to use to split the transform job's data into smaller batches. The default value is <code>None</code>.
-     * If you don't want to split the data, specify (<code>None</code>). If you want to split records on a newline
+     * If you don't want to split the data, specify <code>None</code>. If you want to split records on a newline
      * character boundary, specify <code>Line</code>. To split records according to the RecordIO format, specify
      * <code>RecordIO</code>.
      * </p>
@@ -295,7 +295,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @return The method to use to split the transform job's data into smaller batches. The default value is
-     *         <code>None</code>. If you don't want to split the data, specify (<code>None</code>). If you want to split
+     *         <code>None</code>. If you don't want to split the data, specify <code>None</code>. If you want to split
      *         records on a newline character boundary, specify <code>Line</code>. To split records according to the
      *         RecordIO format, specify <code>RecordIO</code>.</p>
      *         <p>
@@ -318,7 +318,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The method to use to split the transform job's data into smaller batches. The default value is <code>None</code>.
-     * If you don't want to split the data, specify (<code>None</code>). If you want to split records on a newline
+     * If you don't want to split the data, specify <code>None</code>. If you want to split records on a newline
      * character boundary, specify <code>Line</code>. To split records according to the RecordIO format, specify
      * <code>RecordIO</code>.
      * </p>
@@ -336,7 +336,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param splitType
      *        The method to use to split the transform job's data into smaller batches. The default value is
-     *        <code>None</code>. If you don't want to split the data, specify (<code>None</code>). If you want to split
+     *        <code>None</code>. If you don't want to split the data, specify <code>None</code>. If you want to split
      *        records on a newline character boundary, specify <code>Line</code>. To split records according to the
      *        RecordIO format, specify <code>RecordIO</code>.</p>
      *        <p>
@@ -361,7 +361,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The method to use to split the transform job's data into smaller batches. The default value is <code>None</code>.
-     * If you don't want to split the data, specify (<code>None</code>). If you want to split records on a newline
+     * If you don't want to split the data, specify <code>None</code>. If you want to split records on a newline
      * character boundary, specify <code>Line</code>. To split records according to the RecordIO format, specify
      * <code>RecordIO</code>.
      * </p>
@@ -379,7 +379,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param splitType
      *        The method to use to split the transform job's data into smaller batches. The default value is
-     *        <code>None</code>. If you don't want to split the data, specify (<code>None</code>). If you want to split
+     *        <code>None</code>. If you don't want to split the data, specify <code>None</code>. If you want to split
      *        records on a newline character boundary, specify <code>Line</code>. To split records according to the
      *        RecordIO format, specify <code>RecordIO</code>.</p>
      *        <p>

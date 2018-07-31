@@ -28,7 +28,7 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
 
     /** Required. The unique ID that Amazon MQ generates for the configuration. */
     private String id;
-    /** The Universally Unique Identifier (UUID) of the request. */
+    /** The revision number of the configuration. */
     private Integer revision;
 
     /**
@@ -66,10 +66,10 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      * 
      * @param revision
-     *        The Universally Unique Identifier (UUID) of the request.
+     *        The revision number of the configuration.
      */
 
     public void setRevision(Integer revision) {
@@ -77,9 +77,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      * 
-     * @return The Universally Unique Identifier (UUID) of the request.
+     * @return The revision number of the configuration.
      */
 
     public Integer getRevision() {
@@ -87,10 +87,10 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      * 
      * @param revision
-     *        The Universally Unique Identifier (UUID) of the request.
+     *        The revision number of the configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

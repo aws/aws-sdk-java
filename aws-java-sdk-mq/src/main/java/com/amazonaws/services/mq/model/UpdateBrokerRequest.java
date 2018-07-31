@@ -34,6 +34,8 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String brokerId;
     /** A list of information about the configuration. */
     private ConfigurationId configuration;
+    /** Enables Amazon CloudWatch logging for brokers. */
+    private Logs logs;
 
     /**
      * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
@@ -116,6 +118,40 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * Enables Amazon CloudWatch logging for brokers.
+     * 
+     * @param logs
+     *        Enables Amazon CloudWatch logging for brokers.
+     */
+
+    public void setLogs(Logs logs) {
+        this.logs = logs;
+    }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     * 
+     * @return Enables Amazon CloudWatch logging for brokers.
+     */
+
+    public Logs getLogs() {
+        return this.logs;
+    }
+
+    /**
+     * Enables Amazon CloudWatch logging for brokers.
+     * 
+     * @param logs
+     *        Enables Amazon CloudWatch logging for brokers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerRequest withLogs(Logs logs) {
+        setLogs(logs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -129,7 +165,9 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getBrokerId() != null)
             sb.append("BrokerId: ").append(getBrokerId()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getLogs() != null)
+            sb.append("Logs: ").append(getLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -152,6 +190,10 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getLogs() == null ^ this.getLogs() == null)
+            return false;
+        if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
+            return false;
         return true;
     }
 
@@ -162,6 +204,7 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getBrokerId() == null) ? 0 : getBrokerId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         return hashCode;
     }
 

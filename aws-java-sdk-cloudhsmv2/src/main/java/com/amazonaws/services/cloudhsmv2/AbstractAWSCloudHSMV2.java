@@ -28,6 +28,11 @@ public class AbstractAWSCloudHSMV2 implements AWSCloudHSMV2 {
     }
 
     @Override
+    public CopyBackupToRegionResult copyBackupToRegion(CopyBackupToRegionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

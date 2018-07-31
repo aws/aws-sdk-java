@@ -56,6 +56,8 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      */
     private java.util.Map<String, java.util.List<String>> filters;
 
+    private Boolean sortAscending;
+
     /**
      * <p>
      * The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.
@@ -270,6 +272,40 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * @param sortAscending
+     */
+
+    public void setSortAscending(Boolean sortAscending) {
+        this.sortAscending = sortAscending;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getSortAscending() {
+        return this.sortAscending;
+    }
+
+    /**
+     * @param sortAscending
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupsRequest withSortAscending(Boolean sortAscending) {
+        setSortAscending(sortAscending);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isSortAscending() {
+        return this.sortAscending;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -285,7 +321,9 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getSortAscending() != null)
+            sb.append("SortAscending: ").append(getSortAscending());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +350,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
+        if (other.getSortAscending() == null ^ this.getSortAscending() == null)
+            return false;
+        if (other.getSortAscending() != null && other.getSortAscending().equals(this.getSortAscending()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +365,7 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getSortAscending() == null) ? 0 : getSortAscending().hashCode());
         return hashCode;
     }
 

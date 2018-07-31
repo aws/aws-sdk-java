@@ -125,6 +125,14 @@ public class AllocatePublicVirtualInterfaceResultJsonUnmarshaller implements Unm
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

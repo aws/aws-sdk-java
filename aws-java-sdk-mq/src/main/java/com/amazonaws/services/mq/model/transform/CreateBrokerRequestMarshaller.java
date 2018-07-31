@@ -47,6 +47,8 @@ public class CreateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineVersion").build();
     private static final MarshallingInfo<String> HOSTINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostInstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
     private static final MarshallingInfo<StructuredPojo> MAINTENANCEWINDOWSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maintenanceWindowStartTime").build();
     private static final MarshallingInfo<Boolean> PUBLICLYACCESSIBLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -82,6 +84,7 @@ public class CreateBrokerRequestMarshaller {
             protocolMarshaller.marshall(createBrokerRequest.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createBrokerRequest.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getMaintenanceWindowStartTime(), MAINTENANCEWINDOWSTARTTIME_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);

@@ -48,6 +48,10 @@ public class ConfigurationRevisionJsonUnmarshaller implements Unmarshaller<Confi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("created", targetDepth)) {
+                    context.nextToken();
+                    configurationRevision.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     configurationRevision.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

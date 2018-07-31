@@ -35,6 +35,14 @@ public class BackupMarshaller {
             .marshallLocationName("ClusterId").build();
     private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> COPYTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTimestamp").build();
+    private static final MarshallingInfo<String> SOURCEREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceRegion").build();
+    private static final MarshallingInfo<String> SOURCEBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackup").build();
+    private static final MarshallingInfo<String> SOURCECLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCluster").build();
 
     private static final BackupMarshaller instance = new BackupMarshaller();
 
@@ -56,6 +64,10 @@ public class BackupMarshaller {
             protocolMarshaller.marshall(backup.getBackupState(), BACKUPSTATE_BINDING);
             protocolMarshaller.marshall(backup.getClusterId(), CLUSTERID_BINDING);
             protocolMarshaller.marshall(backup.getCreateTimestamp(), CREATETIMESTAMP_BINDING);
+            protocolMarshaller.marshall(backup.getCopyTimestamp(), COPYTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(backup.getSourceRegion(), SOURCEREGION_BINDING);
+            protocolMarshaller.marshall(backup.getSourceBackup(), SOURCEBACKUP_BINDING);
+            protocolMarshaller.marshall(backup.getSourceCluster(), SOURCECLUSTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

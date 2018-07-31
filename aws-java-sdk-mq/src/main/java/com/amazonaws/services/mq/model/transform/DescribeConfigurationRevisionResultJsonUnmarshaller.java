@@ -52,6 +52,10 @@ public class DescribeConfigurationRevisionResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     describeConfigurationRevisionResult.setConfigurationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("created", targetDepth)) {
+                    context.nextToken();
+                    describeConfigurationRevisionResult.setCreated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("data", targetDepth)) {
                     context.nextToken();
                     describeConfigurationRevisionResult.setData(context.getUnmarshaller(String.class).unmarshall(context));

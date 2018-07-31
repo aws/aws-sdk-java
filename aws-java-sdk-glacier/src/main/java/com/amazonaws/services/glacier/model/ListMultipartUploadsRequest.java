@@ -43,7 +43,7 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      */
     private String limit;
@@ -192,12 +192,12 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      * 
      * @param limit
      *        Specifies the maximum number of uploads returned in the response body. If this value is not specified, the
-     *        List Uploads operation returns up to 1,000 uploads.
+     *        List Uploads operation returns up to 50 uploads.
      */
 
     public void setLimit(String limit) {
@@ -207,11 +207,11 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      * 
      * @return Specifies the maximum number of uploads returned in the response body. If this value is not specified,
-     *         the List Uploads operation returns up to 1,000 uploads.
+     *         the List Uploads operation returns up to 50 uploads.
      */
 
     public String getLimit() {
@@ -221,12 +221,12 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      * 
      * @param limit
      *        Specifies the maximum number of uploads returned in the response body. If this value is not specified, the
-     *        List Uploads operation returns up to 1,000 uploads.
+     *        List Uploads operation returns up to 50 uploads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,8 @@ public class DescribeBackupsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<Map> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Filters").build();
+    private static final MarshallingInfo<Boolean> SORTASCENDING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortAscending").build();
 
     private static final DescribeBackupsRequestMarshaller instance = new DescribeBackupsRequestMarshaller();
 
@@ -55,6 +57,7 @@ public class DescribeBackupsRequestMarshaller {
             protocolMarshaller.marshall(describeBackupsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeBackupsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeBackupsRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(describeBackupsRequest.getSortAscending(), SORTASCENDING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

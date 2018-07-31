@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the
- * engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a configuration.
+ * engine type and version).
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration" target="_top">AWS API
  *      Documentation</a>

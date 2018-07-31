@@ -45,6 +45,8 @@ public class InterconnectMarshaller {
             .marshallLocationName("lagId").build();
     private static final MarshallingInfo<String> AWSDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("awsDevice").build();
+    private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
 
     private static final InterconnectMarshaller instance = new InterconnectMarshaller();
 
@@ -71,6 +73,7 @@ public class InterconnectMarshaller {
             protocolMarshaller.marshall(interconnect.getLoaIssueTime(), LOAISSUETIME_BINDING);
             protocolMarshaller.marshall(interconnect.getLagId(), LAGID_BINDING);
             protocolMarshaller.marshall(interconnect.getAwsDevice(), AWSDEVICE_BINDING);
+            protocolMarshaller.marshall(interconnect.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

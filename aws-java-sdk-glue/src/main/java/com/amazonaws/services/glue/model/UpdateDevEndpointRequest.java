@@ -39,6 +39,18 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     private String publicKey;
     /**
      * <p>
+     * The list of public keys for the DevEndpoint to use.
+     * </p>
+     */
+    private java.util.List<String> addPublicKeys;
+    /**
+     * <p>
+     * The list of public keys to be deleted from the DevEndpoint.
+     * </p>
+     */
+    private java.util.List<String> deletePublicKeys;
+    /**
+     * <p>
      * Custom Python or Java libraries to be loaded in the DevEndpoint.
      * </p>
      */
@@ -128,6 +140,146 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdateDevEndpointRequest withPublicKey(String publicKey) {
         setPublicKey(publicKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of public keys for the DevEndpoint to use.
+     * </p>
+     * 
+     * @return The list of public keys for the DevEndpoint to use.
+     */
+
+    public java.util.List<String> getAddPublicKeys() {
+        return addPublicKeys;
+    }
+
+    /**
+     * <p>
+     * The list of public keys for the DevEndpoint to use.
+     * </p>
+     * 
+     * @param addPublicKeys
+     *        The list of public keys for the DevEndpoint to use.
+     */
+
+    public void setAddPublicKeys(java.util.Collection<String> addPublicKeys) {
+        if (addPublicKeys == null) {
+            this.addPublicKeys = null;
+            return;
+        }
+
+        this.addPublicKeys = new java.util.ArrayList<String>(addPublicKeys);
+    }
+
+    /**
+     * <p>
+     * The list of public keys for the DevEndpoint to use.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddPublicKeys(java.util.Collection)} or {@link #withAddPublicKeys(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param addPublicKeys
+     *        The list of public keys for the DevEndpoint to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withAddPublicKeys(String... addPublicKeys) {
+        if (this.addPublicKeys == null) {
+            setAddPublicKeys(new java.util.ArrayList<String>(addPublicKeys.length));
+        }
+        for (String ele : addPublicKeys) {
+            this.addPublicKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of public keys for the DevEndpoint to use.
+     * </p>
+     * 
+     * @param addPublicKeys
+     *        The list of public keys for the DevEndpoint to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withAddPublicKeys(java.util.Collection<String> addPublicKeys) {
+        setAddPublicKeys(addPublicKeys);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of public keys to be deleted from the DevEndpoint.
+     * </p>
+     * 
+     * @return The list of public keys to be deleted from the DevEndpoint.
+     */
+
+    public java.util.List<String> getDeletePublicKeys() {
+        return deletePublicKeys;
+    }
+
+    /**
+     * <p>
+     * The list of public keys to be deleted from the DevEndpoint.
+     * </p>
+     * 
+     * @param deletePublicKeys
+     *        The list of public keys to be deleted from the DevEndpoint.
+     */
+
+    public void setDeletePublicKeys(java.util.Collection<String> deletePublicKeys) {
+        if (deletePublicKeys == null) {
+            this.deletePublicKeys = null;
+            return;
+        }
+
+        this.deletePublicKeys = new java.util.ArrayList<String>(deletePublicKeys);
+    }
+
+    /**
+     * <p>
+     * The list of public keys to be deleted from the DevEndpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeletePublicKeys(java.util.Collection)} or {@link #withDeletePublicKeys(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param deletePublicKeys
+     *        The list of public keys to be deleted from the DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withDeletePublicKeys(String... deletePublicKeys) {
+        if (this.deletePublicKeys == null) {
+            setDeletePublicKeys(new java.util.ArrayList<String>(deletePublicKeys.length));
+        }
+        for (String ele : deletePublicKeys) {
+            this.deletePublicKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of public keys to be deleted from the DevEndpoint.
+     * </p>
+     * 
+     * @param deletePublicKeys
+     *        The list of public keys to be deleted from the DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withDeletePublicKeys(java.util.Collection<String> deletePublicKeys) {
+        setDeletePublicKeys(deletePublicKeys);
         return this;
     }
 
@@ -246,6 +398,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("EndpointName: ").append(getEndpointName()).append(",");
         if (getPublicKey() != null)
             sb.append("PublicKey: ").append(getPublicKey()).append(",");
+        if (getAddPublicKeys() != null)
+            sb.append("AddPublicKeys: ").append(getAddPublicKeys()).append(",");
+        if (getDeletePublicKeys() != null)
+            sb.append("DeletePublicKeys: ").append(getDeletePublicKeys()).append(",");
         if (getCustomLibraries() != null)
             sb.append("CustomLibraries: ").append(getCustomLibraries()).append(",");
         if (getUpdateEtlLibraries() != null)
@@ -272,6 +428,14 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getPublicKey() != null && other.getPublicKey().equals(this.getPublicKey()) == false)
             return false;
+        if (other.getAddPublicKeys() == null ^ this.getAddPublicKeys() == null)
+            return false;
+        if (other.getAddPublicKeys() != null && other.getAddPublicKeys().equals(this.getAddPublicKeys()) == false)
+            return false;
+        if (other.getDeletePublicKeys() == null ^ this.getDeletePublicKeys() == null)
+            return false;
+        if (other.getDeletePublicKeys() != null && other.getDeletePublicKeys().equals(this.getDeletePublicKeys()) == false)
+            return false;
         if (other.getCustomLibraries() == null ^ this.getCustomLibraries() == null)
             return false;
         if (other.getCustomLibraries() != null && other.getCustomLibraries().equals(this.getCustomLibraries()) == false)
@@ -290,6 +454,8 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
         hashCode = prime * hashCode + ((getPublicKey() == null) ? 0 : getPublicKey().hashCode());
+        hashCode = prime * hashCode + ((getAddPublicKeys() == null) ? 0 : getAddPublicKeys().hashCode());
+        hashCode = prime * hashCode + ((getDeletePublicKeys() == null) ? 0 : getDeletePublicKeys().hashCode());
         hashCode = prime * hashCode + ((getCustomLibraries() == null) ? 0 : getCustomLibraries().hashCode());
         hashCode = prime * hashCode + ((getUpdateEtlLibraries() == null) ? 0 : getUpdateEtlLibraries().hashCode());
         return hashCode;

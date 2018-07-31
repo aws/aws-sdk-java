@@ -32,6 +32,8 @@ public class BrokerInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("consoleURL").build();
     private static final MarshallingInfo<List> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("endpoints").build();
+    private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ipAddress").build();
 
     private static final BrokerInstanceMarshaller instance = new BrokerInstanceMarshaller();
 
@@ -51,6 +53,7 @@ public class BrokerInstanceMarshaller {
         try {
             protocolMarshaller.marshall(brokerInstance.getConsoleURL(), CONSOLEURL_BINDING);
             protocolMarshaller.marshall(brokerInstance.getEndpoints(), ENDPOINTS_BINDING);
+            protocolMarshaller.marshall(brokerInstance.getIpAddress(), IPADDRESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

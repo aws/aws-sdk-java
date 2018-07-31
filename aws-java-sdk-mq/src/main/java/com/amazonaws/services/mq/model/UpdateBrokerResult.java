@@ -27,6 +27,8 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     private String brokerId;
     /** The ID of the updated configuration. */
     private ConfigurationId configuration;
+    /** The list of information about logs to be enabled for the specified broker. */
+    private Logs logs;
 
     /**
      * Required. The unique ID that Amazon MQ generates for the broker.
@@ -97,6 +99,40 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * The list of information about logs to be enabled for the specified broker.
+     * 
+     * @param logs
+     *        The list of information about logs to be enabled for the specified broker.
+     */
+
+    public void setLogs(Logs logs) {
+        this.logs = logs;
+    }
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     * 
+     * @return The list of information about logs to be enabled for the specified broker.
+     */
+
+    public Logs getLogs() {
+        return this.logs;
+    }
+
+    /**
+     * The list of information about logs to be enabled for the specified broker.
+     * 
+     * @param logs
+     *        The list of information about logs to be enabled for the specified broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withLogs(Logs logs) {
+        setLogs(logs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -110,7 +146,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getBrokerId() != null)
             sb.append("BrokerId: ").append(getBrokerId()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getLogs() != null)
+            sb.append("Logs: ").append(getLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -133,6 +171,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getLogs() == null ^ this.getLogs() == null)
+            return false;
+        if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
+            return false;
         return true;
     }
 
@@ -143,6 +185,7 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
 
         hashCode = prime * hashCode + ((getBrokerId() == null) ? 0 : getBrokerId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         return hashCode;
     }
 

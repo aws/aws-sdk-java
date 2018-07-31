@@ -76,6 +76,10 @@ public class BGPPeerJsonUnmarshaller implements Unmarshaller<BGPPeer, JsonUnmars
                     context.nextToken();
                     bGPPeer.setBgpStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    bGPPeer.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

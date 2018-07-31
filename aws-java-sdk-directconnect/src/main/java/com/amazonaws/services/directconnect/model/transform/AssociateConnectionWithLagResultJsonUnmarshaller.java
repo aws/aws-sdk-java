@@ -96,6 +96,10 @@ public class AssociateConnectionWithLagResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    associateConnectionWithLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

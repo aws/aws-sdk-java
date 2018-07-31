@@ -96,6 +96,10 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createConnectionResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

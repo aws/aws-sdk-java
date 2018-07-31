@@ -64,6 +64,22 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                     context.nextToken();
                     backup.setCreateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CopyTimestamp", targetDepth)) {
+                    context.nextToken();
+                    backup.setCopyTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("SourceRegion", targetDepth)) {
+                    context.nextToken();
+                    backup.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceBackup", targetDepth)) {
+                    context.nextToken();
+                    backup.setSourceBackup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceCluster", targetDepth)) {
+                    context.nextToken();
+                    backup.setSourceCluster(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

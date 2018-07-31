@@ -40,25 +40,22 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * special characters.
      */
     private String brokerName;
-    /**
-     * The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING,
-     * REBOOT_IN_PROGRESS
-     */
+    /** The status of the broker. */
     private String brokerState;
     /** The list of all revisions for the specified configuration. */
     private Configurations configurations;
-    /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     * SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates
-     * an active/standby broker for high availability.
-     */
+    /** The time when the broker was created. */
+    private java.util.Date created;
+    /** Required. The deployment mode of the broker. */
     private String deploymentMode;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
     /** The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0. */
     private String engineVersion;
-    /** The broker's instance type. Possible values: mq.t2.micro, mq.m4.large */
+    /** The broker's instance type. */
     private String hostInstanceType;
+    /** The list of information about logs currently enabled and pending to be deployed for the specified broker. */
+    private LogsSummary logs;
     /** The parameters that determine the WeeklyStartTime. */
     private WeeklyStartTime maintenanceWindowStartTime;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
@@ -303,12 +300,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING,
-     * REBOOT_IN_PROGRESS
+     * The status of the broker.
      * 
      * @param brokerState
-     *        The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS,
-     *        RUNNING, REBOOT_IN_PROGRESS
+     *        The status of the broker.
      * @see BrokerState
      */
 
@@ -317,11 +312,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING,
-     * REBOOT_IN_PROGRESS
+     * The status of the broker.
      * 
-     * @return The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS,
-     *         RUNNING, REBOOT_IN_PROGRESS
+     * @return The status of the broker.
      * @see BrokerState
      */
 
@@ -330,12 +323,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING,
-     * REBOOT_IN_PROGRESS
+     * The status of the broker.
      * 
      * @param brokerState
-     *        The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS,
-     *        RUNNING, REBOOT_IN_PROGRESS
+     *        The status of the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BrokerState
      */
@@ -346,12 +337,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING,
-     * REBOOT_IN_PROGRESS
+     * The status of the broker.
      * 
      * @param brokerState
-     *        The status of the broker. Possible values: CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS,
-     *        RUNNING, REBOOT_IN_PROGRESS
+     *        The status of the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BrokerState
      */
@@ -396,14 +385,44 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     * SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates
-     * an active/standby broker for high availability.
+     * The time when the broker was created.
+     * 
+     * @param created
+     *        The time when the broker was created.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * The time when the broker was created.
+     * 
+     * @return The time when the broker was created.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * The time when the broker was created.
+     * 
+     * @param created
+     *        The time when the broker was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withCreated(java.util.Date created) {
+        setCreated(created);
+        return this;
+    }
+
+    /**
+     * Required. The deployment mode of the broker.
      * 
      * @param deploymentMode
-     *        Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     *        SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ
-     *        creates an active/standby broker for high availability.
+     *        Required. The deployment mode of the broker.
      * @see DeploymentMode
      */
 
@@ -412,13 +431,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     * SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates
-     * an active/standby broker for high availability.
+     * Required. The deployment mode of the broker.
      * 
-     * @return Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     *         SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ
-     *         creates an active/standby broker for high availability.
+     * @return Required. The deployment mode of the broker.
      * @see DeploymentMode
      */
 
@@ -427,14 +442,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     * SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates
-     * an active/standby broker for high availability.
+     * Required. The deployment mode of the broker.
      * 
      * @param deploymentMode
-     *        Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     *        SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ
-     *        creates an active/standby broker for high availability.
+     *        Required. The deployment mode of the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentMode
      */
@@ -445,14 +456,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     * SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates
-     * an active/standby broker for high availability.
+     * Required. The deployment mode of the broker.
      * 
      * @param deploymentMode
-     *        Required. The deployment mode of the broker. Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ
-     *        SINGLE_INSTANCE creates a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ
-     *        creates an active/standby broker for high availability.
+     *        Required. The deployment mode of the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentMode
      */
@@ -548,10 +555,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * The broker's instance type.
      * 
      * @param hostInstanceType
-     *        The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     *        The broker's instance type.
      */
 
     public void setHostInstanceType(String hostInstanceType) {
@@ -559,9 +566,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * The broker's instance type.
      * 
-     * @return The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * @return The broker's instance type.
      */
 
     public String getHostInstanceType() {
@@ -569,15 +576,49 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     * The broker's instance type.
      * 
      * @param hostInstanceType
-     *        The broker's instance type. Possible values: mq.t2.micro, mq.m4.large
+     *        The broker's instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeBrokerResult withHostInstanceType(String hostInstanceType) {
         setHostInstanceType(hostInstanceType);
+        return this;
+    }
+
+    /**
+     * The list of information about logs currently enabled and pending to be deployed for the specified broker.
+     * 
+     * @param logs
+     *        The list of information about logs currently enabled and pending to be deployed for the specified broker.
+     */
+
+    public void setLogs(LogsSummary logs) {
+        this.logs = logs;
+    }
+
+    /**
+     * The list of information about logs currently enabled and pending to be deployed for the specified broker.
+     * 
+     * @return The list of information about logs currently enabled and pending to be deployed for the specified broker.
+     */
+
+    public LogsSummary getLogs() {
+        return this.logs;
+    }
+
+    /**
+     * The list of information about logs currently enabled and pending to be deployed for the specified broker.
+     * 
+     * @param logs
+     *        The list of information about logs currently enabled and pending to be deployed for the specified broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withLogs(LogsSummary logs) {
+        setLogs(logs);
         return this;
     }
 
@@ -886,6 +927,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("BrokerState: ").append(getBrokerState()).append(",");
         if (getConfigurations() != null)
             sb.append("Configurations: ").append(getConfigurations()).append(",");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getDeploymentMode() != null)
             sb.append("DeploymentMode: ").append(getDeploymentMode()).append(",");
         if (getEngineType() != null)
@@ -894,6 +937,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getHostInstanceType() != null)
             sb.append("HostInstanceType: ").append(getHostInstanceType()).append(",");
+        if (getLogs() != null)
+            sb.append("Logs: ").append(getLogs()).append(",");
         if (getMaintenanceWindowStartTime() != null)
             sb.append("MaintenanceWindowStartTime: ").append(getMaintenanceWindowStartTime()).append(",");
         if (getPubliclyAccessible() != null)
@@ -946,6 +991,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
             return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
+            return false;
         if (other.getDeploymentMode() == null ^ this.getDeploymentMode() == null)
             return false;
         if (other.getDeploymentMode() != null && other.getDeploymentMode().equals(this.getDeploymentMode()) == false)
@@ -961,6 +1010,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getHostInstanceType() == null ^ this.getHostInstanceType() == null)
             return false;
         if (other.getHostInstanceType() != null && other.getHostInstanceType().equals(this.getHostInstanceType()) == false)
+            return false;
+        if (other.getLogs() == null ^ this.getLogs() == null)
+            return false;
+        if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
             return false;
         if (other.getMaintenanceWindowStartTime() == null ^ this.getMaintenanceWindowStartTime() == null)
             return false;
@@ -997,10 +1050,12 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getBrokerName() == null) ? 0 : getBrokerName().hashCode());
         hashCode = prime * hashCode + ((getBrokerState() == null) ? 0 : getBrokerState().hashCode());
         hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDeploymentMode() == null) ? 0 : getDeploymentMode().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());

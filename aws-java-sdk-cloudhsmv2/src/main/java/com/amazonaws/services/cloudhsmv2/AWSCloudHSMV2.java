@@ -43,6 +43,26 @@ public interface AWSCloudHSMV2 {
     String ENDPOINT_PREFIX = "cloudhsmv2";
 
     /**
+     * @param copyBackupToRegionRequest
+     * @return Result of the CopyBackupToRegion operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.CopyBackupToRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CopyBackupToRegionResult copyBackupToRegion(CopyBackupToRegionRequest copyBackupToRegionRequest);
+
+    /**
      * <p>
      * Creates a new AWS CloudHSM cluster.
      * </p>

@@ -63,6 +63,39 @@ public class AWSCloudHSMV2AsyncClient extends AWSCloudHSMV2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest request) {
+
+        return copyBackupToRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(final CopyBackupToRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopyBackupToRegionRequest, CopyBackupToRegionResult> asyncHandler) {
+        final CopyBackupToRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CopyBackupToRegionResult>() {
+            @Override
+            public CopyBackupToRegionResult call() throws Exception {
+                CopyBackupToRegionResult result = null;
+
+                try {
+                    result = executeCopyBackupToRegion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);

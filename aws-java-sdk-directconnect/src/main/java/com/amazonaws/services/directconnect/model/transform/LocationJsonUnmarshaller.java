@@ -56,6 +56,10 @@ public class LocationJsonUnmarshaller implements Unmarshaller<Location, JsonUnma
                     context.nextToken();
                     location.setLocationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    location.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

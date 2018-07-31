@@ -26,10 +26,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationRevision implements Serializable, Cloneable, StructuredPojo {
 
+    /** Required. The date and time of the configuration revision. */
+    private java.util.Date created;
     /** The description of the configuration revision. */
     private String description;
-    /** Required. The revision of the configuration. */
+    /** Required. The revision number of the configuration. */
     private Integer revision;
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration revision.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @return Required. The date and time of the configuration revision.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigurationRevision withCreated(java.util.Date created) {
+        setCreated(created);
+        return this;
+    }
 
     /**
      * The description of the configuration revision.
@@ -66,10 +102,10 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Required. The revision of the configuration.
+     * Required. The revision number of the configuration.
      * 
      * @param revision
-     *        Required. The revision of the configuration.
+     *        Required. The revision number of the configuration.
      */
 
     public void setRevision(Integer revision) {
@@ -77,9 +113,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Required. The revision of the configuration.
+     * Required. The revision number of the configuration.
      * 
-     * @return Required. The revision of the configuration.
+     * @return Required. The revision number of the configuration.
      */
 
     public Integer getRevision() {
@@ -87,10 +123,10 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Required. The revision of the configuration.
+     * Required. The revision number of the configuration.
      * 
      * @param revision
-     *        Required. The revision of the configuration.
+     *        Required. The revision number of the configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,6 +146,8 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRevision() != null)
@@ -128,6 +166,10 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
         if (obj instanceof ConfigurationRevision == false)
             return false;
         ConfigurationRevision other = (ConfigurationRevision) obj;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -144,6 +186,7 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
         return hashCode;

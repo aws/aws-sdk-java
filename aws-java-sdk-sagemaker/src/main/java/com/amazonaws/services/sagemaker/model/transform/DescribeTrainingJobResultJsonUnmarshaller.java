@@ -125,6 +125,11 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("SecondaryStatusTransitions", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setSecondaryStatusTransitions(new ListUnmarshaller<SecondaryStatusTransition>(
+                            SecondaryStatusTransitionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

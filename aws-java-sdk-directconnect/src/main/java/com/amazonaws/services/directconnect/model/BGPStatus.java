@@ -23,7 +23,12 @@ import javax.annotation.Generated;
  * <p>
  * <b>Up</b>: The BGP peer is established.
  * </p>
- * </li>
+ * <note>
+ * <p>
+ * A state of <code>up</code> does not indicate the state of the routing function. Ensure that you are receiving routes
+ * over the BGP session.
+ * </p>
+ * </note></li>
  * <li>
  * <p>
  * <b>Down</b>: The BGP peer is down.

@@ -113,12 +113,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobProcessDetails jobProcessDetails;
-    /**
-     * <p>
-     * The parameters specified for the job document.
-     * </p>
-     */
-    private java.util.Map<String, String> documentParameters;
 
     /**
      * <p>
@@ -797,67 +791,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The parameters specified for the job document.
-     * </p>
-     * 
-     * @return The parameters specified for the job document.
-     */
-
-    public java.util.Map<String, String> getDocumentParameters() {
-        return documentParameters;
-    }
-
-    /**
-     * <p>
-     * The parameters specified for the job document.
-     * </p>
-     * 
-     * @param documentParameters
-     *        The parameters specified for the job document.
-     */
-
-    public void setDocumentParameters(java.util.Map<String, String> documentParameters) {
-        this.documentParameters = documentParameters;
-    }
-
-    /**
-     * <p>
-     * The parameters specified for the job document.
-     * </p>
-     * 
-     * @param documentParameters
-     *        The parameters specified for the job document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Job withDocumentParameters(java.util.Map<String, String> documentParameters) {
-        setDocumentParameters(documentParameters);
-        return this;
-    }
-
-    public Job addDocumentParametersEntry(String key, String value) {
-        if (null == this.documentParameters) {
-            this.documentParameters = new java.util.HashMap<String, String>();
-        }
-        if (this.documentParameters.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.documentParameters.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into DocumentParameters.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Job clearDocumentParametersEntries() {
-        this.documentParameters = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -895,9 +828,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getCompletedAt() != null)
             sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getJobProcessDetails() != null)
-            sb.append("JobProcessDetails: ").append(getJobProcessDetails()).append(",");
-        if (getDocumentParameters() != null)
-            sb.append("DocumentParameters: ").append(getDocumentParameters());
+            sb.append("JobProcessDetails: ").append(getJobProcessDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -968,10 +899,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobProcessDetails() != null && other.getJobProcessDetails().equals(this.getJobProcessDetails()) == false)
             return false;
-        if (other.getDocumentParameters() == null ^ this.getDocumentParameters() == null)
-            return false;
-        if (other.getDocumentParameters() != null && other.getDocumentParameters().equals(this.getDocumentParameters()) == false)
-            return false;
         return true;
     }
 
@@ -994,7 +921,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
         hashCode = prime * hashCode + ((getJobProcessDetails() == null) ? 0 : getJobProcessDetails().hashCode());
-        hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
         return hashCode;
     }
 

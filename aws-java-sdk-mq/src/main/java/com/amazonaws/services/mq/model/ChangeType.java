@@ -15,7 +15,7 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+ * The type of change pending for the ActiveMQ user.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ChangeType {

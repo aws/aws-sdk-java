@@ -33,7 +33,7 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
     private java.util.List<String> groups;
-    /** Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE */
+    /** Required. The type of change pending for the ActiveMQ user. */
     private String pendingChange;
 
     /**
@@ -155,10 +155,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      * 
      * @param pendingChange
-     *        Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     *        Required. The type of change pending for the ActiveMQ user.
      * @see ChangeType
      */
 
@@ -167,9 +167,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      * 
-     * @return Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * @return Required. The type of change pending for the ActiveMQ user.
      * @see ChangeType
      */
 
@@ -178,10 +178,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      * 
      * @param pendingChange
-     *        Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     *        Required. The type of change pending for the ActiveMQ user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
@@ -192,10 +192,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * Required. The type of change pending for the ActiveMQ user.
      * 
      * @param pendingChange
-     *        Required. The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     *        Required. The type of change pending for the ActiveMQ user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */

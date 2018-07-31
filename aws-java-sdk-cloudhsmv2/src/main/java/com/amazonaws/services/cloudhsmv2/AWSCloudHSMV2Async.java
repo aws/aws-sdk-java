@@ -34,6 +34,29 @@ import com.amazonaws.services.cloudhsmv2.model.*;
 public interface AWSCloudHSMV2Async extends AWSCloudHSMV2 {
 
     /**
+     * @param copyBackupToRegionRequest
+     * @return A Java Future containing the result of the CopyBackupToRegion operation returned by the service.
+     * @sample AWSCloudHSMV2Async.CopyBackupToRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest copyBackupToRegionRequest);
+
+    /**
+     * @param copyBackupToRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyBackupToRegion operation returned by the service.
+     * @sample AWSCloudHSMV2AsyncHandler.CopyBackupToRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest copyBackupToRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyBackupToRegionRequest, CopyBackupToRegionResult> asyncHandler);
+
+    /**
      * <p>
      * Creates a new AWS CloudHSM cluster.
      * </p>

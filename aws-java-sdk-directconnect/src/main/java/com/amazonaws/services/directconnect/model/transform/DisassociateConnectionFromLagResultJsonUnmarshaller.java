@@ -96,6 +96,10 @@ public class DisassociateConnectionFromLagResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     disassociateConnectionFromLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    disassociateConnectionFromLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

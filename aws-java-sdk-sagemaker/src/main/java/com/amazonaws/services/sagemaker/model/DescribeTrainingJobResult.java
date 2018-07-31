@@ -94,6 +94,75 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Starting</code> - starting the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Downloading</code> - downloading the input data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Training</code> - model training is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Uploading</code> - uploading the trained model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopping</code> - stopping the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopped</code> - the training job has stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Completed</code> - the training job has completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     * <code>StatusMessage</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
+     * </p>
+     * </important>
      */
     private String secondaryStatus;
     /**
@@ -182,6 +251,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
+     * </p>
+     */
+    private java.util.List<SecondaryStatusTransition> secondaryStatusTransitions;
 
     /**
      * <p>
@@ -696,10 +772,148 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Starting</code> - starting the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Downloading</code> - downloading the input data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Training</code> - model training is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Uploading</code> - uploading the trained model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopping</code> - stopping the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopped</code> - the training job has stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Completed</code> - the training job has completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     * <code>StatusMessage</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
+     * </p>
+     * </important>
      * 
      * @param secondaryStatus
      *        Provides granular information about the system state. For more information, see
-     *        <code>TrainingJobStatus</code>.
+     *        <code>TrainingJobStatus</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Starting</code> - starting the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Downloading</code> - downloading the input data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Training</code> - model training is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Uploading</code> - uploading the trained model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stopping</code> - stopping the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stopped</code> - the training job has stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *        stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> - the training job has completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     *        <code>StatusMessage</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *        information on the progress of the training job.
+     *        </p>
      * @see SecondaryStatus
      */
 
@@ -711,9 +925,147 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Starting</code> - starting the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Downloading</code> - downloading the input data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Training</code> - model training is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Uploading</code> - uploading the trained model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopping</code> - stopping the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopped</code> - the training job has stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Completed</code> - the training job has completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     * <code>StatusMessage</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
+     * </p>
+     * </important>
      * 
      * @return Provides granular information about the system state. For more information, see
-     *         <code>TrainingJobStatus</code>.
+     *         <code>TrainingJobStatus</code>. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Starting</code> - starting the training job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Downloading</code> - downloading the input data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Training</code> - model training is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Uploading</code> - uploading the trained model.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Stopping</code> - stopping the training job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Stopped</code> - the training job has stopped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *         stopped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Completed</code> - the training job has completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     *         <code>StatusMessage</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *         information on the progress of the training job.
+     *         </p>
      * @see SecondaryStatus
      */
 
@@ -725,10 +1077,148 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Starting</code> - starting the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Downloading</code> - downloading the input data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Training</code> - model training is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Uploading</code> - uploading the trained model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopping</code> - stopping the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopped</code> - the training job has stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Completed</code> - the training job has completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     * <code>StatusMessage</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
+     * </p>
+     * </important>
      * 
      * @param secondaryStatus
      *        Provides granular information about the system state. For more information, see
-     *        <code>TrainingJobStatus</code>.
+     *        <code>TrainingJobStatus</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Starting</code> - starting the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Downloading</code> - downloading the input data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Training</code> - model training is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Uploading</code> - uploading the trained model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stopping</code> - stopping the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stopped</code> - the training job has stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *        stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> - the training job has completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     *        <code>StatusMessage</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *        information on the progress of the training job.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecondaryStatus
      */
@@ -742,10 +1232,148 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Starting</code> - starting the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Downloading</code> - downloading the input data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Training</code> - model training is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Uploading</code> - uploading the trained model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopping</code> - stopping the training job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Stopped</code> - the training job has stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Completed</code> - the training job has completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     * <code>StatusMessage</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
+     * </p>
+     * </important>
      * 
      * @param secondaryStatus
      *        Provides granular information about the system state. For more information, see
-     *        <code>TrainingJobStatus</code>.
+     *        <code>TrainingJobStatus</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Starting</code> - starting the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Downloading</code> - downloading the input data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Training</code> - model training is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Uploading</code> - uploading the trained model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stopping</code> - stopping the training job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Stopped</code> - the training job has stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *        stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> - the training job has completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> - the training job has failed. The failure reason is provided in the
+     *        <code>StatusMessage</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *        information on the progress of the training job.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecondaryStatus
      */
@@ -1375,6 +2003,84 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
+     * </p>
+     * 
+     * @return To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *         time-ordered secondary statuses that a training job has transitioned.
+     */
+
+    public java.util.List<SecondaryStatusTransition> getSecondaryStatusTransitions() {
+        return secondaryStatusTransitions;
+    }
+
+    /**
+     * <p>
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
+     * </p>
+     * 
+     * @param secondaryStatusTransitions
+     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *        time-ordered secondary statuses that a training job has transitioned.
+     */
+
+    public void setSecondaryStatusTransitions(java.util.Collection<SecondaryStatusTransition> secondaryStatusTransitions) {
+        if (secondaryStatusTransitions == null) {
+            this.secondaryStatusTransitions = null;
+            return;
+        }
+
+        this.secondaryStatusTransitions = new java.util.ArrayList<SecondaryStatusTransition>(secondaryStatusTransitions);
+    }
+
+    /**
+     * <p>
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondaryStatusTransitions(java.util.Collection)} or
+     * {@link #withSecondaryStatusTransitions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param secondaryStatusTransitions
+     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *        time-ordered secondary statuses that a training job has transitioned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withSecondaryStatusTransitions(SecondaryStatusTransition... secondaryStatusTransitions) {
+        if (this.secondaryStatusTransitions == null) {
+            setSecondaryStatusTransitions(new java.util.ArrayList<SecondaryStatusTransition>(secondaryStatusTransitions.length));
+        }
+        for (SecondaryStatusTransition ele : secondaryStatusTransitions) {
+            this.secondaryStatusTransitions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
+     * </p>
+     * 
+     * @param secondaryStatusTransitions
+     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *        time-ordered secondary statuses that a training job has transitioned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withSecondaryStatusTransitions(java.util.Collection<SecondaryStatusTransition> secondaryStatusTransitions) {
+        setSecondaryStatusTransitions(secondaryStatusTransitions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1422,7 +2128,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getTrainingEndTime() != null)
             sb.append("TrainingEndTime: ").append(getTrainingEndTime()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getSecondaryStatusTransitions() != null)
+            sb.append("SecondaryStatusTransitions: ").append(getSecondaryStatusTransitions());
         sb.append("}");
         return sb.toString();
     }
@@ -1513,6 +2221,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getSecondaryStatusTransitions() == null ^ this.getSecondaryStatusTransitions() == null)
+            return false;
+        if (other.getSecondaryStatusTransitions() != null && other.getSecondaryStatusTransitions().equals(this.getSecondaryStatusTransitions()) == false)
+            return false;
         return true;
     }
 
@@ -1540,6 +2252,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getTrainingStartTime() == null) ? 0 : getTrainingStartTime().hashCode());
         hashCode = prime * hashCode + ((getTrainingEndTime() == null) ? 0 : getTrainingEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryStatusTransitions() == null) ? 0 : getSecondaryStatusTransitions().hashCode());
         return hashCode;
     }
 

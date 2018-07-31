@@ -77,6 +77,24 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
 
     private com.amazonaws.internal.SdkInternalList<BGPPeer> bgpPeers;
+    /**
+     * <p>
+     * The AWS region where the virtual interface is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     */
+    private String region;
+    /**
+     * <p>
+     * The Direct Connection endpoint which the virtual interface terminates on.
+     * </p>
+     */
+    private String awsDeviceV2;
 
     /**
      * <p>
@@ -719,6 +737,119 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The AWS region where the virtual interface is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @param region
+     *        The AWS region where the virtual interface is located.</p>
+     *        <p>
+     *        Example: us-east-1
+     *        </p>
+     *        <p>
+     *        Default: None
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * The AWS region where the virtual interface is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @return The AWS region where the virtual interface is located.</p>
+     *         <p>
+     *         Example: us-east-1
+     *         </p>
+     *         <p>
+     *         Default: None
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * The AWS region where the virtual interface is located.
+     * </p>
+     * <p>
+     * Example: us-east-1
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @param region
+     *        The AWS region where the virtual interface is located.</p>
+     *        <p>
+     *        Example: us-east-1
+     *        </p>
+     *        <p>
+     *        Default: None
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocatePrivateVirtualInterfaceResult withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Direct Connection endpoint which the virtual interface terminates on.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The Direct Connection endpoint which the virtual interface terminates on.
+     */
+
+    public void setAwsDeviceV2(String awsDeviceV2) {
+        this.awsDeviceV2 = awsDeviceV2;
+    }
+
+    /**
+     * <p>
+     * The Direct Connection endpoint which the virtual interface terminates on.
+     * </p>
+     * 
+     * @return The Direct Connection endpoint which the virtual interface terminates on.
+     */
+
+    public String getAwsDeviceV2() {
+        return this.awsDeviceV2;
+    }
+
+    /**
+     * <p>
+     * The Direct Connection endpoint which the virtual interface terminates on.
+     * </p>
+     * 
+     * @param awsDeviceV2
+     *        The Direct Connection endpoint which the virtual interface terminates on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocatePrivateVirtualInterfaceResult withAwsDeviceV2(String awsDeviceV2) {
+        setAwsDeviceV2(awsDeviceV2);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -766,7 +897,11 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
         if (getRouteFilterPrefixes() != null)
             sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes()).append(",");
         if (getBgpPeers() != null)
-            sb.append("BgpPeers: ").append(getBgpPeers());
+            sb.append("BgpPeers: ").append(getBgpPeers()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion()).append(",");
+        if (getAwsDeviceV2() != null)
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2());
         sb.append("}");
         return sb.toString();
     }
@@ -857,6 +992,14 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
             return false;
         if (other.getBgpPeers() != null && other.getBgpPeers().equals(this.getBgpPeers()) == false)
             return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
+        if (other.getAwsDeviceV2() == null ^ this.getAwsDeviceV2() == null)
+            return false;
+        if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
+            return false;
         return true;
     }
 
@@ -884,6 +1027,8 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
         hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
         hashCode = prime * hashCode + ((getBgpPeers() == null) ? 0 : getBgpPeers().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         return hashCode;
     }
 

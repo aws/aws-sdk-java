@@ -88,6 +88,10 @@ public class UpdateLagResultJsonUnmarshaller implements Unmarshaller<UpdateLagRe
                     context.nextToken();
                     updateLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
                     updateLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));

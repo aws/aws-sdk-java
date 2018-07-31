@@ -51,6 +51,8 @@ public class ConnectionMarshaller {
             .marshallLocationName("lagId").build();
     private static final MarshallingInfo<String> AWSDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("awsDevice").build();
+    private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
 
     private static final ConnectionMarshaller instance = new ConnectionMarshaller();
 
@@ -80,6 +82,7 @@ public class ConnectionMarshaller {
             protocolMarshaller.marshall(connection.getLoaIssueTime(), LOAISSUETIME_BINDING);
             protocolMarshaller.marshall(connection.getLagId(), LAGID_BINDING);
             protocolMarshaller.marshall(connection.getAwsDevice(), AWSDEVICE_BINDING);
+            protocolMarshaller.marshall(connection.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

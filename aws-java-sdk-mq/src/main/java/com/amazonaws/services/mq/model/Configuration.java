@@ -28,6 +28,8 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
     /** Required. The ARN of the configuration. */
     private String arn;
+    /** Required. The date and time of the configuration revision. */
+    private java.util.Date created;
     /** Required. The description of the configuration. */
     private String description;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
@@ -75,6 +77,40 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
     public Configuration withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration revision.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @return Required. The date and time of the configuration revision.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withCreated(java.util.Date created) {
+        setCreated(created);
         return this;
     }
 
@@ -318,6 +354,8 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEngineType() != null)
@@ -347,6 +385,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -381,6 +423,7 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
