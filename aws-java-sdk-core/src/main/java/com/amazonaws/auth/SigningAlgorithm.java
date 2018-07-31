@@ -24,28 +24,16 @@ public enum SigningAlgorithm {
     HmacSHA1,
     HmacSHA256;
 
-    private final ThreadLocal<Mac> macReference;
-
-    private SigningAlgorithm() {
-        final String algorithmName = this.toString();
-        macReference = new ThreadLocal<Mac>() {
-            @Override
-            protected Mac initialValue() {
-                try {
-                    return Mac.getInstance(algorithmName);
-                } catch (NoSuchAlgorithmException e) {
-                    throw new SdkClientException("Unable to fetch Mac instance for Algorithm "
-                            + algorithmName + e.getMessage(),e);
-
-                }
-            }
-        };
-    }
-
     /**
-     * Returns the thread local reference for the crypto algorithm
+     * Returns an instance of {@link Mac} for the algorithm name.
      */
     public Mac getMac() {
-        return macReference.get();
+        final String algorithmName = this.toString();
+        try {
+            return Mac.getInstance(algorithmName);
+        } catch (NoSuchAlgorithmException e) {
+            throw new SdkClientException("Unable to fetch Mac instance for Algorithm "
+                    + algorithmName + e.getMessage(),e);
+        }
     }
 }

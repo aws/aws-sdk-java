@@ -19,13 +19,22 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.amazonaws.SdkClientException;
+
 public class AbstractAWSSignerTest {
 
+    private static final String EMPTY_STRING_SHA256_HEX = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+
     @Test
-    public void test() {
+    public void testDigestOfEmptyString() {
         assertEquals(
-            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            EMPTY_STRING_SHA256_HEX,
             AbstractAWSSigner.EMPTY_STRING_SHA256_HEX);
+    }
+    
+    @Test(expected=SdkClientException.class)
+    public void testMessageDigestAlgorithmDoesNotExist() {
+        AbstractAWSSigner.getMessageDigestInstance("doesNotExist");
     }
 
 }

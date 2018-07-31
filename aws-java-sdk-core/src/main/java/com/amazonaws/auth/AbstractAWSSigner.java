@@ -48,25 +48,8 @@ import com.amazonaws.util.StringUtils;
  */
 public abstract class AbstractAWSSigner implements Signer {
 
-    public static final String EMPTY_STRING_SHA256_HEX;
-    private static final ThreadLocal<MessageDigest> SHA256_MESSAGE_DIGEST;
-
-    static {
-        SHA256_MESSAGE_DIGEST = new ThreadLocal<MessageDigest>() {
-            @Override
-            protected MessageDigest initialValue() {
-                try {
-                    return MessageDigest.getInstance("SHA-256");
-                } catch (NoSuchAlgorithmException e) {
-                    throw new SdkClientException(
-                            "Unable to get SHA256 Function"
-                                    + e.getMessage(), e);
-                }
-            }
-        };
-        EMPTY_STRING_SHA256_HEX = BinaryUtils.toHex(doHash(""));
-    }
-
+    public static final String EMPTY_STRING_SHA256_HEX = BinaryUtils.toHex(doHash(""));
+    
     /**
      * Computes an RFC 2104-compliant HMAC signature and returns the result as a
      * Base64 encoded string.
@@ -471,13 +454,22 @@ public abstract class AbstractAWSSigner implements Signer {
 
 
     /**
-     * Returns the re-usable thread local version of MessageDigest.
-     * @return
+     * Returns a MessageDigest for the SHA-256 algorithm.
+     * @return a MessageDigest for the SHA-256 algorithm
      */
     private static MessageDigest getMessageDigestInstance() {
-        MessageDigest messageDigest = SHA256_MESSAGE_DIGEST.get();
-        messageDigest.reset();
-        return messageDigest;
+        return getMessageDigestInstance("SHA-256");
+    }
+    
+    // visible for testing
+    static MessageDigest getMessageDigestInstance(String algorithm) {
+        try {
+            return MessageDigest.getInstance(algorithm);
+        } catch (NoSuchAlgorithmException e) {
+            throw new SdkClientException(
+                    "Unable to get " + algorithm + " Function"
+                            + e.getMessage(), e);
+        }
     }
 
 }
