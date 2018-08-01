@@ -28,18 +28,18 @@ public class DisableGatewayResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the disabled gateway.
+     * The unique Amazon Resource Name (ARN) of the disabled gateway.
      * </p>
      */
     private String gatewayARN;
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the disabled gateway.
+     * The unique Amazon Resource Name (ARN) of the disabled gateway.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name of the disabled gateway.
+     *        The unique Amazon Resource Name (ARN) of the disabled gateway.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -48,10 +48,10 @@ public class DisableGatewayResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the disabled gateway.
+     * The unique Amazon Resource Name (ARN) of the disabled gateway.
      * </p>
      * 
-     * @return The unique Amazon Resource Name of the disabled gateway.
+     * @return The unique Amazon Resource Name (ARN) of the disabled gateway.
      */
 
     public String getGatewayARN() {
@@ -60,11 +60,11 @@ public class DisableGatewayResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the disabled gateway.
+     * The unique Amazon Resource Name (ARN) of the disabled gateway.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name of the disabled gateway.
+     *        The unique Amazon Resource Name (ARN) of the disabled gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

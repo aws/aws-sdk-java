@@ -96,6 +96,10 @@ public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSC
                     context.nextToken();
                     storediSCSIVolume.setVolumeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("KMSKey", targetDepth)) {
+                    context.nextToken();
+                    storediSCSIVolume.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

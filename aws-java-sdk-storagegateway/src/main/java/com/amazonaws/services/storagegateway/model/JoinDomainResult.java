@@ -28,18 +28,18 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the gateway that joined the domain.
+     * The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      * </p>
      */
     private String gatewayARN;
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the gateway that joined the domain.
+     * The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name of the gateway that joined the domain.
+     *        The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -48,10 +48,10 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the gateway that joined the domain.
+     * The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      * </p>
      * 
-     * @return The unique Amazon Resource Name of the gateway that joined the domain.
+     * @return The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      */
 
     public String getGatewayARN() {
@@ -60,11 +60,11 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the gateway that joined the domain.
+     * The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name of the gateway that joined the domain.
+     *        The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

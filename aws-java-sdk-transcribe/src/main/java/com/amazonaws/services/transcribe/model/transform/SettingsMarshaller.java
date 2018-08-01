@@ -33,6 +33,8 @@ public class SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShowSpeakerLabels").build();
     private static final MarshallingInfo<Integer> MAXSPEAKERLABELS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxSpeakerLabels").build();
+    private static final MarshallingInfo<Boolean> CHANNELIDENTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelIdentification").build();
 
     private static final SettingsMarshaller instance = new SettingsMarshaller();
 
@@ -53,6 +55,7 @@ public class SettingsMarshaller {
             protocolMarshaller.marshall(settings.getVocabularyName(), VOCABULARYNAME_BINDING);
             protocolMarshaller.marshall(settings.getShowSpeakerLabels(), SHOWSPEAKERLABELS_BINDING);
             protocolMarshaller.marshall(settings.getMaxSpeakerLabels(), MAXSPEAKERLABELS_BINDING);
+            protocolMarshaller.marshall(settings.getChannelIdentification(), CHANNELIDENTIFICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

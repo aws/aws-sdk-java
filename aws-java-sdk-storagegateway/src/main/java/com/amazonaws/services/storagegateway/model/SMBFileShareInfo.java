@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway
- * discovers them in S3 buckets. This operation is only supported in file gateways.
+ * discovers them in S3 buckets. This operation is only supported for file gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SMBFileShareInfo" target="_top">AWS
@@ -38,8 +38,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String gatewayARN;
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by Amazon S3.
-     * Optional.
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
      * </p>
      */
     private Boolean kMSEncrypted;
@@ -57,9 +57,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String locationARN;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      */
     private String defaultStorageClass;
@@ -67,35 +67,38 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String objectACL;
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      */
     private Boolean readOnly;
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      */
     private Boolean guessMIMETypeEnabled;
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      */
     private Boolean requesterPays;
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> validUserList;
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> invalidUserList;
@@ -208,12 +211,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by Amazon S3.
-     * Optional.
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      */
 
@@ -223,11 +226,11 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by Amazon S3.
-     * Optional.
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -237,12 +240,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by Amazon S3.
-     * Optional.
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -254,11 +257,11 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by Amazon S3.
-     * Optional.
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -386,15 +389,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
-     *        S3_STANDARD is used. Optional.
+     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
+     *        are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is
+     *        not populated, the default value <code>S3_STANDARD</code> is used. Optional.
      */
 
     public void setDefaultStorageClass(String defaultStorageClass) {
@@ -403,14 +406,14 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *         S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
-     *         S3_STANDARD is used. Optional.
+     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
+     *         are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field
+     *         is not populated, the default value <code>S3_STANDARD</code> is used. Optional.
      */
 
     public String getDefaultStorageClass() {
@@ -419,15 +422,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
-     *        S3_STANDARD is used. Optional.
+     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
+     *        are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is
+     *        not populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,12 +481,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *        false.
+     *        A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *        and otherwise false.
      */
 
     public void setReadOnly(Boolean readOnly) {
@@ -492,11 +496,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
-     * @return Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *         false.
+     * @return A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *         and otherwise false.
      */
 
     public Boolean getReadOnly() {
@@ -505,12 +510,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *        false.
+     *        A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *        and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,11 +527,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
-     * @return Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *         false.
+     * @return A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *         and otherwise false.
      */
 
     public Boolean isReadOnly() {
@@ -534,13 +541,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
      * @param guessMIMETypeEnabled
-     *        Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to
-     *        enable MIME type guessing, and otherwise to false. The default value is true.
+     *        A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *        value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      */
 
     public void setGuessMIMETypeEnabled(Boolean guessMIMETypeEnabled) {
@@ -549,12 +556,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
-     * @return Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true
-     *         to enable MIME type guessing, and otherwise to false. The default value is true.
+     * @return A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *         value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      */
 
     public Boolean getGuessMIMETypeEnabled() {
@@ -563,13 +570,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
      * @param guessMIMETypeEnabled
-     *        Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to
-     *        enable MIME type guessing, and otherwise to false. The default value is true.
+     *        A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *        value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,12 +587,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
-     * @return Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true
-     *         to enable MIME type guessing, and otherwise to false. The default value is true.
+     * @return A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *         value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      */
 
     public Boolean isGuessMIMETypeEnabled() {
@@ -594,13 +601,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param requesterPays
-     *        Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *        true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     *        A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      */
 
     public void setRequesterPays(Boolean requesterPays) {
@@ -609,12 +616,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *         true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * @return A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *         gateway puts objects into. The default value is <code>private</code>.
      */
 
     public Boolean getRequesterPays() {
@@ -623,13 +630,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param requesterPays
-     *        Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *        true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     *        A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,12 +647,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *         true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * @return A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *         gateway puts objects into. The default value is <code>private</code>.
      */
 
     public Boolean isRequesterPays() {
@@ -654,12 +661,14 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
-     * @return A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *         Authentication is set to "ActiveDirectory".
+     * @return A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *         be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *         set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getValidUserList() {
@@ -671,13 +680,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
-     *        A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *        be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *        set to <code>ActiveDirectory</code>.
      */
 
     public void setValidUserList(java.util.Collection<String> validUserList) {
@@ -691,8 +702,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -701,8 +713,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param validUserList
-     *        A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *        be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *        set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -718,13 +731,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
-     *        A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *        be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *        set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,12 +750,14 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
-     * @return A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *         Authentication is set to "ActiveDirectory".
+     * @return A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *         must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getInvalidUserList() {
@@ -752,13 +769,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
-     *        A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
+     *        is set to <code>ActiveDirectory</code>.
      */
 
     public void setInvalidUserList(java.util.Collection<String> invalidUserList) {
@@ -772,8 +791,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -782,8 +802,9 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param invalidUserList
-     *        A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
+     *        is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -799,13 +820,15 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
-     *        A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
+     *        is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

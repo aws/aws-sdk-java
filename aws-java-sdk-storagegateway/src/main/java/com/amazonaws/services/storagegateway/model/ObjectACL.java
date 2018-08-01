@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The
- * default value is "private".
+ * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects
+ * into. The default value is "private".
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

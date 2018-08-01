@@ -30,7 +30,7 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      * </p>
      */
     private String gatewayARN;
@@ -55,11 +55,11 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     *        The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -68,10 +68,10 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      * </p>
      * 
-     * @return The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     * @return The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      */
 
     public String getGatewayARN() {
@@ -80,11 +80,11 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name of the file gateway you want to add to the Active Directory domain.
+     *        The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

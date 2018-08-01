@@ -85,8 +85,8 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      */
     private String kMSKey;
@@ -443,13 +443,13 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
-     *        only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        can only be set when KMSEncrypted is true. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -458,12 +458,12 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
-     *         only be set when KMSEncrypted is true. Optional.
+     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *         can only be set when KMSEncrypted is true. Optional.
      */
 
     public String getKMSKey() {
@@ -472,13 +472,13 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
-     * set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
-     *        only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        can only be set when KMSEncrypted is true. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

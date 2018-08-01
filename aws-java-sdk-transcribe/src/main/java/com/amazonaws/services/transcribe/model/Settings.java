@@ -36,9 +36,14 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     private String vocabularyName;
     /**
      * <p>
-     * Determines whether the transcription job should use speaker recognition to identify different speakers in the
-     * input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of
-     * speaker labels <code>MaxSpeakerLabels</code> field.
+     * Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+     * audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      */
     private Boolean showSpeakerLabels;
@@ -50,6 +55,22 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer maxSpeakerLabels;
+    /**
+     * <p>
+     * Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of
+     * each channel into a single transcription.
+     * </p>
+     * <p>
+     * Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start
+     * time and end time of the item and alternative transcriptions of the item including the confidence that Amazon
+     * Transcribe has in the transcription.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
+     * </p>
+     */
+    private Boolean channelIdentification;
 
     /**
      * <p>
@@ -93,15 +114,24 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the transcription job should use speaker recognition to identify different speakers in the
-     * input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of
-     * speaker labels <code>MaxSpeakerLabels</code> field.
+     * Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+     * audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
      * @param showSpeakerLabels
-     *        Determines whether the transcription job should use speaker recognition to identify different speakers in
-     *        the input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the
-     *        maximum number of speaker labels <code>MaxSpeakerLabels</code> field.
+     *        Determines whether the transcription job uses speaker recognition to identify different speakers in the
+     *        input audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     *        <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     *        <code>MaxSpeakerLabels</code> field.</p>
+     *        <p>
+     *        You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
      */
 
     public void setShowSpeakerLabels(Boolean showSpeakerLabels) {
@@ -110,14 +140,23 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the transcription job should use speaker recognition to identify different speakers in the
-     * input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of
-     * speaker labels <code>MaxSpeakerLabels</code> field.
+     * Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+     * audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
-     * @return Determines whether the transcription job should use speaker recognition to identify different speakers in
-     *         the input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the
-     *         maximum number of speaker labels <code>MaxSpeakerLabels</code> field.
+     * @return Determines whether the transcription job uses speaker recognition to identify different speakers in the
+     *         input audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     *         <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     *         <code>MaxSpeakerLabels</code> field.</p>
+     *         <p>
+     *         You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *         request. If you set both, your request returns a <code>BadRequestException</code>.
      */
 
     public Boolean getShowSpeakerLabels() {
@@ -126,15 +165,24 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the transcription job should use speaker recognition to identify different speakers in the
-     * input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of
-     * speaker labels <code>MaxSpeakerLabels</code> field.
+     * Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+     * audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
      * @param showSpeakerLabels
-     *        Determines whether the transcription job should use speaker recognition to identify different speakers in
-     *        the input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the
-     *        maximum number of speaker labels <code>MaxSpeakerLabels</code> field.
+     *        Determines whether the transcription job uses speaker recognition to identify different speakers in the
+     *        input audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     *        <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     *        <code>MaxSpeakerLabels</code> field.</p>
+     *        <p>
+     *        You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,14 +193,23 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the transcription job should use speaker recognition to identify different speakers in the
-     * input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of
-     * speaker labels <code>MaxSpeakerLabels</code> field.
+     * Determines whether the transcription job uses speaker recognition to identify different speakers in the input
+     * audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     * <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     * <code>MaxSpeakerLabels</code> field.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
      * </p>
      * 
-     * @return Determines whether the transcription job should use speaker recognition to identify different speakers in
-     *         the input audio. If you set the <code>ShowSpeakerLabels</code> field to true, you must also set the
-     *         maximum number of speaker labels <code>MaxSpeakerLabels</code> field.
+     * @return Determines whether the transcription job uses speaker recognition to identify different speakers in the
+     *         input audio. Speaker recognition labels individual speakers in the audio file. If you set the
+     *         <code>ShowSpeakerLabels</code> field to true, you must also set the maximum number of speaker labels
+     *         <code>MaxSpeakerLabels</code> field.</p>
+     *         <p>
+     *         You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *         request. If you set both, your request returns a <code>BadRequestException</code>.
      */
 
     public Boolean isShowSpeakerLabels() {
@@ -212,6 +269,134 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of
+     * each channel into a single transcription.
+     * </p>
+     * <p>
+     * Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start
+     * time and end time of the item and alternative transcriptions of the item including the confidence that Amazon
+     * Transcribe has in the transcription.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
+     * </p>
+     * 
+     * @param channelIdentification
+     *        Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription
+     *        output of each channel into a single transcription. </p>
+     *        <p>
+     *        Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the
+     *        start time and end time of the item and alternative transcriptions of the item including the confidence
+     *        that Amazon Transcribe has in the transcription.
+     *        </p>
+     *        <p>
+     *        You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
+     */
+
+    public void setChannelIdentification(Boolean channelIdentification) {
+        this.channelIdentification = channelIdentification;
+    }
+
+    /**
+     * <p>
+     * Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of
+     * each channel into a single transcription.
+     * </p>
+     * <p>
+     * Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start
+     * time and end time of the item and alternative transcriptions of the item including the confidence that Amazon
+     * Transcribe has in the transcription.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
+     * </p>
+     * 
+     * @return Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription
+     *         output of each channel into a single transcription. </p>
+     *         <p>
+     *         Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the
+     *         start time and end time of the item and alternative transcriptions of the item including the confidence
+     *         that Amazon Transcribe has in the transcription.
+     *         </p>
+     *         <p>
+     *         You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *         request. If you set both, your request returns a <code>BadRequestException</code>.
+     */
+
+    public Boolean getChannelIdentification() {
+        return this.channelIdentification;
+    }
+
+    /**
+     * <p>
+     * Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of
+     * each channel into a single transcription.
+     * </p>
+     * <p>
+     * Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start
+     * time and end time of the item and alternative transcriptions of the item including the confidence that Amazon
+     * Transcribe has in the transcription.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
+     * </p>
+     * 
+     * @param channelIdentification
+     *        Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription
+     *        output of each channel into a single transcription. </p>
+     *        <p>
+     *        Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the
+     *        start time and end time of the item and alternative transcriptions of the item including the confidence
+     *        that Amazon Transcribe has in the transcription.
+     *        </p>
+     *        <p>
+     *        You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *        request. If you set both, your request returns a <code>BadRequestException</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Settings withChannelIdentification(Boolean channelIdentification) {
+        setChannelIdentification(channelIdentification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription output of
+     * each channel into a single transcription.
+     * </p>
+     * <p>
+     * Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the start
+     * time and end time of the item and alternative transcriptions of the item including the confidence that Amazon
+     * Transcribe has in the transcription.
+     * </p>
+     * <p>
+     * You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request. If
+     * you set both, your request returns a <code>BadRequestException</code>.
+     * </p>
+     * 
+     * @return Instructs Amazon Transcribe to process each audio channel separately and then merge the transcription
+     *         output of each channel into a single transcription. </p>
+     *         <p>
+     *         Amazon Transcribe also produces a transcription of each item detected on an audio channel, including the
+     *         start time and end time of the item and alternative transcriptions of the item including the confidence
+     *         that Amazon Transcribe has in the transcription.
+     *         </p>
+     *         <p>
+     *         You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *         request. If you set both, your request returns a <code>BadRequestException</code>.
+     */
+
+    public Boolean isChannelIdentification() {
+        return this.channelIdentification;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -227,7 +412,9 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         if (getShowSpeakerLabels() != null)
             sb.append("ShowSpeakerLabels: ").append(getShowSpeakerLabels()).append(",");
         if (getMaxSpeakerLabels() != null)
-            sb.append("MaxSpeakerLabels: ").append(getMaxSpeakerLabels());
+            sb.append("MaxSpeakerLabels: ").append(getMaxSpeakerLabels()).append(",");
+        if (getChannelIdentification() != null)
+            sb.append("ChannelIdentification: ").append(getChannelIdentification());
         sb.append("}");
         return sb.toString();
     }
@@ -254,6 +441,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMaxSpeakerLabels() != null && other.getMaxSpeakerLabels().equals(this.getMaxSpeakerLabels()) == false)
             return false;
+        if (other.getChannelIdentification() == null ^ this.getChannelIdentification() == null)
+            return false;
+        if (other.getChannelIdentification() != null && other.getChannelIdentification().equals(this.getChannelIdentification()) == false)
+            return false;
         return true;
     }
 
@@ -265,6 +456,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVocabularyName() == null) ? 0 : getVocabularyName().hashCode());
         hashCode = prime * hashCode + ((getShowSpeakerLabels() == null) ? 0 : getShowSpeakerLabels().hashCode());
         hashCode = prime * hashCode + ((getMaxSpeakerLabels() == null) ? 0 : getMaxSpeakerLabels().hashCode());
+        hashCode = prime * hashCode + ((getChannelIdentification() == null) ? 0 : getChannelIdentification().hashCode());
         return hashCode;
     }
 

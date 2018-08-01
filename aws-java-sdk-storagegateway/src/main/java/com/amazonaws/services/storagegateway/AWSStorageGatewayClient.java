@@ -92,7 +92,7 @@ import com.amazonaws.services.storagegateway.model.transform.*;
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
- * Endpoints:</a> Provides a list of each region and endpoints available for use with AWS Storage Gateway.
+ * Endpoints:</a> Provides a list of each AWS region and endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -912,7 +912,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
      * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
-     * interface. This operation is only supported in the file gateway type.
+     * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
      * <p>
@@ -981,17 +981,18 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
      * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
-     * interface. This operation is only supported in the file gateway type.
+     * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
      * <p>
-     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
-     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
-     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
-     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
+     * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
      * </p>
      * <p>
-     * File gateway does not support creating hard or symbolic links on a file share.
+     * File gateways don't support creating hard or symbolic links on a file share.
      * </p>
      * </important>
      * 
@@ -1583,7 +1584,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes a file share from a file gateway. This operation is only supported in the file gateway type.
+     * Deletes a file share from a file gateway. This operation is only supported for file gateways.
      * </p>
      * 
      * @param deleteFileShareRequest
@@ -2327,7 +2328,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets a description for one or more Network File System (NFS) file shares from a file gateway. This operation is
-     * only supported in the file gateway type.
+     * only supported for file gateways.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -2385,7 +2386,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets a description for one or more Server Message Block (SMB) file shares from a file gateway. This operation is
-     * only supported in the file gateway type.
+     * only supported for file gateways.
      * </p>
      * 
      * @param describeSMBFileSharesRequest
@@ -2443,7 +2444,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is
-     * only supported in the file gateway type.
+     * only supported for file gateways.
      * </p>
      * 
      * @param describeSMBSettingsRequest
@@ -3060,8 +3061,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Adds a file gateway to an Active Directory domain. This operation is only supported in the file gateway type that
-     * supports the SMB file protocol.
+     * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
+     * support the SMB file protocol.
      * </p>
      * 
      * @param joinDomainRequest
@@ -3118,7 +3119,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
-     * user account. This operation is only supported in the file gateway type.
+     * user account. This operation is only supported for file gateways.
      * </p>
      * 
      * @param listFileSharesRequest
@@ -3666,8 +3667,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * share up to that point in time have been uploaded to Amazon S3. These files include files written to the NFS file
      * share up to the time that you make a request for notification. When the upload is done, Storage Gateway sends you
      * notification through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the notification
-     * through event targets such as Amazon SNS or AWS Lambda function. This operation is only supported in the file
-     * gateway type.
+     * through event targets such as Amazon SNS or AWS Lambda function. This operation is only supported for file
+     * gateways.
      * </p>
      * <p>
      * For more information, see Getting File Upload Notification in the Storage Gateway User Guide
@@ -4106,8 +4107,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication method for the
-     * file share is “GuestAccess”.
+     * Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code> user is the user when the
+     * authentication method for the file share is set to <code>GuestAccess</code>.
      * </p>
      * 
      * @param setSMBGuestPasswordRequest
@@ -4787,22 +4788,23 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates a Server Message Block (SMB) file share. This operation is only supported in the file gateway type.
+     * Updates a Server Message Block (SMB) file share.
      * </p>
      * <note>
      * <p>
      * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported in the file gateway type.
+     * supported for file gateways.
      * </p>
      * </note> <important>
      * <p>
-     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
-     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
-     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
-     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
+     * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
      * </p>
      * <p>
-     * File gateway does not support creating hard or symbolic links on a file share.
+     * File gateways don't support creating hard or symbolic links on a file share.
      * </p>
      * </important>
      * 

@@ -30,7 +30,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     * The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      * </p>
      */
     private String fileShareARN;
@@ -43,68 +43,71 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be set when
-     * KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      */
     private String kMSKey;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      */
     private String defaultStorageClass;
     /**
      * <p>
-     * Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects
-     * into. The default value is "private".
+     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is "private".
      * </p>
      */
     private String objectACL;
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      */
     private Boolean readOnly;
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      */
     private Boolean guessMIMETypeEnabled;
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      */
     private Boolean requesterPays;
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> validUserList;
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> invalidUserList;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     * The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      * </p>
      * 
      * @param fileShareARN
-     *        The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     *        The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      */
 
     public void setFileShareARN(String fileShareARN) {
@@ -113,10 +116,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     * The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     * @return The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      */
 
     public String getFileShareARN() {
@@ -125,11 +128,11 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     * The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      * </p>
      * 
      * @param fileShareARN
-     *        The Amazon Resource Name (ARN) of the SMB file share you want to update.
+     *        The Amazon Resource Name (ARN) of the SMB file share that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,13 +203,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be set when
-     * KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be
-     *        set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        can only be set when KMSEncrypted is true. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -215,12 +218,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be set when
-     * KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be
-     *         set when KMSEncrypted is true. Optional.
+     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *         can only be set when KMSEncrypted is true. Optional.
      */
 
     public String getKMSKey() {
@@ -229,13 +232,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be set when
-     * KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption. This value can only be
-     *        set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        can only be set when KMSEncrypted is true. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,15 +249,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
-     *        S3_STANDARD is used. Optional.
+     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
+     *        are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is
+     *        not populated, the default value <code>S3_STANDARD</code> is used. Optional.
      */
 
     public void setDefaultStorageClass(String defaultStorageClass) {
@@ -263,14 +266,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *         S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
-     *         S3_STANDARD is used. Optional.
+     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
+     *         are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field
+     *         is not populated, the default value <code>S3_STANDARD</code> is used. Optional.
      */
 
     public String getDefaultStorageClass() {
@@ -279,15 +282,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
-     * used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
+     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
-     *        S3_STANDARD is used. Optional.
+     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
+     *        are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is
+     *        not populated, the default value <code>S3_STANDARD</code> is used. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,12 +301,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects
-     * into. The default value is "private".
+     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is "private".
      * </p>
      * 
      * @param objectACL
-     *        Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     *        A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
      *        objects into. The default value is "private".
      * @see ObjectACL
      */
@@ -314,12 +317,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects
-     * into. The default value is "private".
+     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is "private".
      * </p>
      * 
-     * @return Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
-     *         objects into. The default value is "private".
+     * @return A value that sets the access control list permission for objects in the S3 bucket that a file gateway
+     *         puts objects into. The default value is "private".
      * @see ObjectACL
      */
 
@@ -329,12 +332,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects
-     * into. The default value is "private".
+     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is "private".
      * </p>
      * 
      * @param objectACL
-     *        Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     *        A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
      *        objects into. The default value is "private".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
@@ -347,12 +350,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects
-     * into. The default value is "private".
+     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is "private".
      * </p>
      * 
      * @param objectACL
-     *        Sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     *        A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
      *        objects into. The default value is "private".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
@@ -365,12 +368,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *        false.
+     *        A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *        and otherwise false.
      */
 
     public void setReadOnly(Boolean readOnly) {
@@ -379,11 +383,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
-     * @return Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *         false.
+     * @return A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *         and otherwise false.
      */
 
     public Boolean getReadOnly() {
@@ -392,12 +397,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *        false.
+     *        A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *        and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,11 +414,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
+     * otherwise false.
      * </p>
      * 
-     * @return Sets the write status of a file share. This value is true if the write status is read-only, and otherwise
-     *         false.
+     * @return A value that sets the write status of a file share. This value is true if the write status is read-only,
+     *         and otherwise false.
      */
 
     public Boolean isReadOnly() {
@@ -421,13 +428,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
      * @param guessMIMETypeEnabled
-     *        Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to
-     *        enable MIME type guessing, and otherwise to false. The default value is true.
+     *        A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *        value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      */
 
     public void setGuessMIMETypeEnabled(Boolean guessMIMETypeEnabled) {
@@ -436,12 +443,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
-     * @return Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true
-     *         to enable MIME type guessing, and otherwise to false. The default value is true.
+     * @return A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *         value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      */
 
     public Boolean getGuessMIMETypeEnabled() {
@@ -450,13 +457,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
      * @param guessMIMETypeEnabled
-     *        Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to
-     *        enable MIME type guessing, and otherwise to false. The default value is true.
+     *        A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *        value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,12 +474,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable
-     * MIME type guessing, and otherwise to false. The default value is true.
+     * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
+     * true to enable MIME type guessing, and otherwise to false. The default value is true.
      * </p>
      * 
-     * @return Enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true
-     *         to enable MIME type guessing, and otherwise to false. The default value is true.
+     * @return A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
+     *         value to true to enable MIME type guessing, and otherwise to false. The default value is true.
      */
 
     public Boolean isGuessMIMETypeEnabled() {
@@ -481,13 +488,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param requesterPays
-     *        Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *        true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     *        A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      */
 
     public void setRequesterPays(Boolean requesterPays) {
@@ -496,12 +503,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *         true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * @return A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *         gateway puts objects into. The default value is <code>private</code>.
      */
 
     public Boolean getRequesterPays() {
@@ -510,13 +517,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param requesterPays
-     *        Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *        true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     *        A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,12 +534,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to true if
-     * you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return Sets who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to
-     *         true if you want the requester to pay instead of the bucket owner, and otherwise to false.
+     * @return A value that sets the access control list permission for objects in the Amazon S3 bucket that a file
+     *         gateway puts objects into. The default value is <code>private</code>.
      */
 
     public Boolean isRequesterPays() {
@@ -541,12 +548,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
-     * @return A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *         Authentication is set to "ActiveDirectory".
+     * @return A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *         be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *         set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getValidUserList() {
@@ -558,13 +567,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
-     *        A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *        be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *        set to <code>ActiveDirectory</code>.
      */
 
     public void setValidUserList(java.util.Collection<String> validUserList) {
@@ -578,8 +589,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -588,8 +600,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param validUserList
-     *        A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *        be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *        set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,13 +618,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param validUserList
-     *        A list of users in the Active Directory that are allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are allowed to access the file share. A group must
+     *        be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is
+     *        set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,12 +637,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
-     * @return A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *         Authentication is set to "ActiveDirectory".
+     * @return A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *         must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getInvalidUserList() {
@@ -639,13 +656,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
-     *        A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
+     *        is set to <code>ActiveDirectory</code>.
      */
 
     public void setInvalidUserList(java.util.Collection<String> invalidUserList) {
@@ -659,8 +678,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -669,8 +689,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param invalidUserList
-     *        A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
+     *        is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -686,13 +707,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     * Authentication is set to "ActiveDirectory".
+     * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
-     *        A list of users in the Active Directory that are not allowed to access the file share. Can only be set if
-     *        Authentication is set to "ActiveDirectory".
+     *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
+     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
+     *        is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

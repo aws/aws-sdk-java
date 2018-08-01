@@ -60,6 +60,10 @@ public class SettingsJsonUnmarshaller implements Unmarshaller<Settings, JsonUnma
                     context.nextToken();
                     settings.setMaxSpeakerLabels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ChannelIdentification", targetDepth)) {
+                    context.nextToken();
+                    settings.setChannelIdentification(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

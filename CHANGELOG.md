@@ -1,3 +1,12 @@
+# __1.11.378__ __2018-08-01__
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway now enables you to create stored volumes with AWS KMS support.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this update Amazon Transcribe now supports channel identification. It transcribes audio from separate channels and combines them into a single transcription. 
+
 # __1.11.377__ __2018-07-31__
 ## __AWS Elemental MediaConvert__
   - ### Features
