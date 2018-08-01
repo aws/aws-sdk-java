@@ -27,27 +27,27 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     * <code>StartOutboundVoiceContact</code> operation.
+     * The unique identifier of the contact to end.
      * </p>
      */
     private String contactId;
     /**
      * <p>
-     * The identifier of the Amazon Connect instance in which the contact is active.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      */
     private String instanceId;
 
     /**
      * <p>
-     * The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     * <code>StartOutboundVoiceContact</code> operation.
+     * The unique identifier of the contact to end.
      * </p>
      * 
      * @param contactId
-     *        The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     *        <code>StartOutboundVoiceContact</code> operation.
+     *        The unique identifier of the contact to end.
      */
 
     public void setContactId(String contactId) {
@@ -56,12 +56,10 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     * <code>StartOutboundVoiceContact</code> operation.
+     * The unique identifier of the contact to end.
      * </p>
      * 
-     * @return The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     *         <code>StartOutboundVoiceContact</code> operation.
+     * @return The unique identifier of the contact to end.
      */
 
     public String getContactId() {
@@ -70,13 +68,11 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     * <code>StartOutboundVoiceContact</code> operation.
+     * The unique identifier of the contact to end.
      * </p>
      * 
      * @param contactId
-     *        The unique identifier of the contact to end. This is the <code>ContactId</code> value returned from the
-     *        <code>StartOutboundVoiceContact</code> operation.
+     *        The unique identifier of the contact to end.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +83,17 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance in which the contact is active.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance in which the contact is active.
+     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
+     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
+     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
+     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      */
 
     public void setInstanceId(String instanceId) {
@@ -100,10 +102,17 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance in which the contact is active.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance in which the contact is active.
+     * @return The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console
+     *         and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID
+     *         is displayed in the Overview section of your instance settings. For example, the instance ID is the set
+     *         of characters at the end of the instance ARN, after instance/, such as
+     *         10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      */
 
     public String getInstanceId() {
@@ -112,11 +121,17 @@ public class StopContactRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance in which the contact is active.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance in which the contact is active.
+     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
+     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
+     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
+     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

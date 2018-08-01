@@ -1,3 +1,24 @@
+# __1.11.377__ __2018-07-31__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Fixes an issue with modeled timestamps being labeled with the incorrect format.
+
+## __AWS IoT__
+  - ### Features
+    - As part of this release we are introducing a new IoT security service, AWS IoT Device Defender, and extending capability of AWS IoT to support Step Functions rule action. The AWS IoT Device Defender is a fully managed service that helps you secure your fleet of IoT devices. For more details on this new service, go to https://aws.amazon.com/iot-device-defender. The Step Functions rule action lets you start an execution of AWS Step Functions state machine from a rule.
+
+## __AWS Key Management Service__
+  - ### Features
+    - Added a KeyID parameter to the ListAliases operation. This parameter allows users to list only the aliases that refer to a particular AWS KMS customer master key. All other functionality remains intact.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This update includes the new User Management APIs and the Federation API used for SAML authentication. The User Management APIs let you create and manage users in your Amazon Connect instance programmatically. The Federation API enables authentication between AWS and your existing identity provider using tokens.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service adds support for enabling Elasticsearch error logs, providing you valuable information for troubleshooting your Elasticsearch domains quickly and easily. These logs are published to the Amazon CloudWatch Logs service and can be turned on or off at will.
+
 # __1.11.376__ __2018-07-30__
 ## __AWS CloudHSM V2__
   - ### Features

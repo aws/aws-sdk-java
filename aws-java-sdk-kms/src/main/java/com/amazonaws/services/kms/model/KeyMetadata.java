@@ -122,7 +122,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String expirationModel;
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
+     * The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference,
      * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -894,13 +894,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
+     * The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference,
      * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
+     *        The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the
      *        difference, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
@@ -913,12 +913,12 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
+     * The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference,
      * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
+     * @return The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the
      *         difference, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *         Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
@@ -931,13 +931,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
+     * The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference,
      * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
+     *        The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the
      *        difference, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
@@ -952,13 +952,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
+     * The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference,
      * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
+     *        The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the
      *        difference, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
@@ -971,13 +971,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
+     * The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference,
      * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
+     *        The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the
      *        difference, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.

@@ -28,7 +28,7 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
     private String thingName;
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -81,11 +81,11 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -94,10 +94,10 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token to retrieve the next set of results.
      * </p>
      * 
-     * @return The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * @return The token to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -106,11 +106,11 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

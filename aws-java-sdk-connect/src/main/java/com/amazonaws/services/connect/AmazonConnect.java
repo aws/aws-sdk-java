@@ -45,15 +45,256 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Creates a new user account in your Amazon Connect instance.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws LimitExceededException
+     *         The limit exceeded the maximum allowed active calls in a queue.
+     * @throws DuplicateResourceException
+     *         A resource with that name already exisits.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateUserResult createUser(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * Deletes a user account from Amazon Connect.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
+
+    /**
+     * <p>
+     * Returns a <code>User</code> object that contains information about the user account specified by the
+     * <code>UserId</code>.
+     * </p>
+     * 
+     * @param describeUserRequest
+     * @return Result of the DescribeUser operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeUserResult describeUser(DescribeUserRequest describeUserRequest);
+
+    /**
+     * <p>
+     * Returns a <code>HierarchyGroup</code> object that includes information about a hierarchy group in your instance.
+     * </p>
+     * 
+     * @param describeUserHierarchyGroupRequest
+     * @return Result of the DescribeUserHierarchyGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeUserHierarchyGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeUserHierarchyGroupResult describeUserHierarchyGroup(DescribeUserHierarchyGroupRequest describeUserHierarchyGroupRequest);
+
+    /**
+     * <p>
+     * Returns a <code>HiearchyGroupStructure</code> object, which contains data about the levels in the agent
+     * hierarchy.
+     * </p>
+     * 
+     * @param describeUserHierarchyStructureRequest
+     * @return Result of the DescribeUserHierarchyStructure operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.DescribeUserHierarchyStructure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeUserHierarchyStructureResult describeUserHierarchyStructure(DescribeUserHierarchyStructureRequest describeUserHierarchyStructureRequest);
+
+    /**
+     * <p>
+     * Retrieves a token for federation.
+     * </p>
+     * 
+     * @param getFederationTokenRequest
+     * @return Result of the GetFederationToken operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws UserNotFoundException
+     *         No user with the specified credentials was found in the Amazon Connect instance.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws DuplicateResourceException
+     *         A resource with that name already exisits.
+     * @sample AmazonConnect.GetFederationToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetFederationTokenResult getFederationToken(GetFederationTokenRequest getFederationTokenRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>RoutingProfileSummary</code> objects that includes information about the routing
+     * profiles in your instance.
+     * </p>
+     * 
+     * @param listRoutingProfilesRequest
+     * @return Result of the ListRoutingProfiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListRoutingProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRoutingProfilesResult listRoutingProfiles(ListRoutingProfilesRequest listRoutingProfilesRequest);
+
+    /**
+     * <p>
+     * Returns an array of SecurityProfileSummary objects that contain information about the security profiles in your
+     * instance, including the ARN, Id, and Name of the security profile.
+     * </p>
+     * 
+     * @param listSecurityProfilesRequest
+     * @return Result of the ListSecurityProfiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListSecurityProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListSecurityProfilesResult listSecurityProfiles(ListSecurityProfilesRequest listSecurityProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a <code>UserHierarchyGroupSummaryList</code>, which is an array of <code>HierarchyGroupSummary</code>
+     * objects that contain information about the hierarchy groups in your instance.
+     * </p>
+     * 
+     * @param listUserHierarchyGroupsRequest
+     * @return Result of the ListUserHierarchyGroups operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListUserHierarchyGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListUserHierarchyGroupsResult listUserHierarchyGroups(ListUserHierarchyGroupsRequest listUserHierarchyGroupsRequest);
+
+    /**
+     * <p>
+     * Returns a <code>UserSummaryList</code>, which is an array of <code>UserSummary</code> objects.
+     * </p>
+     * 
+     * @param listUsersRequest
+     * @return Result of the ListUsers operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.ListUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
      * The <code>StartOutboundVoiceContact</code> operation initiates a contact flow to place an outbound call to a
      * customer.
      * </p>
      * <p>
-     * There is a throttling limit placed on usage of the API that includes a <code>RateLimit</code> of 2 per second,
-     * and a <code>BurstLimit</code> of 5 per second.
+     * There is a throttling limit placed on usage of the API that includes a RateLimit of 2 per second, and a
+     * BurstLimit of 5 per second.
      * </p>
      * <p>
-     * If you are using an IAM account, it must have permissions to the <code>connect:StartOutboundVoiceContact</code>
+     * If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
      * action.
      * </p>
      * 
@@ -70,12 +311,9 @@ public interface AmazonConnect {
      * @throws LimitExceededException
      *         The limit exceeded the maximum allowed active calls in a queue.
      * @throws DestinationNotAllowedException
-     *         Outbound calls to the destination number are not allowed for your instance. You can request that the
-     *         country be included in the allowed countries for your instance by submitting a <a
-     *         href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase">Service
-     *         Limit Increase</a>.
+     *         Outbound calls to the destination number are not allowed.
      * @throws OutboundContactNotPermittedException
-     *         The contact is not permitted because outbound calling is not enabled for the instance.
+     *         The contact is not permitted.
      * @sample AmazonConnect.StartOutboundVoiceContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact"
      *      target="_top">AWS API Documentation</a>
@@ -87,7 +325,7 @@ public interface AmazonConnect {
      * Ends the contact initiated by the <code>StartOutboundVoiceContact</code> operation.
      * </p>
      * <p>
-     * If you are using an IAM account, it must have permissions to the <code>connect:StopContact</code> operation.
+     * If you are using an IAM account, it must have permission to the <code>connect:StopContact</code> action.
      * </p>
      * 
      * @param stopContactRequest
@@ -107,6 +345,122 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     StopContactResult stopContact(StopContactRequest stopContactRequest);
+
+    /**
+     * <p>
+     * Assigns the specified hierarchy group to the user.
+     * </p>
+     * 
+     * @param updateUserHierarchyRequest
+     * @return Result of the UpdateUserHierarchy operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserHierarchy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateUserHierarchyResult updateUserHierarchy(UpdateUserHierarchyRequest updateUserHierarchyRequest);
+
+    /**
+     * <p>
+     * Updates the identity information for the specified user in a <code>UserIdentityInfo</code> object, including
+     * email, first name, and last name.
+     * </p>
+     * 
+     * @param updateUserIdentityInfoRequest
+     * @return Result of the UpdateUserIdentityInfo operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserIdentityInfo
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateUserIdentityInfoResult updateUserIdentityInfo(UpdateUserIdentityInfoRequest updateUserIdentityInfoRequest);
+
+    /**
+     * <p>
+     * Updates the phone configuration settings in the <code>UserPhoneConfig</code> object for the specified user.
+     * </p>
+     * 
+     * @param updateUserPhoneConfigRequest
+     * @return Result of the UpdateUserPhoneConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserPhoneConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserPhoneConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateUserPhoneConfigResult updateUserPhoneConfig(UpdateUserPhoneConfigRequest updateUserPhoneConfigRequest);
+
+    /**
+     * <p>
+     * Assigns the specified routing profile to a user.
+     * </p>
+     * 
+     * @param updateUserRoutingProfileRequest
+     * @return Result of the UpdateUserRoutingProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserRoutingProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserRoutingProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateUserRoutingProfileResult updateUserRoutingProfile(UpdateUserRoutingProfileRequest updateUserRoutingProfileRequest);
+
+    /**
+     * <p>
+     * Update the security profiles assigned to the user.
+     * </p>
+     * 
+     * @param updateUserSecurityProfilesRequest
+     * @return Result of the UpdateUserSecurityProfiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateUserSecurityProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserSecurityProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateUserSecurityProfilesResult updateUserSecurityProfiles(UpdateUserSecurityProfilesRequest updateUserSecurityProfilesRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

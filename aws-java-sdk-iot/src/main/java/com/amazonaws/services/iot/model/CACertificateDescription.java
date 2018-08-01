@@ -86,6 +86,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * </p>
      */
     private String generationId;
+    /**
+     * <p>
+     * When the CA certificate is valid.
+     * </p>
+     */
+    private CertificateValidity validity;
 
     /**
      * <p>
@@ -564,6 +570,46 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * When the CA certificate is valid.
+     * </p>
+     * 
+     * @param validity
+     *        When the CA certificate is valid.
+     */
+
+    public void setValidity(CertificateValidity validity) {
+        this.validity = validity;
+    }
+
+    /**
+     * <p>
+     * When the CA certificate is valid.
+     * </p>
+     * 
+     * @return When the CA certificate is valid.
+     */
+
+    public CertificateValidity getValidity() {
+        return this.validity;
+    }
+
+    /**
+     * <p>
+     * When the CA certificate is valid.
+     * </p>
+     * 
+     * @param validity
+     *        When the CA certificate is valid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CACertificateDescription withValidity(CertificateValidity validity) {
+        setValidity(validity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -593,7 +639,9 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
         if (getCustomerVersion() != null)
             sb.append("CustomerVersion: ").append(getCustomerVersion()).append(",");
         if (getGenerationId() != null)
-            sb.append("GenerationId: ").append(getGenerationId());
+            sb.append("GenerationId: ").append(getGenerationId()).append(",");
+        if (getValidity() != null)
+            sb.append("Validity: ").append(getValidity());
         sb.append("}");
         return sb.toString();
     }
@@ -648,6 +696,10 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
             return false;
         if (other.getGenerationId() != null && other.getGenerationId().equals(this.getGenerationId()) == false)
             return false;
+        if (other.getValidity() == null ^ this.getValidity() == null)
+            return false;
+        if (other.getValidity() != null && other.getValidity().equals(this.getValidity()) == false)
+            return false;
         return true;
     }
 
@@ -666,6 +718,7 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getCustomerVersion() == null) ? 0 : getCustomerVersion().hashCode());
         hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
+        hashCode = prime * hashCode + ((getValidity() == null) ? 0 : getValidity().hashCode());
         return hashCode;
     }
 

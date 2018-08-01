@@ -18,6 +18,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * .
+     * </p>
+     */
     private String certificatePem;
     /**
      * <p>
@@ -27,7 +32,12 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.Map<String, String> resourceArns;
 
     /**
+     * <p>
+     * .
+     * </p>
+     * 
      * @param certificatePem
+     *        .
      */
 
     public void setCertificatePem(String certificatePem) {
@@ -35,7 +45,11 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * .
+     * </p>
+     * 
+     * @return .
      */
 
     public String getCertificatePem() {
@@ -43,7 +57,12 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * .
+     * </p>
+     * 
      * @param certificatePem
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

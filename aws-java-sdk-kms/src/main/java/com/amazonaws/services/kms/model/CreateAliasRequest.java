@@ -27,8 +27,9 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the display name. The name must start with the word "alias" followed by a forward slash
-     * (alias/). Aliases that begin with "alias/AWS" are reserved.
+     * Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code>
+     * prefix is reserved for AWS managed CMKs.
      * </p>
      */
     private String aliasName;
@@ -62,13 +63,15 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the display name. The name must start with the word "alias" followed by a forward slash
-     * (alias/). Aliases that begin with "alias/AWS" are reserved.
+     * Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code>
+     * prefix is reserved for AWS managed CMKs.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the display name. The name must start with the word "alias" followed by a forward
-     *        slash (alias/). Aliases that begin with "alias/AWS" are reserved.
+     *        Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such
+     *        as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The
+     *        <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.
      */
 
     public void setAliasName(String aliasName) {
@@ -77,12 +80,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the display name. The name must start with the word "alias" followed by a forward slash
-     * (alias/). Aliases that begin with "alias/AWS" are reserved.
+     * Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code>
+     * prefix is reserved for AWS managed CMKs.
      * </p>
      * 
-     * @return String that contains the display name. The name must start with the word "alias" followed by a forward
-     *         slash (alias/). Aliases that begin with "alias/AWS" are reserved.
+     * @return Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such
+     *         as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The
+     *         <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.
      */
 
     public String getAliasName() {
@@ -91,13 +96,15 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the display name. The name must start with the word "alias" followed by a forward slash
-     * (alias/). Aliases that begin with "alias/AWS" are reserved.
+     * Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as
+     * <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code>
+     * prefix is reserved for AWS managed CMKs.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the display name. The name must start with the word "alias" followed by a forward
-     *        slash (alias/). Aliases that begin with "alias/AWS" are reserved.
+     *        Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such
+     *        as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The
+     *        <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

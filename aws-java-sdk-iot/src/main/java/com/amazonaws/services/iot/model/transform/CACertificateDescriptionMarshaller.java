@@ -47,6 +47,8 @@ public class CACertificateDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerVersion").build();
     private static final MarshallingInfo<String> GENERATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generationId").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("validity").build();
 
     private static final CACertificateDescriptionMarshaller instance = new CACertificateDescriptionMarshaller();
 
@@ -74,6 +76,7 @@ public class CACertificateDescriptionMarshaller {
             protocolMarshaller.marshall(cACertificateDescription.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(cACertificateDescription.getCustomerVersion(), CUSTOMERVERSION_BINDING);
             protocolMarshaller.marshall(cACertificateDescription.getGenerationId(), GENERATIONID_BINDING);
+            protocolMarshaller.marshall(cACertificateDescription.getValidity(), VALIDITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -249,6 +249,31 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Associates a Device Defender security profile with a thing group or with this account. Each thing group or
+     * account can have up to five security profiles associated with it.
+     * </p>
+     * 
+     * @param attachSecurityProfileRequest
+     * @return Result of the AttachSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.AttachSecurityProfile
+     */
+    AttachSecurityProfileResult attachSecurityProfile(AttachSecurityProfileRequest attachSecurityProfileRequest);
+
+    /**
+     * <p>
      * Attaches the specified principal to the specified thing.
      * </p>
      * 
@@ -270,6 +295,26 @@ public interface AWSIot {
      * @sample AWSIot.AttachThingPrincipal
      */
     AttachThingPrincipalResult attachThingPrincipal(AttachThingPrincipalRequest attachThingPrincipalRequest);
+
+    /**
+     * <p>
+     * Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in
+     * progress, an "InvalidRequestException" occurs.
+     * </p>
+     * 
+     * @param cancelAuditTaskRequest
+     * @return Result of the CancelAuditTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CancelAuditTask
+     */
+    CancelAuditTaskResult cancelAuditTask(CancelAuditTaskRequest cancelAuditTaskRequest);
 
     /**
      * <p>
@@ -634,6 +679,44 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Creates a scheduled audit that is run at a specified time interval.
+     * </p>
+     * 
+     * @param createScheduledAuditRequest
+     * @return Result of the CreateScheduledAudit operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreateScheduledAudit
+     */
+    CreateScheduledAuditResult createScheduledAudit(CreateScheduledAuditRequest createScheduledAuditRequest);
+
+    /**
+     * <p>
+     * Creates a Device Defender security profile.
+     * </p>
+     * 
+     * @param createSecurityProfileRequest
+     * @return Result of the CreateSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateSecurityProfile
+     */
+    CreateSecurityProfileResult createSecurityProfile(CreateSecurityProfileRequest createSecurityProfileRequest);
+
+    /**
+     * <p>
      * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
      * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
      * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
@@ -766,6 +849,26 @@ public interface AWSIot {
      * @sample AWSIot.CreateTopicRule
      */
     CreateTopicRuleResult createTopicRule(CreateTopicRuleRequest createTopicRuleRequest);
+
+    /**
+     * <p>
+     * Restores the default settings for Device Defender audits for this account. Any configuration data you entered is
+     * deleted and all audit checks are reset to disabled.
+     * </p>
+     * 
+     * @param deleteAccountAuditConfigurationRequest
+     * @return Result of the DeleteAccountAuditConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteAccountAuditConfiguration
+     */
+    DeleteAccountAuditConfigurationResult deleteAccountAuditConfiguration(DeleteAccountAuditConfigurationRequest deleteAccountAuditConfigurationRequest);
 
     /**
      * <p>
@@ -1042,6 +1145,45 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Deletes a scheduled audit.
+     * </p>
+     * 
+     * @param deleteScheduledAuditRequest
+     * @return Result of the DeleteScheduledAudit operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteScheduledAudit
+     */
+    DeleteScheduledAuditResult deleteScheduledAudit(DeleteScheduledAuditRequest deleteScheduledAuditRequest);
+
+    /**
+     * <p>
+     * Deletes a Device Defender security profile.
+     * </p>
+     * 
+     * @param deleteSecurityProfileRequest
+     * @return Result of the DeleteSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
+     * @sample AWSIot.DeleteSecurityProfile
+     */
+    DeleteSecurityProfileResult deleteSecurityProfile(DeleteSecurityProfileRequest deleteSecurityProfileRequest);
+
+    /**
+     * <p>
      * Deletes a stream.
      * </p>
      * 
@@ -1199,6 +1341,41 @@ public interface AWSIot {
      * @sample AWSIot.DeprecateThingType
      */
     DeprecateThingTypeResult deprecateThingType(DeprecateThingTypeRequest deprecateThingTypeRequest);
+
+    /**
+     * <p>
+     * Gets information about the Device Defender audit settings for this account. Settings include how audit
+     * notifications are sent and which audit checks are enabled or disabled.
+     * </p>
+     * 
+     * @param describeAccountAuditConfigurationRequest
+     * @return Result of the DescribeAccountAuditConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAccountAuditConfiguration
+     */
+    DescribeAccountAuditConfigurationResult describeAccountAuditConfiguration(DescribeAccountAuditConfigurationRequest describeAccountAuditConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender audit.
+     * </p>
+     * 
+     * @param describeAuditTaskRequest
+     * @return Result of the DescribeAuditTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuditTask
+     */
+    DescribeAuditTaskResult describeAuditTask(DescribeAuditTaskRequest describeAuditTaskRequest);
 
     /**
      * <p>
@@ -1415,6 +1592,44 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about a scheduled audit.
+     * </p>
+     * 
+     * @param describeScheduledAuditRequest
+     * @return Result of the DescribeScheduledAudit operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeScheduledAudit
+     */
+    DescribeScheduledAuditResult describeScheduledAudit(DescribeScheduledAuditRequest describeScheduledAuditRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender security profile.
+     * </p>
+     * 
+     * @param describeSecurityProfileRequest
+     * @return Result of the DescribeSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeSecurityProfile
+     */
+    DescribeSecurityProfileResult describeSecurityProfile(DescribeSecurityProfileRequest describeSecurityProfileRequest);
+
+    /**
+     * <p>
      * Gets information about a stream.
      * </p>
      * 
@@ -1574,6 +1789,25 @@ public interface AWSIot {
      */
     @Deprecated
     DetachPrincipalPolicyResult detachPrincipalPolicy(DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
+
+    /**
+     * <p>
+     * Disassociates a Device Defender security profile from a thing group or from this account.
+     * </p>
+     * 
+     * @param detachSecurityProfileRequest
+     * @return Result of the DetachSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DetachSecurityProfile
+     */
+    DetachSecurityProfileResult detachSecurityProfile(DetachSecurityProfileRequest detachSecurityProfileRequest);
 
     /**
      * <p>
@@ -1848,13 +2082,32 @@ public interface AWSIot {
      * @return Result of the GetV2LoggingOptions operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
-     * @throws InvalidRequestException
-     *         The request is not valid.
+     * @throws NotConfiguredException
+     *         The resource is not configured.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
      * @sample AWSIot.GetV2LoggingOptions
      */
     GetV2LoggingOptionsResult getV2LoggingOptions(GetV2LoggingOptionsRequest getV2LoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Lists the active violations for a given Device Defender security profile.
+     * </p>
+     * 
+     * @param listActiveViolationsRequest
+     * @return Result of the ListActiveViolations operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListActiveViolations
+     */
+    ListActiveViolationsResult listActiveViolations(ListActiveViolationsRequest listActiveViolationsRequest);
 
     /**
      * <p>
@@ -1880,6 +2133,41 @@ public interface AWSIot {
      * @sample AWSIot.ListAttachedPolicies
      */
     ListAttachedPoliciesResult listAttachedPolicies(ListAttachedPoliciesRequest listAttachedPoliciesRequest);
+
+    /**
+     * <p>
+     * Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time
+     * period. (Findings are retained for 180 days.)
+     * </p>
+     * 
+     * @param listAuditFindingsRequest
+     * @return Result of the ListAuditFindings operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditFindings
+     */
+    ListAuditFindingsResult listAuditFindings(ListAuditFindingsRequest listAuditFindingsRequest);
+
+    /**
+     * <p>
+     * Lists the Device Defender audits that have been performed during a given time period.
+     * </p>
+     * 
+     * @param listAuditTasksRequest
+     * @return Result of the ListAuditTasks operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditTasks
+     */
+    ListAuditTasksResult listAuditTasks(ListAuditTasksRequest listAuditTasksRequest);
 
     /**
      * <p>
@@ -2249,6 +2537,60 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists all of your scheduled audits.
+     * </p>
+     * 
+     * @param listScheduledAuditsRequest
+     * @return Result of the ListScheduledAudits operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListScheduledAudits
+     */
+    ListScheduledAuditsResult listScheduledAudits(ListScheduledAuditsRequest listScheduledAuditsRequest);
+
+    /**
+     * <p>
+     * Lists the Device Defender security profiles you have created. You can use filters to list only those security
+     * profiles associated with a thing group or only those associated with your account.
+     * </p>
+     * 
+     * @param listSecurityProfilesRequest
+     * @return Result of the ListSecurityProfiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListSecurityProfiles
+     */
+    ListSecurityProfilesResult listSecurityProfiles(ListSecurityProfilesRequest listSecurityProfilesRequest);
+
+    /**
+     * <p>
+     * Lists the Device Defender security profiles attached to a target (thing group).
+     * </p>
+     * 
+     * @param listSecurityProfilesForTargetRequest
+     * @return Result of the ListSecurityProfilesForTarget operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.ListSecurityProfilesForTarget
+     */
+    ListSecurityProfilesForTargetResult listSecurityProfilesForTarget(ListSecurityProfilesForTargetRequest listSecurityProfilesForTargetRequest);
+
+    /**
+     * <p>
      * Lists all of the streams in your AWS account.
      * </p>
      * 
@@ -2292,6 +2634,25 @@ public interface AWSIot {
      * @sample AWSIot.ListTargetsForPolicy
      */
     ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest listTargetsForPolicyRequest);
+
+    /**
+     * <p>
+     * Lists the targets (thing groups) associated with a given Device Defender security profile.
+     * </p>
+     * 
+     * @param listTargetsForSecurityProfileRequest
+     * @return Result of the ListTargetsForSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListTargetsForSecurityProfile
+     */
+    ListTargetsForSecurityProfileResult listTargetsForSecurityProfile(ListTargetsForSecurityProfileRequest listTargetsForSecurityProfileRequest);
 
     /**
      * <p>
@@ -2488,6 +2849,25 @@ public interface AWSIot {
      * @sample AWSIot.ListV2LoggingLevels
      */
     ListV2LoggingLevelsResult listV2LoggingLevels(ListV2LoggingLevelsRequest listV2LoggingLevelsRequest);
+
+    /**
+     * <p>
+     * Lists the Device Defender security profile violations discovered during the given time period. You can use
+     * filters to limit the results to those alerts issued for a particular security profile, behavior or thing
+     * (device).
+     * </p>
+     * 
+     * @param listViolationEventsRequest
+     * @return Result of the ListViolationEvents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListViolationEvents
+     */
+    ListViolationEventsResult listViolationEvents(ListViolationEventsRequest listViolationEventsRequest);
 
     /**
      * <p>
@@ -2796,6 +3176,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Starts an on-demand Device Defender audit.
+     * </p>
+     * 
+     * @param startOnDemandAuditTaskRequest
+     * @return Result of the StartOnDemandAuditTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.StartOnDemandAuditTask
+     */
+    StartOnDemandAuditTaskResult startOnDemandAuditTask(StartOnDemandAuditTaskRequest startOnDemandAuditTaskRequest);
+
+    /**
+     * <p>
      * Creates a bulk thing provisioning task.
      * </p>
      * 
@@ -2928,6 +3327,24 @@ public interface AWSIot {
      * @sample AWSIot.TransferCertificate
      */
     TransferCertificateResult transferCertificate(TransferCertificateRequest transferCertificateRequest);
+
+    /**
+     * <p>
+     * Configures or reconfigures the Device Defender audit settings for this account. Settings include how audit
+     * notifications are sent and which audit checks are enabled or disabled.
+     * </p>
+     * 
+     * @param updateAccountAuditConfigurationRequest
+     * @return Result of the UpdateAccountAuditConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateAccountAuditConfiguration
+     */
+    UpdateAccountAuditConfigurationResult updateAccountAuditConfiguration(UpdateAccountAuditConfigurationRequest updateAccountAuditConfigurationRequest);
 
     /**
      * <p>
@@ -3074,6 +3491,47 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a scheduled audit, including what checks are performed and how often the audit takes place.
+     * </p>
+     * 
+     * @param updateScheduledAuditRequest
+     * @return Result of the UpdateScheduledAudit operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateScheduledAudit
+     */
+    UpdateScheduledAuditResult updateScheduledAudit(UpdateScheduledAuditRequest updateScheduledAuditRequest);
+
+    /**
+     * <p>
+     * Updates a Device Defender security profile.
+     * </p>
+     * 
+     * @param updateSecurityProfileRequest
+     * @return Result of the UpdateSecurityProfile operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateSecurityProfile
+     */
+    UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest updateSecurityProfileRequest);
+
+    /**
+     * <p>
      * Updates an existing stream. The stream version will be incremented by one.
      * </p>
      * 
@@ -3162,6 +3620,23 @@ public interface AWSIot {
      * @sample AWSIot.UpdateThingGroupsForThing
      */
     UpdateThingGroupsForThingResult updateThingGroupsForThing(UpdateThingGroupsForThingRequest updateThingGroupsForThingRequest);
+
+    /**
+     * <p>
+     * Validates a Device Defender security profile behaviors specification.
+     * </p>
+     * 
+     * @param validateSecurityProfileBehaviorsRequest
+     * @return Result of the ValidateSecurityProfileBehaviors operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ValidateSecurityProfileBehaviors
+     */
+    ValidateSecurityProfileBehaviorsResult validateSecurityProfileBehaviors(ValidateSecurityProfileBehaviorsRequest validateSecurityProfileBehaviorsRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

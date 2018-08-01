@@ -39,10 +39,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <note>
  * <p>
  * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
- * Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and other
- * AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and
- * retrying requests automatically. For more information about the AWS SDKs, including how to download and install them,
- * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and
+ * other AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors,
+ * and retrying requests automatically. For more information about the AWS SDKs, including how to download and install
+ * them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  * </note>
  * <p>
@@ -59,7 +59,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <i>do
  * not</i> use your AWS account (root) access key ID and secret key for everyday work with AWS KMS. Instead, use the
- * access key ID and secret access key for an IAM user, or you can use the AWS Security Token Service to generate
+ * access key ID and secret access key for an IAM user. You can also use the AWS Security Token Service to generate
  * temporary security credentials that you can use to sign requests.
  * </p>
  * <p>
@@ -104,11 +104,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * </ul>
  * <p>
- * <b>Commonly Used APIs</b>
+ * <b>Commonly Used API Operations</b>
  * </p>
  * <p>
- * Of the APIs discussed in this guide, the following will prove the most useful for most applications. You will likely
- * perform actions other than these, such as creating keys and assigning policies, by using the console.
+ * Of the API operations discussed in this guide, the following will prove the most useful for most applications. You
+ * will likely perform operations other than these, such as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
  * <li>

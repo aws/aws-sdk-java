@@ -55,6 +55,8 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("salesforce").build();
     private static final MarshallingInfo<StructuredPojo> IOTANALYTICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iotAnalytics").build();
+    private static final MarshallingInfo<StructuredPojo> STEPFUNCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stepFunctions").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -86,6 +88,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getElasticsearch(), ELASTICSEARCH_BINDING);
             protocolMarshaller.marshall(action.getSalesforce(), SALESFORCE_BINDING);
             protocolMarshaller.marshall(action.getIotAnalytics(), IOTANALYTICS_BINDING);
+            protocolMarshaller.marshall(action.getStepFunctions(), STEPFUNCTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -54,7 +54,7 @@ public class QueueJsonUnmarshaller implements Unmarshaller<Queue, JsonUnmarshall
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    queue.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    queue.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -62,7 +62,7 @@ public class QueueJsonUnmarshaller implements Unmarshaller<Queue, JsonUnmarshall
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
-                    queue.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    queue.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

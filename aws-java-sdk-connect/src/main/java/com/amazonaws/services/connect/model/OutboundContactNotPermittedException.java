@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The contact is not permitted because outbound calling is not enabled for the instance.
+ * The contact is not permitted.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

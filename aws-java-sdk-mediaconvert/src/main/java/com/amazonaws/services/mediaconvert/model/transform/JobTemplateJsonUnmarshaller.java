@@ -58,7 +58,7 @@ public class JobTemplateJsonUnmarshaller implements Unmarshaller<JobTemplate, Js
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    jobTemplate.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    jobTemplate.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -66,7 +66,7 @@ public class JobTemplateJsonUnmarshaller implements Unmarshaller<JobTemplate, Js
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
-                    jobTemplate.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    jobTemplate.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

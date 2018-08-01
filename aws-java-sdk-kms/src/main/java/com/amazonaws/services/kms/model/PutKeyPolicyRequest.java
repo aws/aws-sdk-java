@@ -80,8 +80,8 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
-     * to enforce a delay before including the new principal in a key policy because the new principal might not be
-     * immediately visible to AWS KMS. For more information, see <a href=
+     * to enforce a delay before including the new principal in a key policy. The reason for this is that the new
+     * principal might not be immediately visible to AWS KMS. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
@@ -343,8 +343,8 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
-     * to enforce a delay before including the new principal in a key policy because the new principal might not be
-     * immediately visible to AWS KMS. For more information, see <a href=
+     * to enforce a delay before including the new principal in a key policy. The reason for this is that the new
+     * principal might not be immediately visible to AWS KMS. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
@@ -375,8 +375,9 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Each statement in the key policy must contain one or more principals. The principals in the key policy
      *        must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or
-     *        role), you might need to enforce a delay before including the new principal in a key policy because the
-     *        new principal might not be immediately visible to AWS KMS. For more information, see <a href=
+     *        role), you might need to enforce a delay before including the new principal in a key policy. The reason
+     *        for this is that the new principal might not be immediately visible to AWS KMS. For more information, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *        >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management
      *        User Guide</i>.
@@ -413,8 +414,8 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
-     * to enforce a delay before including the new principal in a key policy because the new principal might not be
-     * immediately visible to AWS KMS. For more information, see <a href=
+     * to enforce a delay before including the new principal in a key policy. The reason for this is that the new
+     * principal might not be immediately visible to AWS KMS. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
@@ -444,8 +445,9 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         Each statement in the key policy must contain one or more principals. The principals in the key policy
      *         must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or
-     *         role), you might need to enforce a delay before including the new principal in a key policy because the
-     *         new principal might not be immediately visible to AWS KMS. For more information, see <a href=
+     *         role), you might need to enforce a delay before including the new principal in a key policy. The reason
+     *         for this is that the new principal might not be immediately visible to AWS KMS. For more information, see
+     *         <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *         >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management
      *         User Guide</i>.
@@ -482,8 +484,8 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
      * and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need
-     * to enforce a delay before including the new principal in a key policy because the new principal might not be
-     * immediately visible to AWS KMS. For more information, see <a href=
+     * to enforce a delay before including the new principal in a key policy. The reason for this is that the new
+     * principal might not be immediately visible to AWS KMS. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      * >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User
      * Guide</i>.
@@ -514,8 +516,9 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Each statement in the key policy must contain one or more principals. The principals in the key policy
      *        must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or
-     *        role), you might need to enforce a delay before including the new principal in a key policy because the
-     *        new principal might not be immediately visible to AWS KMS. For more information, see <a href=
+     *        role), you might need to enforce a delay before including the new principal in a key policy. The reason
+     *        for this is that the new principal might not be immediately visible to AWS KMS. For more information, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *        >Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management
      *        User Guide</i>.

@@ -27,6 +27,17 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     */
+    private String keyId;
+    /**
+     * <p>
      * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
      * return more than the specified number of items, but it might return fewer.
      * </p>
@@ -43,6 +54,76 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String marker;
+
+    /**
+     * <p>
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     * 
+     * @param keyId
+     *        Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon
+     *        Resource Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN
+     *        in this value.</p>
+     *        <p>
+     *        This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account
+     *        and region.
+     */
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    /**
+     * <p>
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     * 
+     * @return Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon
+     *         Resource Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias
+     *         ARN in this value.</p>
+     *         <p>
+     *         This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account
+     *         and region.
+     */
+
+    public String getKeyId() {
+        return this.keyId;
+    }
+
+    /**
+     * <p>
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     * 
+     * @param keyId
+     *        Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon
+     *        Resource Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN
+     *        in this value.</p>
+     *        <p>
+     *        This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account
+     *        and region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAliasesRequest withKeyId(String keyId) {
+        setKeyId(keyId);
+        return this;
+    }
 
     /**
      * <p>
@@ -168,6 +249,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKeyId() != null)
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getMarker() != null)
@@ -186,6 +269,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof ListAliasesRequest == false)
             return false;
         ListAliasesRequest other = (ListAliasesRequest) obj;
+        if (other.getKeyId() == null ^ this.getKeyId() == null)
+            return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
+            return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
@@ -202,6 +289,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;

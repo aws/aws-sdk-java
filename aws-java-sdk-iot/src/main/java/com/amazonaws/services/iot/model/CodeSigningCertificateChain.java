@@ -25,6 +25,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CodeSigningCertificateChain implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A stream of the certificate chain files.
+     * </p>
+     */
     private Stream stream;
     /**
      * <p>
@@ -40,7 +45,12 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
     private String inlineDocument;
 
     /**
+     * <p>
+     * A stream of the certificate chain files.
+     * </p>
+     * 
      * @param stream
+     *        A stream of the certificate chain files.
      */
 
     public void setStream(Stream stream) {
@@ -48,7 +58,11 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
     }
 
     /**
-     * @return
+     * <p>
+     * A stream of the certificate chain files.
+     * </p>
+     * 
+     * @return A stream of the certificate chain files.
      */
 
     public Stream getStream() {
@@ -56,7 +70,12 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A stream of the certificate chain files.
+     * </p>
+     * 
      * @param stream
+     *        A stream of the certificate chain files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

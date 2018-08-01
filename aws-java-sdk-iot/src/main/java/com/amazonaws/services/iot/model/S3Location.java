@@ -17,17 +17,40 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * The location in S3 the contains the files to stream.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The S3 bucket that contains the file to stream.
+     * </p>
+     */
     private String bucket;
-
+    /**
+     * <p>
+     * The name of the file within the S3 bucket to stream.
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * The file version.
+     * </p>
+     */
     private String version;
 
     /**
+     * <p>
+     * The S3 bucket that contains the file to stream.
+     * </p>
+     * 
      * @param bucket
+     *        The S3 bucket that contains the file to stream.
      */
 
     public void setBucket(String bucket) {
@@ -35,7 +58,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The S3 bucket that contains the file to stream.
+     * </p>
+     * 
+     * @return The S3 bucket that contains the file to stream.
      */
 
     public String getBucket() {
@@ -43,7 +70,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The S3 bucket that contains the file to stream.
+     * </p>
+     * 
      * @param bucket
+     *        The S3 bucket that contains the file to stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -53,7 +85,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the file within the S3 bucket to stream.
+     * </p>
+     * 
      * @param key
+     *        The name of the file within the S3 bucket to stream.
      */
 
     public void setKey(String key) {
@@ -61,7 +98,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the file within the S3 bucket to stream.
+     * </p>
+     * 
+     * @return The name of the file within the S3 bucket to stream.
      */
 
     public String getKey() {
@@ -69,7 +110,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the file within the S3 bucket to stream.
+     * </p>
+     * 
      * @param key
+     *        The name of the file within the S3 bucket to stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +125,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The file version.
+     * </p>
+     * 
      * @param version
+     *        The file version.
      */
 
     public void setVersion(String version) {
@@ -87,7 +138,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The file version.
+     * </p>
+     * 
+     * @return The file version.
      */
 
     public String getVersion() {
@@ -95,7 +150,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The file version.
+     * </p>
+     * 
      * @param version
+     *        The file version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

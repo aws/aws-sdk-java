@@ -16,10 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Outbound calls to the destination number are not allowed for your instance. You can request that the country be
- * included in the allowed countries for your instance by submitting a <a
- * href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase">Service Limit
- * Increase</a>.
+ * Outbound calls to the destination number are not allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

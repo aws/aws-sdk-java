@@ -25,6 +25,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CodeSigningSignature implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A stream of the code signing signature.
+     * </p>
+     */
     private Stream stream;
     /**
      * <p>
@@ -34,7 +39,12 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
     private java.nio.ByteBuffer inlineDocument;
 
     /**
+     * <p>
+     * A stream of the code signing signature.
+     * </p>
+     * 
      * @param stream
+     *        A stream of the code signing signature.
      */
 
     public void setStream(Stream stream) {
@@ -42,7 +52,11 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * A stream of the code signing signature.
+     * </p>
+     * 
+     * @return A stream of the code signing signature.
      */
 
     public Stream getStream() {
@@ -50,7 +64,12 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * A stream of the code signing signature.
+     * </p>
+     * 
      * @param stream
+     *        A stream of the code signing signature.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

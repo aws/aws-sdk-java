@@ -110,6 +110,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private IotAnalyticsAction iotAnalytics;
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     */
+    private StepFunctionsAction stepFunctions;
 
     /**
      * <p>
@@ -678,6 +684,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @param stepFunctions
+     *        Starts execution of a Step Functions state machine.
+     */
+
+    public void setStepFunctions(StepFunctionsAction stepFunctions) {
+        this.stepFunctions = stepFunctions;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @return Starts execution of a Step Functions state machine.
+     */
+
+    public StepFunctionsAction getStepFunctions() {
+        return this.stepFunctions;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @param stepFunctions
+     *        Starts execution of a Step Functions state machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withStepFunctions(StepFunctionsAction stepFunctions) {
+        setStepFunctions(stepFunctions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -715,7 +761,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getSalesforce() != null)
             sb.append("Salesforce: ").append(getSalesforce()).append(",");
         if (getIotAnalytics() != null)
-            sb.append("IotAnalytics: ").append(getIotAnalytics());
+            sb.append("IotAnalytics: ").append(getIotAnalytics()).append(",");
+        if (getStepFunctions() != null)
+            sb.append("StepFunctions: ").append(getStepFunctions());
         sb.append("}");
         return sb.toString();
     }
@@ -786,6 +834,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIotAnalytics() != null && other.getIotAnalytics().equals(this.getIotAnalytics()) == false)
             return false;
+        if (other.getStepFunctions() == null ^ this.getStepFunctions() == null)
+            return false;
+        if (other.getStepFunctions() != null && other.getStepFunctions().equals(this.getStepFunctions()) == false)
+            return false;
         return true;
     }
 
@@ -808,6 +860,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());
+        hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
         return hashCode;
     }
 

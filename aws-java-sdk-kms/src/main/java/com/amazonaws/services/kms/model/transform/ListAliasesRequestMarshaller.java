@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListAliasesRequestMarshaller {
 
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,7 @@ public class ListAliasesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listAliasesRequest.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(listAliasesRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(listAliasesRequest.getMarker(), MARKER_BINDING);
         } catch (Exception e) {

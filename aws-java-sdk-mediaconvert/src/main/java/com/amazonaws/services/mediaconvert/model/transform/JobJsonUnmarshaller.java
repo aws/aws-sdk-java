@@ -54,7 +54,7 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    job.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    job.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
                     context.nextToken();
