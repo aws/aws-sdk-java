@@ -79,12 +79,7 @@ public final class EC2CredentialsUtils {
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint) throws IOException {
-        Map<String, String> headers = new HashMap<String, String>();
-        headers.put("User-Agent", USER_AGENT);
-        headers.put("Accept", "*/*");
-        headers.put("Connection", "keep-alive");
-
-        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, headers);
+        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, new HashMap<String, String>());
     }
 
     /**
@@ -110,10 +105,20 @@ public final class EC2CredentialsUtils {
     public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) throws IOException {
         int retriesAttempted = 0;
         InputStream inputStream = null;
+        Map<String, String> mdsHeaders = new HashMap<String, String>();
+
+        // Check to see if map is null. Make a copy if it isn't
+        if (headers != null) {
+            mdsHeaders.putAll(headers);
+        }
+
+        mdsHeaders.put("User-Agent", USER_AGENT);
+        mdsHeaders.put("Accept", "*/*");
+        mdsHeaders.put("Connection", "keep-alive");
 
         while (true) {
             try {
-                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint, headers);
+                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint, mdsHeaders);
 
                 int statusCode = connection.getResponseCode();
 
