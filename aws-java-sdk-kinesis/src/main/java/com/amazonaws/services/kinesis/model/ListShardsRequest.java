@@ -63,7 +63,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String nextToken;
     /**
      * <p>
-     * The ID of the shard to start the list with.
+     * Specify this parameter to indicate that you want to list the shards starting with the shard whose ID immediately
+     * follows <code>ExclusiveStartShardId</code>.
      * </p>
      * <p>
      * If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the shards
@@ -321,7 +322,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the shard to start the list with.
+     * Specify this parameter to indicate that you want to list the shards starting with the shard whose ID immediately
+     * follows <code>ExclusiveStartShardId</code>.
      * </p>
      * <p>
      * If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the shards
@@ -332,7 +334,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param exclusiveStartShardId
-     *        The ID of the shard to start the list with. </p>
+     *        Specify this parameter to indicate that you want to list the shards starting with the shard whose ID
+     *        immediately follows <code>ExclusiveStartShardId</code>.</p>
      *        <p>
      *        If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the
      *        shards starting with the first one in the stream.
@@ -347,7 +350,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the shard to start the list with.
+     * Specify this parameter to indicate that you want to list the shards starting with the shard whose ID immediately
+     * follows <code>ExclusiveStartShardId</code>.
      * </p>
      * <p>
      * If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the shards
@@ -357,7 +361,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * You cannot specify this parameter if you specify <code>NextToken</code>.
      * </p>
      * 
-     * @return The ID of the shard to start the list with. </p>
+     * @return Specify this parameter to indicate that you want to list the shards starting with the shard whose ID
+     *         immediately follows <code>ExclusiveStartShardId</code>.</p>
      *         <p>
      *         If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the
      *         shards starting with the first one in the stream.
@@ -372,7 +377,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the shard to start the list with.
+     * Specify this parameter to indicate that you want to list the shards starting with the shard whose ID immediately
+     * follows <code>ExclusiveStartShardId</code>.
      * </p>
      * <p>
      * If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the shards
@@ -383,7 +389,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param exclusiveStartShardId
-     *        The ID of the shard to start the list with. </p>
+     *        Specify this parameter to indicate that you want to list the shards starting with the shard whose ID
+     *        immediately follows <code>ExclusiveStartShardId</code>.</p>
      *        <p>
      *        If you don't specify this parameter, the default behavior is for <code>ListShards</code> to list the
      *        shards starting with the first one in the stream.

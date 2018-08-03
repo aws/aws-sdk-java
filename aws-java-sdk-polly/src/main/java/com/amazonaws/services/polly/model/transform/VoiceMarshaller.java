@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.polly.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class VoiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageName").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<List> ADDITIONALLANGUAGECODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalLanguageCodes").build();
 
     private static final VoiceMarshaller instance = new VoiceMarshaller();
 
@@ -59,6 +62,7 @@ public class VoiceMarshaller {
             protocolMarshaller.marshall(voice.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(voice.getLanguageName(), LANGUAGENAME_BINDING);
             protocolMarshaller.marshall(voice.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(voice.getAdditionalLanguageCodes(), ADDITIONALLANGUAGECODES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

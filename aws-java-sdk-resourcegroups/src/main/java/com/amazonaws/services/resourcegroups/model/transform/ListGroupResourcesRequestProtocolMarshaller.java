@@ -32,8 +32,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListGroupResourcesRequestProtocolMarshaller implements Marshaller<Request<ListGroupResourcesRequest>, ListGroupResourcesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/groups/{GroupName}/resource-identifiers").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .serviceName("AWSResourceGroups").build();
+            .requestUri("/groups/{GroupName}/resource-identifiers-list").httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false)
+            .hasPayloadMembers(true).serviceName("AWSResourceGroups").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

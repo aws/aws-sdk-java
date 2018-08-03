@@ -32,8 +32,8 @@ public class ListSpeechSynthesisTasksResult extends com.amazonaws.AmazonWebServi
     private String nextToken;
     /**
      * <p>
-     * SynthesisTask object that provides information from the specified task in the list request, including output
-     * format, creation time, task status, and so on.
+     * List of SynthesisTask objects that provides information from the specified task in the list request, including
+     * output format, creation time, task status, and so on.
      * </p>
      */
     private java.util.List<SynthesisTask> synthesisTasks;
@@ -86,12 +86,12 @@ public class ListSpeechSynthesisTasksResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * SynthesisTask object that provides information from the specified task in the list request, including output
-     * format, creation time, task status, and so on.
+     * List of SynthesisTask objects that provides information from the specified task in the list request, including
+     * output format, creation time, task status, and so on.
      * </p>
      * 
-     * @return SynthesisTask object that provides information from the specified task in the list request, including
-     *         output format, creation time, task status, and so on.
+     * @return List of SynthesisTask objects that provides information from the specified task in the list request,
+     *         including output format, creation time, task status, and so on.
      */
 
     public java.util.List<SynthesisTask> getSynthesisTasks() {
@@ -100,13 +100,13 @@ public class ListSpeechSynthesisTasksResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * SynthesisTask object that provides information from the specified task in the list request, including output
-     * format, creation time, task status, and so on.
+     * List of SynthesisTask objects that provides information from the specified task in the list request, including
+     * output format, creation time, task status, and so on.
      * </p>
      * 
      * @param synthesisTasks
-     *        SynthesisTask object that provides information from the specified task in the list request, including
-     *        output format, creation time, task status, and so on.
+     *        List of SynthesisTask objects that provides information from the specified task in the list request,
+     *        including output format, creation time, task status, and so on.
      */
 
     public void setSynthesisTasks(java.util.Collection<SynthesisTask> synthesisTasks) {
@@ -120,8 +120,8 @@ public class ListSpeechSynthesisTasksResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * SynthesisTask object that provides information from the specified task in the list request, including output
-     * format, creation time, task status, and so on.
+     * List of SynthesisTask objects that provides information from the specified task in the list request, including
+     * output format, creation time, task status, and so on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,8 +130,8 @@ public class ListSpeechSynthesisTasksResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param synthesisTasks
-     *        SynthesisTask object that provides information from the specified task in the list request, including
-     *        output format, creation time, task status, and so on.
+     *        List of SynthesisTask objects that provides information from the specified task in the list request,
+     *        including output format, creation time, task status, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,13 +147,13 @@ public class ListSpeechSynthesisTasksResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * SynthesisTask object that provides information from the specified task in the list request, including output
-     * format, creation time, task status, and so on.
+     * List of SynthesisTask objects that provides information from the specified task in the list request, including
+     * output format, creation time, task status, and so on.
      * </p>
      * 
      * @param synthesisTasks
-     *        SynthesisTask object that provides information from the specified task in the list request, including
-     *        output format, creation time, task status, and so on.
+     *        List of SynthesisTask objects that provides information from the specified task in the list request,
+     *        including output format, creation time, task status, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

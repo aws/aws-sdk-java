@@ -36,7 +36,7 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
     private String streamName;
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
@@ -83,10 +83,10 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      * 
-     * @return The set of key-value pairs to use to create the tags.
+     * @return A set of up to 10 key-value pairs to use to create the tags.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -98,11 +98,11 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      * 
      * @param tags
-     *        The set of key-value pairs to use to create the tags.
+     *        A set of up to 10 key-value pairs to use to create the tags.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -111,11 +111,11 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The set of key-value pairs to use to create the tags.
+     * A set of up to 10 key-value pairs to use to create the tags.
      * </p>
      * 
      * @param tags
-     *        The set of key-value pairs to use to create the tags.
+     *        A set of up to 10 key-value pairs to use to create the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

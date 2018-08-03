@@ -15,7 +15,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * A parameter version can have a maximum of ten labels.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ParameterVersionLabelLimitExceededException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {

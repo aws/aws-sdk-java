@@ -54,6 +54,8 @@ public class SynthesisTaskMarshaller {
             .marshallLocationName("TextType").build();
     private static final MarshallingInfo<String> VOICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VoiceId").build();
+    private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
 
     private static final SynthesisTaskMarshaller instance = new SynthesisTaskMarshaller();
 
@@ -84,6 +86,7 @@ public class SynthesisTaskMarshaller {
             protocolMarshaller.marshall(synthesisTask.getSpeechMarkTypes(), SPEECHMARKTYPES_BINDING);
             protocolMarshaller.marshall(synthesisTask.getTextType(), TEXTTYPE_BINDING);
             protocolMarshaller.marshall(synthesisTask.getVoiceId(), VOICEID_BINDING);
+            protocolMarshaller.marshall(synthesisTask.getLanguageCode(), LANGUAGECODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

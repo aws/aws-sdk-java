@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.resourcegroups.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class ListGroupResourcesRequestMarshaller {
 
     private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("GroupName").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +54,7 @@ public class ListGroupResourcesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listGroupResourcesRequest.getGroupName(), GROUPNAME_BINDING);
+            protocolMarshaller.marshall(listGroupResourcesRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(listGroupResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listGroupResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

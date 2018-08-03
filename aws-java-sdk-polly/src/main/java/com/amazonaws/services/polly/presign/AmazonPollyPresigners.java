@@ -94,6 +94,10 @@ public final class AmazonPollyPresigners {
                 request.addParameter("SpeechMarkTypes", speechMarkType);
             }
         }
+
+        if (synthesizeSpeechRequest.getLanguageCode() != null) {
+            request.addParameter("LanguageCode", synthesizeSpeechRequest.getLanguageCode());
+        }
     }
 
     private Request<?> newRequest(AWSCredentialsProvider credentials) {

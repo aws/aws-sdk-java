@@ -69,6 +69,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public DeregisterStreamConsumerResult deregisterStreamConsumer(DeregisterStreamConsumerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -91,6 +96,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     @Override
     public DescribeStreamResult describeStream(String streamName, Integer limit, String exclusiveStartShardId) {
         return describeStream(new DescribeStreamRequest().withStreamName(streamName).withLimit(limit).withExclusiveStartShardId(exclusiveStartShardId));
+    }
+
+    @Override
+    public DescribeStreamConsumerResult describeStreamConsumer(DescribeStreamConsumerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -136,6 +146,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public ListShardsResult listShards(ListShardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStreamConsumersResult listStreamConsumers(ListStreamConsumersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -192,6 +207,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public PutRecordsResult putRecords(PutRecordsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterStreamConsumerResult registerStreamConsumer(RegisterStreamConsumerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

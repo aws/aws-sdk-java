@@ -33,6 +33,20 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
     private String groupName;
     /**
      * <p>
+     * Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<ResourceFilter> filters;
+    /**
+     * <p>
      * The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated
      * output. By default, this number is 50.
      * </p>
@@ -83,6 +97,140 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
 
     public ListGroupResourcesRequest withGroupName(String groupName) {
         setGroupName(groupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources
+     *         operation.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the
+     *         format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<ResourceFilter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources
+     *        operation.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        </p>
+     *        </li>
+     */
+
+    public void setFilters(java.util.Collection<ResourceFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<ResourceFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources
+     *        operation.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupResourcesRequest withFilters(ResourceFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<ResourceFilter>(filters.length));
+        }
+        for (ResourceFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources
+     *        operation.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupResourcesRequest withFilters(java.util.Collection<ResourceFilter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -191,6 +339,8 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -213,6 +363,10 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -230,6 +384,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

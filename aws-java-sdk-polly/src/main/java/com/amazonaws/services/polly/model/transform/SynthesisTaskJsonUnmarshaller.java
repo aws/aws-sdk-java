@@ -100,6 +100,10 @@ public class SynthesisTaskJsonUnmarshaller implements Unmarshaller<SynthesisTask
                     context.nextToken();
                     synthesisTask.setVoiceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LanguageCode", targetDepth)) {
+                    context.nextToken();
+                    synthesisTask.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

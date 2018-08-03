@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The pagination token passed to the <code>ListShards</code> operation is expired. For more information, see
- * <a>ListShardsInput$NextToken</a>.
+ * The pagination token passed to the operation is expired.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

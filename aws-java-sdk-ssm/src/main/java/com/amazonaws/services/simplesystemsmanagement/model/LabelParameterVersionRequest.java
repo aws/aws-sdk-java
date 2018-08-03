@@ -25,14 +25,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The parameter name on which you want to attach one or more labels.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The specific version of the parameter on which you want to attach one or more labels. If no version is specified,
+     * the system attaches the label to the latest version.)
+     * </p>
+     */
     private Long parameterVersion;
-
+    /**
+     * <p>
+     * One or more labels to attach to the specified parameter version.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> labels;
 
     /**
+     * <p>
+     * The parameter name on which you want to attach one or more labels.
+     * </p>
+     * 
      * @param name
+     *        The parameter name on which you want to attach one or more labels.
      */
 
     public void setName(String name) {
@@ -40,7 +59,11 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The parameter name on which you want to attach one or more labels.
+     * </p>
+     * 
+     * @return The parameter name on which you want to attach one or more labels.
      */
 
     public String getName() {
@@ -48,7 +71,12 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The parameter name on which you want to attach one or more labels.
+     * </p>
+     * 
      * @param name
+     *        The parameter name on which you want to attach one or more labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +86,14 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The specific version of the parameter on which you want to attach one or more labels. If no version is specified,
+     * the system attaches the label to the latest version.)
+     * </p>
+     * 
      * @param parameterVersion
+     *        The specific version of the parameter on which you want to attach one or more labels. If no version is
+     *        specified, the system attaches the label to the latest version.)
      */
 
     public void setParameterVersion(Long parameterVersion) {
@@ -66,7 +101,13 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The specific version of the parameter on which you want to attach one or more labels. If no version is specified,
+     * the system attaches the label to the latest version.)
+     * </p>
+     * 
+     * @return The specific version of the parameter on which you want to attach one or more labels. If no version is
+     *         specified, the system attaches the label to the latest version.)
      */
 
     public Long getParameterVersion() {
@@ -74,7 +115,14 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The specific version of the parameter on which you want to attach one or more labels. If no version is specified,
+     * the system attaches the label to the latest version.)
+     * </p>
+     * 
      * @param parameterVersion
+     *        The specific version of the parameter on which you want to attach one or more labels. If no version is
+     *        specified, the system attaches the label to the latest version.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +132,11 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * One or more labels to attach to the specified parameter version.
+     * </p>
+     * 
+     * @return One or more labels to attach to the specified parameter version.
      */
 
     public java.util.List<String> getLabels() {
@@ -95,7 +147,12 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * One or more labels to attach to the specified parameter version.
+     * </p>
+     * 
      * @param labels
+     *        One or more labels to attach to the specified parameter version.
      */
 
     public void setLabels(java.util.Collection<String> labels) {
@@ -109,12 +166,16 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * One or more labels to attach to the specified parameter version.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param labels
+     *        One or more labels to attach to the specified parameter version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,7 +190,12 @@ public class LabelParameterVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * One or more labels to attach to the specified parameter version.
+     * </p>
+     * 
      * @param labels
+     *        One or more labels to attach to the specified parameter version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

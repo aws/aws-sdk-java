@@ -80,6 +80,20 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String voiceId;
+    /**
+     * <p>
+     * Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such
+     * as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
+     * </p>
+     * <p>
+     * If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the
+     * bilingual voice. The default language for any voice is the one returned by the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the
+     * <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English
+     * rather than Hindi.
+     * </p>
+     */
+    private String languageCode;
 
     /**
      * <p>
@@ -644,6 +658,154 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such
+     * as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
+     * </p>
+     * <p>
+     * If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the
+     * bilingual voice. The default language for any voice is the one returned by the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the
+     * <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English
+     * rather than Hindi.
+     * </p>
+     * 
+     * @param languageCode
+     *        Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual
+     *        voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+     *        <p>
+     *        If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language
+     *        of the bilingual voice. The default language for any voice is the one returned by the <a
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation
+     *        for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use
+     *        Indian English rather than Hindi.
+     * @see LanguageCode
+     */
+
+    public void setLanguageCode(String languageCode) {
+        this.languageCode = languageCode;
+    }
+
+    /**
+     * <p>
+     * Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such
+     * as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
+     * </p>
+     * <p>
+     * If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the
+     * bilingual voice. The default language for any voice is the one returned by the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the
+     * <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English
+     * rather than Hindi.
+     * </p>
+     * 
+     * @return Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual
+     *         voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+     *         <p>
+     *         If a bilingual voice is used and no language code is specified, Amazon Polly will use the default
+     *         language of the bilingual voice. The default language for any voice is the one returned by the <a
+     *         href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation
+     *         for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will
+     *         use Indian English rather than Hindi.
+     * @see LanguageCode
+     */
+
+    public String getLanguageCode() {
+        return this.languageCode;
+    }
+
+    /**
+     * <p>
+     * Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such
+     * as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
+     * </p>
+     * <p>
+     * If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the
+     * bilingual voice. The default language for any voice is the one returned by the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the
+     * <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English
+     * rather than Hindi.
+     * </p>
+     * 
+     * @param languageCode
+     *        Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual
+     *        voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+     *        <p>
+     *        If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language
+     *        of the bilingual voice. The default language for any voice is the one returned by the <a
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation
+     *        for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use
+     *        Indian English rather than Hindi.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public SynthesizeSpeechRequest withLanguageCode(String languageCode) {
+        setLanguageCode(languageCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such
+     * as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
+     * </p>
+     * <p>
+     * If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the
+     * bilingual voice. The default language for any voice is the one returned by the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the
+     * <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English
+     * rather than Hindi.
+     * </p>
+     * 
+     * @param languageCode
+     *        Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual
+     *        voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+     *        <p>
+     *        If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language
+     *        of the bilingual voice. The default language for any voice is the one returned by the <a
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation
+     *        for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use
+     *        Indian English rather than Hindi.
+     * @see LanguageCode
+     */
+
+    public void setLanguageCode(LanguageCode languageCode) {
+        withLanguageCode(languageCode);
+    }
+
+    /**
+     * <p>
+     * Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such
+     * as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
+     * </p>
+     * <p>
+     * If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the
+     * bilingual voice. The default language for any voice is the one returned by the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the
+     * <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English
+     * rather than Hindi.
+     * </p>
+     * 
+     * @param languageCode
+     *        Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual
+     *        voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+     *        <p>
+     *        If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language
+     *        of the bilingual voice. The default language for any voice is the one returned by the <a
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation
+     *        for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use
+     *        Indian English rather than Hindi.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public SynthesizeSpeechRequest withLanguageCode(LanguageCode languageCode) {
+        this.languageCode = languageCode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -667,7 +829,9 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTextType() != null)
             sb.append("TextType: ").append(getTextType()).append(",");
         if (getVoiceId() != null)
-            sb.append("VoiceId: ").append(getVoiceId());
+            sb.append("VoiceId: ").append(getVoiceId()).append(",");
+        if (getLanguageCode() != null)
+            sb.append("LanguageCode: ").append(getLanguageCode());
         sb.append("}");
         return sb.toString();
     }
@@ -710,6 +874,10 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getVoiceId() != null && other.getVoiceId().equals(this.getVoiceId()) == false)
             return false;
+        if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
+            return false;
+        if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
+            return false;
         return true;
     }
 
@@ -725,6 +893,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
         hashCode = prime * hashCode + ((getTextType() == null) ? 0 : getTextType().hashCode());
         hashCode = prime * hashCode + ((getVoiceId() == null) ? 0 : getVoiceId().hashCode());
+        hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         return hashCode;
     }
 

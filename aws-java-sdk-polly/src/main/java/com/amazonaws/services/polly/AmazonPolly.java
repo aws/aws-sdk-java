@@ -287,7 +287,7 @@ public interface AmazonPolly {
      * @throws TextLengthExceededException
      *         The value of the "Text" parameter is longer than the accepted limits. For the
      *         <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of
-     *         which no more than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API, the
+     *         which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the
      *         maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not
      *         counted as billed characters.
      * @throws InvalidS3BucketException
@@ -315,6 +315,8 @@ public interface AmazonPolly {
      *         available for content in <code>json</code> format.
      * @throws SsmlMarksNotSupportedForTextTypeException
      *         SSML speech marks are not supported for plain text-type input.
+     * @throws LanguageNotSupportedException
+     *         The language specified is not currently supported by Amazon Polly in this capacity.
      * @sample AmazonPolly.StartSpeechSynthesisTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask" target="_top">AWS
      *      API Documentation</a>
@@ -334,7 +336,7 @@ public interface AmazonPolly {
      * @throws TextLengthExceededException
      *         The value of the "Text" parameter is longer than the accepted limits. For the
      *         <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of
-     *         which no more than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API, the
+     *         which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the
      *         maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not
      *         counted as billed characters.
      * @throws InvalidSampleRateException
@@ -355,6 +357,8 @@ public interface AmazonPolly {
      *         available for content in <code>json</code> format.
      * @throws SsmlMarksNotSupportedForTextTypeException
      *         SSML speech marks are not supported for plain text-type input.
+     * @throws LanguageNotSupportedException
+     *         The language specified is not currently supported by Amazon Polly in this capacity.
      * @sample AmazonPolly.SynthesizeSpeech
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>

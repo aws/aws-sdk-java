@@ -1,3 +1,20 @@
+# __1.11.379__ __2018-08-02__
+## __AWS Resource Groups__
+  - ### Features
+    - AWS Resource Groups service added a new feature to filter group resources by resource-type when using the ListGroupResources operation.
+
+## __Amazon Kinesis__
+  - ### Features
+    - This update introduces SubscribeToShard and RegisterStreamConsumer APIs which allows for retrieving records on a data stream over HTTP2 with enhanced fan-out capabilities. With this new feature the Java SDK now supports event streaming natively which will allow you to define payload and exception structures on the client over a persistent connection. For more information, see Developing Consumers with Enhanced Fan-Out in the Kinesis Developer Guide.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly enables female voice Aditi to speak Hindi language
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
+
 # __1.11.378__ __2018-08-01__
 ## __AWS Storage Gateway__
   - ### Features

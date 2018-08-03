@@ -149,6 +149,12 @@ public class StreamDescriptionSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private Integer openShardCount;
+    /**
+     * <p>
+     * The number of enhanced fan-out consumers registered with the stream.
+     * </p>
+     */
+    private Integer consumerCount;
 
     /**
      * <p>
@@ -1052,6 +1058,46 @@ public class StreamDescriptionSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The number of enhanced fan-out consumers registered with the stream.
+     * </p>
+     * 
+     * @param consumerCount
+     *        The number of enhanced fan-out consumers registered with the stream.
+     */
+
+    public void setConsumerCount(Integer consumerCount) {
+        this.consumerCount = consumerCount;
+    }
+
+    /**
+     * <p>
+     * The number of enhanced fan-out consumers registered with the stream.
+     * </p>
+     * 
+     * @return The number of enhanced fan-out consumers registered with the stream.
+     */
+
+    public Integer getConsumerCount() {
+        return this.consumerCount;
+    }
+
+    /**
+     * <p>
+     * The number of enhanced fan-out consumers registered with the stream.
+     * </p>
+     * 
+     * @param consumerCount
+     *        The number of enhanced fan-out consumers registered with the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamDescriptionSummary withConsumerCount(Integer consumerCount) {
+        setConsumerCount(consumerCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1079,7 +1125,9 @@ public class StreamDescriptionSummary implements Serializable, Cloneable, Struct
         if (getKeyId() != null)
             sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getOpenShardCount() != null)
-            sb.append("OpenShardCount: ").append(getOpenShardCount());
+            sb.append("OpenShardCount: ").append(getOpenShardCount()).append(",");
+        if (getConsumerCount() != null)
+            sb.append("ConsumerCount: ").append(getConsumerCount());
         sb.append("}");
         return sb.toString();
     }
@@ -1130,6 +1178,10 @@ public class StreamDescriptionSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getOpenShardCount() != null && other.getOpenShardCount().equals(this.getOpenShardCount()) == false)
             return false;
+        if (other.getConsumerCount() == null ^ this.getConsumerCount() == null)
+            return false;
+        if (other.getConsumerCount() != null && other.getConsumerCount().equals(this.getConsumerCount()) == false)
+            return false;
         return true;
     }
 
@@ -1147,6 +1199,7 @@ public class StreamDescriptionSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getOpenShardCount() == null) ? 0 : getOpenShardCount().hashCode());
+        hashCode = prime * hashCode + ((getConsumerCount() == null) ? 0 : getConsumerCount().hashCode());
         return hashCode;
     }
 

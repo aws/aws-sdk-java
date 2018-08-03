@@ -46,6 +46,8 @@ public class StreamDescriptionSummaryMarshaller {
             .marshallLocationName("KeyId").build();
     private static final MarshallingInfo<Integer> OPENSHARDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenShardCount").build();
+    private static final MarshallingInfo<Integer> CONSUMERCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumerCount").build();
 
     private static final StreamDescriptionSummaryMarshaller instance = new StreamDescriptionSummaryMarshaller();
 
@@ -72,6 +74,7 @@ public class StreamDescriptionSummaryMarshaller {
             protocolMarshaller.marshall(streamDescriptionSummary.getEncryptionType(), ENCRYPTIONTYPE_BINDING);
             protocolMarshaller.marshall(streamDescriptionSummary.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(streamDescriptionSummary.getOpenShardCount(), OPENSHARDCOUNT_BINDING);
+            protocolMarshaller.marshall(streamDescriptionSummary.getConsumerCount(), CONSUMERCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
