@@ -15,7 +15,9 @@ package com.amazonaws.services.alexaforbusiness.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request failed because this device is no longer registered and therefore no longer managed by this account.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeviceNotRegisteredException extends com.amazonaws.services.alexaforbusiness.model.AmazonAlexaForBusinessException {

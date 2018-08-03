@@ -27,7 +27,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ARN of the specific resource for which to list tags. Required.
+     * The ARN of the specified resource for which to list tags.
      * </p>
      */
     private String arn;
@@ -50,11 +50,11 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ARN of the specific resource for which to list tags. Required.
+     * The ARN of the specified resource for which to list tags.
      * </p>
      * 
      * @param arn
-     *        The ARN of the specific resource for which to list tags. Required.
+     *        The ARN of the specified resource for which to list tags.
      */
 
     public void setArn(String arn) {
@@ -63,10 +63,10 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ARN of the specific resource for which to list tags. Required.
+     * The ARN of the specified resource for which to list tags.
      * </p>
      * 
-     * @return The ARN of the specific resource for which to list tags. Required.
+     * @return The ARN of the specified resource for which to list tags.
      */
 
     public String getArn() {
@@ -75,11 +75,11 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ARN of the specific resource for which to list tags. Required.
+     * The ARN of the specified resource for which to list tags.
      * </p>
      * 
      * @param arn
-     *        The ARN of the specific resource for which to list tags. Required.
+     *        The ARN of the specified resource for which to list tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -38,10 +38,10 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * 
-     * @return The list of tags requested for the specific resource.
+     * @return The tags requested for the specified resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -50,11 +50,11 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * 
      * @param tags
-     *        The list of tags requested for the specific resource.
+     *        The tags requested for the specified resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -68,7 +68,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      * 
      * @param tags
-     *        The list of tags requested for the specific resource.
+     *        The tags requested for the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * 
      * @param tags
-     *        The list of tags requested for the specific resource.
+     *        The tags requested for the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

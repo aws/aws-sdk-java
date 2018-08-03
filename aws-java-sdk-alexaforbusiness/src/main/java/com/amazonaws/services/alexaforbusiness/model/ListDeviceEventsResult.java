@@ -23,15 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The device events requested for the device ARN.
+     * </p>
+     */
     private java.util.List<DeviceEvent> deviceEvents;
-    /** <p/> */
+    /**
+     * <p>
+     * The token returned to indicate that there is more data available.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * <p/>
+     * <p>
+     * The device events requested for the device ARN.
+     * </p>
      * 
-     * @return
+     * @return The device events requested for the device ARN.
      */
 
     public java.util.List<DeviceEvent> getDeviceEvents() {
@@ -39,9 +49,12 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p/>
+     * <p>
+     * The device events requested for the device ARN.
+     * </p>
      * 
      * @param deviceEvents
+     *        The device events requested for the device ARN.
      */
 
     public void setDeviceEvents(java.util.Collection<DeviceEvent> deviceEvents) {
@@ -54,7 +67,9 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p/>
+     * <p>
+     * The device events requested for the device ARN.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDeviceEvents(java.util.Collection)} or {@link #withDeviceEvents(java.util.Collection)} if you want to
@@ -62,6 +77,7 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param deviceEvents
+     *        The device events requested for the device ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,9 +92,12 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p/>
+     * <p>
+     * The device events requested for the device ARN.
+     * </p>
      * 
      * @param deviceEvents
+     *        The device events requested for the device ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,9 +107,12 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p/>
+     * <p>
+     * The token returned to indicate that there is more data available.
+     * </p>
      * 
      * @param nextToken
+     *        The token returned to indicate that there is more data available.
      */
 
     public void setNextToken(String nextToken) {
@@ -98,9 +120,11 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p/>
+     * <p>
+     * The token returned to indicate that there is more data available.
+     * </p>
      * 
-     * @return
+     * @return The token returned to indicate that there is more data available.
      */
 
     public String getNextToken() {
@@ -108,9 +132,12 @@ public class ListDeviceEventsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p/>
+     * <p>
+     * The token returned to indicate that there is more data available.
+     * </p>
      * 
      * @param nextToken
+     *        The token returned to indicate that there is more data available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

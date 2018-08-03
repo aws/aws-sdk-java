@@ -872,9 +872,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
-     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
-     * device events for that EventType in reverse chronological order.
+     * Lists the device event history, including device connection status, for up to 30 days.
      * </p>
      * 
      * @param listDeviceEventsRequest
@@ -887,9 +885,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
-     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
-     * device events for that EventType in reverse chronological order.
+     * Lists the device event history, including device connection status, for up to 30 days.
      * </p>
      * 
      * @param listDeviceEventsRequest
@@ -938,7 +934,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists all tags for a specific resource.
+     * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest
@@ -951,7 +947,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists all tags for a specific resource.
+     * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest

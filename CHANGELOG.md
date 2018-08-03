@@ -1,7 +1,11 @@
-# __1.11.379__ __2018-08-02__
+# __1.11.380__ __2018-08-03__
 ## __AWS Resource Groups__
   - ### Features
     - AWS Resource Groups service added a new feature to filter group resources by resource-type when using the ListGroupResources operation.
+
+## __Alexa For Business__
+  - ### Features
+    - Documentation updates for AWS Alexa For Business
 
 ## __Amazon Kinesis__
   - ### Features

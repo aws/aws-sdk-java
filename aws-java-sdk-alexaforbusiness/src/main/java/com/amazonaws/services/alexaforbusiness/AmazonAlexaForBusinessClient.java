@@ -195,6 +195,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws LimitExceededException
      *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
      * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
      * @sample AmazonAlexaForBusiness.AssociateDeviceWithRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom"
      *      target="_top">AWS API Documentation</a>
@@ -1028,6 +1030,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param disassociateDeviceFromRoomRequest
      * @return Result of the DisassociateDeviceFromRoom operation returned by the service.
      * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
      * @sample AmazonAlexaForBusiness.DisassociateDeviceFromRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom"
      *      target="_top">AWS API Documentation</a>
@@ -1484,9 +1488,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
-     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
-     * device events for that EventType in reverse chronological order.
+     * Lists the device event history, including device connection status, for up to 30 days.
      * </p>
      * 
      * @param listDeviceEventsRequest
@@ -1586,7 +1588,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists all tags for a specific resource.
+     * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest
@@ -2195,6 +2197,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @param startDeviceSyncRequest
      * @return Result of the StartDeviceSync operation returned by the service.
      * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
      * @sample AmazonAlexaForBusiness.StartDeviceSync
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync"
      *      target="_top">AWS API Documentation</a>
@@ -2453,6 +2457,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @throws NotFoundException
      *         The resource is not found. HTTP Status Code: 400
      * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
      * @sample AmazonAlexaForBusiness.UpdateDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice" target="_top">AWS
      *      API Documentation</a>
