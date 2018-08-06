@@ -208,39 +208,41 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(modifyDBInstanceRequest.getPerformanceInsightsKMSKeyId()));
         }
 
-        CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
-        if (cloudwatchLogsExportConfiguration != null) {
+        {
+            CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
+            if (cloudwatchLogsExportConfiguration != null) {
 
-            if (cloudwatchLogsExportConfiguration.getEnableLogTypes() != null) {
-                java.util.List<String> enableLogTypesList = cloudwatchLogsExportConfiguration.getEnableLogTypes();
-                if (enableLogTypesList.isEmpty()) {
-                    request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes", "");
-                } else {
-                    int enableLogTypesListIndex = 1;
+                if (cloudwatchLogsExportConfiguration.getEnableLogTypes() != null) {
+                    java.util.List<String> enableLogTypesList = cloudwatchLogsExportConfiguration.getEnableLogTypes();
+                    if (enableLogTypesList.isEmpty()) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes", "");
+                    } else {
+                        int enableLogTypesListIndex = 1;
 
-                    for (String enableLogTypesListValue : enableLogTypesList) {
-                        if (enableLogTypesListValue != null) {
-                            request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
-                                    StringUtils.fromString(enableLogTypesListValue));
+                        for (String enableLogTypesListValue : enableLogTypesList) {
+                            if (enableLogTypesListValue != null) {
+                                request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
+                                        StringUtils.fromString(enableLogTypesListValue));
+                            }
+                            enableLogTypesListIndex++;
                         }
-                        enableLogTypesListIndex++;
                     }
                 }
-            }
 
-            if (cloudwatchLogsExportConfiguration.getDisableLogTypes() != null) {
-                java.util.List<String> disableLogTypesList = cloudwatchLogsExportConfiguration.getDisableLogTypes();
-                if (disableLogTypesList.isEmpty()) {
-                    request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes", "");
-                } else {
-                    int disableLogTypesListIndex = 1;
+                if (cloudwatchLogsExportConfiguration.getDisableLogTypes() != null) {
+                    java.util.List<String> disableLogTypesList = cloudwatchLogsExportConfiguration.getDisableLogTypes();
+                    if (disableLogTypesList.isEmpty()) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes", "");
+                    } else {
+                        int disableLogTypesListIndex = 1;
 
-                    for (String disableLogTypesListValue : disableLogTypesList) {
-                        if (disableLogTypesListValue != null) {
-                            request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
-                                    StringUtils.fromString(disableLogTypesListValue));
+                        for (String disableLogTypesListValue : disableLogTypesList) {
+                            if (disableLogTypesListValue != null) {
+                                request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
+                                        StringUtils.fromString(disableLogTypesListValue));
+                            }
+                            disableLogTypesListIndex++;
                         }
-                        disableLogTypesListIndex++;
                     }
                 }
             }

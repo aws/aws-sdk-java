@@ -60,19 +60,21 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("CNAMEPrefix", StringUtils.fromString(createEnvironmentRequest.getCNAMEPrefix()));
         }
 
-        EnvironmentTier tier = createEnvironmentRequest.getTier();
-        if (tier != null) {
+        {
+            EnvironmentTier tier = createEnvironmentRequest.getTier();
+            if (tier != null) {
 
-            if (tier.getName() != null) {
-                request.addParameter("Tier.Name", StringUtils.fromString(tier.getName()));
-            }
+                if (tier.getName() != null) {
+                    request.addParameter("Tier.Name", StringUtils.fromString(tier.getName()));
+                }
 
-            if (tier.getType() != null) {
-                request.addParameter("Tier.Type", StringUtils.fromString(tier.getType()));
-            }
+                if (tier.getType() != null) {
+                    request.addParameter("Tier.Type", StringUtils.fromString(tier.getType()));
+                }
 
-            if (tier.getVersion() != null) {
-                request.addParameter("Tier.Version", StringUtils.fromString(tier.getVersion()));
+                if (tier.getVersion() != null) {
+                    request.addParameter("Tier.Version", StringUtils.fromString(tier.getVersion()));
+                }
             }
         }
 

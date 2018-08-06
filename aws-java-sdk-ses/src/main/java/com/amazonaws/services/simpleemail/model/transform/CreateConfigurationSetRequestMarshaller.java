@@ -41,11 +41,13 @@ public class CreateConfigurationSetRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        ConfigurationSet configurationSet = createConfigurationSetRequest.getConfigurationSet();
-        if (configurationSet != null) {
+        {
+            ConfigurationSet configurationSet = createConfigurationSetRequest.getConfigurationSet();
+            if (configurationSet != null) {
 
-            if (configurationSet.getName() != null) {
-                request.addParameter("ConfigurationSet.Name", StringUtils.fromString(configurationSet.getName()));
+                if (configurationSet.getName() != null) {
+                    request.addParameter("ConfigurationSet.Name", StringUtils.fromString(configurationSet.getName()));
+                }
             }
         }
 

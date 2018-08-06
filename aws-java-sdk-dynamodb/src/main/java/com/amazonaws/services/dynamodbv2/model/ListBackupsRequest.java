@@ -58,6 +58,32 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String exclusiveStartBackupArn;
+    /**
+     * <p>
+     * The backups from the table specified by BackupType are listed.
+     * </p>
+     * <p>
+     * Where BackupType can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String backupType;
 
     /**
      * <p>
@@ -278,6 +304,221 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The backups from the table specified by BackupType are listed.
+     * </p>
+     * <p>
+     * Where BackupType can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        The backups from the table specified by BackupType are listed.</p>
+     *        <p>
+     *        Where BackupType can be:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - On demand backup created by you.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     *        </p>
+     *        </li>
+     * @see BackupTypeFilter
+     */
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    /**
+     * <p>
+     * The backups from the table specified by BackupType are listed.
+     * </p>
+     * <p>
+     * Where BackupType can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The backups from the table specified by BackupType are listed.</p>
+     *         <p>
+     *         Where BackupType can be:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>USER</code> - On demand backup created by you.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     *         </p>
+     *         </li>
+     * @see BackupTypeFilter
+     */
+
+    public String getBackupType() {
+        return this.backupType;
+    }
+
+    /**
+     * <p>
+     * The backups from the table specified by BackupType are listed.
+     * </p>
+     * <p>
+     * Where BackupType can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        The backups from the table specified by BackupType are listed.</p>
+     *        <p>
+     *        Where BackupType can be:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - On demand backup created by you.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BackupTypeFilter
+     */
+
+    public ListBackupsRequest withBackupType(String backupType) {
+        setBackupType(backupType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The backups from the table specified by BackupType are listed.
+     * </p>
+     * <p>
+     * Where BackupType can be:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        The backups from the table specified by BackupType are listed.</p>
+     *        <p>
+     *        Where BackupType can be:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - On demand backup created by you.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BackupTypeFilter
+     */
+
+    public ListBackupsRequest withBackupType(BackupTypeFilter backupType) {
+        this.backupType = backupType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -297,7 +538,9 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTimeRangeUpperBound() != null)
             sb.append("TimeRangeUpperBound: ").append(getTimeRangeUpperBound()).append(",");
         if (getExclusiveStartBackupArn() != null)
-            sb.append("ExclusiveStartBackupArn: ").append(getExclusiveStartBackupArn());
+            sb.append("ExclusiveStartBackupArn: ").append(getExclusiveStartBackupArn()).append(",");
+        if (getBackupType() != null)
+            sb.append("BackupType: ").append(getBackupType());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +575,10 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getExclusiveStartBackupArn() != null && other.getExclusiveStartBackupArn().equals(this.getExclusiveStartBackupArn()) == false)
             return false;
+        if (other.getBackupType() == null ^ this.getBackupType() == null)
+            return false;
+        if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +592,7 @@ public class ListBackupsRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTimeRangeLowerBound() == null) ? 0 : getTimeRangeLowerBound().hashCode());
         hashCode = prime * hashCode + ((getTimeRangeUpperBound() == null) ? 0 : getTimeRangeUpperBound().hashCode());
         hashCode = prime * hashCode + ((getExclusiveStartBackupArn() == null) ? 0 : getExclusiveStartBackupArn().hashCode());
+        hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
         return hashCode;
     }
 

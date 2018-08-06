@@ -86,27 +86,29 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
                     request.addParameter("MetricData.member." + metricDataListIndex + ".Value", StringUtils.fromDouble(metricDataListValue.getValue()));
                 }
 
-                StatisticSet statisticValues = metricDataListValue.getStatisticValues();
-                if (statisticValues != null) {
+                {
+                    StatisticSet statisticValues = metricDataListValue.getStatisticValues();
+                    if (statisticValues != null) {
 
-                    if (statisticValues.getSampleCount() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.SampleCount",
-                                StringUtils.fromDouble(statisticValues.getSampleCount()));
-                    }
+                        if (statisticValues.getSampleCount() != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.SampleCount",
+                                    StringUtils.fromDouble(statisticValues.getSampleCount()));
+                        }
 
-                    if (statisticValues.getSum() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Sum",
-                                StringUtils.fromDouble(statisticValues.getSum()));
-                    }
+                        if (statisticValues.getSum() != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Sum",
+                                    StringUtils.fromDouble(statisticValues.getSum()));
+                        }
 
-                    if (statisticValues.getMinimum() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Minimum",
-                                StringUtils.fromDouble(statisticValues.getMinimum()));
-                    }
+                        if (statisticValues.getMinimum() != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Minimum",
+                                    StringUtils.fromDouble(statisticValues.getMinimum()));
+                        }
 
-                    if (statisticValues.getMaximum() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Maximum",
-                                StringUtils.fromDouble(statisticValues.getMaximum()));
+                        if (statisticValues.getMaximum() != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Maximum",
+                                    StringUtils.fromDouble(statisticValues.getMaximum()));
+                        }
                     }
                 }
 

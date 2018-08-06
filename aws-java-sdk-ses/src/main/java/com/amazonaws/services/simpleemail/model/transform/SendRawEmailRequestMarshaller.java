@@ -58,11 +58,13 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             }
         }
 
-        RawMessage rawMessage = sendRawEmailRequest.getRawMessage();
-        if (rawMessage != null) {
+        {
+            RawMessage rawMessage = sendRawEmailRequest.getRawMessage();
+            if (rawMessage != null) {
 
-            if (rawMessage.getData() != null) {
-                request.addParameter("RawMessage.Data", StringUtils.fromByteBuffer(rawMessage.getData()));
+                if (rawMessage.getData() != null) {
+                    request.addParameter("RawMessage.Data", StringUtils.fromByteBuffer(rawMessage.getData()));
+                }
             }
         }
 

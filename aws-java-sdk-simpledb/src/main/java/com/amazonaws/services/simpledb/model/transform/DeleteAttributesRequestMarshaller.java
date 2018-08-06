@@ -77,19 +77,21 @@ public class DeleteAttributesRequestMarshaller implements Marshaller<Request<Del
             }
         }
 
-        UpdateCondition expected = deleteAttributesRequest.getExpected();
-        if (expected != null) {
+        {
+            UpdateCondition expected = deleteAttributesRequest.getExpected();
+            if (expected != null) {
 
-            if (expected.getName() != null) {
-                request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
-            }
+                if (expected.getName() != null) {
+                    request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
+                }
 
-            if (expected.getValue() != null) {
-                request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
-            }
+                if (expected.getValue() != null) {
+                    request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
+                }
 
-            if (expected.getExists() != null) {
-                request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.getExists()));
+                if (expected.getExists() != null) {
+                    request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.getExists()));
+                }
             }
         }
 

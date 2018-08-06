@@ -102,132 +102,136 @@ public class CreateRuleRequestMarshaller implements Marshaller<Request<CreateRul
                                 StringUtils.fromString(actionsListValue.getTargetGroupArn()));
                     }
 
-                    AuthenticateOidcActionConfig authenticateOidcConfig = actionsListValue.getAuthenticateOidcConfig();
-                    if (authenticateOidcConfig != null) {
+                    {
+                        AuthenticateOidcActionConfig authenticateOidcConfig = actionsListValue.getAuthenticateOidcConfig();
+                        if (authenticateOidcConfig != null) {
 
-                        if (authenticateOidcConfig.getIssuer() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.Issuer",
-                                    StringUtils.fromString(authenticateOidcConfig.getIssuer()));
-                        }
-
-                        if (authenticateOidcConfig.getAuthorizationEndpoint() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.AuthorizationEndpoint",
-                                    StringUtils.fromString(authenticateOidcConfig.getAuthorizationEndpoint()));
-                        }
-
-                        if (authenticateOidcConfig.getTokenEndpoint() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.TokenEndpoint",
-                                    StringUtils.fromString(authenticateOidcConfig.getTokenEndpoint()));
-                        }
-
-                        if (authenticateOidcConfig.getUserInfoEndpoint() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.UserInfoEndpoint",
-                                    StringUtils.fromString(authenticateOidcConfig.getUserInfoEndpoint()));
-                        }
-
-                        if (authenticateOidcConfig.getClientId() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.ClientId",
-                                    StringUtils.fromString(authenticateOidcConfig.getClientId()));
-                        }
-
-                        if (authenticateOidcConfig.getClientSecret() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.ClientSecret",
-                                    StringUtils.fromString(authenticateOidcConfig.getClientSecret()));
-                        }
-
-                        if (authenticateOidcConfig.getSessionCookieName() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.SessionCookieName",
-                                    StringUtils.fromString(authenticateOidcConfig.getSessionCookieName()));
-                        }
-
-                        if (authenticateOidcConfig.getScope() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.Scope",
-                                    StringUtils.fromString(authenticateOidcConfig.getScope()));
-                        }
-
-                        if (authenticateOidcConfig.getSessionTimeout() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.SessionTimeout",
-                                    StringUtils.fromLong(authenticateOidcConfig.getSessionTimeout()));
-                        }
-
-                        java.util.Map<String, String> authenticationRequestExtraParams = authenticateOidcConfig.getAuthenticationRequestExtraParams();
-                        if (authenticationRequestExtraParams != null) {
-                            int authenticationRequestExtraParamsListIndex = 1;
-                            for (Map.Entry<String, String> entry : authenticationRequestExtraParams.entrySet()) {
-                                if (entry.getKey() != null) {
-                                    request.addParameter("Actions.member." + actionsListIndex
-                                            + ".AuthenticateOidcConfig.AuthenticationRequestExtraParams.entry." + authenticationRequestExtraParamsListIndex
-                                            + ".key", StringUtils.fromString(entry.getKey()));
-                                }
-                                if (entry.getValue() != null) {
-                                    request.addParameter("Actions.member." + actionsListIndex
-                                            + ".AuthenticateOidcConfig.AuthenticationRequestExtraParams.entry." + authenticationRequestExtraParamsListIndex
-                                            + ".value", StringUtils.fromString(entry.getValue()));
-                                }
-                                authenticationRequestExtraParamsListIndex++;
+                            if (authenticateOidcConfig.getIssuer() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.Issuer",
+                                        StringUtils.fromString(authenticateOidcConfig.getIssuer()));
                             }
-                        }
 
-                        if (authenticateOidcConfig.getOnUnauthenticatedRequest() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.OnUnauthenticatedRequest",
-                                    StringUtils.fromString(authenticateOidcConfig.getOnUnauthenticatedRequest()));
+                            if (authenticateOidcConfig.getAuthorizationEndpoint() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.AuthorizationEndpoint",
+                                        StringUtils.fromString(authenticateOidcConfig.getAuthorizationEndpoint()));
+                            }
+
+                            if (authenticateOidcConfig.getTokenEndpoint() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.TokenEndpoint",
+                                        StringUtils.fromString(authenticateOidcConfig.getTokenEndpoint()));
+                            }
+
+                            if (authenticateOidcConfig.getUserInfoEndpoint() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.UserInfoEndpoint",
+                                        StringUtils.fromString(authenticateOidcConfig.getUserInfoEndpoint()));
+                            }
+
+                            if (authenticateOidcConfig.getClientId() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.ClientId",
+                                        StringUtils.fromString(authenticateOidcConfig.getClientId()));
+                            }
+
+                            if (authenticateOidcConfig.getClientSecret() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.ClientSecret",
+                                        StringUtils.fromString(authenticateOidcConfig.getClientSecret()));
+                            }
+
+                            if (authenticateOidcConfig.getSessionCookieName() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.SessionCookieName",
+                                        StringUtils.fromString(authenticateOidcConfig.getSessionCookieName()));
+                            }
+
+                            if (authenticateOidcConfig.getScope() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.Scope",
+                                        StringUtils.fromString(authenticateOidcConfig.getScope()));
+                            }
+
+                            if (authenticateOidcConfig.getSessionTimeout() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.SessionTimeout",
+                                        StringUtils.fromLong(authenticateOidcConfig.getSessionTimeout()));
+                            }
+
+                            java.util.Map<String, String> authenticationRequestExtraParams = authenticateOidcConfig.getAuthenticationRequestExtraParams();
+                            if (authenticationRequestExtraParams != null) {
+                                int authenticationRequestExtraParamsListIndex = 1;
+                                for (Map.Entry<String, String> entry : authenticationRequestExtraParams.entrySet()) {
+                                    if (entry.getKey() != null) {
+                                        request.addParameter("Actions.member." + actionsListIndex
+                                                + ".AuthenticateOidcConfig.AuthenticationRequestExtraParams.entry." + authenticationRequestExtraParamsListIndex
+                                                + ".key", StringUtils.fromString(entry.getKey()));
+                                    }
+                                    if (entry.getValue() != null) {
+                                        request.addParameter("Actions.member." + actionsListIndex
+                                                + ".AuthenticateOidcConfig.AuthenticationRequestExtraParams.entry." + authenticationRequestExtraParamsListIndex
+                                                + ".value", StringUtils.fromString(entry.getValue()));
+                                    }
+                                    authenticationRequestExtraParamsListIndex++;
+                                }
+                            }
+
+                            if (authenticateOidcConfig.getOnUnauthenticatedRequest() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.OnUnauthenticatedRequest",
+                                        StringUtils.fromString(authenticateOidcConfig.getOnUnauthenticatedRequest()));
+                            }
                         }
                     }
 
-                    AuthenticateCognitoActionConfig authenticateCognitoConfig = actionsListValue.getAuthenticateCognitoConfig();
-                    if (authenticateCognitoConfig != null) {
+                    {
+                        AuthenticateCognitoActionConfig authenticateCognitoConfig = actionsListValue.getAuthenticateCognitoConfig();
+                        if (authenticateCognitoConfig != null) {
 
-                        if (authenticateCognitoConfig.getUserPoolArn() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.UserPoolArn",
-                                    StringUtils.fromString(authenticateCognitoConfig.getUserPoolArn()));
-                        }
-
-                        if (authenticateCognitoConfig.getUserPoolClientId() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.UserPoolClientId",
-                                    StringUtils.fromString(authenticateCognitoConfig.getUserPoolClientId()));
-                        }
-
-                        if (authenticateCognitoConfig.getUserPoolDomain() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.UserPoolDomain",
-                                    StringUtils.fromString(authenticateCognitoConfig.getUserPoolDomain()));
-                        }
-
-                        if (authenticateCognitoConfig.getSessionCookieName() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.SessionCookieName",
-                                    StringUtils.fromString(authenticateCognitoConfig.getSessionCookieName()));
-                        }
-
-                        if (authenticateCognitoConfig.getScope() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.Scope",
-                                    StringUtils.fromString(authenticateCognitoConfig.getScope()));
-                        }
-
-                        if (authenticateCognitoConfig.getSessionTimeout() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.SessionTimeout",
-                                    StringUtils.fromLong(authenticateCognitoConfig.getSessionTimeout()));
-                        }
-
-                        java.util.Map<String, String> authenticationRequestExtraParams = authenticateCognitoConfig.getAuthenticationRequestExtraParams();
-                        if (authenticationRequestExtraParams != null) {
-                            int authenticationRequestExtraParamsListIndex = 1;
-                            for (Map.Entry<String, String> entry : authenticationRequestExtraParams.entrySet()) {
-                                if (entry.getKey() != null) {
-                                    request.addParameter("Actions.member." + actionsListIndex
-                                            + ".AuthenticateCognitoConfig.AuthenticationRequestExtraParams.entry." + authenticationRequestExtraParamsListIndex
-                                            + ".key", StringUtils.fromString(entry.getKey()));
-                                }
-                                if (entry.getValue() != null) {
-                                    request.addParameter("Actions.member." + actionsListIndex
-                                            + ".AuthenticateCognitoConfig.AuthenticationRequestExtraParams.entry." + authenticationRequestExtraParamsListIndex
-                                            + ".value", StringUtils.fromString(entry.getValue()));
-                                }
-                                authenticationRequestExtraParamsListIndex++;
+                            if (authenticateCognitoConfig.getUserPoolArn() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.UserPoolArn",
+                                        StringUtils.fromString(authenticateCognitoConfig.getUserPoolArn()));
                             }
-                        }
 
-                        if (authenticateCognitoConfig.getOnUnauthenticatedRequest() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.OnUnauthenticatedRequest",
-                                    StringUtils.fromString(authenticateCognitoConfig.getOnUnauthenticatedRequest()));
+                            if (authenticateCognitoConfig.getUserPoolClientId() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.UserPoolClientId",
+                                        StringUtils.fromString(authenticateCognitoConfig.getUserPoolClientId()));
+                            }
+
+                            if (authenticateCognitoConfig.getUserPoolDomain() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.UserPoolDomain",
+                                        StringUtils.fromString(authenticateCognitoConfig.getUserPoolDomain()));
+                            }
+
+                            if (authenticateCognitoConfig.getSessionCookieName() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.SessionCookieName",
+                                        StringUtils.fromString(authenticateCognitoConfig.getSessionCookieName()));
+                            }
+
+                            if (authenticateCognitoConfig.getScope() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.Scope",
+                                        StringUtils.fromString(authenticateCognitoConfig.getScope()));
+                            }
+
+                            if (authenticateCognitoConfig.getSessionTimeout() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.SessionTimeout",
+                                        StringUtils.fromLong(authenticateCognitoConfig.getSessionTimeout()));
+                            }
+
+                            java.util.Map<String, String> authenticationRequestExtraParams = authenticateCognitoConfig.getAuthenticationRequestExtraParams();
+                            if (authenticationRequestExtraParams != null) {
+                                int authenticationRequestExtraParamsListIndex = 1;
+                                for (Map.Entry<String, String> entry : authenticationRequestExtraParams.entrySet()) {
+                                    if (entry.getKey() != null) {
+                                        request.addParameter("Actions.member." + actionsListIndex
+                                                + ".AuthenticateCognitoConfig.AuthenticationRequestExtraParams.entry."
+                                                + authenticationRequestExtraParamsListIndex + ".key", StringUtils.fromString(entry.getKey()));
+                                    }
+                                    if (entry.getValue() != null) {
+                                        request.addParameter("Actions.member." + actionsListIndex
+                                                + ".AuthenticateCognitoConfig.AuthenticationRequestExtraParams.entry."
+                                                + authenticationRequestExtraParamsListIndex + ".value", StringUtils.fromString(entry.getValue()));
+                                    }
+                                    authenticationRequestExtraParamsListIndex++;
+                                }
+                            }
+
+                            if (authenticateCognitoConfig.getOnUnauthenticatedRequest() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateCognitoConfig.OnUnauthenticatedRequest",
+                                        StringUtils.fromString(authenticateCognitoConfig.getOnUnauthenticatedRequest()));
+                            }
                         }
                     }
 
@@ -235,56 +239,60 @@ public class CreateRuleRequestMarshaller implements Marshaller<Request<CreateRul
                         request.addParameter("Actions.member." + actionsListIndex + ".Order", StringUtils.fromInteger(actionsListValue.getOrder()));
                     }
 
-                    RedirectActionConfig redirectConfig = actionsListValue.getRedirectConfig();
-                    if (redirectConfig != null) {
+                    {
+                        RedirectActionConfig redirectConfig = actionsListValue.getRedirectConfig();
+                        if (redirectConfig != null) {
 
-                        if (redirectConfig.getProtocol() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Protocol",
-                                    StringUtils.fromString(redirectConfig.getProtocol()));
-                        }
+                            if (redirectConfig.getProtocol() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Protocol",
+                                        StringUtils.fromString(redirectConfig.getProtocol()));
+                            }
 
-                        if (redirectConfig.getPort() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Port",
-                                    StringUtils.fromString(redirectConfig.getPort()));
-                        }
+                            if (redirectConfig.getPort() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Port",
+                                        StringUtils.fromString(redirectConfig.getPort()));
+                            }
 
-                        if (redirectConfig.getHost() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Host",
-                                    StringUtils.fromString(redirectConfig.getHost()));
-                        }
+                            if (redirectConfig.getHost() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Host",
+                                        StringUtils.fromString(redirectConfig.getHost()));
+                            }
 
-                        if (redirectConfig.getPath() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Path",
-                                    StringUtils.fromString(redirectConfig.getPath()));
-                        }
+                            if (redirectConfig.getPath() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Path",
+                                        StringUtils.fromString(redirectConfig.getPath()));
+                            }
 
-                        if (redirectConfig.getQuery() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Query",
-                                    StringUtils.fromString(redirectConfig.getQuery()));
-                        }
+                            if (redirectConfig.getQuery() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.Query",
+                                        StringUtils.fromString(redirectConfig.getQuery()));
+                            }
 
-                        if (redirectConfig.getStatusCode() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.StatusCode",
-                                    StringUtils.fromString(redirectConfig.getStatusCode()));
+                            if (redirectConfig.getStatusCode() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".RedirectConfig.StatusCode",
+                                        StringUtils.fromString(redirectConfig.getStatusCode()));
+                            }
                         }
                     }
 
-                    FixedResponseActionConfig fixedResponseConfig = actionsListValue.getFixedResponseConfig();
-                    if (fixedResponseConfig != null) {
+                    {
+                        FixedResponseActionConfig fixedResponseConfig = actionsListValue.getFixedResponseConfig();
+                        if (fixedResponseConfig != null) {
 
-                        if (fixedResponseConfig.getMessageBody() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".FixedResponseConfig.MessageBody",
-                                    StringUtils.fromString(fixedResponseConfig.getMessageBody()));
-                        }
+                            if (fixedResponseConfig.getMessageBody() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".FixedResponseConfig.MessageBody",
+                                        StringUtils.fromString(fixedResponseConfig.getMessageBody()));
+                            }
 
-                        if (fixedResponseConfig.getStatusCode() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".FixedResponseConfig.StatusCode",
-                                    StringUtils.fromString(fixedResponseConfig.getStatusCode()));
-                        }
+                            if (fixedResponseConfig.getStatusCode() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".FixedResponseConfig.StatusCode",
+                                        StringUtils.fromString(fixedResponseConfig.getStatusCode()));
+                            }
 
-                        if (fixedResponseConfig.getContentType() != null) {
-                            request.addParameter("Actions.member." + actionsListIndex + ".FixedResponseConfig.ContentType",
-                                    StringUtils.fromString(fixedResponseConfig.getContentType()));
+                            if (fixedResponseConfig.getContentType() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".FixedResponseConfig.ContentType",
+                                        StringUtils.fromString(fixedResponseConfig.getContentType()));
+                            }
                         }
                     }
                     actionsListIndex++;

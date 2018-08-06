@@ -40,22 +40,26 @@ public class CreateReceiptFilterRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        ReceiptFilter filter = createReceiptFilterRequest.getFilter();
-        if (filter != null) {
+        {
+            ReceiptFilter filter = createReceiptFilterRequest.getFilter();
+            if (filter != null) {
 
-            if (filter.getName() != null) {
-                request.addParameter("Filter.Name", StringUtils.fromString(filter.getName()));
-            }
-
-            ReceiptIpFilter ipFilter = filter.getIpFilter();
-            if (ipFilter != null) {
-
-                if (ipFilter.getPolicy() != null) {
-                    request.addParameter("Filter.IpFilter.Policy", StringUtils.fromString(ipFilter.getPolicy()));
+                if (filter.getName() != null) {
+                    request.addParameter("Filter.Name", StringUtils.fromString(filter.getName()));
                 }
 
-                if (ipFilter.getCidr() != null) {
-                    request.addParameter("Filter.IpFilter.Cidr", StringUtils.fromString(ipFilter.getCidr()));
+                {
+                    ReceiptIpFilter ipFilter = filter.getIpFilter();
+                    if (ipFilter != null) {
+
+                        if (ipFilter.getPolicy() != null) {
+                            request.addParameter("Filter.IpFilter.Policy", StringUtils.fromString(ipFilter.getPolicy()));
+                        }
+
+                        if (ipFilter.getCidr() != null) {
+                            request.addParameter("Filter.IpFilter.Cidr", StringUtils.fromString(ipFilter.getCidr()));
+                        }
+                    }
                 }
             }
         }

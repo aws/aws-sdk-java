@@ -72,9 +72,17 @@ public class BackupSummaryJsonUnmarshaller implements Unmarshaller<BackupSummary
                     context.nextToken();
                     backupSummary.setBackupCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("BackupExpiryDateTime", targetDepth)) {
+                    context.nextToken();
+                    backupSummary.setBackupExpiryDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("BackupStatus", targetDepth)) {
                     context.nextToken();
                     backupSummary.setBackupStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BackupType", targetDepth)) {
+                    context.nextToken();
+                    backupSummary.setBackupType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupSizeBytes", targetDepth)) {
                     context.nextToken();

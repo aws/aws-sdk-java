@@ -64,9 +64,17 @@ public class BackupDetailsJsonUnmarshaller implements Unmarshaller<BackupDetails
                     context.nextToken();
                     backupDetails.setBackupStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BackupType", targetDepth)) {
+                    context.nextToken();
+                    backupDetails.setBackupType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("BackupCreationDateTime", targetDepth)) {
                     context.nextToken();
                     backupDetails.setBackupCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("BackupExpiryDateTime", targetDepth)) {
+                    context.nextToken();
+                    backupDetails.setBackupExpiryDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

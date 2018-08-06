@@ -35,8 +35,12 @@ public class BackupDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupSizeBytes").build();
     private static final MarshallingInfo<String> BACKUPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupStatus").build();
+    private static final MarshallingInfo<String> BACKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupType").build();
     private static final MarshallingInfo<java.util.Date> BACKUPCREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupCreationDateTime").build();
+    private static final MarshallingInfo<java.util.Date> BACKUPEXPIRYDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupExpiryDateTime").build();
 
     private static final BackupDetailsMarshaller instance = new BackupDetailsMarshaller();
 
@@ -58,7 +62,9 @@ public class BackupDetailsMarshaller {
             protocolMarshaller.marshall(backupDetails.getBackupName(), BACKUPNAME_BINDING);
             protocolMarshaller.marshall(backupDetails.getBackupSizeBytes(), BACKUPSIZEBYTES_BINDING);
             protocolMarshaller.marshall(backupDetails.getBackupStatus(), BACKUPSTATUS_BINDING);
+            protocolMarshaller.marshall(backupDetails.getBackupType(), BACKUPTYPE_BINDING);
             protocolMarshaller.marshall(backupDetails.getBackupCreationDateTime(), BACKUPCREATIONDATETIME_BINDING);
+            protocolMarshaller.marshall(backupDetails.getBackupExpiryDateTime(), BACKUPEXPIRYDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,4 +1,8 @@
-# __1.11.380__ __2018-08-03__
+# __1.11.381__ __2018-08-06__
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - Updates the ARN structure vended by AWS Health API. All ARNs will now include the service and type code of the associated event, as vended by DescribeEventTypes.
+
 ## __AWS Resource Groups__
   - ### Features
     - AWS Resource Groups service added a new feature to filter group resources by resource-type when using the ListGroupResources operation.
@@ -6,6 +10,10 @@
 ## __Alexa For Business__
   - ### Features
     - Documentation updates for AWS Alexa For Business
+
+## __Amazon DynamoDB__
+  - ### Features
+    -  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
 
 ## __Amazon Kinesis__
   - ### Features

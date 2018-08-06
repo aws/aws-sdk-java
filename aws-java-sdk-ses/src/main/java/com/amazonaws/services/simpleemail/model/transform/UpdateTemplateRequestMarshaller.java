@@ -40,23 +40,25 @@ public class UpdateTemplateRequestMarshaller implements Marshaller<Request<Updat
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        Template template = updateTemplateRequest.getTemplate();
-        if (template != null) {
+        {
+            Template template = updateTemplateRequest.getTemplate();
+            if (template != null) {
 
-            if (template.getTemplateName() != null) {
-                request.addParameter("Template.TemplateName", StringUtils.fromString(template.getTemplateName()));
-            }
+                if (template.getTemplateName() != null) {
+                    request.addParameter("Template.TemplateName", StringUtils.fromString(template.getTemplateName()));
+                }
 
-            if (template.getSubjectPart() != null) {
-                request.addParameter("Template.SubjectPart", StringUtils.fromString(template.getSubjectPart()));
-            }
+                if (template.getSubjectPart() != null) {
+                    request.addParameter("Template.SubjectPart", StringUtils.fromString(template.getSubjectPart()));
+                }
 
-            if (template.getTextPart() != null) {
-                request.addParameter("Template.TextPart", StringUtils.fromString(template.getTextPart()));
-            }
+                if (template.getTextPart() != null) {
+                    request.addParameter("Template.TextPart", StringUtils.fromString(template.getTextPart()));
+                }
 
-            if (template.getHtmlPart() != null) {
-                request.addParameter("Template.HtmlPart", StringUtils.fromString(template.getHtmlPart()));
+                if (template.getHtmlPart() != null) {
+                    request.addParameter("Template.HtmlPart", StringUtils.fromString(template.getHtmlPart()));
+                }
             }
         }
 

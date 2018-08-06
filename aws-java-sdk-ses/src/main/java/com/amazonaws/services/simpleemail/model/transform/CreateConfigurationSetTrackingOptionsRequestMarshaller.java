@@ -47,11 +47,13 @@ public class CreateConfigurationSetTrackingOptionsRequestMarshaller implements
             request.addParameter("ConfigurationSetName", StringUtils.fromString(createConfigurationSetTrackingOptionsRequest.getConfigurationSetName()));
         }
 
-        TrackingOptions trackingOptions = createConfigurationSetTrackingOptionsRequest.getTrackingOptions();
-        if (trackingOptions != null) {
+        {
+            TrackingOptions trackingOptions = createConfigurationSetTrackingOptionsRequest.getTrackingOptions();
+            if (trackingOptions != null) {
 
-            if (trackingOptions.getCustomRedirectDomain() != null) {
-                request.addParameter("TrackingOptions.CustomRedirectDomain", StringUtils.fromString(trackingOptions.getCustomRedirectDomain()));
+                if (trackingOptions.getCustomRedirectDomain() != null) {
+                    request.addParameter("TrackingOptions.CustomRedirectDomain", StringUtils.fromString(trackingOptions.getCustomRedirectDomain()));
+                }
             }
         }
 

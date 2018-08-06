@@ -44,28 +44,33 @@ public class DefineSuggesterRequestMarshaller implements Marshaller<Request<Defi
             request.addParameter("DomainName", StringUtils.fromString(defineSuggesterRequest.getDomainName()));
         }
 
-        Suggester suggester = defineSuggesterRequest.getSuggester();
-        if (suggester != null) {
+        {
+            Suggester suggester = defineSuggesterRequest.getSuggester();
+            if (suggester != null) {
 
-            if (suggester.getSuggesterName() != null) {
-                request.addParameter("Suggester.SuggesterName", StringUtils.fromString(suggester.getSuggesterName()));
-            }
-
-            DocumentSuggesterOptions documentSuggesterOptions = suggester.getDocumentSuggesterOptions();
-            if (documentSuggesterOptions != null) {
-
-                if (documentSuggesterOptions.getSourceField() != null) {
-                    request.addParameter("Suggester.DocumentSuggesterOptions.SourceField", StringUtils.fromString(documentSuggesterOptions.getSourceField()));
+                if (suggester.getSuggesterName() != null) {
+                    request.addParameter("Suggester.SuggesterName", StringUtils.fromString(suggester.getSuggesterName()));
                 }
 
-                if (documentSuggesterOptions.getFuzzyMatching() != null) {
-                    request.addParameter("Suggester.DocumentSuggesterOptions.FuzzyMatching",
-                            StringUtils.fromString(documentSuggesterOptions.getFuzzyMatching()));
-                }
+                {
+                    DocumentSuggesterOptions documentSuggesterOptions = suggester.getDocumentSuggesterOptions();
+                    if (documentSuggesterOptions != null) {
 
-                if (documentSuggesterOptions.getSortExpression() != null) {
-                    request.addParameter("Suggester.DocumentSuggesterOptions.SortExpression",
-                            StringUtils.fromString(documentSuggesterOptions.getSortExpression()));
+                        if (documentSuggesterOptions.getSourceField() != null) {
+                            request.addParameter("Suggester.DocumentSuggesterOptions.SourceField",
+                                    StringUtils.fromString(documentSuggesterOptions.getSourceField()));
+                        }
+
+                        if (documentSuggesterOptions.getFuzzyMatching() != null) {
+                            request.addParameter("Suggester.DocumentSuggesterOptions.FuzzyMatching",
+                                    StringUtils.fromString(documentSuggesterOptions.getFuzzyMatching()));
+                        }
+
+                        if (documentSuggesterOptions.getSortExpression() != null) {
+                            request.addParameter("Suggester.DocumentSuggesterOptions.SortExpression",
+                                    StringUtils.fromString(documentSuggesterOptions.getSortExpression()));
+                        }
+                    }
                 }
             }
         }

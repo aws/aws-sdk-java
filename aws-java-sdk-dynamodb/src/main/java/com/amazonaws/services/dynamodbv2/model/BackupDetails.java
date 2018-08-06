@@ -54,10 +54,35 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
     private String backupStatus;
     /**
      * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String backupType;
+    /**
+     * <p>
      * Time at which the backup was created. This is the request time of the backup.
      * </p>
      */
     private java.util.Date backupCreationDateTime;
+    /**
+     * <p>
+     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     */
+    private java.util.Date backupExpiryDateTime;
 
     /**
      * <p>
@@ -240,6 +265,157 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        BackupType:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - On demand backup created by you.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        </p>
+     *        </li>
+     * @see BackupType
+     */
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return BackupType:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>USER</code> - On demand backup created by you.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *         </p>
+     *         </li>
+     * @see BackupType
+     */
+
+    public String getBackupType() {
+        return this.backupType;
+    }
+
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        BackupType:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - On demand backup created by you.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BackupType
+     */
+
+    public BackupDetails withBackupType(String backupType) {
+        setBackupType(backupType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - On demand backup created by you.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        BackupType:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - On demand backup created by you.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BackupType
+     */
+
+    public BackupDetails withBackupType(BackupType backupType) {
+        this.backupType = backupType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Time at which the backup was created. This is the request time of the backup.
      * </p>
      * 
@@ -279,6 +455,52 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     * 
+     * @param backupExpiryDateTime
+     *        Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on
+     *        demand backup expires automatically 35 days after its creation.
+     */
+
+    public void setBackupExpiryDateTime(java.util.Date backupExpiryDateTime) {
+        this.backupExpiryDateTime = backupExpiryDateTime;
+    }
+
+    /**
+     * <p>
+     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     * 
+     * @return Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on
+     *         demand backup expires automatically 35 days after its creation.
+     */
+
+    public java.util.Date getBackupExpiryDateTime() {
+        return this.backupExpiryDateTime;
+    }
+
+    /**
+     * <p>
+     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     * 
+     * @param backupExpiryDateTime
+     *        Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on
+     *        demand backup expires automatically 35 days after its creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupDetails withBackupExpiryDateTime(java.util.Date backupExpiryDateTime) {
+        setBackupExpiryDateTime(backupExpiryDateTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -297,8 +519,12 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
             sb.append("BackupSizeBytes: ").append(getBackupSizeBytes()).append(",");
         if (getBackupStatus() != null)
             sb.append("BackupStatus: ").append(getBackupStatus()).append(",");
+        if (getBackupType() != null)
+            sb.append("BackupType: ").append(getBackupType()).append(",");
         if (getBackupCreationDateTime() != null)
-            sb.append("BackupCreationDateTime: ").append(getBackupCreationDateTime());
+            sb.append("BackupCreationDateTime: ").append(getBackupCreationDateTime()).append(",");
+        if (getBackupExpiryDateTime() != null)
+            sb.append("BackupExpiryDateTime: ").append(getBackupExpiryDateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -329,9 +555,17 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBackupStatus() != null && other.getBackupStatus().equals(this.getBackupStatus()) == false)
             return false;
+        if (other.getBackupType() == null ^ this.getBackupType() == null)
+            return false;
+        if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
+            return false;
         if (other.getBackupCreationDateTime() == null ^ this.getBackupCreationDateTime() == null)
             return false;
         if (other.getBackupCreationDateTime() != null && other.getBackupCreationDateTime().equals(this.getBackupCreationDateTime()) == false)
+            return false;
+        if (other.getBackupExpiryDateTime() == null ^ this.getBackupExpiryDateTime() == null)
+            return false;
+        if (other.getBackupExpiryDateTime() != null && other.getBackupExpiryDateTime().equals(this.getBackupExpiryDateTime()) == false)
             return false;
         return true;
     }
@@ -345,7 +579,9 @@ public class BackupDetails implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBackupName() == null) ? 0 : getBackupName().hashCode());
         hashCode = prime * hashCode + ((getBackupSizeBytes() == null) ? 0 : getBackupSizeBytes().hashCode());
         hashCode = prime * hashCode + ((getBackupStatus() == null) ? 0 : getBackupStatus().hashCode());
+        hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
         hashCode = prime * hashCode + ((getBackupCreationDateTime() == null) ? 0 : getBackupCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getBackupExpiryDateTime() == null) ? 0 : getBackupExpiryDateTime().hashCode());
         return hashCode;
     }
 

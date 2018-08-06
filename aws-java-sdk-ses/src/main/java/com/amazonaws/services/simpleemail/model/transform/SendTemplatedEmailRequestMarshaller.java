@@ -44,43 +44,50 @@ public class SendTemplatedEmailRequestMarshaller implements Marshaller<Request<S
             request.addParameter("Source", StringUtils.fromString(sendTemplatedEmailRequest.getSource()));
         }
 
-        Destination destination = sendTemplatedEmailRequest.getDestination();
-        if (destination != null) {
+        {
+            Destination destination = sendTemplatedEmailRequest.getDestination();
+            if (destination != null) {
 
-            if (!destination.getToAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses();
-                int toAddressesListIndex = 1;
+                if (!destination.getToAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getToAddresses();
+                    int toAddressesListIndex = 1;
 
-                for (String toAddressesListValue : toAddressesList) {
-                    if (toAddressesListValue != null) {
-                        request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                    for (String toAddressesListValue : toAddressesList) {
+                        if (toAddressesListValue != null) {
+                            request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                        }
+                        toAddressesListIndex++;
                     }
-                    toAddressesListIndex++;
                 }
-            }
 
-            if (!destination.getCcAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses();
-                int ccAddressesListIndex = 1;
+                if (!destination.getCcAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getCcAddresses();
+                    int ccAddressesListIndex = 1;
 
-                for (String ccAddressesListValue : ccAddressesList) {
-                    if (ccAddressesListValue != null) {
-                        request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                    for (String ccAddressesListValue : ccAddressesList) {
+                        if (ccAddressesListValue != null) {
+                            request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                        }
+                        ccAddressesListIndex++;
                     }
-                    ccAddressesListIndex++;
                 }
-            }
 
-            if (!destination.getBccAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
-                        .getBccAddresses();
-                int bccAddressesListIndex = 1;
+                if (!destination.getBccAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getBccAddresses();
+                    int bccAddressesListIndex = 1;
 
-                for (String bccAddressesListValue : bccAddressesList) {
-                    if (bccAddressesListValue != null) {
-                        request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                    for (String bccAddressesListValue : bccAddressesList) {
+                        if (bccAddressesListValue != null) {
+                            request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                        }
+                        bccAddressesListIndex++;
                     }
-                    bccAddressesListIndex++;
                 }
             }
         }

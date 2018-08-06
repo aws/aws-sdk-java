@@ -205,36 +205,38 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("PerformanceInsightsRetentionPeriod", StringUtils.fromInteger(modifyDBInstanceRequest.getPerformanceInsightsRetentionPeriod()));
         }
 
-        CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
-        if (cloudwatchLogsExportConfiguration != null) {
+        {
+            CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
+            if (cloudwatchLogsExportConfiguration != null) {
 
-            if (!cloudwatchLogsExportConfiguration.getEnableLogTypes().isEmpty()
-                    || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getEnableLogTypes()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
-                        .getEnableLogTypes();
-                int enableLogTypesListIndex = 1;
+                if (!cloudwatchLogsExportConfiguration.getEnableLogTypes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getEnableLogTypes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                            .getEnableLogTypes();
+                    int enableLogTypesListIndex = 1;
 
-                for (String enableLogTypesListValue : enableLogTypesList) {
-                    if (enableLogTypesListValue != null) {
-                        request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
-                                StringUtils.fromString(enableLogTypesListValue));
+                    for (String enableLogTypesListValue : enableLogTypesList) {
+                        if (enableLogTypesListValue != null) {
+                            request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
+                                    StringUtils.fromString(enableLogTypesListValue));
+                        }
+                        enableLogTypesListIndex++;
                     }
-                    enableLogTypesListIndex++;
                 }
-            }
 
-            if (!cloudwatchLogsExportConfiguration.getDisableLogTypes().isEmpty()
-                    || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getDisableLogTypes()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
-                        .getDisableLogTypes();
-                int disableLogTypesListIndex = 1;
+                if (!cloudwatchLogsExportConfiguration.getDisableLogTypes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getDisableLogTypes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                            .getDisableLogTypes();
+                    int disableLogTypesListIndex = 1;
 
-                for (String disableLogTypesListValue : disableLogTypesList) {
-                    if (disableLogTypesListValue != null) {
-                        request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
-                                StringUtils.fromString(disableLogTypesListValue));
+                    for (String disableLogTypesListValue : disableLogTypesList) {
+                        if (disableLogTypesListValue != null) {
+                            request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
+                                    StringUtils.fromString(disableLogTypesListValue));
+                        }
+                        disableLogTypesListIndex++;
                     }
-                    disableLogTypesListIndex++;
                 }
             }
         }

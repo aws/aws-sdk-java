@@ -48,19 +48,21 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("LaunchConfigurationName", StringUtils.fromString(createAutoScalingGroupRequest.getLaunchConfigurationName()));
         }
 
-        LaunchTemplateSpecification launchTemplate = createAutoScalingGroupRequest.getLaunchTemplate();
-        if (launchTemplate != null) {
+        {
+            LaunchTemplateSpecification launchTemplate = createAutoScalingGroupRequest.getLaunchTemplate();
+            if (launchTemplate != null) {
 
-            if (launchTemplate.getLaunchTemplateId() != null) {
-                request.addParameter("LaunchTemplate.LaunchTemplateId", StringUtils.fromString(launchTemplate.getLaunchTemplateId()));
-            }
+                if (launchTemplate.getLaunchTemplateId() != null) {
+                    request.addParameter("LaunchTemplate.LaunchTemplateId", StringUtils.fromString(launchTemplate.getLaunchTemplateId()));
+                }
 
-            if (launchTemplate.getLaunchTemplateName() != null) {
-                request.addParameter("LaunchTemplate.LaunchTemplateName", StringUtils.fromString(launchTemplate.getLaunchTemplateName()));
-            }
+                if (launchTemplate.getLaunchTemplateName() != null) {
+                    request.addParameter("LaunchTemplate.LaunchTemplateName", StringUtils.fromString(launchTemplate.getLaunchTemplateName()));
+                }
 
-            if (launchTemplate.getVersion() != null) {
-                request.addParameter("LaunchTemplate.Version", StringUtils.fromString(launchTemplate.getVersion()));
+                if (launchTemplate.getVersion() != null) {
+                    request.addParameter("LaunchTemplate.Version", StringUtils.fromString(launchTemplate.getVersion()));
+                }
             }
         }
 

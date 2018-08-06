@@ -44,15 +44,17 @@ public class DefineExpressionRequestMarshaller implements Marshaller<Request<Def
             request.addParameter("DomainName", StringUtils.fromString(defineExpressionRequest.getDomainName()));
         }
 
-        Expression expression = defineExpressionRequest.getExpression();
-        if (expression != null) {
+        {
+            Expression expression = defineExpressionRequest.getExpression();
+            if (expression != null) {
 
-            if (expression.getExpressionName() != null) {
-                request.addParameter("Expression.ExpressionName", StringUtils.fromString(expression.getExpressionName()));
-            }
+                if (expression.getExpressionName() != null) {
+                    request.addParameter("Expression.ExpressionName", StringUtils.fromString(expression.getExpressionName()));
+                }
 
-            if (expression.getExpressionValue() != null) {
-                request.addParameter("Expression.ExpressionValue", StringUtils.fromString(expression.getExpressionValue()));
+                if (expression.getExpressionValue() != null) {
+                    request.addParameter("Expression.ExpressionValue", StringUtils.fromString(expression.getExpressionValue()));
+                }
             }
         }
 

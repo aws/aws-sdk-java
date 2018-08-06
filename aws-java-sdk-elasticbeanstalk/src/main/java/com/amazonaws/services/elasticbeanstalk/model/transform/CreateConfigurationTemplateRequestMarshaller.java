@@ -58,15 +58,17 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             request.addParameter("PlatformArn", StringUtils.fromString(createConfigurationTemplateRequest.getPlatformArn()));
         }
 
-        SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
-        if (sourceConfiguration != null) {
+        {
+            SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
+            if (sourceConfiguration != null) {
 
-            if (sourceConfiguration.getApplicationName() != null) {
-                request.addParameter("SourceConfiguration.ApplicationName", StringUtils.fromString(sourceConfiguration.getApplicationName()));
-            }
+                if (sourceConfiguration.getApplicationName() != null) {
+                    request.addParameter("SourceConfiguration.ApplicationName", StringUtils.fromString(sourceConfiguration.getApplicationName()));
+                }
 
-            if (sourceConfiguration.getTemplateName() != null) {
-                request.addParameter("SourceConfiguration.TemplateName", StringUtils.fromString(sourceConfiguration.getTemplateName()));
+                if (sourceConfiguration.getTemplateName() != null) {
+                    request.addParameter("SourceConfiguration.TemplateName", StringUtils.fromString(sourceConfiguration.getTemplateName()));
+                }
             }
         }
 

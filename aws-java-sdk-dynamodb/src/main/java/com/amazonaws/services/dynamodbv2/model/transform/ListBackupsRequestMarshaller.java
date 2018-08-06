@@ -37,6 +37,8 @@ public class ListBackupsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeRangeUpperBound").build();
     private static final MarshallingInfo<String> EXCLUSIVESTARTBACKUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartBackupArn").build();
+    private static final MarshallingInfo<String> BACKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupType").build();
 
     private static final ListBackupsRequestMarshaller instance = new ListBackupsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListBackupsRequestMarshaller {
             protocolMarshaller.marshall(listBackupsRequest.getTimeRangeLowerBound(), TIMERANGELOWERBOUND_BINDING);
             protocolMarshaller.marshall(listBackupsRequest.getTimeRangeUpperBound(), TIMERANGEUPPERBOUND_BINDING);
             protocolMarshaller.marshall(listBackupsRequest.getExclusiveStartBackupArn(), EXCLUSIVESTARTBACKUPARN_BINDING);
+            protocolMarshaller.marshall(listBackupsRequest.getBackupType(), BACKUPTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
