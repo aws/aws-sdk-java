@@ -26,15 +26,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of dimension groups to evaluate. */
+    /** A set of segment criteria to evaluate. */
     private java.util.List<SegmentGroup> groups;
-    /** How should the groups be applied for the result */
+    /**
+     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
+     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
+     */
     private String include;
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      * 
-     * @return List of dimension groups to evaluate.
+     * @return A set of segment criteria to evaluate.
      */
 
     public java.util.List<SegmentGroup> getGroups() {
@@ -42,10 +46,10 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      * 
      * @param groups
-     *        List of dimension groups to evaluate.
+     *        A set of segment criteria to evaluate.
      */
 
     public void setGroups(java.util.Collection<SegmentGroup> groups) {
@@ -58,7 +62,7 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -66,7 +70,7 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param groups
-     *        List of dimension groups to evaluate.
+     *        A set of segment criteria to evaluate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +85,10 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * List of dimension groups to evaluate.
+     * A set of segment criteria to evaluate.
      * 
      * @param groups
-     *        List of dimension groups to evaluate.
+     *        A set of segment criteria to evaluate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +98,14 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
+     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      * 
      * @param include
-     *        How should the groups be applied for the result
+     *        Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
+     *        should the resulting segment include endpoints that are matched by all, any, or none of the segment groups
+     *        you created. Acceptable values: ALL, ANY, or NONE.
      * @see Include
      */
 
@@ -106,9 +114,13 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
+     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      * 
-     * @return How should the groups be applied for the result
+     * @return Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
+     *         should the resulting segment include endpoints that are matched by all, any, or none of the segment
+     *         groups you created. Acceptable values: ALL, ANY, or NONE.
      * @see Include
      */
 
@@ -117,10 +129,14 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
+     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      * 
      * @param include
-     *        How should the groups be applied for the result
+     *        Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
+     *        should the resulting segment include endpoints that are matched by all, any, or none of the segment groups
+     *        you created. Acceptable values: ALL, ANY, or NONE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Include
      */
@@ -131,10 +147,14 @@ public class SegmentGroupList implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * How should the groups be applied for the result
+     * Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should
+     * the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
      * 
      * @param include
-     *        How should the groups be applied for the result
+     *        Specify how to handle multiple segment groups. For example, if the segment includes three segment groups,
+     *        should the resulting segment include endpoints that are matched by all, any, or none of the segment groups
+     *        you created. Acceptable values: ALL, ANY, or NONE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Include
      */

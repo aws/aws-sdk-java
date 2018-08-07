@@ -717,6 +717,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest request) {
+
+        return putEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveAttributesResult> removeAttributesAsync(RemoveAttributesRequest request) {
 
         return removeAttributesAsync(request, null);

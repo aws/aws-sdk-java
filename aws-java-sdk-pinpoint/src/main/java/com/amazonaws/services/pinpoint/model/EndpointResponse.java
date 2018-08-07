@@ -26,17 +26,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId). */
+    /** The address of the endpoint as provided by your push provider. For example, the DeviceToken or RegistrationId. */
     private String address;
-    /** The ID of the application associated with the endpoint. */
+    /** The ID of the application that is associated with the endpoint. */
     private String applicationId;
     /**
      * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
-     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
-     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * attribute named "interests" might have the following values: ["science", "politics", "travel"]. You can use these
+     * attributes as selection criteria when you create segments.
      * 
-     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
-     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
+     * The Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason, you should avoid using
+     * these characters in the names of custom attributes.
      */
     private java.util.Map<String, java.util.List<String>> attributes;
     /**
@@ -46,22 +47,22 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
      */
     private String channelType;
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
+     * A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
      * randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
      */
     private String cohortId;
-    /** The last time the endpoint was created. Provided in ISO 8601 format. */
+    /** The date and time when the endpoint was created, shown in ISO 8601 format. */
     private String creationDate;
     /** The endpoint demographic attributes. */
     private EndpointDemographic demographic;
-    /** The last time the endpoint was updated. Provided in ISO 8601 format. */
+    /** The date and time when the endpoint was last updated, shown in ISO 8601 format. */
     private String effectiveDate;
     /** Unused. */
     private String endpointStatus;
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to ensure
-     * that it is unique compared to all other endpoints for the application.
+     * that it doesn't conflict with other endpoint IDs associated with the application.
      */
     private String id;
     /** The endpoint location attributes. */
@@ -82,11 +83,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     private EndpointUser user;
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the DeviceToken or RegistrationId.
      * 
      * @param address
-     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
-     *        RegistrationId).
+     *        The address of the endpoint as provided by your push provider. For example, the DeviceToken or
+     *        RegistrationId.
      */
 
     public void setAddress(String address) {
@@ -94,10 +95,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the DeviceToken or RegistrationId.
      * 
-     * @return The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
-     *         RegistrationId).
+     * @return The address of the endpoint as provided by your push provider. For example, the DeviceToken or
+     *         RegistrationId.
      */
 
     public String getAddress() {
@@ -105,11 +106,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the DeviceToken or RegistrationId.
      * 
      * @param address
-     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
-     *        RegistrationId).
+     *        The address of the endpoint as provided by your push provider. For example, the DeviceToken or
+     *        RegistrationId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,10 +120,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      * 
      * @param applicationId
-     *        The ID of the application associated with the endpoint.
+     *        The ID of the application that is associated with the endpoint.
      */
 
     public void setApplicationId(String applicationId) {
@@ -130,9 +131,9 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      * 
-     * @return The ID of the application associated with the endpoint.
+     * @return The ID of the application that is associated with the endpoint.
      */
 
     public String getApplicationId() {
@@ -140,10 +141,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      * 
      * @param applicationId
-     *        The ID of the application associated with the endpoint.
+     *        The ID of the application that is associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,19 +155,20 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
-     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
-     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * attribute named "interests" might have the following values: ["science", "politics", "travel"]. You can use these
+     * attributes as selection criteria when you create segments.
      * 
-     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
-     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
+     * The Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason, you should avoid using
+     * these characters in the names of custom attributes.
      * 
      * @return Custom attributes that describe the endpoint by associating a name with an array of values. For example,
-     *         an attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these
-     *         attributes as selection criteria when you create a segment of users to engage with a messaging campaign.
+     *         an attribute named "interests" might have the following values: ["science", "politics", "travel"]. You
+     *         can use these attributes as selection criteria when you create segments.
      * 
-     *         The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console
-     *         does not display attributes that include these characters in the name. This limitation does not apply to
-     *         attribute values.
+     *         The Amazon Pinpoint console can't display attribute names that include the following characters:
+     *         hash/pound sign (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason,
+     *         you should avoid using these characters in the names of custom attributes.
      */
 
     public java.util.Map<String, java.util.List<String>> getAttributes() {
@@ -175,20 +177,21 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
-     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
-     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * attribute named "interests" might have the following values: ["science", "politics", "travel"]. You can use these
+     * attributes as selection criteria when you create segments.
      * 
-     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
-     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
+     * The Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason, you should avoid using
+     * these characters in the names of custom attributes.
      * 
      * @param attributes
      *        Custom attributes that describe the endpoint by associating a name with an array of values. For example,
-     *        an attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these
-     *        attributes as selection criteria when you create a segment of users to engage with a messaging campaign.
+     *        an attribute named "interests" might have the following values: ["science", "politics", "travel"]. You can
+     *        use these attributes as selection criteria when you create segments.
      * 
-     *        The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console
-     *        does not display attributes that include these characters in the name. This limitation does not apply to
-     *        attribute values.
+     *        The Amazon Pinpoint console can't display attribute names that include the following characters:
+     *        hash/pound sign (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason,
+     *        you should avoid using these characters in the names of custom attributes.
      */
 
     public void setAttributes(java.util.Map<String, java.util.List<String>> attributes) {
@@ -197,20 +200,21 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Custom attributes that describe the endpoint by associating a name with an array of values. For example, an
-     * attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these attributes
-     * as selection criteria when you create a segment of users to engage with a messaging campaign.
+     * attribute named "interests" might have the following values: ["science", "politics", "travel"]. You can use these
+     * attributes as selection criteria when you create segments.
      * 
-     * The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console does not
-     * display attributes that include these characters in the name. This limitation does not apply to attribute values.
+     * The Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason, you should avoid using
+     * these characters in the names of custom attributes.
      * 
      * @param attributes
      *        Custom attributes that describe the endpoint by associating a name with an array of values. For example,
-     *        an attribute named "interests" might have the values ["science", "politics", "travel"]. You can use these
-     *        attributes as selection criteria when you create a segment of users to engage with a messaging campaign.
+     *        an attribute named "interests" might have the following values: ["science", "politics", "travel"]. You can
+     *        use these attributes as selection criteria when you create segments.
      * 
-     *        The following characters are not recommended in attribute names: # : ? \ /. The Amazon Pinpoint console
-     *        does not display attributes that include these characters in the name. This limitation does not apply to
-     *        attribute values.
+     *        The Amazon Pinpoint console can't display attribute names that include the following characters:
+     *        hash/pound sign (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this reason,
+     *        you should avoid using these characters in the names of custom attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,12 +328,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
+     * A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
      * randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
      * 
      * @param cohortId
-     *        A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into
+     *        A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into
      *        cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon
      *        Pinpoint assigns cohorts to the holdout or treatment allocations for a campaign.
      */
@@ -339,11 +343,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
+     * A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
      * randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
      * 
-     * @return A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into
+     * @return A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into
      *         cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon
      *         Pinpoint assigns cohorts to the holdout or treatment allocations for a campaign.
      */
@@ -353,12 +357,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
+     * A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts
      * randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
      * 
      * @param cohortId
-     *        A number from 0 - 99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into
+     *        A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into
      *        cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon
      *        Pinpoint assigns cohorts to the holdout or treatment allocations for a campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -370,10 +374,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      * 
      * @param creationDate
-     *        The last time the endpoint was created. Provided in ISO 8601 format.
+     *        The date and time when the endpoint was created, shown in ISO 8601 format.
      */
 
     public void setCreationDate(String creationDate) {
@@ -381,9 +385,9 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      * 
-     * @return The last time the endpoint was created. Provided in ISO 8601 format.
+     * @return The date and time when the endpoint was created, shown in ISO 8601 format.
      */
 
     public String getCreationDate() {
@@ -391,10 +395,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      * 
      * @param creationDate
-     *        The last time the endpoint was created. Provided in ISO 8601 format.
+     *        The date and time when the endpoint was created, shown in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,10 +442,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      * 
      * @param effectiveDate
-     *        The last time the endpoint was updated. Provided in ISO 8601 format.
+     *        The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
 
     public void setEffectiveDate(String effectiveDate) {
@@ -449,9 +453,9 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      * 
-     * @return The last time the endpoint was updated. Provided in ISO 8601 format.
+     * @return The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
 
     public String getEffectiveDate() {
@@ -459,10 +463,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      * 
      * @param effectiveDate
-     *        The last time the endpoint was updated. Provided in ISO 8601 format.
+     *        The date and time when the endpoint was last updated, shown in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +511,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to ensure
-     * that it is unique compared to all other endpoints for the application.
+     * that it doesn't conflict with other endpoint IDs associated with the application.
      * 
      * @param id
      *        The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to
-     *        ensure that it is unique compared to all other endpoints for the application.
+     *        ensure that it doesn't conflict with other endpoint IDs associated with the application.
      */
 
     public void setId(String id) {
@@ -520,10 +524,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to ensure
-     * that it is unique compared to all other endpoints for the application.
+     * that it doesn't conflict with other endpoint IDs associated with the application.
      * 
      * @return The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to
-     *         ensure that it is unique compared to all other endpoints for the application.
+     *         ensure that it doesn't conflict with other endpoint IDs associated with the application.
      */
 
     public String getId() {
@@ -532,11 +536,11 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to ensure
-     * that it is unique compared to all other endpoints for the application.
+     * that it doesn't conflict with other endpoint IDs associated with the application.
      * 
      * @param id
      *        The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to
-     *        ensure that it is unique compared to all other endpoints for the application.
+     *        ensure that it doesn't conflict with other endpoint IDs associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

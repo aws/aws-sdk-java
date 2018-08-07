@@ -57,20 +57,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private String taskArn;
     /**
      * <p>
-     * The role to assume when running the Maintenance Window task.
-     * </p>
-     * <p>
-     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
-     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
-     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
-     * Systems Manager User Guide</i>.
+     * The role that should be assumed when executing the task.
      * </p>
      */
     private String serviceRoleArn;
@@ -400,37 +387,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role to assume when running the Maintenance Window task.
-     * </p>
-     * <p>
-     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
-     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
-     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
-     * Systems Manager User Guide</i>.
+     * The role that should be assumed when executing the task.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role to assume when running the Maintenance Window task.</p>
-     *        <p>
-     *        If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for
-     *        Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will
-     *        be created when you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     *        ARN.
-     *        </p>
-     *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     *        >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the
-     *        <i>AWS Systems Manager User Guide</i>.
+     *        The role that should be assumed when executing the task.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -439,36 +400,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role to assume when running the Maintenance Window task.
-     * </p>
-     * <p>
-     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
-     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
-     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
-     * Systems Manager User Guide</i>.
+     * The role that should be assumed when executing the task.
      * </p>
      * 
-     * @return The role to assume when running the Maintenance Window task.</p>
-     *         <p>
-     *         If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for
-     *         Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will
-     *         be created when you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     *         ARN.
-     *         </p>
-     *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     *         >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     *         >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the
-     *         <i>AWS Systems Manager User Guide</i>.
+     * @return The role that should be assumed when executing the task.
      */
 
     public String getServiceRoleArn() {
@@ -477,37 +412,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role to assume when running the Maintenance Window task.
-     * </p>
-     * <p>
-     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
-     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
-     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
-     * Systems Manager User Guide</i>.
+     * The role that should be assumed when executing the task.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role to assume when running the Maintenance Window task.</p>
-     *        <p>
-     *        If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for
-     *        Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will
-     *        be created when you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     *        ARN.
-     *        </p>
-     *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     *        >Service-Linked Role Permissions for Systems Manager</a> and <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the
-     *        <i>AWS Systems Manager User Guide</i>.
+     *        The role that should be assumed when executing the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

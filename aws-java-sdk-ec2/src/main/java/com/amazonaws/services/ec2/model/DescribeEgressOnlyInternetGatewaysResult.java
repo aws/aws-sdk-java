@@ -26,7 +26,7 @@ public class DescribeEgressOnlyInternetGatewaysResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Information about the egress-only Internet gateways.
+     * Information about the egress-only internet gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EgressOnlyInternetGateway> egressOnlyInternetGateways;
@@ -39,10 +39,10 @@ public class DescribeEgressOnlyInternetGatewaysResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Information about the egress-only Internet gateways.
+     * Information about the egress-only internet gateways.
      * </p>
      * 
-     * @return Information about the egress-only Internet gateways.
+     * @return Information about the egress-only internet gateways.
      */
 
     public java.util.List<EgressOnlyInternetGateway> getEgressOnlyInternetGateways() {
@@ -54,11 +54,11 @@ public class DescribeEgressOnlyInternetGatewaysResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Information about the egress-only Internet gateways.
+     * Information about the egress-only internet gateways.
      * </p>
      * 
      * @param egressOnlyInternetGateways
-     *        Information about the egress-only Internet gateways.
+     *        Information about the egress-only internet gateways.
      */
 
     public void setEgressOnlyInternetGateways(java.util.Collection<EgressOnlyInternetGateway> egressOnlyInternetGateways) {
@@ -72,7 +72,7 @@ public class DescribeEgressOnlyInternetGatewaysResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Information about the egress-only Internet gateways.
+     * Information about the egress-only internet gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeEgressOnlyInternetGatewaysResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param egressOnlyInternetGateways
-     *        Information about the egress-only Internet gateways.
+     *        Information about the egress-only internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeEgressOnlyInternetGatewaysResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Information about the egress-only Internet gateways.
+     * Information about the egress-only internet gateways.
      * </p>
      * 
      * @param egressOnlyInternetGateways
-     *        Information about the egress-only Internet gateways.
+     *        Information about the egress-only internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

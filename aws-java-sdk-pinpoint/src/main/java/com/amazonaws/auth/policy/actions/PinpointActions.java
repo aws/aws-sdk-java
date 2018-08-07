@@ -131,6 +131,8 @@ public enum PinpointActions implements Action {
     PhoneNumberValidate("pinpoint:PhoneNumberValidate"),
     /** Action for the PutEventStream operation. */
     PutEventStream("pinpoint:PutEventStream"),
+    /** Action for the PutEvents operation. */
+    PutEvents("pinpoint:PutEvents"),
     /** Action for the RemoveAttributes operation. */
     RemoveAttributes("pinpoint:RemoveAttributes"),
     /** Action for the SendMessages operation. */

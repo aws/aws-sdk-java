@@ -67,6 +67,10 @@ public class MessageRequestJsonUnmarshaller implements Unmarshaller<MessageReque
                     context.nextToken();
                     messageRequest.setMessageConfiguration(DirectMessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TraceId", targetDepth)) {
+                    context.nextToken();
+                    messageRequest.setTraceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

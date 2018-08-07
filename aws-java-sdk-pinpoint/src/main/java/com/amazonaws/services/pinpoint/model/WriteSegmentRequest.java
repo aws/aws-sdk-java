@@ -30,7 +30,11 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     private SegmentDimensions dimensions;
     /** The name of segment */
     private String name;
-    /** Segment definition groups. We currently only support one. If specified Dimensions must be empty. */
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
+     * or a Dimensions object, but not both.
+     */
     private SegmentGroupList segmentGroups;
 
     /**
@@ -102,10 +106,14 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
+     * or a Dimensions object, but not both.
      * 
      * @param segmentGroups
-     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     *        A segment group, which consists of zero or more source segments, plus dimensions that are applied to those
+     *        source segments. Your request can only include one segment group. Your request can include either a
+     *        SegmentGroups object or a Dimensions object, but not both.
      */
 
     public void setSegmentGroups(SegmentGroupList segmentGroups) {
@@ -113,9 +121,13 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
+     * or a Dimensions object, but not both.
      * 
-     * @return Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * @return A segment group, which consists of zero or more source segments, plus dimensions that are applied to
+     *         those source segments. Your request can only include one segment group. Your request can include either a
+     *         SegmentGroups object or a Dimensions object, but not both.
      */
 
     public SegmentGroupList getSegmentGroups() {
@@ -123,10 +135,14 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments. Your request can only include one segment group. Your request can include either a SegmentGroups object
+     * or a Dimensions object, but not both.
      * 
      * @param segmentGroups
-     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     *        A segment group, which consists of zero or more source segments, plus dimensions that are applied to those
+     *        source segments. Your request can only include one segment group. Your request can include either a
+     *        SegmentGroups object or a Dimensions object, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

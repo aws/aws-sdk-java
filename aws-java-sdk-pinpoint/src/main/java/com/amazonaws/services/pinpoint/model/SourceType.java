@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SourceType {
 
     ALL("ALL"),
-    ANY("ANY");
+    ANY("ANY"),
+    NONE("NONE");
 
     private String value;
 

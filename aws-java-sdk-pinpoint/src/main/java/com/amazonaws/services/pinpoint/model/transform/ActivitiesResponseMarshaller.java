@@ -30,6 +30,8 @@ public class ActivitiesResponseMarshaller {
 
     private static final MarshallingInfo<List> ITEM_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Item").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
     private static final ActivitiesResponseMarshaller instance = new ActivitiesResponseMarshaller();
 
@@ -48,6 +50,7 @@ public class ActivitiesResponseMarshaller {
 
         try {
             protocolMarshaller.marshall(activitiesResponse.getItem(), ITEM_BINDING);
+            protocolMarshaller.marshall(activitiesResponse.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

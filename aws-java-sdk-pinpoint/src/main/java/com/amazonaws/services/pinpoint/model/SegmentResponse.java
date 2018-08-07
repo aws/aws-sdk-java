@@ -26,9 +26,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The ID of the application to which the segment applies. */
+    /** The ID of the application that the segment applies to. */
     private String applicationId;
-    /** The date the segment was created in ISO 8601 format. */
+    /** The date and time when the segment was created. */
     private String creationDate;
     /** The segment dimensions attributes. */
     private SegmentDimensions dimensions;
@@ -36,11 +36,14 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     private String id;
     /** The import job settings. */
     private SegmentImportResource importDefinition;
-    /** The date the segment was last updated in ISO 8601 format. */
+    /** The date and time when the segment was last modified. */
     private String lastModifiedDate;
-    /** The name of segment */
+    /** The name of the segment. */
     private String name;
-    /** Segment definition groups. We currently only support one. If specified Dimensions must be empty. */
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments.
+     */
     private SegmentGroupList segmentGroups;
     /**
      * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
@@ -54,10 +57,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     private Integer version;
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      * 
      * @param applicationId
-     *        The ID of the application to which the segment applies.
+     *        The ID of the application that the segment applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -65,9 +68,9 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      * 
-     * @return The ID of the application to which the segment applies.
+     * @return The ID of the application that the segment applies to.
      */
 
     public String getApplicationId() {
@@ -75,10 +78,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      * 
      * @param applicationId
-     *        The ID of the application to which the segment applies.
+     *        The ID of the application that the segment applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +91,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      * 
      * @param creationDate
-     *        The date the segment was created in ISO 8601 format.
+     *        The date and time when the segment was created.
      */
 
     public void setCreationDate(String creationDate) {
@@ -99,9 +102,9 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      * 
-     * @return The date the segment was created in ISO 8601 format.
+     * @return The date and time when the segment was created.
      */
 
     public String getCreationDate() {
@@ -109,10 +112,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      * 
      * @param creationDate
-     *        The date the segment was created in ISO 8601 format.
+     *        The date and time when the segment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,10 +227,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      * 
      * @param lastModifiedDate
-     *        The date the segment was last updated in ISO 8601 format.
+     *        The date and time when the segment was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -235,9 +238,9 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      * 
-     * @return The date the segment was last updated in ISO 8601 format.
+     * @return The date and time when the segment was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -245,10 +248,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      * 
      * @param lastModifiedDate
-     *        The date the segment was last updated in ISO 8601 format.
+     *        The date and time when the segment was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,10 +261,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The name of segment
+     * The name of the segment.
      * 
      * @param name
-     *        The name of segment
+     *        The name of the segment.
      */
 
     public void setName(String name) {
@@ -269,9 +272,9 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The name of segment
+     * The name of the segment.
      * 
-     * @return The name of segment
+     * @return The name of the segment.
      */
 
     public String getName() {
@@ -279,10 +282,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The name of segment
+     * The name of the segment.
      * 
      * @param name
-     *        The name of segment
+     *        The name of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,10 +295,12 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments.
      * 
      * @param segmentGroups
-     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     *        A segment group, which consists of zero or more source segments, plus dimensions that are applied to those
+     *        source segments.
      */
 
     public void setSegmentGroups(SegmentGroupList segmentGroups) {
@@ -303,9 +308,11 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments.
      * 
-     * @return Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * @return A segment group, which consists of zero or more source segments, plus dimensions that are applied to
+     *         those source segments.
      */
 
     public SegmentGroupList getSegmentGroups() {
@@ -313,10 +320,12 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source
+     * segments.
      * 
      * @param segmentGroups
-     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     *        A segment group, which consists of zero or more source segments, plus dimensions that are applied to those
+     *        source segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

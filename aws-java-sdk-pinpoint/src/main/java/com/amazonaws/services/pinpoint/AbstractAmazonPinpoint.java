@@ -303,6 +303,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public PutEventsResult putEvents(PutEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveAttributesResult removeAttributes(RemoveAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

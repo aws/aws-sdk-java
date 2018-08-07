@@ -22,7 +22,9 @@ public enum CommandFilterKey {
 
     InvokedAfter("InvokedAfter"),
     InvokedBefore("InvokedBefore"),
-    Status("Status");
+    Status("Status"),
+    ExecutionStage("ExecutionStage"),
+    DocumentName("DocumentName");
 
     private String value;
 

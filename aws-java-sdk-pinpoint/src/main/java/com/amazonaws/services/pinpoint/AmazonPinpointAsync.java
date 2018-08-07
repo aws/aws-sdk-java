@@ -548,7 +548,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteSmsChannelRequest, DeleteSmsChannelResult> asyncHandler);
 
     /**
-     * Deletes endpoints associated with an user id.
+     * Deletes endpoints that are associated with a User ID.
      * 
      * @param deleteUserEndpointsRequest
      * @return A Java Future containing the result of the DeleteUserEndpoints operation returned by the service.
@@ -559,7 +559,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<DeleteUserEndpointsResult> deleteUserEndpointsAsync(DeleteUserEndpointsRequest deleteUserEndpointsRequest);
 
     /**
-     * Deletes endpoints associated with an user id.
+     * Deletes endpoints that are associated with a User ID.
      * 
      * @param deleteUserEndpointsRequest
      * @param asyncHandler
@@ -1387,7 +1387,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSmsChannelRequest, GetSmsChannelResult> asyncHandler);
 
     /**
-     * Returns information about the endpoints associated with an user id.
+     * Returns information about the endpoints that are associated with a User ID.
      * 
      * @param getUserEndpointsRequest
      * @return A Java Future containing the result of the GetUserEndpoints operation returned by the service.
@@ -1398,7 +1398,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<GetUserEndpointsResult> getUserEndpointsAsync(GetUserEndpointsRequest getUserEndpointsRequest);
 
     /**
-     * Returns information about the endpoints associated with an user id.
+     * Returns information about the endpoints that are associated with a User ID.
      * 
      * @param getUserEndpointsRequest
      * @param asyncHandler
@@ -1468,6 +1468,35 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<PutEventStreamRequest, PutEventStreamResult> asyncHandler);
 
     /**
+     * Use to record events for endpoints. This method creates events and creates or updates the endpoints that those
+     * events are associated with.
+     * 
+     * @param putEventsRequest
+     * @return A Java Future containing the result of the PutEvents operation returned by the service.
+     * @sample AmazonPinpointAsync.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest);
+
+    /**
+     * Use to record events for endpoints. This method creates events and creates or updates the endpoints that those
+     * events are associated with.
+     * 
+     * @param putEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEvents operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest putEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler);
+
+    /**
      * Used to remove the attributes for an app
      * 
      * @param removeAttributesRequest
@@ -1495,15 +1524,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<RemoveAttributesRequest, RemoveAttributesResult> asyncHandler);
 
     /**
-     * Use this resource to send a direct message, which is a one time message that you send to a limited audience
-     * without creating a campaign.
-     * 
-     * You can send the message to up to 100 recipients. You cannot use the message to engage a segment. When you send
-     * the message, Amazon Pinpoint delivers it immediately, and you cannot schedule the delivery. To engage a user
-     * segment, and to schedule the message delivery, create a campaign instead of sending a direct message.
-     * 
-     * You can send a direct message as a push notification to your mobile app or as an SMS message to SMS-enabled
-     * devices.
+     * Used to send a direct message.
      * 
      * @param sendMessagesRequest
      * @return A Java Future containing the result of the SendMessages operation returned by the service.
@@ -1514,15 +1535,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<SendMessagesResult> sendMessagesAsync(SendMessagesRequest sendMessagesRequest);
 
     /**
-     * Use this resource to send a direct message, which is a one time message that you send to a limited audience
-     * without creating a campaign.
-     * 
-     * You can send the message to up to 100 recipients. You cannot use the message to engage a segment. When you send
-     * the message, Amazon Pinpoint delivers it immediately, and you cannot schedule the delivery. To engage a user
-     * segment, and to schedule the message delivery, create a campaign instead of sending a direct message.
-     * 
-     * You can send a direct message as a push notification to your mobile app or as an SMS message to SMS-enabled
-     * devices.
+     * Used to send a direct message.
      * 
      * @param sendMessagesRequest
      * @param asyncHandler
@@ -1538,22 +1551,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<SendMessagesRequest, SendMessagesResult> asyncHandler);
 
     /**
-     * Use this resource to message a list of users. Amazon Pinpoint sends the message to all of the endpoints that are
-     * associated with each user.
-     * 
-     * A user represents an individual who is assigned a unique user ID, and this ID is assigned to one or more
-     * endpoints. For example, if an individual uses your app on multiple devices, your app could assign that person's
-     * user ID to the endpoint for each device.
-     * 
-     * With the users-messages resource, you specify the message recipients as user IDs. For each user ID, Amazon
-     * Pinpoint delivers the message to all of the user's endpoints. Within the body of your request, you can specify a
-     * default message, and you can tailor your message for different channels, including those for mobile push and SMS.
-     * 
-     * With this resource, you send a direct message, which is a one time message that you send to a limited audience
-     * without creating a campaign. You can send the message to up to 100 users per request. You cannot use the message
-     * to engage a segment. When you send the message, Amazon Pinpoint delivers it immediately, and you cannot schedule
-     * the delivery. To engage a user segment, and to schedule the message delivery, create a campaign instead of using
-     * the users-messages resource.
+     * Used to send a message to a list of users.
      * 
      * @param sendUsersMessagesRequest
      * @return A Java Future containing the result of the SendUsersMessages operation returned by the service.
@@ -1564,22 +1562,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest sendUsersMessagesRequest);
 
     /**
-     * Use this resource to message a list of users. Amazon Pinpoint sends the message to all of the endpoints that are
-     * associated with each user.
-     * 
-     * A user represents an individual who is assigned a unique user ID, and this ID is assigned to one or more
-     * endpoints. For example, if an individual uses your app on multiple devices, your app could assign that person's
-     * user ID to the endpoint for each device.
-     * 
-     * With the users-messages resource, you specify the message recipients as user IDs. For each user ID, Amazon
-     * Pinpoint delivers the message to all of the user's endpoints. Within the body of your request, you can specify a
-     * default message, and you can tailor your message for different channels, including those for mobile push and SMS.
-     * 
-     * With this resource, you send a direct message, which is a one time message that you send to a limited audience
-     * without creating a campaign. You can send the message to up to 100 users per request. You cannot use the message
-     * to engage a segment. When you send the message, Amazon Pinpoint delivers it immediately, and you cannot schedule
-     * the delivery. To engage a user segment, and to schedule the message delivery, create a campaign instead of using
-     * the users-messages resource.
+     * Used to send a message to a list of users.
      * 
      * @param sendUsersMessagesRequest
      * @param asyncHandler
@@ -1925,7 +1908,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<UpdateGcmChannelRequest, UpdateGcmChannelResult> asyncHandler);
 
     /**
-     * Use to update a segment.
+     * Used to update a segment.
      * 
      * @param updateSegmentRequest
      * @return A Java Future containing the result of the UpdateSegment operation returned by the service.
@@ -1936,7 +1919,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateSegmentResult> updateSegmentAsync(UpdateSegmentRequest updateSegmentRequest);
 
     /**
-     * Use to update a segment.
+     * Used to update a segment.
      * 
      * @param updateSegmentRequest
      * @param asyncHandler

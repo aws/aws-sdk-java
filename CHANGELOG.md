@@ -1,4 +1,8 @@
-# __1.11.381__ __2018-08-06__
+# __1.11.382__ __2018-08-07__
+## __AWS CodeBuild__
+  - ### Features
+    - Release semantic versioning feature for CodeBuild
+
 ## __AWS Health APIs and Notifications__
   - ### Features
     - Updates the ARN structure vended by AWS Health API. All ARNs will now include the service and type code of the associated event, as vended by DescribeEventTypes.
@@ -11,13 +15,25 @@
   - ### Features
     - Documentation updates for AWS Alexa For Business
 
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation Update
+
 ## __Amazon DynamoDB__
   - ### Features
     -  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
 
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon VPC Flow Logs adds support for delivering flow logs directly to S3
+
 ## __Amazon Kinesis__
   - ### Features
     - This update introduces SubscribeToShard and RegisterStreamConsumer APIs which allows for retrieving records on a data stream over HTTP2 with enhanced fan-out capabilities. With this new feature the Java SDK now supports event streaming natively which will allow you to define payload and exception structures on the client over a persistent connection. For more information, see Developing Consumers with Enhanced Fan-Out in the Kinesis Developer Guide.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release includes a new batch API call for Amazon Pinpoint which can be used to update endpoints and submit events. This call will accept events from clients such as mobile devices and AWS SDKs. This call will accept requests which has multiple endpoints and multiple events attached to those endpoints in a single call. This call will update the endpoints attached and will ingest events for those endpoints. The response from this call will be a multipart response per endpoint/per event submitted.
 
 ## __Amazon Polly__
   - ### Features
@@ -26,6 +42,7 @@
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features
     - This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
+    - Two new filters ExecutionStage and DocumentName will be added to ListCommands so that customers will have more approaches to query their commands.
 
 # __1.11.378__ __2018-08-01__
 ## __AWS Storage Gateway__

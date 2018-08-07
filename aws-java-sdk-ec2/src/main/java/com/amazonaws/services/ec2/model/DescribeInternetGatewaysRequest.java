@@ -68,10 +68,10 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more Internet gateway IDs.
+     * One or more internet gateway IDs.
      * </p>
      * <p>
-     * Default: Describes all your Internet gateways.
+     * Default: Describes all your internet gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> internetGatewayIds;
@@ -403,15 +403,15 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more Internet gateway IDs.
+     * One or more internet gateway IDs.
      * </p>
      * <p>
-     * Default: Describes all your Internet gateways.
+     * Default: Describes all your internet gateways.
      * </p>
      * 
-     * @return One or more Internet gateway IDs.</p>
+     * @return One or more internet gateway IDs.</p>
      *         <p>
-     *         Default: Describes all your Internet gateways.
+     *         Default: Describes all your internet gateways.
      */
 
     public java.util.List<String> getInternetGatewayIds() {
@@ -423,16 +423,16 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more Internet gateway IDs.
+     * One or more internet gateway IDs.
      * </p>
      * <p>
-     * Default: Describes all your Internet gateways.
+     * Default: Describes all your internet gateways.
      * </p>
      * 
      * @param internetGatewayIds
-     *        One or more Internet gateway IDs.</p>
+     *        One or more internet gateway IDs.</p>
      *        <p>
-     *        Default: Describes all your Internet gateways.
+     *        Default: Describes all your internet gateways.
      */
 
     public void setInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
@@ -446,10 +446,10 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more Internet gateway IDs.
+     * One or more internet gateway IDs.
      * </p>
      * <p>
-     * Default: Describes all your Internet gateways.
+     * Default: Describes all your internet gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -458,9 +458,9 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param internetGatewayIds
-     *        One or more Internet gateway IDs.</p>
+     *        One or more internet gateway IDs.</p>
      *        <p>
-     *        Default: Describes all your Internet gateways.
+     *        Default: Describes all your internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,16 +476,16 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more Internet gateway IDs.
+     * One or more internet gateway IDs.
      * </p>
      * <p>
-     * Default: Describes all your Internet gateways.
+     * Default: Describes all your internet gateways.
      * </p>
      * 
      * @param internetGatewayIds
-     *        One or more Internet gateway IDs.</p>
+     *        One or more internet gateway IDs.</p>
      *        <p>
-     *        Default: Describes all your Internet gateways.
+     *        Default: Describes all your internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

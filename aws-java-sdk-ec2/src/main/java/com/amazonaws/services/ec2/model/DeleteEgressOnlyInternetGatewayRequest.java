@@ -28,18 +28,18 @@ public class DeleteEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      */
     private String egressOnlyInternetGatewayId;
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
+     *        The ID of the egress-only internet gateway.
      */
 
     public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
@@ -48,10 +48,10 @@ public class DeleteEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      * 
-     * @return The ID of the egress-only Internet gateway.
+     * @return The ID of the egress-only internet gateway.
      */
 
     public String getEgressOnlyInternetGatewayId() {
@@ -60,11 +60,11 @@ public class DeleteEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
+     *        The ID of the egress-only internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Internet gateway.
+ * Describes an internet gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InternetGateway" target="_top">AWS API
@@ -28,29 +28,29 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any VPCs attached to the Internet gateway.
+     * Any VPCs attached to the internet gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InternetGatewayAttachment> attachments;
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      */
     private String internetGatewayId;
     /**
      * <p>
-     * Any tags assigned to the Internet gateway.
+     * Any tags assigned to the internet gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * Any VPCs attached to the Internet gateway.
+     * Any VPCs attached to the internet gateway.
      * </p>
      * 
-     * @return Any VPCs attached to the Internet gateway.
+     * @return Any VPCs attached to the internet gateway.
      */
 
     public java.util.List<InternetGatewayAttachment> getAttachments() {
@@ -62,11 +62,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any VPCs attached to the Internet gateway.
+     * Any VPCs attached to the internet gateway.
      * </p>
      * 
      * @param attachments
-     *        Any VPCs attached to the Internet gateway.
+     *        Any VPCs attached to the internet gateway.
      */
 
     public void setAttachments(java.util.Collection<InternetGatewayAttachment> attachments) {
@@ -80,7 +80,7 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any VPCs attached to the Internet gateway.
+     * Any VPCs attached to the internet gateway.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * </p>
      * 
      * @param attachments
-     *        Any VPCs attached to the Internet gateway.
+     *        Any VPCs attached to the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any VPCs attached to the Internet gateway.
+     * Any VPCs attached to the internet gateway.
      * </p>
      * 
      * @param attachments
-     *        Any VPCs attached to the Internet gateway.
+     *        Any VPCs attached to the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +120,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      * 
      * @param internetGatewayId
-     *        The ID of the Internet gateway.
+     *        The ID of the internet gateway.
      */
 
     public void setInternetGatewayId(String internetGatewayId) {
@@ -133,10 +133,10 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      * 
-     * @return The ID of the Internet gateway.
+     * @return The ID of the internet gateway.
      */
 
     public String getInternetGatewayId() {
@@ -145,11 +145,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      * 
      * @param internetGatewayId
-     *        The ID of the Internet gateway.
+     *        The ID of the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,10 +160,10 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the Internet gateway.
+     * Any tags assigned to the internet gateway.
      * </p>
      * 
-     * @return Any tags assigned to the Internet gateway.
+     * @return Any tags assigned to the internet gateway.
      */
 
     public java.util.List<Tag> getTags() {
@@ -175,11 +175,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the Internet gateway.
+     * Any tags assigned to the internet gateway.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the Internet gateway.
+     *        Any tags assigned to the internet gateway.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -193,7 +193,7 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the Internet gateway.
+     * Any tags assigned to the internet gateway.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -202,7 +202,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the Internet gateway.
+     *        Any tags assigned to the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the Internet gateway.
+     * Any tags assigned to the internet gateway.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the Internet gateway.
+     *        Any tags assigned to the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -528,7 +528,7 @@ public interface AmazonPinpoint {
     DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest);
 
     /**
-     * Deletes endpoints associated with an user id.
+     * Deletes endpoints that are associated with a User ID.
      * 
      * @param deleteUserEndpointsRequest
      * @return Result of the DeleteUserEndpoints operation returned by the service.
@@ -1241,7 +1241,7 @@ public interface AmazonPinpoint {
     GetSmsChannelResult getSmsChannel(GetSmsChannelRequest getSmsChannelRequest);
 
     /**
-     * Returns information about the endpoints associated with an user id.
+     * Returns information about the endpoints that are associated with a User ID.
      * 
      * @param getUserEndpointsRequest
      * @return Result of the GetUserEndpoints operation returned by the service.
@@ -1310,6 +1310,30 @@ public interface AmazonPinpoint {
     PutEventStreamResult putEventStream(PutEventStreamRequest putEventStreamRequest);
 
     /**
+     * Use to record events for endpoints. This method creates events and creates or updates the endpoints that those
+     * events are associated with.
+     * 
+     * @param putEventsRequest
+     * @return Result of the PutEvents operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws MethodNotAllowedException
+     *         405 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AmazonPinpoint.PutEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutEventsResult putEvents(PutEventsRequest putEventsRequest);
+
+    /**
      * Used to remove the attributes for an app
      * 
      * @param removeAttributesRequest
@@ -1333,15 +1357,7 @@ public interface AmazonPinpoint {
     RemoveAttributesResult removeAttributes(RemoveAttributesRequest removeAttributesRequest);
 
     /**
-     * Use this resource to send a direct message, which is a one time message that you send to a limited audience
-     * without creating a campaign.
-     * 
-     * You can send the message to up to 100 recipients. You cannot use the message to engage a segment. When you send
-     * the message, Amazon Pinpoint delivers it immediately, and you cannot schedule the delivery. To engage a user
-     * segment, and to schedule the message delivery, create a campaign instead of sending a direct message.
-     * 
-     * You can send a direct message as a push notification to your mobile app or as an SMS message to SMS-enabled
-     * devices.
+     * Used to send a direct message.
      * 
      * @param sendMessagesRequest
      * @return Result of the SendMessages operation returned by the service.
@@ -1364,22 +1380,7 @@ public interface AmazonPinpoint {
     SendMessagesResult sendMessages(SendMessagesRequest sendMessagesRequest);
 
     /**
-     * Use this resource to message a list of users. Amazon Pinpoint sends the message to all of the endpoints that are
-     * associated with each user.
-     * 
-     * A user represents an individual who is assigned a unique user ID, and this ID is assigned to one or more
-     * endpoints. For example, if an individual uses your app on multiple devices, your app could assign that person's
-     * user ID to the endpoint for each device.
-     * 
-     * With the users-messages resource, you specify the message recipients as user IDs. For each user ID, Amazon
-     * Pinpoint delivers the message to all of the user's endpoints. Within the body of your request, you can specify a
-     * default message, and you can tailor your message for different channels, including those for mobile push and SMS.
-     * 
-     * With this resource, you send a direct message, which is a one time message that you send to a limited audience
-     * without creating a campaign. You can send the message to up to 100 users per request. You cannot use the message
-     * to engage a segment. When you send the message, Amazon Pinpoint delivers it immediately, and you cannot schedule
-     * the delivery. To engage a user segment, and to schedule the message delivery, create a campaign instead of using
-     * the users-messages resource.
+     * Used to send a message to a list of users.
      * 
      * @param sendUsersMessagesRequest
      * @return Result of the SendUsersMessages operation returned by the service.
@@ -1678,7 +1679,7 @@ public interface AmazonPinpoint {
     UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest);
 
     /**
-     * Use to update a segment.
+     * Used to update a segment.
      * 
      * @param updateSegmentRequest
      * @return Result of the UpdateSegment operation returned by the service.

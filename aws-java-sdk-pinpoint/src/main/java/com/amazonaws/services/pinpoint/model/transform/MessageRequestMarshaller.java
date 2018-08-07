@@ -37,6 +37,8 @@ public class MessageRequestMarshaller {
             .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<StructuredPojo> MESSAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageConfiguration").build();
+    private static final MarshallingInfo<String> TRACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TraceId").build();
 
     private static final MessageRequestMarshaller instance = new MessageRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class MessageRequestMarshaller {
             protocolMarshaller.marshall(messageRequest.getContext(), CONTEXT_BINDING);
             protocolMarshaller.marshall(messageRequest.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(messageRequest.getMessageConfiguration(), MESSAGECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(messageRequest.getTraceId(), TRACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

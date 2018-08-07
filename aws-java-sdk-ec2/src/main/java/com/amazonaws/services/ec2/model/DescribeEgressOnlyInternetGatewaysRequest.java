@@ -28,14 +28,14 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only Internet gateway IDs.
+     * One or more egress-only internet gateway IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> egressOnlyInternetGatewayIds;
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * </p>
      */
@@ -49,10 +49,10 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only Internet gateway IDs.
+     * One or more egress-only internet gateway IDs.
      * </p>
      * 
-     * @return One or more egress-only Internet gateway IDs.
+     * @return One or more egress-only internet gateway IDs.
      */
 
     public java.util.List<String> getEgressOnlyInternetGatewayIds() {
@@ -64,11 +64,11 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only Internet gateway IDs.
+     * One or more egress-only internet gateway IDs.
      * </p>
      * 
      * @param egressOnlyInternetGatewayIds
-     *        One or more egress-only Internet gateway IDs.
+     *        One or more egress-only internet gateway IDs.
      */
 
     public void setEgressOnlyInternetGatewayIds(java.util.Collection<String> egressOnlyInternetGatewayIds) {
@@ -82,7 +82,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only Internet gateway IDs.
+     * One or more egress-only internet gateway IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +91,7 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
      * </p>
      * 
      * @param egressOnlyInternetGatewayIds
-     *        One or more egress-only Internet gateway IDs.
+     *        One or more egress-only internet gateway IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * One or more egress-only Internet gateway IDs.
+     * One or more egress-only internet gateway IDs.
      * </p>
      * 
      * @param egressOnlyInternetGatewayIds
-     *        One or more egress-only Internet gateway IDs.
+     *        One or more egress-only internet gateway IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,14 +123,14 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     *        5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -140,13 +140,13 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * </p>
      * 
      * @return The maximum number of results to return for the request in a single page. The remaining results can be
      *         seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *         5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     *         5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      */
 
     public Integer getMaxResults() {
@@ -156,14 +156,14 @@ public class DescribeEgressOnlyInternetGatewaysRequest extends AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     *        5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

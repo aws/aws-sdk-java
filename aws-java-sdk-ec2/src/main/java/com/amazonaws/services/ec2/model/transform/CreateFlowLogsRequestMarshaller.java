@@ -73,6 +73,14 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("TrafficType", StringUtils.fromString(createFlowLogsRequest.getTrafficType()));
         }
 
+        if (createFlowLogsRequest.getLogDestinationType() != null) {
+            request.addParameter("LogDestinationType", StringUtils.fromString(createFlowLogsRequest.getLogDestinationType()));
+        }
+
+        if (createFlowLogsRequest.getLogDestination() != null) {
+            request.addParameter("LogDestination", StringUtils.fromString(createFlowLogsRequest.getLogDestination()));
+        }
+
         return request;
     }
 

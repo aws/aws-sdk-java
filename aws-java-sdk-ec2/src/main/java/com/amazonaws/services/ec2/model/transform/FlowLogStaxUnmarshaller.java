@@ -87,6 +87,16 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
                     flowLog.setTrafficType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("logDestinationType", targetDepth)) {
+                    flowLog.setLogDestinationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("logDestination", targetDepth)) {
+                    flowLog.setLogDestination(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return flowLog;

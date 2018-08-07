@@ -28,6 +28,8 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
 
     /** List of campaign activities */
     private java.util.List<ActivityResponse> item;
+    /** The string that you use in a subsequent request to get the next page of results in a paginated response. */
+    private String nextToken;
 
     /**
      * List of campaign activities
@@ -92,6 +94,40 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * 
+     * @param nextToken
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * 
+     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * 
+     * @param nextToken
+     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivitiesResponse withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -103,7 +139,9 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItem() != null)
-            sb.append("Item: ").append(getItem());
+            sb.append("Item: ").append(getItem()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -122,6 +160,10 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getItem() != null && other.getItem().equals(this.getItem()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -131,6 +173,7 @@ public class ActivitiesResponse implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getItem() == null) ? 0 : getItem().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

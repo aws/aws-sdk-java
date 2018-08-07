@@ -27,17 +27,17 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InternetGateway> internetGateways;
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * 
-     * @return Information about one or more Internet gateways.
+     * @return Information about one or more internet gateways.
      */
 
     public java.util.List<InternetGateway> getInternetGateways() {
@@ -49,11 +49,11 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * 
      * @param internetGateways
-     *        Information about one or more Internet gateways.
+     *        Information about one or more internet gateways.
      */
 
     public void setInternetGateways(java.util.Collection<InternetGateway> internetGateways) {
@@ -67,7 +67,7 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param internetGateways
-     *        Information about one or more Internet gateways.
+     *        Information about one or more internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * 
      * @param internetGateways
-     *        Information about one or more Internet gateways.
+     *        Information about one or more internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

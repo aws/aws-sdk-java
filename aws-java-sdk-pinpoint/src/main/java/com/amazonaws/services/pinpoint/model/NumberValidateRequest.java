@@ -26,17 +26,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NumberValidateRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** (Optional) The two-character ISO country code for the country where the phone number was originally registered. */
+    /**
+     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
+     * registered.
+     */
     private String isoCountryCode;
-    /** The phone number to get information about. */
+    /**
+     * The phone number to get information about. The phone number that you provide should include a country code. If
+     * the number doesn't include a valid country code, the operation might result in an error.
+     */
     private String phoneNumber;
 
     /**
-     * (Optional) The two-character ISO country code for the country where the phone number was originally registered.
+     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
+     * registered.
      * 
      * @param isoCountryCode
-     *        (Optional) The two-character ISO country code for the country where the phone number was originally
-     *        registered.
+     *        (Optional) The two-character ISO country code for the country or region where the phone number was
+     *        originally registered.
      */
 
     public void setIsoCountryCode(String isoCountryCode) {
@@ -44,10 +51,11 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * (Optional) The two-character ISO country code for the country where the phone number was originally registered.
+     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
+     * registered.
      * 
-     * @return (Optional) The two-character ISO country code for the country where the phone number was originally
-     *         registered.
+     * @return (Optional) The two-character ISO country code for the country or region where the phone number was
+     *         originally registered.
      */
 
     public String getIsoCountryCode() {
@@ -55,11 +63,12 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * (Optional) The two-character ISO country code for the country where the phone number was originally registered.
+     * (Optional) The two-character ISO country code for the country or region where the phone number was originally
+     * registered.
      * 
      * @param isoCountryCode
-     *        (Optional) The two-character ISO country code for the country where the phone number was originally
-     *        registered.
+     *        (Optional) The two-character ISO country code for the country or region where the phone number was
+     *        originally registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,10 +78,12 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The phone number to get information about.
+     * The phone number to get information about. The phone number that you provide should include a country code. If
+     * the number doesn't include a valid country code, the operation might result in an error.
      * 
      * @param phoneNumber
-     *        The phone number to get information about.
+     *        The phone number to get information about. The phone number that you provide should include a country
+     *        code. If the number doesn't include a valid country code, the operation might result in an error.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -80,9 +91,11 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The phone number to get information about.
+     * The phone number to get information about. The phone number that you provide should include a country code. If
+     * the number doesn't include a valid country code, the operation might result in an error.
      * 
-     * @return The phone number to get information about.
+     * @return The phone number to get information about. The phone number that you provide should include a country
+     *         code. If the number doesn't include a valid country code, the operation might result in an error.
      */
 
     public String getPhoneNumber() {
@@ -90,10 +103,12 @@ public class NumberValidateRequest implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The phone number to get information about.
+     * The phone number to get information about. The phone number that you provide should include a country code. If
+     * the number doesn't include a valid country code, the operation might result in an error.
      * 
      * @param phoneNumber
-     *        The phone number to get information about.
+     *        The phone number to get information about. The phone number that you provide should include a country
+     *        code. If the number doesn't include a valid country code, the operation might result in an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

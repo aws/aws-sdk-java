@@ -30,18 +30,18 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      */
     private String internetGatewayId;
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      * 
      * @param internetGatewayId
-     *        The ID of the Internet gateway.
+     *        The ID of the internet gateway.
      */
 
     public void setInternetGatewayId(String internetGatewayId) {
@@ -50,10 +50,10 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      * 
-     * @return The ID of the Internet gateway.
+     * @return The ID of the internet gateway.
      */
 
     public String getInternetGatewayId() {
@@ -62,11 +62,11 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ID of the Internet gateway.
+     * The ID of the internet gateway.
      * </p>
      * 
      * @param internetGatewayId
-     *        The ID of the Internet gateway.
+     *        The ID of the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

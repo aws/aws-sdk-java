@@ -33,8 +33,8 @@ public class Subnet implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances
-     * are considered unavailable.
+     * The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      */
     private Integer availableIpAddressCount;
@@ -136,13 +136,13 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances
-     * are considered unavailable.
+     * The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      * 
      * @param availableIpAddressCount
-     *        The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped
-     *        instances are considered unavailable.
+     *        The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances
+     *        are considered unavailable.
      */
 
     public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
@@ -151,12 +151,12 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances
-     * are considered unavailable.
+     * The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      * 
-     * @return The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped
-     *         instances are considered unavailable.
+     * @return The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances
+     *         are considered unavailable.
      */
 
     public Integer getAvailableIpAddressCount() {
@@ -165,13 +165,13 @@ public class Subnet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances
-     * are considered unavailable.
+     * The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are
+     * considered unavailable.
      * </p>
      * 
      * @param availableIpAddressCount
-     *        The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped
-     *        instances are considered unavailable.
+     *        The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances
+     *        are considered unavailable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

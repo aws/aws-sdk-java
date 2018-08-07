@@ -59,6 +59,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     * </p>
+     * <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      * </p>
      * </li>
@@ -75,7 +78,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results of the initial
      * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
-     * between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     * between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * <p>
@@ -121,6 +124,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     * </p>
+     * <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      * </p>
      * </li>
@@ -153,6 +159,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      *         <li>
+     *         <p>
+     *         <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     *         </p>
      *         <p>
      *         <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *         </p>
@@ -197,6 +206,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     * </p>
+     * <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      * </p>
      * </li>
@@ -230,6 +242,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        <li>
+     *        <p>
+     *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     *        </p>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
@@ -276,6 +291,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     * </p>
+     * <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      * </p>
      * </li>
@@ -314,6 +332,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        <li>
+     *        <p>
+     *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     *        </p>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
@@ -362,6 +383,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     * </p>
+     * <p>
      * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      * </p>
      * </li>
@@ -395,6 +419,9 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        <li>
+     *        <p>
+     *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+     *        </p>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
@@ -484,7 +511,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results of the initial
      * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
-     * between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     * between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * <p>
@@ -494,7 +521,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results of the
      *        initial request can be seen by sending another request with the returned <code>NextToken</code> value.
-     *        This value can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only
+     *        This value can be between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only
      *        1000 results are returned. You cannot specify this parameter and the instance IDs parameter in the same
      *        request.</p>
      *        <p>
@@ -509,7 +536,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results of the initial
      * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
-     * between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     * between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * <p>
@@ -518,7 +545,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of results to return for the request in a single page. The remaining results of the
      *         initial request can be seen by sending another request with the returned <code>NextToken</code> value.
-     *         This value can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only
+     *         This value can be between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only
      *         1000 results are returned. You cannot specify this parameter and the instance IDs parameter in the same
      *         request.</p>
      *         <p>
@@ -533,7 +560,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results of the initial
      * request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be
-     * between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
+     * between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
      * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * <p>
@@ -543,7 +570,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results of the
      *        initial request can be seen by sending another request with the returned <code>NextToken</code> value.
-     *        This value can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only
+     *        This value can be between 5 and 1000. If <code>MaxResults</code> is given a value larger than 1000, only
      *        1000 results are returned. You cannot specify this parameter and the instance IDs parameter in the same
      *        request.</p>
      *        <p>

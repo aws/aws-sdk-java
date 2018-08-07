@@ -44,6 +44,8 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, EndpointSendConfiguration> endpoints;
     /** Message configuration. */
     private DirectMessageConfiguration messageConfiguration;
+    /** A unique ID that you can use to trace a message. This ID is visible to recipients. */
+    private String traceId;
 
     /**
      * A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object. An
@@ -269,6 +271,40 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A unique ID that you can use to trace a message. This ID is visible to recipients.
+     * 
+     * @param traceId
+     *        A unique ID that you can use to trace a message. This ID is visible to recipients.
+     */
+
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to recipients.
+     * 
+     * @return A unique ID that you can use to trace a message. This ID is visible to recipients.
+     */
+
+    public String getTraceId() {
+        return this.traceId;
+    }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to recipients.
+     * 
+     * @param traceId
+     *        A unique ID that you can use to trace a message. This ID is visible to recipients.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest withTraceId(String traceId) {
+        setTraceId(traceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -286,7 +322,9 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         if (getEndpoints() != null)
             sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getMessageConfiguration() != null)
-            sb.append("MessageConfiguration: ").append(getMessageConfiguration());
+            sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
+        if (getTraceId() != null)
+            sb.append("TraceId: ").append(getTraceId());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +355,10 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
             return false;
+        if (other.getTraceId() == null ^ this.getTraceId() == null)
+            return false;
+        if (other.getTraceId() != null && other.getTraceId().equals(this.getTraceId()) == false)
+            return false;
         return true;
     }
 
@@ -329,6 +371,7 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTraceId() == null) ? 0 : getTraceId().hashCode());
         return hashCode;
     }
 

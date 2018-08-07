@@ -27,18 +27,18 @@ public class CreateInternetGatewayResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the Internet gateway.
+     * Information about the internet gateway.
      * </p>
      */
     private InternetGateway internetGateway;
 
     /**
      * <p>
-     * Information about the Internet gateway.
+     * Information about the internet gateway.
      * </p>
      * 
      * @param internetGateway
-     *        Information about the Internet gateway.
+     *        Information about the internet gateway.
      */
 
     public void setInternetGateway(InternetGateway internetGateway) {
@@ -47,10 +47,10 @@ public class CreateInternetGatewayResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the Internet gateway.
+     * Information about the internet gateway.
      * </p>
      * 
-     * @return Information about the Internet gateway.
+     * @return Information about the internet gateway.
      */
 
     public InternetGateway getInternetGateway() {
@@ -59,11 +59,11 @@ public class CreateInternetGatewayResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the Internet gateway.
+     * Information about the internet gateway.
      * </p>
      * 
      * @param internetGateway
-     *        Information about the Internet gateway.
+     *        Information about the internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

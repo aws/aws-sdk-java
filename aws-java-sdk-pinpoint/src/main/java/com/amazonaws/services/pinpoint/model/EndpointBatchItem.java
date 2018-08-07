@@ -29,8 +29,8 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
     /**
      * The destination for messages that you send to this endpoint. The address varies by channel. For mobile push
      * channels, use the token provided by the push notification service, such as the APNs device token or the FCM
-     * registration token. For the SMS channel, use a phone number in E.164 format, such as +1206XXX5550100. For the
-     * email channel, use an email address.
+     * registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email
+     * channel, use an email address.
      */
     private String address;
     /**
@@ -76,14 +76,14 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
     /**
      * The destination for messages that you send to this endpoint. The address varies by channel. For mobile push
      * channels, use the token provided by the push notification service, such as the APNs device token or the FCM
-     * registration token. For the SMS channel, use a phone number in E.164 format, such as +1206XXX5550100. For the
-     * email channel, use an email address.
+     * registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email
+     * channel, use an email address.
      * 
      * @param address
      *        The destination for messages that you send to this endpoint. The address varies by channel. For mobile
      *        push channels, use the token provided by the push notification service, such as the APNs device token or
-     *        the FCM registration token. For the SMS channel, use a phone number in E.164 format, such as
-     *        +1206XXX5550100. For the email channel, use an email address.
+     *        the FCM registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100.
+     *        For the email channel, use an email address.
      */
 
     public void setAddress(String address) {
@@ -93,13 +93,13 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
     /**
      * The destination for messages that you send to this endpoint. The address varies by channel. For mobile push
      * channels, use the token provided by the push notification service, such as the APNs device token or the FCM
-     * registration token. For the SMS channel, use a phone number in E.164 format, such as +1206XXX5550100. For the
-     * email channel, use an email address.
+     * registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email
+     * channel, use an email address.
      * 
      * @return The destination for messages that you send to this endpoint. The address varies by channel. For mobile
      *         push channels, use the token provided by the push notification service, such as the APNs device token or
      *         the FCM registration token. For the SMS channel, use a phone number in E.164 format, such as
-     *         +1206XXX5550100. For the email channel, use an email address.
+     *         +12065550100. For the email channel, use an email address.
      */
 
     public String getAddress() {
@@ -109,14 +109,14 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
     /**
      * The destination for messages that you send to this endpoint. The address varies by channel. For mobile push
      * channels, use the token provided by the push notification service, such as the APNs device token or the FCM
-     * registration token. For the SMS channel, use a phone number in E.164 format, such as +1206XXX5550100. For the
-     * email channel, use an email address.
+     * registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email
+     * channel, use an email address.
      * 
      * @param address
      *        The destination for messages that you send to this endpoint. The address varies by channel. For mobile
      *        push channels, use the token provided by the push notification service, such as the APNs device token or
-     *        the FCM registration token. For the SMS channel, use a phone number in E.164 format, such as
-     *        +1206XXX5550100. For the email channel, use an email address.
+     *        the FCM registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100.
+     *        For the email channel, use an email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

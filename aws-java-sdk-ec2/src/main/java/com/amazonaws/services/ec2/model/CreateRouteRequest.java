@@ -42,13 +42,13 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String destinationIpv6CidrBlock;
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      */
     private String egressOnlyInternetGatewayId;
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * The ID of an internet gateway or virtual private gateway attached to your VPC.
      * </p>
      */
     private String gatewayId;
@@ -175,11 +175,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     *        [IPv6 traffic only] The ID of an egress-only internet gateway.
      */
 
     public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
@@ -188,10 +188,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      * 
-     * @return [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * @return [IPv6 traffic only] The ID of an egress-only internet gateway.
      */
 
     public String getEgressOnlyInternetGatewayId() {
@@ -200,11 +200,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     *        [IPv6 traffic only] The ID of an egress-only internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +215,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * The ID of an internet gateway or virtual private gateway attached to your VPC.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     *        The ID of an internet gateway or virtual private gateway attached to your VPC.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -228,10 +228,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * The ID of an internet gateway or virtual private gateway attached to your VPC.
      * </p>
      * 
-     * @return The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * @return The ID of an internet gateway or virtual private gateway attached to your VPC.
      */
 
     public String getGatewayId() {
@@ -240,11 +240,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * The ID of an internet gateway or virtual private gateway attached to your VPC.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     *        The ID of an internet gateway or virtual private gateway attached to your VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,16 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentReference implements Serializable, Cloneable, StructuredPojo {
 
-    /** Segment Id. */
+    /** A unique identifier for the segment. */
     private String id;
     /** If specified contains a specific version of the segment included. */
     private Integer version;
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      * 
      * @param id
-     *        Segment Id.
+     *        A unique identifier for the segment.
      */
 
     public void setId(String id) {
@@ -43,9 +43,9 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      * 
-     * @return Segment Id.
+     * @return A unique identifier for the segment.
      */
 
     public String getId() {
@@ -53,10 +53,10 @@ public class SegmentReference implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Segment Id.
+     * A unique identifier for the segment.
      * 
      * @param id
-     *        Segment Id.
+     *        A unique identifier for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

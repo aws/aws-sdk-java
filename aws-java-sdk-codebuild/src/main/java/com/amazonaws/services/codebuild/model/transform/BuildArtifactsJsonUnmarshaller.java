@@ -60,6 +60,10 @@ public class BuildArtifactsJsonUnmarshaller implements Unmarshaller<BuildArtifac
                     context.nextToken();
                     buildArtifacts.setMd5sum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("overrideArtifactName", targetDepth)) {
+                    context.nextToken();
+                    buildArtifacts.setOverrideArtifactName(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("encryptionDisabled", targetDepth)) {
                     context.nextToken();
                     buildArtifacts.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));

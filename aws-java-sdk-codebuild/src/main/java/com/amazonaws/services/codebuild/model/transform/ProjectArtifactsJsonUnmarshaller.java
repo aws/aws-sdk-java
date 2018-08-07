@@ -72,6 +72,10 @@ public class ProjectArtifactsJsonUnmarshaller implements Unmarshaller<ProjectArt
                     context.nextToken();
                     projectArtifacts.setPackaging(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("overrideArtifactName", targetDepth)) {
+                    context.nextToken();
+                    projectArtifacts.setOverrideArtifactName(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("encryptionDisabled", targetDepth)) {
                     context.nextToken();
                     projectArtifacts.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));

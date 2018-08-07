@@ -52,6 +52,10 @@ public class ActivitiesResponseJsonUnmarshaller implements Unmarshaller<Activiti
                     context.nextToken();
                     activitiesResponse.setItem(new ListUnmarshaller<ActivityResponse>(ActivityResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    activitiesResponse.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

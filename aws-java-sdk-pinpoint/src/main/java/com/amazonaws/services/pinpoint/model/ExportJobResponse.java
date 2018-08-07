@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExportJobResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The unique ID of the application to which the job applies. */
+    /** The unique ID of the application associated with the export job. */
     private String applicationId;
     /** The number of pieces that have successfully completed as of the time of the request. */
     private Integer completedPieces;
@@ -61,10 +61,10 @@ public class ExportJobResponse implements Serializable, Cloneable, StructuredPoj
     private String type;
 
     /**
-     * The unique ID of the application to which the job applies.
+     * The unique ID of the application associated with the export job.
      * 
      * @param applicationId
-     *        The unique ID of the application to which the job applies.
+     *        The unique ID of the application associated with the export job.
      */
 
     public void setApplicationId(String applicationId) {
@@ -72,9 +72,9 @@ public class ExportJobResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The unique ID of the application to which the job applies.
+     * The unique ID of the application associated with the export job.
      * 
-     * @return The unique ID of the application to which the job applies.
+     * @return The unique ID of the application associated with the export job.
      */
 
     public String getApplicationId() {
@@ -82,10 +82,10 @@ public class ExportJobResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The unique ID of the application to which the job applies.
+     * The unique ID of the application associated with the export job.
      * 
      * @param applicationId
-     *        The unique ID of the application to which the job applies.
+     *        The unique ID of the application associated with the export job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

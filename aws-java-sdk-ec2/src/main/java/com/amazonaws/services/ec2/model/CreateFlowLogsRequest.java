@@ -29,21 +29,21 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * The ARN for the IAM role that's used to post flow logs to a log group.
      * </p>
      */
     private String deliverLogsPermissionArn;
     /**
      * <p>
-     * The name of the CloudWatch log group.
+     * The name of the log group.
      * </p>
      */
     private String logGroupName;
@@ -68,16 +68,45 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String trafficType;
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is to be published. Flow log data can be published
+     * to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     * <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.
+     * </p>
+     * <p>
+     * Default: <code>cloud-watch-logs</code>
+     * </p>
+     */
+    private String logDestinationType;
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is to be published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value
+     * specified for LogDestinationType.
+     * </p>
+     * <p>
+     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
+     * of the CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * </p>
+     */
+    private String logDestination;
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      *        Idempotency</a>.
@@ -89,12 +118,12 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      *         Idempotency</a>.
@@ -106,13 +135,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      *        Idempotency</a>.
@@ -126,11 +155,11 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * The ARN for the IAM role that's used to post flow logs to a log group.
      * </p>
      * 
      * @param deliverLogsPermissionArn
-     *        The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     *        The ARN for the IAM role that's used to post flow logs to a log group.
      */
 
     public void setDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
@@ -139,10 +168,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * The ARN for the IAM role that's used to post flow logs to a log group.
      * </p>
      * 
-     * @return The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * @return The ARN for the IAM role that's used to post flow logs to a log group.
      */
 
     public String getDeliverLogsPermissionArn() {
@@ -151,11 +180,11 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * The ARN for the IAM role that's used to post flow logs to a log group.
      * </p>
      * 
      * @param deliverLogsPermissionArn
-     *        The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     *        The ARN for the IAM role that's used to post flow logs to a log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +195,11 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The name of the CloudWatch log group.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the CloudWatch log group.
+     *        The name of the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -179,10 +208,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The name of the CloudWatch log group.
+     * The name of the log group.
      * </p>
      * 
-     * @return The name of the CloudWatch log group.
+     * @return The name of the log group.
      */
 
     public String getLogGroupName() {
@@ -191,11 +220,11 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The name of the CloudWatch log group.
+     * The name of the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the CloudWatch log group.
+     *        The name of the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,6 +473,234 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is to be published. Flow log data can be published
+     * to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     * <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.
+     * </p>
+     * <p>
+     * Default: <code>cloud-watch-logs</code>
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is to be published. Flow log data can be
+     *        published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     *        <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.</p>
+     *        <p>
+     *        Default: <code>cloud-watch-logs</code>
+     * @see LogDestinationType
+     */
+
+    public void setLogDestinationType(String logDestinationType) {
+        this.logDestinationType = logDestinationType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is to be published. Flow log data can be published
+     * to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     * <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.
+     * </p>
+     * <p>
+     * Default: <code>cloud-watch-logs</code>
+     * </p>
+     * 
+     * @return Specifies the type of destination to which the flow log data is to be published. Flow log data can be
+     *         published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     *         <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.</p>
+     *         <p>
+     *         Default: <code>cloud-watch-logs</code>
+     * @see LogDestinationType
+     */
+
+    public String getLogDestinationType() {
+        return this.logDestinationType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is to be published. Flow log data can be published
+     * to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     * <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.
+     * </p>
+     * <p>
+     * Default: <code>cloud-watch-logs</code>
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is to be published. Flow log data can be
+     *        published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     *        <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.</p>
+     *        <p>
+     *        Default: <code>cloud-watch-logs</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogDestinationType
+     */
+
+    public CreateFlowLogsRequest withLogDestinationType(String logDestinationType) {
+        setLogDestinationType(logDestinationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is to be published. Flow log data can be published
+     * to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     * <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.
+     * </p>
+     * <p>
+     * Default: <code>cloud-watch-logs</code>
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is to be published. Flow log data can be
+     *        published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     *        <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.</p>
+     *        <p>
+     *        Default: <code>cloud-watch-logs</code>
+     * @see LogDestinationType
+     */
+
+    public void setLogDestinationType(LogDestinationType logDestinationType) {
+        withLogDestinationType(logDestinationType);
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is to be published. Flow log data can be published
+     * to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     * <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.
+     * </p>
+     * <p>
+     * Default: <code>cloud-watch-logs</code>
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is to be published. Flow log data can be
+     *        published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify
+     *        <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3, specify <code>s3</code>.</p>
+     *        <p>
+     *        Default: <code>cloud-watch-logs</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogDestinationType
+     */
+
+    public CreateFlowLogsRequest withLogDestinationType(LogDestinationType logDestinationType) {
+        this.logDestinationType = logDestinationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is to be published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value
+     * specified for LogDestinationType.
+     * </p>
+     * <p>
+     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
+     * of the CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * </p>
+     * 
+     * @param logDestination
+     *        Specifies the destination to which the flow log data is to be published. Flow log data can be published to
+     *        an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the
+     *        value specified for LogDestinationType.</p>
+     *        <p>
+     *        If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
+     *        (ARN) of the CloudWatch Logs log group.
+     *        </p>
+     *        <p>
+     *        If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     *        subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     *        <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in
+     *        a bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     */
+
+    public void setLogDestination(String logDestination) {
+        this.logDestination = logDestination;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is to be published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value
+     * specified for LogDestinationType.
+     * </p>
+     * <p>
+     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
+     * of the CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * </p>
+     * 
+     * @return Specifies the destination to which the flow log data is to be published. Flow log data can be published
+     *         to an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on
+     *         the value specified for LogDestinationType.</p>
+     *         <p>
+     *         If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
+     *         (ARN) of the CloudWatch Logs log group.
+     *         </p>
+     *         <p>
+     *         If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     *         subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     *         <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code>
+     *         in a bucket named <code>my-bucket</code>, use the following ARN:
+     *         <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     */
+
+    public String getLogDestination() {
+        return this.logDestination;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is to be published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value
+     * specified for LogDestinationType.
+     * </p>
+     * <p>
+     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
+     * of the CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * </p>
+     * 
+     * @param logDestination
+     *        Specifies the destination to which the flow log data is to be published. Flow log data can be published to
+     *        an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the
+     *        value specified for LogDestinationType.</p>
+     *        <p>
+     *        If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
+     *        (ARN) of the CloudWatch Logs log group.
+     *        </p>
+     *        <p>
+     *        If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
+     *        subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
+     *        <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in
+     *        a bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsRequest withLogDestination(String logDestination) {
+        setLogDestination(logDestination);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -476,7 +733,11 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getTrafficType() != null)
-            sb.append("TrafficType: ").append(getTrafficType());
+            sb.append("TrafficType: ").append(getTrafficType()).append(",");
+        if (getLogDestinationType() != null)
+            sb.append("LogDestinationType: ").append(getLogDestinationType()).append(",");
+        if (getLogDestination() != null)
+            sb.append("LogDestination: ").append(getLogDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -515,6 +776,14 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getTrafficType() != null && other.getTrafficType().equals(this.getTrafficType()) == false)
             return false;
+        if (other.getLogDestinationType() == null ^ this.getLogDestinationType() == null)
+            return false;
+        if (other.getLogDestinationType() != null && other.getLogDestinationType().equals(this.getLogDestinationType()) == false)
+            return false;
+        if (other.getLogDestination() == null ^ this.getLogDestination() == null)
+            return false;
+        if (other.getLogDestination() != null && other.getLogDestination().equals(this.getLogDestination()) == false)
+            return false;
         return true;
     }
 
@@ -529,6 +798,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getResourceIds() == null) ? 0 : getResourceIds().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
+        hashCode = prime * hashCode + ((getLogDestinationType() == null) ? 0 : getLogDestinationType().hashCode());
+        hashCode = prime * hashCode + ((getLogDestination() == null) ? 0 : getLogDestination().hashCode());
         return hashCode;
     }
 

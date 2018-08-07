@@ -57,6 +57,10 @@ public class SendUsersMessageRequestJsonUnmarshaller implements Unmarshaller<Sen
                     context.nextToken();
                     sendUsersMessageRequest.setMessageConfiguration(DirectMessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TraceId", targetDepth)) {
+                    context.nextToken();
+                    sendUsersMessageRequest.setTraceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Users", targetDepth)) {
                     context.nextToken();
                     sendUsersMessageRequest.setUsers(new MapUnmarshaller<String, EndpointSendConfiguration>(context.getUnmarshaller(String.class),

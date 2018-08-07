@@ -14,19 +14,15 @@
  */
 package com.amazonaws.internal;
 
-import com.amazonaws.util.VersionInfoUtils;
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
-import static org.hamcrest.CoreMatchers.allOf;
-import static org.hamcrest.Matchers.hasEntry;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.argThat;
 import static org.mockito.Matchers.eq;
 
 import java.io.IOException;
@@ -35,7 +31,6 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hamcrest.Matcher;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -54,8 +49,6 @@ import utils.http.SocketUtils;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EC2CredentialsUtilsTest {
-
-    private static final String USER_AGENT = String.format("aws-sdk-java/%s", VersionInfoUtils.getVersion());
 
     @ClassRule
     public static WireMockRule mockServer = new WireMockRule(0);
@@ -209,66 +202,6 @@ public class EC2CredentialsUtilsTest {
             fail("Expected an AmazonServiceException");
         } catch (AmazonServiceException ase) {
             Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(eq(endpoint), any(Map.class));
-        }
-    }
-
-    /**
-     * When readResource is called,
-     * the SDK User-Agent should be added.
-     */
-    @Test
-    @SuppressWarnings("unchecked")
-    public void readResouce_AddsSDKUserAgent() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class))).thenThrow(new IOException());
-
-        try {
-            new EC2CredentialsUtils(mockConnection).readResource(endpoint);
-            fail("Expected an IOexception");
-        } catch (IOException exception) {
-            Matcher<Map<? extends String, ? extends String>> expectedHeaders = hasEntry("User-Agent", USER_AGENT);
-            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(eq(endpoint), (Map<String, String>) argThat(expectedHeaders));
-        }
-    }
-
-    /**
-     * When readResource is called with custom retry policy,
-     * the SDK User-Agent should be added.
-     */
-    @Test
-    @SuppressWarnings("unchecked")
-    public void readResouceWithCustomRetryPolicy_AddsSDKUserAgent() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class))).thenThrow(new IOException());
-
-        try {
-            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy, null);
-            fail("Expected an IOexception");
-        } catch (IOException exception) {
-            Matcher<Map<? extends String, ? extends String>> expectedHeaders = hasEntry("User-Agent", USER_AGENT);
-            Mockito.verify(mockConnection, Mockito.times(CustomRetryPolicy.MAX_RETRIES + 1)).connectToEndpoint(eq(endpoint), (Map<String, String>) argThat(expectedHeaders));
-        }
-    }
-
-    /**
-     * When readResource is called with custom retry policy
-     * and additional headers, the SDK User-Agent should be
-     * added.
-     */
-    @Test
-    @SuppressWarnings("unchecked")
-    public void readResouceWithCustomRetryPolicyAndHeaders_AddsSDKUserAgent() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class))).thenThrow(new IOException());
-
-        try {
-            Map<String, String> headers = new HashMap<String, String>();
-            headers.put("Foo","Bar");
-            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy, headers);
-            fail("Expected an IOexception");
-        } catch (IOException exception) {
-            Matcher<Map<? extends String, ? extends String>> expectedHeaders = allOf(
-                hasEntry("User-Agent", USER_AGENT),
-                hasEntry("Foo", "Bar")
-            );
-            Mockito.verify(mockConnection, Mockito.times(CustomRetryPolicy.MAX_RETRIES + 1)).connectToEndpoint(eq(endpoint), (Map<String, String>) argThat(expectedHeaders));
         }
     }
 

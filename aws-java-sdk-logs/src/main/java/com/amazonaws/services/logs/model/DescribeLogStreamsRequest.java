@@ -36,7 +36,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * The prefix to match.
      * </p>
      * <p>
-     * iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      */
     private String logStreamNamePrefix;
@@ -140,13 +140,13 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * The prefix to match.
      * </p>
      * <p>
-     * iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      * 
      * @param logStreamNamePrefix
      *        The prefix to match.</p>
      *        <p>
-     *        iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     *        If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      */
 
     public void setLogStreamNamePrefix(String logStreamNamePrefix) {
@@ -158,12 +158,12 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * The prefix to match.
      * </p>
      * <p>
-     * iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      * 
      * @return The prefix to match.</p>
      *         <p>
-     *         iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     *         If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      */
 
     public String getLogStreamNamePrefix() {
@@ -175,13 +175,13 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * The prefix to match.
      * </p>
      * <p>
-     * iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     * If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * </p>
      * 
      * @param logStreamNamePrefix
      *        The prefix to match.</p>
      *        <p>
-     *        iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+     *        If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

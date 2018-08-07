@@ -1161,8 +1161,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their time stamp (the time the event occurred,
-     * expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC).
+     * The log events in the batch must be in chronological ordered by their time stamp. The time stamp is the time the
+     * event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for
+     * PowerShell and the AWS SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example,
+     * 2017-09-15T13:45:30.)
      * </p>
      * </li>
      * <li>
@@ -1176,6 +1178,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If a call to PutLogEvents returns "UnrecognizedClientException" the most likely cause is an invalid AWS access
+     * key ID or secret key.
+     * </p>
      * 
      * @param putLogEventsRequest
      * @return A Java Future containing the result of the PutLogEvents operation returned by the service.
@@ -1217,8 +1223,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their time stamp (the time the event occurred,
-     * expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC).
+     * The log events in the batch must be in chronological ordered by their time stamp. The time stamp is the time the
+     * event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for
+     * PowerShell and the AWS SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example,
+     * 2017-09-15T13:45:30.)
      * </p>
      * </li>
      * <li>
@@ -1232,6 +1240,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If a call to PutLogEvents returns "UnrecognizedClientException" the most likely cause is an invalid AWS access
+     * key ID or secret key.
+     * </p>
      * 
      * @param putLogEventsRequest
      * @param asyncHandler
@@ -1288,7 +1300,7 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a resource policy allowing other AWS services to put log events to this account, such as
-     * Amazon Route 53. An account can have up to 50 resource policies per region.
+     * Amazon Route 53. An account can have up to 10 resource policies per region.
      * </p>
      * 
      * @param putResourcePolicyRequest
@@ -1302,7 +1314,7 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a resource policy allowing other AWS services to put log events to this account, such as
-     * Amazon Route 53. An account can have up to 50 resource policies per region.
+     * Amazon Route 53. An account can have up to 10 resource policies per region.
      * </p>
      * 
      * @param putResourcePolicyRequest

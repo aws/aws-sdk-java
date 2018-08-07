@@ -34,7 +34,7 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
      */
     private String action;
-    /** The message body of the notification, the email body or the text message. */
+    /** The message body of the notification. */
     private String body;
     /**
      * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
@@ -157,10 +157,10 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The message body of the notification.
      */
 
     public void setBody(String body) {
@@ -168,9 +168,9 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
-     * @return The message body of the notification, the email body or the text message.
+     * @return The message body of the notification.
      */
 
     public String getBody() {
@@ -178,10 +178,10 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The message body of the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

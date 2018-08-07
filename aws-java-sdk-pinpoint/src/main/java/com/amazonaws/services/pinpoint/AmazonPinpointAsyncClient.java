@@ -1991,6 +1991,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest request) {
+
+        return putEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventsResult> putEventsAsync(final PutEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler) {
+        final PutEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEventsResult>() {
+            @Override
+            public PutEventsResult call() throws Exception {
+                PutEventsResult result = null;
+
+                try {
+                    result = executePutEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveAttributesResult> removeAttributesAsync(RemoveAttributesRequest request) {
 
         return removeAttributesAsync(request, null);

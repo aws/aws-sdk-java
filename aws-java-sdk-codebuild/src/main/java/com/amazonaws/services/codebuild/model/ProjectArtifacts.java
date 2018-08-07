@@ -244,6 +244,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     private String packaging;
     /**
      * <p>
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     */
+    private Boolean overrideArtifactName;
+    /**
+     * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
      * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
      * </p>
@@ -1986,6 +1994,74 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @param overrideArtifactName
+     *        If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *        specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     *        example, you can append a date and time to your artifact name so that it is always unique.
+     */
+
+    public void setOverrideArtifactName(Boolean overrideArtifactName) {
+        this.overrideArtifactName = overrideArtifactName;
+    }
+
+    /**
+     * <p>
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @return If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *         specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     *         example, you can append a date and time to your artifact name so that it is always unique.
+     */
+
+    public Boolean getOverrideArtifactName() {
+        return this.overrideArtifactName;
+    }
+
+    /**
+     * <p>
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @param overrideArtifactName
+     *        If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *        specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     *        example, you can append a date and time to your artifact name so that it is always unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectArtifacts withOverrideArtifactName(Boolean overrideArtifactName) {
+        setOverrideArtifactName(overrideArtifactName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @return If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *         specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
+     *         example, you can append a date and time to your artifact name so that it is always unique.
+     */
+
+    public Boolean isOverrideArtifactName() {
+        return this.overrideArtifactName;
+    }
+
+    /**
+     * <p>
      * Set to true if you do not want your output artifacts encrypted. This option is only valid if your artifacts type
      * is Amazon S3. If this is set with another artifacts type, an invalidInputException will be thrown.
      * </p>
@@ -2071,6 +2147,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
             sb.append("Name: ").append(getName()).append(",");
         if (getPackaging() != null)
             sb.append("Packaging: ").append(getPackaging()).append(",");
+        if (getOverrideArtifactName() != null)
+            sb.append("OverrideArtifactName: ").append(getOverrideArtifactName()).append(",");
         if (getEncryptionDisabled() != null)
             sb.append("EncryptionDisabled: ").append(getEncryptionDisabled());
         sb.append("}");
@@ -2111,6 +2189,10 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getPackaging() != null && other.getPackaging().equals(this.getPackaging()) == false)
             return false;
+        if (other.getOverrideArtifactName() == null ^ this.getOverrideArtifactName() == null)
+            return false;
+        if (other.getOverrideArtifactName() != null && other.getOverrideArtifactName().equals(this.getOverrideArtifactName()) == false)
+            return false;
         if (other.getEncryptionDisabled() == null ^ this.getEncryptionDisabled() == null)
             return false;
         if (other.getEncryptionDisabled() != null && other.getEncryptionDisabled().equals(this.getEncryptionDisabled()) == false)
@@ -2129,6 +2211,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getNamespaceType() == null) ? 0 : getNamespaceType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPackaging() == null) ? 0 : getPackaging().hashCode());
+        hashCode = prime * hashCode + ((getOverrideArtifactName() == null) ? 0 : getOverrideArtifactName().hashCode());
         hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
         return hashCode;
     }

@@ -29,27 +29,27 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      */
     private String destinationCidrBlock;
     /**
      * <p>
-     * The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      */
     private String destinationIpv6CidrBlock;
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      */
     private String egressOnlyInternetGatewayId;
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway.
+     * The ID of an internet gateway or virtual private gateway.
      * </p>
      */
     private String gatewayId;
@@ -86,13 +86,13 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of
-     *        an existing route in the table.
+     *        The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR
+     *        of an existing route in the table.
      */
 
     public void setDestinationCidrBlock(String destinationCidrBlock) {
@@ -101,12 +101,12 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      * 
-     * @return The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of
-     *         an existing route in the table.
+     * @return The IPv4 CIDR address block used for the destination match. The value that you provide must match the
+     *         CIDR of an existing route in the table.
      */
 
     public String getDestinationCidrBlock() {
@@ -115,13 +115,13 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      * 
      * @param destinationCidrBlock
-     *        The IPv4 CIDR address block used for the destination match. The value you provide must match the CIDR of
-     *        an existing route in the table.
+     *        The IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR
+     *        of an existing route in the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,13 +132,13 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      * 
      * @param destinationIpv6CidrBlock
-     *        The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of
-     *        an existing route in the table.
+     *        The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR
+     *        of an existing route in the table.
      */
 
     public void setDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
@@ -147,12 +147,12 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      * 
-     * @return The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of
-     *         an existing route in the table.
+     * @return The IPv6 CIDR address block used for the destination match. The value that you provide must match the
+     *         CIDR of an existing route in the table.
      */
 
     public String getDestinationIpv6CidrBlock() {
@@ -161,13 +161,13 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of an
+     * The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an
      * existing route in the table.
      * </p>
      * 
      * @param destinationIpv6CidrBlock
-     *        The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of
-     *        an existing route in the table.
+     *        The IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR
+     *        of an existing route in the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     *        [IPv6 traffic only] The ID of an egress-only internet gateway.
      */
 
     public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
@@ -191,10 +191,10 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      * 
-     * @return [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * @return [IPv6 traffic only] The ID of an egress-only internet gateway.
      */
 
     public String getEgressOnlyInternetGatewayId() {
@@ -203,11 +203,11 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     * [IPv6 traffic only] The ID of an egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        [IPv6 traffic only] The ID of an egress-only Internet gateway.
+     *        [IPv6 traffic only] The ID of an egress-only internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway.
+     * The ID of an internet gateway or virtual private gateway.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway.
+     *        The ID of an internet gateway or virtual private gateway.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -231,10 +231,10 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway.
+     * The ID of an internet gateway or virtual private gateway.
      * </p>
      * 
-     * @return The ID of an Internet gateway or virtual private gateway.
+     * @return The ID of an internet gateway or virtual private gateway.
      */
 
     public String getGatewayId() {
@@ -243,11 +243,11 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of an Internet gateway or virtual private gateway.
+     * The ID of an internet gateway or virtual private gateway.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway.
+     *        The ID of an internet gateway or virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

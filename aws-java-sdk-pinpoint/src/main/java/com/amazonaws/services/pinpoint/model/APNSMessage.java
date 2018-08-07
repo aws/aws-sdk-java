@@ -39,7 +39,7 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.
      */
     private Integer badge;
-    /** The message body of the notification, the email body or the text message. */
+    /** The message body of the notification. */
     private String body;
     /**
      * Provide this key with a string value that represents the notification's type. This value corresponds to the value
@@ -255,10 +255,10 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The message body of the notification.
      */
 
     public void setBody(String body) {
@@ -266,9 +266,9 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
-     * @return The message body of the notification, the email body or the text message.
+     * @return The message body of the notification.
      */
 
     public String getBody() {
@@ -276,10 +276,10 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The message body of the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

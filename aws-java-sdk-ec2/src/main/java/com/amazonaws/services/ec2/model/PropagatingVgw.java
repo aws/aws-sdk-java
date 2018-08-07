@@ -28,18 +28,18 @@ public class PropagatingVgw implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the virtual private gateway (VGW).
+     * The ID of the virtual private gateway.
      * </p>
      */
     private String gatewayId;
 
     /**
      * <p>
-     * The ID of the virtual private gateway (VGW).
+     * The ID of the virtual private gateway.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of the virtual private gateway (VGW).
+     *        The ID of the virtual private gateway.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -48,10 +48,10 @@ public class PropagatingVgw implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the virtual private gateway (VGW).
+     * The ID of the virtual private gateway.
      * </p>
      * 
-     * @return The ID of the virtual private gateway (VGW).
+     * @return The ID of the virtual private gateway.
      */
 
     public String getGatewayId() {
@@ -60,11 +60,11 @@ public class PropagatingVgw implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the virtual private gateway (VGW).
+     * The ID of the virtual private gateway.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of the virtual private gateway (VGW).
+     *        The ID of the virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
