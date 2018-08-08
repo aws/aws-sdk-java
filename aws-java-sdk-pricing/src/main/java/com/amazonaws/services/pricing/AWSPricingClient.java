@@ -58,7 +58,7 @@ import com.amazonaws.services.pricing.model.transform.*;
  * </p>
  * <p>
  * Use <code>GetServices</code> without a service code to retrieve the service codes for all AWS services, then
- * <code>GetServices</code> with a service code to retreive the attribute names for that service. After you have the
+ * <code>GetServices</code> with a service code to retrieve the attribute names for that service. After you have the
  * service code and attribute names, you can use <code>GetAttributeValues</code> to see what values are available for an
  * attribute. With the service code and an attribute name and value, you can use <code>GetProducts</code> to find
  * specific products that you're interested in, such as an <code>AmazonEC2</code> instance, with a
@@ -355,7 +355,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

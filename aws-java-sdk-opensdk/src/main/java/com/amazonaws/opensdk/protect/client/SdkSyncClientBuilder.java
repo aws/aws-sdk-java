@@ -57,7 +57,7 @@ import java.util.List;
 public abstract class SdkSyncClientBuilder<Subclass extends SdkSyncClientBuilder, TypeToBuild> {
 
     private static final String USER_AGENT_PREFIX = "aws-apig-java";
-    private static final String UA_NAME_VERSION_SEPERATOR = "/";
+    private static final String UA_NAME_VERSION_SEPARATOR = "/";
 
     private AWSCredentialsProvider iamCredentials;
     private String endpoint;
@@ -230,7 +230,7 @@ public abstract class SdkSyncClientBuilder<Subclass extends SdkSyncClientBuilder
             if (apiKey != null) {
                 config.addHeader("x-api-key", apiKey);
             }
-            config.setUserAgentPrefix(USER_AGENT_PREFIX + UA_NAME_VERSION_SEPERATOR + VersionInfoUtils.getVersion());
+            config.setUserAgentPrefix(USER_AGENT_PREFIX + UA_NAME_VERSION_SEPARATOR + VersionInfoUtils.getVersion());
             return config;
         }
 

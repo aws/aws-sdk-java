@@ -1475,7 +1475,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

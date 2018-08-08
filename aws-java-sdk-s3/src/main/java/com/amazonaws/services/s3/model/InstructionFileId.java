@@ -23,7 +23,7 @@ import com.amazonaws.annotation.Immutable;
 public final class InstructionFileId extends S3ObjectId {
     public static final String DEFAULT_INSTRUCTION_FILE_SUFFIX = "instruction";
     @Deprecated
-    public static final String DEFAULT_INSTURCTION_FILE_SUFFIX = DEFAULT_INSTRUCTION_FILE_SUFFIX;
+    public static final String DEFAULT_INSTRUCTION_FILE_SUFFIX = DEFAULT_INSTRUCTION_FILE_SUFFIX;
     public static final String DOT = ".";
 
     /**

@@ -1431,7 +1431,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidPluginNameException
      *         The plugin name is not valid.
      * @throws InvocationDoesNotExistException
-     *         The command ID and instance ID you specified did not match any invocations. Verify the command ID adn the
+     *         The command ID and instance ID you specified did not match any invocations. Verify the command ID and the
      *         instance ID and try again.
      * @sample AWSSimpleSystemsManagement.GetCommandInvocation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation" target="_top">AWS API

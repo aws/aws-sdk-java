@@ -63,7 +63,7 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.Date startTime;
     /**
      * <p>
-     * The date and time specifiying the end of the requested time series data. The value specified is <i>exclusive</i>
+     * The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>
      * - data points less than (but not equal to) <code>EndTime</code> will be returned.
      * </p>
      * <p>
@@ -406,7 +406,7 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The date and time specifiying the end of the requested time series data. The value specified is <i>exclusive</i>
+     * The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>
      * - data points less than (but not equal to) <code>EndTime</code> will be returned.
      * </p>
      * <p>
@@ -414,7 +414,7 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param endTime
-     *        The date and time specifiying the end of the requested time series data. The value specified is
+     *        The date and time specifying the end of the requested time series data. The value specified is
      *        <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
      *        <p>
      *        The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.
@@ -426,14 +426,14 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The date and time specifiying the end of the requested time series data. The value specified is <i>exclusive</i>
+     * The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>
      * - data points less than (but not equal to) <code>EndTime</code> will be returned.
      * </p>
      * <p>
      * The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.
      * </p>
      * 
-     * @return The date and time specifiying the end of the requested time series data. The value specified is
+     * @return The date and time specifying the end of the requested time series data. The value specified is
      *         <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
      *         <p>
      *         The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.
@@ -445,7 +445,7 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The date and time specifiying the end of the requested time series data. The value specified is <i>exclusive</i>
+     * The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>
      * - data points less than (but not equal to) <code>EndTime</code> will be returned.
      * </p>
      * <p>
@@ -453,7 +453,7 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param endTime
-     *        The date and time specifiying the end of the requested time series data. The value specified is
+     *        The date and time specifying the end of the requested time series data. The value specified is
      *        <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
      *        <p>
      *        The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.

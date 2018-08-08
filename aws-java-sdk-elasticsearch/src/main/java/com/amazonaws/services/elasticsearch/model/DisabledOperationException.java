@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An error occured because the client wanted to access a not supported operation. Gives http status code of 409.
+ * An error occurred because the client wanted to access a not supported operation. Gives http status code of 409.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

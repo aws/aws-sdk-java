@@ -52,7 +52,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      * <li>
      * <p>
      * To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this
-     * stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack
+     * stack, even triggers you've specified before (for example, when creating the stack or during a previous stack
      * update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.
      * </p>
      * </li>
@@ -109,7 +109,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      * <li>
      * <p>
      * To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this
-     * stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack
+     * stack, even triggers you've specified before (for example, when creating the stack or during a previous stack
      * update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.
      * </p>
      * </li>
@@ -139,7 +139,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used
-     *         for this stack, even triggers you've specifed before (for example, when creating the stack or during a
+     *         for this stack, even triggers you've specified before (for example, when creating the stack or during a
      *         previous stack update). Any triggers that you don't include in the updated list of triggers are no longer
      *         applied to the stack.
      *         </p>
@@ -179,7 +179,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      * <li>
      * <p>
      * To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this
-     * stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack
+     * stack, even triggers you've specified before (for example, when creating the stack or during a previous stack
      * update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.
      * </p>
      * </li>
@@ -210,7 +210,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used
-     *        for this stack, even triggers you've specifed before (for example, when creating the stack or during a
+     *        for this stack, even triggers you've specified before (for example, when creating the stack or during a
      *        previous stack update). Any triggers that you don't include in the updated list of triggers are no longer
      *        applied to the stack.
      *        </p>
@@ -252,7 +252,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      * <li>
      * <p>
      * To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this
-     * stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack
+     * stack, even triggers you've specified before (for example, when creating the stack or during a previous stack
      * update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.
      * </p>
      * </li>
@@ -288,7 +288,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used
-     *        for this stack, even triggers you've specifed before (for example, when creating the stack or during a
+     *        for this stack, even triggers you've specified before (for example, when creating the stack or during a
      *        previous stack update). Any triggers that you don't include in the updated list of triggers are no longer
      *        applied to the stack.
      *        </p>
@@ -332,7 +332,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      * <li>
      * <p>
      * To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this
-     * stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack
+     * stack, even triggers you've specified before (for example, when creating the stack or during a previous stack
      * update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.
      * </p>
      * </li>
@@ -363,7 +363,7 @@ public class RollbackConfiguration implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used
-     *        for this stack, even triggers you've specifed before (for example, when creating the stack or during a
+     *        for this stack, even triggers you've specified before (for example, when creating the stack or during a
      *        previous stack update). Any triggers that you don't include in the updated list of triggers are no longer
      *        applied to the stack.
      *        </p>

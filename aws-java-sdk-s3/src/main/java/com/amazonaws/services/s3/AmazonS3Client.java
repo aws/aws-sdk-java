@@ -2280,7 +2280,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         getBucketLifecycleConfigurationRequest = beforeClientExecution(getBucketLifecycleConfigurationRequest);
         rejectNull(getBucketLifecycleConfigurationRequest, "The request object pamameter getBucketLifecycleConfigurationRequest must be specified.");
         String bucketName = getBucketLifecycleConfigurationRequest.getBucketName();
-        rejectNull(bucketName, "The bucket name must be specifed when retrieving the bucket lifecycle configuration.");
+        rejectNull(bucketName, "The bucket name must be specified when retrieving the bucket lifecycle configuration.");
 
         Request<GetBucketLifecycleConfigurationRequest> request = createRequest(bucketName, null, getBucketLifecycleConfigurationRequest, HttpMethodName.GET);
         request.addParameter("lifecycle", null);
@@ -2451,7 +2451,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public BucketTaggingConfiguration getBucketTaggingConfiguration(GetBucketTaggingConfigurationRequest getBucketTaggingConfigurationRequest) {
         getBucketTaggingConfigurationRequest = beforeClientExecution(getBucketTaggingConfigurationRequest);
-        rejectNull(getBucketTaggingConfigurationRequest, "The request object parameter getBucketTaggingConfigurationRequest must be specifed.");
+        rejectNull(getBucketTaggingConfigurationRequest, "The request object parameter getBucketTaggingConfigurationRequest must be specified.");
         String bucketName = getBucketTaggingConfigurationRequest.getBucketName();
         rejectNull(bucketName, "The bucket name must be specified when retrieving the bucket tagging configuration.");
 
@@ -2647,7 +2647,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public BucketLoggingConfiguration getBucketLoggingConfiguration(GetBucketLoggingConfigurationRequest getBucketLoggingConfigurationRequest)
             throws SdkClientException, AmazonServiceException {
         getBucketLoggingConfigurationRequest = beforeClientExecution(getBucketLoggingConfigurationRequest);
-        rejectNull(getBucketLoggingConfigurationRequest, "The request object parameter getBucketLoggingConfigurationRequest must be specifed.");
+        rejectNull(getBucketLoggingConfigurationRequest, "The request object parameter getBucketLoggingConfigurationRequest must be specified.");
         String bucketName = getBucketLoggingConfigurationRequest.getBucketName();
         rejectNull(bucketName,
                 "The bucket name parameter must be specified when requesting a bucket's logging status");
@@ -3674,7 +3674,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
-     * Has signer been explicitly overriden in the configuration?
+     * Has signer been explicitly overridden in the configuration?
      */
     private boolean isSignerOverridden() {
         return clientConfiguration != null

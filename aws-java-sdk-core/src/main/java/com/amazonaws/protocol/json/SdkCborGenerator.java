@@ -32,7 +32,7 @@ import static com.amazonaws.SDKGlobalConfiguration.AWS_CBOR_DISABLE_SYSTEM_PROPE
 @SdkInternalApi
 class SdkCborGenerator extends SdkJsonGenerator {
 
-    private static final int CBOR_TAG_TIMESTAP = 1;
+    private static final int CBOR_TAG_TIMESTAMP = 1;
 
     public SdkCborGenerator(JsonFactory factory, String contentType) {
         super(factory, contentType);
@@ -52,7 +52,7 @@ class SdkCborGenerator extends SdkJsonGenerator {
 
         CBORGenerator generator = (CBORGenerator) getGenerator();
         try {
-            generator.writeTag(CBOR_TAG_TIMESTAP);
+            generator.writeTag(CBOR_TAG_TIMESTAMP);
             generator.writeNumber(date.getTime());
         } catch (IOException e) {
             throw new JsonGenerationException(e);

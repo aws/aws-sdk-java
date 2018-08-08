@@ -336,7 +336,7 @@ public class ShapeModel extends DocumentationModel {
         final Map<String, MemberModel> shapeMembers = new HashMap<String, MemberModel>();
 
         // Creating a map of shape's members. This map is used below when
-        // fetching the details of a memeber.
+        // fetching the details of a member.
         final List<MemberModel> memberModels = getMembers();
         if (memberModels != null) {
             for (MemberModel model : memberModels) {

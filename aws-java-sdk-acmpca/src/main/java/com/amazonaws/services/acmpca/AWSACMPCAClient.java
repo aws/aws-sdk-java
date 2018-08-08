@@ -328,7 +328,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
      * restorable for 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
      * operation returns the time remaining in the restoration window of a Private CA in the <code>DELETED</code> state.
-     * To restore an eligable CA, call the <a>RestoreCertificateAuthority</a> operation.
+     * To restore an eligible CA, call the <a>RestoreCertificateAuthority</a> operation.
      * </p>
      * 
      * @param deleteCertificateAuthorityRequest
@@ -1348,7 +1348,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

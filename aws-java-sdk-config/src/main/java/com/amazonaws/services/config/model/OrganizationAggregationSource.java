@@ -30,7 +30,7 @@ public class OrganizationAggregationSource implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     * ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      * </p>
      */
     private String roleArn;
@@ -49,11 +49,11 @@ public class OrganizationAggregationSource implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     * ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      * </p>
      * 
      * @param roleArn
-     *        ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     *        ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      */
 
     public void setRoleArn(String roleArn) {
@@ -62,10 +62,10 @@ public class OrganizationAggregationSource implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     * ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      * </p>
      * 
-     * @return ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     * @return ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      */
 
     public String getRoleArn() {
@@ -74,11 +74,11 @@ public class OrganizationAggregationSource implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     * ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      * </p>
      * 
      * @param roleArn
-     *        ARN of the IAM role used to retreive AWS Organization details associated with the aggregator account.
+     *        ARN of the IAM role used to retrieve AWS Organization details associated with the aggregator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

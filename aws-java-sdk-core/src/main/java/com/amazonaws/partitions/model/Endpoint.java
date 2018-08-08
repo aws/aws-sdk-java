@@ -165,7 +165,7 @@ public class Endpoint {
     }
 
     /**
-     * A convienient methods that returns true if the endpoint support HTTPS
+     * A convenient methods that returns true if the endpoint support HTTPS
      * scheme. Returns false otherwise.
      */
     public boolean hasHttpsSupport() {
@@ -173,7 +173,7 @@ public class Endpoint {
     }
 
     /**
-     * A convienient methods that returns true if the endpoint support HTTP
+     * A convenient methods that returns true if the endpoint support HTTP
      * scheme. Returns false otherwise.
      */
     public boolean hasHttpSupport() {

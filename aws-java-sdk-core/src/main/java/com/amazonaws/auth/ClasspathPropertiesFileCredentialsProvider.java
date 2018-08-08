@@ -24,7 +24,7 @@ import com.amazonaws.SdkClientException;
  * credentials from a properties file on the classpath. The default
  * constructor creates a credentials provider that loads the credentials
  * from a file named <code>AwsCredentials.properties</code> on the
- * classpath, but which file to use from the classpath can also be controled
+ * classpath, but which file to use from the classpath can also be controlled
  * through the one-argument constructor.
  * <p>
  * The AWS access key ID is expected to be in the <code>accessKey</code>

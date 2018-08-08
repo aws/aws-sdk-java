@@ -38,7 +38,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
      * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
-     * compressed archive that contains the ouput of the operation.
+     * compressed archive that contains the output of the operation.
      * </p>
      */
     private String s3Uri;
@@ -52,7 +52,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
      * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
-     * compressed archive that contains the ouput of the operation.
+     * compressed archive that contains the output of the operation.
      * </p>
      * 
      * @param s3Uri
@@ -63,7 +63,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        When the topic detection job is finished, the service creates an output file in a directory specific to
      *        the job. The <code>S3Uri</code> field contains the location of the output file, called
-     *        <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.
+     *        <code>output.tar.gz</code>. It is a compressed archive that contains the output of the operation.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -79,7 +79,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
      * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
-     * compressed archive that contains the ouput of the operation.
+     * compressed archive that contains the output of the operation.
      * </p>
      * 
      * @return When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the
@@ -89,7 +89,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         When the topic detection job is finished, the service creates an output file in a directory specific to
      *         the job. The <code>S3Uri</code> field contains the location of the output file, called
-     *         <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.
+     *         <code>output.tar.gz</code>. It is a compressed archive that contains the output of the operation.
      */
 
     public String getS3Uri() {
@@ -105,7 +105,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
      * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
-     * compressed archive that contains the ouput of the operation.
+     * compressed archive that contains the output of the operation.
      * </p>
      * 
      * @param s3Uri
@@ -116,7 +116,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        When the topic detection job is finished, the service creates an output file in a directory specific to
      *        the job. The <code>S3Uri</code> field contains the location of the output file, called
-     *        <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.
+     *        <code>output.tar.gz</code>. It is a compressed archive that contains the output of the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

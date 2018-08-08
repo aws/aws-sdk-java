@@ -31,7 +31,7 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
      * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
      * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
-     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * parameter is specified, <code>DbUser</code> is added to the listed groups for any sessions created using these
      * credentials.
      * </p>
      */
@@ -55,7 +55,7 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
      * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
      * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
-     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * parameter is specified, <code>DbUser</code> is added to the listed groups for any sessions created using these
      * credentials.
      * </p>
      * 
@@ -63,7 +63,7 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
      *        A database user name that is authorized to log on to the database <code>DbName</code> using the password
      *        <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same
      *        database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the
-     *        <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any
+     *        <code>DbGroups</code> parameter is specified, <code>DbUser</code> is added to the listed groups for any
      *        sessions created using these credentials.
      */
 
@@ -76,14 +76,14 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
      * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
      * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
-     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * parameter is specified, <code>DbUser</code> is added to the listed groups for any sessions created using these
      * credentials.
      * </p>
      * 
      * @return A database user name that is authorized to log on to the database <code>DbName</code> using the password
      *         <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same
      *         database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the
-     *         <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any
+     *         <code>DbGroups</code> parameter is specified, <code>DbUser</code> is added to the listed groups for any
      *         sessions created using these credentials.
      */
 
@@ -96,7 +96,7 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
      * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
      * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
-     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * parameter is specified, <code>DbUser</code> is added to the listed groups for any sessions created using these
      * credentials.
      * </p>
      * 
@@ -104,7 +104,7 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
      *        A database user name that is authorized to log on to the database <code>DbName</code> using the password
      *        <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same
      *        database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the
-     *        <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any
+     *        <code>DbGroups</code> parameter is specified, <code>DbUser</code> is added to the listed groups for any
      *        sessions created using these credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

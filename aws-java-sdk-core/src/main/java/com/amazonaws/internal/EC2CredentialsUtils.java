@@ -133,7 +133,7 @@ public final class EC2CredentialsUtils {
                 if (!retryPolicy.shouldRetry(retriesAttempted++, CredentialsEndpointRetryParameters.builder().withException(ioException).build())) {
                     throw ioException;
                 }
-                LOG.debug("An IOException occured when connecting to service endpoint: " + endpoint  + "\n Retrying to connect again.");
+                LOG.debug("An IOException occurred when connecting to service endpoint: " + endpoint  + "\n Retrying to connect again.");
             } finally {
                 IOUtils.closeQuietly(inputStream, LOG);
             }

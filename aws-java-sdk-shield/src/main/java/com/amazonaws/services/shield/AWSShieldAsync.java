@@ -238,7 +238,7 @@ public interface AWSShieldAsync extends AWSShield {
      * to Create Rules and Web ACLs on Your Behalf</a>.
      * </p>
      * <p>
-     * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
+     * When you initially create a subscription, your subscription is set to be automatically renewed at the end of the
      * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
      * 
@@ -261,7 +261,7 @@ public interface AWSShieldAsync extends AWSShield {
      * to Create Rules and Web ACLs on Your Behalf</a>.
      * </p>
      * <p>
-     * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
+     * When you initially create a subscription, your subscription is set to be automatically renewed at the end of the
      * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
      * 

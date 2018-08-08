@@ -162,7 +162,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     * associated with this stack set, even tags you've specifed before (for example, when creating the stack set or
+     * associated with this stack set, even tags you've specified before (for example, when creating the stack set or
      * during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are
      * removed from the stack set, and therefore from the stacks and resources as well.
      * </p>
@@ -1365,7 +1365,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     * associated with this stack set, even tags you've specifed before (for example, when creating the stack set or
+     * associated with this stack set, even tags you've specified before (for example, when creating the stack set or
      * during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are
      * removed from the stack set, and therefore from the stacks and resources as well.
      * </p>
@@ -1401,7 +1401,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     *         associated with this stack set, even tags you've specifed before (for example, when creating the stack
+     *         associated with this stack set, even tags you've specified before (for example, when creating the stack
      *         set or during a previous update of the stack set.). Any tags that you don't include in the updated list
      *         of tags are removed from the stack set, and therefore from the stacks and resources as well.
      *         </p>
@@ -1447,7 +1447,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     * associated with this stack set, even tags you've specifed before (for example, when creating the stack set or
+     * associated with this stack set, even tags you've specified before (for example, when creating the stack set or
      * during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are
      * removed from the stack set, and therefore from the stacks and resources as well.
      * </p>
@@ -1484,7 +1484,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     *        associated with this stack set, even tags you've specifed before (for example, when creating the stack set
+     *        associated with this stack set, even tags you've specified before (for example, when creating the stack set
      *        or during a previous update of the stack set.). Any tags that you don't include in the updated list of
      *        tags are removed from the stack set, and therefore from the stacks and resources as well.
      *        </p>
@@ -1532,7 +1532,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     * associated with this stack set, even tags you've specifed before (for example, when creating the stack set or
+     * associated with this stack set, even tags you've specified before (for example, when creating the stack set or
      * during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are
      * removed from the stack set, and therefore from the stacks and resources as well.
      * </p>
@@ -1574,7 +1574,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     *        associated with this stack set, even tags you've specifed before (for example, when creating the stack set
+     *        associated with this stack set, even tags you've specified before (for example, when creating the stack set
      *        or during a previous update of the stack set.). Any tags that you don't include in the updated list of
      *        tags are removed from the stack set, and therefore from the stacks and resources as well.
      *        </p>
@@ -1624,7 +1624,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     * associated with this stack set, even tags you've specifed before (for example, when creating the stack set or
+     * associated with this stack set, even tags you've specified before (for example, when creating the stack set or
      * during a previous update of the stack set.). Any tags that you don't include in the updated list of tags are
      * removed from the stack set, and therefore from the stacks and resources as well.
      * </p>
@@ -1661,7 +1661,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the tags that you want
-     *        associated with this stack set, even tags you've specifed before (for example, when creating the stack set
+     *        associated with this stack set, even tags you've specified before (for example, when creating the stack set
      *        or during a previous update of the stack set.). Any tags that you don't include in the updated list of
      *        tags are removed from the stack set, and therefore from the stacks and resources as well.
      *        </p>

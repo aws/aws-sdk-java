@@ -5123,7 +5123,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * Returns an inventory configuration (identified by the inventory ID) from the bucket.
      *
      * @param getBucketInventoryConfigurationRequest
-     *              The request object to retreive an inventory configuration.
+     *              The request object to retrieve an inventory configuration.
      * @return
      *              An {@link GetBucketInventoryConfigurationResult} object containing the inventory configuration.
      */

@@ -307,7 +307,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *         No connectors are available to handle this request. Please associate connector(s) and verify any existing
      *         connectors are healthy and can respond to requests.
      * @throws InternalErrorException
-     *         An internal error has occured.
+     *         An internal error has occurred.
      * @sample AWSServerMigration.CreateReplicationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob" target="_top">AWS API
      *      Documentation</a>
@@ -884,7 +884,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws ReplicationJobNotFoundException
      *         The specified Replication Job cannot be found.
      * @throws InternalErrorException
-     *         An internal error has occured.
+     *         An internal error has occurred.
      * @sample AWSServerMigration.UpdateReplicationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob" target="_top">AWS API
      *      Documentation</a>
@@ -946,7 +946,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

@@ -177,13 +177,13 @@ public class ReceiveQueueBuffer {
                 // attempt to satisfy futures until we run out of either futures or
                 // finished tasks
                 while ((!futures.isEmpty()) && (!finishedTasks.isEmpty())) {
-                    // Remove any expired tasks before attempting to fufill the future
+                    // Remove any expired tasks before attempting to fulfill the future
                     pruneExpiredTasks();
-                    // Fufill the future from a non expired task if there is one. There is still a
+                    // Fulfill the future from a non expired task if there is one. There is still a
                     // slight chance that the first task could have expired between the time we
-                    // pruned and the time we fufill the future
+                    // pruned and the time we fulfill the future
                     if (!finishedTasks.isEmpty()) {
-                        fufillFuture(futures.poll());
+                        fulfillFuture(futures.poll());
                     }
                 }
             }
@@ -196,7 +196,7 @@ public class ReceiveQueueBuffer {
      * method assumes that you are holding the finished tasks lock locks when invoking it. violate
      * this assumption at your own peril
      */
-    private void fufillFuture(ReceiveMessageFuture future) {
+    private void fulfillFuture(ReceiveMessageFuture future) {
         ReceiveMessageBatchTask task = finishedTasks.getFirst();
         ReceiveMessageResult result = new ReceiveMessageResult();
         LinkedList<Message> messages = new LinkedList<Message>();

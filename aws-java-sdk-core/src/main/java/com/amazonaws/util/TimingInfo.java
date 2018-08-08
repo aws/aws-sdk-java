@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
  * In contrast to {@link TimingInfoFullSupport}, which is intended to be a full
  * support of the timing info, this class only provides a minimal support of
  * start and end time (ie with no-ops for sub-event measurements) for backward
- * compatiblity reasons.
+ * compatibility reasons.
  * <p>
  * This class is instantiated instead of {@link TimingInfoFullSupport} when
  * request metric collection is not required during a particular service

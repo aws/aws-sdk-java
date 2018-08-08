@@ -113,7 +113,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     * <code>Complete</code>: Returns a list of command executions that have already completed.
      * </p>
      * </li>
      * </ul>
@@ -274,7 +274,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     * <code>Complete</code>: Returns a list of command executions that have already completed.
      * </p>
      * </li>
      * </ul>
@@ -358,7 +358,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     *        <code>Complete</code>: Returns a list of command executions that have already completed.
      *        </p>
      *        </li>
      *        </ul>
@@ -448,7 +448,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     * <code>Complete</code>: Returns a list of command executions that have already completed.
      * </p>
      * </li>
      * </ul>
@@ -531,7 +531,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     *         <code>Complete</code>: Returns a list of command executions that have already completed.
      *         </p>
      *         </li>
      *         </ul>
@@ -621,7 +621,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     * <code>Complete</code>: Returns a list of command executions that have already completed.
      * </p>
      * </li>
      * </ul>
@@ -705,7 +705,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Complete</code>: Returns a list of command exeuctions that have already completed.
+     *        <code>Complete</code>: Returns a list of command executions that have already completed.
      *        </p>
      *        </li>
      *        </ul>

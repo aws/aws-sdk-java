@@ -51,7 +51,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Must be unique withing your AWS account.
+     * Must be unique within your AWS account.
      * </p>
      * </li>
      * </ul>
@@ -114,7 +114,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Must be unique withing your AWS account.
+     * Must be unique within your AWS account.
      * </p>
      * </li>
      * </ul>
@@ -147,7 +147,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique withing your AWS account.
+     *        Must be unique within your AWS account.
      *        </p>
      *        </li>
      *        </ul>
@@ -186,7 +186,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Must be unique withing your AWS account.
+     * Must be unique within your AWS account.
      * </p>
      * </li>
      * </ul>
@@ -218,7 +218,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique withing your AWS account.
+     *         Must be unique within your AWS account.
      *         </p>
      *         </li>
      *         </ul>
@@ -257,7 +257,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Must be unique withing your AWS account.
+     * Must be unique within your AWS account.
      * </p>
      * </li>
      * </ul>
@@ -290,7 +290,7 @@ public class CreateClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique withing your AWS account.
+     *        Must be unique within your AWS account.
      *        </p>
      *        </li>
      *        </ul>

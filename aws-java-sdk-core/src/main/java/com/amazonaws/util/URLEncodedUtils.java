@@ -274,7 +274,7 @@ class URLEncodedUtils {
      * Encode/escape www-url-form-encoded content.
      * <p>
      * Uses the {@link #URLENCODER} set of characters, rather than
-     * the {@link #UNRSERVED} set; this is for compatibilty with previous
+     * the {@link #UNRSERVED} set; this is for compatibility with previous
      * releases, URLEncoder.encode() and most browsers.
      *
      * @param content the content to encode, will convert space to '+'
@@ -292,7 +292,7 @@ class URLEncodedUtils {
      * Encode/escape www-url-form-encoded content.
      * <p>
      * Uses the {@link #URLENCODER} set of characters, rather than
-     * the {@link #UNRSERVED} set; this is for compatibilty with previous
+     * the {@link #UNRSERVED} set; this is for compatibility with previous
      * releases, URLEncoder.encode() and most browsers.
      *
      * @param content the content to encode, will convert space to '+'

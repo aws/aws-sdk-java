@@ -506,7 +506,7 @@ public class ArchiveTransferManager {
      *
      * @param accountId
      *            The account ID containing the job output to download (or null
-     *            if the current account shoudl be used).
+     *            if the current account should be used).
      * @param vaultName
      *            The name of the vault from where the job was initiated.
      * @param jobId

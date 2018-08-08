@@ -30,7 +30,7 @@ public class StartPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Idempotent token used to identify the start request. If you use the same token with multiple
      * <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     * <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     * <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      * </p>
      */
     private String clientRequestToken;
@@ -93,13 +93,13 @@ public class StartPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Idempotent token used to identify the start request. If you use the same token with multiple
      * <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     * <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     * <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      * </p>
      * 
      * @param clientRequestToken
      *        Idempotent token used to identify the start request. If you use the same token with multiple
      *        <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     *        <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     *        <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -110,12 +110,12 @@ public class StartPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Idempotent token used to identify the start request. If you use the same token with multiple
      * <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     * <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     * <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      * </p>
      * 
      * @return Idempotent token used to identify the start request. If you use the same token with multiple
      *         <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     *         <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     *         <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      */
 
     public String getClientRequestToken() {
@@ -126,13 +126,13 @@ public class StartPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Idempotent token used to identify the start request. If you use the same token with multiple
      * <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     * <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     * <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      * </p>
      * 
      * @param clientRequestToken
      *        Idempotent token used to identify the start request. If you use the same token with multiple
      *        <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-     *        <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.
+     *        <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

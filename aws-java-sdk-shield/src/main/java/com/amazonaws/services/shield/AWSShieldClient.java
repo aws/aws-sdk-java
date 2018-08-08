@@ -313,7 +313,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws NoAssociatedRoleException
-     *         The ARN of the role that you specifed does not exist.
+     *         The ARN of the role that you specified does not exist.
      * @throws LimitsExceededException
      *         Exception that indicates that the operation would exceed a limit.</p>
      *         <p>
@@ -569,7 +569,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * to Create Rules and Web ACLs on Your Behalf</a>.
      * </p>
      * <p>
-     * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
+     * When you initially create a subscription, your subscription is set to be automatically renewed at the end of the
      * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
      * 
@@ -1033,7 +1033,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws NoAssociatedRoleException
-     *         The ARN of the role that you specifed does not exist.
+     *         The ARN of the role that you specified does not exist.
      * @throws AccessDeniedForDependencyException
      *         In order to grant the necessary access to the DDoS Response Team, the user submitting
      *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
@@ -1464,7 +1464,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

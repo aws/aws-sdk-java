@@ -85,7 +85,7 @@ public class ModelClassGeneratorTasks extends BaseGeneratorTasks {
      * For API Gateway request classes we override the sdkRequestConfig fluent setter to return the correct concrete request type
      * for better method chaining.
      *
-     * @return True if sdkRequestConfig should be overriden by template. False if not.
+     * @return True if sdkRequestConfig should be overridden by template. False if not.
      */
     private boolean shouldGenerateSdkRequestConfigSetter(ShapeModel shape) {
         return model.getMetadata().getProtocol() == Protocol.API_GATEWAY && shape.getShapeType() == ShapeType.Request;

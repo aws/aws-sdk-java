@@ -352,7 +352,7 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
     /**
      * Sets the optional customer-provided server-side encryption key to use
      * when retrieving the metadata of a server-side encrypted object, and
-     * retuns the updated request object so that additional method calls can be
+     * returns the updated request object so that additional method calls can be
      * chained together.
      *
      * @param sseKey

@@ -37,7 +37,7 @@ public class ShapeSubstitution {
      * the model classes. However the wire representation is not changed.
      *
      * TODO This customization has been added to preserve backwards
-     * compatiblity of EC2 APIs. This should be removed as part of next major
+     * compatibility of EC2 APIs. This should be removed as part of next major
      * version bump.
      */
     private List<String> skipMarshallPathForShapes;

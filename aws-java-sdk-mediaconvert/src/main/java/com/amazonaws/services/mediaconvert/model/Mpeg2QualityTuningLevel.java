@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video
+ * Use Quality tuning level (Mpeg2QualityTuningLevel) to specify whether to use single-pass or multipass video
  * encoding.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

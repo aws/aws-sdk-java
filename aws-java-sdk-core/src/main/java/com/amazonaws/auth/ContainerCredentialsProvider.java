@@ -50,7 +50,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
 
     private static final Set<String> ALLOWED_FULL_URI_HOSTS = allowedHosts();
 
-    /** Default endpoint to retreive the Amazon ECS Credentials. */
+    /** Default endpoint to retrieve the Amazon ECS Credentials. */
     private static final String ECS_CREDENTIALS_ENDPOINT = "http://169.254.170.2";
 
     private final EC2CredentialsFetcher credentialsFetcher;
@@ -117,7 +117,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
             URI uri = new URI(fullUri);
 
             if (!ALLOWED_FULL_URI_HOSTS.contains(uri.getHost())) {
-                throw new SdkClientException("The full URI (" + uri + ") contained withing environment variable " +
+                throw new SdkClientException("The full URI (" + uri + ") contained within environment variable " +
                     CONTAINER_CREDENTIALS_FULL_URI + " has an invalid host. Host can only be one of [" +
                     CollectionUtils.join(ALLOWED_FULL_URI_HOSTS, ", ") + "]");
             }

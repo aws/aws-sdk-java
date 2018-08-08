@@ -53,7 +53,7 @@ public abstract class Comparator implements JmesPathExpression {
     }
 
     /**
-     * Abstract method definition that is overriden by subclasses
+     * Abstract method definition that is overridden by subclasses
      * to compare the lhs and rhs expressions depending on the
      * particular type of comparator
      *

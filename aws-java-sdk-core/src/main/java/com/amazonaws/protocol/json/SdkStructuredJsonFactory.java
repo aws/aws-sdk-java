@@ -40,7 +40,7 @@ public interface SdkStructuredJsonFactory {
     StructuredJsonGenerator createWriter(String contentType);
 
     /**
-     * Returns the response handler to be used for handling a successfull response.
+     * Returns the response handler to be used for handling a successful response.
      *
      * @param operationMetadata Additional context information about an operation to create the
      *                          appropriate response handler.

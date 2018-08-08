@@ -144,7 +144,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1199,7 +1199,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1216,7 +1216,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
-     *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
+     *        resolution, and the alarm may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets this
      *        alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about
      *        pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      *        </p>
@@ -1239,7 +1239,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1255,7 +1255,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *         sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *         this case, it does not receive data for the attempts that do not correspond to a one-minute data
-     *         resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
+     *         resolution, and the alarm may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets
      *         this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information
      *         about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      *         </p>
@@ -1278,7 +1278,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1295,7 +1295,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
-     *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
+     *        resolution, and the alarm may often lapse into INSUFFICIENT_DATA status. Specifying 10 or 30 also sets this
      *        alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about
      *        pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      *        </p>

@@ -820,7 +820,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * You can create one plan per provisioned product. To create a plan for an existing provisioned product, the
-     * product status must be AVAILBLE or TAINTED.
+     * product status must be AVAILABLE or TAINTED.
      * </p>
      * <p>
      * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
@@ -3692,7 +3692,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

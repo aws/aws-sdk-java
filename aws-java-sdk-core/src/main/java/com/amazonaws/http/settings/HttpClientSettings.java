@@ -26,7 +26,7 @@ import com.amazonaws.util.ValidationUtils;
 import java.util.List;
 
 /**
- * A convienient class that expose all settings in {@link ClientConfiguration} and other internal settings to the
+ * A convenient class that expose all settings in {@link ClientConfiguration} and other internal settings to the
  * underlying http client.
  */
 @SdkInternalApi

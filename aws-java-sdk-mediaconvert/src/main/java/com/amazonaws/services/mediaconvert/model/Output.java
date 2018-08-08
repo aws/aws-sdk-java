@@ -56,7 +56,7 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     private OutputSettings outputSettings;
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      */
     private String preset;
@@ -375,11 +375,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * 
      * @param preset
-     *        Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom
+     *        Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom
      *        preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
      *        both.
      */
@@ -389,10 +389,10 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * 
-     * @return Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom
+     * @return Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom
      *         preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
      *         both.
      */
@@ -402,11 +402,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * 
      * @param preset
-     *        Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom
+     *        Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom
      *        preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
      *        both.
      * @return Returns a reference to this object so that method calls can be chained together.
