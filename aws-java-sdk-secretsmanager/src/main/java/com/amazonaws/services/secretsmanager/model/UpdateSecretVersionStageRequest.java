@@ -56,8 +56,8 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * (Optional) The secret version ID that you want to add the staging labels to.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then they are removed
-     * from that version before adding them to this version.
+     * If any of the staging labels are already attached to a different version of the secret, then they are
+     * automatically removed from that version before adding them to this version.
      * </p>
      */
     private String moveToVersionId;
@@ -235,15 +235,15 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * (Optional) The secret version ID that you want to add the staging labels to.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then they are removed
-     * from that version before adding them to this version.
+     * If any of the staging labels are already attached to a different version of the secret, then they are
+     * automatically removed from that version before adding them to this version.
      * </p>
      * 
      * @param moveToVersionId
      *        (Optional) The secret version ID that you want to add the staging labels to.</p>
      *        <p>
      *        If any of the staging labels are already attached to a different version of the secret, then they are
-     *        removed from that version before adding them to this version.
+     *        automatically removed from that version before adding them to this version.
      */
 
     public void setMoveToVersionId(String moveToVersionId) {
@@ -255,14 +255,14 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * (Optional) The secret version ID that you want to add the staging labels to.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then they are removed
-     * from that version before adding them to this version.
+     * If any of the staging labels are already attached to a different version of the secret, then they are
+     * automatically removed from that version before adding them to this version.
      * </p>
      * 
      * @return (Optional) The secret version ID that you want to add the staging labels to.</p>
      *         <p>
      *         If any of the staging labels are already attached to a different version of the secret, then they are
-     *         removed from that version before adding them to this version.
+     *         automatically removed from that version before adding them to this version.
      */
 
     public String getMoveToVersionId() {
@@ -274,15 +274,15 @@ public class UpdateSecretVersionStageRequest extends com.amazonaws.AmazonWebServ
      * (Optional) The secret version ID that you want to add the staging labels to.
      * </p>
      * <p>
-     * If any of the staging labels are already attached to a different version of the secret, then they are removed
-     * from that version before adding them to this version.
+     * If any of the staging labels are already attached to a different version of the secret, then they are
+     * automatically removed from that version before adding them to this version.
      * </p>
      * 
      * @param moveToVersionId
      *        (Optional) The secret version ID that you want to add the staging labels to.</p>
      *        <p>
      *        If any of the staging labels are already attached to a different version of the secret, then they are
-     *        removed from that version before adding them to this version.
+     *        automatically removed from that version before adding them to this version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

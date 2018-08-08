@@ -43,6 +43,8 @@ public class StartAutomationExecutionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetParameterName").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<List> TARGETMAPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TargetMaps").build();
     private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
     private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class StartAutomationExecutionRequestMarshaller {
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMode(), MODE_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getTargetParameterName(), TARGETPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getTargetMaps(), TARGETMAPS_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMaxErrors(), MAXERRORS_BINDING);
         } catch (Exception e) {
