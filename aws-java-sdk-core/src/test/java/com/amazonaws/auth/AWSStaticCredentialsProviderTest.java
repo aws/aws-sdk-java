@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.SdkClientException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -53,6 +54,34 @@ public class AWSStaticCredentialsProviderTest {
     @Test(expected = IllegalArgumentException.class)
     public void nullCredentials_ThrowsIllegalArgumentException() {
         new AWSStaticCredentialsProvider(null);
+    }
+
+
+    @Test(expected = SdkClientException.class)
+    public void shouldNotAcceptNullCredentials() {
+        final AWSCredentials credentials = new AWSCredentials() {
+            @Override
+            public String getAWSAccessKeyId() {
+                return null;
+            }
+
+            @Override
+            public String getAWSSecretKey() {
+                return null;
+            }
+        };
+
+        final AWSCredentials actualCredentials =
+                new AWSStaticCredentialsProvider(credentials).getCredentials();
+        assertEquals(credentials, actualCredentials);
+    }
+
+    @Test(expected = SdkClientException.class)
+    public void shouldNotAcceptEmptyCredentials() {
+        final BasicAWSCredentials credentials = new BasicAWSCredentials("", "");
+        final AWSCredentials actualCredentials =
+                new AWSStaticCredentialsProvider(credentials).getCredentials();
+        assertEquals(credentials, actualCredentials);
     }
 
 }
