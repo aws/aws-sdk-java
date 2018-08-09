@@ -1480,8 +1480,9 @@ public interface AWSSecretsManager {
 
     /**
      * <p>
-     * Modifies many of the details of a secret. If you include a <code>ClientRequestToken</code> and either
-     * <code>SecretString</code> or <code>SecretBinary</code> then it also creates a new version attached to the secret.
+     * Modifies many of the details of the specified secret. If you include a <code>ClientRequestToken</code> and
+     * <i>either</i> <code>SecretString</code> or <code>SecretBinary</code> then it also creates a new version attached
+     * to the secret.
      * </p>
      * <p>
      * To modify the rotation configuration of a secret, use <a>RotateSecret</a> instead.
@@ -1497,8 +1498,8 @@ public interface AWSSecretsManager {
      * <li>
      * <p>
      * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
-     * parameter already exists, the operation generates an error. You cannot modify an existing version, you can only
-     * create new ones.
+     * parameter already exists, the operation results in an error. You cannot modify an existing version, you can only
+     * create a new version.
      * </p>
      * </li>
      * <li>

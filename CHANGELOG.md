@@ -1,4 +1,4 @@
-# __1.11.382__ __2018-08-07__
+# __1.11.383__ __2018-08-08__
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
@@ -10,6 +10,10 @@
 ## __AWS Resource Groups__
   - ### Features
     - AWS Resource Groups service added a new feature to filter group resources by resource-type when using the ListGroupResources operation.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - This release introduces a ForceDeleteWithoutRecovery parameter to the DeleteSecret API enabling customers to force the deletion of a secret without any recovery window
 
 ## __Alexa For Business__
   - ### Features
@@ -41,6 +45,7 @@
 
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features
+    - AWS Systems Manager Automation is launching two new features for Automation Execution Rate Control based on tags and customized parameter maps. With the first feature, customer can target their resources by specifying a Tag with Key/Value. With the second feature, Parameter maps rate control, customers can benefit from customization of input parameters.
     - This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
     - Two new filters ExecutionStage and DocumentName will be added to ListCommands so that customers will have more approaches to query their commands.
 

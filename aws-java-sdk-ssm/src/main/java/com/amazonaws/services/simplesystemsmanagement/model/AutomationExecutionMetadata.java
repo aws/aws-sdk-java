@@ -126,6 +126,12 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>> targetMaps;
+    /**
+     * <p>
      * A list of targets that resolved during the execution.
      * </p>
      */
@@ -911,6 +917,79 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * 
+     * @return The specified key-value mapping of document parameters to target resources.
+     */
+
+    public java.util.List<java.util.Map<String, java.util.List<String>>> getTargetMaps() {
+        if (targetMaps == null) {
+            targetMaps = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>();
+        }
+        return targetMaps;
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * 
+     * @param targetMaps
+     *        The specified key-value mapping of document parameters to target resources.
+     */
+
+    public void setTargetMaps(java.util.Collection<java.util.Map<String, java.util.List<String>>> targetMaps) {
+        if (targetMaps == null) {
+            this.targetMaps = null;
+            return;
+        }
+
+        this.targetMaps = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>(targetMaps);
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetMaps(java.util.Collection)} or {@link #withTargetMaps(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param targetMaps
+     *        The specified key-value mapping of document parameters to target resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecutionMetadata withTargetMaps(java.util.Map<String, java.util.List<String>>... targetMaps) {
+        if (this.targetMaps == null) {
+            setTargetMaps(new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>(targetMaps.length));
+        }
+        for (java.util.Map<String, java.util.List<String>> ele : targetMaps) {
+            this.targetMaps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * 
+     * @param targetMaps
+     *        The specified key-value mapping of document parameters to target resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecutionMetadata withTargetMaps(java.util.Collection<java.util.Map<String, java.util.List<String>>> targetMaps) {
+        setTargetMaps(targetMaps);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of targets that resolved during the execution.
      * </p>
      * 
@@ -1112,6 +1191,8 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
             sb.append("TargetParameterName: ").append(getTargetParameterName()).append(",");
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
+        if (getTargetMaps() != null)
+            sb.append("TargetMaps: ").append(getTargetMaps()).append(",");
         if (getResolvedTargets() != null)
             sb.append("ResolvedTargets: ").append(getResolvedTargets()).append(",");
         if (getMaxConcurrency() != null)
@@ -1198,6 +1279,10 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
+        if (other.getTargetMaps() == null ^ this.getTargetMaps() == null)
+            return false;
+        if (other.getTargetMaps() != null && other.getTargetMaps().equals(this.getTargetMaps()) == false)
+            return false;
         if (other.getResolvedTargets() == null ^ this.getResolvedTargets() == null)
             return false;
         if (other.getResolvedTargets() != null && other.getResolvedTargets().equals(this.getResolvedTargets()) == false)
@@ -1238,6 +1323,7 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
         hashCode = prime * hashCode + ((getTargetParameterName() == null) ? 0 : getTargetParameterName().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getTargetMaps() == null) ? 0 : getTargetMaps().hashCode());
         hashCode = prime * hashCode + ((getResolvedTargets() == null) ? 0 : getResolvedTargets().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());

@@ -65,6 +65,8 @@ public class AutomationExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetParameterName").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<List> TARGETMAPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TargetMaps").build();
     private static final MarshallingInfo<StructuredPojo> RESOLVEDTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolvedTargets").build();
     private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -108,6 +110,7 @@ public class AutomationExecutionMarshaller {
             protocolMarshaller.marshall(automationExecution.getCurrentAction(), CURRENTACTION_BINDING);
             protocolMarshaller.marshall(automationExecution.getTargetParameterName(), TARGETPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(automationExecution.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getTargetMaps(), TARGETMAPS_BINDING);
             protocolMarshaller.marshall(automationExecution.getResolvedTargets(), RESOLVEDTARGETS_BINDING);
             protocolMarshaller.marshall(automationExecution.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(automationExecution.getMaxErrors(), MAXERRORS_BINDING);

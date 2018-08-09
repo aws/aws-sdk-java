@@ -41,6 +41,26 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Long recoveryWindowInDays;
+    /**
+     * <p>
+     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
+     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * </p>
+     * <p>
+     * An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     * operation completes. If you write code to delete and then immediately recreate a secret with the same name,
+     * ensure that your code includes appropriate back off and retry logic.
+     * </p>
+     * <important>
+     * <p>
+     * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
+     * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
+     * recover the secret. It is permanently lost.
+     * </p>
+     * </important>
+     */
+    private Boolean forceDeleteWithoutRecovery;
 
     /**
      * <p>
@@ -144,6 +164,166 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
+     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * </p>
+     * <p>
+     * An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     * operation completes. If you write code to delete and then immediately recreate a secret with the same name,
+     * ensure that your code includes appropriate back off and retry logic.
+     * </p>
+     * <important>
+     * <p>
+     * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
+     * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
+     * recover the secret. It is permanently lost.
+     * </p>
+     * </important>
+     * 
+     * @param forceDeleteWithoutRecovery
+     *        (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
+     *        use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     *        <p>
+     *        An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     *        operation completes. If you write code to delete and then immediately recreate a secret with the same
+     *        name, ensure that your code includes appropriate back off and retry logic.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
+     *        before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
+     *        parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have
+     *        no opportunity to recover the secret. It is permanently lost.
+     *        </p>
+     */
+
+    public void setForceDeleteWithoutRecovery(Boolean forceDeleteWithoutRecovery) {
+        this.forceDeleteWithoutRecovery = forceDeleteWithoutRecovery;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
+     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * </p>
+     * <p>
+     * An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     * operation completes. If you write code to delete and then immediately recreate a secret with the same name,
+     * ensure that your code includes appropriate back off and retry logic.
+     * </p>
+     * <important>
+     * <p>
+     * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
+     * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
+     * recover the secret. It is permanently lost.
+     * </p>
+     * </important>
+     * 
+     * @return (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
+     *         use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     *         <p>
+     *         An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     *         operation completes. If you write code to delete and then immediately recreate a secret with the same
+     *         name, ensure that your code includes appropriate back off and retry logic.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
+     *         before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
+     *         parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you
+     *         have no opportunity to recover the secret. It is permanently lost.
+     *         </p>
+     */
+
+    public Boolean getForceDeleteWithoutRecovery() {
+        return this.forceDeleteWithoutRecovery;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
+     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * </p>
+     * <p>
+     * An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     * operation completes. If you write code to delete and then immediately recreate a secret with the same name,
+     * ensure that your code includes appropriate back off and retry logic.
+     * </p>
+     * <important>
+     * <p>
+     * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
+     * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
+     * recover the secret. It is permanently lost.
+     * </p>
+     * </important>
+     * 
+     * @param forceDeleteWithoutRecovery
+     *        (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
+     *        use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     *        <p>
+     *        An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     *        operation completes. If you write code to delete and then immediately recreate a secret with the same
+     *        name, ensure that your code includes appropriate back off and retry logic.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
+     *        before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
+     *        parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have
+     *        no opportunity to recover the secret. It is permanently lost.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteSecretRequest withForceDeleteWithoutRecovery(Boolean forceDeleteWithoutRecovery) {
+        setForceDeleteWithoutRecovery(forceDeleteWithoutRecovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
+     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * </p>
+     * <p>
+     * An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     * operation completes. If you write code to delete and then immediately recreate a secret with the same name,
+     * ensure that your code includes appropriate back off and retry logic.
+     * </p>
+     * <important>
+     * <p>
+     * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
+     * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
+     * recover the secret. It is permanently lost.
+     * </p>
+     * </important>
+     * 
+     * @return (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
+     *         use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     *         <p>
+     *         An asynchronous background process performs the actual deletion, so there can be a short delay before the
+     *         operation completes. If you write code to delete and then immediately recreate a secret with the same
+     *         name, ensure that your code includes appropriate back off and retry logic.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
+     *         before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
+     *         parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you
+     *         have no opportunity to recover the secret. It is permanently lost.
+     *         </p>
+     */
+
+    public Boolean isForceDeleteWithoutRecovery() {
+        return this.forceDeleteWithoutRecovery;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -157,7 +337,9 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getSecretId() != null)
             sb.append("SecretId: ").append(getSecretId()).append(",");
         if (getRecoveryWindowInDays() != null)
-            sb.append("RecoveryWindowInDays: ").append(getRecoveryWindowInDays());
+            sb.append("RecoveryWindowInDays: ").append(getRecoveryWindowInDays()).append(",");
+        if (getForceDeleteWithoutRecovery() != null)
+            sb.append("ForceDeleteWithoutRecovery: ").append(getForceDeleteWithoutRecovery());
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +362,10 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getRecoveryWindowInDays() != null && other.getRecoveryWindowInDays().equals(this.getRecoveryWindowInDays()) == false)
             return false;
+        if (other.getForceDeleteWithoutRecovery() == null ^ this.getForceDeleteWithoutRecovery() == null)
+            return false;
+        if (other.getForceDeleteWithoutRecovery() != null && other.getForceDeleteWithoutRecovery().equals(this.getForceDeleteWithoutRecovery()) == false)
+            return false;
         return true;
     }
 
@@ -190,6 +376,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getSecretId() == null) ? 0 : getSecretId().hashCode());
         hashCode = prime * hashCode + ((getRecoveryWindowInDays() == null) ? 0 : getRecoveryWindowInDays().hashCode());
+        hashCode = prime * hashCode + ((getForceDeleteWithoutRecovery() == null) ? 0 : getForceDeleteWithoutRecovery().hashCode());
         return hashCode;
     }
 
