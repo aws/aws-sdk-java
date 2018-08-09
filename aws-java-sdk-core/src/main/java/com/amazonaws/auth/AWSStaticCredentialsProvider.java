@@ -14,6 +14,8 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.SdkClientException;
+import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.ValidationUtils;
 
 /**
@@ -28,6 +30,13 @@ public class AWSStaticCredentialsProvider implements AWSCredentialsProvider {
     }
 
     public AWSCredentials getCredentials() {
+        if (StringUtils.isNullOrEmpty(credentials.getAWSSecretKey())
+                || StringUtils.isNullOrEmpty(credentials.getAWSAccessKeyId())) {
+
+            throw new SdkClientException(
+                    "Unable to load AWS credentials from " + credentials.getClass().getSimpleName()
+            );
+        }
         return credentials;
     }
 
