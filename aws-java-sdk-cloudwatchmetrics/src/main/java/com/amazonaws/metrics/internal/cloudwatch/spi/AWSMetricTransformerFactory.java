@@ -46,7 +46,7 @@ public enum AWSMetricTransformerFactory {
      * convention of &lt;AwsPrefix>MetricTransformer. The "AwsPrefix" is the
      * same as the enum literal name. Since each service specific request metric
      * transformer internally contains static reference to service specific
-     * classes, this dynamic class loading mechansim allows service specific
+     * classes, this dynamic class loading mechanism allows service specific
      * transformers to be skipped in case some service specific class files are
      * absent in the classpath.
      */

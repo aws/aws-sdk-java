@@ -3745,7 +3745,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidPluginNameException
      *         The plugin name is not valid.
      * @throws InvocationDoesNotExistException
-     *         The command ID and instance ID you specified did not match any invocations. Verify the command ID adn the
+     *         The command ID and instance ID you specified did not match any invocations. Verify the command ID and the
      *         instance ID and try again.
      * @sample AWSSimpleSystemsManagement.GetCommandInvocation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation" target="_top">AWS API
@@ -7313,7 +7313,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

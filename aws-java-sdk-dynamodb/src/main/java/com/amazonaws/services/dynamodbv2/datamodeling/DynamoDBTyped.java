@@ -78,13 +78,13 @@ import java.lang.annotation.Target;
  * <p>If the converter being applied is already a supported data type and
  * the conversion is of the same attribute type, for instance,
  * {@link java.util.Date} to {@link String} to {@code S},
- * the annotation may be omited. The annotation is require for all non-standard
- * types or if the attribute type binding is being overriden.</p>
+ * the annotation may be omitted. The annotation is require for all non-standard
+ * types or if the attribute type binding is being overridden.</p>
  *
  * <p><b>{@link com.amazonaws.services.dynamodbv2.model.AttributeValue}</b></p>
  * <p>Direct native conversion is supported by default in all schemas.
  * If the attribute is a primary or index key, it must specify either
- * {@code B}, {@code N}, or {@code S}, otherwise, it may be omited.</p>
+ * {@code B}, {@code N}, or {@code S}, otherwise, it may be omitted.</p>
  *
  * <p><b>{@link Boolean} to {@code BOOL}</b></p>
  * <p>The standard V2 conversion schema will by default serialize booleans

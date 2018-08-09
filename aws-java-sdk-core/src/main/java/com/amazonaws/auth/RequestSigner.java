@@ -21,7 +21,7 @@ import com.amazonaws.SignableRequest;
 
 /**
  * A strategy for applying cryptographic signatures to a request, proving
- * that the request was made by someone in posession of the given set of
+ * that the request was made by someone in possession of the given set of
  * credentials without transmitting the secret key over the wire.
  */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A comparision that is used to determine whether a query should return this object.
+ * A comparison that is used to determine whether a query should return this object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Selector" target="_top">AWS API

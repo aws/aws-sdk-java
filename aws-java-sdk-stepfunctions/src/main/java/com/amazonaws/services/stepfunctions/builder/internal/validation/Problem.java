@@ -31,7 +31,7 @@ final class Problem {
     }
 
     /**
-     * @return Context of where this violation occured.
+     * @return Context of where this violation occurred.
      */
     public ValidationContext getContext() {
         return context;

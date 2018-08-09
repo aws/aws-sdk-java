@@ -161,7 +161,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
      * restorable for 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
      * operation returns the time remaining in the restoration window of a Private CA in the <code>DELETED</code> state.
-     * To restore an eligable CA, call the <a>RestoreCertificateAuthority</a> operation.
+     * To restore an eligible CA, call the <a>RestoreCertificateAuthority</a> operation.
      * </p>
      * 
      * @param deleteCertificateAuthorityRequest
@@ -191,7 +191,7 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * passed. By default, if you do not set the <code>PermanentDeletionTimeInDays</code> parameter, the CA remains
      * restorable for 30 days. You can set the parameter from 7 to 30 days. The <a>DescribeCertificateAuthority</a>
      * operation returns the time remaining in the restoration window of a Private CA in the <code>DELETED</code> state.
-     * To restore an eligable CA, call the <a>RestoreCertificateAuthority</a> operation.
+     * To restore an eligible CA, call the <a>RestoreCertificateAuthority</a> operation.
      * </p>
      * 
      * @param deleteCertificateAuthorityRequest

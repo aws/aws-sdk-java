@@ -54,7 +54,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * <p>
      * Shows a brief description and other information about the secondary status. For example, the
      * <code>LaunchingMLInstances</code> secondary status could show a status message of
-     * "Insufficent capacity error while launching instances".
+     * "Insufficient capacity error while launching instances".
      * </p>
      */
     private String statusMessage;
@@ -216,13 +216,13 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * <p>
      * Shows a brief description and other information about the secondary status. For example, the
      * <code>LaunchingMLInstances</code> secondary status could show a status message of
-     * "Insufficent capacity error while launching instances".
+     * "Insufficient capacity error while launching instances".
      * </p>
      * 
      * @param statusMessage
      *        Shows a brief description and other information about the secondary status. For example, the
      *        <code>LaunchingMLInstances</code> secondary status could show a status message of
-     *        "Insufficent capacity error while launching instances".
+     *        "Insufficient capacity error while launching instances".
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -233,12 +233,12 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * <p>
      * Shows a brief description and other information about the secondary status. For example, the
      * <code>LaunchingMLInstances</code> secondary status could show a status message of
-     * "Insufficent capacity error while launching instances".
+     * "Insufficient capacity error while launching instances".
      * </p>
      * 
      * @return Shows a brief description and other information about the secondary status. For example, the
      *         <code>LaunchingMLInstances</code> secondary status could show a status message of
-     *         "Insufficent capacity error while launching instances".
+     *         "Insufficient capacity error while launching instances".
      */
 
     public String getStatusMessage() {
@@ -249,13 +249,13 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
      * <p>
      * Shows a brief description and other information about the secondary status. For example, the
      * <code>LaunchingMLInstances</code> secondary status could show a status message of
-     * "Insufficent capacity error while launching instances".
+     * "Insufficient capacity error while launching instances".
      * </p>
      * 
      * @param statusMessage
      *        Shows a brief description and other information about the secondary status. For example, the
      *        <code>LaunchingMLInstances</code> secondary status could show a status message of
-     *        "Insufficent capacity error while launching instances".
+     *        "Insufficient capacity error while launching instances".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

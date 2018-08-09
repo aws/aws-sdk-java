@@ -70,7 +70,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -364,7 +364,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -375,7 +375,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param maximumPageSize
      *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        further pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
      *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
@@ -388,7 +388,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -398,7 +398,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
+     *         obtain further pages of results. The default is 1000, which is the maximum allowed page size. You can,
      *         however, specify a page size <i>smaller</i> than the maximum.</p>
      *         <p>
      *         This is an upper limit only; the actual number of results returned per call may be fewer than the
@@ -411,7 +411,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -422,7 +422,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param maximumPageSize
      *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        further pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
      *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the

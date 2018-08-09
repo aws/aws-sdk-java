@@ -170,7 +170,7 @@ public class ClientHandlerImpl extends ClientHandler {
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the
+     * Normal invoke with authentication. Credentials are required and may be overridden at the
      * request level.
      **/
     private <Output, Input> Response<Output> invoke(Request<Input> request,

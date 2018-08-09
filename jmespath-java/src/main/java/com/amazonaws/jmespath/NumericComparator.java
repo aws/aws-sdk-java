@@ -48,7 +48,7 @@ public abstract class NumericComparator extends Comparator {
     }
 
     /**
-     * Abstract method definition that is overriden by the
+     * Abstract method definition that is overridden by the
      * subclasses to compare the given lhs and rhs numbers
      * according to the given comparator
      *

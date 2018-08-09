@@ -192,7 +192,7 @@ public class WebIdentityFederationSessionCredentialsProvider implements AWSSessi
    /**
      * Set the refresh threshold for the session credentials created by this client in
      * seconds. This value will be used internally to determine if new
-     * credentials should be fetched from STS. Returns a refrence to the object
+     * credentials should be fetched from STS. Returns a reference to the object
      * so methods can be chained.
      *
      * @see com.amazonaws.services.securitytoken.model.AssumeRoleWithWebIdentityRequest 

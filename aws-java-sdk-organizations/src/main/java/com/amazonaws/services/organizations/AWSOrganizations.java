@@ -7387,7 +7387,7 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Lists all the roots, organizaitonal units (OUs), and accounts to which the specified policy is attached.
+     * Lists all the roots, organizational units (OUs), and accounts to which the specified policy is attached.
      * </p>
      * <note>
      * <p>

@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
+ * Use Quality tuning level (H264QualityTuningLevel) to specify whether to use fast single-pass, high-quality
  * singlepass, or high-quality multipass video encoding.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

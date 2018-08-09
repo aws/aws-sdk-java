@@ -9022,7 +9022,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists all the roots, organizaitonal units (OUs), and accounts to which the specified policy is attached.
+     * Lists all the roots, organizational units (OUs), and accounts to which the specified policy is attached.
      * </p>
      * <note>
      * <p>
@@ -10210,7 +10210,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

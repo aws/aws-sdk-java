@@ -1525,7 +1525,7 @@ public interface AmazonElastiCache {
      * <p>
      * To determine whether the node replacement is complete you can check Events using the Amazon ElastiCache console,
      * the AWS CLI, or the ElastiCache API. Look for the following automatic failover related events, listed here in
-     * order of occurrance:
+     * order of occurrence:
      * </p>
      * <ol>
      * <li>

@@ -33,7 +33,7 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     private Hdr10Metadata hdr10Metadata;
     /**
      * Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system
-     * automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet
+     * automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or packet
      * identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      */
     private Integer pid;
@@ -151,12 +151,12 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system
-     * automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet
+     * automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or packet
      * identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      * 
      * @param pid
      *        Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the
-     *        system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or
+     *        system automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or
      *        packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      */
 
@@ -166,11 +166,11 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system
-     * automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet
+     * automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or packet
      * identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      * 
      * @return Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the
-     *         system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or
+     *         system automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or
      *         packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      */
 
@@ -180,12 +180,12 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system
-     * automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet
+     * automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or packet
      * identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      * 
      * @param pid
      *        Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the
-     *        system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or
+     *        system automatically converts it to the hexadecimal value. For example, 257 selects PID 0x101. A PID, or
      *        packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

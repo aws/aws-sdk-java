@@ -47,7 +47,7 @@ public class AwsProfileNameLoader {
 
     /**
      * TODO The order would make more sense as System Property, Environment Variable, Default
-     * Profile name but we have to keep the current order for backwards compatiblity. Consider
+     * Profile name but we have to keep the current order for backwards compatibility. Consider
      * changing this in a future major version.
      */
     public final String loadProfileName() {

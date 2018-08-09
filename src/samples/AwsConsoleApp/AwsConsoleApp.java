@@ -156,7 +156,7 @@ public class AwsConsoleApp {
             System.out.println("You have " + instances.size() + " Amazon EC2 instance(s) running.");
         } catch (AmazonServiceException ase) {
                 System.out.println("Caught Exception: " + ase.getMessage());
-                System.out.println("Reponse Status Code: " + ase.getStatusCode());
+                System.out.println("Response Status Code: " + ase.getStatusCode());
                 System.out.println("Error Code: " + ase.getErrorCode());
                 System.out.println("Request ID: " + ase.getRequestId());
         }
@@ -186,7 +186,7 @@ public class AwsConsoleApp {
                     "containing a total of " + totalItems + " items.");
         } catch (AmazonServiceException ase) {
                 System.out.println("Caught Exception: " + ase.getMessage());
-                System.out.println("Reponse Status Code: " + ase.getStatusCode());
+                System.out.println("Response Status Code: " + ase.getStatusCode());
                 System.out.println("Error Code: " + ase.getErrorCode());
                 System.out.println("Request ID: " + ase.getRequestId());
         }

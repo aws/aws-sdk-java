@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970. Set Telecine (Mpeg2Telecine) to Hard
  * (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
- * converstion to the player.
+ * conversion to the player.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2Telecine {

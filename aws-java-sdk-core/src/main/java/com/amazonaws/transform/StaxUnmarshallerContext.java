@@ -145,7 +145,7 @@ public class StaxUnmarshallerContext {
      * document being parsed.
      *
      * @param expression
-     *            The psuedo-xpath expression to test.
+     *            The pseudo-xpath expression to test.
      * @return True if the expression matches the current document position,
      *         otherwise false.
      */
@@ -160,7 +160,7 @@ public class StaxUnmarshallerContext {
      * specified stack depth.
      *
      * @param expression
-     *            The psuedo-xpath expression to test.
+     *            The pseudo-xpath expression to test.
      * @param startingStackDepth
      *            The depth in the stack representing where the expression must
      *            start matching in order for this method to return true.

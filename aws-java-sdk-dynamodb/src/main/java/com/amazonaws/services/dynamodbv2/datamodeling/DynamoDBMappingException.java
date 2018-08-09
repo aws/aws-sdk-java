@@ -15,7 +15,7 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 /**
- * Generic exception for problems occuring when mapping DynamoDB items to Java
+ * Generic exception for problems occurring when mapping DynamoDB items to Java
  * objects or vice versa. Excludes service exceptions.
  */
 public class DynamoDBMappingException extends RuntimeException {

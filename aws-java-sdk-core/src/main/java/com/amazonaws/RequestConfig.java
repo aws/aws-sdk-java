@@ -31,7 +31,7 @@ import java.util.Map;
 public abstract class RequestConfig {
 
     /**
-     * No op implementation to initalize request config in {@link DefaultRequest}.
+     * No op implementation to initialize request config in {@link DefaultRequest}.
      */
     public static final RequestConfig NO_OP = new AmazonWebServiceRequestAdapter(
             AmazonWebServiceRequest.NOOP);

@@ -3106,7 +3106,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * <p>
      * To determine whether the node replacement is complete you can check Events using the Amazon ElastiCache console,
      * the AWS CLI, or the ElastiCache API. Look for the following automatic failover related events, listed here in
-     * order of occurrance:
+     * order of occurrence:
      * </p>
      * <ol>
      * <li>
@@ -3241,7 +3241,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     }
 
     /**
-     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     * Normal invoke with authentication. Credentials are required and may be overridden at the request level.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {

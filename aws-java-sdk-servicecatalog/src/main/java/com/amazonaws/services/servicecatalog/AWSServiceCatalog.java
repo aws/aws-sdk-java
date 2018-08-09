@@ -304,7 +304,7 @@ public interface AWSServiceCatalog {
      * </p>
      * <p>
      * You can create one plan per provisioned product. To create a plan for an existing provisioned product, the
-     * product status must be AVAILBLE or TAINTED.
+     * product status must be AVAILABLE or TAINTED.
      * </p>
      * <p>
      * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify

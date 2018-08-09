@@ -30,7 +30,7 @@ public class GenerateDeleteTableRequestTest {
     private static final String TABLE_NAME = "OBJECTORMEXAMPLE";
 
     @Test
-    public void tableNameNotOverriden_UsesTableNameAttributeInAnnotation() {
+    public void tableNameNotOverridden_UsesTableNameAttributeInAnnotation() {
         DynamoDBMapper dynamoDBMapper = new DynamoDBMapper(null);
         DeleteTableRequest deleteTableRequest = dynamoDBMapper.generateDeleteTableRequest(ObjectORMExample.class);
         assertEquals(deleteTableRequest.getTableName(), TABLE_NAME);

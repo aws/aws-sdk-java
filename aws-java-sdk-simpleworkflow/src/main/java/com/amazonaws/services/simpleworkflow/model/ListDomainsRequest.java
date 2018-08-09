@@ -44,7 +44,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String registrationStatus;
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -204,7 +204,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -215,7 +215,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param maximumPageSize
      *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        further pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
      *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
@@ -228,7 +228,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -238,7 +238,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
+     *         obtain further pages of results. The default is 1000, which is the maximum allowed page size. You can,
      *         however, specify a page size <i>smaller</i> than the maximum.</p>
      *         <p>
      *         This is an upper limit only; the actual number of results returned per call may be fewer than the
@@ -251,7 +251,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain further
      * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
      * size <i>smaller</i> than the maximum.
      * </p>
@@ -262,7 +262,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param maximumPageSize
      *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
-     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        further pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
      *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the

@@ -206,12 +206,12 @@ public class XpathUtilsTest {
     public void testMissingNodes() throws Exception {
         Document document = documentFrom(DOCUMENT);
         XPath xpath = XpathUtils.xpath();
-        assertNull(asDouble("non-existant-node/name", document, xpath));
-        assertNull(asLong("non-existant-node/name", document, xpath));
-        assertNull(asInteger("non-existant-node/name", document, xpath));
-        assertNull(asDate("non-existant-node/name", document, xpath));
-        assertNull(asFloat("non-existant-node/name", document, xpath));
-        assertNull(asString("non-existant-node/name", document, xpath));
+        assertNull(asDouble("non-existent-node/name", document, xpath));
+        assertNull(asLong("non-existent-node/name", document, xpath));
+        assertNull(asInteger("non-existent-node/name", document, xpath));
+        assertNull(asDate("non-existent-node/name", document, xpath));
+        assertNull(asFloat("non-existent-node/name", document, xpath));
+        assertNull(asString("non-existent-node/name", document, xpath));
     }
 
     /**

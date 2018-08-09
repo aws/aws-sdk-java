@@ -251,7 +251,7 @@ final class ShapeSubstitutionsProcessor implements CodegenCustomizationProcessor
                  * the model classes. However the wire representation is not changed.
                  *
                  * TODO This customization has been added to preserve backwards
-                 * compatiblity of EC2 APIs. This should be removed as part of next major
+                 * compatibility of EC2 APIs. This should be removed as part of next major
                  * version bump.
                  */
                 if (!shouldSkipAddingMarshallingPath(shapeSubstitutions.get
@@ -298,7 +298,7 @@ final class ShapeSubstitutionsProcessor implements CodegenCustomizationProcessor
                  * the model classes. However the wire representation is not changed.
                  *
                  * TODO This customization has been added to preserve backwards
-                 * compatiblity of EC2 APIs. This should be removed as part of next major
+                 * compatibility of EC2 APIs. This should be removed as part of next major
                  * version bump.
                  */
                 if (!shouldSkipAddingMarshallingPath(shapeSubstitutions.get

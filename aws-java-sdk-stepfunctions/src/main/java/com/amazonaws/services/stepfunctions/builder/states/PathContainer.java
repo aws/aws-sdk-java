@@ -113,7 +113,7 @@ final class PathContainer {
 
         /**
          * If an explicit null is set we preserve that in a {@link NullNode} so that we
-         * can serialize an explicit JSON null instead of ommitting that field from the JSON object.
+         * can serialize an explicit JSON null instead of omitting that field from the JSON object.
          *
          * @return NullNode if path is null, otherwise a TextNode containing the value.
          */

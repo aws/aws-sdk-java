@@ -42,7 +42,7 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
     private String email;
     /**
      * <p>
-     * The date when the specified commit was commited, in timestamp format with GMT offset.
+     * The date when the specified commit was committed, in timestamp format with GMT offset.
      * </p>
      */
     private String date;
@@ -129,11 +129,11 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date when the specified commit was commited, in timestamp format with GMT offset.
+     * The date when the specified commit was committed, in timestamp format with GMT offset.
      * </p>
      * 
      * @param date
-     *        The date when the specified commit was commited, in timestamp format with GMT offset.
+     *        The date when the specified commit was committed, in timestamp format with GMT offset.
      */
 
     public void setDate(String date) {
@@ -142,10 +142,10 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date when the specified commit was commited, in timestamp format with GMT offset.
+     * The date when the specified commit was committed, in timestamp format with GMT offset.
      * </p>
      * 
-     * @return The date when the specified commit was commited, in timestamp format with GMT offset.
+     * @return The date when the specified commit was committed, in timestamp format with GMT offset.
      */
 
     public String getDate() {
@@ -154,11 +154,11 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date when the specified commit was commited, in timestamp format with GMT offset.
+     * The date when the specified commit was committed, in timestamp format with GMT offset.
      * </p>
      * 
      * @param date
-     *        The date when the specified commit was commited, in timestamp format with GMT offset.
+     *        The date when the specified commit was committed, in timestamp format with GMT offset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     * When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      * <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription
      * period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      * <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value
@@ -38,7 +38,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     * When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      * <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription
      * period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      * <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value
@@ -46,7 +46,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param autoRenew
-     *        When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     *        When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      *        <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing
      *        subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      *        <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing
@@ -60,14 +60,14 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     * When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      * <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription
      * period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      * <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value
      * for <code>AutoRenew</code> remains unchanged.
      * </p>
      * 
-     * @return When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     * @return When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      *         <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing
      *         subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      *         <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the
@@ -81,7 +81,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     * When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      * <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription
      * period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      * <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value
@@ -89,7 +89,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param autoRenew
-     *        When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     *        When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      *        <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing
      *        subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      *        <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing
@@ -105,7 +105,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     * When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      * <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription
      * period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      * <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value
@@ -113,7 +113,7 @@ public class UpdateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param autoRenew
-     *        When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
+     *        When you initially create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If
      *        <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing
      *        subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the
      *        <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing

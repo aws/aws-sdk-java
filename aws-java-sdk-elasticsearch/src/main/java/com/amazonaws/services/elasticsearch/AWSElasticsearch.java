@@ -137,7 +137,7 @@ public interface AWSElasticsearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         An error occurred because the client wanted to access a not supported operation. Gives http status code of
      *         409.
      * @throws InternalException
      *         The request processing has failed because of an unknown error, exception or failure (the failure is
@@ -310,7 +310,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http status code of 400.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         An error occurred because the client wanted to access a not supported operation. Gives http status code of
      *         409.
      * @throws InternalException
      *         The request processing has failed because of an unknown error, exception or failure (the failure is
@@ -336,7 +336,7 @@ public interface AWSElasticsearch {
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http status code of 400.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         An error occurred because the client wanted to access a not supported operation. Gives http status code of
      *         409.
      * @sample AWSElasticsearch.DescribeReservedElasticsearchInstances
      */
@@ -446,7 +446,7 @@ public interface AWSElasticsearch {
      *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
      *         409.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         An error occurred because the client wanted to access a not supported operation. Gives http status code of
      *         409.
      * @throws ValidationException
      *         An exception for missing / invalid input fields. Gives http status code of 400.

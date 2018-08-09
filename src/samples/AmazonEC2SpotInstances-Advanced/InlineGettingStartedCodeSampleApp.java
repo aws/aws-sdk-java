@@ -268,7 +268,7 @@ public class InlineGettingStartedCodeSampleApp {
             // Write out any exceptions that may have occurred.
             System.out.println("Error cancelling instances");
             System.out.println("Caught Exception: " + e.getMessage());
-            System.out.println("Reponse Status Code: " + e.getStatusCode());
+            System.out.println("Response Status Code: " + e.getStatusCode());
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
         }
@@ -284,7 +284,7 @@ public class InlineGettingStartedCodeSampleApp {
             // Write out any exceptions that may have occurred.
             System.out.println("Error terminating instances");
             System.out.println("Caught Exception: " + e.getMessage());
-            System.out.println("Reponse Status Code: " + e.getStatusCode());
+            System.out.println("Response Status Code: " + e.getStatusCode());
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
         }

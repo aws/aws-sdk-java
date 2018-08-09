@@ -63,7 +63,7 @@ public class SnsMessageManager {
 
     /**
      * Creates an {@link SnsMessageManager} pinned to the given region. This handler will throw an exception if it
-     * recieves a message from another region. If you must handle messages from multiple regions then you should
+     * receives a message from another region. If you must handle messages from multiple regions then you should
      * maintain a cache of region to {@link SnsMessageManager} instances.
      *
      * @param region Region to pin handler to.

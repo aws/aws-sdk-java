@@ -27,7 +27,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
  * {@link DynamoDBTypeConverted} is created per field/attribute. In the old,
  * an new instance of the marshaller was created for each call to
  * {@code marshall} and {@code unmarshall}. If your marshaller/converter is not
- * thread safe, it is recomended to specify a converter which will instantiate
+ * thread safe, it is recommended to specify a converter which will instantiate
  * a new marshaller per call.</p>
  *
  * <pre class="brush: java">

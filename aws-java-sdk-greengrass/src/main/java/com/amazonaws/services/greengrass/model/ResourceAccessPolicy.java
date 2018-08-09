@@ -31,7 +31,7 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
      * (read-only).
      */
     private String permission;
-    /** The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.) */
+    /** The ID of the resource. (This ID is assigned to the resource when you create the resource definition.) */
     private String resourceId;
 
     /**
@@ -94,10 +94,10 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+     * The ID of the resource. (This ID is assigned to the resource when you create the resource definition.)
      * 
      * @param resourceId
-     *        The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+     *        The ID of the resource. (This ID is assigned to the resource when you create the resource definition.)
      */
 
     public void setResourceId(String resourceId) {
@@ -105,9 +105,9 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+     * The ID of the resource. (This ID is assigned to the resource when you create the resource definition.)
      * 
-     * @return The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+     * @return The ID of the resource. (This ID is assigned to the resource when you create the resource definition.)
      */
 
     public String getResourceId() {
@@ -115,10 +115,10 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+     * The ID of the resource. (This ID is assigned to the resource when you create the resource definition.)
      * 
      * @param resourceId
-     *        The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+     *        The ID of the resource. (This ID is assigned to the resource when you create the resource definition.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

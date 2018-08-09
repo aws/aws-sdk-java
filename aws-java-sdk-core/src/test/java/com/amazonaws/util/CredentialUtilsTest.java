@@ -41,7 +41,7 @@ public class CredentialUtilsTest {
     private static final AWSCredentialsProvider CLIENT_CREDENTIALS = new DefaultAWSCredentialsProviderChain();
 
     @Test
-    public void request_credentials_takes_precendence_over_client_credentials() {
+    public void request_credentials_takes_precedence_over_client_credentials() {
         final String awsAccessKeyId = "foo";
         final String awsSecretAccessKey = "bar";
         final AWSCredentials reqCredentials = new BasicAWSCredentials(awsAccessKeyId,

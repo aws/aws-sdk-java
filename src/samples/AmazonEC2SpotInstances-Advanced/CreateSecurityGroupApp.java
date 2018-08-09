@@ -113,7 +113,7 @@ public class CreateSecurityGroupApp {
             AuthorizeSecurityGroupIngressRequest ingressRequest = new AuthorizeSecurityGroupIngressRequest(
                     "GettingStartedGroup", ipPermissions);
             ec2.authorizeSecurityGroupIngress(ingressRequest);
-            System.out.println(String.format("Ingress port authroized: [%s]",
+            System.out.println(String.format("Ingress port authorized: [%s]",
                     ipPermissions.toString()));
         } catch (AmazonServiceException ase) {
             // Ignore because this likely means the zone has already been authorized.

@@ -113,7 +113,7 @@ public class EC2MetadataClient {
      *         Instance Metadata Service.
      *
      * @throws IOException
-     *             If any problems ocurred while reading the response.
+     *             If any problems occurred while reading the response.
      */
     private String readResponse(HttpURLConnection connection) throws IOException {
         if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)

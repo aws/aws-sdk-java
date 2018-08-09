@@ -47,7 +47,7 @@ public abstract class AwsSyncClientBuilder<Subclass extends AwsSyncClientBuilder
     }
 
     /**
-     * Overriden by subclasses to call the client constructor.
+     * Overridden by subclasses to call the client constructor.
      *
      * @param clientParams Client Params to create client with
      * @return Built client.

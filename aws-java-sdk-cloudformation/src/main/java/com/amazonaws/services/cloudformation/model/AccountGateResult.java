@@ -73,7 +73,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions
+     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions
      * to invoke the function. AWS CloudFormation proceeds with the stack set operation in this account and region.
      * </p>
      * </li>
@@ -129,7 +129,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions
+     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions
      * to invoke the function. AWS CloudFormation proceeds with the stack set operation in this account and region.
      * </p>
      * </li>
@@ -175,7 +175,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks
+     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks
      *        permissions to invoke the function. AWS CloudFormation proceeds with the stack set operation in this
      *        account and region.
      *        </p>
@@ -229,7 +229,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions
+     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions
      * to invoke the function. AWS CloudFormation proceeds with the stack set operation in this account and region.
      * </p>
      * </li>
@@ -274,7 +274,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks
+     *         The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks
      *         permissions to invoke the function. AWS CloudFormation proceeds with the stack set operation in this
      *         account and region.
      *         </p>
@@ -328,7 +328,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions
+     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions
      * to invoke the function. AWS CloudFormation proceeds with the stack set operation in this account and region.
      * </p>
      * </li>
@@ -374,7 +374,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks
+     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks
      *        permissions to invoke the function. AWS CloudFormation proceeds with the stack set operation in this
      *        account and region.
      *        </p>
@@ -430,7 +430,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions
+     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions
      * to invoke the function. AWS CloudFormation proceeds with the stack set operation in this account and region.
      * </p>
      * </li>
@@ -476,7 +476,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks
+     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks
      *        permissions to invoke the function. AWS CloudFormation proceeds with the stack set operation in this
      *        account and region.
      *        </p>
@@ -530,7 +530,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions
+     * The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions
      * to invoke the function. AWS CloudFormation proceeds with the stack set operation in this account and region.
      * </p>
      * </li>
@@ -576,7 +576,7 @@ public class AccountGateResult implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks
+     *        The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks
      *        permissions to invoke the function. AWS CloudFormation proceeds with the stack set operation in this
      *        account and region.
      *        </p>
