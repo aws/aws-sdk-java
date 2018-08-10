@@ -144,28 +144,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -374,7 +354,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
@@ -1164,54 +1148,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b> true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b> false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *        information, see <a>CreateDBInstance</a>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1222,53 +1167,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b> true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b> false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *         information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1279,54 +1185,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b> true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b> false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *        information, see <a>CreateDBInstance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1339,53 +1206,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b> true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b> false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *         information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -2766,10 +2594,18 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
-     * @return The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     * @return The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
+     *         depend on the DB engine being used. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *         >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service
+     *         User Guide</i>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -2781,11 +2617,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     *        The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -2799,7 +2643,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2808,7 +2656,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     *        The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2824,11 +2676,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     * The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of logs that the restored DB instance is to export to CloudWatch Logs.
+     *        The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

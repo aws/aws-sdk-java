@@ -279,8 +279,23 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
+
+    private Integer capacity;
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     */
+    private String engineMode;
+
+    private ScalingConfigurationInfo scalingConfigurationInfo;
 
     /**
      * <p>
@@ -2160,8 +2175,17 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
-     * @return A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * @return A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+     *         <p>
+     *         Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *         Files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public java.util.List<String> getEnabledCloudwatchLogsExports() {
@@ -2175,9 +2199,18 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
@@ -2194,13 +2227,22 @@ public class DBCluster implements Serializable, Cloneable {
      * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
      * </p>
      * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnabledCloudwatchLogsExports(java.util.Collection)} or
      * {@link #withEnabledCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2218,14 +2260,115 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBCluster withEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
         setEnabledCloudwatchLogsExports(enabledCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
+     * @param capacity
+     */
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getCapacity() {
+        return this.capacity;
+    }
+
+    /**
+     * @param capacity
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCapacity(Integer capacity) {
+        setCapacity(capacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     * 
+     * @param engineMode
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     */
+
+    public void setEngineMode(String engineMode) {
+        this.engineMode = engineMode;
+    }
+
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     * 
+     * @return The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     */
+
+    public String getEngineMode() {
+        return this.engineMode;
+    }
+
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     * 
+     * @param engineMode
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withEngineMode(String engineMode) {
+        setEngineMode(engineMode);
+        return this;
+    }
+
+    /**
+     * @param scalingConfigurationInfo
+     */
+
+    public void setScalingConfigurationInfo(ScalingConfigurationInfo scalingConfigurationInfo) {
+        this.scalingConfigurationInfo = scalingConfigurationInfo;
+    }
+
+    /**
+     * @return
+     */
+
+    public ScalingConfigurationInfo getScalingConfigurationInfo() {
+        return this.scalingConfigurationInfo;
+    }
+
+    /**
+     * @param scalingConfigurationInfo
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withScalingConfigurationInfo(ScalingConfigurationInfo scalingConfigurationInfo) {
+        setScalingConfigurationInfo(scalingConfigurationInfo);
         return this;
     }
 
@@ -2317,7 +2460,13 @@ public class DBCluster implements Serializable, Cloneable {
         if (getBacktrackConsumedChangeRecords() != null)
             sb.append("BacktrackConsumedChangeRecords: ").append(getBacktrackConsumedChangeRecords()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getCapacity() != null)
+            sb.append("Capacity: ").append(getCapacity()).append(",");
+        if (getEngineMode() != null)
+            sb.append("EngineMode: ").append(getEngineMode()).append(",");
+        if (getScalingConfigurationInfo() != null)
+            sb.append("ScalingConfigurationInfo: ").append(getScalingConfigurationInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -2491,6 +2640,18 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
             return false;
+        if (other.getCapacity() == null ^ this.getCapacity() == null)
+            return false;
+        if (other.getCapacity() != null && other.getCapacity().equals(this.getCapacity()) == false)
+            return false;
+        if (other.getEngineMode() == null ^ this.getEngineMode() == null)
+            return false;
+        if (other.getEngineMode() != null && other.getEngineMode().equals(this.getEngineMode()) == false)
+            return false;
+        if (other.getScalingConfigurationInfo() == null ^ this.getScalingConfigurationInfo() == null)
+            return false;
+        if (other.getScalingConfigurationInfo() != null && other.getScalingConfigurationInfo().equals(this.getScalingConfigurationInfo()) == false)
+            return false;
         return true;
     }
 
@@ -2538,6 +2699,9 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         hashCode = prime * hashCode + ((getBacktrackConsumedChangeRecords() == null) ? 0 : getBacktrackConsumedChangeRecords().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getCapacity() == null) ? 0 : getCapacity().hashCode());
+        hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
+        hashCode = prime * hashCode + ((getScalingConfigurationInfo() == null) ? 0 : getScalingConfigurationInfo().hashCode());
         return hashCode;
     }
 

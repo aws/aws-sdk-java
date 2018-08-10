@@ -155,6 +155,8 @@ public enum RDSActions implements Action {
     FailoverDBCluster("rds:FailoverDBCluster"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("rds:ListTagsForResource"),
+    /** Action for the ModifyCurrentDBClusterCapacity operation. */
+    ModifyCurrentDBClusterCapacity("rds:ModifyCurrentDBClusterCapacity"),
     /** Action for the ModifyDBCluster operation. */
     ModifyDBCluster("rds:ModifyDBCluster"),
     /** Action for the ModifyDBClusterParameterGroup operation. */

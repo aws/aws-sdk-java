@@ -19,7 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A data volume used in a task definition.
+ * A data volume used in a task definition. For tasks that use a Docker volume, specify a
+ * <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and
+ * optional <code>sourcePath</code>. For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing_data_volumes.html">Using Data Volumes in
+ * Tasks</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume" target="_top">AWS API Documentation</a>
@@ -37,9 +41,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported when using
+     * either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter determine whether your
+     * bind mount host volume persists on the host container instance and where it is stored. If the <code>host</code>
+     * parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not
+     * guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -49,6 +55,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HostVolumeProperties host;
+    /**
+     * <p>
+     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * </p>
+     */
+    private DockerVolumeConfiguration dockerVolumeConfiguration;
 
     /**
      * <p>
@@ -104,9 +116,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported when using
+     * either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter determine whether your
+     * bind mount host volume persists on the host container instance and where it is stored. If the <code>host</code>
+     * parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not
+     * guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -116,10 +130,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param host
-     *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
-     *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *        associated with it stop running.</p>
+     *        This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported when
+     *        using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter determine
+     *        whether your bind mount host volume persists on the host container instance and where it is stored. If the
+     *        <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume, but
+     *        the data is not guaranteed to persist after the containers associated with it stop running.</p>
      *        <p>
      *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
      *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
@@ -133,9 +148,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported when using
+     * either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter determine whether your
+     * bind mount host volume persists on the host container instance and where it is stored. If the <code>host</code>
+     * parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not
+     * guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -144,10 +161,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      * 
-     * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
-     *         container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *         a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *         associated with it stop running.</p>
+     * @return This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported
+     *         when using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter
+     *         determine whether your bind mount host volume persists on the host container instance and where it is
+     *         stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your
+     *         data volume, but the data is not guaranteed to persist after the containers associated with it stop
+     *         running.</p>
      *         <p>
      *         Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
      *         Windows containers cannot mount directories on a different drive, and mount point cannot be across
@@ -161,9 +180,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
-     * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported when using
+     * either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter determine whether your
+     * bind mount host volume persists on the host container instance and where it is stored. If the <code>host</code>
+     * parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not
+     * guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
      * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
@@ -173,10 +194,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param host
-     *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
-     *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *        associated with it stop running.</p>
+     *        This parameter is specified when using bind mount host volumes. Bind mount host volumes are supported when
+     *        using either the EC2 or Fargate launch types. The contents of the <code>host</code> parameter determine
+     *        whether your bind mount host volume persists on the host container instance and where it is stored. If the
+     *        <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume, but
+     *        the data is not guaranteed to persist after the containers associated with it stop running.</p>
      *        <p>
      *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
      *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
@@ -187,6 +209,46 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     public Volume withHost(HostVolumeProperties host) {
         setHost(host);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * </p>
+     * 
+     * @param dockerVolumeConfiguration
+     *        The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     */
+
+    public void setDockerVolumeConfiguration(DockerVolumeConfiguration dockerVolumeConfiguration) {
+        this.dockerVolumeConfiguration = dockerVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * </p>
+     * 
+     * @return The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     */
+
+    public DockerVolumeConfiguration getDockerVolumeConfiguration() {
+        return this.dockerVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * </p>
+     * 
+     * @param dockerVolumeConfiguration
+     *        The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withDockerVolumeConfiguration(DockerVolumeConfiguration dockerVolumeConfiguration) {
+        setDockerVolumeConfiguration(dockerVolumeConfiguration);
         return this;
     }
 
@@ -204,7 +266,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getHost() != null)
-            sb.append("Host: ").append(getHost());
+            sb.append("Host: ").append(getHost()).append(",");
+        if (getDockerVolumeConfiguration() != null)
+            sb.append("DockerVolumeConfiguration: ").append(getDockerVolumeConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +291,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHost() != null && other.getHost().equals(this.getHost()) == false)
             return false;
+        if (other.getDockerVolumeConfiguration() == null ^ this.getDockerVolumeConfiguration() == null)
+            return false;
+        if (other.getDockerVolumeConfiguration() != null && other.getDockerVolumeConfiguration().equals(this.getDockerVolumeConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -237,6 +305,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getHost() == null) ? 0 : getHost().hashCode());
+        hashCode = prime * hashCode + ((getDockerVolumeConfiguration() == null) ? 0 : getDockerVolumeConfiguration().hashCode());
         return hashCode;
     }
 

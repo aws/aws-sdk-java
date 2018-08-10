@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : {
       "DescribeEventsRequest" : [ "SourceType" ],
       "Event" : [ "SourceType" ],
@@ -139,6 +139,10 @@
         "documentation" : "<p>You have exceeded the maximum number of tags for this DAX cluster.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -185,6 +189,10 @@
       }, {
         "exceptionName" : "InvalidParameterGroupStateException",
         "documentation" : "<p>One or more parameters in a parameter group are in an invalid state.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -238,6 +246,10 @@
         "exceptionName" : "InvalidSubnetException",
         "documentation" : "<p>An invalid subnet identifier was specified.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -277,6 +289,10 @@
       }, {
         "exceptionName" : "InvalidClusterStateException",
         "documentation" : "<p>The requested DAX cluster is not in the <i>available</i> state.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -323,6 +339,10 @@
         "documentation" : "<p>The requested DAX cluster is not in the <i>available</i> state.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -365,6 +385,10 @@
       }, {
         "exceptionName" : "ParameterGroupNotFoundException",
         "documentation" : "<p>The specified parameter group does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -410,6 +434,10 @@
         "exceptionName" : "SubnetGroupNotFoundException",
         "documentation" : "<p>The requested subnet group name does not refer to an existing subnet group.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -441,6 +469,10 @@
       "exceptions" : [ {
         "exceptionName" : "ClusterNotFoundException",
         "documentation" : "<p>The requested cluster ID does not refer to an existing DAX cluster.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -479,6 +511,10 @@
       "deprecated" : false,
       "documentation" : "<p>Returns the default system parameter information for the DAX caching software.</p>",
       "exceptions" : [ {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -515,6 +551,10 @@
       "deprecated" : false,
       "documentation" : "<p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
       "exceptions" : [ {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -553,6 +593,10 @@
       "exceptions" : [ {
         "exceptionName" : "ParameterGroupNotFoundException",
         "documentation" : "<p>The specified parameter group does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -595,6 +639,10 @@
         "documentation" : "<p>The specified parameter group does not exist.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -633,6 +681,10 @@
       "exceptions" : [ {
         "exceptionName" : "SubnetGroupNotFoundException",
         "documentation" : "<p>The requested subnet group name does not refer to an existing subnet group.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -687,6 +739,10 @@
         "documentation" : "<p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -735,6 +791,10 @@
         "documentation" : "<p>The requested DAX cluster is not in the <i>available</i> state.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -781,6 +841,10 @@
       }, {
         "exceptionName" : "InvalidClusterStateException",
         "documentation" : "<p>The requested DAX cluster is not in the <i>available</i> state.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -835,6 +899,10 @@
         "documentation" : "<p>The requested DAX cluster is not in the <i>available</i> state.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -885,6 +953,10 @@
       }, {
         "exceptionName" : "InvalidClusterStateException",
         "documentation" : "<p>The requested DAX cluster is not in the <i>available</i> state.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -939,6 +1011,10 @@
         "documentation" : "<p>The specified parameter group does not exist.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value for a parameter is invalid.</p>",
         "httpStatusCode" : null
@@ -981,6 +1057,10 @@
       }, {
         "exceptionName" : "ParameterGroupNotFoundException",
         "documentation" : "<p>The specified parameter group does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -1033,6 +1113,10 @@
       }, {
         "exceptionName" : "InvalidSubnetException",
         "documentation" : "<p>An invalid subnet identifier was specified.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2399,6 +2483,71 @@
           "variableSetterType" : "ParameterGroupStatus"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SSEDescription",
+        "c2jShape" : "SSEDescription",
+        "deprecated" : false,
+        "documentation" : "<p>The description of the server-side encryption status on the specified DAX cluster.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withSSEDescription",
+        "getterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@return The description of the server-side encryption status on the specified DAX cluster.*/",
+        "getterMethodName" : "getSSEDescription",
+        "getterModel" : {
+          "returnType" : "SSEDescription",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SSEDescription",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SSEDescription",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "SSEDescription",
+        "setterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.*/",
+        "setterMethodName" : "setSSEDescription",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "SSEDescription",
+          "variableName" : "sSEDescription",
+          "variableType" : "SSEDescription",
+          "documentation" : "",
+          "simpleType" : "SSEDescription",
+          "variableSetterType" : "SSEDescription"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "SSEDescription",
+          "variableName" : "sSEDescription",
+          "variableType" : "SSEDescription",
+          "documentation" : "<p>The description of the server-side encryption status on the specified DAX cluster.</p>",
+          "simpleType" : "SSEDescription",
+          "variableSetterType" : "SSEDescription"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ActiveNodes" : {
@@ -3350,6 +3499,72 @@
             "documentation" : "<p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SSEDescription" : {
+          "c2jName" : "SSEDescription",
+          "c2jShape" : "SSEDescription",
+          "deprecated" : false,
+          "documentation" : "<p>The description of the server-side encryption status on the specified DAX cluster.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withSSEDescription",
+          "getterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@return The description of the server-side encryption status on the specified DAX cluster.*/",
+          "getterMethodName" : "getSSEDescription",
+          "getterModel" : {
+            "returnType" : "SSEDescription",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SSEDescription",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SSEDescription",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "SSEDescription",
+          "setterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.*/",
+          "setterMethodName" : "setSSEDescription",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "SSEDescription",
+            "variableName" : "sSEDescription",
+            "variableType" : "SSEDescription",
+            "documentation" : "",
+            "simpleType" : "SSEDescription",
+            "variableSetterType" : "SSEDescription"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The description of the server-side encryption status on the specified DAX cluster.</p>\n@param sSEDescription The description of the server-side encryption status on the specified DAX cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "SSEDescription",
+            "variableName" : "sSEDescription",
+            "variableType" : "SSEDescription",
+            "documentation" : "<p>The description of the server-side encryption status on the specified DAX cluster.</p>",
+            "simpleType" : "SSEDescription",
+            "variableSetterType" : "SSEDescription"
           },
           "xmlNameSpaceUri" : null
         },
@@ -4874,6 +5089,71 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SSESpecification",
+        "c2jShape" : "SSESpecification",
+        "deprecated" : false,
+        "documentation" : "<p>Represents the settings used to enable server-side encryption on the cluster.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withSSESpecification",
+        "getterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@return Represents the settings used to enable server-side encryption on the cluster.*/",
+        "getterMethodName" : "getSSESpecification",
+        "getterModel" : {
+          "returnType" : "SSESpecification",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SSESpecification",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SSESpecification",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "SSESpecification",
+        "setterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.*/",
+        "setterMethodName" : "setSSESpecification",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "SSESpecification",
+          "variableName" : "sSESpecification",
+          "variableType" : "SSESpecification",
+          "documentation" : "",
+          "simpleType" : "SSESpecification",
+          "variableSetterType" : "SSESpecification"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "SSESpecification",
+          "variableName" : "sSESpecification",
+          "variableType" : "SSESpecification",
+          "documentation" : "<p>Represents the settings used to enable server-side encryption on the cluster.</p>",
+          "simpleType" : "SSESpecification",
+          "variableSetterType" : "SSESpecification"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AvailabilityZones" : {
@@ -5550,6 +5830,72 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "SSESpecification" : {
+          "c2jName" : "SSESpecification",
+          "c2jShape" : "SSESpecification",
+          "deprecated" : false,
+          "documentation" : "<p>Represents the settings used to enable server-side encryption on the cluster.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withSSESpecification",
+          "getterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@return Represents the settings used to enable server-side encryption on the cluster.*/",
+          "getterMethodName" : "getSSESpecification",
+          "getterModel" : {
+            "returnType" : "SSESpecification",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SSESpecification",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SSESpecification",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "SSESpecification",
+          "setterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.*/",
+          "setterMethodName" : "setSSESpecification",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "SSESpecification",
+            "variableName" : "sSESpecification",
+            "variableType" : "SSESpecification",
+            "documentation" : "",
+            "simpleType" : "SSESpecification",
+            "variableSetterType" : "SSESpecification"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Represents the settings used to enable server-side encryption on the cluster.</p>\n@param sSESpecification Represents the settings used to enable server-side encryption on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "SSESpecification",
+            "variableName" : "sSESpecification",
+            "variableType" : "SSESpecification",
+            "documentation" : "<p>Represents the settings used to enable server-side encryption on the cluster.</p>",
+            "simpleType" : "SSESpecification",
+            "variableSetterType" : "SSESpecification"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "SecurityGroupIds" : {
           "c2jName" : "SecurityGroupIds",
           "c2jShape" : "SecurityGroupIdentifierList",
@@ -5911,7 +6257,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "ClusterName", "NodeType", "ReplicationFactor", "IamRoleArn" ],
+      "required" : [ "ClusterName", "NodeType", "ReplicationFactor" ],
       "shapeName" : "CreateClusterRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -23507,6 +23853,402 @@
       },
       "wrapper" : false
     },
+    "SSEDescription" : {
+      "c2jName" : "SSEDescription",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The description of the server-side encryption status on the specified DAX cluster.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Status",
+        "c2jShape" : "SSEStatus",
+        "deprecated" : false,
+        "documentation" : "<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>",
+        "enumType" : "SSEStatus",
+        "fluentSetterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEStatus*/",
+        "fluentSetterMethodName" : "withStatus",
+        "getterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@return The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@see SSEStatus*/",
+        "getterMethodName" : "getStatus",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Status",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Status",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Status",
+        "setterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@see SSEStatus*/",
+        "setterMethodName" : "setStatus",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "status",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEStatus*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "status",
+          "variableType" : "String",
+          "documentation" : "<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Status" : {
+          "c2jName" : "Status",
+          "c2jShape" : "SSEStatus",
+          "deprecated" : false,
+          "documentation" : "<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>",
+          "enumType" : "SSEStatus",
+          "fluentSetterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEStatus*/",
+          "fluentSetterMethodName" : "withStatus",
+          "getterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@return The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@see SSEStatus*/",
+          "getterMethodName" : "getStatus",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Status",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Status",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Status",
+          "setterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@see SSEStatus*/",
+          "setterMethodName" : "setStatus",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "status",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>\n@param status The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEStatus*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "status",
+            "variableType" : "String",
+            "documentation" : "<p>The current state of server-side encryption:</p> <ul> <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> </ul>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "SSEDescription",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "SSEDescription",
+        "variableName" : "sSEDescription",
+        "variableType" : "SSEDescription",
+        "documentation" : null,
+        "simpleType" : "SSEDescription",
+        "variableSetterType" : "SSEDescription"
+      },
+      "wrapper" : false
+    },
+    "SSESpecification" : {
+      "c2jName" : "SSESpecification",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Represents the settings used to enable server-side encryption.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Enabled",
+        "c2jShape" : "SSEEnabled",
+        "deprecated" : false,
+        "documentation" : "<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEnabled",
+        "getterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@return Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.*/",
+        "getterMethodName" : "getEnabled",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Enabled",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Enabled",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "Enabled",
+        "setterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.*/",
+        "setterMethodName" : "setEnabled",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enabled",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "enabled",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Enabled" : {
+          "c2jName" : "Enabled",
+          "c2jShape" : "SSEEnabled",
+          "deprecated" : false,
+          "documentation" : "<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEnabled",
+          "getterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@return Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.*/",
+          "getterMethodName" : "getEnabled",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Enabled",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Enabled",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "Enabled",
+          "setterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.*/",
+          "setterMethodName" : "setEnabled",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enabled",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>\n@param enabled Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "enabled",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "Enabled" ],
+      "shapeName" : "SSESpecification",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "SSESpecification",
+        "variableName" : "sSESpecification",
+        "variableType" : "SSESpecification",
+        "documentation" : null,
+        "simpleType" : "SSESpecification",
+        "variableSetterType" : "SSESpecification"
+      },
+      "wrapper" : false
+    },
+    "SSEStatus" : {
+      "c2jName" : "SSEStatus",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "ENABLING",
+        "value" : "ENABLING"
+      }, {
+        "name" : "ENABLED",
+        "value" : "ENABLED"
+      }, {
+        "name" : "DISABLING",
+        "value" : "DISABLING"
+      }, {
+        "name" : "DISABLED",
+        "value" : "DISABLED"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "SSEStatus",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "SSEStatus",
+        "variableName" : "sSEStatus",
+        "variableType" : "SSEStatus",
+        "documentation" : null,
+        "simpleType" : "SSEStatus",
+        "variableSetterType" : "SSEStatus"
+      },
+      "wrapper" : false
+    },
     "SecurityGroupMembership" : {
       "c2jName" : "SecurityGroupMembership",
       "customization" : {
@@ -23807,6 +24549,43 @@
         "documentation" : null,
         "simpleType" : "SecurityGroupMembership",
         "variableSetterType" : "SecurityGroupMembership"
+      },
+      "wrapper" : false
+    },
+    "ServiceLinkedRoleNotFoundException" : {
+      "c2jName" : "ServiceLinkedRoleNotFoundFault",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : "ServiceLinkedRoleNotFoundFault",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ServiceLinkedRoleNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ServiceLinkedRoleNotFoundException",
+        "variableName" : "serviceLinkedRoleNotFoundException",
+        "variableType" : "ServiceLinkedRoleNotFoundException",
+        "documentation" : null,
+        "simpleType" : "ServiceLinkedRoleNotFoundException",
+        "variableSetterType" : "ServiceLinkedRoleNotFoundException"
       },
       "wrapper" : false
     },

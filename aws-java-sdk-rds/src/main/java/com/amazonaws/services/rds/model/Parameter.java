@@ -92,6 +92,12 @@ public class Parameter implements Serializable, Cloneable {
      * </p>
      */
     private String applyMethod;
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
 
     /**
      * <p>
@@ -547,6 +553,79 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * 
+     * @return The valid DB engine modes.
+     */
+
+    public java.util.List<String> getSupportedEngineModes() {
+        if (supportedEngineModes == null) {
+            supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedEngineModes;
+    }
+
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        The valid DB engine modes.
+     */
+
+    public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        if (supportedEngineModes == null) {
+            this.supportedEngineModes = null;
+            return;
+        }
+
+        this.supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes);
+    }
+
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        The valid DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withSupportedEngineModes(String... supportedEngineModes) {
+        if (this.supportedEngineModes == null) {
+            setSupportedEngineModes(new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes.length));
+        }
+        for (String ele : supportedEngineModes) {
+            this.supportedEngineModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The valid DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        The valid DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        setSupportedEngineModes(supportedEngineModes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -576,7 +655,9 @@ public class Parameter implements Serializable, Cloneable {
         if (getMinimumEngineVersion() != null)
             sb.append("MinimumEngineVersion: ").append(getMinimumEngineVersion()).append(",");
         if (getApplyMethod() != null)
-            sb.append("ApplyMethod: ").append(getApplyMethod());
+            sb.append("ApplyMethod: ").append(getApplyMethod()).append(",");
+        if (getSupportedEngineModes() != null)
+            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes());
         sb.append("}");
         return sb.toString();
     }
@@ -631,6 +712,10 @@ public class Parameter implements Serializable, Cloneable {
             return false;
         if (other.getApplyMethod() != null && other.getApplyMethod().equals(this.getApplyMethod()) == false)
             return false;
+        if (other.getSupportedEngineModes() == null ^ this.getSupportedEngineModes() == null)
+            return false;
+        if (other.getSupportedEngineModes() != null && other.getSupportedEngineModes().equals(this.getSupportedEngineModes()) == false)
+            return false;
         return true;
     }
 
@@ -649,6 +734,7 @@ public class Parameter implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIsModifiable() == null) ? 0 : getIsModifiable().hashCode());
         hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getApplyMethod() == null) ? 0 : getApplyMethod().hashCode());
+        hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         return hashCode;
     }
 

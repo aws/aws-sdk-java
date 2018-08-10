@@ -181,6 +181,32 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
+        if (createDBClusterRequest.getEngineMode() != null) {
+            request.addParameter("EngineMode", StringUtils.fromString(createDBClusterRequest.getEngineMode()));
+        }
+
+        {
+            ScalingConfiguration scalingConfiguration = createDBClusterRequest.getScalingConfiguration();
+            if (scalingConfiguration != null) {
+
+                if (scalingConfiguration.getMinCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MinCapacity", StringUtils.fromInteger(scalingConfiguration.getMinCapacity()));
+                }
+
+                if (scalingConfiguration.getMaxCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MaxCapacity", StringUtils.fromInteger(scalingConfiguration.getMaxCapacity()));
+                }
+
+                if (scalingConfiguration.getAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.AutoPause", StringUtils.fromBoolean(scalingConfiguration.getAutoPause()));
+                }
+
+                if (scalingConfiguration.getSecondsUntilAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.SecondsUntilAutoPause", StringUtils.fromInteger(scalingConfiguration.getSecondsUntilAutoPause()));
+                }
+            }
+        }
+
         if (createDBClusterRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }

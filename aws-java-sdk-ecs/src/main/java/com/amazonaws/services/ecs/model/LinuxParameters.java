@@ -44,10 +44,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -171,10 +170,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -183,11 +181,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *         container</a> section of the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
-     *         the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code>
+     *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *         <p>
      *         If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *         supported.
@@ -204,10 +200,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -217,11 +212,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *        supported.
@@ -240,10 +233,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -258,11 +250,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *        supported.
@@ -283,10 +273,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -296,11 +285,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *        supported.

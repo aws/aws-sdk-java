@@ -30,7 +30,8 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task
+     * definition <code>volume</code>.
      * </p>
      */
     private String sourceVolume;
@@ -50,11 +51,13 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task
+     * definition <code>volume</code>.
      * </p>
      * 
      * @param sourceVolume
-     *        The name of the volume to mount.
+     *        The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of
+     *        task definition <code>volume</code>.
      */
 
     public void setSourceVolume(String sourceVolume) {
@@ -63,10 +66,12 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task
+     * definition <code>volume</code>.
      * </p>
      * 
-     * @return The name of the volume to mount.
+     * @return The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of
+     *         task definition <code>volume</code>.
      */
 
     public String getSourceVolume() {
@@ -75,11 +80,13 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task
+     * definition <code>volume</code>.
      * </p>
      * 
      * @param sourceVolume
-     *        The name of the volume to mount.
+     *        The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of
+     *        task definition <code>volume</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,4 +1,4 @@
-# __1.11.383__ __2018-08-08__
+# __1.11.384__ __2018-08-09__
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
@@ -27,6 +27,14 @@
   - ### Features
     -  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
 
+## __Amazon DynamoDB Accelerator (DAX)__
+  - ### Features
+    - Add the SSESpecification field to CreateCluster to allow creation of clusters with server-side encryption, and add the SSEDescription field to DescribeClusters to display the status of server-side encryption for a cluster. 
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for Docker volumes and Docker volume drivers. Customers can now configure their ECS Tasks to use Docker volumes, enabling stateful and storage-intensive applications to be deployed on ECS.
+
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - Amazon VPC Flow Logs adds support for delivering flow logs directly to S3
@@ -42,6 +50,10 @@
 ## __Amazon Polly__
   - ### Features
     - Amazon Polly enables female voice Aditi to speak Hindi language
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Launch RDS Aurora Serverless
 
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

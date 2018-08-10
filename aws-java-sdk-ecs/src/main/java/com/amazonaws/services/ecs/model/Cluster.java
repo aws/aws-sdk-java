@@ -54,7 +54,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      */
     private Integer registeredContainerInstancesCount;
@@ -278,11 +279,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
      * @param registeredContainerInstancesCount
-     *        The number of container instances registered into the cluster.
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
      */
 
     public void setRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
@@ -291,10 +294,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
-     * @return The number of container instances registered into the cluster.
+     * @return The number of container instances registered into the cluster. This includes container instances in both
+     *         <code>ACTIVE</code> and <code>DRAINING</code> status.
      */
 
     public Integer getRegisteredContainerInstancesCount() {
@@ -303,11 +308,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
      * @param registeredContainerInstancesCount
-     *        The number of container instances registered into the cluster.
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

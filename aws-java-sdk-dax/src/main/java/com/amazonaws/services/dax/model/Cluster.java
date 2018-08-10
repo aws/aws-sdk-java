@@ -129,6 +129,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ParameterGroupStatus parameterGroup;
+    /**
+     * <p>
+     * The description of the server-side encryption status on the specified DAX cluster.
+     * </p>
+     */
+    private SSEDescription sSEDescription;
 
     /**
      * <p>
@@ -897,6 +903,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The description of the server-side encryption status on the specified DAX cluster.
+     * </p>
+     * 
+     * @param sSEDescription
+     *        The description of the server-side encryption status on the specified DAX cluster.
+     */
+
+    public void setSSEDescription(SSEDescription sSEDescription) {
+        this.sSEDescription = sSEDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the server-side encryption status on the specified DAX cluster.
+     * </p>
+     * 
+     * @return The description of the server-side encryption status on the specified DAX cluster.
+     */
+
+    public SSEDescription getSSEDescription() {
+        return this.sSEDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the server-side encryption status on the specified DAX cluster.
+     * </p>
+     * 
+     * @param sSEDescription
+     *        The description of the server-side encryption status on the specified DAX cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withSSEDescription(SSEDescription sSEDescription) {
+        setSSEDescription(sSEDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -938,7 +984,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getIamRoleArn() != null)
             sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getParameterGroup() != null)
-            sb.append("ParameterGroup: ").append(getParameterGroup());
+            sb.append("ParameterGroup: ").append(getParameterGroup()).append(",");
+        if (getSSEDescription() != null)
+            sb.append("SSEDescription: ").append(getSSEDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -1017,6 +1065,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParameterGroup() != null && other.getParameterGroup().equals(this.getParameterGroup()) == false)
             return false;
+        if (other.getSSEDescription() == null ^ this.getSSEDescription() == null)
+            return false;
+        if (other.getSSEDescription() != null && other.getSSEDescription().equals(this.getSSEDescription()) == false)
+            return false;
         return true;
     }
 
@@ -1041,6 +1093,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getParameterGroup() == null) ? 0 : getParameterGroup().hashCode());
+        hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
         return hashCode;
     }
 

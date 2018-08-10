@@ -55,7 +55,8 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      */
     private String assignPublicIp;
@@ -296,11 +297,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
      * @param assignPublicIp
-     *        Whether the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address. The default value is
+     *        <code>DISABLED</code>.
      * @see AssignPublicIp
      */
 
@@ -310,10 +313,12 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
-     * @return Whether the task's elastic network interface receives a public IP address.
+     * @return Whether the task's elastic network interface receives a public IP address. The default value is
+     *         <code>DISABLED</code>.
      * @see AssignPublicIp
      */
 
@@ -323,11 +328,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
      * @param assignPublicIp
-     *        Whether the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address. The default value is
+     *        <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */
@@ -339,11 +346,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
      * @param assignPublicIp
-     *        Whether the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address. The default value is
+     *        <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */

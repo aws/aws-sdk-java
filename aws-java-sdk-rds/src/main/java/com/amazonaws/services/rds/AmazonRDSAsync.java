@@ -3273,6 +3273,81 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Set the capacity of an Aurora Serverless DB cluster to a specific value.
+     * </p>
+     * <p>
+     * Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some cases, the capacity might
+     * not scale fast enough to meet a sudden change in workload, such as a large number of new transactions. Call
+     * <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.
+     * </p>
+     * <p>
+     * After this call sets the DB cluster capacity, Aurora Serverless can automatically scale the DB cluster based on
+     * the cooldown period for scaling up and the cooldown period for scaling down.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>, connections
+     * to the DB cluster are dropped when the capacity is set.
+     * </p>
+     * </important>
+     * 
+     * @param modifyCurrentDBClusterCapacityRequest
+     * @return A Java Future containing the result of the ModifyCurrentDBClusterCapacity operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.ModifyCurrentDBClusterCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCurrentDBClusterCapacityResult> modifyCurrentDBClusterCapacityAsync(
+            ModifyCurrentDBClusterCapacityRequest modifyCurrentDBClusterCapacityRequest);
+
+    /**
+     * <p>
+     * Set the capacity of an Aurora Serverless DB cluster to a specific value.
+     * </p>
+     * <p>
+     * Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some cases, the capacity might
+     * not scale fast enough to meet a sudden change in workload, such as a large number of new transactions. Call
+     * <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.
+     * </p>
+     * <p>
+     * After this call sets the DB cluster capacity, Aurora Serverless can automatically scale the DB cluster based on
+     * the cooldown period for scaling up and the cooldown period for scaling down.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>, connections
+     * to the DB cluster are dropped when the capacity is set.
+     * </p>
+     * </important>
+     * 
+     * @param modifyCurrentDBClusterCapacityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyCurrentDBClusterCapacity operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.ModifyCurrentDBClusterCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCurrentDBClusterCapacityResult> modifyCurrentDBClusterCapacityAsync(
+            ModifyCurrentDBClusterCapacityRequest modifyCurrentDBClusterCapacityRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyCurrentDBClusterCapacityRequest, ModifyCurrentDBClusterCapacityResult> asyncHandler);
+
+    /**
+     * <p>
      * Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by
      * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora on Amazon RDS</a> in the

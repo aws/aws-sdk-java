@@ -2934,6 +2934,40 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyCurrentDBClusterCapacityResult> modifyCurrentDBClusterCapacityAsync(ModifyCurrentDBClusterCapacityRequest request) {
+
+        return modifyCurrentDBClusterCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCurrentDBClusterCapacityResult> modifyCurrentDBClusterCapacityAsync(
+            final ModifyCurrentDBClusterCapacityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyCurrentDBClusterCapacityRequest, ModifyCurrentDBClusterCapacityResult> asyncHandler) {
+        final ModifyCurrentDBClusterCapacityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyCurrentDBClusterCapacityResult>() {
+            @Override
+            public ModifyCurrentDBClusterCapacityResult call() throws Exception {
+                ModifyCurrentDBClusterCapacityResult result = null;
+
+                try {
+                    result = executeModifyCurrentDBClusterCapacity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> modifyDBClusterAsync(ModifyDBClusterRequest request) {
 
         return modifyDBClusterAsync(request, null);

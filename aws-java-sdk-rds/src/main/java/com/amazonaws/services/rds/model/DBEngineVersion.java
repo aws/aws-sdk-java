@@ -102,6 +102,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsReadReplica;
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
 
     /**
      * <p>
@@ -770,6 +776,79 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * 
+     * @return A list of the supported DB engine modes.
+     */
+
+    public java.util.List<String> getSupportedEngineModes() {
+        if (supportedEngineModes == null) {
+            supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedEngineModes;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes.
+     */
+
+    public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        if (supportedEngineModes == null) {
+            this.supportedEngineModes = null;
+            return;
+        }
+
+        this.supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes);
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedEngineModes(String... supportedEngineModes) {
+        if (this.supportedEngineModes == null) {
+            setSupportedEngineModes(new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes.length));
+        }
+        for (String ele : supportedEngineModes) {
+            this.supportedEngineModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        setSupportedEngineModes(supportedEngineModes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -803,7 +882,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getSupportsLogExportsToCloudwatchLogs() != null)
             sb.append("SupportsLogExportsToCloudwatchLogs: ").append(getSupportsLogExportsToCloudwatchLogs()).append(",");
         if (getSupportsReadReplica() != null)
-            sb.append("SupportsReadReplica: ").append(getSupportsReadReplica());
+            sb.append("SupportsReadReplica: ").append(getSupportsReadReplica()).append(",");
+        if (getSupportedEngineModes() != null)
+            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes());
         sb.append("}");
         return sb.toString();
     }
@@ -867,6 +948,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getSupportsReadReplica() != null && other.getSupportsReadReplica().equals(this.getSupportsReadReplica()) == false)
             return false;
+        if (other.getSupportedEngineModes() == null ^ this.getSupportedEngineModes() == null)
+            return false;
+        if (other.getSupportedEngineModes() != null && other.getSupportedEngineModes().equals(this.getSupportedEngineModes()) == false)
+            return false;
         return true;
     }
 
@@ -887,6 +972,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExportableLogTypes() == null) ? 0 : getExportableLogTypes().hashCode());
         hashCode = prime * hashCode + ((getSupportsLogExportsToCloudwatchLogs() == null) ? 0 : getSupportsLogExportsToCloudwatchLogs().hashCode());
         hashCode = prime * hashCode + ((getSupportsReadReplica() == null) ? 0 : getSupportsReadReplica().hashCode());
+        hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         return hashCode;
     }
 

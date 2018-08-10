@@ -41,10 +41,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> command;
@@ -95,10 +93,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * 
      * @return A string array representing the command that the container runs to determine if it is healthy. The string
@@ -110,9 +106,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *         <code>HealthCheck</code> in the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *         container</a> section of the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     *         href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      */
 
     public java.util.List<String> getCommand() {
@@ -133,10 +128,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * 
      * @param command
@@ -149,9 +142,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *        <code>HealthCheck</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      */
 
     public void setCommand(java.util.Collection<String> command) {
@@ -174,10 +166,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,9 +185,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *        <code>HealthCheck</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,10 +211,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * 
      * @param command
@@ -238,9 +225,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *        <code>HealthCheck</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a>.
+     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

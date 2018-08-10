@@ -275,6 +275,20 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("Capacity", targetDepth)) {
+                    dBCluster.setCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EngineMode", targetDepth)) {
+                    dBCluster.setEngineMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ScalingConfigurationInfo", targetDepth)) {
+                    dBCluster.setScalingConfigurationInfo(ScalingConfigurationInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBCluster;

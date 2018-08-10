@@ -141,6 +141,9 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                             new JsonErrorShapeMetadata().withErrorCode("ClusterAlreadyExistsFault").withModeledClass(
                                     com.amazonaws.services.dax.model.ClusterAlreadyExistsException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceLinkedRoleNotFoundFault").withModeledClass(
+                                    com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NodeQuotaForClusterExceededFault").withModeledClass(
                                     com.amazonaws.services.dax.model.NodeQuotaForClusterExceededException.class))
                     .addErrorMetadata(
@@ -212,6 +215,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The VPC network is in an invalid state.
      * @throws TagQuotaPerResourceExceededException
      *         You have exceeded the maximum number of tags for this DAX cluster.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -272,6 +276,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The specified parameter group already exists.
      * @throws InvalidParameterGroupStateException
      *         One or more parameters in a parameter group are in an invalid state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -333,6 +338,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
+     * @throws ServiceLinkedRoleNotFoundException
      * @sample AmazonDax.CreateSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -394,6 +400,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         None of the nodes in the cluster have the given node ID.
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -455,6 +462,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The requested cluster ID does not refer to an existing DAX cluster.
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -513,6 +521,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         One or more parameters in a parameter group are in an invalid state.
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -575,6 +584,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The specified subnet group is currently in use.
      * @throws SubnetGroupNotFoundException
      *         The requested subnet group name does not refer to an existing subnet group.
+     * @throws ServiceLinkedRoleNotFoundException
      * @sample AmazonDax.DeleteSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -643,6 +653,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      * @return Result of the DescribeClusters operation returned by the service.
      * @throws ClusterNotFoundException
      *         The requested cluster ID does not refer to an existing DAX cluster.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -696,6 +707,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      * 
      * @param describeDefaultParametersRequest
      * @return Result of the DescribeDefaultParameters operation returned by the service.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -756,6 +768,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      * 
      * @param describeEventsRequest
      * @return Result of the DescribeEvents operation returned by the service.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -812,6 +825,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      * @return Result of the DescribeParameterGroups operation returned by the service.
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -869,6 +883,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      * @return Result of the DescribeParameters operation returned by the service.
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -925,6 +940,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      * @return Result of the DescribeSubnetGroups operation returned by the service.
      * @throws SubnetGroupNotFoundException
      *         The requested subnet group name does not refer to an existing subnet group.
+     * @throws ServiceLinkedRoleNotFoundException
      * @sample AmazonDax.DescribeSubnetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups" target="_top">AWS API
      *      Documentation</a>
@@ -987,6 +1003,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         You have attempted to exceed the maximum number of nodes for a DAX cluster.
      * @throws NodeQuotaForCustomerExceededException
      *         You have attempted to exceed the maximum number of nodes for your AWS account.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1049,6 +1066,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The Amazon Resource Name (ARN) supplied in the request is not valid.
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1109,6 +1127,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         None of the nodes in the cluster have the given node ID.
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1171,6 +1190,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The Amazon Resource Name (ARN) supplied in the request is not valid.
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1233,6 +1253,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The tag does not exist.
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1295,6 +1316,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         One or more parameters in a parameter group are in an invalid state.
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1353,6 +1375,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         One or more parameters in a parameter group are in an invalid state.
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1414,6 +1437,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The requested subnet is being used by another subnet group.
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
+     * @throws ServiceLinkedRoleNotFoundException
      * @sample AmazonDax.UpdateSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup" target="_top">AWS API
      *      Documentation</a>

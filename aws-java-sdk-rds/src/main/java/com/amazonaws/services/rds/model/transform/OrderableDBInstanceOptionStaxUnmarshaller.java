@@ -160,6 +160,16 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     continue;
                 }
 
+                if (context.testExpression("SupportedEngineModes", targetDepth)) {
+                    orderableDBInstanceOption.withSupportedEngineModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes/member", targetDepth)) {
+                    orderableDBInstanceOption.withSupportedEngineModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return orderableDBInstanceOption;

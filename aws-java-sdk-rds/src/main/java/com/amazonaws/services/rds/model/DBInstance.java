@@ -238,27 +238,6 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      */
     private Boolean publiclyAccessible;
     /**
@@ -421,6 +400,11 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
@@ -2003,52 +1987,11 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b>true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b>false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        specifies an internal instance with a DNS name that resolves to a private IP address.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -2061,51 +2004,10 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b>true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b>false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         specifies an internal instance with a DNS name that resolves to a private IP address.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -2118,52 +2020,11 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b>true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b>false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        specifies an internal instance with a DNS name that resolves to a private IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2178,51 +2039,10 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b>true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b>false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         specifies an internal instance with a DNS name that resolves to a private IP address.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -3414,8 +3234,17 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
-     * @return A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * @return A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *         <p>
+     *         Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *         Files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public java.util.List<String> getEnabledCloudwatchLogsExports() {
@@ -3429,9 +3258,18 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
@@ -3448,13 +3286,22 @@ public class DBInstance implements Serializable, Cloneable {
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
      * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnabledCloudwatchLogsExports(java.util.Collection)} or
      * {@link #withEnabledCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3472,9 +3319,18 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -208,10 +208,26 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private Long backtrackWindow;
     /**
      * <p>
-     * The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     * The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     */
+    private String engineMode;
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     */
+    private ScalingConfiguration scalingConfiguration;
 
     /**
      * <p>
@@ -1448,10 +1464,18 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     * The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
-     * @return The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     * @return The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list
+     *         depend on the DB engine being used. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *         >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service
+     *         User Guide</i>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -1463,11 +1487,19 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     * The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     *        The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -1481,7 +1513,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     * The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1490,7 +1526,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     *        The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1506,16 +1546,104 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     * The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+     *        The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreDBClusterFromSnapshotRequest withEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
         setEnableCloudwatchLogsExports(enableCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     * 
+     * @param engineMode
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     */
+
+    public void setEngineMode(String engineMode) {
+        this.engineMode = engineMode;
+    }
+
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     * 
+     * @return The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     */
+
+    public String getEngineMode() {
+        return this.engineMode;
+    }
+
+    /**
+     * <p>
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * </p>
+     * 
+     * @param engineMode
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromSnapshotRequest withEngineMode(String engineMode) {
+        setEngineMode(engineMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     * 
+     * @param scalingConfiguration
+     *        For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     */
+
+    public void setScalingConfiguration(ScalingConfiguration scalingConfiguration) {
+        this.scalingConfiguration = scalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     * 
+     * @return For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     */
+
+    public ScalingConfiguration getScalingConfiguration() {
+        return this.scalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     * 
+     * @param scalingConfiguration
+     *        For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromSnapshotRequest withScalingConfiguration(ScalingConfiguration scalingConfiguration) {
+        setScalingConfiguration(scalingConfiguration);
         return this;
     }
 
@@ -1559,7 +1687,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (getBacktrackWindow() != null)
             sb.append("BacktrackWindow: ").append(getBacktrackWindow()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
-            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getEngineMode() != null)
+            sb.append("EngineMode: ").append(getEngineMode()).append(",");
+        if (getScalingConfiguration() != null)
+            sb.append("ScalingConfiguration: ").append(getScalingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1635,6 +1767,14 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getEngineMode() == null ^ this.getEngineMode() == null)
+            return false;
+        if (other.getEngineMode() != null && other.getEngineMode().equals(this.getEngineMode()) == false)
+            return false;
+        if (other.getScalingConfiguration() == null ^ this.getScalingConfiguration() == null)
+            return false;
+        if (other.getScalingConfiguration() != null && other.getScalingConfiguration().equals(this.getScalingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1658,6 +1798,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
+        hashCode = prime * hashCode + ((getScalingConfiguration() == null) ? 0 : getScalingConfiguration().hashCode());
         return hashCode;
     }
 

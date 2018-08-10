@@ -677,6 +677,7 @@ public interface AmazonRDS {
      *         An error occurred accessing an AWS KMS key.
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
+     * @throws BackupPolicyNotFoundException
      * @sample AmazonRDS.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1908,6 +1909,47 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Set the capacity of an Aurora Serverless DB cluster to a specific value.
+     * </p>
+     * <p>
+     * Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some cases, the capacity might
+     * not scale fast enough to meet a sudden change in workload, such as a large number of new transactions. Call
+     * <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.
+     * </p>
+     * <p>
+     * After this call sets the DB cluster capacity, Aurora Serverless can automatically scale the DB cluster based on
+     * the cooldown period for scaling up and the cooldown period for scaling down.
+     * </p>
+     * <p>
+     * For more information about Aurora Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using Amazon Aurora
+     * Serverless</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>, connections
+     * to the DB cluster are dropped when the capacity is set.
+     * </p>
+     * </important>
+     * 
+     * @param modifyCurrentDBClusterCapacityRequest
+     * @return Result of the ModifyCurrentDBClusterCapacity operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBClusterCapacityException
+     *         <i>Capacity</i> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are
+     *         <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
+     *         <code>128</code>, and <code>256</code>.
+     * @sample AmazonRDS.ModifyCurrentDBClusterCapacity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyCurrentDBClusterCapacityResult modifyCurrentDBClusterCapacity(ModifyCurrentDBClusterCapacityRequest modifyCurrentDBClusterCapacityRequest);
+
+    /**
+     * <p>
      * Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by
      * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora on Amazon RDS</a> in the
@@ -2065,6 +2107,7 @@ public interface AmazonRDS {
      *         <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
+     * @throws BackupPolicyNotFoundException
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2700,6 +2743,7 @@ public interface AmazonRDS {
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+     * @throws BackupPolicyNotFoundException
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -2756,6 +2800,7 @@ public interface AmazonRDS {
      *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
+     * @throws BackupPolicyNotFoundException
      * @sample AmazonRDS.RestoreDBInstanceFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
      *      API Documentation</a>
@@ -2829,6 +2874,7 @@ public interface AmazonRDS {
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+     * @throws BackupPolicyNotFoundException
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"
      *      target="_top">AWS API Documentation</a>

@@ -1018,26 +1018,42 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
+     * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     * </p>
+     * <p>
+     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Default VPC:</b> true
+     * If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VPC:</b> false
+     * If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Boolean publiclyAccessible;
 
@@ -1252,7 +1268,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer performanceInsightsRetentionPeriod;
     /**
      * <p>
-     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
@@ -7826,51 +7846,83 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
+     * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     * </p>
+     * <p>
+     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Default VPC:</b> true
+     * If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VPC:</b> false
+     * If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
      *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
+     *        Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     *        </p>
+     *        <p>
+     *        If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *        the following applies:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Default VPC:</b> true
+     *        If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance
+     *        is private.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>VPC:</b> false
+     *        If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *        following applies:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     *        private.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     *        </p>
+     *        </li>
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -7884,50 +7936,83 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
+     * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     * </p>
+     * <p>
+     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Default VPC:</b> true
+     * If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VPC:</b> false
+     * If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
+     *         Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     *         </p>
+     *         <p>
+     *         If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *         the following applies:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Default VPC:</b> true
+     *         If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance
+     *         is private.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>VPC:</b> false
+     *         If the default VPC in the target region has an Internet gateway attached to it, the DB instance is
+     *         public.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *         following applies:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     *         private.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     *         </p>
+     *         </li>
      */
 
     public Boolean getPubliclyAccessible() {
@@ -7941,51 +8026,83 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
+     * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     * </p>
+     * <p>
+     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Default VPC:</b> true
+     * If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VPC:</b> false
+     * If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
      *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
+     *        Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     *        </p>
+     *        <p>
+     *        If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *        the following applies:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Default VPC:</b> true
+     *        If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance
+     *        is private.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>VPC:</b> false
+     *        If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *        following applies:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     *        private.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -8001,50 +8118,83 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
      * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
+     * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     * </p>
+     * <p>
+     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Default VPC:</b> true
+     * If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>VPC:</b> false
+     * If the default VPC in the target region has an Internet gateway attached to it, the DB instance is public.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * following applies:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     * private.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
      *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
      *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
+     *         Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
+     *         </p>
+     *         <p>
+     *         If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *         the following applies:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Default VPC:</b> true
+     *         If the default VPC in the target region doesn’t have an Internet gateway attached to it, the DB instance
+     *         is private.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>VPC:</b> false
+     *         If the default VPC in the target region has an Internet gateway attached to it, the DB instance is
+     *         public.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *         following applies:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the subnets are part of a VPC that doesn’t have an Internet gateway attached to it, the DB instance is
+     *         private.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the subnets are part of a VPC that has an Internet gateway attached to it, the DB instance is public.
+     *         </p>
+     *         </li>
      */
 
     public Boolean isPubliclyAccessible() {
@@ -9533,10 +9683,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
-     * @return The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * @return The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
+     *         depend on the DB engine being used. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *         >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service
+     *         User Guide</i>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -9548,11 +9706,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -9566,7 +9732,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -9575,7 +9745,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -9591,11 +9765,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     * The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on
+     * the DB engine being used. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        The list of log types that need to be enabled for exporting to CloudWatch Logs.
+     *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
+     *        depend on the DB engine being used. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+     *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

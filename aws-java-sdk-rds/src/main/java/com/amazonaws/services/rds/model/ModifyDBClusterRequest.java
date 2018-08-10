@@ -264,6 +264,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     * <code>serverless</code> DB engine mode.
+     * </p>
+     */
+    private ScalingConfiguration scalingConfiguration;
 
     /**
      * <p>
@@ -1810,6 +1817,52 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     * <code>serverless</code> DB engine mode.
+     * </p>
+     * 
+     * @param scalingConfiguration
+     *        The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     *        <code>serverless</code> DB engine mode.
+     */
+
+    public void setScalingConfiguration(ScalingConfiguration scalingConfiguration) {
+        this.scalingConfiguration = scalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     * <code>serverless</code> DB engine mode.
+     * </p>
+     * 
+     * @return The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     *         <code>serverless</code> DB engine mode.
+     */
+
+    public ScalingConfiguration getScalingConfiguration() {
+        return this.scalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     * <code>serverless</code> DB engine mode.
+     * </p>
+     * 
+     * @param scalingConfiguration
+     *        The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in
+     *        <code>serverless</code> DB engine mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withScalingConfiguration(ScalingConfiguration scalingConfiguration) {
+        setScalingConfiguration(scalingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1849,7 +1902,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getCloudwatchLogsExportConfiguration() != null)
             sb.append("CloudwatchLogsExportConfiguration: ").append(getCloudwatchLogsExportConfiguration()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getScalingConfiguration() != null)
+            sb.append("ScalingConfiguration: ").append(getScalingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1926,6 +1981,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getScalingConfiguration() == null ^ this.getScalingConfiguration() == null)
+            return false;
+        if (other.getScalingConfiguration() != null && other.getScalingConfiguration().equals(this.getScalingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1949,6 +2008,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchLogsExportConfiguration() == null) ? 0 : getCloudwatchLogsExportConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getScalingConfiguration() == null) ? 0 : getScalingConfiguration().hashCode());
         return hashCode;
     }
 

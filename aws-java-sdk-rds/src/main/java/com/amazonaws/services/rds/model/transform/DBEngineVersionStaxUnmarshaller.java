@@ -124,6 +124,17 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     dBEngineVersion.setSupportsReadReplica(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportedEngineModes", targetDepth)) {
+                    dBEngineVersion.withSupportedEngineModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes/member", targetDepth)) {
+                    dBEngineVersion.withSupportedEngineModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

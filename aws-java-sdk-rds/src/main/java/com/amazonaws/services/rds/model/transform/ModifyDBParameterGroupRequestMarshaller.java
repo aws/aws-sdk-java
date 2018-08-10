@@ -99,6 +99,21 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
                     request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyMethod",
                             StringUtils.fromString(parametersListValue.getApplyMethod()));
                 }
+
+                if (!parametersListValue.getSupportedEngineModes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) parametersListValue.getSupportedEngineModes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> supportedEngineModesList = (com.amazonaws.internal.SdkInternalList<String>) parametersListValue
+                            .getSupportedEngineModes();
+                    int supportedEngineModesListIndex = 1;
+
+                    for (String supportedEngineModesListValue : supportedEngineModesList) {
+                        if (supportedEngineModesListValue != null) {
+                            request.addParameter("Parameters.Parameter." + parametersListIndex + ".SupportedEngineModes.member."
+                                    + supportedEngineModesListIndex, StringUtils.fromString(supportedEngineModesListValue));
+                        }
+                        supportedEngineModesListIndex++;
+                    }
+                }
                 parametersListIndex++;
             }
         }

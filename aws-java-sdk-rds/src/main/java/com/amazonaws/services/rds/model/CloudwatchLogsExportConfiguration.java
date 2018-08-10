@@ -20,6 +20,13 @@ import javax.annotation.Generated;
  * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or
  * DB cluster.
  * </p>
+ * <p>
+ * The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not
+ * exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more
+ * information, see <a href=
+ * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
+ * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CloudwatchLogsExportConfiguration"
  *      target="_top">AWS API Documentation</a>
