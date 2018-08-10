@@ -57,6 +57,17 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     private String manifestDurationFormat;
     /** Minimum time of initially buffered media that is needed to ensure smooth playout. */
     private Integer minBufferTime;
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     */
+    private Double minFinalSegmentLength;
 
     private String segmentControl;
     /**
@@ -445,6 +456,82 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public void setMinFinalSegmentLength(Double minFinalSegmentLength) {
+        this.minFinalSegmentLength = minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @return Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *         play back the end of your video asset. If you know that player devices are hanging on the final segment
+     *         of your video because the length of your final segment is too short, use this setting to specify a
+     *         minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than
+     *         your segment length. When you specify a value for this setting, the encoder will combine any final
+     *         segment that is shorter than the length that you specify with the previous segment. For example, your
+     *         segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length;
+     *         when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public Double getMinFinalSegmentLength() {
+        return this.minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafGroupSettings withMinFinalSegmentLength(Double minFinalSegmentLength) {
+        setMinFinalSegmentLength(minFinalSegmentLength);
+        return this;
+    }
+
+    /**
      * @param segmentControl
      * @see CmafSegmentControl
      */
@@ -697,6 +784,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("ManifestDurationFormat: ").append(getManifestDurationFormat()).append(",");
         if (getMinBufferTime() != null)
             sb.append("MinBufferTime: ").append(getMinBufferTime()).append(",");
+        if (getMinFinalSegmentLength() != null)
+            sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
@@ -757,6 +846,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMinBufferTime() != null && other.getMinBufferTime().equals(this.getMinBufferTime()) == false)
             return false;
+        if (other.getMinFinalSegmentLength() == null ^ this.getMinFinalSegmentLength() == null)
+            return false;
+        if (other.getMinFinalSegmentLength() != null && other.getMinFinalSegmentLength().equals(this.getMinFinalSegmentLength()) == false)
+            return false;
         if (other.getSegmentControl() == null ^ this.getSegmentControl() == null)
             return false;
         if (other.getSegmentControl() != null && other.getSegmentControl().equals(this.getSegmentControl()) == false)
@@ -794,6 +887,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getManifestCompression() == null) ? 0 : getManifestCompression().hashCode());
         hashCode = prime * hashCode + ((getManifestDurationFormat() == null) ? 0 : getManifestDurationFormat().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
+        hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getStreamInfResolution() == null) ? 0 : getStreamInfResolution().hashCode());

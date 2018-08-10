@@ -84,6 +84,10 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                     context.nextToken();
                     cmafGroupSettings.setMinBufferTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("minFinalSegmentLength", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("segmentControl", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setSegmentControl(context.getUnmarshaller(String.class).unmarshall(context));

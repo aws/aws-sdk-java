@@ -93,6 +93,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setManifestDurationFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("minFinalSegmentLength", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("minSegmentLength", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setMinSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));

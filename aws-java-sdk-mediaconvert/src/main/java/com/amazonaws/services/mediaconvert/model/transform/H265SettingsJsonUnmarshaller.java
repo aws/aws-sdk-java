@@ -68,6 +68,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                     context.nextToken();
                     h265Settings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dynamicSubGop", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("flickerAdaptiveQuantization", targetDepth)) {
                     context.nextToken();
                     h265Settings.setFlickerAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
@@ -147,6 +151,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                 if (context.testExpression("qualityTuningLevel", targetDepth)) {
                     context.nextToken();
                     h265Settings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("qvbrSettings", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setQvbrSettings(H265QvbrSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
                     context.nextToken();

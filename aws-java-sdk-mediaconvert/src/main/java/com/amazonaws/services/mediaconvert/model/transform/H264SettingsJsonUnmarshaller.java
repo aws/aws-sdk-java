@@ -64,6 +64,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dynamicSubGop", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("entropyEncoding", targetDepth)) {
                     context.nextToken();
                     h264Settings.setEntropyEncoding(context.getUnmarshaller(String.class).unmarshall(context));
@@ -151,6 +155,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                 if (context.testExpression("qualityTuningLevel", targetDepth)) {
                     context.nextToken();
                     h264Settings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("qvbrSettings", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setQvbrSettings(H264QvbrSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("rateControlMode", targetDepth)) {
                     context.nextToken();

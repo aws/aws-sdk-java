@@ -64,6 +64,10 @@ public class Mpeg2SettingsJsonUnmarshaller implements Unmarshaller<Mpeg2Settings
                     context.nextToken();
                     mpeg2Settings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dynamicSubGop", targetDepth)) {
+                    context.nextToken();
+                    mpeg2Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("framerateControl", targetDepth)) {
                     context.nextToken();
                     mpeg2Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));

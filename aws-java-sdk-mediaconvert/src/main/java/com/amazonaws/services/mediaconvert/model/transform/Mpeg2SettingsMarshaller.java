@@ -35,6 +35,8 @@ public class Mpeg2SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecLevel").build();
     private static final MarshallingInfo<String> CODECPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecProfile").build();
+    private static final MarshallingInfo<String> DYNAMICSUBGOP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicSubGop").build();
     private static final MarshallingInfo<String> FRAMERATECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerateControl").build();
     private static final MarshallingInfo<String> FRAMERATECONVERSIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -108,6 +110,7 @@ public class Mpeg2SettingsMarshaller {
             protocolMarshaller.marshall(mpeg2Settings.getBitrate(), BITRATE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getCodecLevel(), CODECLEVEL_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getCodecProfile(), CODECPROFILE_BINDING);
+            protocolMarshaller.marshall(mpeg2Settings.getDynamicSubGop(), DYNAMICSUBGOP_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getFramerateControl(), FRAMERATECONTROL_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getFramerateConversionAlgorithm(), FRAMERATECONVERSIONALGORITHM_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getFramerateDenominator(), FRAMERATEDENOMINATOR_BINDING);

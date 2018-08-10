@@ -56,6 +56,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     private String manifestDurationFormat;
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     */
+    private Double minFinalSegmentLength;
+    /**
      * When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby
      * avail and extending the segment size if needed.
      */
@@ -601,6 +612,82 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public void setMinFinalSegmentLength(Double minFinalSegmentLength) {
+        this.minFinalSegmentLength = minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @return Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *         play back the end of your video asset. If you know that player devices are hanging on the final segment
+     *         of your video because the length of your final segment is too short, use this setting to specify a
+     *         minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than
+     *         your segment length. When you specify a value for this setting, the encoder will combine any final
+     *         segment that is shorter than the length that you specify with the previous segment. For example, your
+     *         segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length;
+     *         when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public Double getMinFinalSegmentLength() {
+        return this.minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsGroupSettings withMinFinalSegmentLength(Double minFinalSegmentLength) {
+        setMinFinalSegmentLength(minFinalSegmentLength);
+        return this;
+    }
+
+    /**
      * When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby
      * avail and extending the segment size if needed.
      * 
@@ -1055,6 +1142,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("ManifestCompression: ").append(getManifestCompression()).append(",");
         if (getManifestDurationFormat() != null)
             sb.append("ManifestDurationFormat: ").append(getManifestDurationFormat()).append(",");
+        if (getMinFinalSegmentLength() != null)
+            sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
         if (getMinSegmentLength() != null)
             sb.append("MinSegmentLength: ").append(getMinSegmentLength()).append(",");
         if (getOutputSelection() != null)
@@ -1135,6 +1224,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getManifestDurationFormat() != null && other.getManifestDurationFormat().equals(this.getManifestDurationFormat()) == false)
             return false;
+        if (other.getMinFinalSegmentLength() == null ^ this.getMinFinalSegmentLength() == null)
+            return false;
+        if (other.getMinFinalSegmentLength() != null && other.getMinFinalSegmentLength().equals(this.getMinFinalSegmentLength()) == false)
+            return false;
         if (other.getMinSegmentLength() == null ^ this.getMinSegmentLength() == null)
             return false;
         if (other.getMinSegmentLength() != null && other.getMinSegmentLength().equals(this.getMinSegmentLength()) == false)
@@ -1198,6 +1291,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getManifestCompression() == null) ? 0 : getManifestCompression().hashCode());
         hashCode = prime * hashCode + ((getManifestDurationFormat() == null) ? 0 : getManifestDurationFormat().hashCode());
+        hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getMinSegmentLength() == null) ? 0 : getMinSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getOutputSelection() == null) ? 0 : getOutputSelection().hashCode());
         hashCode = prime * hashCode + ((getProgramDateTime() == null) ? 0 : getProgramDateTime().hashCode());

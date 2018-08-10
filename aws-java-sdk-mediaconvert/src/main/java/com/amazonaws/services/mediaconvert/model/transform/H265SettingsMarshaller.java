@@ -37,6 +37,8 @@ public class H265SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecLevel").build();
     private static final MarshallingInfo<String> CODECPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecProfile").build();
+    private static final MarshallingInfo<String> DYNAMICSUBGOP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicSubGop").build();
     private static final MarshallingInfo<String> FLICKERADAPTIVEQUANTIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("flickerAdaptiveQuantization").build();
     private static final MarshallingInfo<String> FRAMERATECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -77,6 +79,8 @@ public class H265SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parNumerator").build();
     private static final MarshallingInfo<String> QUALITYTUNINGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qualityTuningLevel").build();
+    private static final MarshallingInfo<StructuredPojo> QVBRSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qvbrSettings").build();
     private static final MarshallingInfo<String> RATECONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rateControlMode").build();
     private static final MarshallingInfo<String> SAMPLEADAPTIVEOFFSETFILTERMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -123,6 +127,7 @@ public class H265SettingsMarshaller {
             protocolMarshaller.marshall(h265Settings.getBitrate(), BITRATE_BINDING);
             protocolMarshaller.marshall(h265Settings.getCodecLevel(), CODECLEVEL_BINDING);
             protocolMarshaller.marshall(h265Settings.getCodecProfile(), CODECPROFILE_BINDING);
+            protocolMarshaller.marshall(h265Settings.getDynamicSubGop(), DYNAMICSUBGOP_BINDING);
             protocolMarshaller.marshall(h265Settings.getFlickerAdaptiveQuantization(), FLICKERADAPTIVEQUANTIZATION_BINDING);
             protocolMarshaller.marshall(h265Settings.getFramerateControl(), FRAMERATECONTROL_BINDING);
             protocolMarshaller.marshall(h265Settings.getFramerateConversionAlgorithm(), FRAMERATECONVERSIONALGORITHM_BINDING);
@@ -143,6 +148,7 @@ public class H265SettingsMarshaller {
             protocolMarshaller.marshall(h265Settings.getParDenominator(), PARDENOMINATOR_BINDING);
             protocolMarshaller.marshall(h265Settings.getParNumerator(), PARNUMERATOR_BINDING);
             protocolMarshaller.marshall(h265Settings.getQualityTuningLevel(), QUALITYTUNINGLEVEL_BINDING);
+            protocolMarshaller.marshall(h265Settings.getQvbrSettings(), QVBRSETTINGS_BINDING);
             protocolMarshaller.marshall(h265Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
             protocolMarshaller.marshall(h265Settings.getSampleAdaptiveOffsetFilterMode(), SAMPLEADAPTIVEOFFSETFILTERMODE_BINDING);
             protocolMarshaller.marshall(h265Settings.getSceneChangeDetect(), SCENECHANGEDETECT_BINDING);

@@ -15,13 +15,15 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use this setting to specify whether this output has a variable bitrate (VBR) or constant bitrate (CBR).
+ * Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or
+ * quality-defined variable bitrate (QVBR).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265RateControlMode {
 
     VBR("VBR"),
-    CBR("CBR");
+    CBR("CBR"),
+    QVBR("QVBR");
 
     private String value;
 

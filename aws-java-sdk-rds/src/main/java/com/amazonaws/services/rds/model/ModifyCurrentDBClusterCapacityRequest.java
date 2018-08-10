@@ -78,8 +78,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>RollbackCapacityChange</code>.
      * </p>
      * <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the capacity to
-     * the specified value as soon as possible.
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
      * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
@@ -379,8 +378,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>RollbackCapacityChange</code>.
      * </p>
      * <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the capacity to
-     * the specified value as soon as possible.
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
      * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
@@ -391,8 +389,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *        The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
      *        <code>RollbackCapacityChange</code>.</p>
      *        <p>
-     *        <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the
-     *        capacity to the specified value as soon as possible.
+     *        <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as
+     *        possible.
      *        </p>
      *        <p>
      *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
@@ -409,8 +407,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>RollbackCapacityChange</code>.
      * </p>
      * <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the capacity to
-     * the specified value as soon as possible.
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
      * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
@@ -420,8 +417,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * @return The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
      *         <code>RollbackCapacityChange</code>.</p>
      *         <p>
-     *         <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the
-     *         capacity to the specified value as soon as possible.
+     *         <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as
+     *         possible.
      *         </p>
      *         <p>
      *         <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
@@ -438,8 +435,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>RollbackCapacityChange</code>.
      * </p>
      * <p>
-     * <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the capacity to
-     * the specified value as soon as possible.
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
      * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
@@ -450,8 +446,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *        The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
      *        <code>RollbackCapacityChange</code>.</p>
      *        <p>
-     *        <code>ForceApplyCapacityChange</code>, the default, drops connections to the DB cluster and sets the
-     *        capacity to the specified value as soon as possible.
+     *        <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as
+     *        possible.
      *        </p>
      *        <p>
      *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the

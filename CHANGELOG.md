@@ -1,7 +1,11 @@
-# __1.11.384__ __2018-08-09__
+# __1.11.385__ __2018-08-10__
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - This release adds support for a new rate control mode, Quality-Defined Variable Bitrate (QVBR) encoding, includes updates to optimize transcoding performance, and resolves previously reported bugs.
 
 ## __AWS Health APIs and Notifications__
   - ### Features
@@ -53,6 +57,7 @@
 
 ## __Amazon Relational Database Service__
   - ### Features
+    - Documentation updates for rds
     - Launch RDS Aurora Serverless
 
 ## __Amazon Simple Systems Manager (SSM)__
