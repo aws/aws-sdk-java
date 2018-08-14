@@ -1,4 +1,4 @@
-# __1.11.385__ __2018-08-10__
+# __1.11.386__ __2018-08-13__
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
@@ -59,6 +59,10 @@
   - ### Features
     - Documentation updates for rds
     - Launch RDS Aurora Serverless
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker updated the default endpoint URL to support Private Link via the CLI/SDK.
 
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

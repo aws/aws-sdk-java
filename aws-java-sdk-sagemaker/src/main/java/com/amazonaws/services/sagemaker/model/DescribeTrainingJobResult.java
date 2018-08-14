@@ -142,7 +142,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
+     * job is stopping.
      * </p>
      * </li>
      * <li>
@@ -159,8 +160,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
-     * the progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
+     * progress of the training job.
      * </p>
      * </important>
      */
@@ -253,8 +254,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     * time-ordered secondary statuses that a training job has transitioned.
+     * A log of time-ordered secondary statuses that a training job has transitioned.
      * </p>
      */
     private java.util.List<SecondaryStatusTransition> secondaryStatusTransitions;
@@ -820,7 +820,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
+     * job is stopping.
      * </p>
      * </li>
      * <li>
@@ -837,8 +838,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
-     * the progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
+     * progress of the training job.
      * </p>
      * </important>
      * 
@@ -893,8 +894,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
-     *        stopped.
+     *        <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
+     *        training job is stopping.
      *        </p>
      *        </li>
      *        <li>
@@ -911,8 +912,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </ul>
      *        <important>
      *        <p>
-     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
-     *        information on the progress of the training job.
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
+     *        on the progress of the training job.
      *        </p>
      * @see SecondaryStatus
      */
@@ -973,7 +974,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
+     * job is stopping.
      * </p>
      * </li>
      * <li>
@@ -990,8 +992,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
-     * the progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
+     * progress of the training job.
      * </p>
      * </important>
      * 
@@ -1045,8 +1047,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
-     *         stopped.
+     *         <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
+     *         training job is stopping.
      *         </p>
      *         </li>
      *         <li>
@@ -1063,8 +1065,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </ul>
      *         <important>
      *         <p>
-     *         The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
-     *         information on the progress of the training job.
+     *         The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
+     *         on the progress of the training job.
      *         </p>
      * @see SecondaryStatus
      */
@@ -1125,7 +1127,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
+     * job is stopping.
      * </p>
      * </li>
      * <li>
@@ -1142,8 +1145,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
-     * the progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
+     * progress of the training job.
      * </p>
      * </important>
      * 
@@ -1198,8 +1201,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
-     *        stopped.
+     *        <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
+     *        training job is stopping.
      *        </p>
      *        </li>
      *        <li>
@@ -1216,8 +1219,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </ul>
      *        <important>
      *        <p>
-     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
-     *        information on the progress of the training job.
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
+     *        on the progress of the training job.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecondaryStatus
@@ -1280,7 +1283,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
+     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
+     * job is stopping.
      * </p>
      * </li>
      * <li>
@@ -1297,8 +1301,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
-     * the progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
+     * progress of the training job.
      * </p>
      * </important>
      * 
@@ -1353,8 +1357,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
-     *        stopped.
+     *        <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
+     *        training job is stopping.
      *        </p>
      *        </li>
      *        <li>
@@ -1371,8 +1375,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </ul>
      *        <important>
      *        <p>
-     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
-     *        information on the progress of the training job.
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
+     *        on the progress of the training job.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecondaryStatus
@@ -2004,12 +2008,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     * time-ordered secondary statuses that a training job has transitioned.
+     * A log of time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * 
-     * @return To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     *         time-ordered secondary statuses that a training job has transitioned.
+     * @return A log of time-ordered secondary statuses that a training job has transitioned.
      */
 
     public java.util.List<SecondaryStatusTransition> getSecondaryStatusTransitions() {
@@ -2018,13 +2020,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     * time-ordered secondary statuses that a training job has transitioned.
+     * A log of time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * 
      * @param secondaryStatusTransitions
-     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     *        time-ordered secondary statuses that a training job has transitioned.
+     *        A log of time-ordered secondary statuses that a training job has transitioned.
      */
 
     public void setSecondaryStatusTransitions(java.util.Collection<SecondaryStatusTransition> secondaryStatusTransitions) {
@@ -2038,8 +2038,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     * time-ordered secondary statuses that a training job has transitioned.
+     * A log of time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2048,8 +2047,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param secondaryStatusTransitions
-     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     *        time-ordered secondary statuses that a training job has transitioned.
+     *        A log of time-ordered secondary statuses that a training job has transitioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2065,13 +2063,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     * time-ordered secondary statuses that a training job has transitioned.
+     * A log of time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * 
      * @param secondaryStatusTransitions
-     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
-     *        time-ordered secondary statuses that a training job has transitioned.
+     *        A log of time-ordered secondary statuses that a training job has transitioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

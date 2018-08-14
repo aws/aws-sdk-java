@@ -99,6 +99,7 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.UnreliableFilterInputStream;
 import java.io.BufferedInputStream;
+import java.io.Closeable;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -753,8 +754,16 @@ public class AmazonHttpClient {
                 throw e;
             } finally {
                 // Always close so any progress tracking would get the final events propagated.
-                closeQuietly(toBeClosed, log);
+                closeQuietlyForRuntimeExceptions(toBeClosed, log);
                 request.setContent(origContent); // restore the original content
+            }
+        }
+
+        private void closeQuietlyForRuntimeExceptions(Closeable c, Log log) {
+            try {
+                closeQuietly(c, log);
+            } catch (RuntimeException e) {
+                log.warn("Unable to close closeable", e);
             }
         }
 
@@ -1049,6 +1058,7 @@ public class AmazonHttpClient {
 
                 Response<Output> response = null;
                 Exception savedException = null;
+                boolean thrown = false;
                 try {
                     HandlerBeforeAttemptContext beforeAttemptContext = HandlerBeforeAttemptContext.builder()
                             .withRequest(request)
@@ -1066,20 +1076,24 @@ public class AmazonHttpClient {
                     handleRetryableException(execOneParams, ioe);
                 } catch (InterruptedException ie) {
                     savedException = ie;
+                    thrown = true;
                     throw ie;
                 } catch (RuntimeException e) {
                     savedException = e;
+                    thrown = true;
                     throw lastReset(captureExceptionMetrics(e));
                 } catch (Error e) {
+                    thrown = true;
                     throw lastReset(captureExceptionMetrics(e));
                 } finally {
                 /*
                  * Some response handlers need to manually manage the HTTP connection and will take
                  * care of releasing the connection on their own, but if this response handler
                  * doesn't need the connection left open, we go ahead and release the it to free up
-                 * resources.
+                 * resources. But if we throw, then the caller doesn't get the handle on the response
+                 * to close for themselves. In this case, we will close the connection for them as well.
                  */
-                    if (!execOneParams.leaveHttpConnectionOpen) {
+                    if (!execOneParams.leaveHttpConnectionOpen || thrown) {
                         if (execOneParams.apacheResponse != null) {
                             HttpEntity entity = execOneParams.apacheResponse.getEntity();
                             if (entity != null) {

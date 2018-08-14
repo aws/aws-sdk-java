@@ -38,7 +38,7 @@ public interface AmazonSageMaker {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "sagemaker";
+    String ENDPOINT_PREFIX = "api.sagemaker";
 
     /**
      * <p>
