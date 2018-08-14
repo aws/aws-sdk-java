@@ -67,7 +67,7 @@ public interface RegionImpl {
     String getServiceEndpoint(String serviceName);
 
     /**
-     * Returns whether the given service support the https protocol in this region.
+     * Returns whether the given service support the http protocol in this region.
      *
      * @param serviceName
      *         The service endpoint prefix which can be retrieved from the
@@ -77,7 +77,7 @@ public interface RegionImpl {
     boolean hasHttpEndpoint(String serviceName);
 
     /**
-     * Returns whether the given service support the http protocol in this region.
+     * Returns whether the given service support the https protocol in this region.
      *
      * @param serviceName
      *         The service endpoint prefix which can be retrieved from the
