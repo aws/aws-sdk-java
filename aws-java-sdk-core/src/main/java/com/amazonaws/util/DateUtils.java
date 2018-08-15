@@ -249,6 +249,18 @@ public class DateUtils {
         }
     }
 
+    public static Date parseUnixTimestampInMillis(String dateString) {
+        if (dateString == null)
+            return null;
+        try {
+            BigDecimal dateValue = new BigDecimal(dateString);
+            return new Date(dateValue.longValue());
+        } catch (NumberFormatException nfe) {
+            throw new SdkClientException("Unable to parse date : "
+                                         + dateString, nfe);
+        }
+    }
+
     /**
      * Formats the give date object into an AWS Service format.
      */

@@ -44,7 +44,7 @@ public class DeletePublicKeyRequestMarshaller implements Marshaller<Request<Dele
             request.addHeader("If-Match", StringUtils.fromString(deletePublicKeyRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2017-10-30/public-key/{Id}";
+        String uriResourcePath = "/2018-06-18/public-key/{Id}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deletePublicKeyRequest.getId());
         request.setResourcePath(uriResourcePath);

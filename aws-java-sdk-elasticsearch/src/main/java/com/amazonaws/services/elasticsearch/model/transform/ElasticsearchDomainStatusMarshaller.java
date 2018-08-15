@@ -45,6 +45,8 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<Boolean> PROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Processing").build();
+    private static final MarshallingInfo<Boolean> UPGRADEPROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpgradeProcessing").build();
     private static final MarshallingInfo<String> ELASTICSEARCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchVersion").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHCLUSTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -90,6 +92,7 @@ public class ElasticsearchDomainStatusMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getProcessing(), PROCESSING_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getUpgradeProcessing(), UPGRADEPROCESSING_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getElasticsearchVersion(), ELASTICSEARCHVERSION_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getElasticsearchClusterConfig(), ELASTICSEARCHCLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEBSOptions(), EBSOPTIONS_BINDING);

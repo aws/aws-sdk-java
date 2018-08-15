@@ -1,4 +1,4 @@
-# __1.11.386__ __2018-08-13__
+# __1.11.387__ __2018-08-14__
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
@@ -23,6 +23,10 @@
   - ### Features
     - Documentation updates for AWS Alexa For Business
 
+## __Amazon CloudFront__
+  - ### Features
+    - Lambda@Edge Now Provides You Access to the Request Body for HTTP POST/PUT Processing. With this feature, you can now offload more origin logic to the edge and improve end-user latency. Developers typically use Web/HTML forms or Web Beacons/Bugs as a mechanism to collect data from the end users and then process that data at their origins servers. For example, if you are collecting end user behavior data through a web beacon on your website, you can use this feature to access the user behavior data and directly log it to an Amazon Kinesis Firehose endpoint from the Lambda function, thereby simplifying your origin infrastructure.
+
 ## __Amazon CloudWatch Logs__
   - ### Features
     - Documentation Update
@@ -42,6 +46,10 @@
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - Amazon VPC Flow Logs adds support for delivering flow logs directly to S3
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service adds support for no downtime, in-place upgrade for Elasticsearch version 5.1 and above.
 
 ## __Amazon Kinesis__
   - ### Features
@@ -69,6 +77,10 @@
     - AWS Systems Manager Automation is launching two new features for Automation Execution Rate Control based on tags and customized parameter maps. With the first feature, customer can target their resources by specifying a Tag with Key/Value. With the second feature, Parameter maps rate control, customers can benefit from customization of input parameters.
     - This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
     - Two new filters ExecutionStage and DocumentName will be added to ListCommands so that customers will have more approaches to query their commands.
+
+## __Auto Scaling__
+  - ### Features
+    - Add batch operations for creating/updating and deleting scheduled scaling actions.
 
 # __1.11.378__ __2018-08-01__
 ## __AWS Storage Gateway__

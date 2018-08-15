@@ -370,6 +370,74 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteScheduledActionResult> batchDeleteScheduledActionAsync(BatchDeleteScheduledActionRequest request) {
+
+        return batchDeleteScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteScheduledActionResult> batchDeleteScheduledActionAsync(final BatchDeleteScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteScheduledActionRequest, BatchDeleteScheduledActionResult> asyncHandler) {
+        final BatchDeleteScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteScheduledActionResult>() {
+            @Override
+            public BatchDeleteScheduledActionResult call() throws Exception {
+                BatchDeleteScheduledActionResult result = null;
+
+                try {
+                    result = executeBatchDeleteScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchPutScheduledUpdateGroupActionResult> batchPutScheduledUpdateGroupActionAsync(
+            BatchPutScheduledUpdateGroupActionRequest request) {
+
+        return batchPutScheduledUpdateGroupActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchPutScheduledUpdateGroupActionResult> batchPutScheduledUpdateGroupActionAsync(
+            final BatchPutScheduledUpdateGroupActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchPutScheduledUpdateGroupActionRequest, BatchPutScheduledUpdateGroupActionResult> asyncHandler) {
+        final BatchPutScheduledUpdateGroupActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchPutScheduledUpdateGroupActionResult>() {
+            @Override
+            public BatchPutScheduledUpdateGroupActionResult call() throws Exception {
+                BatchPutScheduledUpdateGroupActionResult result = null;
+
+                try {
+                    result = executeBatchPutScheduledUpdateGroupAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CompleteLifecycleActionResult> completeLifecycleActionAsync(CompleteLifecycleActionRequest request) {
 
         return completeLifecycleActionAsync(request, null);

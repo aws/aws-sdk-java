@@ -52,6 +52,11 @@ public class LambdaFunctionAssociationStaxUnmarshaller implements Unmarshaller<L
                     lambdaFunctionAssociation.setEventType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("IncludeBody", targetDepth)) {
+                    lambdaFunctionAssociation.setIncludeBody(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return lambdaFunctionAssociation;

@@ -591,6 +591,107 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetCompatibleElasticsearchVersionsResult> getCompatibleElasticsearchVersionsAsync(
+            GetCompatibleElasticsearchVersionsRequest request) {
+
+        return getCompatibleElasticsearchVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompatibleElasticsearchVersionsResult> getCompatibleElasticsearchVersionsAsync(
+            final GetCompatibleElasticsearchVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCompatibleElasticsearchVersionsRequest, GetCompatibleElasticsearchVersionsResult> asyncHandler) {
+        final GetCompatibleElasticsearchVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCompatibleElasticsearchVersionsResult>() {
+            @Override
+            public GetCompatibleElasticsearchVersionsResult call() throws Exception {
+                GetCompatibleElasticsearchVersionsResult result = null;
+
+                try {
+                    result = executeGetCompatibleElasticsearchVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(GetUpgradeHistoryRequest request) {
+
+        return getUpgradeHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(final GetUpgradeHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUpgradeHistoryRequest, GetUpgradeHistoryResult> asyncHandler) {
+        final GetUpgradeHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUpgradeHistoryResult>() {
+            @Override
+            public GetUpgradeHistoryResult call() throws Exception {
+                GetUpgradeHistoryResult result = null;
+
+                try {
+                    result = executeGetUpgradeHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest request) {
+
+        return getUpgradeStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(final GetUpgradeStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler) {
+        final GetUpgradeStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUpgradeStatusResult>() {
+            @Override
+            public GetUpgradeStatusResult call() throws Exception {
+                GetUpgradeStatusResult result = null;
+
+                try {
+                    result = executeGetUpgradeStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(ListDomainNamesRequest request) {
 
         return listDomainNamesAsync(request, null);
@@ -811,6 +912,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeUpdateElasticsearchDomainConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeElasticsearchDomainResult> upgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request) {
+
+        return upgradeElasticsearchDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeElasticsearchDomainResult> upgradeElasticsearchDomainAsync(final UpgradeElasticsearchDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpgradeElasticsearchDomainRequest, UpgradeElasticsearchDomainResult> asyncHandler) {
+        final UpgradeElasticsearchDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpgradeElasticsearchDomainResult>() {
+            @Override
+            public UpgradeElasticsearchDomainResult call() throws Exception {
+                UpgradeElasticsearchDomainResult result = null;
+
+                try {
+                    result = executeUpgradeElasticsearchDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

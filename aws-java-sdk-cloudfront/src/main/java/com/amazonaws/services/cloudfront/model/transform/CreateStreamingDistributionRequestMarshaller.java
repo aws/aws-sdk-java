@@ -48,13 +48,13 @@ public class CreateStreamingDistributionRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2017-10-30/streaming-distribution";
+        String uriResourcePath = "/2018-06-18/streaming-distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-06-18/");
 
             StreamingDistributionConfig streamingDistributionConfig = createStreamingDistributionRequest.getStreamingDistributionConfig();
             if (streamingDistributionConfig != null) {

@@ -62,7 +62,7 @@ public class ConsumerDescriptionJsonUnmarshaller implements Unmarshaller<Consume
                 }
                 if (context.testExpression("ConsumerCreationTimestamp", targetDepth)) {
                     context.nextToken();
-                    consumerDescription.setConsumerCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    consumerDescription.setConsumerCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestampInMillis").unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
                     context.nextToken();

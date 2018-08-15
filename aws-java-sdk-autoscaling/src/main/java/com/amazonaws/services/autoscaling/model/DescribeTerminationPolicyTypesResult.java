@@ -26,7 +26,7 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).
      * </p>
@@ -35,12 +35,12 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).
      * </p>
      * 
-     * @return The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     * @return The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      *         <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
      *         <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
      */
@@ -54,13 +54,13 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     *        The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
      *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
      */
@@ -76,7 +76,7 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).
      * </p>
@@ -87,7 +87,7 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     *        The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
      *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -105,13 +105,13 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     * The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      * <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and
      * <code>Default</code>).
      * </p>
      * 
      * @param terminationPolicyTypes
-     *        The termination policies supported by Auto Scaling (<code>OldestInstance</code>,
+     *        The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
      *        <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
      *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
      * @return Returns a reference to this object so that method calls can be chained together.

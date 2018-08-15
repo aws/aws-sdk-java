@@ -39,7 +39,7 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
     private String autoScalingGroupName;
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      */
     private Boolean protectedFromScaleIn;
@@ -159,11 +159,11 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
@@ -172,10 +172,10 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public Boolean getProtectedFromScaleIn() {
@@ -184,11 +184,11 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,10 +199,10 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public Boolean isProtectedFromScaleIn() {

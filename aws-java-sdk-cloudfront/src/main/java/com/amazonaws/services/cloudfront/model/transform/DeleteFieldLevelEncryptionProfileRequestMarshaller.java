@@ -46,7 +46,7 @@ public class DeleteFieldLevelEncryptionProfileRequestMarshaller implements
             request.addHeader("If-Match", StringUtils.fromString(deleteFieldLevelEncryptionProfileRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2017-10-30/field-level-encryption-profile/{Id}";
+        String uriResourcePath = "/2018-06-18/field-level-encryption-profile/{Id}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteFieldLevelEncryptionProfileRequest.getId());
         request.setResourcePath(uriResourcePath);

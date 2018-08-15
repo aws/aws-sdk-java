@@ -34,8 +34,8 @@ public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set
-     * to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace
-     * the unhealthy instance.
+     * to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto Scaling will terminate
+     * and replace the unhealthy instance.
      * </p>
      */
     private String healthStatus;
@@ -94,14 +94,14 @@ public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set
-     * to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace
-     * the unhealthy instance.
+     * to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto Scaling will terminate
+     * and replace the unhealthy instance.
      * </p>
      * 
      * @param healthStatus
      *        The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in
-     *        service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will
-     *        terminate and replace the unhealthy instance.
+     *        service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto
+     *        Scaling will terminate and replace the unhealthy instance.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -111,13 +111,13 @@ public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set
-     * to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace
-     * the unhealthy instance.
+     * to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto Scaling will terminate
+     * and replace the unhealthy instance.
      * </p>
      * 
      * @return The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in
-     *         service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will
-     *         terminate and replace the unhealthy instance.
+     *         service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto
+     *         Scaling will terminate and replace the unhealthy instance.
      */
 
     public String getHealthStatus() {
@@ -127,14 +127,14 @@ public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in service. Set
-     * to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will terminate and replace
-     * the unhealthy instance.
+     * to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto Scaling will terminate
+     * and replace the unhealthy instance.
      * </p>
      * 
      * @param healthStatus
      *        The health status of the instance. Set to <code>Healthy</code> if you want the instance to remain in
-     *        service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Auto Scaling will
-     *        terminate and replace the unhealthy instance.
+     *        service. Set to <code>Unhealthy</code> if you want the instance to be out of service. Amazon EC2 Auto
+     *        Scaling will terminate and replace the unhealthy instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,8 +21,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html#process-types">Auto
- * Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.
+ * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling
+ * Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ProcessType" target="_top">AWS API

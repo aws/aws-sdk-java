@@ -40,7 +40,7 @@ public class ListInvalidationsRequestMarshaller implements Marshaller<Request<Li
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2017-10-30/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2018-06-18/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
                 listInvalidationsRequest.getDistributionId());

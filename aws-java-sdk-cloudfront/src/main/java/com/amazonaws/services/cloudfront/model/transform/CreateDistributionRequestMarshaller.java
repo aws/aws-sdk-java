@@ -46,13 +46,13 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2017-10-30/distribution";
+        String uriResourcePath = "/2018-06-18/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-06-18/");
 
             DistributionConfig distributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -428,6 +428,10 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                 if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
                                     xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
                                 }
+
+                                if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
+                                    xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody()).endElement();
+                                }
                                 xmlWriter.endElement();
                             }
                             xmlWriter.endElement();
@@ -674,6 +678,10 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
                                         if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
                                             xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
+                                        }
+
+                                        if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
+                                            xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody()).endElement();
                                         }
                                         xmlWriter.endElement();
                                     }

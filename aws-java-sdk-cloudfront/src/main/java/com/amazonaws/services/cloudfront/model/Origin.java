@@ -26,7 +26,7 @@ import javax.annotation.Generated;
  * Limits</a> in the <i>AWS General Reference</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/Origin" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Origin" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,7 +49,8 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -251,7 +252,8 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -302,7 +304,9 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param domainName
      *        <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.</p>
+     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket
+     *        to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the
+     *        bucket.</p>
      *        <p>
      *        Constraints for Amazon S3 origins:
      *        </p>
@@ -357,7 +361,8 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -407,7 +412,9 @@ public class Origin implements Serializable, Cloneable {
      * </ul>
      * 
      * @return <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *         objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.</p>
+     *         objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your
+     *         bucket to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for
+     *         the bucket.</p>
      *         <p>
      *         Constraints for Amazon S3 origins:
      *         </p>
@@ -462,7 +469,8 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -513,7 +521,9 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param domainName
      *        <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.</p>
+     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket
+     *        to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the
+     *        bucket.</p>
      *        <p>
      *        Constraints for Amazon S3 origins:
      *        </p>

@@ -39,9 +39,9 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer desiredCapacity;
     /**
      * <p>
-     * Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to
-     * set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the cooldown period
-     * during manual scaling activities.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      */
     private Boolean honorCooldown;
@@ -128,15 +128,15 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to
-     * set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the cooldown period
-     * during manual scaling activities.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
      * @param honorCooldown
-     *        Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling
-     *        activity to set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the
-     *        cooldown period during manual scaling activities.
+     *        Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *        scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *        does not honor the cooldown period during manual scaling activities.
      */
 
     public void setHonorCooldown(Boolean honorCooldown) {
@@ -145,14 +145,14 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to
-     * set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the cooldown period
-     * during manual scaling activities.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
-     * @return Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling
-     *         activity to set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the
-     *         cooldown period during manual scaling activities.
+     * @return Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *         scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *         does not honor the cooldown period during manual scaling activities.
      */
 
     public Boolean getHonorCooldown() {
@@ -161,15 +161,15 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to
-     * set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the cooldown period
-     * during manual scaling activities.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
      * @param honorCooldown
-     *        Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling
-     *        activity to set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the
-     *        cooldown period during manual scaling activities.
+     *        Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *        scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *        does not honor the cooldown period during manual scaling activities.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,14 +180,14 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to
-     * set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the cooldown period
-     * during manual scaling activities.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
-     * @return Indicates whether Auto Scaling waits for the cooldown period to complete before initiating a scaling
-     *         activity to set your Auto Scaling group to its new capacity. By default, Auto Scaling does not honor the
-     *         cooldown period during manual scaling activities.
+     * @return Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *         scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *         does not honor the cooldown period during manual scaling activities.
      */
 
     public Boolean isHonorCooldown() {

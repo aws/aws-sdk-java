@@ -40,7 +40,8 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      */
     private String lifecycleActionToken;
@@ -140,13 +141,14 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      * 
      * @param lifecycleActionToken
      *        A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an
-     *        instance. Auto Scaling sends this token to the notification target you specified when you created the
-     *        lifecycle hook.
+     *        instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you
+     *        created the lifecycle hook.
      */
 
     public void setLifecycleActionToken(String lifecycleActionToken) {
@@ -156,12 +158,13 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      * 
      * @return A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an
-     *         instance. Auto Scaling sends this token to the notification target you specified when you created the
-     *         lifecycle hook.
+     *         instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you
+     *         created the lifecycle hook.
      */
 
     public String getLifecycleActionToken() {
@@ -171,13 +174,14 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      * 
      * @param lifecycleActionToken
      *        A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an
-     *        instance. Auto Scaling sends this token to the notification target you specified when you created the
-     *        lifecycle hook.
+     *        instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you
+     *        created the lifecycle hook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

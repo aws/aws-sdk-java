@@ -2130,7 +2130,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p/>\n@param consumerCreationTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "consumerCreationTimestamp",
           "variableType" : "java.util.Date",
@@ -2263,7 +2263,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p/>\n@param consumerCreationTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "consumerCreationTimestamp",
             "variableType" : "java.util.Date",
@@ -2695,7 +2695,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p/>\n@param consumerCreationTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "consumerCreationTimestamp",
           "variableType" : "java.util.Date",
@@ -2893,7 +2893,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p/>\n@param consumerCreationTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "consumerCreationTimestamp",
             "variableType" : "java.util.Date",
@@ -10741,7 +10741,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>\n@param timestamp The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
@@ -11072,7 +11072,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>\n@param timestamp The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
@@ -12559,7 +12559,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p> <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>\n@param streamCreationTimestamp Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p> <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "streamCreationTimestamp",
           "variableType" : "java.util.Date",
@@ -12824,7 +12824,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p> <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.</p>\n@param streamCreationTimestamp Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the shards for.</p> <p>You cannot specify this parameter if you specify the <code>NextToken</code> parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "streamCreationTimestamp",
             "variableType" : "java.util.Date",
@@ -13657,7 +13657,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p> <p>You can't specify this parameter if you specify the NextToken parameter. </p>\n@param streamCreationTimestamp Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p> <p>You can't specify this parameter if you specify the NextToken parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "streamCreationTimestamp",
           "variableType" : "java.util.Date",
@@ -13922,7 +13922,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p> <p>You can't specify this parameter if you specify the NextToken parameter. </p>\n@param streamCreationTimestamp Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for. </p> <p>You can't specify this parameter if you specify the NextToken parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "streamCreationTimestamp",
             "variableType" : "java.util.Date",
@@ -19996,7 +19996,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The approximate time that the record was inserted into the stream.</p>\n@param approximateArrivalTimestamp The approximate time that the record was inserted into the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "approximateArrivalTimestamp",
           "variableType" : "java.util.Date",
@@ -20258,7 +20258,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The approximate time that the record was inserted into the stream.</p>\n@param approximateArrivalTimestamp The approximate time that the record was inserted into the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "approximateArrivalTimestamp",
             "variableType" : "java.util.Date",
@@ -24688,7 +24688,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The approximate time that the stream was created.</p>\n@param streamCreationTimestamp The approximate time that the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "streamCreationTimestamp",
           "variableType" : "java.util.Date",
@@ -25652,7 +25652,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The approximate time that the stream was created.</p>\n@param streamCreationTimestamp The approximate time that the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "streamCreationTimestamp",
             "variableType" : "java.util.Date",
@@ -26149,7 +26149,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The approximate time that the stream was created.</p>\n@param streamCreationTimestamp The approximate time that the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "unixTimestampInMillis",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "streamCreationTimestamp",
           "variableType" : "java.util.Date",
@@ -27163,7 +27163,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The approximate time that the stream was created.</p>\n@param streamCreationTimestamp The approximate time that the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "unixTimestampInMillis",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "streamCreationTimestamp",
             "variableType" : "java.util.Date",

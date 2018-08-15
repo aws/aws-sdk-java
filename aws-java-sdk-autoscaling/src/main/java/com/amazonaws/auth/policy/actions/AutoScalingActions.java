@@ -31,6 +31,10 @@ public enum AutoScalingActions implements Action {
     AttachLoadBalancerTargetGroups("autoscaling:AttachLoadBalancerTargetGroups"),
     /** Action for the AttachLoadBalancers operation. */
     AttachLoadBalancers("autoscaling:AttachLoadBalancers"),
+    /** Action for the BatchDeleteScheduledAction operation. */
+    BatchDeleteScheduledAction("autoscaling:BatchDeleteScheduledAction"),
+    /** Action for the BatchPutScheduledUpdateGroupAction operation. */
+    BatchPutScheduledUpdateGroupAction("autoscaling:BatchPutScheduledUpdateGroupAction"),
     /** Action for the CompleteLifecycleAction operation. */
     CompleteLifecycleAction("autoscaling:CompleteLifecycleAction"),
     /** Action for the CreateAutoScalingGroup operation. */

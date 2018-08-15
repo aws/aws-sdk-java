@@ -17,17 +17,32 @@ package com.amazonaws.util;
 
 public enum TimestampFormat {
 
-        ISO_8601("iso8601"),
-        UNIX_TIMESTAMP("unixTimestamp"),
-        RFC_822("rfc822");
+    ISO_8601("iso8601"),
+    UNIX_TIMESTAMP("unixTimestamp"),
+    UNIX_TIMESTAMP_IN_MILLIS("unixTimestampInMillis"),
+    RFC_822("rfc822");
 
-        private final String format;
+    private final String format;
 
-        TimestampFormat(String format) {
-            this.format = format;
-        }
-
-        public String getFormat() {
-            return format;
-        }
+    TimestampFormat(String format) {
+        this.format = format;
     }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public static TimestampFormat fromValue(String format) {
+        if (format == null) {
+            return null;
+        }
+
+        for (TimestampFormat timestampFormat : TimestampFormat.values()) {
+            if (timestampFormat.format.equals(format)) {
+                return timestampFormat;
+            }
+        }
+
+        throw new IllegalArgumentException("Unknown enum value for TimestampFormat : " + format);
+    }
+}

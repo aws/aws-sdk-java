@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A distribution configuration.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DistributionConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DistributionConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -167,18 +167,15 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      */
     private String priceClass;
     /**
      * <p>
      * From this field, you can enable or disable the selected distribution.
-     * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
      * </p>
      */
     private Boolean enabled;
@@ -292,10 +289,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        returns a <code>DistributionAlreadyExists</code> error.
      * @param enabled
      *        From this field, you can enable or disable the selected distribution.
-     *        </p>
-     *        <p>
-     *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *        and <code>Prefix</code>, the values are automatically deleted.
      */
     public DistributionConfig(String callerReference, Boolean enabled) {
         setCallerReference(callerReference);
@@ -1100,8 +1093,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1118,8 +1112,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1142,8 +1137,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @return The price class that corresponds with the maximum price that you want to pay for CloudFront service. If
@@ -1159,8 +1155,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         For more information about price classes, see <a
      *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *         Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *         information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *         href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *         information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *         CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *         Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1183,8 +1180,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1201,8 +1199,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1227,8 +1226,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1245,8 +1245,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1269,8 +1270,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1287,8 +1289,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1302,16 +1305,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
      * @param enabled
-     *        From this field, you can enable or disable the selected distribution.</p>
-     *        <p>
-     *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *        and <code>Prefix</code>, the values are automatically deleted.
+     *        From this field, you can enable or disable the selected distribution.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -1322,15 +1318,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
-     * @return From this field, you can enable or disable the selected distribution.</p>
-     *         <p>
-     *         If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *         and <code>Prefix</code>, the values are automatically deleted.
+     * @return From this field, you can enable or disable the selected distribution.
      */
 
     public Boolean getEnabled() {
@@ -1341,16 +1330,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
      * @param enabled
-     *        From this field, you can enable or disable the selected distribution.</p>
-     *        <p>
-     *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *        and <code>Prefix</code>, the values are automatically deleted.
+     *        From this field, you can enable or disable the selected distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1363,15 +1345,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
-     * @return From this field, you can enable or disable the selected distribution.</p>
-     *         <p>
-     *         If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *         and <code>Prefix</code>, the values are automatically deleted.
+     * @return From this field, you can enable or disable the selected distribution.
      */
 
     public Boolean isEnabled() {

@@ -81,6 +81,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("UpgradeProcessing", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setUpgradeProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ElasticsearchVersion", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setElasticsearchVersion(context.getUnmarshaller(String.class).unmarshall(context));

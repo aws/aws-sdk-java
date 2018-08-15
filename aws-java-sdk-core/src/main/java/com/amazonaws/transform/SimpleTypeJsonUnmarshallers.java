@@ -218,15 +218,24 @@ public class SimpleTypeJsonUnmarshallers {
                 return null;
             }
 
-            if (TimestampFormat.RFC_822.getFormat().equals(dateFormatType)) {
-                return DateUtils.parseRFC822Date(dateString);
-            }
+            try {
+                if (TimestampFormat.RFC_822.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseRFC822Date(dateString);
+                }
 
-            if (TimestampFormat.UNIX_TIMESTAMP.getFormat().equals(dateFormatType)) {
-                return DateUtils.parseServiceSpecificDate(dateString);
-            }
+                if (TimestampFormat.UNIX_TIMESTAMP.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseServiceSpecificDate(dateString);
+                }
 
-            return DateUtils.parseISO8601Date(dateString);
+                if (TimestampFormat.UNIX_TIMESTAMP_IN_MILLIS.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseUnixTimestampInMillis(dateString);
+                }
+
+                return DateUtils.parseISO8601Date(dateString);
+            } catch (Exception exception) {
+                // fallback to the original behavior.
+                return DateJsonUnmarshaller.getInstance().unmarshall(unmarshallerContext);
+            }
         }
 
         public static DateJsonUnmarshallerFactory getInstance(String dateFormatType) {

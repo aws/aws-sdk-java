@@ -33,6 +33,7 @@ import com.amazonaws.codegen.model.service.Shape;
 import com.amazonaws.codegen.naming.NamingStrategy;
 import com.amazonaws.util.StringUtils;
 
+import com.amazonaws.util.TimestampFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -240,11 +241,11 @@ abstract class AddShapes {
 
         String location = c2jMemberDefinition.getLocation();
         if (Location.HEADER.toString().equals(location)) {
-            return TimestampFormat.RFC_822.format;
+            return TimestampFormat.RFC_822.getFormat();
         }
 
         if (Location.QUERY_STRING.toString().equals(location)) {
-            return TimestampFormat.ISO_8601.format;
+            return TimestampFormat.ISO_8601.getFormat();
         }
 
         Protocol protocol = Protocol.fromValue(protocolString);
@@ -254,12 +255,13 @@ abstract class AddShapes {
             case QUERY:
             case EC2:
             case API_GATEWAY:
-                return TimestampFormat.ISO_8601.format;
-            case REST_JSON:
-            case CBOR:
+                return TimestampFormat.ISO_8601.getFormat();
             case ION:
+            case REST_JSON:
             case AWS_JSON:
-                return TimestampFormat.UNIX_TIMESTAMP.format;
+                return TimestampFormat.UNIX_TIMESTAMP.getFormat();
+            case CBOR:
+                return TimestampFormat.UNIX_TIMESTAMP_IN_MILLIS.getFormat();
         }
 
         throw new RuntimeException("Cannot determine timestamp format for protocol " + protocol);
@@ -426,36 +428,5 @@ abstract class AddShapes {
 
     protected String getProtocol() {
         return getServiceModel().getMetadata().getProtocol();
-    }
-
-    enum TimestampFormat {
-
-        ISO_8601("iso8601"),
-        UNIX_TIMESTAMP("unixTimestamp"),
-        RFC_822("rfc822");
-
-        private final String format;
-
-        TimestampFormat(String format) {
-            this.format = format;
-        }
-
-        public static TimestampFormat fromValue(String format) {
-            if (format == null) {
-                return null;
-            }
-
-            for (TimestampFormat timestampFormat : TimestampFormat.values()) {
-                if (timestampFormat.format.equals(format)) {
-                    return timestampFormat;
-                }
-            }
-
-            throw new IllegalArgumentException("Unknown enum value for TimestampFormat : " + format);
-        }
-
-        public String getFormat() {
-            return format;
-        }
     }
 }

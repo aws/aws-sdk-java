@@ -46,13 +46,13 @@ public class CreatePublicKeyRequestMarshaller implements Marshaller<Request<Crea
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2017-10-30/public-key";
+        String uriResourcePath = "/2018-06-18/public-key";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-06-18/");
 
             PublicKeyConfig publicKeyConfig = createPublicKeyRequest.getPublicKeyConfig();
             if (publicKeyConfig != null) {
