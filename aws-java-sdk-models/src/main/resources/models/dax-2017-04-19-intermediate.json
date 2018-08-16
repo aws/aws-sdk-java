@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : {
       "DescribeEventsRequest" : [ "SourceType" ],
       "Event" : [ "SourceType" ],
@@ -74,6 +74,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon DAX",
     "serviceFullName" : "Amazon DynamoDB Accelerator (DAX)",
+    "serviceId" : "DAX",
     "serviceName" : "Amazon DAX",
     "signingName" : "dax",
     "smokeTestsPackageName" : "com.amazonaws.services.dax.smoketests",

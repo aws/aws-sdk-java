@@ -73,6 +73,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Greengrass",
+    "serviceId" : "Greengrass",
     "serviceName" : "AWS Greengrass",
     "signingName" : "greengrass",
     "smokeTestsPackageName" : "com.amazonaws.services.greengrass.smoketests",

@@ -104,6 +104,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Storage Gateway",
+    "serviceId" : "Storage Gateway",
     "serviceName" : "AWS Storage Gateway",
     "signingName" : "storagegateway",
     "smokeTestsPackageName" : "com.amazonaws.services.storagegateway.smoketests",

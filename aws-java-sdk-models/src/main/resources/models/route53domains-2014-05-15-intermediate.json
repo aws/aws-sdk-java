@@ -87,6 +87,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Route 53 Domains",
+    "serviceId" : "Route 53 Domains",
     "serviceName" : "Amazon Route 53 Domains",
     "signingName" : "route53domains",
     "smokeTestsPackageName" : "com.amazonaws.services.route53domains.smoketests",

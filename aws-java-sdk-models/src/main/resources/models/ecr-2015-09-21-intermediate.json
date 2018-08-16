@@ -76,6 +76,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon ECR",
     "serviceFullName" : "Amazon EC2 Container Registry",
+    "serviceId" : "ECR",
     "serviceName" : "Amazon ECR",
     "signingName" : "ecr",
     "smokeTestsPackageName" : "com.amazonaws.services.ecr.smoketests",

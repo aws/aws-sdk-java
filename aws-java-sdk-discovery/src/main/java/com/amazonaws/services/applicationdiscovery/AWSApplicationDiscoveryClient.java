@@ -381,6 +381,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateConfigurationItemsToApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -439,6 +441,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -499,6 +503,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -556,6 +562,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -616,6 +624,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -674,6 +684,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAgents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -739,6 +751,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -804,6 +818,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -862,6 +878,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportTasks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -922,6 +940,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -982,6 +1002,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateConfigurationItemsFromApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1049,6 +1071,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1106,6 +1130,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiscoverySummary");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1166,6 +1192,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1223,6 +1251,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServerNeighbors");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1281,6 +1311,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDataCollectionByAgentIds");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1352,6 +1384,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExportTask");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1410,6 +1444,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDataCollectionByAgentIds");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1468,6 +1504,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

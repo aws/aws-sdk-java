@@ -1859,6 +1859,43 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @return A Java Future containing the result of the StopJob operation returned by the service.
+     * @sample AWSDeviceFarmAsync.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest stopJobRequest);
+
+    /**
+     * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopJob operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest stopJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopJobRequest, StopJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Ends a specified remote access session.
      * </p>
      * 
@@ -2089,6 +2126,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest updateProjectRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @return A Java Future containing the result of the UpdateUpload operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest updateUploadRequest);
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUpload operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest updateUploadRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUploadRequest, UpdateUploadResult> asyncHandler);
 
     /**
      * <p>

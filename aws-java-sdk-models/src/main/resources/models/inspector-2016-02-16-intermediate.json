@@ -165,6 +165,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Inspector",
+    "serviceId" : "Inspector",
     "serviceName" : "Amazon Inspector",
     "signingName" : "inspector",
     "smokeTestsPackageName" : "com.amazonaws.services.inspector.smoketests",

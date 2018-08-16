@@ -372,6 +372,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAffectedEntities");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -424,6 +426,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntityAggregates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -478,6 +482,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventAggregates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -536,6 +542,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventDetails");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,6 +598,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventTypes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -650,6 +660,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -133,6 +133,8 @@ public enum DevicefarmActions implements Action {
     RenewOffering("devicefarm:RenewOffering"),
     /** Action for the ScheduleRun operation. */
     ScheduleRun("devicefarm:ScheduleRun"),
+    /** Action for the StopJob operation. */
+    StopJob("devicefarm:StopJob"),
     /** Action for the StopRemoteAccessSession operation. */
     StopRemoteAccessSession("devicefarm:StopRemoteAccessSession"),
     /** Action for the StopRun operation. */
@@ -147,6 +149,8 @@ public enum DevicefarmActions implements Action {
     UpdateNetworkProfile("devicefarm:UpdateNetworkProfile"),
     /** Action for the UpdateProject operation. */
     UpdateProject("devicefarm:UpdateProject"),
+    /** Action for the UpdateUpload operation. */
+    UpdateUpload("devicefarm:UpdateUpload"),
     /** Action for the UpdateVPCEConfiguration operation. */
     UpdateVPCEConfiguration("devicefarm:UpdateVPCEConfiguration"),
 

@@ -72,6 +72,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Cost and Usage Report Service",
+    "serviceId" : "Cost and Usage Report Service",
     "serviceName" : "AWS Cost and Usage Report Service",
     "signingName" : "cur",
     "smokeTestsPackageName" : "com.amazonaws.services.costandusagereport.smoketests",

@@ -85,6 +85,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS STS",
     "serviceFullName" : "AWS Security Token Service",
+    "serviceId" : "STS",
     "serviceName" : "AWS STS",
     "signingName" : "sts",
     "smokeTestsPackageName" : "com.amazonaws.services.securitytoken.smoketests",

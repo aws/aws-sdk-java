@@ -338,6 +338,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddAttributesToFindings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -413,6 +415,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAssessmentTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -481,6 +485,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAssessmentTemplate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -546,6 +552,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExclusionsPreview");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -609,6 +617,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -671,6 +681,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAssessmentRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -733,6 +745,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAssessmentTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -797,6 +811,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAssessmentTemplate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -851,6 +867,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssessmentRuns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -906,6 +924,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssessmentTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -961,6 +981,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssessmentTemplates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1014,6 +1036,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCrossAccountAccessRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1068,6 +1092,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExclusions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1121,6 +1147,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFindings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1174,6 +1202,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourceGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1228,6 +1258,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRulesPackages");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1296,6 +1328,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssessmentReport");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1355,6 +1389,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExclusionsPreview");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1413,6 +1449,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTelemetryMetadata");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1472,6 +1510,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssessmentRunAgents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1532,6 +1572,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssessmentRuns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1589,6 +1631,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssessmentTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1650,6 +1694,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssessmentTemplates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1710,6 +1756,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventSubscriptions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1769,6 +1817,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExclusions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1827,6 +1877,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFindings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1882,6 +1934,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRulesPackages");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1940,6 +1994,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2001,6 +2057,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PreviewAgents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2063,6 +2121,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCrossAccountAccessRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2126,6 +2186,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAttributesFromFindings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2188,6 +2250,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2258,6 +2322,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAssessmentRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2318,6 +2384,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopAssessmentRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2382,6 +2450,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubscribeToEvent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2443,6 +2513,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnsubscribeFromEvent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2507,6 +2579,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssessmentTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

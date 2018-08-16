@@ -423,6 +423,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCustomAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -487,6 +489,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminAddUserToGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -565,6 +569,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminConfirmSignUp");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -672,6 +678,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminCreateUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -737,6 +745,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDeleteUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -803,6 +813,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDeleteUserAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -898,6 +910,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDisableProviderForUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -964,6 +978,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDisableUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1029,6 +1045,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminEnableUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1096,6 +1114,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminForgetDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1161,6 +1181,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminGetDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1226,6 +1248,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminGetUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1314,6 +1338,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminInitiateAuth");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1401,6 +1427,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminLinkProviderForUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1467,6 +1495,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListDevices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1531,6 +1561,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListGroupsForUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1596,6 +1628,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListUserAuthEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1662,6 +1696,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminRemoveUserFromGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1756,6 +1792,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminResetUserPassword");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1859,6 +1897,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminRespondToAuthChallenge");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1924,6 +1964,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserMFAPreference");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1988,6 +2030,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2053,6 +2097,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateAuthEventFeedback");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2122,6 +2168,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateDeviceStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2207,6 +2255,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateUserAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2273,6 +2323,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUserGlobalSignOut");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2335,6 +2387,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSoftwareToken");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2406,6 +2460,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangePassword");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2480,6 +2536,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2563,6 +2621,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmForgotPassword");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2647,6 +2707,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmSignUp");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2713,6 +2775,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2776,6 +2840,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIdentityProvider");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2838,6 +2904,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2902,6 +2970,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserImportJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2974,6 +3044,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3040,6 +3112,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPoolClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3097,6 +3171,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPoolDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3159,6 +3235,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3220,6 +3298,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityProvider");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3280,6 +3360,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3346,6 +3428,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3412,6 +3496,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3475,6 +3561,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3535,6 +3623,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPoolClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3592,6 +3682,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPoolDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3652,6 +3744,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityProvider");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3712,6 +3806,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourceServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3775,6 +3871,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRiskConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3836,6 +3934,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserImportJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3899,6 +3999,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3959,6 +4061,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPoolClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4017,6 +4121,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPoolDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4086,6 +4192,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgetDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4177,6 +4285,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgotPassword");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4237,6 +4347,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCSVHeader");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4305,6 +4417,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4367,6 +4481,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4428,6 +4544,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityProviderByIdentifier");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4483,6 +4601,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningCertificate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4545,6 +4665,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUICustomization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4611,6 +4733,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4701,6 +4825,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserAttributeVerificationCode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4761,6 +4887,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserPoolMfaConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4825,6 +4953,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GlobalSignOut");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4901,6 +5031,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateAuth");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4969,6 +5101,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5031,6 +5165,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5090,6 +5226,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityProviders");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5150,6 +5288,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceServers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5210,6 +5350,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserImportJobs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5270,6 +5412,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPoolClients");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5328,6 +5472,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPools");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5388,6 +5534,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5450,6 +5598,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsersInGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5534,6 +5684,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendConfirmationCode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5633,6 +5785,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondToAuthChallenge");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5708,6 +5862,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetRiskConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5780,6 +5936,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUICustomization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5843,6 +6001,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserMFAPreference");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5909,6 +6069,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserPoolMfaConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5974,6 +6136,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6058,6 +6222,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignUp");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6120,6 +6286,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartUserImportJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6182,6 +6350,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopUserImportJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6247,6 +6417,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuthEventFeedback");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6316,6 +6488,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6378,6 +6552,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6439,6 +6615,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityProvider");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6499,6 +6677,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6593,6 +6773,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6670,6 +6852,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6736,6 +6920,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPoolClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6814,6 +7000,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifySoftwareToken");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6886,6 +7074,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyUserAttribute");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

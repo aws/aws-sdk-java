@@ -56,6 +56,10 @@ public class ScheduleRunTestJsonUnmarshaller implements Unmarshaller<ScheduleRun
                     context.nextToken();
                     scheduleRunTest.setTestPackageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("testSpecArn", targetDepth)) {
+                    context.nextToken();
+                    scheduleRunTest.setTestSpecArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("filter", targetDepth)) {
                     context.nextToken();
                     scheduleRunTest.setFilter(context.getUnmarshaller(String.class).unmarshall(context));

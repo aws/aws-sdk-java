@@ -79,6 +79,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Rekognition",
+    "serviceId" : "Rekognition",
     "serviceName" : "Amazon Rekognition",
     "signingName" : "rekognition",
     "smokeTestsPackageName" : "com.amazonaws.services.rekognition.smoketests",

@@ -85,6 +85,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWSBudgets",
     "serviceFullName" : "AWS Budgets",
+    "serviceId" : "Budgets",
     "serviceName" : "AWSBudgets",
     "signingName" : "budgets",
     "smokeTestsPackageName" : "com.amazonaws.services.budgets.smoketests",

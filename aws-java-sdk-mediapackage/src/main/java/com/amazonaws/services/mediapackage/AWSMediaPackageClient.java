@@ -165,6 +165,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -225,6 +227,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOriginEndpoint");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -284,6 +288,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -343,6 +349,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOriginEndpoint");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -402,6 +410,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -461,6 +471,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOriginEndpoint");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -521,6 +533,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +594,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginEndpoints");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -640,6 +656,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateChannelCredentials");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -701,6 +719,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -761,6 +781,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOriginEndpoint");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

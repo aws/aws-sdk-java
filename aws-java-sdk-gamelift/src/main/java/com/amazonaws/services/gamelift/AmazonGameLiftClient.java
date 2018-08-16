@@ -963,6 +963,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptMatch");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1077,6 +1079,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1215,6 +1219,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBuild");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1472,6 +1478,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1641,6 +1649,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGameSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1752,6 +1762,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGameSessionQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1882,6 +1894,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMatchmakingConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2000,6 +2014,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMatchmakingRuleSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2125,6 +2141,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlayerSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2250,6 +2268,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlayerSessions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2373,6 +2393,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcPeeringAuthorization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2490,6 +2512,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcPeeringConnection");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2588,6 +2612,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2683,6 +2709,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBuild");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2858,6 +2886,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2945,6 +2975,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGameSessionQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3049,6 +3081,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMatchmakingConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3175,6 +3209,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3273,6 +3309,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcPeeringAuthorization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3378,6 +3416,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcPeeringConnection");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3479,6 +3519,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3571,6 +3613,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBuild");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3752,6 +3796,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEC2InstanceLimits");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3931,6 +3977,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4110,6 +4158,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetCapacity");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4280,6 +4330,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4451,6 +4503,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetPortSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4630,6 +4684,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetUtilization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4764,6 +4820,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessionDetails");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4885,6 +4943,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessionPlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4976,6 +5036,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessionQueues");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5111,6 +5173,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5178,6 +5242,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5276,6 +5342,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMatchmaking");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5381,6 +5449,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMatchmakingConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5486,6 +5556,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMatchmakingRuleSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5602,6 +5674,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePlayerSessions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5772,6 +5846,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRuntimeConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5904,6 +5980,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6000,6 +6078,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcPeeringAuthorizations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6105,6 +6185,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcPeeringConnections");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6232,6 +6314,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGameSessionLogUrl");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6309,6 +6393,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceAccess");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6408,6 +6494,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6503,6 +6591,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuilds");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6676,6 +6766,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFleets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6875,6 +6967,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScalingPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6943,6 +7037,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestUploadCredentials");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7045,6 +7141,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7235,6 +7333,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchGameSessions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7361,6 +7461,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFleetActions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7531,6 +7633,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartGameSessionPlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7645,6 +7749,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMatchBackfill");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7812,6 +7918,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMatchmaking");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7881,6 +7989,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopFleetActions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8001,6 +8111,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopGameSessionPlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8095,6 +8207,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMatchmaking");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8193,6 +8307,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8286,6 +8402,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBuild");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8463,6 +8581,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8654,6 +8774,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetCapacity");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8835,6 +8957,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetPortSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8964,6 +9088,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGameSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9052,6 +9178,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGameSessionQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9156,6 +9284,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMatchmakingConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9341,6 +9471,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuntimeConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9443,6 +9575,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateMatchmakingRuleSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

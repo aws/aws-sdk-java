@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : {
       "PostContentResponse" : [ "dialogState" ],
       "PostTextResponse" : [ "dialogState" ],
@@ -74,6 +74,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Lex Runtime Service",
+    "serviceId" : "Lex Runtime Service",
     "serviceName" : "Amazon Lex Runtime Service",
     "signingName" : "lex",
     "smokeTestsPackageName" : "com.amazonaws.services.lexruntime.smoketests",

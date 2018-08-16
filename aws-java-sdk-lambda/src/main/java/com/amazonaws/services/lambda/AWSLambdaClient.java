@@ -405,6 +405,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -470,6 +472,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -556,6 +560,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSourceMapping");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -632,6 +638,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunction");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -692,6 +700,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -759,6 +769,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSourceMapping");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -836,6 +848,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunction");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -896,6 +910,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionConcurrency");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -954,6 +970,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1036,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1100,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventSourceMapping");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1153,6 +1175,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunction");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1225,6 +1249,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1295,6 +1321,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1416,6 +1444,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Invoke");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1484,6 +1514,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeAsync");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1548,6 +1580,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1622,6 +1656,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventSourceMappings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1694,6 +1730,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1798,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1821,6 +1861,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVersionsByFunction");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1892,6 +1934,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1955,6 +1999,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFunctionConcurrency");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2032,6 +2078,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2094,6 +2142,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2155,6 +2205,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2223,6 +2275,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2304,6 +2358,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventSourceMapping");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2381,6 +2437,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionCode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2458,6 +2516,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

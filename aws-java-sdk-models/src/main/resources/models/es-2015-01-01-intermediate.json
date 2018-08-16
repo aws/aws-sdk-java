@@ -75,6 +75,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Elasticsearch Service",
+    "serviceId" : "Elasticsearch Service",
     "serviceName" : "Amazon Elasticsearch Service",
     "signingName" : "es",
     "smokeTestsPackageName" : "com.amazonaws.services.elasticsearch.smoketests",

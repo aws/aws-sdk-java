@@ -76,6 +76,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Kinesis Analytics",
     "serviceFullName" : "Amazon Kinesis Analytics",
+    "serviceId" : "Kinesis Analytics",
     "serviceName" : "Kinesis Analytics",
     "signingName" : "kinesisanalytics",
     "smokeTestsPackageName" : "com.amazonaws.services.kinesisanalytics.smoketests",

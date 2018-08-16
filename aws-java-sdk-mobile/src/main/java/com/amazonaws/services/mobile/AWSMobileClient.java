@@ -183,6 +183,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -244,6 +246,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -308,6 +312,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBundle");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -372,6 +378,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -438,6 +446,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportBundle");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -504,6 +514,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -566,6 +578,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBundles");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -628,6 +642,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -698,6 +714,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

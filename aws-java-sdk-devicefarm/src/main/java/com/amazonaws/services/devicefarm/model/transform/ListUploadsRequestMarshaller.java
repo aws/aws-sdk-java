@@ -29,6 +29,8 @@ public class ListUploadsRequestMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
 
@@ -49,6 +51,7 @@ public class ListUploadsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listUploadsRequest.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(listUploadsRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(listUploadsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

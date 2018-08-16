@@ -332,6 +332,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationCloudWatchLoggingOption");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -406,6 +408,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInput");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -469,6 +473,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInputProcessingConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +559,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationOutput");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -629,6 +637,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationReferenceDataSource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -713,6 +723,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -774,6 +786,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -838,6 +852,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationCloudWatchLoggingOption");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -901,6 +917,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationInputProcessingConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -965,6 +983,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationOutput");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1035,6 +1055,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationReferenceDataSource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1095,6 +1117,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1168,6 +1192,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverInputSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1227,6 +1253,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1300,6 +1328,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1359,6 +1389,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1427,6 +1459,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

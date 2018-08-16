@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Polly",
+    "serviceId" : "Polly",
     "serviceName" : "Amazon Polly",
     "signingName" : "polly",
     "smokeTestsPackageName" : "com.amazonaws.services.polly.smoketests",

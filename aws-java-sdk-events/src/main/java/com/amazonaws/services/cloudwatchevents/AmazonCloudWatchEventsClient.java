@@ -344,6 +344,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -399,6 +401,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventBus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -452,6 +456,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,6 +518,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,6 +579,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -623,6 +633,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleNamesByTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -676,6 +688,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -729,6 +743,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsByRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -780,6 +796,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -850,6 +868,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -928,6 +948,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1127,6 +1149,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1185,6 +1209,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1250,6 +1276,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1308,6 +1336,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestEventPattern");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

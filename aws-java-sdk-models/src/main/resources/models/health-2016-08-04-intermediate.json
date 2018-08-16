@@ -75,6 +75,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWSHealth",
     "serviceFullName" : "AWS Health APIs and Notifications",
+    "serviceId" : "Health",
     "serviceName" : "AWSHealth",
     "signingName" : "health",
     "smokeTestsPackageName" : "com.amazonaws.services.health.smoketests",

@@ -16,6 +16,9 @@ package com.amazonaws.opensdk.protect.client;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
+import com.amazonaws.monitoring.MonitoringListener;
+import com.amazonaws.monitoring.CsmConfigurationProvider;
+import com.amazonaws.monitoring.CsmConfigurationProviderChain;
 import com.amazonaws.opensdk.config.ConnectionConfiguration;
 import com.amazonaws.opensdk.config.ProxyConfiguration;
 import com.amazonaws.opensdk.config.TimeoutConfiguration;
@@ -242,6 +245,17 @@ public abstract class SdkSyncClientBuilder<Subclass extends SdkSyncClientBuilder
         @Override
         public List<RequestHandler2> getRequestHandlers() {
             return Collections.emptyList();
+        }
+
+        @Override
+        public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+            // Empty chain
+            return new CsmConfigurationProviderChain();
+        }
+
+        @Override
+        public MonitoringListener getMonitoringListener() {
+            return null;
         }
 
         @Override

@@ -97,6 +97,16 @@ public class TimingInfo {
     }
 
     /**
+     * Captures the given wall clock time and start time in nanosecond
+     *
+     * @param startTimeMillis start time since epoch in millisecond
+     * @param startTimeNano start time in nanosecond
+     */
+    public static TimingInfo startTimingFullSupport(long startTimeMillis, long startTimeNano) {
+        return new TimingInfoFullSupport(startTimeMillis, startTimeNano, null);
+    }
+
+    /**
      * Returns a {@link TimingInfoFullSupport} based on the given
      * start and end time in nanosecond, ignoring the wall clock time.
      *

@@ -72,6 +72,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWSMarketplace Metering",
+    "serviceId" : "Marketplace Metering",
     "serviceName" : "AWSMarketplace Metering",
     "signingName" : "aws-marketplace",
     "smokeTestsPackageName" : "com.amazonaws.services.marketplacemetering.smoketests",

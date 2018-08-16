@@ -161,6 +161,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMemberAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -223,6 +225,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateS3Resources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -277,6 +281,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMemberAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -336,6 +342,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateS3Resources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -390,6 +398,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMemberAccounts");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -447,6 +457,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListS3Resources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -505,6 +517,8 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateS3Resources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

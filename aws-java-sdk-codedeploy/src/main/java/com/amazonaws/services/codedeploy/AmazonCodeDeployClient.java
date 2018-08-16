@@ -679,6 +679,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToOnPremisesInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -743,6 +745,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetApplicationRevisions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +806,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetApplications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -870,6 +876,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDeploymentGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -934,6 +942,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDeploymentInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -991,6 +1001,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDeployments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1053,6 +1065,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetOnPremisesInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1123,6 +1137,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ContinueDeployment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1183,6 +1199,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1306,6 +1324,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1371,6 +1391,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeploymentConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1508,6 +1530,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeploymentGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1563,6 +1587,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1627,6 +1653,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeploymentConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1689,6 +1717,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeploymentGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1751,6 +1781,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGitHubAccountToken");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1807,6 +1839,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterOnPremisesInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1864,6 +1898,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1926,6 +1962,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationRevision");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1983,6 +2021,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeployment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2039,6 +2079,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2101,6 +2143,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2163,6 +2207,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2220,6 +2266,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOnPremisesInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2292,6 +2340,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationRevisions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2345,6 +2395,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2402,6 +2454,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentConfigs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2466,6 +2520,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2535,6 +2591,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2605,6 +2663,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeployments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2667,6 +2727,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGitHubAccountTokenNames");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2729,6 +2791,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOnPremisesInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2804,6 +2868,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLifecycleEventHookExecutionStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2868,6 +2934,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterApplicationRevision");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2945,6 +3013,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterOnPremisesInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3012,6 +3082,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromOnPremisesInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3077,6 +3149,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SkipWaitTimeForInstanceTermination");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3136,6 +3210,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDeployment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3194,6 +3270,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3333,6 +3411,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeDeploy");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeploymentGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

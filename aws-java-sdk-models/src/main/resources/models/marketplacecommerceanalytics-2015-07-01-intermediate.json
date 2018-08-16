@@ -73,6 +73,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Marketplace Commerce Analytics",
+    "serviceId" : "Marketplace Commerce Analytics",
     "serviceName" : "AWS Marketplace Commerce Analytics",
     "signingName" : "marketplacecommerceanalytics",
     "smokeTestsPackageName" : "com.amazonaws.services.marketplacecommerceanalytics.smoketests",

@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Alexa For Business",
+    "serviceId" : "Alexa For Business",
     "serviceName" : "Alexa For Business",
     "signingName" : "a4b",
     "smokeTestsPackageName" : "com.amazonaws.services.alexaforbusiness.smoketests",

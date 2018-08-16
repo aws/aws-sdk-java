@@ -322,6 +322,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -430,6 +432,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -493,6 +497,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -558,6 +564,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -608,6 +616,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -660,6 +670,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DomainMetadata");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -718,6 +730,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -773,6 +787,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -874,6 +890,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -950,6 +968,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Select");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

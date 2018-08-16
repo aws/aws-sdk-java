@@ -122,6 +122,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudWatch Logs",
+    "serviceId" : "CloudWatch Logs",
     "serviceName" : "Amazon CloudWatch Logs",
     "signingName" : "logs",
     "smokeTestsPackageName" : "com.amazonaws.services.logs.smoketests",

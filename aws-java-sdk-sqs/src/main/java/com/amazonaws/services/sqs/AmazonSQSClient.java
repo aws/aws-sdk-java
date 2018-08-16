@@ -415,6 +415,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -511,6 +513,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibility");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -594,6 +598,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibilityBatch");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -714,6 +720,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -790,6 +798,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -870,6 +880,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessageBatch");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -939,6 +951,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1012,6 +1026,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1076,6 +1092,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueUrl");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1137,6 +1155,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeadLetterSourceQueues");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1225,6 +1245,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueueTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1280,6 +1302,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueues");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1354,6 +1378,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurgeQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1476,6 +1502,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReceiveMessage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1531,6 +1559,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1602,6 +1632,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1706,6 +1738,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessageBatch");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1770,6 +1804,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetQueueAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1863,6 +1899,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1955,6 +1993,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

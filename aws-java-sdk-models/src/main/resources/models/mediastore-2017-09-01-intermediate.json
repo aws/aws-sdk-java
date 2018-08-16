@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "MediaStore",
     "serviceFullName" : "AWS Elemental MediaStore",
+    "serviceId" : "MediaStore",
     "serviceName" : "MediaStore",
     "signingName" : "mediastore",
     "smokeTestsPackageName" : "com.amazonaws.services.mediastore.smoketests",

@@ -86,6 +86,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CloudTrail",
     "serviceFullName" : "AWS CloudTrail",
+    "serviceId" : "CloudTrail",
     "serviceName" : "CloudTrail",
     "signingName" : "cloudtrail",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudtrail.smoketests",

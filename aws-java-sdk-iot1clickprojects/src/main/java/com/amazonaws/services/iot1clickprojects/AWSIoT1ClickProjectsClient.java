@@ -158,6 +158,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDeviceWithPlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -212,6 +214,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -265,6 +269,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -323,6 +329,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -381,6 +389,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -433,6 +443,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +497,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -541,6 +555,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDeviceFromPlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -594,6 +610,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicesInPlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -647,6 +665,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlacements");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -698,6 +718,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -751,6 +773,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePlacement");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -806,6 +830,8 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -204,6 +204,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon SNS",
     "serviceFullName" : "Amazon Simple Notification Service",
+    "serviceId" : "SNS",
     "serviceName" : "Amazon SNS",
     "signingName" : "sns",
     "smokeTestsPackageName" : "com.amazonaws.services.sns.smoketests",

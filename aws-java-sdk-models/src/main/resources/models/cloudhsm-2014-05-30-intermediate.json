@@ -131,6 +131,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CloudHSM",
     "serviceFullName" : "Amazon CloudHSM",
+    "serviceId" : "CloudHSM",
     "serviceName" : "CloudHSM",
     "signingName" : "cloudhsm",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudhsm.smoketests",

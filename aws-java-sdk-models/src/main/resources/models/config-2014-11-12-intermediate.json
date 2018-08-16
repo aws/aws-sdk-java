@@ -135,6 +135,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Config Service",
     "serviceFullName" : "AWS Config",
+    "serviceId" : "Config Service",
     "serviceName" : "Config Service",
     "signingName" : "config",
     "smokeTestsPackageName" : "com.amazonaws.services.config.smoketests",

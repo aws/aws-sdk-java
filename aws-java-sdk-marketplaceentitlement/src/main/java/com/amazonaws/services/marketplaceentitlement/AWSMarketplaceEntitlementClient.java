@@ -172,6 +172,8 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Entitlement Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEntitlements");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

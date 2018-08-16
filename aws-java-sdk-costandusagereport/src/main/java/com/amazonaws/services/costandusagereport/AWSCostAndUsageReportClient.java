@@ -304,6 +304,8 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReportDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -356,6 +358,8 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReportDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -414,6 +418,8 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutReportDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

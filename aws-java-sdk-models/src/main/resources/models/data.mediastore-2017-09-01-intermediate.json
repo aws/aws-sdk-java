@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "MediaStore Data",
     "serviceFullName" : "AWS Elemental MediaStore Data Plane",
+    "serviceId" : "MediaStore Data",
     "serviceName" : "MediaStore Data",
     "signingName" : "mediastore",
     "smokeTestsPackageName" : "com.amazonaws.services.mediastoredata.smoketests",

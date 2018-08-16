@@ -81,6 +81,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Import/Export",
+    "serviceId" : "ImportExport",
     "serviceName" : "AWS Import/Export",
     "signingName" : "importexport",
     "smokeTestsPackageName" : "com.amazonaws.services.importexport.smoketests",

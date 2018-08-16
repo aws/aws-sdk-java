@@ -60,6 +60,10 @@ public class ExecutionConfigurationJsonUnmarshaller implements Unmarshaller<Exec
                     context.nextToken();
                     executionConfiguration.setAppPackagesCleanup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("videoCapture", targetDepth)) {
+                    context.nextToken();
+                    executionConfiguration.setVideoCapture(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("skipAppResign", targetDepth)) {
                     context.nextToken();
                     executionConfiguration.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));

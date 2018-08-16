@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Translate",
+    "serviceId" : "Translate",
     "serviceName" : "Amazon Translate",
     "signingName" : "translate",
     "smokeTestsPackageName" : "com.amazonaws.services.translate.smoketests",

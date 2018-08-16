@@ -98,6 +98,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "KMS",
     "serviceFullName" : "AWS Key Management Service",
+    "serviceId" : "KMS",
     "serviceName" : "KMS",
     "signingName" : "kms",
     "smokeTestsPackageName" : "com.amazonaws.services.kms.smoketests",

@@ -74,6 +74,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "OpsWorksCM",
     "serviceFullName" : "AWS OpsWorks for Chef Automate",
+    "serviceId" : "OpsWorksCM",
     "serviceName" : "OpsWorksCM",
     "signingName" : "opsworks-cm",
     "smokeTestsPackageName" : "com.amazonaws.services.opsworkscm.smoketests",

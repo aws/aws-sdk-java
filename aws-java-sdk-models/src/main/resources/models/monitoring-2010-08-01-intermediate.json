@@ -94,6 +94,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CloudWatch",
     "serviceFullName" : "Amazon CloudWatch",
+    "serviceId" : "CloudWatch",
     "serviceName" : "CloudWatch",
     "signingName" : "monitoring",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudwatch.smoketests",

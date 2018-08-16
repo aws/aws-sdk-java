@@ -160,6 +160,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon SimpleDB",
+    "serviceId" : "SimpleDB",
     "serviceName" : "Amazon SimpleDB",
     "signingName" : "sdb",
     "smokeTestsPackageName" : "com.amazonaws.services.simpledb.smoketests",

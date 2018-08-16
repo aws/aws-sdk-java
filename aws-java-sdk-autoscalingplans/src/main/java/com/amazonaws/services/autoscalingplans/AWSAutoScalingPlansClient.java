@@ -177,6 +177,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateScalingPlan");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -235,6 +237,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPlan");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -294,6 +298,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPlanResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -353,6 +359,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPlans");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -414,6 +422,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateScalingPlan");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -36,6 +36,137 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String arn;
     /**
      * <p>
+     * The type of upload.
+     * </p>
+     * <p>
+     * Must be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ANDROID_APP: An Android upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String type;
+    /**
+     * <p>
      * An identifier that was returned from the previous call to this operation, which can be used to return the next
      * set of items in the list.
      * </p>
@@ -79,6 +210,1061 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public ListUploadsRequest withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of upload.
+     * </p>
+     * <p>
+     * Must be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ANDROID_APP: An Android upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param type
+     *        The type of upload.</p>
+     *        <p>
+     *        Must be one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        </p>
+     *        </li>
+     * @see UploadType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of upload.
+     * </p>
+     * <p>
+     * Must be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ANDROID_APP: An Android upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of upload.</p>
+     *         <p>
+     *         Must be one of the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ANDROID_APP: An Android upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IOS_APP: An iOS upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         WEB_APP: A web appliction upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXTERNAL_DATA: An external data upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *         </p>
+     *         </li>
+     * @see UploadType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of upload.
+     * </p>
+     * <p>
+     * Must be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ANDROID_APP: An Android upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param type
+     *        The type of upload.</p>
+     *        <p>
+     *        Must be one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UploadType
+     */
+
+    public ListUploadsRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of upload.
+     * </p>
+     * <p>
+     * Must be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ANDROID_APP: An Android upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOS_APP: An iOS upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXTERNAL_DATA: An external data upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param type
+     *        The type of upload.</p>
+     *        <p>
+     *        Must be one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ANDROID_APP: An Android upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXTERNAL_DATA: An external data upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UploadType
+     */
+
+    public ListUploadsRequest withType(UploadType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -141,6 +1327,8 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -161,6 +1349,10 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -174,6 +1366,7 @@ public class ListUploadsRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

@@ -393,6 +393,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateVPCWithHostedZone");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +555,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeResourceRecordSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,6 +625,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -749,6 +755,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHealthCheck");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -904,6 +912,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHostedZone");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1146,6 +1156,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQueryLoggingConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1291,6 +1303,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReusableDelegationSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1363,6 +1377,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1440,6 +1456,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficPolicyInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1513,6 +1531,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficPolicyVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1591,6 +1611,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVPCAssociationAuthorization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1657,6 +1679,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHealthCheck");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1758,6 +1782,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHostedZone");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1818,6 +1844,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueryLoggingConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1887,6 +1915,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReusableDelegationSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1946,6 +1976,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2011,6 +2043,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficPolicyInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2085,6 +2119,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVPCAssociationAuthorization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2159,6 +2195,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateVPCFromHostedZone");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2219,6 +2257,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountLimit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2286,6 +2326,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChange");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2337,6 +2379,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCheckerIpRanges");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2416,6 +2460,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeoLocation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2477,6 +2523,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheck");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2527,6 +2575,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheckCount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2587,6 +2637,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheckLastFailureReason");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2641,6 +2693,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheckStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2695,6 +2749,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedZone");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2746,6 +2802,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedZoneCount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2815,6 +2873,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedZoneLimit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2872,6 +2932,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryLoggingConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2929,6 +2991,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReusableDelegationSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2990,6 +3054,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReusableDelegationSetLimit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3044,6 +3110,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3109,6 +3177,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficPolicyInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3159,6 +3229,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficPolicyInstanceCount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3222,6 +3294,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGeoLocations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3281,6 +3355,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHealthChecks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3348,6 +3424,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHostedZones");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3473,6 +3551,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHostedZonesByName");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3540,6 +3620,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueryLoggingConfigs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3650,6 +3732,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceRecordSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3702,6 +3786,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReusableDelegationSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3776,6 +3862,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3845,6 +3933,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3899,6 +3989,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3970,6 +4062,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4044,6 +4138,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyInstancesByHostedZone");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4113,6 +4209,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyInstancesByPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4170,6 +4268,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4232,6 +4332,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVPCAssociationAuthorizations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4290,6 +4392,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestDNSAnswer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4351,6 +4455,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateHealthCheck");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4405,6 +4511,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateHostedZoneComment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4462,6 +4570,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrafficPolicyComment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4555,6 +4665,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrafficPolicyInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

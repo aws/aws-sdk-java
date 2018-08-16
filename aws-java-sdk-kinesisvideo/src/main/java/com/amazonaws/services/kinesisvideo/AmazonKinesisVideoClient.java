@@ -196,6 +196,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -267,6 +269,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -326,6 +330,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -395,6 +401,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataEndpoint");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -450,6 +458,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreams");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -513,6 +523,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -589,6 +601,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -653,6 +667,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -747,6 +763,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataRetention");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -823,6 +841,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

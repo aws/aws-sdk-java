@@ -68,6 +68,17 @@ public class Utils {
         return interfaceNamePrefix + Constants.ASYNC_SUFFIX;
     }
 
+    public static String deriveServiceId(String interfaceName) {
+        String serviceId = interfaceName;
+
+        if (interfaceName.startsWith("AWS")) {
+            serviceId = interfaceName.substring(3);
+        } else if (interfaceName.startsWith("Amazon")) {
+            serviceId = interfaceName.substring(6);
+        }
+        return serviceId;
+    }
+
     public static String getClientName(String clientNamePrefix) {
         return clientNamePrefix + Constants.CLIENT_NAME_SUFFIX;
     }

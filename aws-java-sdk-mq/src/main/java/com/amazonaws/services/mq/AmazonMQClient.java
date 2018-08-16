@@ -165,6 +165,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBroker");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -224,6 +226,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -282,6 +286,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -337,6 +343,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBroker");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -392,6 +400,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -447,6 +457,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBroker");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +514,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -559,6 +573,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRevision");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -615,6 +631,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -668,6 +686,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBrokers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -724,6 +744,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationRevisions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -778,6 +800,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +857,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -888,6 +914,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootBroker");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -944,6 +972,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBroker");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1003,6 +1033,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1061,6 +1093,8 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

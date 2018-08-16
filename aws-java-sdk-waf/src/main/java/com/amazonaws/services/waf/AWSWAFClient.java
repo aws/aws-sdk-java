@@ -438,6 +438,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateByteMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -591,6 +593,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGeoMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -744,6 +748,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIPSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -964,6 +970,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRateBasedRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1062,6 +1070,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1156,6 +1166,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexPatternSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1337,6 +1349,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1423,6 +1437,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRuleGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1579,6 +1595,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSizeConstraintSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1735,6 +1753,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSqlInjectionMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1908,6 +1928,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebACL");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2062,6 +2084,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateXssMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2185,6 +2209,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteByteMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2307,6 +2333,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGeoMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2429,6 +2457,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIPSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2488,6 +2518,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2612,6 +2644,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRateBasedRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2735,6 +2769,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2833,6 +2869,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexPatternSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2956,6 +2994,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3075,6 +3115,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRuleGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3199,6 +3241,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSizeConstraintSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3325,6 +3369,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSqlInjectionMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3446,6 +3492,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebACL");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3570,6 +3618,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteXssMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3626,6 +3676,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetByteMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3690,6 +3742,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChangeToken");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3762,6 +3816,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChangeTokenStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3818,6 +3874,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeoMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3874,6 +3932,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIPSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3927,6 +3987,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3984,6 +4046,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4098,6 +4162,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedRuleManagedKeys");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4155,6 +4221,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4211,6 +4279,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexPatternSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4268,6 +4338,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4325,6 +4397,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRuleGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4386,6 +4460,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSampledRequests");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4442,6 +4518,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSizeConstraintSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4500,6 +4578,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSqlInjectionMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4557,6 +4637,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACL");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4614,6 +4696,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetXssMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4723,6 +4807,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivatedRulesInRuleGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4778,6 +4864,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListByteMatchSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4832,6 +4920,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGeoMatchSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4886,6 +4976,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIPSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4940,6 +5032,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRateBasedRules");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4994,6 +5088,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexMatchSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5048,6 +5144,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexPatternSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5099,6 +5197,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5153,6 +5253,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5207,6 +5309,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSizeConstraintSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5264,6 +5368,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSqlInjectionMatchSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5319,6 +5425,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscribedRuleGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5374,6 +5482,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebACLs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5429,6 +5539,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListXssMatchSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5586,6 +5698,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermissionPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5835,6 +5949,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateByteMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6082,6 +6198,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGeoMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6367,6 +6485,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIPSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6625,6 +6745,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRateBasedRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6816,6 +6938,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7014,6 +7138,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexPatternSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7273,6 +7399,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7495,6 +7623,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuleGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7759,6 +7889,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSizeConstraintSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8000,6 +8132,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSqlInjectionMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8280,6 +8414,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebACL");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8519,6 +8655,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateXssMatchSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

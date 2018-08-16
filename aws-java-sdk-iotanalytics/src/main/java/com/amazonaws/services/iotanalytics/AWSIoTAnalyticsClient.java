@@ -186,6 +186,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutMessage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -246,6 +248,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelPipelineReprocessing");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -309,6 +313,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -375,6 +381,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -434,6 +442,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetContent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -495,6 +505,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatastore");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -557,6 +569,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -616,6 +630,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -678,6 +694,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -737,6 +755,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetContent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -796,6 +816,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatastore");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -855,6 +877,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -914,6 +938,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -973,6 +999,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1032,6 +1060,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatastore");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1091,6 +1121,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoggingOptions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1151,6 +1183,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1210,6 +1244,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatasetContent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1267,6 +1303,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1324,6 +1362,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1381,6 +1421,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatastores");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1438,6 +1480,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelines");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1499,6 +1543,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1561,6 +1607,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingOptions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1618,6 +1666,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunPipelineActivity");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1678,6 +1728,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SampleChannelData");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1740,6 +1792,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPipelineReprocessing");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1802,6 +1856,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1863,6 +1919,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1922,6 +1980,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1981,6 +2041,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2040,6 +2102,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatastore");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2101,6 +2165,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

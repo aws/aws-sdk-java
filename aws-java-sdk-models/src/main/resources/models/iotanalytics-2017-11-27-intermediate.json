@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT Analytics",
+    "serviceId" : "IoTAnalytics",
     "serviceName" : "AWS IoT Analytics",
     "signingName" : "iotanalytics",
     "smokeTestsPackageName" : "com.amazonaws.services.iotanalytics.smoketests",

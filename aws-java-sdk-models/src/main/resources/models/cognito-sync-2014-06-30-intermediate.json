@@ -75,6 +75,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Cognito Sync",
+    "serviceId" : "Cognito Sync",
     "serviceName" : "Amazon Cognito Sync",
     "signingName" : "cognito-sync",
     "smokeTestsPackageName" : "com.amazonaws.services.cognitosync.smoketests",

@@ -86,6 +86,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CodePipeline",
     "serviceFullName" : "AWS CodePipeline",
+    "serviceId" : "CodePipeline",
     "serviceName" : "CodePipeline",
     "signingName" : "codepipeline",
     "smokeTestsPackageName" : "com.amazonaws.services.codepipeline.smoketests",

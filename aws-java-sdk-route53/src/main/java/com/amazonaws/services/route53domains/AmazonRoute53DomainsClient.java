@@ -316,6 +316,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckDomainAvailability");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -374,6 +376,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckDomainTransferability");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -437,6 +441,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTagsForDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -492,6 +498,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableDomainAutoRenew");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +568,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableDomainTransferLock");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -626,6 +636,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableDomainAutoRenew");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -693,6 +705,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableDomainTransferLock");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -756,6 +770,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactReachabilityStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -814,6 +830,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainDetail");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -870,6 +888,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainSuggestions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -924,6 +944,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOperationDetail");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -978,6 +1000,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1037,6 +1061,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOperations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1104,6 +1130,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1208,6 +1236,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1279,6 +1309,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenewDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1339,6 +1371,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendContactReachabilityEmail");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1398,6 +1432,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetrieveDomainAuthCode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1490,6 +1526,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransferDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1558,6 +1596,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainContact");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1629,6 +1669,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainContactPrivacy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1705,6 +1747,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainNameservers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1768,6 +1812,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTagsForDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1822,6 +1868,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ViewBilling");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

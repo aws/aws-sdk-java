@@ -78,6 +78,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Data Pipeline",
+    "serviceId" : "Data Pipeline",
     "serviceName" : "AWS Data Pipeline",
     "signingName" : "datapipeline",
     "smokeTestsPackageName" : "com.amazonaws.services.datapipeline.smoketests",

@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWSAppSync",
     "serviceFullName" : "AWS AppSync",
+    "serviceId" : "AppSync",
     "serviceName" : "AWSAppSync",
     "signingName" : "appsync",
     "smokeTestsPackageName" : "com.amazonaws.services.appsync.smoketests",

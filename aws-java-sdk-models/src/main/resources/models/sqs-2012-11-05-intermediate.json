@@ -213,6 +213,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon SQS",
     "serviceFullName" : "Amazon Simple Queue Service",
+    "serviceId" : "SQS",
     "serviceName" : "Amazon SQS",
     "signingName" : "sqs",
     "smokeTestsPackageName" : "com.amazonaws.services.sqs.smoketests",

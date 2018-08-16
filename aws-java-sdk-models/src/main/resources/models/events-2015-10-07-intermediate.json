@@ -74,6 +74,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudWatch Events",
+    "serviceId" : "CloudWatch Events",
     "serviceName" : "Amazon CloudWatch Events",
     "signingName" : "events",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudwatchevents.smoketests",

@@ -96,6 +96,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Directory Service",
     "serviceFullName" : "AWS Directory Service",
+    "serviceId" : "Directory Service",
     "serviceName" : "Directory Service",
     "signingName" : "ds",
     "smokeTestsPackageName" : "com.amazonaws.services.directory.smoketests",

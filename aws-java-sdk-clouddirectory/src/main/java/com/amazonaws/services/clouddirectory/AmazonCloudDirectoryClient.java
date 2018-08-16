@@ -428,6 +428,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddFacetToObject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -507,6 +509,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplySchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -603,6 +607,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachObject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -679,6 +685,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -764,6 +772,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachToIndex");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -847,6 +857,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachTypedLink");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -919,6 +931,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchRead");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -993,6 +1007,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchWrite");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1069,6 +1085,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectory");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1147,6 +1165,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1230,6 +1250,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIndex");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1313,6 +1335,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateObject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1407,6 +1431,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1487,6 +1513,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTypedLinkFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1565,6 +1593,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectory");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1643,6 +1673,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1720,6 +1752,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteObject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1795,6 +1829,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1871,6 +1907,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTypedLinkFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1949,6 +1987,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachFromIndex");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2027,6 +2067,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachObject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2103,6 +2145,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2181,6 +2225,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachTypedLink");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2257,6 +2303,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableDirectory");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2333,6 +2381,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableDirectory");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2406,6 +2456,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppliedSchemaVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2477,6 +2529,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDirectory");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2552,6 +2606,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2628,6 +2684,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLinkAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2704,6 +2762,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2778,6 +2838,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectInformation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2854,6 +2916,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSchemaAsJson");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2933,6 +2997,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTypedLinkFacetInformation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3009,6 +3075,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppliedSchemaArns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3084,6 +3152,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedIndices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3159,6 +3229,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevelopmentSchemaArns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3232,6 +3304,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDirectories");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3308,6 +3382,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFacetAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3382,6 +3458,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFacetNames");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3463,6 +3541,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIncomingTypedLinks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3544,6 +3624,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIndex");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3609,6 +3691,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListManagedSchemaArns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3688,6 +3772,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListObjectAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3767,6 +3853,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListObjectChildren");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3853,6 +3941,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListObjectParentPaths");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3932,6 +4022,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListObjectParents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4008,6 +4100,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListObjectPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4089,6 +4183,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOutgoingTypedLinks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4168,6 +4264,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicyAttachments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4245,6 +4343,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublishedSchemaArns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4322,6 +4422,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4402,6 +4504,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypedLinkFacetAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4480,6 +4584,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypedLinkFacetNames");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4562,6 +4668,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LookupPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4636,6 +4744,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4712,6 +4822,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSchemaFromJson");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4788,6 +4900,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFacetFromObject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4864,6 +4978,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4939,6 +5055,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5036,6 +5154,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5113,6 +5233,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLinkAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5192,6 +5314,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateObjectAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5265,6 +5389,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5347,6 +5473,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTypedLinkFacet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5428,6 +5556,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpgradeAppliedSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5507,6 +5637,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudDirectory");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpgradePublishedSchema");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -84,6 +84,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Database Migration Service",
+    "serviceId" : "Database Migration Service",
     "serviceName" : "AWS Database Migration Service",
     "signingName" : "dms",
     "smokeTestsPackageName" : "com.amazonaws.services.databasemigrationservice.smoketests",

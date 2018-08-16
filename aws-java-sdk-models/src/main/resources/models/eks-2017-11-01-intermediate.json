@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon EKS",
     "serviceFullName" : "Amazon Elastic Container Service for Kubernetes",
+    "serviceId" : "EKS",
     "serviceName" : "Amazon EKS",
     "signingName" : "eks",
     "smokeTestsPackageName" : "com.amazonaws.services.eks.smoketests",

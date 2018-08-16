@@ -79,6 +79,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "EFS",
     "serviceFullName" : "Amazon Elastic File System",
+    "serviceId" : "EFS",
     "serviceName" : "EFS",
     "signingName" : "elasticfilesystem",
     "smokeTestsPackageName" : "com.amazonaws.services.elasticfilesystem.smoketests",

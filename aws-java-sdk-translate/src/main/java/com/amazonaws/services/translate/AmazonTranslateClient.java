@@ -216,6 +216,8 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TranslateText");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

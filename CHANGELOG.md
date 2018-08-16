@@ -1,7 +1,11 @@
-# __1.11.387__ __2018-08-14__
+# __1.11.388__ __2018-08-15__
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
+
+## __AWS Device Farm__
+  - ### Features
+    - Support for running tests in a custom environment with live logs/video streaming, full test features parity and reduction in overall test execution time.
 
 ## __AWS Elemental MediaConvert__
   - ### Features

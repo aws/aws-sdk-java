@@ -189,6 +189,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePrivateDnsNamespace");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -254,6 +256,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePublicDnsNamespace");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -335,6 +339,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateService");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -395,6 +401,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNamespace");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -452,6 +460,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteService");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -514,6 +524,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,6 +583,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -636,6 +650,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstancesHealthStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -691,6 +707,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNamespace");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -748,6 +766,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOperation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +822,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetService");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -856,6 +878,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -908,6 +932,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamespaces");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -960,6 +986,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOperations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1012,6 +1040,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1128,6 +1158,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1185,6 +1217,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceCustomHealthStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1268,6 +1302,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateService");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -308,6 +308,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public StopJobResult stopJob(StopJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -339,6 +344,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUploadResult updateUpload(UpdateUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

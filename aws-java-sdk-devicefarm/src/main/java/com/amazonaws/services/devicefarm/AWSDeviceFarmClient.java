@@ -319,6 +319,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDevicePool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -376,6 +378,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -434,6 +438,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -492,6 +498,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -551,6 +559,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRemoteAccessSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -610,6 +620,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUpload");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -666,6 +678,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVPCEConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -725,6 +739,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevicePool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -782,6 +798,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -840,6 +858,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -901,6 +921,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -960,6 +982,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemoteAccessSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1022,6 +1046,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1106,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUpload");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1139,6 +1167,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVPCEConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1198,6 +1228,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1256,6 +1288,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1313,6 +1347,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1371,6 +1407,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicePool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1430,6 +1468,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicePoolCompatibility");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1488,6 +1528,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1546,6 +1588,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1603,6 +1647,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetworkProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1667,6 +1713,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOfferingStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1725,6 +1773,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1783,6 +1833,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRemoteAccessSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1842,6 +1894,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1900,6 +1954,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSuite");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1958,6 +2014,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTest");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2016,6 +2074,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUpload");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2071,6 +2131,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVPCEConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2132,6 +2194,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InstallToRemoteAccessSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2191,6 +2255,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListArtifacts");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2248,6 +2314,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2306,6 +2374,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevicePools");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2364,6 +2434,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2421,6 +2493,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfiles");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2479,6 +2553,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2536,6 +2612,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworkProfiles");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2598,6 +2676,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferingPromotions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2664,6 +2744,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferingTransactions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2729,6 +2811,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2787,6 +2871,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2846,6 +2932,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRemoteAccessSessions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2905,6 +2993,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuns");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2963,6 +3053,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSamples");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3021,6 +3113,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSuites");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3079,6 +3173,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTests");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3137,6 +3233,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUniqueProblems");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3195,6 +3293,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUploads");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3248,6 +3348,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVPCEConfigurations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3313,6 +3415,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3377,6 +3481,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenewOffering");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3437,12 +3543,76 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScheduleRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ScheduleRunResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ScheduleRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @return Result of the StopJob operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopJobResult stopJob(StopJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopJob(request);
+    }
+
+    @SdkInternalApi
+    final StopJobResult executeStopJob(StopJobRequest stopJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopJobRequest> request = null;
+        Response<StopJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopJob");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3496,6 +3666,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRemoteAccessSession");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3558,6 +3730,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRun");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3615,6 +3789,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3674,6 +3850,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevicePool");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3731,6 +3909,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3789,6 +3969,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNetworkProfile");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3847,12 +4029,73 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @return Result of the UpdateUpload operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateUploadResult updateUpload(UpdateUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUpload(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUploadResult executeUpdateUpload(UpdateUploadRequest updateUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUploadRequest> request = null;
+        Response<UpdateUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUpload");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUploadResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3906,6 +4149,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVPCEConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

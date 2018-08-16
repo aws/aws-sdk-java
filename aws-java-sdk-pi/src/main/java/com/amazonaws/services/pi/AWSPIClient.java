@@ -165,6 +165,8 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDimensionKeys");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -222,6 +224,8 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceMetrics");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -17,6 +17,8 @@ package com.amazonaws.http;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.AWSRequestMetrics;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Wrapper around protocol specific error handler to deal with some default scenarios and fill in common information.
@@ -26,6 +28,7 @@ class AwsErrorResponseHandler implements HttpResponseHandler<AmazonServiceExcept
 
     private final HttpResponseHandler<AmazonServiceException> delegate;
     private final AWSRequestMetrics awsRequestMetrics;
+
 
     AwsErrorResponseHandler(HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                             AWSRequestMetrics awsRequestMetrics) {
@@ -76,4 +79,5 @@ class AwsErrorResponseHandler implements HttpResponseHandler<AmazonServiceExcept
     public boolean needsConnectionLeftOpen() {
         return delegate.needsConnectionLeftOpen();
     }
+
 }

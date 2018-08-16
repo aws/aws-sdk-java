@@ -392,6 +392,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean skipAppResign;
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     */
+    private String testSpecArn;
 
     /**
      * <p>
@@ -3627,6 +3633,46 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     * 
+     * @param testSpecArn
+     *        The ARN of the YAML-formatted test specification for the run.
+     */
+
+    public void setTestSpecArn(String testSpecArn) {
+        this.testSpecArn = testSpecArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     * 
+     * @return The ARN of the YAML-formatted test specification for the run.
+     */
+
+    public String getTestSpecArn() {
+        return this.testSpecArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     * 
+     * @param testSpecArn
+     *        The ARN of the YAML-formatted test specification for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withTestSpecArn(String testSpecArn) {
+        setTestSpecArn(testSpecArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3694,7 +3740,9 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         if (getWebUrl() != null)
             sb.append("WebUrl: ").append(getWebUrl()).append(",");
         if (getSkipAppResign() != null)
-            sb.append("SkipAppResign: ").append(getSkipAppResign());
+            sb.append("SkipAppResign: ").append(getSkipAppResign()).append(",");
+        if (getTestSpecArn() != null)
+            sb.append("TestSpecArn: ").append(getTestSpecArn());
         sb.append("}");
         return sb.toString();
     }
@@ -3825,6 +3873,10 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
             return false;
+        if (other.getTestSpecArn() == null ^ this.getTestSpecArn() == null)
+            return false;
+        if (other.getTestSpecArn() != null && other.getTestSpecArn().equals(this.getTestSpecArn()) == false)
+            return false;
         return true;
     }
 
@@ -3862,6 +3914,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
         hashCode = prime * hashCode + ((getWebUrl() == null) ? 0 : getWebUrl().hashCode());
         hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
+        hashCode = prime * hashCode + ((getTestSpecArn() == null) ? 0 : getTestSpecArn().hashCode());
         return hashCode;
     }
 

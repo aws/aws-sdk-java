@@ -758,6 +758,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptHandshake");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1117,6 +1119,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1297,6 +1301,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelHandshake");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1663,6 +1669,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1977,6 +1985,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2290,6 +2300,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganizationalUnit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2610,6 +2622,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2791,6 +2805,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineHandshake");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2961,6 +2977,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3137,6 +3155,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationalUnit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3313,6 +3333,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3483,6 +3505,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3653,6 +3677,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCreateAccountStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3827,6 +3853,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHandshake");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3900,6 +3928,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4070,6 +4100,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationalUnit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4240,6 +4272,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4561,6 +4595,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4888,6 +4924,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAWSServiceAccess");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5207,6 +5245,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisablePolicyType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5528,6 +5568,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAWSServiceAccess");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5788,6 +5830,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAllFeatures");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6107,6 +6151,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnablePolicyType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6372,6 +6418,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteAccountToOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6715,6 +6763,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LeaveOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7024,6 +7074,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAWSServiceAccessForOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7201,6 +7253,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccounts");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7381,6 +7435,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountsForParent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7560,6 +7616,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChildren");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7737,6 +7795,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCreateAccountStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7917,6 +7977,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHandshakesForAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8102,6 +8164,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHandshakesForOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8282,6 +8346,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationalUnitsForParent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8467,6 +8533,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListParents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8642,6 +8710,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8820,6 +8890,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPoliciesForTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9004,6 +9076,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoots");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9181,6 +9255,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsForPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9360,6 +9436,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MoveAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9688,6 +9766,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAccountFromOrganization");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9864,6 +9944,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOrganizationalUnit");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10175,6 +10257,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

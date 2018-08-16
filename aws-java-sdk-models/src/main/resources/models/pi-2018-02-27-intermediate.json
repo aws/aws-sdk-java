@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS PI",
     "serviceFullName" : "AWS Performance Insights",
+    "serviceId" : "PI",
     "serviceName" : "AWS PI",
     "signingName" : "pi",
     "smokeTestsPackageName" : "com.amazonaws.services.pi.smoketests",

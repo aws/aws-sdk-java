@@ -77,6 +77,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS CodeBuild",
+    "serviceId" : "CodeBuild",
     "serviceName" : "AWS CodeBuild",
     "signingName" : "codebuild",
     "smokeTestsPackageName" : "com.amazonaws.services.codebuild.smoketests",

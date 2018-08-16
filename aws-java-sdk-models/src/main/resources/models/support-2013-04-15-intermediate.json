@@ -87,6 +87,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Support",
+    "serviceId" : "Support",
     "serviceName" : "AWS Support",
     "signingName" : "support",
     "smokeTestsPackageName" : "com.amazonaws.services.support.smoketests",

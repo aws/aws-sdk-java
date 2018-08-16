@@ -191,6 +191,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBotVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -269,6 +271,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIntentVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -347,6 +351,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSlotTypeVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -432,6 +438,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBot");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -513,6 +521,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBotAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -577,6 +587,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBotChannelAssociation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -655,6 +667,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBotVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -745,6 +759,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIntent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -823,6 +839,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIntentVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -913,6 +931,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSlotType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -991,6 +1011,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSlotTypeVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1061,6 +1083,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUtterances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1122,6 +1146,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBot");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1184,6 +1210,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBotAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1243,6 +1271,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBotAliases");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1305,6 +1335,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBotChannelAssociation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1367,6 +1399,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBotChannelAssociations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1438,6 +1472,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBotVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1513,6 +1549,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBots");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1574,6 +1612,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBuiltinIntent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1633,6 +1673,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBuiltinIntents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1697,6 +1739,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBuiltinSlotTypes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1755,6 +1799,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExport");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1813,6 +1859,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImport");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1874,6 +1922,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIntent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1945,6 +1995,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIntentVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2020,6 +2072,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIntents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2082,6 +2136,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSlotType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2153,6 +2209,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSlotTypeVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2228,6 +2286,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSlotTypes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2305,6 +2365,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUtterancesView");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2381,6 +2443,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBot");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2447,6 +2511,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBotAlias");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2577,6 +2643,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutIntent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2652,6 +2720,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSlotType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2708,6 +2778,8 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Model Building Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartImport");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

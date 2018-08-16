@@ -148,6 +148,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRoleToGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -202,6 +204,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateServiceRoleToAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -255,6 +259,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -306,6 +312,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -356,6 +364,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -406,6 +416,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -457,6 +469,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -510,6 +524,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunctionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,6 +579,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunctionDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -613,6 +631,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -666,6 +686,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -716,6 +738,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -766,6 +790,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggerDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -817,6 +843,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggerDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -869,6 +897,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -921,6 +951,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -976,6 +1008,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSoftwareUpdateJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1028,6 +1062,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1116,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1130,6 +1168,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCoreDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1179,6 +1219,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1230,6 +1272,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1280,6 +1324,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1329,6 +1375,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggerDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1380,6 +1428,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1431,6 +1481,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriptionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1484,6 +1536,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRoleFromGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1536,6 +1590,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateServiceRoleFromAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1588,6 +1644,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1639,6 +1697,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectivityInfo");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1688,6 +1748,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1738,6 +1800,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1788,6 +1852,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1837,6 +1903,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1887,6 +1955,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1937,6 +2007,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1989,6 +2061,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2039,6 +2113,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2091,6 +2167,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2145,6 +2223,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupCertificateConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2195,6 +2275,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2244,6 +2326,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggerDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2294,6 +2378,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggerDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2344,6 +2430,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2395,6 +2483,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2446,6 +2536,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceRoleForAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2497,6 +2589,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2549,6 +2643,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionDefinitionVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2600,6 +2696,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreDefinitionVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2648,6 +2746,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2697,6 +2797,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeployments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2747,6 +2849,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceDefinitionVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2795,6 +2899,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2846,6 +2952,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionDefinitionVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2895,6 +3003,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2949,6 +3059,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupCertificateAuthorities");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2999,6 +3111,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3046,6 +3160,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3096,6 +3212,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggerDefinitionVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3144,6 +3262,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggerDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3195,6 +3315,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDefinitionVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3244,6 +3366,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3296,6 +3420,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionDefinitionVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3345,6 +3471,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3396,6 +3524,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDeployments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3449,6 +3579,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectivityInfo");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3499,6 +3631,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCoreDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3548,6 +3682,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3599,6 +3735,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3649,6 +3787,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3702,6 +3842,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroupCertificateConfiguration");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3752,6 +3894,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoggerDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3803,6 +3947,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3854,6 +4000,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriptionDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

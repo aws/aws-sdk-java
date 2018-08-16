@@ -378,6 +378,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchMeterUsage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -449,6 +451,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MeterUsage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,6 +516,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCustomer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

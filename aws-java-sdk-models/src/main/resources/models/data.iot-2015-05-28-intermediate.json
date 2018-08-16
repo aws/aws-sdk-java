@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT Data Plane",
+    "serviceId" : "IoT Data Plane",
     "serviceName" : "AWS IoT Data Plane",
     "signingName" : "iotdata",
     "smokeTestsPackageName" : "com.amazonaws.services.iotdata.smoketests",

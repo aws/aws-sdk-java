@@ -334,6 +334,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -401,6 +403,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -462,6 +466,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -536,6 +542,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePreset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -601,6 +609,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +674,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePreset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -726,6 +738,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobsByPipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -785,6 +799,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobsByStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -840,6 +856,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelines");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -901,6 +919,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPresets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -964,6 +984,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReadJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1022,6 +1044,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReadPipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1104,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReadPreset");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1145,6 +1171,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1213,6 +1241,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipeline");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1280,6 +1310,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipelineNotifications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1380,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipelineStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

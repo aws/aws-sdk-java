@@ -79,6 +79,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "SMS",
     "serviceFullName" : "AWS Server Migration Service",
+    "serviceId" : "SMS",
     "serviceName" : "SMS",
     "signingName" : "sms",
     "smokeTestsPackageName" : "com.amazonaws.services.servermigration.smoketests",

@@ -365,6 +365,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBudget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -423,6 +425,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotification");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -481,6 +485,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriber");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -538,6 +544,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBudget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -595,6 +603,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotification");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -652,6 +662,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriber");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -706,6 +718,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -764,6 +778,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -823,6 +839,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationsForBudget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,6 +902,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscribersForNotification");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -941,6 +961,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBudget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,6 +1019,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotification");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1053,6 +1077,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriber");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -378,6 +378,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliveryStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -444,6 +446,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeliveryStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -497,6 +501,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -555,6 +561,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliveryStreams");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -612,6 +620,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForDeliveryStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -704,6 +714,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecord");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -816,6 +828,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecordBatch");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -885,6 +899,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagDeliveryStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -949,6 +965,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagDeliveryStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1036,6 +1054,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDestination");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

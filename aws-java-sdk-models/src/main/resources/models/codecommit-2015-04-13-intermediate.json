@@ -73,6 +73,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CodeCommit",
     "serviceFullName" : "AWS CodeCommit",
+    "serviceId" : "CodeCommit",
     "serviceName" : "CodeCommit",
     "signingName" : "codecommit",
     "smokeTestsPackageName" : "com.amazonaws.services.codecommit.smoketests",

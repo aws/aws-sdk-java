@@ -409,6 +409,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateNode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -480,6 +482,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -565,6 +569,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -625,6 +631,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -693,6 +701,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -746,6 +756,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -810,6 +822,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -872,6 +886,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -931,6 +947,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNodeAssociationStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -995,6 +1013,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1057,6 +1077,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateNode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1123,6 +1145,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1185,6 +1209,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMaintenance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1243,6 +1269,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1312,6 +1340,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServerEngineAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

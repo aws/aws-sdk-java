@@ -89,6 +89,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Organizations",
     "serviceFullName" : "AWS Organizations",
+    "serviceId" : "Organizations",
     "serviceName" : "Organizations",
     "signingName" : "organizations",
     "smokeTestsPackageName" : "com.amazonaws.services.organizations.smoketests",

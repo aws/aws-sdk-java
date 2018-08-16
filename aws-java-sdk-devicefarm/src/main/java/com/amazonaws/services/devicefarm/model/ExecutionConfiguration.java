@@ -48,6 +48,12 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
     private Boolean appPackagesCleanup;
     /**
      * <p>
+     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * </p>
+     */
+    private Boolean videoCapture;
+    /**
+     * <p>
      * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
      * Device Farm always signs your apps again and this parameter has no effect.
      * </p>
@@ -204,6 +210,58 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * </p>
+     * 
+     * @param videoCapture
+     *        Set to true to enable video capture; otherwise, set to false. The default is true.
+     */
+
+    public void setVideoCapture(Boolean videoCapture) {
+        this.videoCapture = videoCapture;
+    }
+
+    /**
+     * <p>
+     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * </p>
+     * 
+     * @return Set to true to enable video capture; otherwise, set to false. The default is true.
+     */
+
+    public Boolean getVideoCapture() {
+        return this.videoCapture;
+    }
+
+    /**
+     * <p>
+     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * </p>
+     * 
+     * @param videoCapture
+     *        Set to true to enable video capture; otherwise, set to false. The default is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionConfiguration withVideoCapture(Boolean videoCapture) {
+        setVideoCapture(videoCapture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * </p>
+     * 
+     * @return Set to true to enable video capture; otherwise, set to false. The default is true.
+     */
+
+    public Boolean isVideoCapture() {
+        return this.videoCapture;
+    }
+
+    /**
+     * <p>
      * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
      * Device Farm always signs your apps again and this parameter has no effect.
      * </p>
@@ -311,6 +369,8 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
             sb.append("AccountsCleanup: ").append(getAccountsCleanup()).append(",");
         if (getAppPackagesCleanup() != null)
             sb.append("AppPackagesCleanup: ").append(getAppPackagesCleanup()).append(",");
+        if (getVideoCapture() != null)
+            sb.append("VideoCapture: ").append(getVideoCapture()).append(",");
         if (getSkipAppResign() != null)
             sb.append("SkipAppResign: ").append(getSkipAppResign());
         sb.append("}");
@@ -339,6 +399,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getAppPackagesCleanup() != null && other.getAppPackagesCleanup().equals(this.getAppPackagesCleanup()) == false)
             return false;
+        if (other.getVideoCapture() == null ^ this.getVideoCapture() == null)
+            return false;
+        if (other.getVideoCapture() != null && other.getVideoCapture().equals(this.getVideoCapture()) == false)
+            return false;
         if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
             return false;
         if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
@@ -354,6 +418,7 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getJobTimeoutMinutes() == null) ? 0 : getJobTimeoutMinutes().hashCode());
         hashCode = prime * hashCode + ((getAccountsCleanup() == null) ? 0 : getAccountsCleanup().hashCode());
         hashCode = prime * hashCode + ((getAppPackagesCleanup() == null) ? 0 : getAppPackagesCleanup().hashCode());
+        hashCode = prime * hashCode + ((getVideoCapture() == null) ? 0 : getVideoCapture().hashCode());
         hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         return hashCode;
     }

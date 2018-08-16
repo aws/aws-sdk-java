@@ -301,6 +301,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Runtime Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostContent");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -464,6 +466,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Runtime Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostText");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CloudHSM V2",
     "serviceFullName" : "AWS CloudHSM V2",
+    "serviceId" : "CloudHSM V2",
     "serviceName" : "CloudHSM V2",
     "signingName" : "cloudhsm",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudhsmv2.smoketests",

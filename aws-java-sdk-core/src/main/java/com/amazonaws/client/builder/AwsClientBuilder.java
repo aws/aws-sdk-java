@@ -27,8 +27,11 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.monitoring.CsmConfigurationProvider;
+import com.amazonaws.monitoring.DefaultCsmConfigurationProviderChain;
 import com.amazonaws.regions.AwsRegionProvider;
 import com.amazonaws.regions.DefaultAwsRegionProviderChain;
 import com.amazonaws.regions.Region;
@@ -75,6 +78,8 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     private Region region;
     private List<RequestHandler2> requestHandlers;
     private EndpointConfiguration endpointConfiguration;
+    private CsmConfigurationProvider csmConfig;
+    private MonitoringListener monitoringListener;
 
     protected AwsClientBuilder(ClientConfigurationFactory clientConfigFactory) {
         this(clientConfigFactory, DEFAULT_REGION_PROVIDER);
@@ -331,12 +336,57 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
+     * Gets the {@link MonitoringListener} in use by the builder.
+     */
+    public final MonitoringListener getMonitoringListener() {
+        return this.monitoringListener;
+    }
+
+    /**
+     * Sets a custom MonitoringListener to use for the client.
+     *
+     * @param monitoringListener Custom Monitoring Listener to use.
+     */
+    public final void setMonitoringListener(MonitoringListener monitoringListener) {
+        this.monitoringListener = monitoringListener;
+    }
+
+    /**
+     * Sets a custom MonitoringListener to use for the client.
+     *
+     * @param monitoringListener Custom MonitoringListener to use.
+     * @return This object for method chaining.
+     */
+    public final Subclass withMonitoringListener(MonitoringListener monitoringListener) {
+        setMonitoringListener(monitoringListener);
+        return getSubclass();
+    }
+
+    /**
      * Request handlers are copied to a new list to avoid mutation, if no request handlers are
      * provided to the builder we supply an empty list.
      */
     private List<RequestHandler2> resolveRequestHandlers() {
         return (requestHandlers == null) ? new ArrayList<RequestHandler2>() :
                 new ArrayList<RequestHandler2>(requestHandlers);
+    }
+
+    public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+        return csmConfig;
+    }
+
+    public void setClientSideMonitoringConfigurationProvider(CsmConfigurationProvider csmConfig) {
+        this.csmConfig = csmConfig;
+    }
+
+    public Subclass withClientSideMonitoringConfigurationProvider(
+            CsmConfigurationProvider csmConfig) {
+        setClientSideMonitoringConfigurationProvider(csmConfig);
+        return getSubclass();
+    }
+
+    private CsmConfigurationProvider resolveClientSideMonitoringConfig() {
+        return csmConfig == null ? DefaultCsmConfigurationProviderChain.getInstance() : csmConfig;
     }
 
     /**
@@ -421,12 +471,16 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         private final AWSCredentialsProvider _credentials;
         private final RequestMetricCollector _metricsCollector;
         private final List<RequestHandler2> _requestHandlers;
+        private final CsmConfigurationProvider _csmConfig;
+        private final MonitoringListener _monitoringListener;
 
         protected SyncBuilderParams() {
             this._clientConfig = resolveClientConfiguration();
             this._credentials = resolveCredentials();
             this._metricsCollector = metricsCollector;
             this._requestHandlers = resolveRequestHandlers();
+            this._csmConfig = resolveClientSideMonitoringConfig();
+            this._monitoringListener = monitoringListener;
         }
 
         @Override
@@ -447,6 +501,16 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         @Override
         public List<RequestHandler2> getRequestHandlers() {
             return this._requestHandlers;
+        }
+
+        @Override
+        public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+            return this._csmConfig;
+        }
+
+        @Override
+        public MonitoringListener getMonitoringListener() {
+            return this._monitoringListener;
         }
 
         @Override

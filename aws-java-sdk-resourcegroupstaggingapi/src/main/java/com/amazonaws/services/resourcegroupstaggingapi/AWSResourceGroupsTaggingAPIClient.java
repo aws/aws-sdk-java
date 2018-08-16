@@ -218,6 +218,8 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -278,6 +280,8 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTagKeys");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -338,6 +342,8 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTagValues");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -424,6 +430,8 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -498,6 +506,8 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

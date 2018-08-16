@@ -458,6 +458,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,6 +623,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRoleWithSAML");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -814,6 +818,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRoleWithWebIdentity");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -917,6 +923,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DecodeAuthorizationMessage");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -966,6 +974,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCallerIdentity");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1125,6 +1135,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFederationToken");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1233,6 +1245,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSessionToken");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

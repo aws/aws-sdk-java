@@ -84,6 +84,7 @@ import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.retry.v2.RetryPolicy;
 import com.amazonaws.retry.v2.RetryPolicyContext;
+import com.amazonaws.util.AwsClientSideMonitoringMetrics;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.CapacityManager;
@@ -743,12 +744,14 @@ public class AmazonHttpClient {
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_STARTED_EVENT);
                 response = executeHelper();
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_SUCCESS_EVENT);
+                awsRequestMetrics.endEvent(AwsClientSideMonitoringMetrics.Latency);
                 awsRequestMetrics.getTimingInfo().endTiming();
                 afterResponse(response);
                 return response;
             } catch (AmazonClientException e) {
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_FAILED_EVENT);
 
+                awsRequestMetrics.endEvent(AwsClientSideMonitoringMetrics.Latency);
                 // Exceptions generated here will block the rethrow of e.
                 afterError(response, e);
                 throw e;
@@ -1026,6 +1029,7 @@ public class AmazonHttpClient {
                 final int readLimit = requestConfig.getRequestClientOptions().getReadLimit();
                 originalContent.mark(readLimit);
             }
+            awsRequestMetrics.startEvent(AwsClientSideMonitoringMetrics.Latency);
             while (true) {
                 checkInterrupted();
                 if (originalContent instanceof BufferedInputStream && originalContent.markSupported()) {

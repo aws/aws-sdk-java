@@ -335,6 +335,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelUpdateStack");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -398,6 +400,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ContinueUpdateRollback");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -475,6 +479,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChangeSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -538,6 +544,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStack");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -605,6 +613,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +674,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -720,6 +732,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChangeSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -773,6 +787,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStack");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -832,6 +848,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -888,6 +906,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -939,6 +959,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountLimits");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -995,6 +1017,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChangeSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1054,6 +1078,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1110,6 +1136,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackInstance");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1164,6 +1192,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1238,6 +1268,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1289,6 +1321,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1342,6 +1376,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSetOperation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1398,6 +1434,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStacks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1454,6 +1492,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EstimateTemplateCost");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1529,6 +1569,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteChangeSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1579,6 +1621,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStackPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1640,6 +1684,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1701,6 +1747,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplateSummary");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1757,6 +1805,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChangeSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1814,6 +1864,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1869,6 +1921,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImports");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1920,6 +1974,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1974,6 +2030,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackResources");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2027,6 +2085,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperationResults");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2078,6 +2138,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperations");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2127,6 +2189,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2179,6 +2243,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStacks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2233,6 +2299,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetStackPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2287,6 +2355,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignalResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2342,6 +2412,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStackSetOperation");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2406,6 +2478,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStack");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2489,6 +2563,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackInstances");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2556,6 +2632,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2612,6 +2690,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTerminationProtection");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2664,6 +2744,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateTemplate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

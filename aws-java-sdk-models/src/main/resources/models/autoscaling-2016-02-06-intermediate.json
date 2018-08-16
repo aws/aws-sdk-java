@@ -79,6 +79,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Application Auto Scaling",
+    "serviceId" : "Application Auto Scaling",
     "serviceName" : "Application Auto Scaling",
     "signingName" : "application-autoscaling",
     "smokeTestsPackageName" : "com.amazonaws.services.applicationautoscaling.smoketests",

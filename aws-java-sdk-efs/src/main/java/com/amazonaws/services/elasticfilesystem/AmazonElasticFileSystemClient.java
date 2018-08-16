@@ -431,6 +431,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFileSystem");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -662,6 +664,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMountTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -724,6 +728,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -798,6 +804,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFileSystem");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +900,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMountTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -954,6 +964,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1035,6 +1047,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystems");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1118,6 +1132,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMountTargetSecurityGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1183,6 +1199,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMountTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1244,6 +1262,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1331,6 +1351,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyMountTargetSecurityGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1401,6 +1423,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFileSystem");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

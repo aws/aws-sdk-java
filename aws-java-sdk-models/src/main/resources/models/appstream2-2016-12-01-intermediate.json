@@ -79,6 +79,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon AppStream",
+    "serviceId" : "AppStream",
     "serviceName" : "Amazon AppStream",
     "signingName" : "appstream",
     "smokeTestsPackageName" : "com.amazonaws.services.appstream.smoketests",

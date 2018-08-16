@@ -74,6 +74,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Cognito Identity",
+    "serviceId" : "Cognito Identity",
     "serviceName" : "Amazon Cognito Identity",
     "signingName" : "cognito-identity",
     "smokeTestsPackageName" : "com.amazonaws.services.cognitoidentity.smoketests",

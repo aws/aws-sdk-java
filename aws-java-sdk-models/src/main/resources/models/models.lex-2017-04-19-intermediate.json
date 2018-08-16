@@ -85,6 +85,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Lex Model Building Service",
+    "serviceId" : "Lex Model Building Service",
     "serviceName" : "Amazon Lex Model Building Service",
     "signingName" : "lex",
     "smokeTestsPackageName" : "com.amazonaws.services.lexmodelbuilding.smoketests",

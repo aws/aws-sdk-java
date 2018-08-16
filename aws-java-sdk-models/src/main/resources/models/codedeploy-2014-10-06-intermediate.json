@@ -123,6 +123,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "CodeDeploy",
     "serviceFullName" : "AWS CodeDeploy",
+    "serviceId" : "CodeDeploy",
     "serviceName" : "CodeDeploy",
     "signingName" : "codedeploy",
     "smokeTestsPackageName" : "com.amazonaws.services.codedeploy.smoketests",

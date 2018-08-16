@@ -173,6 +173,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAdminAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -233,6 +235,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -291,6 +295,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -350,6 +356,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateAdminAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -409,6 +417,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdminAccount");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -464,6 +474,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetail");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -522,6 +534,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNotificationChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +594,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -635,6 +651,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComplianceStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -697,6 +715,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -755,6 +775,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutNotificationChannel");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -815,6 +837,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "ACM-PCA",
     "serviceFullName" : "AWS Certificate Manager Private Certificate Authority",
+    "serviceId" : "ACM PCA",
     "serviceName" : "ACM-PCA",
     "signingName" : "acm-pca",
     "smokeTestsPackageName" : "com.amazonaws.services.acmpca.smoketests",

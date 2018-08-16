@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Kinesis Video Media",
     "serviceFullName" : "Amazon Kinesis Video Streams Media",
+    "serviceId" : "Kinesis Video Media",
     "serviceName" : "Kinesis Video Media",
     "signingName" : "kinesisvideo",
     "smokeTestsPackageName" : "com.amazonaws.services.kinesisvideo.smoketests",

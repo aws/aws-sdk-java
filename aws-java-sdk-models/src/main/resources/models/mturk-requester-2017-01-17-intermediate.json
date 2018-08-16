@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : {
       "Assignment" : [ "AssignmentStatus" ],
       "CreateQualificationTypeRequest" : [ "QualificationTypeStatus" ],
@@ -84,6 +84,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon MTurk",
     "serviceFullName" : "Amazon Mechanical Turk",
+    "serviceId" : "MTurk",
     "serviceName" : "Amazon MTurk",
     "signingName" : "mturk-requester",
     "smokeTestsPackageName" : "com.amazonaws.services.mturk.smoketests",

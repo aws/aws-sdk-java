@@ -166,6 +166,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetNamedQuery");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -223,6 +225,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetQueryExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -283,6 +287,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNamedQuery");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -342,6 +348,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNamedQuery");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -396,6 +404,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNamedQuery");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -451,6 +461,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -506,6 +518,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryResults");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -565,6 +579,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamedQueries");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -624,6 +640,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueryExecutions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -685,6 +703,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartQueryExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -744,6 +764,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopQueryExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

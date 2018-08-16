@@ -412,6 +412,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddListenerCertificates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -478,6 +480,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -572,6 +576,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateListener");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -675,6 +681,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoadBalancer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -761,6 +769,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -838,6 +848,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTargetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -893,6 +905,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteListener");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -957,6 +971,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoadBalancer");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1010,6 +1026,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1064,6 +1082,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTargetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1119,6 +1139,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1175,6 +1197,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountLimits");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1227,6 +1251,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeListenerCertificates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1283,6 +1309,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeListeners");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1342,6 +1370,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoadBalancerAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1397,6 +1427,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoadBalancers");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1453,6 +1485,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRules");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1508,6 +1542,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSSLPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1566,6 +1602,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1624,6 +1662,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTargetGroupAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1683,6 +1723,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTargetGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1739,6 +1781,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTargetHealth");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1823,6 +1867,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyListener");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1881,6 +1927,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyLoadBalancerAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1956,6 +2004,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyRule");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2011,6 +2061,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTargetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2065,6 +2117,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTargetGroupAttributes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2140,6 +2194,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2201,6 +2257,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveListenerCertificates");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2263,6 +2321,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2321,6 +2381,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIpAddressType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2380,6 +2442,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetRulePriorities");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2439,6 +2503,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSecurityGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2504,6 +2570,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSubnets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

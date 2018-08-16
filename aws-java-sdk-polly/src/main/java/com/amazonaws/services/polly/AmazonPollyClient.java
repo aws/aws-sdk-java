@@ -368,6 +368,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLexicon");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -439,6 +441,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVoices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -497,6 +501,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLexicon");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -554,6 +560,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSpeechSynthesisTask");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -609,6 +617,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLexicons");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +674,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSpeechSynthesisTasks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -737,6 +749,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLexicon");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -824,6 +838,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSpeechSynthesisTask");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -903,6 +919,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SynthesizeSpeech");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

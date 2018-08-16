@@ -326,6 +326,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStream");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -420,6 +422,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecords");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -501,6 +505,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShardIterator");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -561,6 +567,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreams");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

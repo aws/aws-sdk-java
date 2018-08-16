@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon GuardDuty",
+    "serviceId" : "GuardDuty",
     "serviceName" : "Amazon GuardDuty",
     "signingName" : "guardduty",
     "smokeTestsPackageName" : "com.amazonaws.services.guardduty.smoketests",

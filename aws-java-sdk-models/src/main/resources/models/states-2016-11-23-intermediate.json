@@ -81,6 +81,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS SFN",
     "serviceFullName" : "AWS Step Functions",
+    "serviceId" : "SFN",
     "serviceName" : "AWS SFN",
     "signingName" : "states",
     "smokeTestsPackageName" : "com.amazonaws.services.stepfunctions.smoketests",

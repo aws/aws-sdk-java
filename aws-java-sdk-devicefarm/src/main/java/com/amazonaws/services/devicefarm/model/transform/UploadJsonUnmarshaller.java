@@ -84,6 +84,10 @@ public class UploadJsonUnmarshaller implements Unmarshaller<Upload, JsonUnmarsha
                     context.nextToken();
                     upload.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("category", targetDepth)) {
+                    context.nextToken();
+                    upload.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

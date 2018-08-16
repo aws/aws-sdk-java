@@ -272,6 +272,18 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DeviceMinutes deviceMinutes;
+    /**
+     * <p>
+     * The endpoint for streaming device video.
+     * </p>
+     */
+    private String videoEndpoint;
+    /**
+     * <p>
+     * This value is set to true if video capture is enabled; otherwise, it is set to false.
+     * </p>
+     */
+    private Boolean videoCapture;
 
     /**
      * <p>
@@ -2538,6 +2550,98 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The endpoint for streaming device video.
+     * </p>
+     * 
+     * @param videoEndpoint
+     *        The endpoint for streaming device video.
+     */
+
+    public void setVideoEndpoint(String videoEndpoint) {
+        this.videoEndpoint = videoEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint for streaming device video.
+     * </p>
+     * 
+     * @return The endpoint for streaming device video.
+     */
+
+    public String getVideoEndpoint() {
+        return this.videoEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint for streaming device video.
+     * </p>
+     * 
+     * @param videoEndpoint
+     *        The endpoint for streaming device video.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withVideoEndpoint(String videoEndpoint) {
+        setVideoEndpoint(videoEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This value is set to true if video capture is enabled; otherwise, it is set to false.
+     * </p>
+     * 
+     * @param videoCapture
+     *        This value is set to true if video capture is enabled; otherwise, it is set to false.
+     */
+
+    public void setVideoCapture(Boolean videoCapture) {
+        this.videoCapture = videoCapture;
+    }
+
+    /**
+     * <p>
+     * This value is set to true if video capture is enabled; otherwise, it is set to false.
+     * </p>
+     * 
+     * @return This value is set to true if video capture is enabled; otherwise, it is set to false.
+     */
+
+    public Boolean getVideoCapture() {
+        return this.videoCapture;
+    }
+
+    /**
+     * <p>
+     * This value is set to true if video capture is enabled; otherwise, it is set to false.
+     * </p>
+     * 
+     * @param videoCapture
+     *        This value is set to true if video capture is enabled; otherwise, it is set to false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withVideoCapture(Boolean videoCapture) {
+        setVideoCapture(videoCapture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This value is set to true if video capture is enabled; otherwise, it is set to false.
+     * </p>
+     * 
+     * @return This value is set to true if video capture is enabled; otherwise, it is set to false.
+     */
+
+    public Boolean isVideoCapture() {
+        return this.videoCapture;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2573,7 +2677,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getDeviceMinutes() != null)
-            sb.append("DeviceMinutes: ").append(getDeviceMinutes());
+            sb.append("DeviceMinutes: ").append(getDeviceMinutes()).append(",");
+        if (getVideoEndpoint() != null)
+            sb.append("VideoEndpoint: ").append(getVideoEndpoint()).append(",");
+        if (getVideoCapture() != null)
+            sb.append("VideoCapture: ").append(getVideoCapture());
         sb.append("}");
         return sb.toString();
     }
@@ -2640,6 +2748,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceMinutes() != null && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
             return false;
+        if (other.getVideoEndpoint() == null ^ this.getVideoEndpoint() == null)
+            return false;
+        if (other.getVideoEndpoint() != null && other.getVideoEndpoint().equals(this.getVideoEndpoint()) == false)
+            return false;
+        if (other.getVideoCapture() == null ^ this.getVideoCapture() == null)
+            return false;
+        if (other.getVideoCapture() != null && other.getVideoCapture().equals(this.getVideoCapture()) == false)
+            return false;
         return true;
     }
 
@@ -2661,6 +2777,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes().hashCode());
+        hashCode = prime * hashCode + ((getVideoEndpoint() == null) ? 0 : getVideoEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getVideoCapture() == null) ? 0 : getVideoCapture().hashCode());
         return hashCode;
     }
 

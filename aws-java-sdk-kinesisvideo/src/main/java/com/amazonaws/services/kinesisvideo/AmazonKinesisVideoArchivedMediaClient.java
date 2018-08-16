@@ -353,6 +353,8 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHLSStreamingSessionURL");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -438,6 +440,8 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMediaForFragmentList");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -506,6 +510,8 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFragments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

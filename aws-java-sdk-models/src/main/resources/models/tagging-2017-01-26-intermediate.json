@@ -72,6 +72,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Resource Groups Tagging API",
+    "serviceId" : "Resource Groups Tagging API",
     "serviceName" : "AWS Resource Groups Tagging API",
     "signingName" : "tagging",
     "smokeTestsPackageName" : "com.amazonaws.services.resourcegroupstaggingapi.smoketests",

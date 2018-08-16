@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS X-Ray",
+    "serviceId" : "XRay",
     "serviceName" : "AWS X-Ray",
     "signingName" : "xray",
     "smokeTestsPackageName" : "com.amazonaws.services.xray.smoketests",

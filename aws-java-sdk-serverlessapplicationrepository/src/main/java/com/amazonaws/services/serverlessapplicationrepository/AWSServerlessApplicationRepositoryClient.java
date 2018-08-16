@@ -201,6 +201,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -261,6 +263,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationVersion");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -320,6 +324,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationChangeSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -382,6 +388,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -441,6 +449,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -500,6 +510,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +572,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationVersions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -618,6 +632,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -679,6 +695,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -740,6 +758,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -111,6 +111,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Direct Connect",
+    "serviceId" : "Direct Connect",
     "serviceName" : "AWS Direct Connect",
     "signingName" : "directconnect",
     "smokeTestsPackageName" : "com.amazonaws.services.directconnect.smoketests",

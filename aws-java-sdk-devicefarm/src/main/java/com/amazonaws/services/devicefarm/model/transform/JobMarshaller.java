@@ -53,6 +53,10 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceArn").build();
     private static final MarshallingInfo<StructuredPojo> DEVICEMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceMinutes").build();
+    private static final MarshallingInfo<String> VIDEOENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoEndpoint").build();
+    private static final MarshallingInfo<Boolean> VIDEOCAPTURE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoCapture").build();
 
     private static final JobMarshaller instance = new JobMarshaller();
 
@@ -83,6 +87,8 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getDevice(), DEVICE_BINDING);
             protocolMarshaller.marshall(job.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(job.getDeviceMinutes(), DEVICEMINUTES_BINDING);
+            protocolMarshaller.marshall(job.getVideoEndpoint(), VIDEOENDPOINT_BINDING);
+            protocolMarshaller.marshall(job.getVideoCapture(), VIDEOCAPTURE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

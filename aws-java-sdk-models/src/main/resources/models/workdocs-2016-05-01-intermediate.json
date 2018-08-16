@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : {
       "Activity" : [ "Type" ],
       "Comment" : [ "Status", "Visibility" ],
@@ -94,6 +94,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon WorkDocs",
+    "serviceId" : "WorkDocs",
     "serviceName" : "Amazon WorkDocs",
     "signingName" : "workdocs",
     "smokeTestsPackageName" : "com.amazonaws.services.workdocs.smoketests",

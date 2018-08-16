@@ -126,6 +126,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon DynamoDB Streams",
+    "serviceId" : "DynamoDB Streams",
     "serviceName" : "Amazon DynamoDB Streams",
     "signingName" : "dynamodb",
     "smokeTestsPackageName" : "com.amazonaws.services.dynamodbv2.smoketests",

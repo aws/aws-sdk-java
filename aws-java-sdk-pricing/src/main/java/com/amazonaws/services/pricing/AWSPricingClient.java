@@ -197,6 +197,8 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -261,6 +263,8 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributeValues");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -320,6 +324,8 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProducts");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

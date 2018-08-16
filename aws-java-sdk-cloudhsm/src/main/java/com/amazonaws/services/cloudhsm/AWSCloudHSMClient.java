@@ -327,6 +327,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -396,6 +398,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHapg");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -476,6 +480,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHsm");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,6 +550,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLunaClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -612,6 +620,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHapg");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -680,6 +690,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHsm");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -747,6 +759,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLunaClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -815,6 +829,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHapg");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -883,6 +899,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHsm");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -955,6 +973,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLunaClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1028,6 +1048,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfig");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1096,6 +1118,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableZones");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1173,6 +1197,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHapgs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1250,6 +1276,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHsms");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1327,6 +1355,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLunaClients");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1399,6 +1429,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1466,6 +1498,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyHapg");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1541,6 +1575,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyHsm");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1607,6 +1643,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyLunaClient");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1678,6 +1716,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -227,6 +227,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -293,6 +295,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificateAuthorityAuditReport");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -368,6 +372,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -465,6 +471,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -526,6 +534,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificateAuthorityAuditReport");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,6 +600,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -649,6 +661,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificateAuthorityCertificate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -714,6 +728,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificateAuthorityCsr");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +818,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportCertificateAuthorityCertificate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -873,6 +891,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IssueCertificate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -927,6 +947,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificateAuthorities");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -983,6 +1005,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1049,6 +1073,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1117,6 +1143,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeCertificate");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1184,6 +1212,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1246,6 +1276,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1312,6 +1344,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCertificateAuthority");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

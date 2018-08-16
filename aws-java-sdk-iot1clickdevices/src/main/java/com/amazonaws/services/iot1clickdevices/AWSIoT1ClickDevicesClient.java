@@ -168,6 +168,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ClaimDevicesByClaimCode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -224,6 +226,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -289,6 +293,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FinalizeDeviceClaim");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -344,6 +350,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceMethods");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -407,6 +415,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateDeviceClaim");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -469,6 +479,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeDeviceMethod");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -526,6 +538,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -581,6 +595,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -636,6 +652,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnclaimDevice");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -691,6 +709,8 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceState");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

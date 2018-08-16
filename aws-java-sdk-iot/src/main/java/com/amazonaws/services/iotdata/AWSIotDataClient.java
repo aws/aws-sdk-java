@@ -344,6 +344,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThingShadow");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -413,6 +415,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThingShadow");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -473,6 +477,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,6 +550,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingShadow");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

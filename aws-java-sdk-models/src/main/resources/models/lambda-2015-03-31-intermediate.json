@@ -99,6 +99,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Lambda",
+    "serviceId" : "Lambda",
     "serviceName" : "AWS Lambda",
     "signingName" : "lambda",
     "smokeTestsPackageName" : "com.amazonaws.services.lambda.smoketests",

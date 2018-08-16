@@ -35,6 +35,8 @@
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "${metadata.serviceId}");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "${operationModel.operationName}");
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

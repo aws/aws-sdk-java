@@ -360,6 +360,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDRTLogBucket");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -461,6 +463,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDRTRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -542,6 +546,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProtection");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -606,6 +612,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscription");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -663,6 +671,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProtection");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -723,6 +733,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscription");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -777,6 +789,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttack");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -832,6 +846,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDRTAccess");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -888,6 +904,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEmergencyContactSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -943,6 +961,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtection");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,6 +1017,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscription");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1072,6 +1094,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDRTLogBucket");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1139,6 +1163,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDRTRole");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1191,6 +1217,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionState");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1247,6 +1275,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttacks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1304,6 +1334,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtections");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1364,6 +1396,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEmergencyContactSettings");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1429,6 +1463,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscription");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

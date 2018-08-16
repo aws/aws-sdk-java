@@ -54,6 +54,16 @@ public class HandlerContextKey<T> {
      */
     public static final HandlerContextKey<String> SIGNING_REGION = new HandlerContextKey<String>("SigningRegion");
 
+    /**
+     * The name of the operation for the request.
+     */
+    public static final HandlerContextKey<String> OPERATION_NAME = new HandlerContextKey<String>("OperationName");
+
+    /**
+     * The unique identifier for a service to which the request is being sent.
+     */
+    public static final HandlerContextKey<String> SERVICE_ID = new HandlerContextKey<String>("ServiceId");
+
     private final String name;
 
     public HandlerContextKey(String name) {

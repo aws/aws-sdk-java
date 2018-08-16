@@ -84,6 +84,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Elastic Load Balancing v2",
     "serviceFullName" : "Elastic Load Balancing",
+    "serviceId" : "Elastic Load Balancing",
     "serviceName" : "Elastic Load Balancing v2",
     "signingName" : "elasticloadbalancing",
     "smokeTestsPackageName" : "com.amazonaws.services.elasticloadbalancingv2.smoketests",

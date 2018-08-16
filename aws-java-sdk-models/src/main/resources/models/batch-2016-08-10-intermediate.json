@@ -81,6 +81,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS Batch",
     "serviceFullName" : "AWS Batch",
+    "serviceId" : "Batch",
     "serviceName" : "AWS Batch",
     "signingName" : "batch",
     "smokeTestsPackageName" : "com.amazonaws.services.batch.smoketests",

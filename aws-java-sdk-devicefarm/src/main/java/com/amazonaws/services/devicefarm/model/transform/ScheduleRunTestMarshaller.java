@@ -33,6 +33,8 @@ public class ScheduleRunTestMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<String> TESTPACKAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("testPackageArn").build();
+    private static final MarshallingInfo<String> TESTSPECARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("testSpecArn").build();
     private static final MarshallingInfo<String> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filter").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,6 +58,7 @@ public class ScheduleRunTestMarshaller {
         try {
             protocolMarshaller.marshall(scheduleRunTest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(scheduleRunTest.getTestPackageArn(), TESTPACKAGEARN_BINDING);
+            protocolMarshaller.marshall(scheduleRunTest.getTestSpecArn(), TESTSPECARN_BINDING);
             protocolMarshaller.marshall(scheduleRunTest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(scheduleRunTest.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {

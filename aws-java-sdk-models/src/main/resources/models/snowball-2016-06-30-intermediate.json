@@ -80,6 +80,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon Snowball",
     "serviceFullName" : "Amazon Import/Export Snowball",
+    "serviceId" : "Snowball",
     "serviceName" : "Amazon Snowball",
     "signingName" : "snowball",
     "smokeTestsPackageName" : "com.amazonaws.services.snowball.smoketests",

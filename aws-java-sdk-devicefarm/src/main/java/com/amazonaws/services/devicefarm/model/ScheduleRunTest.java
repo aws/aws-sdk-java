@@ -118,6 +118,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
     private String testPackageArn;
     /**
      * <p>
+     * The ARN of the YAML-formatted test specification.
+     * </p>
+     */
+    private String testSpecArn;
+    /**
+     * <p>
      * The test's filter.
      * </p>
      */
@@ -1162,6 +1168,46 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     public ScheduleRunTest withTestPackageArn(String testPackageArn) {
         setTestPackageArn(testPackageArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification.
+     * </p>
+     * 
+     * @param testSpecArn
+     *        The ARN of the YAML-formatted test specification.
+     */
+
+    public void setTestSpecArn(String testSpecArn) {
+        this.testSpecArn = testSpecArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification.
+     * </p>
+     * 
+     * @return The ARN of the YAML-formatted test specification.
+     */
+
+    public String getTestSpecArn() {
+        return this.testSpecArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification.
+     * </p>
+     * 
+     * @param testSpecArn
+     *        The ARN of the YAML-formatted test specification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunTest withTestSpecArn(String testSpecArn) {
+        setTestSpecArn(testSpecArn);
         return this;
     }
 
@@ -2289,6 +2335,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
             sb.append("Type: ").append(getType()).append(",");
         if (getTestPackageArn() != null)
             sb.append("TestPackageArn: ").append(getTestPackageArn()).append(",");
+        if (getTestSpecArn() != null)
+            sb.append("TestSpecArn: ").append(getTestSpecArn()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
         if (getParameters() != null)
@@ -2315,6 +2363,10 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTestPackageArn() != null && other.getTestPackageArn().equals(this.getTestPackageArn()) == false)
             return false;
+        if (other.getTestSpecArn() == null ^ this.getTestSpecArn() == null)
+            return false;
+        if (other.getTestSpecArn() != null && other.getTestSpecArn().equals(this.getTestSpecArn()) == false)
+            return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
@@ -2333,6 +2385,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getTestPackageArn() == null) ? 0 : getTestPackageArn().hashCode());
+        hashCode = prime * hashCode + ((getTestSpecArn() == null) ? 0 : getTestSpecArn().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;

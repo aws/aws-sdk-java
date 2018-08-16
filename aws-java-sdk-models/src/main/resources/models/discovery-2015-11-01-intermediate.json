@@ -71,6 +71,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Application Discovery Service",
+    "serviceId" : "Application Discovery Service",
     "serviceName" : "AWS Application Discovery Service",
     "signingName" : "discovery",
     "smokeTestsPackageName" : "com.amazonaws.services.applicationdiscovery.smoketests",

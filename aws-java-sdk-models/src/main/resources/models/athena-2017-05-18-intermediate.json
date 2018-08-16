@@ -75,6 +75,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Athena",
+    "serviceId" : "Athena",
     "serviceName" : "Amazon Athena",
     "signingName" : "athena",
     "smokeTestsPackageName" : "com.amazonaws.services.athena.smoketests",

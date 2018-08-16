@@ -186,6 +186,8 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -247,6 +249,8 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPendingJobExecutions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -309,6 +313,8 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNextPendingJobExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -374,6 +380,8 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

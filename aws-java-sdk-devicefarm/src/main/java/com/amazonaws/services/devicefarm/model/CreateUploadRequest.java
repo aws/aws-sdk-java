@@ -63,7 +63,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -263,7 +263,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -355,7 +355,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -454,7 +454,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -545,7 +545,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         WEB_APP: A web appliction upload.
+     *         WEB_APP: A web application upload.
      *         </p>
      *         </li>
      *         <li>
@@ -644,7 +644,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -736,7 +736,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -837,7 +837,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -929,7 +929,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1028,7 +1028,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -1120,7 +1120,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>

@@ -89,6 +89,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon WorkSpaces",
+    "serviceId" : "WorkSpaces",
     "serviceName" : "Amazon WorkSpaces",
     "signingName" : "workspaces",
     "smokeTestsPackageName" : "com.amazonaws.services.workspaces.smoketests",

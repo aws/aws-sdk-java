@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Marketplace Entitlement Service",
+    "serviceId" : "Marketplace Entitlement Service",
     "serviceName" : "AWS Marketplace Entitlement Service",
     "signingName" : "aws-marketplace",
     "smokeTestsPackageName" : "com.amazonaws.services.marketplaceentitlement.smoketests",

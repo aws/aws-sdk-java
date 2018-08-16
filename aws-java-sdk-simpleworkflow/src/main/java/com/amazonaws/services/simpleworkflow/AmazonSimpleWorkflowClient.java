@@ -387,6 +387,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CountClosedWorkflowExecutions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -496,6 +498,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CountOpenWorkflowExecutions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -584,6 +588,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CountPendingActivityTasks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -672,6 +678,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CountPendingDecisionTasks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -777,6 +785,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprecateActivityType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -869,6 +879,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprecateDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -972,6 +984,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprecateWorkflowType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1067,6 +1081,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivityType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1151,6 +1167,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1242,6 +1260,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkflowExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1339,6 +1359,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkflowType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1431,6 +1453,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkflowExecutionHistory");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1518,6 +1542,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivityTypes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1628,6 +1654,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClosedWorkflowExecutions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1718,6 +1746,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1828,6 +1858,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpenWorkflowExecutions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1913,6 +1945,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflowTypes");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2012,6 +2046,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PollForActivityTask");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2122,6 +2158,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PollForDecisionTask");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2239,6 +2277,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RecordActivityTaskHeartbeat");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2352,6 +2392,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterActivityType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2437,6 +2479,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDomain");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2551,6 +2595,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterWorkflowType");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2647,6 +2693,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestCancelWorkflowExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2748,6 +2796,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondActivityTaskCanceled");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2848,6 +2898,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondActivityTaskCompleted");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2940,6 +2992,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondActivityTaskFailed");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3010,6 +3064,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondDecisionTaskCompleted");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3104,6 +3160,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignalWorkflowExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3253,6 +3311,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartWorkflowExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3354,6 +3414,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SWF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateWorkflowExecution");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -730,6 +730,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest request) {
+
+        return stopJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopJobRequest, StopJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request) {
 
         return stopRemoteAccessSessionAsync(request, null);
@@ -816,6 +829,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest request) {
+
+        return updateUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateUploadRequest, UpdateUploadResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

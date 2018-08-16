@@ -236,6 +236,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironmentEC2");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -300,6 +302,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironmentMembership");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -365,6 +369,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -429,6 +435,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironmentMembership");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -494,6 +502,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentMemberships");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -559,6 +569,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentStatus");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -623,6 +635,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -686,6 +700,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEnvironments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -749,6 +765,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -813,6 +831,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironmentMembership");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -79,6 +79,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudSearch",
+    "serviceId" : "CloudSearch",
     "serviceName" : "Amazon CloudSearch",
     "signingName" : "cloudsearch",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudsearchv2.smoketests",

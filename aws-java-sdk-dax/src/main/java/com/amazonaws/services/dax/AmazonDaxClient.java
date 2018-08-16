@@ -246,6 +246,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -307,6 +309,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateParameterGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -365,6 +369,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubnetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -432,6 +438,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DecreaseReplicationFactor");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -493,6 +501,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -552,6 +562,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteParameterGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -611,6 +623,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubnetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -684,6 +698,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusters");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -739,6 +755,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDefaultParameters");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -799,6 +817,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -857,6 +877,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeParameterGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -914,6 +936,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeParameters");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +991,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubnetGroups");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1035,6 +1061,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IncreaseReplicationFactor");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1125,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1158,6 +1188,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootNode");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1221,6 +1253,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1284,6 +1318,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1347,6 +1383,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCluster");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1406,6 +1444,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateParameterGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1464,6 +1504,8 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubnetGroup");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

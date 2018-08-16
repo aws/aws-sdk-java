@@ -108,6 +108,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Machine Learning",
+    "serviceId" : "Machine Learning",
     "serviceName" : "Amazon Machine Learning",
     "signingName" : "machinelearning",
     "smokeTestsPackageName" : "com.amazonaws.services.machinelearning.smoketests",

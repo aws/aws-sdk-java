@@ -326,6 +326,8 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch Domain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Search");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +393,8 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch Domain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Suggest");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -460,6 +464,8 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch Domain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadDocuments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

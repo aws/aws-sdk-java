@@ -74,6 +74,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "ACM",
     "serviceFullName" : "AWS Certificate Manager",
+    "serviceId" : "ACM",
     "serviceName" : "ACM",
     "signingName" : "acm",
     "smokeTestsPackageName" : "com.amazonaws.services.certificatemanager.smoketests",

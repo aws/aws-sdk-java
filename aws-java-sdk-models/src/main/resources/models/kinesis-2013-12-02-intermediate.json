@@ -121,6 +121,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Kinesis",
     "serviceFullName" : "Amazon Kinesis",
+    "serviceId" : "Kinesis",
     "serviceName" : "Kinesis",
     "signingName" : "kinesis",
     "smokeTestsPackageName" : "com.amazonaws.services.kinesis.smoketests",

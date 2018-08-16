@@ -315,6 +315,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +393,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputeEnvironment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -454,6 +458,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -515,6 +521,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComputeEnvironment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -576,6 +584,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -632,6 +642,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterJobDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -694,6 +706,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComputeEnvironments");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -751,6 +765,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobDefinitions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -807,6 +823,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobQueues");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -862,6 +880,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -918,6 +938,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -973,6 +995,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterJobDefinition");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1030,6 +1054,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1087,6 +1113,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateJob");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1143,6 +1171,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComputeEnvironment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1199,6 +1229,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobQueue");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -407,6 +407,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddAttachmentsToSet");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -474,6 +476,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCommunicationToCase");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -603,6 +607,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCase");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -661,6 +667,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttachment");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -737,6 +745,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCases");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -806,6 +816,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCommunications");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -867,6 +879,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -924,6 +938,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSeverityLevels");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -992,6 +1008,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckRefreshStatuses");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1088,6 +1106,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckResult");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1146,6 +1166,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckSummaries");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1201,6 +1223,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorChecks");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1282,6 +1306,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RefreshTrustedAdvisorCheck");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1337,6 +1363,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCase");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

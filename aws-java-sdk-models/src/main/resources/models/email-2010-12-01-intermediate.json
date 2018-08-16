@@ -125,6 +125,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon SES",
     "serviceFullName" : "Amazon Simple Email Service",
+    "serviceId" : "SES",
     "serviceName" : "Amazon SES",
     "signingName" : "ses",
     "smokeTestsPackageName" : "com.amazonaws.services.simpleemail.smoketests",

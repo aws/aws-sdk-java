@@ -87,6 +87,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "Firehose",
     "serviceFullName" : "Amazon Kinesis Firehose",
+    "serviceId" : "Firehose",
     "serviceName" : "Firehose",
     "signingName" : "firehose",
     "smokeTestsPackageName" : "com.amazonaws.services.kinesisfirehose.smoketests",

@@ -72,6 +72,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS Shield",
     "serviceFullName" : "AWS Shield",
+    "serviceId" : "Shield",
     "serviceName" : "AWS Shield",
     "signingName" : "shield",
     "smokeTestsPackageName" : "com.amazonaws.services.shield.smoketests",

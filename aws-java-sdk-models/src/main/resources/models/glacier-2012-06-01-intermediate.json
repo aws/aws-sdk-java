@@ -254,6 +254,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Glacier",
+    "serviceId" : "Glacier",
     "serviceName" : "Amazon Glacier",
     "signingName" : "glacier",
     "smokeTestsPackageName" : "com.amazonaws.services.glacier.smoketests",

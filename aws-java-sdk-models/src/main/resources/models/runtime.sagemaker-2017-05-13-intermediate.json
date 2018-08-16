@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon SageMaker Runtime",
+    "serviceId" : "SageMaker Runtime",
     "serviceName" : "Amazon SageMaker Runtime",
     "signingName" : "sagemaker",
     "smokeTestsPackageName" : "com.amazonaws.services.sagemakerruntime.smoketests",

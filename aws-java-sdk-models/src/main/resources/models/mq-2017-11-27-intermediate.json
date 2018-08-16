@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AmazonMQ",
+    "serviceId" : "mq",
     "serviceName" : "AmazonMQ",
     "signingName" : "mq",
     "smokeTestsPackageName" : "com.amazonaws.services.mq.smoketests",

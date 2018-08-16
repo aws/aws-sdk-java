@@ -424,6 +424,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +487,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScheduledAction");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -554,6 +558,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterScalableTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,6 +627,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalableTargets");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -691,6 +699,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingActivities");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -765,6 +775,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPolicies");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +845,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScheduledActions");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -918,6 +932,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScalingPolicy");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,6 +1013,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScheduledAction");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1064,6 +1082,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterScalableTarget");
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

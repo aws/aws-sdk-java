@@ -82,8 +82,8 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     @Override
     public void startEvent(String eventName) {
         /* This will overwrite past events */
-        eventsBeingProfiled.put // ignoring the wall clock time
-            (eventName, TimingInfo.startTimingFullSupport(System.nanoTime()));
+        eventsBeingProfiled.put
+            (eventName, TimingInfo.startTimingFullSupport(System.currentTimeMillis(), System.nanoTime()));
     }
 
     @Override
@@ -112,6 +112,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
         this.timingInfo.addSubMeasurement(
             eventName,
             TimingInfo.unmodifiableTimingInfo(
+                event.getStartEpochTimeMilliIfKnown(),
                 event.getStartTimeNano(),
                 event.getEndTimeNano()));
     }

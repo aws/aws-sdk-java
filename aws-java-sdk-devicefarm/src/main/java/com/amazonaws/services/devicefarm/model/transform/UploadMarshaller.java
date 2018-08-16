@@ -45,6 +45,8 @@ public class UploadMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentType").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("message").build();
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("category").build();
 
     private static final UploadMarshaller instance = new UploadMarshaller();
 
@@ -71,6 +73,7 @@ public class UploadMarshaller {
             protocolMarshaller.marshall(upload.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(upload.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(upload.getMessage(), MESSAGE_BINDING);
+            protocolMarshaller.marshall(upload.getCategory(), CATEGORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

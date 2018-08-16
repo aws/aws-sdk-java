@@ -70,6 +70,7 @@
     "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS IoT 1-Click Projects",
     "serviceFullName" : "AWS IoT 1-Click Projects Service",
+    "serviceId" : "IoT 1Click Projects",
     "serviceName" : "AWS IoT 1-Click Projects",
     "signingName" : "iot1click",
     "smokeTestsPackageName" : "com.amazonaws.services.iot1clickprojects.smoketests",
