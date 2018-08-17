@@ -151,6 +151,8 @@ public enum RedshiftActions implements Action {
     RebootCluster("redshift:RebootCluster"),
     /** Action for the ResetClusterParameterGroup operation. */
     ResetClusterParameterGroup("redshift:ResetClusterParameterGroup"),
+    /** Action for the ResizeCluster operation. */
+    ResizeCluster("redshift:ResizeCluster"),
     /** Action for the RestoreFromClusterSnapshot operation. */
     RestoreFromClusterSnapshot("redshift:RestoreFromClusterSnapshot"),
     /** Action for the RestoreTableFromClusterSnapshot operation. */

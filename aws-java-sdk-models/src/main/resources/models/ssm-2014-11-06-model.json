@@ -80,7 +80,7 @@
         {"shape":"InvalidTarget"},
         {"shape":"InvalidSchedule"}
       ],
-      "documentation":"<p>Associates the specified Systems Manager document with the specified instances or targets.</p> <p>When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>"
+      "documentation":"<p>Associates the specified Systems Manager document with the specified instances or targets.</p> <p>When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>"
     },
     "CreateAssociationBatch":{
       "name":"CreateAssociationBatch",
@@ -103,7 +103,7 @@
         {"shape":"InvalidTarget"},
         {"shape":"InvalidSchedule"}
       ],
-      "documentation":"<p>Associates the specified Systems Manager document with the specified instances or targets.</p> <p>When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>"
+      "documentation":"<p>Associates the specified Systems Manager document with the specified instances or targets.</p> <p>When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>"
     },
     "CreateDocument":{
       "name":"CreateDocument",
@@ -845,8 +845,10 @@
       "errors":[
         {"shape":"InternalServerError"},
         {"shape":"InvalidFilter"},
+        {"shape":"InvalidInventoryGroupException"},
         {"shape":"InvalidNextToken"},
         {"shape":"InvalidTypeNameException"},
+        {"shape":"InvalidAggregatorException"},
         {"shape":"InvalidResultAttributeException"}
       ],
       "documentation":"<p>Query inventory information.</p>"
@@ -2792,17 +2794,20 @@
       "enum":[
         "InvokedAfter",
         "InvokedBefore",
-        "Status"
+        "Status",
+        "ExecutionStage",
+        "DocumentName"
       ]
     },
     "CommandFilterList":{
       "type":"list",
       "member":{"shape":"CommandFilter"},
-      "max":3,
+      "max":5,
       "min":1
     },
     "CommandFilterValue":{
       "type":"string",
+      "max":128,
       "min":1
     },
     "CommandId":{
@@ -6687,6 +6692,14 @@
       "documentation":"<p>The activation ID is not valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>",
       "exception":true
     },
+    "InvalidAggregatorException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified aggregator is not valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>",
+      "exception":true
+    },
     "InvalidAllowedPatternException":{
       "type":"structure",
       "members":{
@@ -6856,6 +6869,14 @@
       "documentation":"<p>The specified filter value is not valid.</p>",
       "exception":true
     },
+    "InvalidInventoryGroupException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified inventory group is not valid.</p>",
+      "exception":true
+    },
     "InvalidInventoryItemContextException":{
       "type":"structure",
       "members":{
@@ -7022,6 +7043,10 @@
         "Aggregators":{
           "shape":"InventoryAggregatorList",
           "documentation":"<p>Nested aggregators to further refine aggregation for an inventory type.</p>"
+        },
+        "Groups":{
+          "shape":"InventoryGroupList",
+          "documentation":"<p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>"
         }
       },
       "documentation":"<p>Specifies the inventory type and attribute for the aggregation execution.</p>"
@@ -7170,7 +7195,36 @@
     "InventoryFilterValueList":{
       "type":"list",
       "member":{"shape":"InventoryFilterValue"},
-      "max":20,
+      "max":40,
+      "min":1
+    },
+    "InventoryGroup":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Filters"
+      ],
+      "members":{
+        "Name":{
+          "shape":"InventoryGroupName",
+          "documentation":"<p>The name of the group.</p>"
+        },
+        "Filters":{
+          "shape":"InventoryFilterList",
+          "documentation":"<p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>"
+        }
+      },
+      "documentation":"<p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>"
+    },
+    "InventoryGroupList":{
+      "type":"list",
+      "member":{"shape":"InventoryGroup"},
+      "max":10,
+      "min":1
+    },
+    "InventoryGroupName":{
+      "type":"string",
+      "max":200,
       "min":1
     },
     "InventoryItem":{
@@ -7319,7 +7373,8 @@
         "NotEqual",
         "BeginWith",
         "LessThan",
-        "GreaterThan"
+        "GreaterThan",
+        "Exists"
       ]
     },
     "InventoryResultEntity":{

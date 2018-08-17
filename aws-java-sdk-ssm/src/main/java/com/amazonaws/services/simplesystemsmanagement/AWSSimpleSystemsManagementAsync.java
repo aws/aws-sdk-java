@@ -198,7 +198,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -219,7 +219,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -245,7 +245,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -266,7 +266,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>

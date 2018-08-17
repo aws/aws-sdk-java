@@ -1,4 +1,8 @@
-# __1.11.388__ __2018-08-15__
+# __1.11.389__ __2018-08-16__
+## __AWS Application Discovery Service__
+  - ### Features
+    - The Application Discovery Service's Continuous Export APIs allow you to analyze your on-premises server inventory data, including system performance and network dependencies, in Amazon Athena.
+
 ## __AWS CodeBuild__
   - ### Features
     - Release semantic versioning feature for CodeBuild
@@ -9,6 +13,7 @@
 
 ## __AWS Elemental MediaConvert__
   - ### Features
+    - Added WriteSegmentTimelineInRepresentation option for Dash Outputs
     - This release adds support for a new rate control mode, Quality-Defined Variable Bitrate (QVBR) encoding, includes updates to optimize transcoding performance, and resolves previously reported bugs.
 
 ## __AWS Health APIs and Notifications__
@@ -50,6 +55,7 @@
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - Amazon VPC Flow Logs adds support for delivering flow logs directly to S3
+    - The 'Attribute' parameter DescribeVolumeAttribute request has been marked as required - the API has always required this parameter, but up until now this wasn't reflected appropriately in the SDK.
 
 ## __Amazon Elasticsearch Service__
   - ### Features
@@ -67,6 +73,10 @@
   - ### Features
     - Amazon Polly enables female voice Aditi to speak Hindi language
 
+## __Amazon Redshift__
+  - ### Features
+    - You can now resize your Amazon Redshift cluster quickly. With the new ResizeCluster action, your cluster is available for read and write operations within minutes
+
 ## __Amazon Relational Database Service__
   - ### Features
     - Documentation updates for rds
@@ -79,6 +89,7 @@
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features
     - AWS Systems Manager Automation is launching two new features for Automation Execution Rate Control based on tags and customized parameter maps. With the first feature, customer can target their resources by specifying a Tag with Key/Value. With the second feature, Parameter maps rate control, customers can benefit from customization of input parameters.
+    - AWS Systems Manager Inventory now supports groups to quickly see a count of which managed instances are and arent configured to collect one or more Inventory types
     - This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
     - Two new filters ExecutionStage and DocumentName will be added to ListCommands so that customers will have more approaches to query their commands.
 

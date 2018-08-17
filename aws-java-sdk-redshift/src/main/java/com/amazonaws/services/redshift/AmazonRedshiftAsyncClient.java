@@ -2753,6 +2753,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<Cluster> resizeClusterAsync(ResizeClusterRequest request) {
+
+        return resizeClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> resizeClusterAsync(final ResizeClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResizeClusterRequest, Cluster> asyncHandler) {
+        final ResizeClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Cluster>() {
+            @Override
+            public Cluster call() throws Exception {
+                Cluster result = null;
+
+                try {
+                    result = executeResizeCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> restoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request) {
 
         return restoreFromClusterSnapshotAsync(request, null);

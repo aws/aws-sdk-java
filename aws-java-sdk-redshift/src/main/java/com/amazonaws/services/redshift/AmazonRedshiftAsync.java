@@ -3181,6 +3181,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Changes the cluster's type, node type, or number of nodes.
+     * </p>
+     * 
+     * @param resizeClusterRequest
+     * @return A Java Future containing the result of the ResizeCluster operation returned by the service.
+     * @sample AmazonRedshiftAsync.ResizeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> resizeClusterAsync(ResizeClusterRequest resizeClusterRequest);
+
+    /**
+     * <p>
+     * Changes the cluster's type, node type, or number of nodes.
+     * </p>
+     * 
+     * @param resizeClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResizeCluster operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ResizeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> resizeClusterAsync(ResizeClusterRequest resizeClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ResizeClusterRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same
      * configuration as the original cluster from which the snapshot was created, except that the new cluster is created
      * with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use

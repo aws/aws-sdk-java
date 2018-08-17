@@ -24,7 +24,8 @@ public enum InventoryQueryOperatorType {
     NotEqual("NotEqual"),
     BeginWith("BeginWith"),
     LessThan("LessThan"),
-    GreaterThan("GreaterThan");
+    GreaterThan("GreaterThan"),
+    Exists("Exists");
 
     private String value;
 

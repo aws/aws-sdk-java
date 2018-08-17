@@ -1139,6 +1139,30 @@
       ],
       "documentation":"<p>Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to \"engine-default\". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters. </p>"
     },
+    "ResizeCluster":{
+      "name":"ResizeCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ResizeClusterMessage"},
+      "output":{
+        "shape":"ResizeClusterResult",
+        "resultWrapper":"ResizeClusterResult"
+      },
+      "errors":[
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"NumberOfNodesQuotaExceededFault"},
+        {"shape":"NumberOfNodesPerClusterLimitExceededFault"},
+        {"shape":"InsufficientClusterCapacityFault"},
+        {"shape":"UnsupportedOptionFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"UnauthorizedOperation"},
+        {"shape":"LimitExceededFault"}
+      ],
+      "documentation":"<p>Changes the cluster's type, node type, or number of nodes.</p>"
+    },
     "RestoreFromClusterSnapshot":{
       "name":"RestoreFromClusterSnapshot",
       "http":{
@@ -1578,6 +1602,10 @@
         "MaintenanceTrackName":{
           "shape":"String",
           "documentation":"<p>The name of the maintenance track for the cluster.</p>"
+        },
+        "ElasticResizeNumberOfNodeOptions":{
+          "shape":"String",
+          "documentation":"<p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>"
         }
       },
       "documentation":"<p>Describes a cluster.</p>",
@@ -5098,6 +5126,41 @@
       },
       "documentation":"<p/>"
     },
+    "ResizeClusterMessage":{
+      "type":"structure",
+      "required":[
+        "ClusterIdentifier",
+        "NumberOfNodes"
+      ],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier for the cluster to resize.</p>"
+        },
+        "ClusterType":{
+          "shape":"String",
+          "documentation":"<p>The new cluster type for the specified cluster.</p>"
+        },
+        "NodeType":{
+          "shape":"String",
+          "documentation":"<p>The new node type for the nodes you are adding.</p>"
+        },
+        "NumberOfNodes":{
+          "shape":"Integer",
+          "documentation":"<p>The new number of nodes for the cluster.</p>"
+        },
+        "Classic":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A boolean value indicating whether the resize operation is using the classic resize process.</p>"
+        }
+      }
+    },
+    "ResizeClusterResult":{
+      "type":"structure",
+      "members":{
+        "Cluster":{"shape":"Cluster"}
+      }
+    },
     "ResizeNotFoundFault":{
       "type":"structure",
       "members":{
@@ -5160,6 +5223,14 @@
         "EstimatedTimeToCompletionInSeconds":{
           "shape":"LongOptional",
           "documentation":"<p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>"
+        },
+        "ResizeType":{
+          "shape":"String",
+          "documentation":"<p>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </p>"
+        },
+        "Message":{
+          "shape":"String",
+          "documentation":"<p>An optional string to provide additional details about the resize action.</p>"
         }
       },
       "documentation":"<p>Describes the result of a cluster resize operation.</p>"

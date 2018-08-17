@@ -39,6 +39,8 @@ public enum DiscoveryActions implements Action {
     DescribeAgents("discovery:DescribeAgents"),
     /** Action for the DescribeConfigurations operation. */
     DescribeConfigurations("discovery:DescribeConfigurations"),
+    /** Action for the DescribeContinuousExports operation. */
+    DescribeContinuousExports("discovery:DescribeContinuousExports"),
     /** Action for the DescribeExportConfigurations operation. */
     DescribeExportConfigurations("discovery:DescribeExportConfigurations"),
     /** Action for the DescribeExportTasks operation. */
@@ -55,10 +57,14 @@ public enum DiscoveryActions implements Action {
     ListConfigurations("discovery:ListConfigurations"),
     /** Action for the ListServerNeighbors operation. */
     ListServerNeighbors("discovery:ListServerNeighbors"),
+    /** Action for the StartContinuousExport operation. */
+    StartContinuousExport("discovery:StartContinuousExport"),
     /** Action for the StartDataCollectionByAgentIds operation. */
     StartDataCollectionByAgentIds("discovery:StartDataCollectionByAgentIds"),
     /** Action for the StartExportTask operation. */
     StartExportTask("discovery:StartExportTask"),
+    /** Action for the StopContinuousExport operation. */
+    StopContinuousExport("discovery:StopContinuousExport"),
     /** Action for the StopDataCollectionByAgentIds operation. */
     StopDataCollectionByAgentIds("discovery:StopDataCollectionByAgentIds"),
     /** Action for the UpdateApplication operation. */

@@ -120,6 +120,19 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private Long estimatedTimeToCompletionInSeconds;
+    /**
+     * <p>
+     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     * operation being performed.
+     * </p>
+     */
+    private String resizeType;
+    /**
+     * <p>
+     * An optional string to provide additional details about the resize action.
+     * </p>
+     */
+    private String message;
 
     /**
      * <p>
@@ -833,6 +846,92 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     * operation being performed.
+     * </p>
+     * 
+     * @param resizeType
+     *        An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     *        operation being performed.
+     */
+
+    public void setResizeType(String resizeType) {
+        this.resizeType = resizeType;
+    }
+
+    /**
+     * <p>
+     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     * operation being performed.
+     * </p>
+     * 
+     * @return An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     *         operation being performed.
+     */
+
+    public String getResizeType() {
+        return this.resizeType;
+    }
+
+    /**
+     * <p>
+     * An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     * operation being performed.
+     * </p>
+     * 
+     * @param resizeType
+     *        An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize
+     *        operation being performed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResizeResult withResizeType(String resizeType) {
+        setResizeType(resizeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional string to provide additional details about the resize action.
+     * </p>
+     * 
+     * @param message
+     *        An optional string to provide additional details about the resize action.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * An optional string to provide additional details about the resize action.
+     * </p>
+     * 
+     * @return An optional string to provide additional details about the resize action.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * An optional string to provide additional details about the resize action.
+     * </p>
+     * 
+     * @param message
+     *        An optional string to provide additional details about the resize action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResizeResult withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -866,7 +965,11 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getElapsedTimeInSeconds() != null)
             sb.append("ElapsedTimeInSeconds: ").append(getElapsedTimeInSeconds()).append(",");
         if (getEstimatedTimeToCompletionInSeconds() != null)
-            sb.append("EstimatedTimeToCompletionInSeconds: ").append(getEstimatedTimeToCompletionInSeconds());
+            sb.append("EstimatedTimeToCompletionInSeconds: ").append(getEstimatedTimeToCompletionInSeconds()).append(",");
+        if (getResizeType() != null)
+            sb.append("ResizeType: ").append(getResizeType()).append(",");
+        if (getMessage() != null)
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -931,6 +1034,14 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getEstimatedTimeToCompletionInSeconds() != null
                 && other.getEstimatedTimeToCompletionInSeconds().equals(this.getEstimatedTimeToCompletionInSeconds()) == false)
             return false;
+        if (other.getResizeType() == null ^ this.getResizeType() == null)
+            return false;
+        if (other.getResizeType() != null && other.getResizeType().equals(this.getResizeType()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+            return false;
         return true;
     }
 
@@ -951,6 +1062,8 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getProgressInMegaBytes() == null) ? 0 : getProgressInMegaBytes().hashCode());
         hashCode = prime * hashCode + ((getElapsedTimeInSeconds() == null) ? 0 : getElapsedTimeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getEstimatedTimeToCompletionInSeconds() == null) ? 0 : getEstimatedTimeToCompletionInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getResizeType() == null) ? 0 : getResizeType().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 

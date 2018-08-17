@@ -32,6 +32,8 @@ public class InventoryAggregatorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Expression").build();
     private static final MarshallingInfo<List> AGGREGATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Aggregators").build();
+    private static final MarshallingInfo<List> GROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Groups").build();
 
     private static final InventoryAggregatorMarshaller instance = new InventoryAggregatorMarshaller();
 
@@ -51,6 +53,7 @@ public class InventoryAggregatorMarshaller {
         try {
             protocolMarshaller.marshall(inventoryAggregator.getExpression(), EXPRESSION_BINDING);
             protocolMarshaller.marshall(inventoryAggregator.getAggregators(), AGGREGATORS_BINDING);
+            protocolMarshaller.marshall(inventoryAggregator.getGroups(), GROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

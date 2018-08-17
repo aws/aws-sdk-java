@@ -119,6 +119,16 @@ public class DescribeResizeResultStaxUnmarshaller implements Unmarshaller<Descri
                     describeResizeResult.setEstimatedTimeToCompletionInSeconds(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ResizeType", targetDepth)) {
+                    describeResizeResult.setResizeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Message", targetDepth)) {
+                    describeResizeResult.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeResizeResult;

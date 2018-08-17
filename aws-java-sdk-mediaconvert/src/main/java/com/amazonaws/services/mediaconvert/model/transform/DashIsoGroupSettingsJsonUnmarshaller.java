@@ -80,6 +80,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                     context.nextToken();
                     dashIsoGroupSettings.setSegmentLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("writeSegmentTimelineInRepresentation", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setWriteSegmentTimelineInRepresentation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -2017,6 +2017,40 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Changes the cluster's type, node type, or number of nodes.
+     * </p>
+     * 
+     * @param resizeClusterRequest
+     * @return Result of the ResizeCluster operation returned by the service.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws NumberOfNodesQuotaExceededException
+     *         The operation would exceed the number of nodes allotted to the account. For information about increasing
+     *         your quota, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
+     *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     * @throws NumberOfNodesPerClusterLimitExceededException
+     *         The operation would exceed the number of nodes allowed for a cluster.
+     * @throws InsufficientClusterCapacityException
+     *         The number of nodes specified exceeds the allotted capacity of the cluster.
+     * @throws UnsupportedOptionException
+     *         A request option was specified that is not supported.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @throws LimitExceededException
+     *         The encryption key has exceeded its grant limit in AWS KMS.
+     * @sample AmazonRedshift.ResizeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    Cluster resizeCluster(ResizeClusterRequest resizeClusterRequest);
+
+    /**
+     * <p>
      * Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same
      * configuration as the original cluster from which the snapshot was created, except that the new cluster is created
      * with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use

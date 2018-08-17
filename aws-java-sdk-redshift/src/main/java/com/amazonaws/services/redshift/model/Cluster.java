@@ -349,6 +349,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private String maintenanceTrackName;
+    /**
+     * <p>
+     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * </p>
+     */
+    private String elasticResizeNumberOfNodeOptions;
 
     /**
      * <p>
@@ -2739,6 +2745,46 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * </p>
+     * 
+     * @param elasticResizeNumberOfNodeOptions
+     *        Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     */
+
+    public void setElasticResizeNumberOfNodeOptions(String elasticResizeNumberOfNodeOptions) {
+        this.elasticResizeNumberOfNodeOptions = elasticResizeNumberOfNodeOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * </p>
+     * 
+     * @return Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     */
+
+    public String getElasticResizeNumberOfNodeOptions() {
+        return this.elasticResizeNumberOfNodeOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * </p>
+     * 
+     * @param elasticResizeNumberOfNodeOptions
+     *        Indicates the number of nodes the cluster can be resized to with the elastic resize method.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withElasticResizeNumberOfNodeOptions(String elasticResizeNumberOfNodeOptions) {
+        setElasticResizeNumberOfNodeOptions(elasticResizeNumberOfNodeOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2818,7 +2864,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getPendingActions() != null)
             sb.append("PendingActions: ").append(getPendingActions()).append(",");
         if (getMaintenanceTrackName() != null)
-            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
+        if (getElasticResizeNumberOfNodeOptions() != null)
+            sb.append("ElasticResizeNumberOfNodeOptions: ").append(getElasticResizeNumberOfNodeOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2974,6 +3022,11 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
             return false;
+        if (other.getElasticResizeNumberOfNodeOptions() == null ^ this.getElasticResizeNumberOfNodeOptions() == null)
+            return false;
+        if (other.getElasticResizeNumberOfNodeOptions() != null
+                && other.getElasticResizeNumberOfNodeOptions().equals(this.getElasticResizeNumberOfNodeOptions()) == false)
+            return false;
         return true;
     }
 
@@ -3017,6 +3070,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getPendingActions() == null) ? 0 : getPendingActions().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
+        hashCode = prime * hashCode + ((getElasticResizeNumberOfNodeOptions() == null) ? 0 : getElasticResizeNumberOfNodeOptions().hashCode());
         return hashCode;
     }
 

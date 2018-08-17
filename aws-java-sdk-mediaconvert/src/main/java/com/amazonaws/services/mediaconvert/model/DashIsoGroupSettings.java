@@ -58,6 +58,11 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * internal to a single output file and it does not cause the creation of many output files as in other output types.
      */
     private Integer segmentLength;
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be
+     * promoted down into Representation from AdaptationSet.
+     */
+    private String writeSegmentTimelineInRepresentation;
 
     /**
      * A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used
@@ -398,6 +403,65 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be
+     * promoted down into Representation from AdaptationSet.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline
+     *        will be promoted down into Representation from AdaptationSet.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public void setWriteSegmentTimelineInRepresentation(String writeSegmentTimelineInRepresentation) {
+        this.writeSegmentTimelineInRepresentation = writeSegmentTimelineInRepresentation;
+    }
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be
+     * promoted down into Representation from AdaptationSet.
+     * 
+     * @return When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline
+     *         will be promoted down into Representation from AdaptationSet.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public String getWriteSegmentTimelineInRepresentation() {
+        return this.writeSegmentTimelineInRepresentation;
+    }
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be
+     * promoted down into Representation from AdaptationSet.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline
+     *        will be promoted down into Representation from AdaptationSet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public DashIsoGroupSettings withWriteSegmentTimelineInRepresentation(String writeSegmentTimelineInRepresentation) {
+        setWriteSegmentTimelineInRepresentation(writeSegmentTimelineInRepresentation);
+        return this;
+    }
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be
+     * promoted down into Representation from AdaptationSet.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline
+     *        will be promoted down into Representation from AdaptationSet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public DashIsoGroupSettings withWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation writeSegmentTimelineInRepresentation) {
+        this.writeSegmentTimelineInRepresentation = writeSegmentTimelineInRepresentation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -423,7 +487,9 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
-            sb.append("SegmentLength: ").append(getSegmentLength());
+            sb.append("SegmentLength: ").append(getSegmentLength()).append(",");
+        if (getWriteSegmentTimelineInRepresentation() != null)
+            sb.append("WriteSegmentTimelineInRepresentation: ").append(getWriteSegmentTimelineInRepresentation());
         sb.append("}");
         return sb.toString();
     }
@@ -470,6 +536,11 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getSegmentLength() != null && other.getSegmentLength().equals(this.getSegmentLength()) == false)
             return false;
+        if (other.getWriteSegmentTimelineInRepresentation() == null ^ this.getWriteSegmentTimelineInRepresentation() == null)
+            return false;
+        if (other.getWriteSegmentTimelineInRepresentation() != null
+                && other.getWriteSegmentTimelineInRepresentation().equals(this.getWriteSegmentTimelineInRepresentation()) == false)
+            return false;
         return true;
     }
 
@@ -486,6 +557,7 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
+        hashCode = prime * hashCode + ((getWriteSegmentTimelineInRepresentation() == null) ? 0 : getWriteSegmentTimelineInRepresentation().hashCode());
         return hashCode;
     }
 

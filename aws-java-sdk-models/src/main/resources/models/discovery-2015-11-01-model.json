@@ -108,7 +108,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"ServerInternalErrorException"}
       ],
-      "documentation":"<p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an ID.</p>"
+      "documentation":"<p>Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>"
     },
     "DescribeConfigurations":{
       "name":"DescribeConfigurations",
@@ -124,7 +124,25 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"ServerInternalErrorException"}
       ],
-      "documentation":"<p>Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output fields are specific to the asset type selected. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, and number of network cards.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations\">Using the DescribeConfigurations Action</a>.</p>"
+      "documentation":"<p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations\">Using the DescribeConfigurations Action</a>.</p> </note>"
+    },
+    "DescribeContinuousExports":{
+      "name":"DescribeContinuousExports",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeContinuousExportsRequest"},
+      "output":{"shape":"DescribeContinuousExportsResponse"},
+      "errors":[
+        {"shape":"AuthorizationErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ServerInternalErrorException"},
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.</p>"
     },
     "DescribeExportConfigurations":{
       "name":"DescribeExportConfigurations",
@@ -141,7 +159,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"ServerInternalErrorException"}
       ],
-      "documentation":"<p>Deprecated. Use <code>DescribeExportTasks</code> instead.</p> <p>Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.</p>",
+      "documentation":"<p> <code>DescribeExportConfigurations</code> is deprecated.</p> <p>Use instead <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html\"> <code>DescribeExportTasks</code> </a>.</p>",
       "deprecated":true
     },
     "DescribeExportTasks":{
@@ -175,7 +193,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"ServerInternalErrorException"}
       ],
-      "documentation":"<p>Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves a list of all tags assigned to a specific configuration item.</p>"
+      "documentation":"<p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>"
     },
     "DisassociateConfigurationItemsFromApplication":{
       "name":"DisassociateConfigurationItemsFromApplication",
@@ -224,7 +242,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"ServerInternalErrorException"}
       ],
-      "documentation":"<p>Retrieves a short summary of discovered assets.</p>"
+      "documentation":"<p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>"
     },
     "ListConfigurations":{
       "name":"ListConfigurations",
@@ -241,7 +259,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"ServerInternalErrorException"}
       ],
-      "documentation":"<p>Retrieves a list of configuration items according to criteria that you specify in a filter. The filter criteria identifies the relationship requirements.</p>"
+      "documentation":"<p>Retrieves a list of configuration items as specified by the value passed to the required paramater <code>configurationType</code>. Optional filtering may be applied to refine search results.</p>"
     },
     "ListServerNeighbors":{
       "name":"ListServerNeighbors",
@@ -258,6 +276,25 @@
         {"shape":"ServerInternalErrorException"}
       ],
       "documentation":"<p>Retrieves a list of servers that are one network hop away from a specified server.</p>"
+    },
+    "StartContinuousExport":{
+      "name":"StartContinuousExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartContinuousExportRequest"},
+      "output":{"shape":"StartContinuousExportResponse"},
+      "errors":[
+        {"shape":"ConflictErrorException"},
+        {"shape":"AuthorizationErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ServerInternalErrorException"},
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "documentation":"<p>Start the continuous flow of agent's discovered data into Amazon Athena.</p>"
     },
     "StartDataCollectionByAgentIds":{
       "name":"StartDataCollectionByAgentIds",
@@ -291,6 +328,25 @@
         {"shape":"OperationNotPermittedException"}
       ],
       "documentation":"<p> Begins the export of discovered data to an S3 bucket.</p> <p> If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. </p> <p> If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two exports per day. </p>"
+    },
+    "StopContinuousExport":{
+      "name":"StopContinuousExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopContinuousExportRequest"},
+      "output":{"shape":"StopContinuousExportResponse"},
+      "errors":[
+        {"shape":"AuthorizationErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ServerInternalErrorException"},
+        {"shape":"OperationNotPermittedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "documentation":"<p>Stop the continuous flow of agent's discovered data into Amazon Athena.</p>"
     },
     "StopDataCollectionByAgentIds":{
       "name":"StopDataCollectionByAgentIds",
@@ -528,6 +584,72 @@
     },
     "ConfigurationsDownloadUrl":{"type":"string"},
     "ConfigurationsExportId":{"type":"string"},
+    "ConflictErrorException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"Message"}
+      },
+      "documentation":"<p/>",
+      "exception":true
+    },
+    "ContinuousExportDescription":{
+      "type":"structure",
+      "members":{
+        "exportId":{
+          "shape":"ConfigurationsExportId",
+          "documentation":"<p>The unique ID assigned to this export.</p>"
+        },
+        "status":{
+          "shape":"ContinuousExportStatus",
+          "documentation":"<p>Describes the status of the export. Can be one of the following values:</p> <ul> <li> <p>START_IN_PROGRESS - setting up resources to start continuous export.</p> </li> <li> <p>START_FAILED - an error occurred setting up continuous export. To recover, call start-continuous-export again.</p> </li> <li> <p>ACTIVE - data is being exported to the customer bucket.</p> </li> <li> <p>ERROR - an error occurred during export. To fix the issue, call stop-continuous-export and start-continuous-export.</p> </li> <li> <p>STOP_IN_PROGRESS - stopping the export.</p> </li> <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li> <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li> </ul>"
+        },
+        "statusDetail":{
+          "shape":"StringMax255",
+          "documentation":"<p>Contains information about any errors that may have occurred.</p>"
+        },
+        "s3Bucket":{
+          "shape":"S3Bucket",
+          "documentation":"<p>The name of the s3 bucket where the export data parquet files are stored.</p>"
+        },
+        "startTime":{
+          "shape":"TimeStamp",
+          "documentation":"<p>The timestamp representing when the continuous export was started.</p>"
+        },
+        "stopTime":{
+          "shape":"TimeStamp",
+          "documentation":"<p>The timestamp that represents when this continuous export was stopped.</p>"
+        },
+        "dataSource":{
+          "shape":"DataSource",
+          "documentation":"<p>The type of data collector used to gather this data (currently only offered for AGENT).</p>"
+        },
+        "schemaStorageConfig":{
+          "shape":"SchemaStorageConfig",
+          "documentation":"<p>An object which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>A list of continuous export descriptions.</p>"
+    },
+    "ContinuousExportDescriptions":{
+      "type":"list",
+      "member":{"shape":"ContinuousExportDescription"}
+    },
+    "ContinuousExportIds":{
+      "type":"list",
+      "member":{"shape":"ConfigurationsExportId"}
+    },
+    "ContinuousExportStatus":{
+      "type":"string",
+      "enum":[
+        "START_IN_PROGRESS",
+        "START_FAILED",
+        "ACTIVE",
+        "ERROR",
+        "STOP_IN_PROGRESS",
+        "STOP_FAILED",
+        "INACTIVE"
+      ]
+    },
     "CreateApplicationRequest":{
       "type":"structure",
       "required":["name"],
@@ -659,6 +781,15 @@
       },
       "documentation":"<p>Inventory data for installed discovery connectors.</p>"
     },
+    "DataSource":{
+      "type":"string",
+      "enum":["AGENT"]
+    },
+    "DatabaseName":{
+      "type":"string",
+      "max":252,
+      "min":1
+    },
     "DeleteApplicationsRequest":{
       "type":"structure",
       "required":["configurationIds"],
@@ -755,20 +886,56 @@
         }
       }
     },
+    "DescribeContinuousExportsMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "DescribeContinuousExportsRequest":{
+      "type":"structure",
+      "members":{
+        "exportIds":{
+          "shape":"ContinuousExportIds",
+          "documentation":"<p>The unique IDs assigned to the exports.</p>"
+        },
+        "maxResults":{
+          "shape":"DescribeContinuousExportsMaxResults",
+          "documentation":"<p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token from the previous call to <code>DescribeExportTasks</code>.</p>"
+        }
+      }
+    },
+    "DescribeContinuousExportsResponse":{
+      "type":"structure",
+      "members":{
+        "descriptions":{
+          "shape":"ContinuousExportDescriptions",
+          "documentation":"<p>A list of continuous export descriptions.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token from the previous call to <code>DescribeExportTasks</code>.</p>"
+        }
+      }
+    },
     "DescribeExportConfigurationsRequest":{
       "type":"structure",
       "members":{
         "exportIds":{
           "shape":"ExportIds",
-          "documentation":"<p>A unique identifier that you can use to query the export status.</p>"
+          "documentation":"<p>A list of continuous export ids to search for.</p>"
         },
         "maxResults":{
           "shape":"Integer",
-          "documentation":"<p>The maximum number of results that you want to display as a part of the query.</p>"
+          "documentation":"<p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get results in a set of 10. Use the token in the query to get the next set of 10.</p>"
+          "documentation":"<p>The token from the previous call to describe-export-tasks.</p>"
         }
       }
     },
@@ -777,11 +944,11 @@
       "members":{
         "exportsInfo":{
           "shape":"ExportsInfo",
-          "documentation":"<p>Returns export details. When the status is complete, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>"
+          "documentation":"<p/>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get results in a set of 10. Use the token in the query to get the next set of 10.</p>"
+          "documentation":"<p>The token from the previous call to describe-export-tasks.</p>"
         }
       }
     },
@@ -1212,6 +1379,14 @@
       "type":"list",
       "member":{"shape":"OrderByElement"}
     },
+    "ResourceInUseException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"Message"}
+      },
+      "documentation":"<p/>",
+      "exception":true
+    },
     "ResourceNotFoundException":{
       "type":"structure",
       "members":{
@@ -1219,6 +1394,12 @@
       },
       "documentation":"<p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>",
       "exception":true
+    },
+    "S3Bucket":{"type":"string"},
+    "SchemaStorageConfig":{
+      "type":"map",
+      "key":{"shape":"DatabaseName"},
+      "value":{"shape":"String"}
     },
     "ServerInternalErrorException":{
       "type":"structure",
@@ -1228,6 +1409,36 @@
       "documentation":"<p>The server experienced an internal error. Try again.</p>",
       "exception":true,
       "fault":true
+    },
+    "StartContinuousExportRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "StartContinuousExportResponse":{
+      "type":"structure",
+      "members":{
+        "exportId":{
+          "shape":"ConfigurationsExportId",
+          "documentation":"<p>The unique ID assigned to this export.</p>"
+        },
+        "s3Bucket":{
+          "shape":"S3Bucket",
+          "documentation":"<p>The name of the s3 bucket where the export data parquet files are stored.</p>"
+        },
+        "startTime":{
+          "shape":"TimeStamp",
+          "documentation":"<p>The timestamp representing when the continuous export was started.</p>"
+        },
+        "dataSource":{
+          "shape":"DataSource",
+          "documentation":"<p>The type of data collector used to gather this data (currently only offered for AGENT).</p>"
+        },
+        "schemaStorageConfig":{
+          "shape":"SchemaStorageConfig",
+          "documentation":"<p>A dictionary which describes how the data is stored.</p> <ul> <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li> </ul>"
+        }
+      }
     },
     "StartDataCollectionByAgentIdsRequest":{
       "type":"structure",
@@ -1278,6 +1489,29 @@
         }
       }
     },
+    "StopContinuousExportRequest":{
+      "type":"structure",
+      "required":["exportId"],
+      "members":{
+        "exportId":{
+          "shape":"ConfigurationsExportId",
+          "documentation":"<p>The unique ID assigned to this export.</p>"
+        }
+      }
+    },
+    "StopContinuousExportResponse":{
+      "type":"structure",
+      "members":{
+        "startTime":{
+          "shape":"TimeStamp",
+          "documentation":"<p>Timestamp that represents when this continuous export started collecting data.</p>"
+        },
+        "stopTime":{
+          "shape":"TimeStamp",
+          "documentation":"<p>Timestamp that represents when this continuous export was stopped.</p>"
+        }
+      }
+    },
     "StopDataCollectionByAgentIdsRequest":{
       "type":"structure",
       "required":["agentIds"],
@@ -1298,6 +1532,11 @@
       }
     },
     "String":{"type":"string"},
+    "StringMax255":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
     "Tag":{
       "type":"structure",
       "required":[

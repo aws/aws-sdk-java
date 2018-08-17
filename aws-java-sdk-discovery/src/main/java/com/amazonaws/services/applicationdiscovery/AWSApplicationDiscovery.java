@@ -269,8 +269,8 @@ public interface AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
-     * not specify an ID.
+     * Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user
+     * account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
      * </p>
      * 
      * @param describeAgentsRequest
@@ -291,16 +291,45 @@ public interface AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset
-     * type (server, application, process, or connection). Output fields are specific to the asset type selected. For
-     * example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such
-     * as host name, operating system, and number of network cards.
+     * Retrieves attributes for a list of configuration item IDs.
+     * </p>
+     * <note>
+     * <p>
+     * All of the supplied IDs must be for the same asset type from one of the follwoing:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * server
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * application
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * process
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * connection
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration
+     * item includes a list of attributes about the server, such as host name, operating system, number of network
+     * cards, etc.
      * </p>
      * <p>
      * For a complete list of outputs for each asset type, see <a href=
      * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations"
      * >Using the DescribeConfigurations Action</a>.
      * </p>
+     * </note>
      * 
      * @param describeConfigurationsRequest
      * @return Result of the DescribeConfigurations operation returned by the service.
@@ -320,10 +349,38 @@ public interface AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Deprecated. Use <code>DescribeExportTasks</code> instead.
+     * Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you
+     * call <code>DescribeContinuousExports</code> as is without passing any parameters.
+     * </p>
+     * 
+     * @param describeContinuousExportsRequest
+     * @return Result of the DescribeContinuousExports operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @throws OperationNotPermittedException
+     *         This operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified configuration ID was not located. Verify the configuration ID and try again.
+     * @sample AWSApplicationDiscovery.DescribeContinuousExports
+     */
+    DescribeContinuousExportsResult describeContinuousExports(DescribeContinuousExportsRequest describeContinuousExportsRequest);
+
+    /**
+     * <p>
+     * <code>DescribeExportConfigurations</code> is deprecated.
      * </p>
      * <p>
-     * Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.
+     * Use instead <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
+     * <code>DescribeExportTasks</code> </a>.
      * </p>
      * 
      * @param describeExportConfigurationsRequest
@@ -368,8 +425,32 @@ public interface AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves a list of all tags
-     * assigned to a specific configuration item.
+     * Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value,
+     * passed to the optional parameter <code>filters</code>.
+     * </p>
+     * <p>
+     * There are three valid tag filter names:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * tagKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * tagValue
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * configurationId
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Also, all configuration items associated with your user account that have tags can be listed if you call
+     * <code>DescribeTags</code> as is without passing any parameters.
      * </p>
      * 
      * @param describeTagsRequest
@@ -446,6 +527,9 @@ public interface AWSApplicationDiscovery {
      * <p>
      * Retrieves a short summary of discovered assets.
      * </p>
+     * <p>
+     * This API operation takes no request parameters and is called as is at the command prompt as shown in the example.
+     * </p>
      * 
      * @param getDiscoverySummaryRequest
      * @return Result of the GetDiscoverySummary operation returned by the service.
@@ -465,8 +549,8 @@ public interface AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves a list of configuration items according to criteria that you specify in a filter. The filter criteria
-     * identifies the relationship requirements.
+     * Retrieves a list of configuration items as specified by the value passed to the required paramater
+     * <code>configurationType</code>. Optional filtering may be applied to refine search results.
      * </p>
      * 
      * @param listConfigurationsRequest
@@ -507,6 +591,31 @@ public interface AWSApplicationDiscovery {
      * @sample AWSApplicationDiscovery.ListServerNeighbors
      */
     ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest);
+
+    /**
+     * <p>
+     * Start the continuous flow of agent's discovered data into Amazon Athena.
+     * </p>
+     * 
+     * @param startContinuousExportRequest
+     * @return Result of the StartContinuousExport operation returned by the service.
+     * @throws ConflictErrorException
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @throws OperationNotPermittedException
+     *         This operation is not permitted.
+     * @throws ResourceInUseException
+     * @sample AWSApplicationDiscovery.StartContinuousExport
+     */
+    StartContinuousExportResult startContinuousExport(StartContinuousExportRequest startContinuousExportRequest);
 
     /**
      * <p>
@@ -562,6 +671,32 @@ public interface AWSApplicationDiscovery {
      * @sample AWSApplicationDiscovery.StartExportTask
      */
     StartExportTaskResult startExportTask(StartExportTaskRequest startExportTaskRequest);
+
+    /**
+     * <p>
+     * Stop the continuous flow of agent's discovered data into Amazon Athena.
+     * </p>
+     * 
+     * @param stopContinuousExportRequest
+     * @return Result of the StopContinuousExport operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @throws OperationNotPermittedException
+     *         This operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified configuration ID was not located. Verify the configuration ID and try again.
+     * @throws ResourceInUseException
+     * @sample AWSApplicationDiscovery.StopContinuousExport
+     */
+    StopContinuousExportResult stopContinuousExport(StopContinuousExportRequest stopContinuousExportRequest);
 
     /**
      * <p>

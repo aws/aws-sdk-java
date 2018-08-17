@@ -200,6 +200,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInventoryGroupException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AssociationVersionLimitExceeded").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException.class))
                     .addErrorMetadata(
@@ -223,6 +226,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedParameterType").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAggregatorException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedInventoryItemContextException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException.class))
@@ -780,7 +786,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -878,7 +884,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -4078,10 +4084,15 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         An error occurred on the server side.
      * @throws InvalidFilterException
      *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidInventoryGroupException
+     *         The specified inventory group is not valid.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @throws InvalidTypeNameException
      *         The parameter type name is not valid.
+     * @throws InvalidAggregatorException
+     *         The specified aggregator is not valid for inventory groups. Verify that the aggregator uses a valid
+     *         inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
      * @throws InvalidResultAttributeException
      *         The specified inventory item result attribute is not valid.
      * @sample AWSSimpleSystemsManagement.GetInventory

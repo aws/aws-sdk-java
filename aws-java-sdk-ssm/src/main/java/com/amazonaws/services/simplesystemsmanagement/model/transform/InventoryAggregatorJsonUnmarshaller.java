@@ -57,6 +57,10 @@ public class InventoryAggregatorJsonUnmarshaller implements Unmarshaller<Invento
                     inventoryAggregator.setAggregators(new ListUnmarshaller<InventoryAggregator>(InventoryAggregatorJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("Groups", targetDepth)) {
+                    context.nextToken();
+                    inventoryAggregator.setGroups(new ListUnmarshaller<InventoryGroup>(InventoryGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

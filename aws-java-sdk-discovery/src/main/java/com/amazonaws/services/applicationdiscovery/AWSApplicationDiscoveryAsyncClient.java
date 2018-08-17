@@ -542,6 +542,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(DescribeContinuousExportsRequest request) {
+
+        return describeContinuousExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(final DescribeContinuousExportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeContinuousExportsRequest, DescribeContinuousExportsResult> asyncHandler) {
+        final DescribeContinuousExportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeContinuousExportsResult>() {
+            @Override
+            public DescribeContinuousExportsResult call() throws Exception {
+                DescribeContinuousExportsResult result = null;
+
+                try {
+                    result = executeDescribeContinuousExports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     @Deprecated
     public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(DescribeExportConfigurationsRequest request) {
 
@@ -812,6 +845,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(StartContinuousExportRequest request) {
+
+        return startContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(final StartContinuousExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartContinuousExportRequest, StartContinuousExportResult> asyncHandler) {
+        final StartContinuousExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartContinuousExportResult>() {
+            @Override
+            public StartContinuousExportResult call() throws Exception {
+                StartContinuousExportResult result = null;
+
+                try {
+                    result = executeStartContinuousExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDataCollectionByAgentIdsResult> startDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request) {
 
         return startDataCollectionByAgentIdsAsync(request, null);
@@ -863,6 +929,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
 
                 try {
                     result = executeStartExportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(StopContinuousExportRequest request) {
+
+        return stopContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(final StopContinuousExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopContinuousExportRequest, StopContinuousExportResult> asyncHandler) {
+        final StopContinuousExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopContinuousExportResult>() {
+            @Override
+            public StopContinuousExportResult call() throws Exception {
+                StopContinuousExportResult result = null;
+
+                try {
+                    result = executeStopContinuousExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

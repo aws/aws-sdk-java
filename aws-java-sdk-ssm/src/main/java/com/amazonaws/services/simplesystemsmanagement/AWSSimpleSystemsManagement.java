@@ -214,7 +214,7 @@ public interface AWSSimpleSystemsManagement {
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -274,7 +274,7 @@ public interface AWSSimpleSystemsManagement {
      * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * When you associate a document with one or more instances using instance IDs or tags, SSM Agent running on the
      * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
@@ -1508,10 +1508,15 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidFilterException
      *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidInventoryGroupException
+     *         The specified inventory group is not valid.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @throws InvalidTypeNameException
      *         The parameter type name is not valid.
+     * @throws InvalidAggregatorException
+     *         The specified aggregator is not valid for inventory groups. Verify that the aggregator uses a valid
+     *         inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
      * @throws InvalidResultAttributeException
      *         The specified inventory item result attribute is not valid.
      * @sample AWSSimpleSystemsManagement.GetInventory

@@ -4611,6 +4611,77 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Changes the cluster's type, node type, or number of nodes.
+     * </p>
+     * 
+     * @param resizeClusterRequest
+     * @return Result of the ResizeCluster operation returned by the service.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws NumberOfNodesQuotaExceededException
+     *         The operation would exceed the number of nodes allotted to the account. For information about increasing
+     *         your quota, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
+     *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     * @throws NumberOfNodesPerClusterLimitExceededException
+     *         The operation would exceed the number of nodes allowed for a cluster.
+     * @throws InsufficientClusterCapacityException
+     *         The number of nodes specified exceeds the allotted capacity of the cluster.
+     * @throws UnsupportedOptionException
+     *         A request option was specified that is not supported.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @throws LimitExceededException
+     *         The encryption key has exceeded its grant limit in AWS KMS.
+     * @sample AmazonRedshift.ResizeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public Cluster resizeCluster(ResizeClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeResizeCluster(request);
+    }
+
+    @SdkInternalApi
+    final Cluster executeResizeCluster(ResizeClusterRequest resizeClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resizeClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResizeClusterRequest> request = null;
+        Response<Cluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResizeClusterRequestMarshaller().marshall(super.beforeMarshalling(resizeClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResizeCluster");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same
      * configuration as the original cluster from which the snapshot was created, except that the new cluster is created
      * with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use

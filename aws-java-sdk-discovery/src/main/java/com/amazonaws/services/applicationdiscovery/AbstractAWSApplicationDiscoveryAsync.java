@@ -121,6 +121,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(DescribeContinuousExportsRequest request) {
+
+        return describeContinuousExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(DescribeContinuousExportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeContinuousExportsRequest, DescribeContinuousExportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     @Deprecated
     public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(DescribeExportConfigurationsRequest request) {
 
@@ -231,6 +244,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     }
 
     @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(StartContinuousExportRequest request) {
+
+        return startContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(StartContinuousExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartContinuousExportRequest, StartContinuousExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDataCollectionByAgentIdsResult> startDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request) {
 
         return startDataCollectionByAgentIdsAsync(request, null);
@@ -252,6 +278,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     @Override
     public java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StartExportTaskRequest, StartExportTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(StopContinuousExportRequest request) {
+
+        return stopContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(StopContinuousExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopContinuousExportRequest, StopContinuousExportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

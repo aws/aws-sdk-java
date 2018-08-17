@@ -43,6 +43,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentControl").build();
     private static final MarshallingInfo<Integer> SEGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentLength").build();
+    private static final MarshallingInfo<String> WRITESEGMENTTIMELINEINREPRESENTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeSegmentTimelineInRepresentation").build();
 
     private static final DashIsoGroupSettingsMarshaller instance = new DashIsoGroupSettingsMarshaller();
 
@@ -68,6 +70,7 @@ public class DashIsoGroupSettingsMarshaller {
             protocolMarshaller.marshall(dashIsoGroupSettings.getMinBufferTime(), MINBUFFERTIME_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentControl(), SEGMENTCONTROL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentLength(), SEGMENTLENGTH_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getWriteSegmentTimelineInRepresentation(), WRITESEGMENTTIMELINEINREPRESENTATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

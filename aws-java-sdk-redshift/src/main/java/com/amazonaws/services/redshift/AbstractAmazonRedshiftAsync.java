@@ -1247,6 +1247,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<Cluster> resizeClusterAsync(ResizeClusterRequest request) {
+
+        return resizeClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> resizeClusterAsync(ResizeClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResizeClusterRequest, Cluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> restoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request) {
 
         return restoreFromClusterSnapshotAsync(request, null);

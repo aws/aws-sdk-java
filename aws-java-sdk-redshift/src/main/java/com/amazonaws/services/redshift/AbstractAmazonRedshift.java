@@ -439,6 +439,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public Cluster resizeCluster(ResizeClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Cluster restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
