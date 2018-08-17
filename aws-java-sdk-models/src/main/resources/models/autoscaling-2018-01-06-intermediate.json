@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a scaling plan.</p> <p>A scaling plan contains a set of instructions used to configure dynamic scaling for the scalable resources in your application. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions in your scaling plan.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>An exception was thrown for a validation issue. Review the parameters provided.</p>",
@@ -135,6 +137,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified scaling plan.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>An exception was thrown for a validation issue. Review the parameters provided.</p>",
@@ -179,6 +183,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the scalable resources in the specified scaling plan.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>An exception was thrown for a validation issue. Review the parameters provided.</p>",
@@ -223,6 +229,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the specified scaling plans or all of your scaling plans.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>An exception was thrown for a validation issue. Review the parameters provided.</p>",
@@ -267,6 +275,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the scaling plan for the specified scaling plan.</p> <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>An exception was thrown for a validation issue. Review the parameters provided.</p>",

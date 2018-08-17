@@ -15,6 +15,7 @@ package com.amazonaws.services.rds;
 import javax.annotation.Generated;
 
 import com.amazonaws.ClientConfigurationFactory;
+
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
 import com.amazonaws.client.AwsSyncClientParams;

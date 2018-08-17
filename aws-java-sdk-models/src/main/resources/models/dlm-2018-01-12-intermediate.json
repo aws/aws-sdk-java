@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a policy to manage the lifecycle of the specified AWS resources. You can create up to 100 lifecycle policies.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>Bad request. The request is missing required parameters or has invalid parameters.</p>",
@@ -131,6 +133,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified lifecycle policy and halts the automated operations that the policy specified.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A requested resource was not found.</p>",
@@ -171,6 +175,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets summary information about all or the specified data lifecycle policies.</p> <p>To get complete information about a policy, use <a>GetLifecyclePolicy</a>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A requested resource was not found.</p>",
@@ -215,6 +221,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets detailed information about the specified lifecycle policy.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A requested resource was not found.</p>",
@@ -255,6 +263,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the specified lifecycle policy.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A requested resource was not found.</p>",

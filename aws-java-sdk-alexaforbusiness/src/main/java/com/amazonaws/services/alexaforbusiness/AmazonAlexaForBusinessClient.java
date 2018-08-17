@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.alexaforbusiness.AmazonAlexaForBusinessClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -59,6 +60,7 @@ import com.amazonaws.services.alexaforbusiness.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient implements AmazonAlexaForBusiness {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -118,6 +120,22 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Alexa For Business using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonAlexaForBusinessClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
@@ -171,6 +189,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateContactWithAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -232,6 +252,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AssociateDeviceWithRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateDeviceWithRoomResultJsonUnmarshaller());
@@ -285,6 +307,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateSkillGroupWithRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -342,6 +366,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAddressBookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -396,6 +422,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateContactResultJsonUnmarshaller());
@@ -452,6 +480,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -506,6 +536,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRoomResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRoomResultJsonUnmarshaller());
@@ -562,6 +594,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSkillGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -617,6 +651,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -669,6 +705,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAddressBookResultJsonUnmarshaller());
@@ -723,6 +761,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -775,6 +815,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProfileResultJsonUnmarshaller());
@@ -829,6 +871,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRoomResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRoomResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -880,6 +924,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRoomSkillParameterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -935,6 +981,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSkillGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -987,6 +1035,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
@@ -1041,6 +1091,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateContactFromAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1099,6 +1151,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateDeviceFromRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateDeviceFromRoomResultJsonUnmarshaller());
@@ -1152,6 +1206,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateSkillGroupFromRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1207,6 +1263,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAddressBookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1259,6 +1317,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetContactResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContactResultJsonUnmarshaller());
@@ -1313,6 +1373,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetDeviceResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1365,6 +1427,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetProfileResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetProfileResultJsonUnmarshaller());
@@ -1419,6 +1483,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetRoomResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRoomResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1471,6 +1537,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRoomSkillParameterResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1526,6 +1594,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSkillGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1579,6 +1649,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListDeviceEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDeviceEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1629,6 +1701,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSkillsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSkillsResultJsonUnmarshaller());
@@ -1683,6 +1757,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1734,6 +1810,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PutRoomSkillParameterResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1790,6 +1868,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ResolveRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResolveRoomResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1843,6 +1923,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<RevokeInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RevokeInvitationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1893,6 +1975,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchAddressBooksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchAddressBooksResultJsonUnmarshaller());
@@ -1945,6 +2029,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<SearchContactsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchContactsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1995,6 +2081,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchDevicesResultJsonUnmarshaller());
@@ -2047,6 +2135,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<SearchProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchProfilesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2097,6 +2187,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchRoomsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchRoomsResultJsonUnmarshaller());
@@ -2149,6 +2241,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<SearchSkillGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchSkillGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2199,6 +2293,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchUsersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchUsersResultJsonUnmarshaller());
@@ -2256,6 +2352,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<SendInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendInvitationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2311,6 +2409,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<StartDeviceSyncResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartDeviceSyncResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2364,6 +2464,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2416,6 +2518,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
@@ -2472,6 +2576,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAddressBookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2524,6 +2630,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateContactResultJsonUnmarshaller());
@@ -2581,6 +2689,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2635,6 +2745,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProfileResultJsonUnmarshaller());
@@ -2691,6 +2803,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRoomResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRoomResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2746,6 +2860,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSkillGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2782,9 +2898,18 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -2794,7 +2919,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -2802,8 +2927,15 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

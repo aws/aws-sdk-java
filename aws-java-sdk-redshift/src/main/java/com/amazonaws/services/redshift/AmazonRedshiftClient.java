@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.redshift.AmazonRedshiftClientBuilder;
 import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 
@@ -81,6 +82,7 @@ import com.amazonaws.services.redshift.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRedshiftClient extends AmazonWebServiceClient implements AmazonRedshift {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -270,6 +272,22 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon Redshift using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonRedshiftClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
@@ -427,6 +445,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReservedNode> responseHandler = new StaxResponseHandler<ReservedNode>(new ReservedNodeStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -507,6 +527,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ClusterSecurityGroup> responseHandler = new StaxResponseHandler<ClusterSecurityGroup>(
                     new ClusterSecurityGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -578,6 +600,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -648,6 +672,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -754,6 +780,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -827,6 +855,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ClusterParameterGroup> responseHandler = new StaxResponseHandler<ClusterParameterGroup>(
                     new ClusterParameterGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -894,6 +924,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ClusterSecurityGroup> responseHandler = new StaxResponseHandler<ClusterSecurityGroup>(
                     new ClusterSecurityGroupStaxUnmarshaller());
@@ -963,6 +995,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1043,6 +1077,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ClusterSubnetGroup> responseHandler = new StaxResponseHandler<ClusterSubnetGroup>(new ClusterSubnetGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1141,6 +1177,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1210,6 +1248,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<HsmClientCertificate> responseHandler = new StaxResponseHandler<HsmClientCertificate>(
                     new HsmClientCertificateStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1278,6 +1318,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<HsmConfiguration> responseHandler = new StaxResponseHandler<HsmConfiguration>(new HsmConfigurationStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1350,6 +1392,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SnapshotCopyGrant> responseHandler = new StaxResponseHandler<SnapshotCopyGrant>(new SnapshotCopyGrantStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1415,6 +1459,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateTagsResult> responseHandler = new StaxResponseHandler<CreateTagsResult>(new CreateTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1490,6 +1536,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1549,6 +1597,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteClusterParameterGroupResult> responseHandler = new StaxResponseHandler<DeleteClusterParameterGroupResult>(
                     new DeleteClusterParameterGroupResultStaxUnmarshaller());
@@ -1616,6 +1666,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteClusterSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteClusterSecurityGroupResult>(
                     new DeleteClusterSecurityGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1679,6 +1731,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1734,6 +1788,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteClusterSubnetGroupResult> responseHandler = new StaxResponseHandler<DeleteClusterSubnetGroupResult>(
                     new DeleteClusterSubnetGroupResultStaxUnmarshaller());
@@ -1791,6 +1847,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteEventSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteEventSubscriptionResult>(
                     new DeleteEventSubscriptionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1847,6 +1905,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteHsmClientCertificateResult> responseHandler = new StaxResponseHandler<DeleteHsmClientCertificateResult>(
                     new DeleteHsmClientCertificateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1902,6 +1962,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteHsmConfigurationResult> responseHandler = new StaxResponseHandler<DeleteHsmConfigurationResult>(
                     new DeleteHsmConfigurationResultStaxUnmarshaller());
@@ -1960,6 +2022,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteSnapshotCopyGrantResult> responseHandler = new StaxResponseHandler<DeleteSnapshotCopyGrantResult>(
                     new DeleteSnapshotCopyGrantResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2017,6 +2081,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2068,6 +2134,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeClusterDbRevisionsResult> responseHandler = new StaxResponseHandler<DescribeClusterDbRevisionsResult>(
                     new DescribeClusterDbRevisionsResultStaxUnmarshaller());
@@ -2142,6 +2210,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeClusterParameterGroupsResult> responseHandler = new StaxResponseHandler<DescribeClusterParameterGroupsResult>(
                     new DescribeClusterParameterGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2211,6 +2281,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeClusterParametersResult> responseHandler = new StaxResponseHandler<DescribeClusterParametersResult>(
                     new DescribeClusterParametersResultStaxUnmarshaller());
@@ -2282,6 +2354,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeClusterSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeClusterSecurityGroupsResult>(
                     new DescribeClusterSecurityGroupsResultStaxUnmarshaller());
@@ -2358,6 +2432,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeClusterSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeClusterSnapshotsResult>(
                     new DescribeClusterSnapshotsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2429,6 +2505,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeClusterSubnetGroupsResult> responseHandler = new StaxResponseHandler<DescribeClusterSubnetGroupsResult>(
                     new DescribeClusterSubnetGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2489,6 +2567,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeClusterTracksResult> responseHandler = new StaxResponseHandler<DescribeClusterTracksResult>(
                     new DescribeClusterTracksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2542,6 +2622,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeClusterVersionsResult> responseHandler = new StaxResponseHandler<DescribeClusterVersionsResult>(
                     new DescribeClusterVersionsResultStaxUnmarshaller());
@@ -2617,6 +2699,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeClustersResult> responseHandler = new StaxResponseHandler<DescribeClustersResult>(
                     new DescribeClustersResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2678,6 +2762,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DefaultClusterParameters> responseHandler = new StaxResponseHandler<DefaultClusterParameters>(
                     new DefaultClusterParametersStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2731,6 +2817,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeEventCategoriesResult> responseHandler = new StaxResponseHandler<DescribeEventCategoriesResult>(
                     new DescribeEventCategoriesResultStaxUnmarshaller());
@@ -2803,6 +2891,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeEventSubscriptionsResult> responseHandler = new StaxResponseHandler<DescribeEventSubscriptionsResult>(
                     new DescribeEventSubscriptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2860,6 +2950,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeEventsResult> responseHandler = new StaxResponseHandler<DescribeEventsResult>(
                     new DescribeEventsResultStaxUnmarshaller());
@@ -2932,6 +3024,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeHsmClientCertificatesResult> responseHandler = new StaxResponseHandler<DescribeHsmClientCertificatesResult>(
                     new DescribeHsmClientCertificatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3003,6 +3097,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeHsmConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeHsmConfigurationsResult>(
                     new DescribeHsmConfigurationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3062,6 +3158,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeLoggingStatusResult> responseHandler = new StaxResponseHandler<DescribeLoggingStatusResult>(
                     new DescribeLoggingStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3119,6 +3217,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeOrderableClusterOptionsResult> responseHandler = new StaxResponseHandler<DescribeOrderableClusterOptionsResult>(
                     new DescribeOrderableClusterOptionsResultStaxUnmarshaller());
@@ -3192,6 +3292,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeReservedNodeOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedNodeOfferingsResult>(
                     new DescribeReservedNodeOfferingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3252,6 +3354,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeReservedNodesResult> responseHandler = new StaxResponseHandler<DescribeReservedNodesResult>(
                     new DescribeReservedNodesResultStaxUnmarshaller());
@@ -3319,6 +3423,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeResizeResult> responseHandler = new StaxResponseHandler<DescribeResizeResult>(
                     new DescribeResizeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3380,6 +3486,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSnapshotCopyGrantsResult> responseHandler = new StaxResponseHandler<DescribeSnapshotCopyGrantsResult>(
                     new DescribeSnapshotCopyGrantsResultStaxUnmarshaller());
@@ -3444,6 +3552,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeTableRestoreStatusResult> responseHandler = new StaxResponseHandler<DescribeTableRestoreStatusResult>(
                     new DescribeTableRestoreStatusResultStaxUnmarshaller());
@@ -3536,6 +3646,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3592,6 +3704,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DisableLoggingResult> responseHandler = new StaxResponseHandler<DisableLoggingResult>(
                     new DisableLoggingResultStaxUnmarshaller());
@@ -3657,6 +3771,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3719,6 +3835,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<EnableLoggingResult> responseHandler = new StaxResponseHandler<EnableLoggingResult>(new EnableLoggingResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3791,6 +3909,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3873,6 +3993,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetClusterCredentialsResult> responseHandler = new StaxResponseHandler<GetClusterCredentialsResult>(
                     new GetClusterCredentialsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3938,6 +4060,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetReservedNodeExchangeOfferingsResult> responseHandler = new StaxResponseHandler<GetReservedNodeExchangeOfferingsResult>(
                     new GetReservedNodeExchangeOfferingsResultStaxUnmarshaller());
@@ -4039,6 +4163,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4095,6 +4221,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4153,6 +4281,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4213,6 +4343,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyClusterParameterGroupResult>(
                     new ModifyClusterParameterGroupResultStaxUnmarshaller());
@@ -4281,6 +4413,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ClusterSubnetGroup> responseHandler = new StaxResponseHandler<ClusterSubnetGroup>(new ClusterSubnetGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4354,6 +4488,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4412,6 +4548,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4481,6 +4619,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReservedNode> responseHandler = new StaxResponseHandler<ReservedNode>(new ReservedNodeStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4540,6 +4680,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4596,6 +4738,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResetClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ResetClusterParameterGroupResult>(
                     new ResetClusterParameterGroupResultStaxUnmarshaller());
@@ -4668,6 +4812,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4784,6 +4930,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4861,6 +5009,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<TableRestoreStatus> responseHandler = new StaxResponseHandler<TableRestoreStatus>(new TableRestoreStatusStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4921,6 +5071,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ClusterSecurityGroup> responseHandler = new StaxResponseHandler<ClusterSecurityGroup>(
                     new ClusterSecurityGroupStaxUnmarshaller());
@@ -4986,6 +5138,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5043,6 +5197,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5078,9 +5234,18 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -5090,7 +5255,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -5098,8 +5263,15 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

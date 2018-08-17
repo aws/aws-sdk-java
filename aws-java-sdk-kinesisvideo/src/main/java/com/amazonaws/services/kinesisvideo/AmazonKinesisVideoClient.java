@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.kinesisvideo.AmazonKinesisVideoClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -53,6 +54,7 @@ import com.amazonaws.services.kinesisvideo.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements AmazonKinesisVideo {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -120,6 +122,22 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      *        Object providing client parameters.
      */
     AmazonKinesisVideoClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Kinesis Video using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonKinesisVideoClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
         init();
@@ -202,6 +220,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -275,6 +295,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -335,6 +357,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeStreamResultJsonUnmarshaller());
@@ -407,6 +431,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetDataEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -463,6 +489,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListStreamsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStreamsResultJsonUnmarshaller());
@@ -528,6 +556,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForStreamResultJsonUnmarshaller());
@@ -607,6 +637,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<TagStreamResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -672,6 +704,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagStreamResultJsonUnmarshaller());
@@ -769,6 +803,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDataRetentionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDataRetentionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -847,6 +883,8 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -883,9 +921,18 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -895,7 +942,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -903,8 +950,15 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a unique key that you can distribute to clients who are executing your API.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -151,6 +153,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a <code>DataSource</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -199,6 +203,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a <code>GraphqlApi</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -251,6 +257,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -295,6 +303,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a <code>Type</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -343,6 +353,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes an API key.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -387,6 +399,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a <code>DataSource</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -435,6 +449,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a <code>GraphqlApi</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -483,6 +499,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a <code>Resolver</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -527,6 +545,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a <code>Type</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -575,6 +595,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a <code>DataSource</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -623,6 +645,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a <code>GraphqlApi</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -667,6 +691,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the introspection schema for a GraphQL API.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "GraphQLSchemaException",
         "documentation" : "<p>The GraphQL schema is not valid.</p>",
@@ -711,6 +737,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a <code>Resolver</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -751,6 +779,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the current status of a schema creation operation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -795,6 +825,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a <code>Type</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -843,6 +875,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -887,6 +921,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the data sources for a given API.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -931,6 +967,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists your GraphQL APIs.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -971,6 +1009,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the resolvers for a given API and type.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1015,6 +1055,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the types for a given API.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1063,6 +1105,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous. Use to determine when it has completed.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1111,6 +1155,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates an API key.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1163,6 +1209,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a <code>DataSource</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1211,6 +1259,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a <code>GraphqlApi</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",
@@ -1259,6 +1309,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a <code>Resolver</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Another modification is being made. That modification must complete before you can make your change. </p>",
@@ -1303,6 +1355,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a <code>Type</code> object.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again. </p>",

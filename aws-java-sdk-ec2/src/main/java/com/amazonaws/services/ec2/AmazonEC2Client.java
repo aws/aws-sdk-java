@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
 import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
 
@@ -88,6 +89,7 @@ import com.amazonaws.services.ec2.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2 {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -276,6 +278,22 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon EC2 using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonEC2Client(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new LegacyErrorUnmarshaller(com.amazonaws.services.ec2.model.AmazonEC2Exception.class));
 
@@ -332,6 +350,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult>(
                     new AcceptReservedInstancesExchangeQuoteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -382,6 +402,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AcceptVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<AcceptVpcEndpointConnectionsResult>(
                     new AcceptVpcEndpointConnectionsResultStaxUnmarshaller());
@@ -440,6 +462,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AcceptVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<AcceptVpcPeeringConnectionResult>(
                     new AcceptVpcPeeringConnectionResultStaxUnmarshaller());
@@ -514,6 +538,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AllocateAddressResult> responseHandler = new StaxResponseHandler<AllocateAddressResult>(
                     new AllocateAddressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -572,6 +598,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AllocateHostsResult> responseHandler = new StaxResponseHandler<AllocateHostsResult>(new AllocateHostsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -626,6 +654,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AssignIpv6AddressesResult> responseHandler = new StaxResponseHandler<AssignIpv6AddressesResult>(
                     new AssignIpv6AddressesResultStaxUnmarshaller());
@@ -688,6 +718,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AssignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<AssignPrivateIpAddressesResult>(
                     new AssignPrivateIpAddressesResultStaxUnmarshaller());
@@ -767,6 +799,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AssociateAddressResult> responseHandler = new StaxResponseHandler<AssociateAddressResult>(
                     new AssociateAddressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -831,6 +865,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AssociateDhcpOptionsResult> responseHandler = new StaxResponseHandler<AssociateDhcpOptionsResult>(
                     new AssociateDhcpOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -882,6 +918,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AssociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<AssociateIamInstanceProfileResult>(
                     new AssociateIamInstanceProfileResultStaxUnmarshaller());
@@ -943,6 +981,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AssociateRouteTableResult> responseHandler = new StaxResponseHandler<AssociateRouteTableResult>(
                     new AssociateRouteTableResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -994,6 +1034,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AssociateSubnetCidrBlockResult> responseHandler = new StaxResponseHandler<AssociateSubnetCidrBlockResult>(
                     new AssociateSubnetCidrBlockResultStaxUnmarshaller());
@@ -1051,6 +1093,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AssociateVpcCidrBlockResult> responseHandler = new StaxResponseHandler<AssociateVpcCidrBlockResult>(
                     new AssociateVpcCidrBlockResultStaxUnmarshaller());
@@ -1114,6 +1158,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AttachClassicLinkVpcResult> responseHandler = new StaxResponseHandler<AttachClassicLinkVpcResult>(
                     new AttachClassicLinkVpcResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1168,6 +1214,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AttachInternetGatewayResult> responseHandler = new StaxResponseHandler<AttachInternetGatewayResult>(
                     new AttachInternetGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1219,6 +1267,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AttachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<AttachNetworkInterfaceResult>(
                     new AttachNetworkInterfaceResultStaxUnmarshaller());
@@ -1316,6 +1366,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AttachVolumeResult> responseHandler = new StaxResponseHandler<AttachVolumeResult>(new AttachVolumeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1370,6 +1422,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AttachVpnGatewayResult> responseHandler = new StaxResponseHandler<AttachVpnGatewayResult>(
                     new AttachVpnGatewayResultStaxUnmarshaller());
@@ -1438,6 +1492,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AuthorizeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupEgressResult>(
                     new AuthorizeSecurityGroupEgressResultStaxUnmarshaller());
@@ -1511,6 +1567,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AuthorizeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupIngressResult>(
                     new AuthorizeSecurityGroupIngressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1572,6 +1630,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<BundleInstanceResult> responseHandler = new StaxResponseHandler<BundleInstanceResult>(
                     new BundleInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1623,6 +1683,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CancelBundleTaskResult> responseHandler = new StaxResponseHandler<CancelBundleTaskResult>(
                     new CancelBundleTaskResultStaxUnmarshaller());
@@ -1683,6 +1745,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CancelConversionTaskResult> responseHandler = new StaxResponseHandler<CancelConversionTaskResult>(
                     new CancelConversionTaskResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1737,6 +1801,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CancelExportTaskResult> responseHandler = new StaxResponseHandler<CancelExportTaskResult>(
                     new CancelExportTaskResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1788,6 +1854,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CancelImportTaskResult> responseHandler = new StaxResponseHandler<CancelImportTaskResult>(
                     new CancelImportTaskResultStaxUnmarshaller());
@@ -1851,6 +1919,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CancelReservedInstancesListingResult> responseHandler = new StaxResponseHandler<CancelReservedInstancesListingResult>(
                     new CancelReservedInstancesListingResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1910,6 +1980,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CancelSpotFleetRequestsResult> responseHandler = new StaxResponseHandler<CancelSpotFleetRequestsResult>(
                     new CancelSpotFleetRequestsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1967,6 +2039,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CancelSpotInstanceRequestsResult> responseHandler = new StaxResponseHandler<CancelSpotInstanceRequestsResult>(
                     new CancelSpotInstanceRequestsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2021,6 +2095,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ConfirmProductInstanceResult> responseHandler = new StaxResponseHandler<ConfirmProductInstanceResult>(
                     new ConfirmProductInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2071,6 +2147,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CopyFpgaImageResult> responseHandler = new StaxResponseHandler<CopyFpgaImageResult>(new CopyFpgaImageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2128,6 +2206,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CopyImageResult> responseHandler = new StaxResponseHandler<CopyImageResult>(new CopyImageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2200,6 +2280,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CopySnapshotResult> responseHandler = new StaxResponseHandler<CopySnapshotResult>(new CopySnapshotResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2279,6 +2361,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateCustomerGatewayResult> responseHandler = new StaxResponseHandler<CreateCustomerGatewayResult>(
                     new CreateCustomerGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2332,6 +2416,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateDefaultSubnetResult> responseHandler = new StaxResponseHandler<CreateDefaultSubnetResult>(
                     new CreateDefaultSubnetResultStaxUnmarshaller());
@@ -2398,6 +2484,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateDefaultVpcResult> responseHandler = new StaxResponseHandler<CreateDefaultVpcResult>(
                     new CreateDefaultVpcResultStaxUnmarshaller());
@@ -2501,6 +2589,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateDhcpOptionsResult> responseHandler = new StaxResponseHandler<CreateDhcpOptionsResult>(
                     new CreateDhcpOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2554,6 +2644,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateEgressOnlyInternetGatewayResult>(
                     new CreateEgressOnlyInternetGatewayResultStaxUnmarshaller());
@@ -2613,6 +2705,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateFleetResult> responseHandler = new StaxResponseHandler<CreateFleetResult>(new CreateFleetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2681,6 +2775,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateFlowLogsResult> responseHandler = new StaxResponseHandler<CreateFlowLogsResult>(
                     new CreateFlowLogsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2739,6 +2835,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateFpgaImageResult> responseHandler = new StaxResponseHandler<CreateFpgaImageResult>(
                     new CreateFpgaImageResultStaxUnmarshaller());
@@ -2802,6 +2900,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateImageResult> responseHandler = new StaxResponseHandler<CreateImageResult>(new CreateImageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2859,6 +2959,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateInstanceExportTaskResult> responseHandler = new StaxResponseHandler<CreateInstanceExportTaskResult>(
                     new CreateInstanceExportTaskResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2915,6 +3017,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateInternetGatewayResult>(
                     new CreateInternetGatewayResultStaxUnmarshaller());
@@ -2986,6 +3090,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateKeyPairResult> responseHandler = new StaxResponseHandler<CreateKeyPairResult>(new CreateKeyPairResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3037,6 +3143,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateLaunchTemplateResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateResult>(
                     new CreateLaunchTemplateResultStaxUnmarshaller());
@@ -3093,6 +3201,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateLaunchTemplateVersionResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateVersionResult>(
                     new CreateLaunchTemplateVersionResultStaxUnmarshaller());
@@ -3151,6 +3261,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateNatGatewayResult> responseHandler = new StaxResponseHandler<CreateNatGatewayResult>(
                     new CreateNatGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3207,6 +3319,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateNetworkAclResult> responseHandler = new StaxResponseHandler<CreateNetworkAclResult>(
                     new CreateNetworkAclResultStaxUnmarshaller());
@@ -3277,6 +3391,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateNetworkAclEntryResult> responseHandler = new StaxResponseHandler<CreateNetworkAclEntryResult>(
                     new CreateNetworkAclEntryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3334,6 +3450,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateNetworkInterfaceResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfaceResult>(
                     new CreateNetworkInterfaceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3390,6 +3508,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfacePermissionResult>(
                     new CreateNetworkInterfacePermissionResultStaxUnmarshaller());
@@ -3453,6 +3573,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreatePlacementGroupResult> responseHandler = new StaxResponseHandler<CreatePlacementGroupResult>(
                     new CreatePlacementGroupResultStaxUnmarshaller());
@@ -3530,6 +3652,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateReservedInstancesListingResult> responseHandler = new StaxResponseHandler<CreateReservedInstancesListingResult>(
                     new CreateReservedInstancesListingResultStaxUnmarshaller());
@@ -3613,6 +3737,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateRouteResult> responseHandler = new StaxResponseHandler<CreateRouteResult>(new CreateRouteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3669,6 +3795,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateRouteTableResult> responseHandler = new StaxResponseHandler<CreateRouteTableResult>(
                     new CreateRouteTableResultStaxUnmarshaller());
@@ -3751,6 +3879,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateSecurityGroupResult> responseHandler = new StaxResponseHandler<CreateSecurityGroupResult>(
                     new CreateSecurityGroupResultStaxUnmarshaller());
@@ -3838,6 +3968,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateSnapshotResult> responseHandler = new StaxResponseHandler<CreateSnapshotResult>(
                     new CreateSnapshotResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3892,6 +4024,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<CreateSpotDatafeedSubscriptionResult>(
                     new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller());
@@ -3976,6 +4110,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateSubnetResult> responseHandler = new StaxResponseHandler<CreateSubnetResult>(new CreateSubnetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4035,6 +4171,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateTagsResult> responseHandler = new StaxResponseHandler<CreateTagsResult>(new CreateTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4110,6 +4248,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVolumeResult> responseHandler = new StaxResponseHandler<CreateVolumeResult>(new CreateVolumeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4180,6 +4320,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVpcResult> responseHandler = new StaxResponseHandler<CreateVpcResult>(new CreateVpcResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4247,6 +4389,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVpcEndpointResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointResult>(
                     new CreateVpcEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4306,6 +4450,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult>(
                     new CreateVpcEndpointConnectionNotificationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4364,6 +4510,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult>(
                     new CreateVpcEndpointServiceConfigurationResultStaxUnmarshaller());
@@ -4433,6 +4581,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<CreateVpcPeeringConnectionResult>(
                     new CreateVpcPeeringConnectionResultStaxUnmarshaller());
@@ -4513,6 +4663,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVpnConnectionResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionResult>(
                     new CreateVpnConnectionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4572,6 +4724,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionRouteResult>(
                     new CreateVpnConnectionRouteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4630,6 +4784,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateVpnGatewayResult> responseHandler = new StaxResponseHandler<CreateVpnGatewayResult>(
                     new CreateVpnGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4682,6 +4838,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteCustomerGatewayResult> responseHandler = new StaxResponseHandler<DeleteCustomerGatewayResult>(
                     new DeleteCustomerGatewayResultStaxUnmarshaller());
@@ -4737,6 +4895,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteDhcpOptionsResult> responseHandler = new StaxResponseHandler<DeleteDhcpOptionsResult>(
                     new DeleteDhcpOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4788,6 +4948,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult>(
                     new DeleteEgressOnlyInternetGatewayResultStaxUnmarshaller());
@@ -4846,6 +5008,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteFleetsResult> responseHandler = new StaxResponseHandler<DeleteFleetsResult>(new DeleteFleetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -4897,6 +5061,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteFlowLogsResult> responseHandler = new StaxResponseHandler<DeleteFlowLogsResult>(
                     new DeleteFlowLogsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4947,6 +5113,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteFpgaImageResult> responseHandler = new StaxResponseHandler<DeleteFpgaImageResult>(
                     new DeleteFpgaImageResultStaxUnmarshaller());
@@ -5001,6 +5169,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteInternetGatewayResult>(
                     new DeleteInternetGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5053,6 +5223,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteKeyPairResult> responseHandler = new StaxResponseHandler<DeleteKeyPairResult>(new DeleteKeyPairResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5102,6 +5274,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteLaunchTemplateResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateResult>(
                     new DeleteLaunchTemplateResultStaxUnmarshaller());
@@ -5155,6 +5329,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateVersionsResult>(
                     new DeleteLaunchTemplateVersionsResultStaxUnmarshaller());
@@ -5210,6 +5386,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteNatGatewayResult> responseHandler = new StaxResponseHandler<DeleteNatGatewayResult>(
                     new DeleteNatGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5263,6 +5441,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteNetworkAclResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclResult>(
                     new DeleteNetworkAclResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5315,6 +5495,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteNetworkAclEntryResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclEntryResult>(
                     new DeleteNetworkAclEntryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5366,6 +5548,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfaceResult>(
                     new DeleteNetworkInterfaceResultStaxUnmarshaller());
@@ -5422,6 +5606,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfacePermissionResult>(
                     new DeleteNetworkInterfacePermissionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5477,6 +5663,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeletePlacementGroupResult> responseHandler = new StaxResponseHandler<DeletePlacementGroupResult>(
                     new DeletePlacementGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5529,6 +5717,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteRouteResult> responseHandler = new StaxResponseHandler<DeleteRouteResult>(new DeleteRouteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5580,6 +5770,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteRouteTableResult> responseHandler = new StaxResponseHandler<DeleteRouteTableResult>(
                     new DeleteRouteTableResultStaxUnmarshaller());
@@ -5637,6 +5829,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteSecurityGroupResult>(
                     new DeleteSecurityGroupResultStaxUnmarshaller());
@@ -5705,6 +5899,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteSnapshotResult> responseHandler = new StaxResponseHandler<DeleteSnapshotResult>(
                     new DeleteSnapshotResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5756,6 +5952,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult>(
                     new DeleteSpotDatafeedSubscriptionResultStaxUnmarshaller());
@@ -5815,6 +6013,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteSubnetResult> responseHandler = new StaxResponseHandler<DeleteSubnetResult>(new DeleteSubnetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5870,6 +6070,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5931,6 +6133,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteVolumeResult> responseHandler = new StaxResponseHandler<DeleteVolumeResult>(new DeleteVolumeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -5985,6 +6189,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteVpcResult> responseHandler = new StaxResponseHandler<DeleteVpcResult>(new DeleteVpcResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -6036,6 +6242,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult>(
                     new DeleteVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
@@ -6092,6 +6300,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult>(
                     new DeleteVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6145,6 +6355,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteVpcEndpointsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointsResult>(
                     new DeleteVpcEndpointsResultStaxUnmarshaller());
@@ -6200,6 +6412,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpcPeeringConnectionResult>(
                     new DeleteVpcPeeringConnectionResultStaxUnmarshaller());
@@ -6261,6 +6475,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteVpnConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionResult>(
                     new DeleteVpnConnectionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6315,6 +6531,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionRouteResult>(
                     new DeleteVpnConnectionRouteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6368,6 +6586,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteVpnGatewayResult> responseHandler = new StaxResponseHandler<DeleteVpnGatewayResult>(
                     new DeleteVpnGatewayResultStaxUnmarshaller());
@@ -6427,6 +6647,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeregisterImageResult> responseHandler = new StaxResponseHandler<DeregisterImageResult>(
                     new DeregisterImageResultStaxUnmarshaller());
@@ -6516,6 +6738,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6577,6 +6801,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeAddressesResult> responseHandler = new StaxResponseHandler<DescribeAddressesResult>(
                     new DescribeAddressesResultStaxUnmarshaller());
@@ -6651,6 +6877,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeAggregateIdFormatResult> responseHandler = new StaxResponseHandler<DescribeAggregateIdFormatResult>(
                     new DescribeAggregateIdFormatResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6709,6 +6937,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeAvailabilityZonesResult> responseHandler = new StaxResponseHandler<DescribeAvailabilityZonesResult>(
                     new DescribeAvailabilityZonesResultStaxUnmarshaller());
@@ -6774,6 +7004,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeBundleTasksResult> responseHandler = new StaxResponseHandler<DescribeBundleTasksResult>(
                     new DescribeBundleTasksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6832,6 +7064,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeClassicLinkInstancesResult> responseHandler = new StaxResponseHandler<DescribeClassicLinkInstancesResult>(
                     new DescribeClassicLinkInstancesResultStaxUnmarshaller());
@@ -6895,6 +7129,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeConversionTasksResult> responseHandler = new StaxResponseHandler<DescribeConversionTasksResult>(
                     new DescribeConversionTasksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -6956,6 +7192,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeCustomerGatewaysResult> responseHandler = new StaxResponseHandler<DescribeCustomerGatewaysResult>(
                     new DescribeCustomerGatewaysResultStaxUnmarshaller());
@@ -7019,6 +7257,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeDhcpOptionsResult> responseHandler = new StaxResponseHandler<DescribeDhcpOptionsResult>(
                     new DescribeDhcpOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7077,6 +7317,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeEgressOnlyInternetGatewaysResult> responseHandler = new StaxResponseHandler<DescribeEgressOnlyInternetGatewaysResult>(
                     new DescribeEgressOnlyInternetGatewaysResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7129,6 +7371,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeElasticGpusResult> responseHandler = new StaxResponseHandler<DescribeElasticGpusResult>(
                     new DescribeElasticGpusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7180,6 +7424,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeExportTasksResult> responseHandler = new StaxResponseHandler<DescribeExportTasksResult>(
                     new DescribeExportTasksResultStaxUnmarshaller());
@@ -7237,6 +7483,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeFleetHistoryResult> responseHandler = new StaxResponseHandler<DescribeFleetHistoryResult>(
                     new DescribeFleetHistoryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7288,6 +7536,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeFleetInstancesResult>(
                     new DescribeFleetInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7338,6 +7588,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeFleetsResult> responseHandler = new StaxResponseHandler<DescribeFleetsResult>(
                     new DescribeFleetsResultStaxUnmarshaller());
@@ -7391,6 +7643,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeFlowLogsResult> responseHandler = new StaxResponseHandler<DescribeFlowLogsResult>(
                     new DescribeFlowLogsResultStaxUnmarshaller());
@@ -7448,6 +7702,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeFpgaImageAttributeResult>(
                     new DescribeFpgaImageAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7499,6 +7755,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeFpgaImagesResult> responseHandler = new StaxResponseHandler<DescribeFpgaImagesResult>(
                     new DescribeFpgaImagesResultStaxUnmarshaller());
@@ -7560,6 +7818,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeHostReservationOfferingsResult> responseHandler = new StaxResponseHandler<DescribeHostReservationOfferingsResult>(
                     new DescribeHostReservationOfferingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7610,6 +7870,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeHostReservationsResult> responseHandler = new StaxResponseHandler<DescribeHostReservationsResult>(
                     new DescribeHostReservationsResultStaxUnmarshaller());
@@ -7668,6 +7930,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeHostsResult> responseHandler = new StaxResponseHandler<DescribeHostsResult>(new DescribeHostsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -7724,6 +7988,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult> responseHandler = new StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult>(
                     new DescribeIamInstanceProfileAssociationsResultStaxUnmarshaller());
@@ -7797,6 +8063,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeIdFormatResult> responseHandler = new StaxResponseHandler<DescribeIdFormatResult>(
                     new DescribeIdFormatResultStaxUnmarshaller());
@@ -7875,6 +8143,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeIdentityIdFormatResult> responseHandler = new StaxResponseHandler<DescribeIdentityIdFormatResult>(
                     new DescribeIdentityIdFormatResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -7926,6 +8196,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeImageAttributeResult>(
                     new DescribeImageAttributeResultStaxUnmarshaller());
@@ -7986,6 +8258,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeImagesResult> responseHandler = new StaxResponseHandler<DescribeImagesResult>(
                     new DescribeImagesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8043,6 +8317,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeImportImageTasksResult> responseHandler = new StaxResponseHandler<DescribeImportImageTasksResult>(
                     new DescribeImportImageTasksResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8099,6 +8375,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeImportSnapshotTasksResult> responseHandler = new StaxResponseHandler<DescribeImportSnapshotTasksResult>(
                     new DescribeImportSnapshotTasksResultStaxUnmarshaller());
@@ -8160,6 +8438,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeInstanceAttributeResult> responseHandler = new StaxResponseHandler<DescribeInstanceAttributeResult>(
                     new DescribeInstanceAttributeResultStaxUnmarshaller());
@@ -8232,6 +8512,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeInstanceCreditSpecificationsResult> responseHandler = new StaxResponseHandler<DescribeInstanceCreditSpecificationsResult>(
                     new DescribeInstanceCreditSpecificationsResultStaxUnmarshaller());
@@ -8317,6 +8599,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeInstanceStatusResult> responseHandler = new StaxResponseHandler<DescribeInstanceStatusResult>(
                     new DescribeInstanceStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8389,6 +8673,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeInstancesResult> responseHandler = new StaxResponseHandler<DescribeInstancesResult>(
                     new DescribeInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8445,6 +8731,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeInternetGatewaysResult> responseHandler = new StaxResponseHandler<DescribeInternetGatewaysResult>(
                     new DescribeInternetGatewaysResultStaxUnmarshaller());
@@ -8508,6 +8796,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeKeyPairsResult> responseHandler = new StaxResponseHandler<DescribeKeyPairsResult>(
                     new DescribeKeyPairsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8565,6 +8855,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplateVersionsResult>(
                     new DescribeLaunchTemplateVersionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8615,6 +8907,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeLaunchTemplatesResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplatesResult>(
                     new DescribeLaunchTemplatesResultStaxUnmarshaller());
@@ -8669,6 +8963,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeMovingAddressesResult> responseHandler = new StaxResponseHandler<DescribeMovingAddressesResult>(
                     new DescribeMovingAddressesResultStaxUnmarshaller());
@@ -8727,6 +9023,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeNatGatewaysResult> responseHandler = new StaxResponseHandler<DescribeNatGatewaysResult>(
                     new DescribeNatGatewaysResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8782,6 +9080,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeNetworkAclsResult> responseHandler = new StaxResponseHandler<DescribeNetworkAclsResult>(
                     new DescribeNetworkAclsResultStaxUnmarshaller());
@@ -8841,6 +9141,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfaceAttributeResult>(
                     new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8895,6 +9197,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeNetworkInterfacePermissionsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacePermissionsResult>(
                     new DescribeNetworkInterfacePermissionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -8946,6 +9250,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeNetworkInterfacesResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacesResult>(
                     new DescribeNetworkInterfacesResultStaxUnmarshaller());
@@ -9006,6 +9312,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribePlacementGroupsResult> responseHandler = new StaxResponseHandler<DescribePlacementGroupsResult>(
                     new DescribePlacementGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9065,6 +9373,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribePrefixListsResult> responseHandler = new StaxResponseHandler<DescribePrefixListsResult>(
                     new DescribePrefixListsResultStaxUnmarshaller());
@@ -9140,6 +9450,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribePrincipalIdFormatResult> responseHandler = new StaxResponseHandler<DescribePrincipalIdFormatResult>(
                     new DescribePrincipalIdFormatResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9195,6 +9507,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeRegionsResult> responseHandler = new StaxResponseHandler<DescribeRegionsResult>(
                     new DescribeRegionsResultStaxUnmarshaller());
@@ -9257,6 +9571,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeReservedInstancesResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesResult>(
                     new DescribeReservedInstancesResultStaxUnmarshaller());
@@ -9337,6 +9653,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeReservedInstancesListingsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesListingsResult>(
                     new DescribeReservedInstancesListingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9402,6 +9720,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeReservedInstancesModificationsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesModificationsResult>(
                     new DescribeReservedInstancesModificationsResultStaxUnmarshaller());
@@ -9473,6 +9793,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeReservedInstancesOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesOfferingsResult>(
                     new DescribeReservedInstancesOfferingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9539,6 +9861,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeRouteTablesResult>(
                     new DescribeRouteTablesResultStaxUnmarshaller());
@@ -9608,6 +9932,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeScheduledInstanceAvailabilityResult> responseHandler = new StaxResponseHandler<DescribeScheduledInstanceAvailabilityResult>(
                     new DescribeScheduledInstanceAvailabilityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -9659,6 +9985,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeScheduledInstancesResult> responseHandler = new StaxResponseHandler<DescribeScheduledInstancesResult>(
                     new DescribeScheduledInstancesResultStaxUnmarshaller());
@@ -9712,6 +10040,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSecurityGroupReferencesResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupReferencesResult>(
                     new DescribeSecurityGroupReferencesResultStaxUnmarshaller());
@@ -9771,6 +10101,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupsResult>(
                     new DescribeSecurityGroupsResultStaxUnmarshaller());
@@ -9833,6 +10165,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSnapshotAttributeResult> responseHandler = new StaxResponseHandler<DescribeSnapshotAttributeResult>(
                     new DescribeSnapshotAttributeResultStaxUnmarshaller());
@@ -9942,6 +10276,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeSnapshotsResult>(
                     new DescribeSnapshotsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10002,6 +10338,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DescribeSpotDatafeedSubscriptionResult>(
                     new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10058,6 +10396,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSpotFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetInstancesResult>(
                     new DescribeSpotFleetInstancesResultStaxUnmarshaller());
@@ -10116,6 +10456,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeSpotFleetRequestHistoryResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetRequestHistoryResult>(
                     new DescribeSpotFleetRequestHistoryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10170,6 +10512,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSpotFleetRequestsResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetRequestsResult>(
                     new DescribeSpotFleetRequestsResultStaxUnmarshaller());
@@ -10237,6 +10581,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeSpotInstanceRequestsResult> responseHandler = new StaxResponseHandler<DescribeSpotInstanceRequestsResult>(
                     new DescribeSpotInstanceRequestsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10301,6 +10647,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeSpotPriceHistoryResult> responseHandler = new StaxResponseHandler<DescribeSpotPriceHistoryResult>(
                     new DescribeSpotPriceHistoryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10359,6 +10707,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeStaleSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeStaleSecurityGroupsResult>(
                     new DescribeStaleSecurityGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10414,6 +10764,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSubnetsResult> responseHandler = new StaxResponseHandler<DescribeSubnetsResult>(
                     new DescribeSubnetsResultStaxUnmarshaller());
@@ -10477,6 +10829,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -10537,6 +10891,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVolumeAttributeResult> responseHandler = new StaxResponseHandler<DescribeVolumeAttributeResult>(
                     new DescribeVolumeAttributeResultStaxUnmarshaller());
@@ -10624,6 +10980,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVolumeStatusResult> responseHandler = new StaxResponseHandler<DescribeVolumeStatusResult>(
                     new DescribeVolumeStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10692,6 +11050,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVolumesResult> responseHandler = new StaxResponseHandler<DescribeVolumesResult>(
                     new DescribeVolumesResultStaxUnmarshaller());
@@ -10763,6 +11123,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVolumesModificationsResult> responseHandler = new StaxResponseHandler<DescribeVolumesModificationsResult>(
                     new DescribeVolumesModificationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10815,6 +11177,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcAttributeResult> responseHandler = new StaxResponseHandler<DescribeVpcAttributeResult>(
                     new DescribeVpcAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10866,6 +11230,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVpcClassicLinkResult> responseHandler = new StaxResponseHandler<DescribeVpcClassicLinkResult>(
                     new DescribeVpcClassicLinkResultStaxUnmarshaller());
@@ -10930,6 +11296,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<DescribeVpcClassicLinkDnsSupportResult>(
                     new DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -10983,6 +11351,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult>(
                     new DescribeVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11034,6 +11404,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionsResult>(
                     new DescribeVpcEndpointConnectionsResultStaxUnmarshaller());
@@ -11088,6 +11460,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult>(
                     new DescribeVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11141,6 +11515,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult>(
                     new DescribeVpcEndpointServicePermissionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11192,6 +11568,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVpcEndpointServicesResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicesResult>(
                     new DescribeVpcEndpointServicesResultStaxUnmarshaller());
@@ -11250,6 +11628,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcEndpointsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointsResult>(
                     new DescribeVpcEndpointsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11307,6 +11687,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpcPeeringConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcPeeringConnectionsResult>(
                     new DescribeVpcPeeringConnectionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11363,6 +11745,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVpcsResult> responseHandler = new StaxResponseHandler<DescribeVpcsResult>(new DescribeVpcsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11424,6 +11808,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeVpnConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpnConnectionsResult>(
                     new DescribeVpnConnectionsResultStaxUnmarshaller());
@@ -11487,6 +11873,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeVpnGatewaysResult> responseHandler = new StaxResponseHandler<DescribeVpnGatewaysResult>(
                     new DescribeVpnGatewaysResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11546,6 +11934,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DetachClassicLinkVpcResult> responseHandler = new StaxResponseHandler<DetachClassicLinkVpcResult>(
                     new DetachClassicLinkVpcResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11599,6 +11989,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DetachInternetGatewayResult> responseHandler = new StaxResponseHandler<DetachInternetGatewayResult>(
                     new DetachInternetGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11650,6 +12042,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DetachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DetachNetworkInterfaceResult>(
                     new DetachNetworkInterfaceResultStaxUnmarshaller());
@@ -11717,6 +12111,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DetachVolumeResult> responseHandler = new StaxResponseHandler<DetachVolumeResult>(new DetachVolumeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -11774,6 +12170,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DetachVpnGatewayResult> responseHandler = new StaxResponseHandler<DetachVpnGatewayResult>(
                     new DetachVpnGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -11825,6 +12223,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DisableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<DisableVgwRoutePropagationResult>(
                     new DisableVgwRoutePropagationResultStaxUnmarshaller());
@@ -11878,6 +12278,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DisableVpcClassicLinkResult> responseHandler = new StaxResponseHandler<DisableVpcClassicLinkResult>(
                     new DisableVpcClassicLinkResultStaxUnmarshaller());
@@ -11935,6 +12337,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DisableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<DisableVpcClassicLinkDnsSupportResult>(
                     new DisableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
@@ -11996,6 +12400,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DisassociateAddressResult> responseHandler = new StaxResponseHandler<DisassociateAddressResult>(
                     new DisassociateAddressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12049,6 +12455,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DisassociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<DisassociateIamInstanceProfileResult>(
                     new DisassociateIamInstanceProfileResultStaxUnmarshaller());
@@ -12108,6 +12516,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DisassociateRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateRouteTableResult>(
                     new DisassociateRouteTableResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12160,6 +12570,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DisassociateSubnetCidrBlockResult> responseHandler = new StaxResponseHandler<DisassociateSubnetCidrBlockResult>(
                     new DisassociateSubnetCidrBlockResultStaxUnmarshaller());
@@ -12217,6 +12629,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DisassociateVpcCidrBlockResult> responseHandler = new StaxResponseHandler<DisassociateVpcCidrBlockResult>(
                     new DisassociateVpcCidrBlockResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12268,6 +12682,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<EnableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<EnableVgwRoutePropagationResult>(
                     new EnableVgwRoutePropagationResultStaxUnmarshaller());
@@ -12321,6 +12737,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<EnableVolumeIOResult> responseHandler = new StaxResponseHandler<EnableVolumeIOResult>(
                     new EnableVolumeIOResultStaxUnmarshaller());
@@ -12380,6 +12798,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<EnableVpcClassicLinkResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkResult>(
                     new EnableVpcClassicLinkResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12436,6 +12856,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult>(
                     new EnableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
@@ -12505,6 +12927,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetConsoleOutputResult> responseHandler = new StaxResponseHandler<GetConsoleOutputResult>(
                     new GetConsoleOutputResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12559,6 +12983,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetConsoleScreenshotResult> responseHandler = new StaxResponseHandler<GetConsoleScreenshotResult>(
                     new GetConsoleScreenshotResultStaxUnmarshaller());
@@ -12617,6 +13043,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetHostReservationPurchasePreviewResult> responseHandler = new StaxResponseHandler<GetHostReservationPurchasePreviewResult>(
                     new GetHostReservationPurchasePreviewResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12667,6 +13095,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetLaunchTemplateDataResult> responseHandler = new StaxResponseHandler<GetLaunchTemplateDataResult>(
                     new GetLaunchTemplateDataResultStaxUnmarshaller());
@@ -12741,6 +13171,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetPasswordDataResult> responseHandler = new StaxResponseHandler<GetPasswordDataResult>(
                     new GetPasswordDataResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12796,6 +13228,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<GetReservedInstancesExchangeQuoteResult>(
                     new GetReservedInstancesExchangeQuoteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12850,6 +13284,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ImportImageResult> responseHandler = new StaxResponseHandler<ImportImageResult>(new ImportImageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12914,6 +13350,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ImportInstanceResult> responseHandler = new StaxResponseHandler<ImportInstanceResult>(
                     new ImportInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -12974,6 +13412,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ImportKeyPairResult> responseHandler = new StaxResponseHandler<ImportKeyPairResult>(new ImportKeyPairResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -13024,6 +13464,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ImportSnapshotResult> responseHandler = new StaxResponseHandler<ImportSnapshotResult>(
                     new ImportSnapshotResultStaxUnmarshaller());
@@ -13088,6 +13530,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ImportVolumeResult> responseHandler = new StaxResponseHandler<ImportVolumeResult>(new ImportVolumeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -13141,6 +13585,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyFleetResult> responseHandler = new StaxResponseHandler<ModifyFleetResult>(new ModifyFleetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -13190,6 +13636,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyFpgaImageAttributeResult>(
                     new ModifyFpgaImageAttributeResultStaxUnmarshaller());
@@ -13246,6 +13694,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyHostsResult> responseHandler = new StaxResponseHandler<ModifyHostsResult>(new ModifyHostsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -13322,6 +13772,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdFormatResult>(
                     new ModifyIdFormatResultStaxUnmarshaller());
@@ -13401,6 +13853,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyIdentityIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdentityIdFormatResult>(
                     new ModifyIdentityIdFormatResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -13462,6 +13916,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyImageAttributeResult>(
                     new ModifyImageAttributeResultStaxUnmarshaller());
@@ -13526,6 +13982,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyInstanceAttributeResult> responseHandler = new StaxResponseHandler<ModifyInstanceAttributeResult>(
                     new ModifyInstanceAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -13582,6 +14040,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyInstanceCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyInstanceCreditSpecificationResult>(
                     new ModifyInstanceCreditSpecificationResultStaxUnmarshaller());
@@ -13671,6 +14131,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyInstancePlacementResult> responseHandler = new StaxResponseHandler<ModifyInstancePlacementResult>(
                     new ModifyInstancePlacementResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -13722,6 +14184,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyLaunchTemplateResult> responseHandler = new StaxResponseHandler<ModifyLaunchTemplateResult>(
                     new ModifyLaunchTemplateResultStaxUnmarshaller());
@@ -13775,6 +14239,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ModifyNetworkInterfaceAttributeResult>(
                     new ModifyNetworkInterfaceAttributeResultStaxUnmarshaller());
@@ -13834,6 +14300,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyReservedInstancesResult> responseHandler = new StaxResponseHandler<ModifyReservedInstancesResult>(
                     new ModifyReservedInstancesResultStaxUnmarshaller());
@@ -13897,6 +14365,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifySnapshotAttributeResult> responseHandler = new StaxResponseHandler<ModifySnapshotAttributeResult>(
                     new ModifySnapshotAttributeResultStaxUnmarshaller());
@@ -13972,6 +14442,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifySpotFleetRequestResult> responseHandler = new StaxResponseHandler<ModifySpotFleetRequestResult>(
                     new ModifySpotFleetRequestResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14023,6 +14495,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifySubnetAttributeResult> responseHandler = new StaxResponseHandler<ModifySubnetAttributeResult>(
                     new ModifySubnetAttributeResultStaxUnmarshaller());
@@ -14110,6 +14584,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyVolumeResult> responseHandler = new StaxResponseHandler<ModifyVolumeResult>(new ModifyVolumeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -14170,6 +14646,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyVolumeAttributeResult> responseHandler = new StaxResponseHandler<ModifyVolumeAttributeResult>(
                     new ModifyVolumeAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14221,6 +14699,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyVpcAttributeResult> responseHandler = new StaxResponseHandler<ModifyVpcAttributeResult>(
                     new ModifyVpcAttributeResultStaxUnmarshaller());
@@ -14277,6 +14757,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyVpcEndpointResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointResult>(
                     new ModifyVpcEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14330,6 +14812,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult>(
                     new ModifyVpcEndpointConnectionNotificationResultStaxUnmarshaller());
@@ -14385,6 +14869,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult>(
                     new ModifyVpcEndpointServiceConfigurationResultStaxUnmarshaller());
@@ -14446,6 +14932,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult>(
                     new ModifyVpcEndpointServicePermissionsResultStaxUnmarshaller());
@@ -14526,6 +15014,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyVpcPeeringConnectionOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpcPeeringConnectionOptionsResult>(
                     new ModifyVpcPeeringConnectionOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14589,6 +15079,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyVpcTenancyResult> responseHandler = new StaxResponseHandler<ModifyVpcTenancyResult>(
                     new ModifyVpcTenancyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14646,6 +15138,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<MonitorInstancesResult> responseHandler = new StaxResponseHandler<MonitorInstancesResult>(
                     new MonitorInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14702,6 +15196,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<MoveAddressToVpcResult> responseHandler = new StaxResponseHandler<MoveAddressToVpcResult>(
                     new MoveAddressToVpcResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14754,6 +15250,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<PurchaseHostReservationResult> responseHandler = new StaxResponseHandler<PurchaseHostReservationResult>(
                     new PurchaseHostReservationResultStaxUnmarshaller());
@@ -14820,6 +15318,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<PurchaseReservedInstancesOfferingResult> responseHandler = new StaxResponseHandler<PurchaseReservedInstancesOfferingResult>(
                     new PurchaseReservedInstancesOfferingResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -14880,6 +15380,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<PurchaseScheduledInstancesResult> responseHandler = new StaxResponseHandler<PurchaseScheduledInstancesResult>(
                     new PurchaseScheduledInstancesResultStaxUnmarshaller());
@@ -14942,6 +15444,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RebootInstancesResult> responseHandler = new StaxResponseHandler<RebootInstancesResult>(
                     new RebootInstancesResultStaxUnmarshaller());
@@ -15029,6 +15533,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RegisterImageResult> responseHandler = new StaxResponseHandler<RegisterImageResult>(new RegisterImageResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -15078,6 +15584,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RejectVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<RejectVpcEndpointConnectionsResult>(
                     new RejectVpcEndpointConnectionsResultStaxUnmarshaller());
@@ -15133,6 +15641,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RejectVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<RejectVpcPeeringConnectionResult>(
                     new RejectVpcPeeringConnectionResultStaxUnmarshaller());
@@ -15204,6 +15714,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReleaseAddressResult> responseHandler = new StaxResponseHandler<ReleaseAddressResult>(
                     new ReleaseAddressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -15266,6 +15778,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReleaseHostsResult> responseHandler = new StaxResponseHandler<ReleaseHostsResult>(new ReleaseHostsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -15322,6 +15836,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult> responseHandler = new StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult>(
                     new ReplaceIamInstanceProfileAssociationResultStaxUnmarshaller());
@@ -15381,6 +15897,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReplaceNetworkAclAssociationResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclAssociationResult>(
                     new ReplaceNetworkAclAssociationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -15434,6 +15952,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ReplaceNetworkAclEntryResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclEntryResult>(
                     new ReplaceNetworkAclEntryResultStaxUnmarshaller());
@@ -15494,6 +16014,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReplaceRouteResult> responseHandler = new StaxResponseHandler<ReplaceRouteResult>(new ReplaceRouteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -15552,6 +16074,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReplaceRouteTableAssociationResult> responseHandler = new StaxResponseHandler<ReplaceRouteTableAssociationResult>(
                     new ReplaceRouteTableAssociationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -15609,6 +16133,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ReportInstanceStatusResult> responseHandler = new StaxResponseHandler<ReportInstanceStatusResult>(
                     new ReportInstanceStatusResultStaxUnmarshaller());
@@ -15690,6 +16216,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RequestSpotFleetResult> responseHandler = new StaxResponseHandler<RequestSpotFleetResult>(
                     new RequestSpotFleetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -15746,6 +16274,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RequestSpotInstancesResult> responseHandler = new StaxResponseHandler<RequestSpotInstancesResult>(
                     new RequestSpotInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -15797,6 +16327,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResetFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ResetFpgaImageAttributeResult>(
                     new ResetFpgaImageAttributeResultStaxUnmarshaller());
@@ -15854,6 +16386,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResetImageAttributeResult> responseHandler = new StaxResponseHandler<ResetImageAttributeResult>(
                     new ResetImageAttributeResultStaxUnmarshaller());
@@ -15916,6 +16450,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ResetInstanceAttributeResult> responseHandler = new StaxResponseHandler<ResetInstanceAttributeResult>(
                     new ResetInstanceAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -15967,6 +16503,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ResetNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ResetNetworkInterfaceAttributeResult>(
                     new ResetNetworkInterfaceAttributeResultStaxUnmarshaller());
@@ -16025,6 +16563,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ResetSnapshotAttributeResult> responseHandler = new StaxResponseHandler<ResetSnapshotAttributeResult>(
                     new ResetSnapshotAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -16078,6 +16618,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RestoreAddressToClassicResult> responseHandler = new StaxResponseHandler<RestoreAddressToClassicResult>(
                     new RestoreAddressToClassicResultStaxUnmarshaller());
@@ -16142,6 +16684,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RevokeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupEgressResult>(
                     new RevokeSecurityGroupEgressResultStaxUnmarshaller());
@@ -16211,6 +16755,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RevokeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupIngressResult>(
                     new RevokeSecurityGroupIngressResultStaxUnmarshaller());
@@ -16345,6 +16891,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RunInstancesResult> responseHandler = new StaxResponseHandler<RunInstancesResult>(new RunInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -16406,6 +16954,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RunScheduledInstancesResult> responseHandler = new StaxResponseHandler<RunScheduledInstancesResult>(
                     new RunScheduledInstancesResultStaxUnmarshaller());
@@ -16479,6 +17029,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<StartInstancesResult> responseHandler = new StaxResponseHandler<StartInstancesResult>(
                     new StartInstancesResultStaxUnmarshaller());
@@ -16563,6 +17115,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<StopInstancesResult> responseHandler = new StaxResponseHandler<StopInstancesResult>(new StopInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -16640,6 +17194,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<TerminateInstancesResult> responseHandler = new StaxResponseHandler<TerminateInstancesResult>(
                     new TerminateInstancesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -16690,6 +17246,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UnassignIpv6AddressesResult> responseHandler = new StaxResponseHandler<UnassignIpv6AddressesResult>(
                     new UnassignIpv6AddressesResultStaxUnmarshaller());
@@ -16742,6 +17300,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UnassignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<UnassignPrivateIpAddressesResult>(
                     new UnassignPrivateIpAddressesResultStaxUnmarshaller());
@@ -16796,6 +17356,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UnmonitorInstancesResult> responseHandler = new StaxResponseHandler<UnmonitorInstancesResult>(
                     new UnmonitorInstancesResultStaxUnmarshaller());
@@ -16856,6 +17418,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsEgressResult> responseHandler = new StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsEgressResult>(
                     new UpdateSecurityGroupRuleDescriptionsEgressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -16914,6 +17478,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsIngressResult> responseHandler = new StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsIngressResult>(
                     new UpdateSecurityGroupRuleDescriptionsIngressResultStaxUnmarshaller());
@@ -16986,9 +17552,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -16998,7 +17573,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -17006,8 +17581,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

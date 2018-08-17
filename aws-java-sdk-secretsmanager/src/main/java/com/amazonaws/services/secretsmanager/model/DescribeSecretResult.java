@@ -75,7 +75,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private RotationRulesType rotationRules;
     /**
      * <p>
-     * The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret has never rotated.
      * </p>
      */
     private java.util.Date lastRotatedDate;
@@ -112,9 +113,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
-     * versions during the rotation process.
+     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code>
+     * that each is attached to. Staging labels are used to keep track of the different versions during the rotation
+     * process.
      * </p>
      * <note>
      * <p>
@@ -471,11 +472,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret has never rotated.
      * </p>
      * 
      * @param lastRotatedDate
-     *        The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     *        The most recent date and time that the Secrets Manager rotation process was successfully completed. This
+     *        value is null if the secret has never rotated.
      */
 
     public void setLastRotatedDate(java.util.Date lastRotatedDate) {
@@ -484,10 +487,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret has never rotated.
      * </p>
      * 
-     * @return The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     * @return The most recent date and time that the Secrets Manager rotation process was successfully completed. This
+     *         value is null if the secret has never rotated.
      */
 
     public java.util.Date getLastRotatedDate() {
@@ -496,11 +501,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     * The most recent date and time that the Secrets Manager rotation process was successfully completed. This value is
+     * null if the secret has never rotated.
      * </p>
      * 
      * @param lastRotatedDate
-     *        The last date and time that the Secrets Manager rotation process for this secret was invoked.
+     *        The most recent date and time that the Secrets Manager rotation process was successfully completed. This
+     *        value is null if the secret has never rotated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -742,9 +749,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
-     * versions during the rotation process.
+     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code>
+     * that each is attached to. Staging labels are used to keep track of the different versions during the rotation
+     * process.
      * </p>
      * <note>
      * <p>
@@ -754,8 +761,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * </note>
      * 
      * @return A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     *         <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the
-     *         different versions during the rotation process.</p> <note>
+     *         <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     *         versions during the rotation process.</p> <note>
      *         <p>
      *         A version that does not have any staging labels attached is considered deprecated and subject to
      *         deletion. Such versions are not included in this list.
@@ -768,9 +775,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
-     * versions during the rotation process.
+     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code>
+     * that each is attached to. Staging labels are used to keep track of the different versions during the rotation
+     * process.
      * </p>
      * <note>
      * <p>
@@ -781,8 +788,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param versionIdsToStages
      *        A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     *        <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the
-     *        different versions during the rotation process.</p> <note>
+     *        <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     *        versions during the rotation process.</p> <note>
      *        <p>
      *        A version that does not have any staging labels attached is considered deprecated and subject to deletion.
      *        Such versions are not included in this list.
@@ -795,9 +802,9 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     * <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the different
-     * versions during the rotation process.
+     * A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code>
+     * that each is attached to. Staging labels are used to keep track of the different versions during the rotation
+     * process.
      * </p>
      * <note>
      * <p>
@@ -808,8 +815,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param versionIdsToStages
      *        A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-     *        <code>SecretVersionId</code> that each is attached to. Staging labels are used to keep track of the
-     *        different versions during the rotation process.</p> <note>
+     *        <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different
+     *        versions during the rotation process.</p> <note>
      *        <p>
      *        A version that does not have any staging labels attached is considered deprecated and subject to deletion.
      *        Such versions are not included in this list.

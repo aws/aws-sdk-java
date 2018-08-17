@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.greengrass.AWSGreengrassClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -56,6 +57,7 @@ import com.amazonaws.services.greengrass.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGreengrass {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -96,6 +98,22 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
      *        Object providing client parameters.
      */
     AWSGreengrassClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Greengrass using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSGreengrassClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
         init();
@@ -154,6 +172,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AssociateRoleToGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateRoleToGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -210,6 +230,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AssociateServiceRoleToAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateServiceRoleToAccountResultJsonUnmarshaller());
@@ -265,6 +287,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateCoreDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCoreDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -318,6 +342,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateCoreDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateCoreDefinitionVersionResultJsonUnmarshaller());
@@ -369,6 +395,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDeploymentResultJsonUnmarshaller());
@@ -422,6 +450,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateDeviceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateDeviceDefinitionResultJsonUnmarshaller());
@@ -474,6 +504,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDeviceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -530,6 +562,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateFunctionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateFunctionDefinitionResultJsonUnmarshaller());
@@ -585,6 +619,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateFunctionDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateFunctionDefinitionVersionResultJsonUnmarshaller());
@@ -636,6 +672,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGroupResultJsonUnmarshaller());
@@ -692,6 +730,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateGroupCertificateAuthorityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateGroupCertificateAuthorityResultJsonUnmarshaller());
@@ -743,6 +783,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateGroupVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGroupVersionResultJsonUnmarshaller());
@@ -796,6 +838,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateLoggerDefinitionResultJsonUnmarshaller());
@@ -848,6 +892,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateLoggerDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -903,6 +949,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateResourceDefinitionResultJsonUnmarshaller());
@@ -956,6 +1004,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1014,6 +1064,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateSoftwareUpdateJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateSoftwareUpdateJobResultJsonUnmarshaller());
@@ -1067,6 +1119,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateSubscriptionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1122,6 +1176,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateSubscriptionDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateSubscriptionDefinitionVersionResultJsonUnmarshaller());
@@ -1174,6 +1230,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCoreDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCoreDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1224,6 +1282,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDeviceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1278,6 +1338,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteFunctionDefinitionResultJsonUnmarshaller());
@@ -1330,6 +1392,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1380,6 +1444,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1434,6 +1500,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteResourceDefinitionResultJsonUnmarshaller());
@@ -1486,6 +1554,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSubscriptionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1542,6 +1612,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateRoleFromGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateRoleFromGroupResultJsonUnmarshaller());
@@ -1595,6 +1667,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateServiceRoleFromAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1650,6 +1724,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetAssociatedRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAssociatedRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1703,6 +1779,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetConnectivityInfoResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectivityInfoResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1753,6 +1831,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCoreDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCoreDefinitionResultJsonUnmarshaller());
@@ -1806,6 +1886,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetCoreDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetCoreDefinitionVersionResultJsonUnmarshaller());
@@ -1858,6 +1940,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetDeploymentStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeploymentStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1908,6 +1992,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDeviceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDeviceDefinitionResultJsonUnmarshaller());
@@ -1961,6 +2047,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetDeviceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDeviceDefinitionVersionResultJsonUnmarshaller());
@@ -2012,6 +2100,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFunctionDefinitionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2067,6 +2157,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetFunctionDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetFunctionDefinitionVersionResultJsonUnmarshaller());
@@ -2118,6 +2210,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetGroupResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupResultJsonUnmarshaller());
@@ -2172,6 +2266,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetGroupCertificateAuthorityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2229,6 +2325,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetGroupCertificateConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetGroupCertificateConfigurationResultJsonUnmarshaller());
@@ -2281,6 +2379,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetGroupVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2331,6 +2431,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLoggerDefinitionResultJsonUnmarshaller());
@@ -2384,6 +2486,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetLoggerDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLoggerDefinitionVersionResultJsonUnmarshaller());
@@ -2435,6 +2539,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetResourceDefinitionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2489,6 +2595,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetResourceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetResourceDefinitionVersionResultJsonUnmarshaller());
@@ -2542,6 +2650,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetServiceRoleForAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetServiceRoleForAccountResultJsonUnmarshaller());
@@ -2594,6 +2704,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSubscriptionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2649,6 +2761,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetSubscriptionDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetSubscriptionDefinitionVersionResultJsonUnmarshaller());
@@ -2702,6 +2816,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListCoreDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListCoreDefinitionVersionsResultJsonUnmarshaller());
@@ -2751,6 +2867,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListCoreDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCoreDefinitionsResultJsonUnmarshaller());
@@ -2802,6 +2920,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDeploymentsResultJsonUnmarshaller());
@@ -2855,6 +2975,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListDeviceDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListDeviceDefinitionVersionsResultJsonUnmarshaller());
@@ -2904,6 +3026,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDeviceDefinitionsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2958,6 +3082,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListFunctionDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListFunctionDefinitionVersionsResultJsonUnmarshaller());
@@ -3008,6 +3134,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFunctionDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3065,6 +3193,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListGroupCertificateAuthoritiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListGroupCertificateAuthoritiesResultJsonUnmarshaller());
@@ -3117,6 +3247,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListGroupVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3165,6 +3297,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListGroupsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupsResultJsonUnmarshaller());
@@ -3218,6 +3352,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListLoggerDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListLoggerDefinitionVersionsResultJsonUnmarshaller());
@@ -3267,6 +3403,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListLoggerDefinitionsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3321,6 +3459,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListResourceDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListResourceDefinitionVersionsResultJsonUnmarshaller());
@@ -3371,6 +3511,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListResourceDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3426,6 +3568,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListSubscriptionDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListSubscriptionDefinitionVersionsResultJsonUnmarshaller());
@@ -3476,6 +3620,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSubscriptionDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3529,6 +3675,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ResetDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetDeploymentsResultJsonUnmarshaller());
@@ -3585,6 +3733,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConnectivityInfoResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateConnectivityInfoResultJsonUnmarshaller());
@@ -3637,6 +3787,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCoreDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCoreDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3687,6 +3839,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDeviceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3741,6 +3895,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateFunctionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateFunctionDefinitionResultJsonUnmarshaller());
@@ -3792,6 +3948,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGroupResultJsonUnmarshaller());
@@ -3848,6 +4006,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGroupCertificateConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateGroupCertificateConfigurationResultJsonUnmarshaller());
@@ -3899,6 +4059,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3953,6 +4115,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateResourceDefinitionResultJsonUnmarshaller());
@@ -4006,6 +4170,8 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriptionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateSubscriptionDefinitionResultJsonUnmarshaller());
@@ -4043,9 +4209,18 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -4055,7 +4230,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -4063,8 +4238,15 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

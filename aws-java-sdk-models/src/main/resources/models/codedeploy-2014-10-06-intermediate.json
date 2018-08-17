@@ -144,6 +144,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds tags to on-premises instances.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InstanceNameRequiredException",
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
@@ -200,6 +202,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more application revisions.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationDoesNotExistException",
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>",
@@ -252,6 +256,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more applications.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -296,6 +302,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more deployment groups.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -348,6 +356,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more instance that are part of a deployment group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -400,6 +410,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more deployments.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -440,6 +452,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more on-premises instances.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InstanceNameRequiredException",
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
@@ -480,6 +494,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -532,6 +548,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates an application.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -580,6 +598,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deploys an application revision through the specified deployment group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -700,6 +720,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a deployment configuration.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidDeploymentConfigNameException",
         "documentation" : "<p>The deployment configuration name was specified in an invalid format.</p>",
@@ -756,6 +778,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a deployment group to which application revisions will be deployed.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -892,6 +916,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes an application.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -928,6 +954,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidDeploymentConfigNameException",
         "documentation" : "<p>The deployment configuration name was specified in an invalid format.</p>",
@@ -972,6 +1000,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a deployment group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -1020,6 +1050,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a GitHub account connection.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "GitHubAccountTokenNameRequiredException",
         "documentation" : "<p>The call is missing a required GitHub account connection name.</p>",
@@ -1068,6 +1100,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deregisters an on-premises instance.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InstanceNameRequiredException",
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
@@ -1104,6 +1138,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about an application.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -1144,6 +1180,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about an application revision.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationDoesNotExistException",
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>",
@@ -1196,6 +1234,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about a deployment.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -1236,6 +1276,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about a deployment configuration.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidDeploymentConfigNameException",
         "documentation" : "<p>The deployment configuration name was specified in an invalid format.</p>",
@@ -1276,6 +1318,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about a deployment group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -1328,6 +1372,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about an instance as part of a deployment.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -1380,6 +1426,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about an on-premises instance.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InstanceNameRequiredException",
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
@@ -1420,6 +1468,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists information about revisions for an application.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationDoesNotExistException",
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>",
@@ -1488,6 +1538,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the applications registered with the applicable IAM user or AWS account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The next token was specified in an invalid format.</p>",
@@ -1520,6 +1572,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the deployment configurations with the applicable IAM user or AWS account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The next token was specified in an invalid format.</p>",
@@ -1552,6 +1606,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the deployment groups for an application registered with the applicable IAM user or AWS account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -1596,6 +1652,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the instance for a deployment associated with the applicable IAM user or AWS account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -1656,6 +1714,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the deployments in a deployment group for an application registered with the applicable IAM user or AWS account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -1720,6 +1780,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the names of stored connections to GitHub accounts.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The next token was specified in an invalid format.</p>",
@@ -1760,6 +1822,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets a list of names for one or more on-premises instances.</p> <p>Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRegistrationStatusException",
         "documentation" : "<p>The registration status was specified in an invalid format.</p>",
@@ -1800,6 +1864,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sets the result of a Lambda validation function. The function validates one or both lifecycle events (<code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or <code>Failed</code>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidLifecycleEventHookExecutionStatusException",
         "documentation" : "<p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>",
@@ -1856,6 +1922,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Registers with AWS CodeDeploy a revision for the specified application.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationDoesNotExistException",
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>",
@@ -1908,6 +1976,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InstanceNameAlreadyRegisteredException",
         "documentation" : "<p>The specified on-premises instance name is already registered.</p>",
@@ -1976,6 +2046,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes one or more tags from one or more on-premises instances.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InstanceNameRequiredException",
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
@@ -2032,6 +2104,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is completed.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -2084,6 +2158,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Attempts to stop an ongoing deployment.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeploymentIdRequiredException",
         "documentation" : "<p>At least one deployment ID must be specified.</p>",
@@ -2128,6 +2204,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Changes the name of an application.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",
@@ -2172,6 +2250,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Changes information about a deployment group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ApplicationNameRequiredException",
         "documentation" : "<p>The minimum number of required application names was not specified.</p>",

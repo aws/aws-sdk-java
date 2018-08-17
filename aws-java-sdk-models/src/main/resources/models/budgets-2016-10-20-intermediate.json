@@ -106,6 +106,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a budget and, if included, notifications and subscribers. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>",
@@ -150,6 +152,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a notification. You must create the budget before you create the associated notification.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -198,6 +202,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a subscriber. You must create the associated budget and notification before you create the subscriber.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -246,6 +252,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a budget. You can delete your budget at any time.</p> <p> <b>Deleting a budget also deletes the notifications and subscribers associated with that budget.</b> </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -286,6 +294,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a notification.</p> <p> <b>Deleting a notification also deletes the subscribers associated with the notification.</b> </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>",
@@ -326,6 +336,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a subscriber.</p> <p> <b>Deleting the last subscriber to a notification also deletes the notification.</b> </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -366,6 +378,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes a budget.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -406,6 +420,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the budgets associated with an account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -454,6 +470,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the notifications associated with a budget.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -502,6 +520,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the subscribers associated with a notification.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -550,6 +570,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When a budget is modified, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -590,6 +612,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a notification.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
@@ -634,6 +658,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates a subscriber.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",

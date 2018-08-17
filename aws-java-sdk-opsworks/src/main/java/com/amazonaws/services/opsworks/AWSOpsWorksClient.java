@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.opsworks.AWSOpsWorksClientBuilder;
 import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 
@@ -209,6 +210,7 @@ import com.amazonaws.services.opsworks.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsWorks {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -406,6 +408,22 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on AWS OpsWorks using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSOpsWorksClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
@@ -484,6 +502,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AssignInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssignInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -548,6 +568,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AssignVolumeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssignVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -610,6 +632,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateElasticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateElasticIpResultJsonUnmarshaller());
@@ -683,6 +707,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AttachElasticLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AttachElasticLoadBalancerResultJsonUnmarshaller());
@@ -747,6 +773,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CloneStackResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CloneStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -808,6 +836,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateAppResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAppResultJsonUnmarshaller());
@@ -872,6 +902,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -934,6 +966,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateInstanceResultJsonUnmarshaller());
@@ -1006,6 +1040,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateLayerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLayerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1066,6 +1102,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateStackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1124,6 +1162,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserProfileResultJsonUnmarshaller());
@@ -1185,6 +1225,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppResultJsonUnmarshaller());
@@ -1252,6 +1294,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1316,6 +1360,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLayerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLayerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1379,6 +1425,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteStackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1439,6 +1487,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserProfileResultJsonUnmarshaller());
@@ -1503,6 +1553,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterEcsClusterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterEcsClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1566,6 +1618,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterElasticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterElasticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1628,6 +1682,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1689,6 +1745,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterRdsDbInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1753,6 +1811,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterVolumeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1809,6 +1869,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAgentVersionsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -1878,6 +1940,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAppsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAppsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1944,6 +2008,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeCommandsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCommandsResultJsonUnmarshaller());
@@ -2012,6 +2078,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDeploymentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDeploymentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2078,6 +2146,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEcsClustersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEcsClustersResultJsonUnmarshaller());
@@ -2147,6 +2217,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticIpsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeElasticIpsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2214,6 +2286,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticLoadBalancersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2283,6 +2357,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2349,6 +2425,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeLayersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeLayersResultJsonUnmarshaller());
@@ -2418,6 +2496,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeLoadBasedAutoScalingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeLoadBasedAutoScalingResultJsonUnmarshaller());
@@ -2476,6 +2556,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMyUserProfileResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeMyUserProfileResultJsonUnmarshaller());
@@ -2528,6 +2610,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeOperatingSystemsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2590,6 +2674,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePermissionsResultJsonUnmarshaller());
@@ -2658,6 +2744,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRaidArraysResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRaidArraysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2722,6 +2810,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRdsDbInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -2789,6 +2879,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeServiceErrorsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeServiceErrorsResultJsonUnmarshaller());
@@ -2854,6 +2946,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStackProvisioningParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeStackProvisioningParametersResultJsonUnmarshaller());
@@ -2918,6 +3012,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStackSummaryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeStackSummaryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2979,6 +3075,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStacksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeStacksResultJsonUnmarshaller());
@@ -3048,6 +3146,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTimeBasedAutoScalingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeTimeBasedAutoScalingResultJsonUnmarshaller());
@@ -3109,6 +3209,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUserProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeUserProfilesResultJsonUnmarshaller());
@@ -3177,6 +3279,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeVolumesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeVolumesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3236,6 +3340,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DetachElasticLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3301,6 +3407,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateElasticIpResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DisassociateElasticIpResultJsonUnmarshaller());
@@ -3363,6 +3471,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetHostnameSuggestionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetHostnameSuggestionResultJsonUnmarshaller());
@@ -3424,6 +3534,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GrantAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GrantAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3478,6 +3590,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsResultJsonUnmarshaller());
@@ -3541,6 +3655,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RebootInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RebootInstanceResultJsonUnmarshaller());
@@ -3606,6 +3722,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<RegisterEcsClusterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterEcsClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3669,6 +3787,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterElasticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterElasticIpResultJsonUnmarshaller());
@@ -3749,6 +3869,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<RegisterInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3809,6 +3931,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterRdsDbInstanceResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3874,6 +3998,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterVolumeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterVolumeResultJsonUnmarshaller());
@@ -3946,6 +4072,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<SetLoadBasedAutoScalingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SetLoadBasedAutoScalingResultJsonUnmarshaller());
@@ -4008,6 +4136,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<SetPermissionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetPermissionResultJsonUnmarshaller());
@@ -4073,6 +4203,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<SetTimeBasedAutoScalingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SetTimeBasedAutoScalingResultJsonUnmarshaller());
@@ -4137,6 +4269,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<StartInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4197,6 +4331,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<StartStackResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartStackResultJsonUnmarshaller());
@@ -4262,6 +4398,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<StopInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4323,6 +4461,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<StopStackResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4379,6 +4519,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
@@ -4443,6 +4585,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UnassignInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnassignInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4505,6 +4649,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UnassignVolumeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnassignVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4559,6 +4705,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
@@ -4620,6 +4768,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAppResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppResultJsonUnmarshaller());
@@ -4683,6 +4833,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateElasticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateElasticIpResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4743,6 +4895,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInstanceResultJsonUnmarshaller());
@@ -4805,6 +4959,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLayerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateLayerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4863,6 +5019,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMyUserProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMyUserProfileResultJsonUnmarshaller());
@@ -4925,6 +5083,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRdsDbInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRdsDbInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4986,6 +5146,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateStackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateStackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5046,6 +5208,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUserProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserProfileResultJsonUnmarshaller());
@@ -5109,6 +5273,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateVolumeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5145,9 +5311,18 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -5157,7 +5332,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -5165,8 +5340,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

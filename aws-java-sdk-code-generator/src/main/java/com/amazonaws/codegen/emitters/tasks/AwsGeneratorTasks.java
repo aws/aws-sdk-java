@@ -36,6 +36,7 @@ public class AwsGeneratorTasks implements Iterable<GeneratorTask> {
     private Iterable<GeneratorTask> createAwsTasks(GeneratorTaskParams params) {
         return new CompositeIterable<>(new AsyncClientGeneratorTasks(params),
                                        new WaitersGeneratorTasks(params),
+                                       new EndpointDiscoveryGeneratorTasks(params),
                                        new SmokeTestsGeneratorTasks(params),
                                        new PolicyActionEnumGeneratorTasks(params));
     }

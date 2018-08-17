@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
 
@@ -66,6 +67,7 @@ import com.amazonaws.services.simpleemail.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient implements AmazonSimpleEmailService {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -256,6 +258,22 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon SES using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonSimpleEmailServiceClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new InvalidFirehoseDestinationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3ConfigurationExceptionUnmarshaller());
@@ -362,6 +380,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CloneReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CloneReceiptRuleSetResult>(
                     new CloneReceiptRuleSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -432,6 +452,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateConfigurationSetResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetResult>(
                     new CreateConfigurationSetResultStaxUnmarshaller());
@@ -522,6 +544,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetEventDestinationResult>(
                     new CreateConfigurationSetEventDestinationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -601,6 +625,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult>(
                     new CreateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -674,6 +700,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<CreateCustomVerificationEmailTemplateResult>(
                     new CreateCustomVerificationEmailTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -742,6 +770,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateReceiptFilterResult> responseHandler = new StaxResponseHandler<CreateReceiptFilterResult>(
                     new CreateReceiptFilterResultStaxUnmarshaller());
@@ -832,6 +862,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateReceiptRuleResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleResult>(
                     new CreateReceiptRuleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -900,6 +932,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleSetResult>(
                     new CreateReceiptRuleSetResultStaxUnmarshaller());
@@ -970,6 +1004,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateTemplateResult> responseHandler = new StaxResponseHandler<CreateTemplateResult>(
                     new CreateTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1032,6 +1068,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteConfigurationSetResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetResult>(
                     new DeleteConfigurationSetResultStaxUnmarshaller());
@@ -1100,6 +1138,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetEventDestinationResult>(
                     new DeleteConfigurationSetEventDestinationResultStaxUnmarshaller());
@@ -1172,6 +1212,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult>(
                     new DeleteConfigurationSetTrackingOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1234,6 +1276,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult>(
                     new DeleteCustomVerificationEmailTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1288,6 +1332,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteIdentityResult> responseHandler = new StaxResponseHandler<DeleteIdentityResult>(
                     new DeleteIdentityResultStaxUnmarshaller());
@@ -1359,6 +1405,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteIdentityPolicyResult> responseHandler = new StaxResponseHandler<DeleteIdentityPolicyResult>(
                     new DeleteIdentityPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1421,6 +1469,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteReceiptFilterResult> responseHandler = new StaxResponseHandler<DeleteReceiptFilterResult>(
                     new DeleteReceiptFilterResultStaxUnmarshaller());
@@ -1486,6 +1536,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteReceiptRuleResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleResult>(
                     new DeleteReceiptRuleResultStaxUnmarshaller());
@@ -1557,6 +1609,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleSetResult>(
                     new DeleteReceiptRuleSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1614,6 +1668,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteTemplateResult> responseHandler = new StaxResponseHandler<DeleteTemplateResult>(
                     new DeleteTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1666,6 +1722,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteVerifiedEmailAddressResult> responseHandler = new StaxResponseHandler<DeleteVerifiedEmailAddressResult>(
                     new DeleteVerifiedEmailAddressResultStaxUnmarshaller());
@@ -1730,6 +1788,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeActiveReceiptRuleSetResult>(
                     new DescribeActiveReceiptRuleSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1791,6 +1851,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeConfigurationSetResult> responseHandler = new StaxResponseHandler<DescribeConfigurationSetResult>(
                     new DescribeConfigurationSetResultStaxUnmarshaller());
@@ -1859,6 +1921,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeReceiptRuleResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleResult>(
                     new DescribeReceiptRuleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1924,6 +1988,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleSetResult>(
                     new DescribeReceiptRuleSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1977,6 +2043,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<GetAccountSendingEnabledResult>(
                     new GetAccountSendingEnabledResultStaxUnmarshaller());
@@ -2041,6 +2109,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<GetCustomVerificationEmailTemplateResult>(
                     new GetCustomVerificationEmailTemplateResultStaxUnmarshaller());
@@ -2131,6 +2201,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetIdentityDkimAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityDkimAttributesResult>(
                     new GetIdentityDkimAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2190,6 +2262,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetIdentityMailFromDomainAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityMailFromDomainAttributesResult>(
                     new GetIdentityMailFromDomainAttributesResultStaxUnmarshaller());
@@ -2255,6 +2329,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetIdentityNotificationAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityNotificationAttributesResult>(
                     new GetIdentityNotificationAttributesResultStaxUnmarshaller());
@@ -2327,6 +2403,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetIdentityPoliciesResult> responseHandler = new StaxResponseHandler<GetIdentityPoliciesResult>(
                     new GetIdentityPoliciesResultStaxUnmarshaller());
@@ -2404,6 +2482,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetIdentityVerificationAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityVerificationAttributesResult>(
                     new GetIdentityVerificationAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2457,6 +2537,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetSendQuotaResult> responseHandler = new StaxResponseHandler<GetSendQuotaResult>(new GetSendQuotaResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2517,6 +2599,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetSendStatisticsResult> responseHandler = new StaxResponseHandler<GetSendStatisticsResult>(
                     new GetSendStatisticsResultStaxUnmarshaller());
@@ -2579,6 +2663,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetTemplateResult> responseHandler = new StaxResponseHandler<GetTemplateResult>(new GetTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2643,6 +2729,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListConfigurationSetsResult> responseHandler = new StaxResponseHandler<ListConfigurationSetsResult>(
                     new ListConfigurationSetsResultStaxUnmarshaller());
@@ -2710,6 +2798,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListCustomVerificationEmailTemplatesResult> responseHandler = new StaxResponseHandler<ListCustomVerificationEmailTemplatesResult>(
                     new ListCustomVerificationEmailTemplatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2766,6 +2856,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListIdentitiesResult> responseHandler = new StaxResponseHandler<ListIdentitiesResult>(
                     new ListIdentitiesResultStaxUnmarshaller());
@@ -2844,6 +2936,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListIdentityPoliciesResult> responseHandler = new StaxResponseHandler<ListIdentityPoliciesResult>(
                     new ListIdentityPoliciesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2906,6 +3000,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListReceiptFiltersResult> responseHandler = new StaxResponseHandler<ListReceiptFiltersResult>(
                     new ListReceiptFiltersResultStaxUnmarshaller());
@@ -2972,6 +3068,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListReceiptRuleSetsResult> responseHandler = new StaxResponseHandler<ListReceiptRuleSetsResult>(
                     new ListReceiptRuleSetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3026,6 +3124,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListTemplatesResult> responseHandler = new StaxResponseHandler<ListTemplatesResult>(new ListTemplatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3076,6 +3176,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListVerifiedEmailAddressesResult> responseHandler = new StaxResponseHandler<ListVerifiedEmailAddressesResult>(
                     new ListVerifiedEmailAddressesResultStaxUnmarshaller());
@@ -3155,6 +3257,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<PutIdentityPolicyResult> responseHandler = new StaxResponseHandler<PutIdentityPolicyResult>(
                     new PutIdentityPolicyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3228,6 +3332,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ReorderReceiptRuleSetResult> responseHandler = new StaxResponseHandler<ReorderReceiptRuleSetResult>(
                     new ReorderReceiptRuleSetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3295,6 +3401,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SendBounceResult> responseHandler = new StaxResponseHandler<SendBounceResult>(new SendBounceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3412,6 +3520,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SendBulkTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendBulkTemplatedEmailResult>(
                     new SendBulkTemplatedEmailResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3486,6 +3596,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SendCustomVerificationEmailResult> responseHandler = new StaxResponseHandler<SendCustomVerificationEmailResult>(
                     new SendCustomVerificationEmailResultStaxUnmarshaller());
@@ -3608,6 +3720,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SendEmailResult> responseHandler = new StaxResponseHandler<SendEmailResult>(new SendEmailResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3786,6 +3900,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SendRawEmailResult> responseHandler = new StaxResponseHandler<SendRawEmailResult>(new SendRawEmailResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -3922,6 +4038,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SendTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendTemplatedEmailResult>(
                     new SendTemplatedEmailResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3992,6 +4110,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<SetActiveReceiptRuleSetResult>(
                     new SetActiveReceiptRuleSetResultStaxUnmarshaller());
@@ -4073,6 +4193,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetIdentityDkimEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityDkimEnabledResult>(
                     new SetIdentityDkimEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4145,6 +4267,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetIdentityFeedbackForwardingEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityFeedbackForwardingEnabledResult>(
                     new SetIdentityFeedbackForwardingEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4210,6 +4334,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetIdentityHeadersInNotificationsEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityHeadersInNotificationsEnabledResult>(
                     new SetIdentityHeadersInNotificationsEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4274,6 +4400,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetIdentityMailFromDomainResult> responseHandler = new StaxResponseHandler<SetIdentityMailFromDomainResult>(
                     new SetIdentityMailFromDomainResultStaxUnmarshaller());
@@ -4346,6 +4474,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetIdentityNotificationTopicResult> responseHandler = new StaxResponseHandler<SetIdentityNotificationTopicResult>(
                     new SetIdentityNotificationTopicResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4413,6 +4543,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetReceiptRulePositionResult> responseHandler = new StaxResponseHandler<SetReceiptRulePositionResult>(
                     new SetReceiptRulePositionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4476,6 +4608,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<TestRenderTemplateResult> responseHandler = new StaxResponseHandler<TestRenderTemplateResult>(
                     new TestRenderTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4534,6 +4668,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateAccountSendingEnabledResult>(
                     new UpdateAccountSendingEnabledResultStaxUnmarshaller());
@@ -4616,6 +4752,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetEventDestinationResult>(
                     new UpdateConfigurationSetEventDestinationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4679,6 +4817,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult>(
                     new UpdateConfigurationSetReputationMetricsEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4740,6 +4880,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult>(
                     new UpdateConfigurationSetSendingEnabledResultStaxUnmarshaller());
@@ -4820,6 +4962,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult>(
                     new UpdateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4888,6 +5032,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult>(
                     new UpdateCustomVerificationEmailTemplateResultStaxUnmarshaller());
@@ -4976,6 +5122,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateReceiptRuleResult> responseHandler = new StaxResponseHandler<UpdateReceiptRuleResult>(
                     new UpdateReceiptRuleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5037,6 +5185,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateTemplateResult> responseHandler = new StaxResponseHandler<UpdateTemplateResult>(
                     new UpdateTemplateResultStaxUnmarshaller());
@@ -5107,6 +5257,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<VerifyDomainDkimResult> responseHandler = new StaxResponseHandler<VerifyDomainDkimResult>(
                     new VerifyDomainDkimResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5169,6 +5321,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<VerifyDomainIdentityResult> responseHandler = new StaxResponseHandler<VerifyDomainIdentityResult>(
                     new VerifyDomainIdentityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5223,6 +5377,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<VerifyEmailAddressResult> responseHandler = new StaxResponseHandler<VerifyEmailAddressResult>(
                     new VerifyEmailAddressResultStaxUnmarshaller());
@@ -5284,6 +5440,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<VerifyEmailIdentityResult> responseHandler = new StaxResponseHandler<VerifyEmailIdentityResult>(
                     new VerifyEmailIdentityResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5320,9 +5478,18 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -5332,7 +5499,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -5340,8 +5507,15 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

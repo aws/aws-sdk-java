@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.clouddirectory.AmazonCloudDirectoryClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -61,6 +62,7 @@ import com.amazonaws.services.clouddirectory.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implements AmazonCloudDirectory {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -357,6 +359,22 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon CloudDirectory using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonCloudDirectoryClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
@@ -433,6 +451,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AddFacetToObjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddFacetToObjectResultJsonUnmarshaller());
@@ -514,6 +534,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ApplySchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ApplySchemaResultJsonUnmarshaller());
@@ -613,6 +635,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AttachObjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachObjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -690,6 +714,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<AttachPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachPolicyResultJsonUnmarshaller());
@@ -778,6 +804,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AttachToIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachToIndexResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -863,6 +891,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<AttachTypedLinkResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachTypedLinkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -936,6 +966,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchReadResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchReadResultJsonUnmarshaller());
@@ -1012,6 +1044,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchWriteResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchWriteResultJsonUnmarshaller());
@@ -1090,6 +1124,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDirectoryResultJsonUnmarshaller());
@@ -1170,6 +1206,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFacetResultJsonUnmarshaller());
@@ -1256,6 +1294,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateIndexResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1340,6 +1380,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateObjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateObjectResultJsonUnmarshaller());
@@ -1437,6 +1479,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSchemaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1519,6 +1563,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateTypedLinkFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTypedLinkFacetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1598,6 +1644,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDirectoryResultJsonUnmarshaller());
@@ -1679,6 +1727,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFacetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1758,6 +1808,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteObjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteObjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1834,6 +1886,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSchemaResultJsonUnmarshaller());
@@ -1912,6 +1966,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTypedLinkFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTypedLinkFacetResultJsonUnmarshaller());
@@ -1993,6 +2049,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DetachFromIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachFromIndexResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2073,6 +2131,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DetachObjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachObjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2150,6 +2210,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DetachPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachPolicyResultJsonUnmarshaller());
@@ -2231,6 +2293,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DetachTypedLinkResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachTypedLinkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2308,6 +2372,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DisableDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisableDirectoryResultJsonUnmarshaller());
@@ -2387,6 +2453,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<EnableDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2462,6 +2530,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetAppliedSchemaVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetAppliedSchemaVersionResultJsonUnmarshaller());
@@ -2534,6 +2604,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDirectoryResultJsonUnmarshaller());
@@ -2611,6 +2683,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFacetResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFacetResultJsonUnmarshaller());
@@ -2690,6 +2764,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetLinkAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLinkAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2768,6 +2844,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetObjectAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetObjectAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2843,6 +2921,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetObjectInformationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetObjectInformationResultJsonUnmarshaller());
@@ -2921,6 +3001,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSchemaAsJsonResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSchemaAsJsonResultJsonUnmarshaller());
@@ -3003,6 +3085,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetTypedLinkFacetInformationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetTypedLinkFacetInformationResultJsonUnmarshaller());
@@ -3081,6 +3165,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListAppliedSchemaArnsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListAppliedSchemaArnsResultJsonUnmarshaller());
@@ -3157,6 +3243,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAttachedIndicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAttachedIndicesResultJsonUnmarshaller());
@@ -3235,6 +3323,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListDevelopmentSchemaArnsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListDevelopmentSchemaArnsResultJsonUnmarshaller());
@@ -3309,6 +3399,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDirectoriesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDirectoriesResultJsonUnmarshaller());
@@ -3388,6 +3480,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListFacetAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFacetAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3463,6 +3557,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFacetNamesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFacetNamesResultJsonUnmarshaller());
@@ -3547,6 +3643,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListIncomingTypedLinksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListIncomingTypedLinksResultJsonUnmarshaller());
@@ -3630,6 +3728,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListIndexResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIndexResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3696,6 +3796,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListManagedSchemaArnsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -3778,6 +3880,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListObjectAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListObjectAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3858,6 +3962,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListObjectChildrenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListObjectChildrenResultJsonUnmarshaller());
@@ -3947,6 +4053,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListObjectParentPathsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListObjectParentPathsResultJsonUnmarshaller());
@@ -4028,6 +4136,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListObjectParentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListObjectParentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4105,6 +4215,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListObjectPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListObjectPoliciesResultJsonUnmarshaller());
@@ -4189,6 +4301,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListOutgoingTypedLinksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListOutgoingTypedLinksResultJsonUnmarshaller());
@@ -4270,6 +4384,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListPolicyAttachmentsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListPolicyAttachmentsResultJsonUnmarshaller());
@@ -4349,6 +4465,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListPublishedSchemaArnsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListPublishedSchemaArnsResultJsonUnmarshaller());
@@ -4427,6 +4545,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
@@ -4510,6 +4630,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<ListTypedLinkFacetAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListTypedLinkFacetAttributesResultJsonUnmarshaller());
@@ -4589,6 +4711,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTypedLinkFacetNamesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4674,6 +4798,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<LookupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new LookupPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4749,6 +4875,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<PublishSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PublishSchemaResultJsonUnmarshaller());
@@ -4828,6 +4956,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<PutSchemaFromJsonResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutSchemaFromJsonResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -4905,6 +5035,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveFacetFromObjectResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
@@ -4984,6 +5116,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5060,6 +5194,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
@@ -5160,6 +5296,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFacetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5238,6 +5376,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLinkAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateLinkAttributesResultJsonUnmarshaller());
@@ -5320,6 +5460,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateObjectAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateObjectAttributesResultJsonUnmarshaller());
@@ -5394,6 +5536,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSchemaResultJsonUnmarshaller());
@@ -5479,6 +5623,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTypedLinkFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTypedLinkFacetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5562,6 +5708,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpgradeAppliedSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpgradeAppliedSchemaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -5643,6 +5791,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpgradePublishedSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpgradePublishedSchemaResultJsonUnmarshaller());
@@ -5680,9 +5830,18 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -5692,7 +5851,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -5700,8 +5859,15 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

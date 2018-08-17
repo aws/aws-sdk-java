@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidArgumentException",
         "documentation" : "<p>One of the arguments provided is invalid for this request.</p>",
@@ -131,6 +133,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidArgumentException",
         "documentation" : "<p>One of the arguments provided is invalid for this request.</p>",

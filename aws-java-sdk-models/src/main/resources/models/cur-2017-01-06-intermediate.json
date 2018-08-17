@@ -93,6 +93,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Delete a specified report definition",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "This exception is thrown on a known dependency failure.",
@@ -129,6 +131,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Describe a list of report definitions owned by the account",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
         "documentation" : "This exception is thrown on a known dependency failure.",
@@ -161,6 +165,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Create a new report definition",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DuplicateReportNameException",
         "documentation" : "This exception is thrown when putting a report preference with a name that already exists.",

@@ -50,32 +50,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      */
     private String clientRequestToken;
@@ -156,32 +131,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -202,32 +152,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are
-     *        failures and retries during the function's processing.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a
-     *        new version of the secret is created.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation
-     *        is idempotent).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from the request then an error occurs because you cannot
-     *        modify an existing secret value.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        failures and retries during the function's processing. This value becomes the <code>VersionId</code> of
+     *        the new version.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -252,32 +178,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @return (Optional) Specifies a unique identifier for the new version of the secret that helps ensure idempotency.
@@ -297,32 +198,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are
-     *         failures and retries during the function's processing.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a
-     *         new version of the secret is created.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation
-     *         is idempotent).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are different from the request then an error occurs because you cannot
-     *         modify an existing secret value.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         This value becomes the <code>SecretVersionId</code> of the new version.
+     *         failures and retries during the function's processing. This value becomes the <code>VersionId</code> of
+     *         the new version.
      */
 
     public String getClientRequestToken() {
@@ -347,32 +224,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -393,32 +245,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are
-     *        failures and retries during the function's processing.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a
-     *        new version of the secret is created.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation
-     *        is idempotent).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from the request then an error occurs because you cannot
-     *        modify an existing secret value.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        failures and retries during the function's processing. This value becomes the <code>VersionId</code> of
+     *        the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

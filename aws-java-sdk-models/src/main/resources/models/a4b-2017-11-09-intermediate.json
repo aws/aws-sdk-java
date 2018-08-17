@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Associates a contact with a given address book.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400</p>",
@@ -123,6 +125,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400</p>",
@@ -159,6 +163,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -187,6 +193,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates an address book with the specified details.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists. HTTP Status Code: 400</p>",
@@ -223,6 +231,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a contact with the specified details.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists. HTTP Status Code: 400</p>",
@@ -259,6 +269,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new room profile with the specified details.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400</p>",
@@ -295,6 +307,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a room with the specified details.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists. HTTP Status Code: 400</p>",
@@ -331,6 +345,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a skill group with a specified name and description.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AlreadyExistsException",
         "documentation" : "<p>The resource being created already exists. HTTP Status Code: 400</p>",
@@ -367,6 +383,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceInUseException",
         "documentation" : "<p>The resource in the request is already in use. HTTP Status Code: 400</p>",
@@ -403,6 +421,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes an address book by the address book ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -435,6 +455,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a contact by the contact ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -467,6 +489,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a room profile by the profile ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -499,6 +523,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a room by the room ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -531,6 +557,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -559,6 +587,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a skill group by skill group ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -591,6 +621,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a specified user by user ARN and enrollment ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -623,6 +655,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Disassociates a contact from a given address book.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -651,6 +685,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeviceNotRegisteredException",
         "documentation" : "<p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>",
@@ -683,6 +719,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -711,6 +749,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets address the book details by the address book ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -743,6 +783,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets the contact details by the contact ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -775,6 +817,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets the details of a device by device ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -807,6 +851,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets the details of a room profile by profile ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -839,6 +885,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets room details by room ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -871,6 +919,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets room skill parameter details by room, skill, and parameter key ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -903,6 +953,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets skill group details by skill group ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -935,6 +987,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the device event history, including device connection status, for up to 30 days.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -967,6 +1021,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists all enabled skills in a specific skill group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -995,6 +1051,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists all tags for the specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1027,6 +1085,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1055,6 +1115,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1087,6 +1149,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Revokes an invitation and invalidates the enrollment URL.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1119,6 +1183,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches address books and lists the ones that meet a set of filter and sort criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1147,6 +1213,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches contacts and lists the ones that meet a set of filter and sort criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1175,6 +1243,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches devices and lists the ones that meet a set of filter criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1203,6 +1273,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches room profiles and lists the ones that meet a set of filter criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1231,6 +1303,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches rooms and lists the ones that meet a set of filter and sort criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1259,6 +1333,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1287,6 +1363,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Searches users and lists the ones that meet a set of filter and sort criteria.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1315,6 +1393,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this operation again, whichever comes first. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1351,6 +1431,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Resets a device and its account to the known default settings, by clearing all information and settings set by previous users.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DeviceNotRegisteredException",
         "documentation" : "<p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>",
@@ -1383,6 +1465,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds metadata tags to a specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1415,6 +1499,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes metadata tags from a specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1447,6 +1533,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates address book details by the address book ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1483,6 +1571,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the contact details by the contact ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1515,6 +1605,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the device name by device ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1551,6 +1643,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates an existing room profile by room profile ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1587,6 +1681,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates room details by room ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
@@ -1623,6 +1719,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates skill group details by skill group ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",

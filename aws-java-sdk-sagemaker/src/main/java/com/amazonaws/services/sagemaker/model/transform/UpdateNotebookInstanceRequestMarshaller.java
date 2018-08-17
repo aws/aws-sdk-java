@@ -33,6 +33,10 @@ public class UpdateNotebookInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<String> LIFECYCLECONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LifecycleConfigName").build();
+    private static final MarshallingInfo<Boolean> DISASSOCIATELIFECYCLECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateLifecycleConfig").build();
 
     private static final UpdateNotebookInstanceRequestMarshaller instance = new UpdateNotebookInstanceRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class UpdateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getNotebookInstanceName(), NOTEBOOKINSTANCENAME_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(updateNotebookInstanceRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getLifecycleConfigName(), LIFECYCLECONFIGNAME_BINDING);
+            protocolMarshaller.marshall(updateNotebookInstanceRequest.getDisassociateLifecycleConfig(), DISASSOCIATELIFECYCLECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

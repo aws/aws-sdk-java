@@ -34,16 +34,16 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The location of the primary docker image containing inference code, associated artifacts, and custom environment
-     * map that the inference code uses when the model is deployed into production.
+     * map that the inference code uses when the model is deployed for predictions.
      * </p>
      */
     private ContainerDefinition primaryContainer;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances. Deploying on ML compute instances is part of model hosting.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     * instances is part of model hosting. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -64,7 +64,8 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
+     * but not in batch transform. For more information, see <a>host-vpc</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -112,12 +113,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The location of the primary docker image containing inference code, associated artifacts, and custom environment
-     * map that the inference code uses when the model is deployed into production.
+     * map that the inference code uses when the model is deployed for predictions.
      * </p>
      * 
      * @param primaryContainer
      *        The location of the primary docker image containing inference code, associated artifacts, and custom
-     *        environment map that the inference code uses when the model is deployed into production.
+     *        environment map that the inference code uses when the model is deployed for predictions.
      */
 
     public void setPrimaryContainer(ContainerDefinition primaryContainer) {
@@ -127,11 +128,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The location of the primary docker image containing inference code, associated artifacts, and custom environment
-     * map that the inference code uses when the model is deployed into production.
+     * map that the inference code uses when the model is deployed for predictions.
      * </p>
      * 
      * @return The location of the primary docker image containing inference code, associated artifacts, and custom
-     *         environment map that the inference code uses when the model is deployed into production.
+     *         environment map that the inference code uses when the model is deployed for predictions.
      */
 
     public ContainerDefinition getPrimaryContainer() {
@@ -141,12 +142,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The location of the primary docker image containing inference code, associated artifacts, and custom environment
-     * map that the inference code uses when the model is deployed into production.
+     * map that the inference code uses when the model is deployed for predictions.
      * </p>
      * 
      * @param primaryContainer
      *        The location of the primary docker image containing inference code, associated artifacts, and custom
-     *        environment map that the inference code uses when the model is deployed into production.
+     *        environment map that the inference code uses when the model is deployed for predictions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,9 +159,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances. Deploying on ML compute instances is part of model hosting.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     * instances is part of model hosting. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -171,8 +172,8 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
-     *        and docker image for deployment on ML compute instances. Deploying on ML compute instances is part of
-     *        model hosting. For more information, see <a
+     *        and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML
+     *        compute instances is part of model hosting. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
@@ -188,9 +189,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances. Deploying on ML compute instances is part of model hosting.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     * instances is part of model hosting. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -200,8 +201,8 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
-     *         and docker image for deployment on ML compute instances. Deploying on ML compute instances is part of
-     *         model hosting. For more information, see <a
+     *         and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML
+     *         compute instances is part of model hosting. For more information, see <a
      *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *         </p> <note>
      *         <p>
@@ -217,9 +218,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute instances. Deploying on ML compute instances is part of model hosting.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>.
+     * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
+     * instances is part of model hosting. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -230,8 +231,8 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
-     *        and docker image for deployment on ML compute instances. Deploying on ML compute instances is part of
-     *        model hosting. For more information, see <a
+     *        and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML
+     *        compute instances is part of model hosting. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
@@ -335,12 +336,14 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
+     * but not in batch transform. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to
-     *        and from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *        and from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting
+     *        services but not in batch transform. For more information, see <a>host-vpc</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -350,11 +353,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
+     * but not in batch transform. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @return A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access
-     *         to and from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *         to and from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in
+     *         hosting services but not in batch transform. For more information, see <a>host-vpc</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -364,12 +369,14 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
-     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting services
+     * but not in batch transform. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to
-     *        and from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *        and from your model container by configuring the VPC. <code>VpcConfig</code> is currently used in hosting
+     *        services but not in batch transform. For more information, see <a>host-vpc</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

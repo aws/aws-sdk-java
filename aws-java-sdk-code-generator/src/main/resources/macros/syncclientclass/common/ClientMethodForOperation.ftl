@@ -41,6 +41,13 @@
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+            <#if operationModel.endpointDiscovery?has_content>
+                if (endpointDiscoveryEnabled) {
+                    cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
+                }
+            </#if>
+
             <#if operationModel.returnType??>
                 <@ResponseHandlerCreation.content operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
                 response = <@ClientInvokeMethodInvocation.content operationModel />

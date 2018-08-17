@@ -102,22 +102,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Downloading</code> - downloading the input data.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      * </p>
      * </li>
      * <li>
@@ -142,8 +127,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
-     * job is stopping.
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
      * </p>
      * </li>
      * <li>
@@ -153,15 +137,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     * <code>StatusMessage</code>.
+     * <code>Failed</code> - the training job has failed. The failure reason is stored in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
-     * progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
      * </p>
      * </important>
      */
@@ -254,7 +238,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * A log of time-ordered secondary statuses that a training job has transitioned.
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
      * </p>
      */
     private java.util.List<SecondaryStatusTransition> secondaryStatusTransitions;
@@ -780,22 +765,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Downloading</code> - downloading the input data.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      * </p>
      * </li>
      * <li>
@@ -820,8 +790,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
-     * job is stopping.
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
      * </p>
      * </li>
      * <li>
@@ -831,15 +800,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     * <code>StatusMessage</code>.
+     * <code>Failed</code> - the training job has failed. The failure reason is stored in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
-     * progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
      * </p>
      * </important>
      * 
@@ -854,22 +823,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>Downloading</code> - downloading the input data.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      *        </p>
      *        </li>
      *        <li>
@@ -894,8 +848,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
-     *        training job is stopping.
+     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *        stopped.
      *        </p>
      *        </li>
      *        <li>
@@ -905,15 +859,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     *        <code>StatusMessage</code>.
+     *        <code>Failed</code> - the training job has failed. The failure reason is stored in the
+     *        <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <important>
      *        <p>
-     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
-     *        on the progress of the training job.
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *        information on the progress of the training job.
      *        </p>
      * @see SecondaryStatus
      */
@@ -934,22 +888,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Downloading</code> - downloading the input data.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      * </p>
      * </li>
      * <li>
@@ -974,8 +913,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
-     * job is stopping.
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
      * </p>
      * </li>
      * <li>
@@ -985,15 +923,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     * <code>StatusMessage</code>.
+     * <code>Failed</code> - the training job has failed. The failure reason is stored in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
-     * progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
      * </p>
      * </important>
      * 
@@ -1007,22 +945,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>Downloading</code> - downloading the input data.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      *         </p>
      *         </li>
      *         <li>
@@ -1047,8 +970,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
-     *         training job is stopping.
+     *         <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *         stopped.
      *         </p>
      *         </li>
      *         <li>
@@ -1058,15 +981,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     *         <code>StatusMessage</code>.
+     *         <code>Failed</code> - the training job has failed. The failure reason is stored in the
+     *         <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <important>
      *         <p>
-     *         The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
-     *         on the progress of the training job.
+     *         The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *         information on the progress of the training job.
      *         </p>
      * @see SecondaryStatus
      */
@@ -1087,22 +1010,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Downloading</code> - downloading the input data.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      * </p>
      * </li>
      * <li>
@@ -1127,8 +1035,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
-     * job is stopping.
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
      * </p>
      * </li>
      * <li>
@@ -1138,15 +1045,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     * <code>StatusMessage</code>.
+     * <code>Failed</code> - the training job has failed. The failure reason is stored in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
-     * progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
      * </p>
      * </important>
      * 
@@ -1161,22 +1068,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>Downloading</code> - downloading the input data.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      *        </p>
      *        </li>
      *        <li>
@@ -1201,8 +1093,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
-     *        training job is stopping.
+     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *        stopped.
      *        </p>
      *        </li>
      *        <li>
@@ -1212,15 +1104,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     *        <code>StatusMessage</code>.
+     *        <code>Failed</code> - the training job has failed. The failure reason is stored in the
+     *        <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <important>
      *        <p>
-     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
-     *        on the progress of the training job.
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *        information on the progress of the training job.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecondaryStatus
@@ -1243,22 +1135,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Downloading</code> - downloading the input data.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      * </p>
      * </li>
      * <li>
@@ -1283,8 +1160,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the training
-     * job is stopping.
+     * <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been stopped.
      * </p>
      * </li>
      * <li>
@@ -1294,15 +1170,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     * <code>StatusMessage</code>.
+     * <code>Failed</code> - the training job has failed. The failure reason is stored in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information on the
-     * progress of the training job.
+     * The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide information on
+     * the progress of the training job.
      * </p>
      * </important>
      * 
@@ -1317,22 +1193,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>PreparingTrainingStack</code> - preparing the ML instances for the training job.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>Downloading</code> - downloading the input data.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
      *        </p>
      *        </li>
      *        <li>
@@ -1357,8 +1218,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time, which means the
-     *        training job is stopping.
+     *        <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run time and has been
+     *        stopped.
      *        </p>
      *        </li>
      *        <li>
@@ -1368,15 +1229,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - the training job has failed. The failure reason is provided in the
-     *        <code>StatusMessage</code>.
+     *        <code>Failed</code> - the training job has failed. The failure reason is stored in the
+     *        <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <important>
      *        <p>
-     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primary provide information
-     *        on the progress of the training job.
+     *        The valid values for <code>SecondaryStatus</code> are subject to change. They primarily provide
+     *        information on the progress of the training job.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecondaryStatus
@@ -2008,10 +1869,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A log of time-ordered secondary statuses that a training job has transitioned.
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * 
-     * @return A log of time-ordered secondary statuses that a training job has transitioned.
+     * @return To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *         time-ordered secondary statuses that a training job has transitioned.
      */
 
     public java.util.List<SecondaryStatusTransition> getSecondaryStatusTransitions() {
@@ -2020,11 +1883,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A log of time-ordered secondary statuses that a training job has transitioned.
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * 
      * @param secondaryStatusTransitions
-     *        A log of time-ordered secondary statuses that a training job has transitioned.
+     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *        time-ordered secondary statuses that a training job has transitioned.
      */
 
     public void setSecondaryStatusTransitions(java.util.Collection<SecondaryStatusTransition> secondaryStatusTransitions) {
@@ -2038,7 +1903,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A log of time-ordered secondary statuses that a training job has transitioned.
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2047,7 +1913,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param secondaryStatusTransitions
-     *        A log of time-ordered secondary statuses that a training job has transitioned.
+     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *        time-ordered secondary statuses that a training job has transitioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2063,11 +1930,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A log of time-ordered secondary statuses that a training job has transitioned.
+     * To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     * time-ordered secondary statuses that a training job has transitioned.
      * </p>
      * 
      * @param secondaryStatusTransitions
-     *        A log of time-ordered secondary statuses that a training job has transitioned.
+     *        To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code> is a log of
+     *        time-ordered secondary statuses that a training job has transitioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

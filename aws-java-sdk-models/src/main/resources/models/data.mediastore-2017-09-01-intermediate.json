@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes an object at the specified path.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
         "documentation" : "<p>The specified container was not found for the specified account.</p>",
@@ -131,6 +133,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets the headers for an object at the specified path.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
         "documentation" : "<p>The specified container was not found for the specified account.</p>",
@@ -171,6 +175,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Downloads the object at the specified path.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
         "documentation" : "<p>The specified container was not found for the specified account.</p>",
@@ -215,6 +221,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Provides a list of metadata entries about folders and objects in the specified folder.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
         "documentation" : "<p>The specified container was not found for the specified account.</p>",
@@ -251,6 +259,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Uploads an object to the specified path. Object sizes are limited to 10 MB.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ContainerNotFoundException",
         "documentation" : "<p>The specified container was not found for the specified account.</p>",

@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new user account in your Amazon Connect instance.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -147,6 +149,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a user account from Amazon Connect.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -195,6 +199,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a <code>User</code> object that contains information about the user account specified by the <code>UserId</code>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -243,6 +249,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a <code>HierarchyGroup</code> object that includes information about a hierarchy group in your instance.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -291,6 +299,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a <code>HiearchyGroupStructure</code> object, which contains data about the levels in the agent hierarchy.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -339,6 +349,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a token for federation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -391,6 +403,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns an array of <code>RoutingProfileSummary</code> objects that includes information about the routing profiles in your instance.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -439,6 +453,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns an array of SecurityProfileSummary objects that contain information about the security profiles in your instance, including the ARN, Id, and Name of the security profile.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -487,6 +503,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a <code>UserHierarchyGroupSummaryList</code>, which is an array of <code>HierarchyGroupSummary</code> objects that contain information about the hierarchy groups in your instance.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -535,6 +553,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a <code>UserSummaryList</code>, which is an array of <code>UserSummary</code> objects.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -583,6 +603,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>The <code>StartOutboundVoiceContact</code> operation initiates a contact flow to place an outbound call to a customer.</p> <p>There is a throttling limit placed on usage of the API that includes a RateLimit of 2 per second, and a BurstLimit of 5 per second.</p> <p>If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code> action.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -639,6 +661,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Ends the contact initiated by the <code>StartOutboundVoiceContact</code> operation.</p> <p>If you are using an IAM account, it must have permission to the <code>connect:StopContact</code> action.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -687,6 +711,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Assigns the specified hierarchy group to the user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -735,6 +761,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the identity information for the specified user in a <code>UserIdentityInfo</code> object, including email, first name, and last name.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -783,6 +811,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the phone configuration settings in the <code>UserPhoneConfig</code> object for the specified user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -831,6 +861,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Assigns the specified routing profile to a user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",
@@ -879,6 +911,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Update the security profiles assigned to the user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request is not valid.</p>",

@@ -112,9 +112,9 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <p>
      * If you cancel a rotation that is in progress, it can leave the <code>VersionStage</code> labels in an unexpected
      * state. Depending on what step of the rotation was in progress, you might need to remove the staging label
-     * <code>AWSPENDING</code> from the partially created version, specified by the <code>SecretVersionId</code>
-     * response value. You should also evaluate the partially rotated new version to see if it should be deleted, which
-     * you can do by removing all staging labels from the new version's <code>VersionStage</code> field.
+     * <code>AWSPENDING</code> from the partially created version, specified by the <code>VersionId</code> response
+     * value. You should also evaluate the partially rotated new version to see if it should be deleted, which you can
+     * do by removing all staging labels from the new version's <code>VersionStage</code> field.
      * </p>
      * </note>
      * <p>
@@ -196,9 +196,9 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <p>
      * If you cancel a rotation that is in progress, it can leave the <code>VersionStage</code> labels in an unexpected
      * state. Depending on what step of the rotation was in progress, you might need to remove the staging label
-     * <code>AWSPENDING</code> from the partially created version, specified by the <code>SecretVersionId</code>
-     * response value. You should also evaluate the partially rotated new version to see if it should be deleted, which
-     * you can do by removing all staging labels from the new version's <code>VersionStage</code> field.
+     * <code>AWSPENDING</code> from the partially created version, specified by the <code>VersionId</code> response
+     * value. You should also evaluate the partially rotated new version to see if it should be deleted, which you can
+     * do by removing all staging labels from the new version's <code>VersionStage</code> field.
      * </p>
      * </note>
      * <p>
@@ -1476,7 +1476,7 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * </li>
      * <li>
      * <p>
-     * This operation is idempotent. If a version with a <code>SecretVersionId</code> with the same value as the
+     * This operation is idempotent. If a version with a <code>VersionId</code> with the same value as the
      * <code>ClientRequestToken</code> parameter already exists and you specify the same secret data, the operation
      * succeeds but does nothing. However, if the secret data is different, then the operation fails because you cannot
      * modify an existing version; you can only create new ones.
@@ -1597,7 +1597,7 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * </li>
      * <li>
      * <p>
-     * This operation is idempotent. If a version with a <code>SecretVersionId</code> with the same value as the
+     * This operation is idempotent. If a version with a <code>VersionId</code> with the same value as the
      * <code>ClientRequestToken</code> parameter already exists and you specify the same secret data, the operation
      * succeeds but does nothing. However, if the secret data is different, then the operation fails because you cannot
      * modify an existing version; you can only create new ones.
@@ -1786,6 +1786,12 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.
      * </p>
      * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
+     * </p>
+     * <p>
      * The rotation function must end with the versions of the secret in one of two states:
      * </p>
      * <ul>
@@ -1876,6 +1882,12 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * for your protected service, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating Secrets in AWS
      * Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
      * </p>
      * <p>
      * The rotation function must end with the versions of the secret in one of two states:
@@ -2267,9 +2279,9 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
-     * parameter already exists, the operation results in an error. You cannot modify an existing version, you can only
-     * create a new version.
+     * If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code> parameter
+     * already exists, the operation results in an error. You cannot modify an existing version, you can only create a
+     * new version.
      * </p>
      * </li>
      * <li>
@@ -2383,9 +2395,9 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
-     * parameter already exists, the operation results in an error. You cannot modify an existing version, you can only
-     * create a new version.
+     * If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code> parameter
+     * already exists, the operation results in an error. You cannot modify an existing version, you can only create a
+     * new version.
      * </p>
      * </li>
      * <li>

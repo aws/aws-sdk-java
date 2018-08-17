@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds a member to the resource's set of delegates.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -139,6 +141,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds a member to the group's set.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -199,6 +203,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds an alias to the set of a given member of Amazon WorkMail.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EmailAddressInUseException",
         "documentation" : "<p>The email address that you're trying to assign is already created for a different user, group, or resource.</p>",
@@ -259,6 +265,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a group that can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -319,6 +327,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new Amazon WorkMail resource. The available types are equipment and room.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -375,6 +385,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a user who can be used in Amazon WorkMail by calling the RegisterToWorkMail operation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -439,6 +451,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Remove the alias from a set of aliases for a given user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -487,6 +501,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a group from Amazon WorkMail.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -543,6 +559,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes permissions granted to a user or group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -591,6 +609,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified resource. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityStateException",
         "documentation" : "<p>You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.</p>",
@@ -635,6 +655,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a user from Amazon WorkMail and all subsequent systems. The action can't be undone. The mailbox is kept as-is for a minimum of 30 days, without any means to restore it. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -691,6 +713,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. Amazon WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -739,6 +763,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the data available for the group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -783,6 +809,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Provides more information regarding a given organization based on its identifier.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more of the input parameters don't match the service's restrictions.</p>",
@@ -819,6 +847,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the data available for the resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -863,6 +893,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Provides information regarding the user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -907,6 +939,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes a member from the resource's set of delegates.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -955,6 +989,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes a member from a group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -1015,6 +1051,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a paginated call to list the aliases associated with a given entity.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -1063,6 +1101,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns an overview of the members of a group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -1111,6 +1151,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns summaries of the organization's groups.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -1155,6 +1197,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the mailbox permissions associated with a mailbox.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -1199,6 +1243,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns summaries of the customer's non-deleted organizations.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more of the input parameters don't match the service's restrictions.</p>",
@@ -1231,6 +1277,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -1279,6 +1327,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns summaries of the organization's resources.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more of the input parameters don't match the service's restrictions.</p>",
@@ -1319,6 +1369,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns summaries of the organization's users.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more of the input parameters don't match the service's restrictions.</p>",
@@ -1359,6 +1411,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
         "documentation" : "<p>The identifier supplied for the entity is valid, but it does not exist in your organization.</p>",
@@ -1407,6 +1461,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Registers an existing and disabled user, group, or resource/entity for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the entity is enabled and fails if the entity is deleted. This operation results in the accumulation of costs. For more information, see <a href=\"http://aws.amazon.com/workmail/pricing\">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. Users can either be created by calling the CreateUser API or they can be synchronized from your directory. For more information, see DeregisterFromWorkMail.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -1479,6 +1535,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Allows the administrator to reset the password for a user.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -1543,6 +1601,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the primary email for an entity. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email) and the email provided in the input is promoted as the primary.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryServiceAuthenticationFailedException",
         "documentation" : "<p>The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.</p>",
@@ -1619,6 +1679,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates data for the resource. It must be preceded by a describe call in order to have the latest information. The dataset in the request should be the one expected when performing another describe call.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "DirectoryUnavailableException",
         "documentation" : "<p>The directory that you are trying to perform operations on isn't available.</p>",

@@ -64,6 +64,12 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can
      * fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
+     * <p>
+     * Batch transform will automatically split your input data into whatever payload size is specified if you set
+     * <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>. There's
+     * no need to split the dataset into smaller files or to use larger payload sizes unless the records in your dataset
+     * are very large.
+     * </p>
      */
     private String batchStrategy;
     /**
@@ -319,11 +325,22 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can
      * fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
+     * <p>
+     * Batch transform will automatically split your input data into whatever payload size is specified if you set
+     * <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>. There's
+     * no need to split the dataset into smaller files or to use larger payload sizes unless the records in your dataset
+     * are very large.
+     * </p>
      * 
      * @param batchStrategy
      *        Determines the number of records included in a single mini-batch. <code>SingleRecord</code> means only one
      *        record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many
-     *        records that can fit within the <code>MaxPayloadInMB</code> limit.
+     *        records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+     *        <p>
+     *        Batch transform will automatically split your input data into whatever payload size is specified if you
+     *        set <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>
+     *        . There's no need to split the dataset into smaller files or to use larger payload sizes unless the
+     *        records in your dataset are very large.
      * @see BatchStrategy
      */
 
@@ -337,10 +354,21 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can
      * fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
+     * <p>
+     * Batch transform will automatically split your input data into whatever payload size is specified if you set
+     * <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>. There's
+     * no need to split the dataset into smaller files or to use larger payload sizes unless the records in your dataset
+     * are very large.
+     * </p>
      * 
      * @return Determines the number of records included in a single mini-batch. <code>SingleRecord</code> means only
      *         one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many
-     *         records that can fit within the <code>MaxPayloadInMB</code> limit.
+     *         records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+     *         <p>
+     *         Batch transform will automatically split your input data into whatever payload size is specified if you
+     *         set <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to
+     *         <code>MultiRecord</code>. There's no need to split the dataset into smaller files or to use larger
+     *         payload sizes unless the records in your dataset are very large.
      * @see BatchStrategy
      */
 
@@ -354,11 +382,22 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can
      * fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
+     * <p>
+     * Batch transform will automatically split your input data into whatever payload size is specified if you set
+     * <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>. There's
+     * no need to split the dataset into smaller files or to use larger payload sizes unless the records in your dataset
+     * are very large.
+     * </p>
      * 
      * @param batchStrategy
      *        Determines the number of records included in a single mini-batch. <code>SingleRecord</code> means only one
      *        record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many
-     *        records that can fit within the <code>MaxPayloadInMB</code> limit.
+     *        records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+     *        <p>
+     *        Batch transform will automatically split your input data into whatever payload size is specified if you
+     *        set <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>
+     *        . There's no need to split the dataset into smaller files or to use larger payload sizes unless the
+     *        records in your dataset are very large.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */
@@ -374,11 +413,22 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can
      * fit within the <code>MaxPayloadInMB</code> limit.
      * </p>
+     * <p>
+     * Batch transform will automatically split your input data into whatever payload size is specified if you set
+     * <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>. There's
+     * no need to split the dataset into smaller files or to use larger payload sizes unless the records in your dataset
+     * are very large.
+     * </p>
      * 
      * @param batchStrategy
      *        Determines the number of records included in a single mini-batch. <code>SingleRecord</code> means only one
      *        record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many
-     *        records that can fit within the <code>MaxPayloadInMB</code> limit.
+     *        records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+     *        <p>
+     *        Batch transform will automatically split your input data into whatever payload size is specified if you
+     *        set <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code> to <code>MultiRecord</code>
+     *        . There's no need to split the dataset into smaller files or to use larger payload sizes unless the
+     *        records in your dataset are very large.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */

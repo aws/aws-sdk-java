@@ -105,6 +105,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds metadata tags to an AWS DMS resource, including replication instance, endpoint, security group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -137,6 +139,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates an endpoint using the provided settings.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "KMSKeyNotAccessibleException",
         "documentation" : "<p>AWS DMS cannot access the KMS key.</p>",
@@ -189,6 +193,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Creates an AWS DMS event notification subscription. </p> <p>You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of AWS DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (<code>EventCategories</code>) for events you want to be notified of. If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your AWS DMS sources. If you don't specify either <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all AWS DMS sources belonging to your customer account.</p> <p>For more information about AWS DMS events, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html\"> Working with Events and Notifications </a> in the AWS Database MIgration Service User Guide.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceQuotaExceededException",
         "documentation" : "<p>The quota for this resource quota has been exceeded.</p>",
@@ -237,6 +243,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates the replication instance using the specified parameters.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>",
@@ -305,6 +313,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>",
@@ -357,6 +367,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a replication task using the specified parameters.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>",
@@ -409,6 +421,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified certificate. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -445,6 +459,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the endpoint must be deleted before you can delete the endpoint.</p> </note> <p/>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -481,6 +497,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Deletes an AWS DMS event subscription. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -517,6 +535,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified replication instance.</p> <note> <p>You must delete any migration tasks that are associated with the replication instance before you can delete it.</p> </note> <p/>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -553,6 +573,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a subnet group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -589,6 +611,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified replication task.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -625,6 +649,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the account, such as the number of replication instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value.</p> <p>This command does not take any parameters.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -653,6 +679,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Provides a description of the certificate.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -685,6 +713,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -717,6 +747,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the type of endpoints available.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -745,6 +777,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the endpoints for your account in the current region.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -777,6 +811,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html\"> Working with Events and Notifications </a> in the AWS Database Migration Service User Guide. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -805,6 +841,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists all the event subscriptions for a customer account. The description of a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>. </p> <p>If you specify <code>SubscriptionName</code>, this action lists the description for that subscription.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -837,6 +875,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Lists events for a given source identifier and source type. You can also specify a start and end time. For more information on AWS DMS events, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html\"> Working with Events and Notifications </a>. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -865,6 +905,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the replication instance types that can be created in the specified region.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -893,6 +935,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the status of the RefreshSchemas operation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -929,6 +973,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the task logs for the specified task.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -965,6 +1011,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about replication instances for your account in the current region.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -997,6 +1045,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the replication subnet groups.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1029,6 +1079,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the task assessment results from Amazon S3. This action always returns the latest results.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1061,6 +1113,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about replication tasks for your account in the current region.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1093,6 +1147,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the schema for the specified endpoint.</p> <p/>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -1129,6 +1185,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted.</p> <p>Note that the \"last updated\" column the DMS console only indicates the time that AWS DMS last updated the table statistics record for a table. It does not indicate the time of the last update to the table.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1165,6 +1223,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Uploads the specified certificate.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceAlreadyExistsException",
         "documentation" : "<p>The resource you are attempting to create already exists.</p>",
@@ -1205,6 +1265,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists all tags for an AWS DMS resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1237,6 +1299,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Modifies the specified endpoint.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -1285,6 +1349,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Modifies an existing AWS DMS event notification subscription. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceQuotaExceededException",
         "documentation" : "<p>The quota for this resource quota has been exceeded.</p>",
@@ -1329,6 +1395,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p> <p>Some settings are applied during the maintenance window.</p> <p/>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -1381,6 +1449,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Modifies the settings for the specified replication subnet group.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>",
@@ -1433,6 +1503,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Modifies the specified replication task.</p> <p>You can't modify the task endpoints. The task must be stopped before you can modify it. </p> <p>For more information about AWS DMS tasks, see the AWS DMS user guide at <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html\"> Working with Migration Tasks </a> </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -1477,6 +1549,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1513,6 +1587,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -1557,6 +1633,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Reloads the target database table with the source data. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1593,6 +1671,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes metadata tags from a DMS resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1625,6 +1705,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Starts the replication task.</p> <p>For more information about AWS DMS tasks, see the AWS DMS user guide at <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html\"> Working with Migration Tasks </a> </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1665,6 +1747,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Starts the replication task assessment for unsupported data types in the source database. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
@@ -1701,6 +1785,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Stops the replication task.</p> <p/>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",
@@ -1737,6 +1823,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Tests the connection between the replication instance and the endpoint.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>",

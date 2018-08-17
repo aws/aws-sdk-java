@@ -1,4 +1,4 @@
-# __1.11.389__ __2018-08-16__
+# __1.11.390__ __2018-08-17__
 ## __AWS Application Discovery Service__
   - ### Features
     - The Application Discovery Service's Continuous Export APIs allow you to analyze your on-premises server inventory data, including system performance and network dependencies, in Amazon Athena.
@@ -26,6 +26,7 @@
 
 ## __AWS Secrets Manager__
   - ### Features
+    - Documentation updates for Secrets Manager
     - This release introduces a ForceDeleteWithoutRecovery parameter to the DeleteSecret API enabling customers to force the deletion of a secret without any recovery window
 
 ## __Alexa For Business__
@@ -47,6 +48,7 @@
 ## __Amazon DynamoDB Accelerator (DAX)__
   - ### Features
     - Add the SSESpecification field to CreateCluster to allow creation of clusters with server-side encryption, and add the SSEDescription field to DescribeClusters to display the status of server-side encryption for a cluster. 
+    - DAX CreateClusterRequest is updated to include IamRoleArn as a required request parameter. 
 
 ## __Amazon EC2 Container Service__
   - ### Features
@@ -84,6 +86,7 @@
 
 ## __Amazon SageMaker Service__
   - ### Features
+    - Added an optional boolean parameter, 'DisassociateLifecycleConfig', to the UpdateNotebookInstance operation. When set to true, the lifecycle configuration associated with the notebook instance will be removed, allowing a new one to be set via a new 'LifecycleConfigName' parameter.
     - SageMaker updated the default endpoint URL to support Private Link via the CLI/SDK.
 
 ## __Amazon Simple Systems Manager (SSM)__

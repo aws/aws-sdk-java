@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -67,6 +68,7 @@ import com.amazonaws.services.sns.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -253,6 +255,22 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon SNS using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonSNSClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new SubscriptionLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
@@ -325,6 +343,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(new AddPermissionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -394,6 +414,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CheckIfPhoneNumberIsOptedOutResult> responseHandler = new StaxResponseHandler<CheckIfPhoneNumberIsOptedOutResult>(
                     new CheckIfPhoneNumberIsOptedOutResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -458,6 +480,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ConfirmSubscriptionResult> responseHandler = new StaxResponseHandler<ConfirmSubscriptionResult>(
                     new ConfirmSubscriptionResultStaxUnmarshaller());
@@ -552,6 +576,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreatePlatformApplicationResult> responseHandler = new StaxResponseHandler<CreatePlatformApplicationResult>(
                     new CreatePlatformApplicationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -626,6 +652,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreatePlatformEndpointResult> responseHandler = new StaxResponseHandler<CreatePlatformEndpointResult>(
                     new CreatePlatformEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -688,6 +716,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateTopicResult> responseHandler = new StaxResponseHandler<CreateTopicResult>(new CreateTopicResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -757,6 +787,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteEndpointResult> responseHandler = new StaxResponseHandler<DeleteEndpointResult>(
                     new DeleteEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -816,6 +848,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeletePlatformApplicationResult> responseHandler = new StaxResponseHandler<DeletePlatformApplicationResult>(
                     new DeletePlatformApplicationResultStaxUnmarshaller());
@@ -877,6 +911,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteTopicResult> responseHandler = new StaxResponseHandler<DeleteTopicResult>(new DeleteTopicResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -944,6 +980,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetEndpointAttributesResult> responseHandler = new StaxResponseHandler<GetEndpointAttributesResult>(
                     new GetEndpointAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1007,6 +1045,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<GetPlatformApplicationAttributesResult>(
                     new GetPlatformApplicationAttributesResultStaxUnmarshaller());
@@ -1072,6 +1112,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetSMSAttributesResult> responseHandler = new StaxResponseHandler<GetSMSAttributesResult>(
                     new GetSMSAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1131,6 +1173,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<GetSubscriptionAttributesResult>(
                     new GetSubscriptionAttributesResultStaxUnmarshaller());
@@ -1197,6 +1241,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<GetTopicAttributesResult> responseHandler = new StaxResponseHandler<GetTopicAttributesResult>(
                     new GetTopicAttributesResultStaxUnmarshaller());
@@ -1274,6 +1320,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListEndpointsByPlatformApplicationResult> responseHandler = new StaxResponseHandler<ListEndpointsByPlatformApplicationResult>(
                     new ListEndpointsByPlatformApplicationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1342,6 +1390,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListPhoneNumbersOptedOutResult> responseHandler = new StaxResponseHandler<ListPhoneNumbersOptedOutResult>(
                     new ListPhoneNumbersOptedOutResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1408,6 +1458,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListPlatformApplicationsResult> responseHandler = new StaxResponseHandler<ListPlatformApplicationsResult>(
                     new ListPlatformApplicationsResultStaxUnmarshaller());
@@ -1476,6 +1528,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListSubscriptionsResult> responseHandler = new StaxResponseHandler<ListSubscriptionsResult>(
                     new ListSubscriptionsResultStaxUnmarshaller());
@@ -1552,6 +1606,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListSubscriptionsByTopicResult> responseHandler = new StaxResponseHandler<ListSubscriptionsByTopicResult>(
                     new ListSubscriptionsByTopicResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1623,6 +1679,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListTopicsResult> responseHandler = new StaxResponseHandler<ListTopicsResult>(new ListTopicsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1697,6 +1755,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<OptInPhoneNumberResult> responseHandler = new StaxResponseHandler<OptInPhoneNumberResult>(
                     new OptInPhoneNumberResultStaxUnmarshaller());
@@ -1782,6 +1842,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<PublishResult> responseHandler = new StaxResponseHandler<PublishResult>(new PublishResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1851,6 +1913,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
                     new RemovePermissionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1918,6 +1982,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetEndpointAttributesResult> responseHandler = new StaxResponseHandler<SetEndpointAttributesResult>(
                     new SetEndpointAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1982,6 +2048,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<SetPlatformApplicationAttributesResult>(
                     new SetPlatformApplicationAttributesResultStaxUnmarshaller());
@@ -2050,6 +2118,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetSMSAttributesResult> responseHandler = new StaxResponseHandler<SetSMSAttributesResult>(
                     new SetSMSAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2112,6 +2182,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<SetSubscriptionAttributesResult>(
                     new SetSubscriptionAttributesResultStaxUnmarshaller());
@@ -2178,6 +2250,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetTopicAttributesResult> responseHandler = new StaxResponseHandler<SetTopicAttributesResult>(
                     new SetTopicAttributesResultStaxUnmarshaller());
@@ -2254,6 +2328,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SubscribeResult> responseHandler = new StaxResponseHandler<SubscribeResult>(new SubscribeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2325,6 +2401,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UnsubscribeResult> responseHandler = new StaxResponseHandler<UnsubscribeResult>(new UnsubscribeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2365,9 +2443,18 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -2377,7 +2464,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -2385,8 +2472,15 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

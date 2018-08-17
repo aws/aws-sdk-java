@@ -276,17 +276,21 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For
-     * each container, you specify the docker image containing inference code, artifacts (from prior training), and
-     * custom environment map that the inference code uses when you deploy the model into production.
+     * Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary container. For the
+     * primary container, you specify the docker image containing inference code, artifacts (from prior training), and
+     * custom environment map that the inference code uses when you deploy the model for predictions.
      * </p>
      * <p>
-     * Use this API to create a model only if you want to use Amazon SageMaker hosting services. To host your model, you
-     * create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with
-     * the <code>CreateEndpoint</code> API.
+     * Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch transform job.
      * </p>
      * <p>
-     * Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment.
+     * To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then
+     * create an endpoint with the <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the containers
+     * that you defined for the model in the hosting environment.
+     * </p>
+     * <p>
+     * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. Amazon
+     * SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.
      * </p>
      * <p>
      * In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
@@ -294,9 +298,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute hosting instances. In addition, you also use the IAM role to manage
-     * permissions the inference code needs. For example, if the inference code access any other AWS resources, you
-     * grant necessary permissions via this role.
+     * docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also
+     * use the IAM role to manage permissions the inference code needs. For example, if the inference code access any
+     * other AWS resources, you grant necessary permissions via this role.
      * </p>
      * 
      * @param createModelRequest
@@ -309,17 +313,21 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For
-     * each container, you specify the docker image containing inference code, artifacts (from prior training), and
-     * custom environment map that the inference code uses when you deploy the model into production.
+     * Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary container. For the
+     * primary container, you specify the docker image containing inference code, artifacts (from prior training), and
+     * custom environment map that the inference code uses when you deploy the model for predictions.
      * </p>
      * <p>
-     * Use this API to create a model only if you want to use Amazon SageMaker hosting services. To host your model, you
-     * create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with
-     * the <code>CreateEndpoint</code> API.
+     * Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch transform job.
      * </p>
      * <p>
-     * Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment.
+     * To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then
+     * create an endpoint with the <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the containers
+     * that you defined for the model in the hosting environment.
+     * </p>
+     * <p>
+     * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. Amazon
+     * SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.
      * </p>
      * <p>
      * In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
@@ -327,9 +335,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and
-     * docker image for deployment on ML compute hosting instances. In addition, you also use the IAM role to manage
-     * permissions the inference code needs. For example, if the inference code access any other AWS resources, you
-     * grant necessary permissions via this role.
+     * docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also
+     * use the IAM role to manage permissions the inference code needs. For example, if the inference code access any
+     * other AWS resources, you grant necessary permissions via this role.
      * </p>
      * 
      * @param createModelRequest
@@ -752,7 +760,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <li>
      * <p>
      * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing
-     * Amazon SageMaker model within an AWS Region in an AWS account.
+     * Amazon SageMaker model in the same AWS Region and AWS account. For information on creating a model, see
+     * <a>CreateModel</a>.
      * </p>
      * </li>
      * <li>
@@ -807,7 +816,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <li>
      * <p>
      * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing
-     * Amazon SageMaker model within an AWS Region in an AWS account.
+     * Amazon SageMaker model in the same AWS Region and AWS account. For information on creating a model, see
+     * <a>CreateModel</a>.
      * </p>
      * </li>
      * <li>

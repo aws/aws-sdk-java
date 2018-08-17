@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Creates an AWS Mobile Hub project. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -147,6 +149,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Delets a project in AWS Mobile Hub. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -195,6 +199,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Get the bundle details for the requested bundle id. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -247,6 +253,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Gets details about a project in AWS Mobile Hub. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -299,6 +307,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -351,6 +361,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -403,6 +415,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> List all available bundles. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -451,6 +465,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Lists projects in AWS Mobile Hub. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",
@@ -499,6 +515,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Update an existing project. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>",

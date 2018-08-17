@@ -34,6 +34,8 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate sdkFunctionClass = new TopLevelTemplate("/templates/waiter/SdkFunction.ftl", null);
     private TopLevelTemplate acceptorClass = new TopLevelTemplate("/templates/waiter/Acceptor.ftl", null);
     private TopLevelTemplate waiterClass = new TopLevelTemplate("/templates/waiter/Waiter.ftl", null);
+    private TopLevelTemplate endpointDiscoveryCache = new TopLevelTemplate("/templates/endpoint-discovery/Cache.ftl", null);
+    private TopLevelTemplate endpointDiscoveryCacheLoader = new TopLevelTemplate("/templates/endpoint-discovery/CacheLoader.ftl", null);
     private TopLevelTemplate syncClient;
     private TopLevelTemplate asyncClient;
     private TopLevelTemplate syncAbstractClass;
@@ -385,5 +387,13 @@ public class CodeGenTemplatesConfig {
 
     public TopLevelTemplate getApiGatewayReadmeTemplate() {
         return apiGatewayReadmeTemplate;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryCache() {
+        return endpointDiscoveryCache;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryCacheLoader() {
+        return endpointDiscoveryCacheLoader;
     }
 }

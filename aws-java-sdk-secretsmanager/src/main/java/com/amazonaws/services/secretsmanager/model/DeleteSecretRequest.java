@@ -34,7 +34,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String secretId;
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
+     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
@@ -43,8 +44,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Long recoveryWindowInDays;
     /**
      * <p>
-     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
-     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     * parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
      * </p>
      * <p>
      * An asynchronous background process performs the actual deletion, so there can be a short delay before the
@@ -110,14 +111,17 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
+     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
+     *        can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
+     *        call.</p>
      *        <p>
      *        This value can range from 7 to 30 days. The default value is 30.
      */
@@ -128,13 +132,16 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
+     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
      * </p>
      * 
-     * @return (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.</p>
+     * @return (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
+     *         can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
+     *         call.</p>
      *         <p>
      *         This value can range from 7 to 30 days. The default value is 30.
      */
@@ -145,14 +152,17 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
+     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
+     *        can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
+     *        call.</p>
      *        <p>
      *        This value can range from 7 to 30 days. The default value is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -165,8 +175,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
-     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     * parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
      * </p>
      * <p>
      * An asynchronous background process performs the actual deletion, so there can be a short delay before the
@@ -183,8 +193,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @param forceDeleteWithoutRecovery
-     *        (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
-     *        use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     *        (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     *        parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
      *        <p>
      *        An asynchronous background process performs the actual deletion, so there can be a short delay before the
      *        operation completes. If you write code to delete and then immediately recreate a secret with the same
@@ -205,8 +215,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
-     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     * parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
      * </p>
      * <p>
      * An asynchronous background process performs the actual deletion, so there can be a short delay before the
@@ -222,8 +232,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </important>
      * 
-     * @return (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
-     *         use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     * @return (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both
+     *         this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
      *         <p>
      *         An asynchronous background process performs the actual deletion, so there can be a short delay before the
      *         operation completes. If you write code to delete and then immediately recreate a secret with the same
@@ -244,8 +254,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
-     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     * parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
      * </p>
      * <p>
      * An asynchronous background process performs the actual deletion, so there can be a short delay before the
@@ -262,8 +272,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @param forceDeleteWithoutRecovery
-     *        (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
-     *        use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     *        (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     *        parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
      *        <p>
      *        An asynchronous background process performs the actual deletion, so there can be a short delay before the
      *        operation completes. If you write code to delete and then immediately recreate a secret with the same
@@ -286,8 +296,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot use
-     * both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
+     * (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both this
+     * parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.
      * </p>
      * <p>
      * An asynchronous background process performs the actual deletion, so there can be a short delay before the
@@ -303,8 +313,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </important>
      * 
-     * @return (Optional) Specifies that the secret is to be deleted immediately without any recovery window. You cannot
-     *         use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
+     * @return (Optional) Specifies that the secret is to be deleted without any recovery window. You can't use both
+     *         this parameter and the <code>RecoveryWindowInDays</code> parameter in the same API call.</p>
      *         <p>
      *         An asynchronous background process performs the actual deletion, so there can be a short delay before the
      *         operation completes. If you write code to delete and then immediately recreate a secret with the same

@@ -96,6 +96,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging\" target=\"_blank\"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -140,6 +142,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new Elasticsearch domain. For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -196,6 +200,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -240,6 +246,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr\" target=\"_blank\">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -280,6 +288,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -324,6 +334,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -368,6 +380,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -408,6 +422,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -460,6 +476,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists available reserved Elasticsearch instance offerings.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>",
@@ -504,6 +522,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about reserved Elasticsearch instances for this account.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>",
@@ -548,6 +568,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p> Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -596,6 +618,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the complete history of the last 10 upgrades that were performed on the domain.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -644,6 +668,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -692,6 +718,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -728,6 +756,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>List all Elasticsearch instance types that are supported for given ElasticsearchVersion</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -772,6 +802,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>List all supported Elasticsearch versions</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -816,6 +848,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns all tags for the given Elasticsearch domain.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -860,6 +894,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Allows you to purchase reserved Elasticsearch instances.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>",
@@ -912,6 +948,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes the specified set of tags from the specified Elasticsearch domain.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -952,6 +990,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",
@@ -1004,6 +1044,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BaseException",
         "documentation" : "<p>An error occurred while processing the request.</p>",

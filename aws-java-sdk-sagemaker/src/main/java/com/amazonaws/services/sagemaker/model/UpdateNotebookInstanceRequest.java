@@ -51,6 +51,20 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </note>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     */
+    private String lifecycleConfigName;
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
+     * notebook instance.
+     * </p>
+     */
+    private Boolean disassociateLifecycleConfig;
 
     /**
      * <p>
@@ -237,6 +251,112 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param lifecycleConfigName
+     *        The name of a lifecycle configuration to associate with the notebook instance. For information about
+     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     */
+
+    public void setLifecycleConfigName(String lifecycleConfigName) {
+        this.lifecycleConfigName = lifecycleConfigName;
+    }
+
+    /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @return The name of a lifecycle configuration to associate with the notebook instance. For information about
+     *         lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     */
+
+    public String getLifecycleConfigName() {
+        return this.lifecycleConfigName;
+    }
+
+    /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param lifecycleConfigName
+     *        The name of a lifecycle configuration to associate with the notebook instance. For information about
+     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withLifecycleConfigName(String lifecycleConfigName) {
+        setLifecycleConfigName(lifecycleConfigName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
+     * notebook instance.
+     * </p>
+     * 
+     * @param disassociateLifecycleConfig
+     *        Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with
+     *        the notebook instance.
+     */
+
+    public void setDisassociateLifecycleConfig(Boolean disassociateLifecycleConfig) {
+        this.disassociateLifecycleConfig = disassociateLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
+     * notebook instance.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated
+     *         with the notebook instance.
+     */
+
+    public Boolean getDisassociateLifecycleConfig() {
+        return this.disassociateLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
+     * notebook instance.
+     * </p>
+     * 
+     * @param disassociateLifecycleConfig
+     *        Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with
+     *        the notebook instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNotebookInstanceRequest withDisassociateLifecycleConfig(Boolean disassociateLifecycleConfig) {
+        setDisassociateLifecycleConfig(disassociateLifecycleConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
+     * notebook instance.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated
+     *         with the notebook instance.
+     */
+
+    public Boolean isDisassociateLifecycleConfig() {
+        return this.disassociateLifecycleConfig;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -252,7 +372,11 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getLifecycleConfigName() != null)
+            sb.append("LifecycleConfigName: ").append(getLifecycleConfigName()).append(",");
+        if (getDisassociateLifecycleConfig() != null)
+            sb.append("DisassociateLifecycleConfig: ").append(getDisassociateLifecycleConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -279,6 +403,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getLifecycleConfigName() == null ^ this.getLifecycleConfigName() == null)
+            return false;
+        if (other.getLifecycleConfigName() != null && other.getLifecycleConfigName().equals(this.getLifecycleConfigName()) == false)
+            return false;
+        if (other.getDisassociateLifecycleConfig() == null ^ this.getDisassociateLifecycleConfig() == null)
+            return false;
+        if (other.getDisassociateLifecycleConfig() != null && other.getDisassociateLifecycleConfig().equals(this.getDisassociateLifecycleConfig()) == false)
+            return false;
         return true;
     }
 
@@ -290,6 +422,8 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getNotebookInstanceName() == null) ? 0 : getNotebookInstanceName().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleConfigName() == null) ? 0 : getLifecycleConfigName().hashCode());
+        hashCode = prime * hashCode + ((getDisassociateLifecycleConfig() == null) ? 0 : getDisassociateLifecycleConfig().hashCode());
         return hashCode;
     }
 

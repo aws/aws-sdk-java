@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.importexport.AmazonImportExportClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -57,6 +58,7 @@ import com.amazonaws.services.importexport.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonImportExportClient extends AmazonWebServiceClient implements AmazonImportExport {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -245,6 +247,22 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on AWS Import/Export using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonImportExportClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new MissingCustomsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidVersionExceptionUnmarshaller());
@@ -327,6 +345,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CancelJobResult> responseHandler = new StaxResponseHandler<CancelJobResult>(new CancelJobResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -415,6 +435,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateJobResult> responseHandler = new StaxResponseHandler<CreateJobResult>(new CreateJobResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -477,6 +499,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetShippingLabelResult> responseHandler = new StaxResponseHandler<GetShippingLabelResult>(
                     new GetShippingLabelResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -538,6 +562,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<GetStatusResult> responseHandler = new StaxResponseHandler<GetStatusResult>(new GetStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -593,6 +619,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListJobsResult> responseHandler = new StaxResponseHandler<ListJobsResult>(new ListJobsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -689,6 +717,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateJobResult> responseHandler = new StaxResponseHandler<UpdateJobResult>(new UpdateJobResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -724,9 +754,18 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -736,7 +775,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -744,8 +783,15 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

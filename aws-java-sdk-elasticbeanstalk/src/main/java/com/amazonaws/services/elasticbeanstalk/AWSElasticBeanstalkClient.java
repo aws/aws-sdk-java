@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalkClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -73,6 +74,7 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements AWSElasticBeanstalk {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -261,6 +263,22 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Elastic Beanstalk using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSElasticBeanstalkClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
@@ -334,6 +352,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AbortEnvironmentUpdateResult> responseHandler = new StaxResponseHandler<AbortEnvironmentUpdateResult>(
                     new AbortEnvironmentUpdateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -397,6 +417,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ApplyEnvironmentManagedActionResult> responseHandler = new StaxResponseHandler<ApplyEnvironmentManagedActionResult>(
                     new ApplyEnvironmentManagedActionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -448,6 +470,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CheckDNSAvailabilityResult> responseHandler = new StaxResponseHandler<CheckDNSAvailabilityResult>(
                     new CheckDNSAvailabilityResultStaxUnmarshaller());
@@ -510,6 +534,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ComposeEnvironmentsResult> responseHandler = new StaxResponseHandler<ComposeEnvironmentsResult>(
                     new ComposeEnvironmentsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -564,6 +590,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateApplicationResult> responseHandler = new StaxResponseHandler<CreateApplicationResult>(
                     new CreateApplicationResultStaxUnmarshaller());
@@ -664,6 +692,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateApplicationVersionResult> responseHandler = new StaxResponseHandler<CreateApplicationVersionResult>(
                     new CreateApplicationVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -743,6 +773,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateConfigurationTemplateResult> responseHandler = new StaxResponseHandler<CreateConfigurationTemplateResult>(
                     new CreateConfigurationTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -797,6 +829,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateEnvironmentResult> responseHandler = new StaxResponseHandler<CreateEnvironmentResult>(
                     new CreateEnvironmentResultStaxUnmarshaller());
@@ -855,6 +889,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreatePlatformVersionResult> responseHandler = new StaxResponseHandler<CreatePlatformVersionResult>(
                     new CreatePlatformVersionResultStaxUnmarshaller());
@@ -915,6 +951,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateStorageLocationResult> responseHandler = new StaxResponseHandler<CreateStorageLocationResult>(
                     new CreateStorageLocationResultStaxUnmarshaller());
@@ -981,6 +1019,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteApplicationResult> responseHandler = new StaxResponseHandler<DeleteApplicationResult>(
                     new DeleteApplicationResultStaxUnmarshaller());
@@ -1066,6 +1106,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteApplicationVersionResult> responseHandler = new StaxResponseHandler<DeleteApplicationVersionResult>(
                     new DeleteApplicationVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1127,6 +1169,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteConfigurationTemplateResult> responseHandler = new StaxResponseHandler<DeleteConfigurationTemplateResult>(
                     new DeleteConfigurationTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1184,6 +1228,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteEnvironmentConfigurationResult> responseHandler = new StaxResponseHandler<DeleteEnvironmentConfigurationResult>(
                     new DeleteEnvironmentConfigurationResultStaxUnmarshaller());
@@ -1245,6 +1291,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeletePlatformVersionResult> responseHandler = new StaxResponseHandler<DeletePlatformVersionResult>(
                     new DeletePlatformVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1301,6 +1349,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1352,6 +1402,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeApplicationVersionsResult> responseHandler = new StaxResponseHandler<DescribeApplicationVersionsResult>(
                     new DescribeApplicationVersionsResultStaxUnmarshaller());
@@ -1409,6 +1461,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeApplicationsResult> responseHandler = new StaxResponseHandler<DescribeApplicationsResult>(
                     new DescribeApplicationsResultStaxUnmarshaller());
@@ -1470,6 +1524,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeConfigurationOptionsResult> responseHandler = new StaxResponseHandler<DescribeConfigurationOptionsResult>(
                     new DescribeConfigurationOptionsResultStaxUnmarshaller());
@@ -1542,6 +1598,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeConfigurationSettingsResult> responseHandler = new StaxResponseHandler<DescribeConfigurationSettingsResult>(
                     new DescribeConfigurationSettingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1600,6 +1658,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeEnvironmentHealthResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentHealthResult>(
                     new DescribeEnvironmentHealthResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1657,6 +1717,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult>(
                     new DescribeEnvironmentManagedActionHistoryResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1713,6 +1775,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeEnvironmentManagedActionsResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionsResult>(
                     new DescribeEnvironmentManagedActionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1767,6 +1831,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeEnvironmentResourcesResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentResourcesResult>(
                     new DescribeEnvironmentResourcesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1818,6 +1884,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeEnvironmentsResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentsResult>(
                     new DescribeEnvironmentsResultStaxUnmarshaller());
@@ -1880,6 +1948,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeEventsResult> responseHandler = new StaxResponseHandler<DescribeEventsResult>(
                     new DescribeEventsResultStaxUnmarshaller());
@@ -1945,6 +2015,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeInstancesHealthResult> responseHandler = new StaxResponseHandler<DescribeInstancesHealthResult>(
                     new DescribeInstancesHealthResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2000,6 +2072,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribePlatformVersionResult> responseHandler = new StaxResponseHandler<DescribePlatformVersionResult>(
                     new DescribePlatformVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2051,6 +2125,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListAvailableSolutionStacksResult> responseHandler = new StaxResponseHandler<ListAvailableSolutionStacksResult>(
                     new ListAvailableSolutionStacksResultStaxUnmarshaller());
@@ -2111,6 +2187,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ListPlatformVersionsResult> responseHandler = new StaxResponseHandler<ListPlatformVersionsResult>(
                     new ListPlatformVersionsResultStaxUnmarshaller());
@@ -2176,6 +2254,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2229,6 +2309,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RebuildEnvironmentResult> responseHandler = new StaxResponseHandler<RebuildEnvironmentResult>(
                     new RebuildEnvironmentResultStaxUnmarshaller());
@@ -2303,6 +2385,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RequestEnvironmentInfoResult> responseHandler = new StaxResponseHandler<RequestEnvironmentInfoResult>(
                     new RequestEnvironmentInfoResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2353,6 +2437,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RestartAppServerResult> responseHandler = new StaxResponseHandler<RestartAppServerResult>(
                     new RestartAppServerResultStaxUnmarshaller());
@@ -2416,6 +2502,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RetrieveEnvironmentInfoResult> responseHandler = new StaxResponseHandler<RetrieveEnvironmentInfoResult>(
                     new RetrieveEnvironmentInfoResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2467,6 +2555,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SwapEnvironmentCNAMEsResult> responseHandler = new StaxResponseHandler<SwapEnvironmentCNAMEsResult>(
                     new SwapEnvironmentCNAMEsResultStaxUnmarshaller());
@@ -2527,6 +2617,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<TerminateEnvironmentResult> responseHandler = new StaxResponseHandler<TerminateEnvironmentResult>(
                     new TerminateEnvironmentResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2585,6 +2677,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateApplicationResult> responseHandler = new StaxResponseHandler<UpdateApplicationResult>(
                     new UpdateApplicationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2640,6 +2734,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateApplicationResourceLifecycleResult> responseHandler = new StaxResponseHandler<UpdateApplicationResourceLifecycleResult>(
                     new UpdateApplicationResourceLifecycleResultStaxUnmarshaller());
@@ -2697,6 +2793,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateApplicationVersionResult> responseHandler = new StaxResponseHandler<UpdateApplicationVersionResult>(
                     new UpdateApplicationVersionResultStaxUnmarshaller());
@@ -2770,6 +2868,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateConfigurationTemplateResult> responseHandler = new StaxResponseHandler<UpdateConfigurationTemplateResult>(
                     new UpdateConfigurationTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2835,6 +2935,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<UpdateEnvironmentResult> responseHandler = new StaxResponseHandler<UpdateEnvironmentResult>(
                     new UpdateEnvironmentResultStaxUnmarshaller());
@@ -2933,6 +3035,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<UpdateTagsForResourceResult> responseHandler = new StaxResponseHandler<UpdateTagsForResourceResult>(
                     new UpdateTagsForResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2994,6 +3098,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ValidateConfigurationSettingsResult> responseHandler = new StaxResponseHandler<ValidateConfigurationSettingsResult>(
                     new ValidateConfigurationSettingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -3030,9 +3136,18 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -3042,7 +3157,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -3050,8 +3165,15 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

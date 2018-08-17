@@ -46,7 +46,7 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A timestamp that shows when the secondary status has ended and the job has transitioned into another secondary
-     * status.
+     * status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      * </p>
      */
     private java.util.Date endTime;
@@ -169,12 +169,12 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A timestamp that shows when the secondary status has ended and the job has transitioned into another secondary
-     * status.
+     * status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      * </p>
      * 
      * @param endTime
      *        A timestamp that shows when the secondary status has ended and the job has transitioned into another
-     *        secondary status.
+     *        secondary status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -184,11 +184,11 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A timestamp that shows when the secondary status has ended and the job has transitioned into another secondary
-     * status.
+     * status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      * </p>
      * 
      * @return A timestamp that shows when the secondary status has ended and the job has transitioned into another
-     *         secondary status.
+     *         secondary status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      */
 
     public java.util.Date getEndTime() {
@@ -198,12 +198,12 @@ public class SecondaryStatusTransition implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A timestamp that shows when the secondary status has ended and the job has transitioned into another secondary
-     * status.
+     * status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      * </p>
      * 
      * @param endTime
      *        A timestamp that shows when the secondary status has ended and the job has transitioned into another
-     *        secondary status.
+     *        secondary status. The <code>EndTime</code> timestamp is also set after the training job has ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.elasticloadbalancingv2.AmazonElasticLoadBalancingClientBuilder;
 import com.amazonaws.services.elasticloadbalancingv2.waiters.AmazonElasticLoadBalancingWaiters;
 
@@ -126,6 +127,7 @@ import com.amazonaws.services.elasticloadbalancingv2.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient implements AmazonElasticLoadBalancing {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -317,6 +319,22 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Elastic Load Balancing v2 using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonElasticLoadBalancingClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new UnsupportedProtocolExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AllocationIdNotFoundExceptionUnmarshaller());
@@ -418,6 +436,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<AddListenerCertificatesResult> responseHandler = new StaxResponseHandler<AddListenerCertificatesResult>(
                     new AddListenerCertificatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -485,6 +505,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<AddTagsResult> responseHandler = new StaxResponseHandler<AddTagsResult>(new AddTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -581,6 +603,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<CreateListenerResult> responseHandler = new StaxResponseHandler<CreateListenerResult>(
                     new CreateListenerResultStaxUnmarshaller());
@@ -687,6 +711,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateLoadBalancerResult> responseHandler = new StaxResponseHandler<CreateLoadBalancerResult>(
                     new CreateLoadBalancerResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -775,6 +801,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateRuleResult> responseHandler = new StaxResponseHandler<CreateRuleResult>(new CreateRuleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -854,6 +882,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<CreateTargetGroupResult> responseHandler = new StaxResponseHandler<CreateTargetGroupResult>(
                     new CreateTargetGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -910,6 +940,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteListenerResult> responseHandler = new StaxResponseHandler<DeleteListenerResult>(
                     new DeleteListenerResultStaxUnmarshaller());
@@ -977,6 +1009,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteLoadBalancerResult> responseHandler = new StaxResponseHandler<DeleteLoadBalancerResult>(
                     new DeleteLoadBalancerResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1031,6 +1065,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeleteRuleResult> responseHandler = new StaxResponseHandler<DeleteRuleResult>(new DeleteRuleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1088,6 +1124,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DeleteTargetGroupResult> responseHandler = new StaxResponseHandler<DeleteTargetGroupResult>(
                     new DeleteTargetGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1144,6 +1182,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DeregisterTargetsResult> responseHandler = new StaxResponseHandler<DeregisterTargetsResult>(
                     new DeregisterTargetsResultStaxUnmarshaller());
@@ -1203,6 +1243,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1256,6 +1298,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeListenerCertificatesResult> responseHandler = new StaxResponseHandler<DescribeListenerCertificatesResult>(
                     new DescribeListenerCertificatesResultStaxUnmarshaller());
@@ -1314,6 +1358,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeListenersResult> responseHandler = new StaxResponseHandler<DescribeListenersResult>(
                     new DescribeListenersResultStaxUnmarshaller());
@@ -1376,6 +1422,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerAttributesResult>(
                     new DescribeLoadBalancerAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1432,6 +1480,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeLoadBalancersResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancersResult>(
                     new DescribeLoadBalancersResultStaxUnmarshaller());
@@ -1491,6 +1541,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeRulesResult> responseHandler = new StaxResponseHandler<DescribeRulesResult>(new DescribeRulesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1547,6 +1599,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeSSLPoliciesResult> responseHandler = new StaxResponseHandler<DescribeSSLPoliciesResult>(
                     new DescribeSSLPoliciesResultStaxUnmarshaller());
@@ -1608,6 +1662,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -1667,6 +1723,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeTargetGroupAttributesResult> responseHandler = new StaxResponseHandler<DescribeTargetGroupAttributesResult>(
                     new DescribeTargetGroupAttributesResultStaxUnmarshaller());
@@ -1729,6 +1787,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<DescribeTargetGroupsResult> responseHandler = new StaxResponseHandler<DescribeTargetGroupsResult>(
                     new DescribeTargetGroupsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1786,6 +1846,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<DescribeTargetHealthResult> responseHandler = new StaxResponseHandler<DescribeTargetHealthResult>(
                     new DescribeTargetHealthResultStaxUnmarshaller());
@@ -1873,6 +1935,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyListenerResult> responseHandler = new StaxResponseHandler<ModifyListenerResult>(
                     new ModifyListenerResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1932,6 +1996,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<ModifyLoadBalancerAttributesResult>(
                     new ModifyLoadBalancerAttributesResultStaxUnmarshaller());
@@ -2010,6 +2076,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyRuleResult> responseHandler = new StaxResponseHandler<ModifyRuleResult>(new ModifyRuleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2067,6 +2135,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<ModifyTargetGroupResult> responseHandler = new StaxResponseHandler<ModifyTargetGroupResult>(
                     new ModifyTargetGroupResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2122,6 +2192,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<ModifyTargetGroupAttributesResult> responseHandler = new StaxResponseHandler<ModifyTargetGroupAttributesResult>(
                     new ModifyTargetGroupAttributesResultStaxUnmarshaller());
@@ -2200,6 +2272,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RegisterTargetsResult> responseHandler = new StaxResponseHandler<RegisterTargetsResult>(
                     new RegisterTargetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2262,6 +2336,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<RemoveListenerCertificatesResult> responseHandler = new StaxResponseHandler<RemoveListenerCertificatesResult>(
                     new RemoveListenerCertificatesResultStaxUnmarshaller());
@@ -2327,6 +2403,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<RemoveTagsResult> responseHandler = new StaxResponseHandler<RemoveTagsResult>(new RemoveTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2386,6 +2464,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetIpAddressTypeResult> responseHandler = new StaxResponseHandler<SetIpAddressTypeResult>(
                     new SetIpAddressTypeResultStaxUnmarshaller());
@@ -2448,6 +2528,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetRulePrioritiesResult> responseHandler = new StaxResponseHandler<SetRulePrioritiesResult>(
                     new SetRulePrioritiesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2508,6 +2590,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             StaxResponseHandler<SetSecurityGroupsResult> responseHandler = new StaxResponseHandler<SetSecurityGroupsResult>(
                     new SetSecurityGroupsResultStaxUnmarshaller());
@@ -2576,6 +2660,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             StaxResponseHandler<SetSubnetsResult> responseHandler = new StaxResponseHandler<SetSubnetsResult>(new SetSubnetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
@@ -2611,9 +2697,18 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -2623,7 +2718,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -2631,8 +2726,15 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

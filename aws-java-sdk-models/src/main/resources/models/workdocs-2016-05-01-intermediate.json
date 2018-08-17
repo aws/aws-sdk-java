@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : {
       "Activity" : [ "Type" ],
       "Comment" : [ "Status", "Visibility" ],
@@ -115,6 +115,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -167,6 +169,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Activates the specified user. Only active users can access Amazon WorkDocs.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -215,6 +219,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -259,6 +265,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds a new comment to the specified document version.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -315,6 +323,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -371,6 +381,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a folder with the specified name and parent folder.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -431,6 +443,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds the specified list of labels to the given resource (a document or folder)</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -483,6 +497,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Configure WorkDocs to use Amazon SNS notifications.</p> <p>The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm\">Confirm the Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedResourceAccessException",
         "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
@@ -523,6 +539,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is \"ACTIVE\". New users can access Amazon WorkDocs.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityAlreadyExistsException",
         "documentation" : "<p>The resource already exists.</p>",
@@ -571,6 +589,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -619,6 +639,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified comment from the document version.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -675,6 +697,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes custom metadata from the specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -727,6 +751,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Permanently deletes the specified document and its associated metadata.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -783,6 +809,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Permanently deletes the specified folder and its contents.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -839,6 +867,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the contents of the specified folder.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -887,6 +917,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified list of labels from a resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -935,6 +967,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified subscription from the specified organization.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedResourceAccessException",
         "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
@@ -979,6 +1013,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1027,6 +1063,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the user activities in a specified time period.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1075,6 +1113,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>List all the comments for the specified document version.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1127,6 +1167,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the document versions for the specified document.</p> <p>By default, only active versions are returned.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1183,6 +1225,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the contents of the specified folder, including its documents and subfolders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1235,6 +1279,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the groups specified by query.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1279,6 +1325,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the specified notification subscriptions.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedResourceAccessException",
         "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
@@ -1319,6 +1367,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the permissions of a specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1363,6 +1413,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1411,6 +1463,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p> <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1459,6 +1513,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1507,6 +1563,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves details of a document.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1563,6 +1621,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1611,6 +1671,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves version metadata for the specified document.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1667,6 +1729,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the metadata of the specified folder.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1723,6 +1787,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1771,6 +1837,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new document object and version object.</p> <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <a>UpdateDocumentVersion</a>.</p> <p>To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1843,6 +1911,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes all the permissions from the specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1887,6 +1957,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes the permission for the specified principal from the specified resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
@@ -1931,6 +2003,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -1995,6 +2069,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -2055,6 +2131,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
@@ -2119,6 +2197,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",

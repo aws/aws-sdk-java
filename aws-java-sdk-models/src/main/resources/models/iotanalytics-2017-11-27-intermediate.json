@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sends messages to a channel.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A resource with the specified name could not be found.</p>",
@@ -139,6 +141,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Cancels the reprocessing of data through the pipeline.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A resource with the specified name could not be found.</p>",
@@ -187,6 +191,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a channel. A channel collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -239,6 +245,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a data set. A data set stores data retrieved from a data store by applying an SQL action.</p> <note> <p>This operation creates the skeleton of a data set. To populate the data set, call \"CreateDatasetContent\".</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -291,6 +299,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates the content of a data set by applying an SQL action.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -339,6 +349,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a data store, which is a repository for messages.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -391,6 +403,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a pipeline. A pipeline consumes messages from one or more channels and allows you to process the messages before storing them in a data store.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -443,6 +457,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified channel.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -491,6 +507,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified data set.</p> <p>You do not have to delete the content of the data set before you perform this operation.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -539,6 +557,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the content of the specified data set.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -587,6 +607,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified data store.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -635,6 +657,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified pipeline.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -683,6 +707,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a channel.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -731,6 +757,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a data set.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -779,6 +807,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a data store.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -827,6 +857,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the current settings of the AWS IoT Analytics logging options.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -875,6 +907,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a pipeline.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -923,6 +957,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves the contents of a data set as pre-signed URIs.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -971,6 +1007,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a list of channels.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1015,6 +1053,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about data sets.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1059,6 +1099,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a list of data stores.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1103,6 +1145,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a list of pipelines.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1147,6 +1191,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists the tags (metadata) which you have assigned to the resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1199,6 +1245,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sets or updates the AWS IoT Analytics logging options.</p> <p>Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field (for example, to correct an invalid policy) it takes up to 5 minutes for that change to take effect. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1243,6 +1291,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Simulates the results of running a pipeline activity on a message payload.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1287,6 +1337,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1335,6 +1387,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Starts the reprocessing of raw message data through the pipeline.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>A resource with the specified name could not be found.</p>",
@@ -1387,6 +1441,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1439,6 +1495,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Removes the given tags (metadata) from the resource.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1491,6 +1549,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the settings of a channel.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1539,6 +1599,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the settings of a data set.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1587,6 +1649,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the settings of a data store.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",
@@ -1635,6 +1699,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the settings of a pipeline.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request was not valid.</p>",

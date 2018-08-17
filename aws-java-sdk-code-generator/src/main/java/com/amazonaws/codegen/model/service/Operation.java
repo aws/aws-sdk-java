@@ -37,7 +37,13 @@ public class Operation {
 
     private List<ErrorMap> errors;
 
+    private EndpointDiscovery endpointDiscovery;
+
     private boolean requiresApiKey;
+
+    private EndpointDiscovery endpointdiscovery;
+    
+    private boolean endpointoperation;
 
     @JsonProperty("authtype")
     private AuthType authType = AuthType.IAM;
@@ -129,11 +135,35 @@ public class Operation {
         this.authorizer = authorizer;
     }
 
+    public EndpointDiscovery getEndpointDiscovery() {
+        return endpointDiscovery;
+    }
+
+    public void setEndpointDiscovery(EndpointDiscovery endpointDiscovery) {
+        this.endpointDiscovery = endpointDiscovery;
+    }
+
     public boolean requiresApiKey() {
         return requiresApiKey;
     }
 
     public void setRequiresApiKey(boolean requiresApiKey) {
         this.requiresApiKey = requiresApiKey;
+    }
+
+    public EndpointDiscovery getEndpointdiscovery() {
+        return endpointdiscovery;
+    }
+
+    public void setEndpointdiscovery(EndpointDiscovery endpointdiscovery) {
+        this.endpointdiscovery = endpointdiscovery;
+    }
+    
+    public boolean isEndpointoperation() {
+        return endpointoperation;
+    }
+
+    public void setEndpointoperation(boolean endpointoperation) {
+        this.endpointoperation = endpointoperation;
     }
 }

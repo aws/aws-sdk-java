@@ -73,7 +73,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      */
     private String clientRequestToken;
@@ -224,7 +224,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -267,7 +267,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        This value becomes the <code>VersionId</code> of the new version.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -315,7 +315,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @return (Optional) Specifies a unique identifier for the new version of the secret. </p> <note>
@@ -358,7 +358,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         This value becomes the <code>SecretVersionId</code> of the new version.
+     *         This value becomes the <code>VersionId</code> of the new version.
      */
 
     public String getClientRequestToken() {
@@ -406,7 +406,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -449,7 +449,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        This value becomes the <code>VersionId</code> of the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

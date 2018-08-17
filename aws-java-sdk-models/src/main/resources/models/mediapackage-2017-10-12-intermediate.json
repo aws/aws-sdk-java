@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Creates a new Channel.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -143,6 +145,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Creates a new OriginEndpoint record.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -195,6 +199,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Deletes an existing Channel.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -247,6 +253,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Deletes an existing OriginEndpoint.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -299,6 +307,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Gets details about a Channel.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -351,6 +361,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Gets details about an existing OriginEndpoint.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -403,6 +415,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns a collection of Channels.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -455,6 +469,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns a collection of OriginEndpoint records.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -507,6 +523,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Changes the Channel ingest username and password.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -559,6 +577,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Updates an existing Channel.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",
@@ -611,6 +631,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Updates an existing OriginEndpoint.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "UnprocessableEntityException",
         "documentation" : "The parameters sent in the request are not valid.",

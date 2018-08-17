@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Creates a broker. Note: This API is asynchronous.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -139,6 +141,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -183,6 +187,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Creates an ActiveMQ user.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -231,6 +237,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Deletes a broker. Note: This API is asynchronous.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -275,6 +283,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Deletes an ActiveMQ user.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -319,6 +329,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns information about the specified broker.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -363,6 +375,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns information about the specified configuration.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -407,6 +421,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns the specified configuration revision for the specified configuration.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -451,6 +467,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns information about an ActiveMQ user.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -495,6 +513,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns a list of all brokers.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -535,6 +555,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns a list of all revisions for the specified configuration.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -579,6 +601,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns a list of all configurations.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.",
@@ -619,6 +643,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Returns a list of all ActiveMQ users.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -663,6 +689,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Reboots a broker. Note: This API is asynchronous.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -707,6 +735,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Adds a pending configuration change to a broker.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -751,6 +781,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Updates the specified configuration.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",
@@ -799,6 +831,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "Updates the information for an ActiveMQ user.",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.",

@@ -64,6 +64,8 @@ final class AddOperations {
             operationModel.setDeprecated(op.isDeprecated());
             operationModel.setDocumentation(op.getDocumentation());
             operationModel.setIsAuthenticated(isAuthenticated(op));
+            operationModel.setEndpointDiscovery(op.getEndpointdiscovery());
+            operationModel.setEndpointOperation(op.isEndpointoperation());
 
             final Input input = op.getInput();
             if (input != null) {

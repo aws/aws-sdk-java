@@ -91,6 +91,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an audio file.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
@@ -135,6 +137,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a vocabulary from Amazon Transcribe. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
@@ -179,6 +183,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about a transcription job. To see the status of the job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in the <code>TranscriptionFileUri</code> field.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
@@ -223,6 +229,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about a vocabulary.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
@@ -267,6 +275,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Lists transcription jobs with the specified status.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
@@ -307,6 +317,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the entire list of vocabularies.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
@@ -347,6 +359,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Starts an asynchronous job to transcribe speech to text.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
@@ -391,6 +405,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the existing information with the values that you provide in the request.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",

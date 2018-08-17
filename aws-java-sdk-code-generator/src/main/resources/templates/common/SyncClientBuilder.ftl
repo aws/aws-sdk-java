@@ -4,6 +4,7 @@ package ${metadata.packageName};
 import javax.annotation.Generated;
 
 import com.amazonaws.ClientConfigurationFactory;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
 import com.amazonaws.client.AwsSyncClientParams;
@@ -18,6 +19,10 @@ public final class ${metadata.syncClientBuilderClassName}
     extends AwsSyncClientBuilder<${metadata.syncClientBuilderClassName}, ${metadata.syncInterface}> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ${clientConfigFactory}();
+
+    <#if endpointOperation?has_content>
+    private boolean endpointDiscoveryEnabled = true;
+    </#if>
 
     /**
     * @return Create new instance of builder with all defaults set.
@@ -38,6 +43,20 @@ public final class ${metadata.syncClientBuilderClassName}
         super(CLIENT_CONFIG_FACTORY);
     }
 
+    <#if endpointOperation?has_content>
+    public ${metadata.syncClientBuilderClassName} enableEndpointDiscovery() {
+        this.endpointDiscoveryEnabled = true;
+        return this;
+    }
+    </#if>
+
+    <#if endpointOperation?has_content>
+    public ${metadata.syncClientBuilderClassName} disableEndpointDiscovery() {
+        this.endpointDiscoveryEnabled = false;
+        return this;
+    }
+    </#if>
+
     /**
      * Construct a synchronous implementation of ${metadata.syncInterface} using the current builder configuration.
      *
@@ -46,6 +65,11 @@ public final class ${metadata.syncClientBuilderClassName}
      */
     @Override
     protected ${metadata.syncInterface} build(AwsSyncClientParams params) {
+        <#if endpointOperation?has_content>
+         if (endpointDiscoveryEnabled && getEndpoint() == null) {
+            return new ${metadata.syncClient}(params, endpointDiscoveryEnabled);
+        }
+        </#if>
         return new ${metadata.syncClient}(params);
     }
 

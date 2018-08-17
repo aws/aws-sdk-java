@@ -94,6 +94,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about one or more repositories.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNamesRequiredException",
         "documentation" : "<p>A repository names object is required but was not specified.</p>",
@@ -154,6 +156,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note> <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -238,6 +242,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a pull request in the specified repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -366,6 +372,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Creates a new, empty repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameExistsException",
         "documentation" : "<p>The specified repository name already exists.</p>",
@@ -434,6 +442,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a branch from a repository, unless that branch is the default branch for the repository. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -506,6 +516,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes the content of a comment made on a change, file, or commit in a repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "CommentDoesNotExistException",
         "documentation" : "<p>No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.</p>",
@@ -550,6 +562,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important> <p>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</p> </important>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -606,6 +620,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about one or more pull request events.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -686,6 +702,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the base-64 encoded content of an individual blob within a repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -762,6 +780,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about a repository branch, including its name and the last commit ID.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -834,6 +854,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns the content of a comment made on a change, file, or commit in a repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "CommentDoesNotExistException",
         "documentation" : "<p>No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.</p>",
@@ -878,6 +900,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about comments made on the comparison between two commits.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -958,6 +982,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns comments made on a pull request.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestIdRequiredException",
         "documentation" : "<p>A pull request ID is required, but none was provided.</p>",
@@ -1054,6 +1080,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about a commit, including commit message and committer information.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1126,6 +1154,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified reference). Results can be limited to a specified path.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1218,6 +1248,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1310,6 +1342,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about a pull request in a specified repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -1370,6 +1404,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns information about a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1430,6 +1466,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about triggers configured for a repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1490,6 +1528,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more branches in a repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1554,6 +1594,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidPullRequestStatusException",
         "documentation" : "<p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>",
@@ -1634,6 +1676,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more repositories.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "InvalidSortByException",
         "documentation" : "<p>The specified sort by value is not valid.</p>",
@@ -1674,6 +1718,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Closes a pull request and attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the fast-forward merge option.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ManualMergeRequiredException",
         "documentation" : "<p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>",
@@ -1766,6 +1812,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Posts a comment on the comparison between two commits.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -1886,6 +1934,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Posts a comment on a pull request.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -2026,6 +2076,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "ClientRequestTokenRequiredException",
         "documentation" : "<p>A client request token is required. A client request token is an unique, client-generated idempotency token that when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request will return information about the initial request that used that token.</p>",
@@ -2086,6 +2138,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Adds or updates a file in an AWS CodeCommit repository.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -2222,6 +2276,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Replaces all triggers for a repository. This can be used to create or delete triggers.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>",
@@ -2334,6 +2390,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test will send data from the last commit. If no data is available, sample data will be generated.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>",
@@ -2446,6 +2504,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Replaces the contents of a comment.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "CommentContentRequiredException",
         "documentation" : "<p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>",
@@ -2502,6 +2562,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sets or changes the default branch name for the specified repository.</p> <note> <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -2574,6 +2636,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Replaces the contents of the description of a pull request.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -2622,6 +2686,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Updates the status of a pull request. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -2694,6 +2760,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Replaces the title of a pull request.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "PullRequestDoesNotExistException",
         "documentation" : "<p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>",
@@ -2746,6 +2814,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Sets or changes the comment or description for a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryNameRequiredException",
         "documentation" : "<p>A repository name is required but was not specified.</p>",
@@ -2810,6 +2880,8 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix \".git\" is prohibited. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "RepositoryDoesNotExistException",
         "documentation" : "<p>The specified repository does not exist.</p>",

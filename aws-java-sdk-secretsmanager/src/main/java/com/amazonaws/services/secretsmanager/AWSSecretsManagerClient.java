@@ -37,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.services.secretsmanager.AWSSecretsManagerClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -123,6 +124,7 @@ import com.amazonaws.services.secretsmanager.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSSecretsManagerClient extends AmazonWebServiceClient implements AWSSecretsManager {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -194,6 +196,22 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on AWS Secrets Manager using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSSecretsManagerClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
@@ -217,9 +235,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <p>
      * If you cancel a rotation that is in progress, it can leave the <code>VersionStage</code> labels in an unexpected
      * state. Depending on what step of the rotation was in progress, you might need to remove the staging label
-     * <code>AWSPENDING</code> from the partially created version, specified by the <code>SecretVersionId</code>
-     * response value. You should also evaluate the partially rotated new version to see if it should be deleted, which
-     * you can do by removing all staging labels from the new version's <code>VersionStage</code> field.
+     * <code>AWSPENDING</code> from the partially created version, specified by the <code>VersionId</code> response
+     * value. You should also evaluate the partially rotated new version to see if it should be deleted, which you can
+     * do by removing all staging labels from the new version's <code>VersionStage</code> field.
      * </p>
      * </note>
      * <p>
@@ -337,6 +355,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<CancelRotateSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelRotateSecretResultJsonUnmarshaller());
@@ -530,6 +550,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<CreateSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSecretResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -634,6 +656,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
@@ -768,6 +792,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSecretResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -862,6 +888,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSecretResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -948,6 +976,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRandomPasswordResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRandomPasswordResultJsonUnmarshaller());
@@ -1055,6 +1085,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
@@ -1167,6 +1199,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<GetSecretValueResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSecretValueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1256,6 +1290,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSecretVersionIdsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSecretVersionIdsResultJsonUnmarshaller());
@@ -1347,6 +1383,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSecretsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSecretsResultJsonUnmarshaller());
@@ -1465,6 +1503,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1512,7 +1552,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * This operation is idempotent. If a version with a <code>SecretVersionId</code> with the same value as the
+     * This operation is idempotent. If a version with a <code>VersionId</code> with the same value as the
      * <code>ClientRequestToken</code> parameter already exists and you specify the same secret data, the operation
      * succeeds but does nothing. However, if the secret data is different, then the operation fails because you cannot
      * modify an existing version; you can only create new ones.
@@ -1656,6 +1696,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<PutSecretValueResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutSecretValueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1754,6 +1796,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<RestoreSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreSecretResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -1783,6 +1827,12 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * for your protected service, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating Secrets in AWS
      * Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
      * </p>
      * <p>
      * The rotation function must end with the versions of the secret in one of two states:
@@ -1906,6 +1956,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
+
+            URI cachedEndpoint = null;
 
             HttpResponseHandler<AmazonWebServiceResponse<RotateSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RotateSecretResultJsonUnmarshaller());
@@ -2057,6 +2109,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2170,6 +2224,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2201,9 +2257,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <ul>
      * <li>
      * <p>
-     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
-     * parameter already exists, the operation results in an error. You cannot modify an existing version, you can only
-     * create a new version.
+     * If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code> parameter
+     * already exists, the operation results in an error. You cannot modify an existing version, you can only create a
+     * new version.
      * </p>
      * </li>
      * <li>
@@ -2360,6 +2416,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSecretResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSecretResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
@@ -2483,6 +2541,8 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI cachedEndpoint = null;
+
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSecretVersionStageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateSecretVersionStageResultJsonUnmarshaller());
@@ -2520,9 +2580,18 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint);
     }
 
     /**
@@ -2532,7 +2601,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null);
     }
 
     /**
@@ -2540,8 +2609,15 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
