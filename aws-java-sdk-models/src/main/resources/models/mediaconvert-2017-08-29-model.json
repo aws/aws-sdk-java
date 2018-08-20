@@ -1043,11 +1043,7 @@
           "locationName": "vbrQuality"
         }
       },
-      "documentation": "Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to \"VBR\" or \"CBR\".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode.",
-      "required": [
-        "CodingMode",
-        "SampleRate"
-      ]
+      "documentation": "Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to \"VBR\" or \"CBR\".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode."
     },
     "AacSpecification": {
       "type": "string",
@@ -1250,10 +1246,7 @@
           "locationName": "wavSettings"
         }
       },
-      "documentation": "Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings",
-      "required": [
-        "Codec"
-      ]
+      "documentation": "Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings"
     },
     "AudioDefaultSelection": {
       "type": "string",
@@ -1313,10 +1306,7 @@
           "documentation": "Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary). Alphanumeric characters, spaces, and underscore are legal."
         }
       },
-      "documentation": "Description of audio output",
-      "required": [
-        "CodecSettings"
-      ]
+      "documentation": "Description of audio output"
     },
     "AudioLanguageCodeControl": {
       "type": "string",
@@ -1453,10 +1443,7 @@
           "documentation": "Name of an Audio Selector within the same input to include in the group.  Audio selector names are standardized, based on their order within the input (e.g., \"Audio Selector 1\"). The audio selector name parameter can be repeated to add any number of audio selectors to the group."
         }
       },
-      "documentation": "Group of Audio Selectors",
-      "required": [
-        "AudioSelectorNames"
-      ]
+      "documentation": "Group of Audio Selectors"
     },
     "AudioSelectorType": {
       "type": "string",
@@ -1578,13 +1565,7 @@
           "documentation": "Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match."
         }
       },
-      "documentation": "Burn-In Destination Settings.",
-      "required": [
-        "OutlineColor",
-        "Alignment",
-        "OutlineSize",
-        "FontOpacity"
-      ]
+      "documentation": "Burn-In Destination Settings."
     },
     "BurninSubtitleAlignment": {
       "type": "string",
@@ -1691,11 +1672,7 @@
           "documentation": "Human readable information to indicate captions available for players (eg. English, or Spanish). Alphanumeric characters, spaces, and underscore are legal."
         }
       },
-      "documentation": "Description of Caption output",
-      "required": [
-        "DestinationSettings",
-        "CaptionSelectorName"
-      ]
+      "documentation": "Description of Caption output"
     },
     "CaptionDescriptionPreset": {
       "type": "structure",
@@ -1720,10 +1697,7 @@
           "documentation": "Human readable information to indicate captions available for players (eg. English, or Spanish). Alphanumeric characters, spaces, and underscore are legal."
         }
       },
-      "documentation": "Caption Description for preset",
-      "required": [
-        "DestinationSettings"
-      ]
+      "documentation": "Caption Description for preset"
     },
     "CaptionDestinationSettings": {
       "type": "structure",
@@ -1753,10 +1727,7 @@
           "locationName": "ttmlDestinationSettings"
         }
       },
-      "documentation": "Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext.",
-      "required": [
-        "DestinationType"
-      ]
+      "documentation": "Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext."
     },
     "CaptionDestinationType": {
       "type": "string",
@@ -1790,10 +1761,7 @@
           "locationName": "sourceSettings"
         }
       },
-      "documentation": "Set up captions in your outputs by first selecting them from your input here.",
-      "required": [
-        "SourceSettings"
-      ]
+      "documentation": "Set up captions in your outputs by first selecting them from your input here."
     },
     "CaptionSourceSettings": {
       "type": "structure",
@@ -1823,10 +1791,7 @@
           "locationName": "teletextSourceSettings"
         }
       },
-      "documentation": "Source settings (SourceSettings) contains the group of settings for captions in the input.",
-      "required": [
-        "SourceType"
-      ]
+      "documentation": "Source settings (SourceSettings) contains the group of settings for captions in the input."
     },
     "CaptionSourceType": {
       "type": "string",
@@ -1852,10 +1817,7 @@
           "documentation": "List of output channels"
         }
       },
-      "documentation": "Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification).",
-      "required": [
-        "OutputChannels"
-      ]
+      "documentation": "Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification)."
     },
     "CmafClientCache": {
       "type": "string",
@@ -1898,10 +1860,7 @@
           "locationName": "type"
         }
       },
-      "documentation": "Settings for CMAF encryption",
-      "required": [
-        "Type"
-      ]
+      "documentation": "Settings for CMAF encryption"
     },
     "CmafEncryptionType": {
       "type": "string",
@@ -1981,11 +1940,7 @@
           "locationName": "writeHlsManifest"
         }
       },
-      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output.",
-      "required": [
-        "FragmentLength",
-        "SegmentLength"
-      ]
+      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output."
     },
     "CmafInitializationVectorInManifest": {
       "type": "string",
@@ -2164,10 +2119,7 @@
           "locationName": "mp4Settings"
         }
       },
-      "documentation": "Container specific settings.",
-      "required": [
-        "Container"
-      ]
+      "documentation": "Container specific settings."
     },
     "ContainerType": {
       "type": "string",
@@ -2362,10 +2314,7 @@
           "locationName": "spekeKeyProvider"
         }
       },
-      "documentation": "Specifies DRM settings for DASH outputs.",
-      "required": [
-        "SpekeKeyProvider"
-      ]
+      "documentation": "Specifies DRM settings for DASH outputs."
     },
     "DashIsoGroupSettings": {
       "type": "structure",
@@ -2414,11 +2363,7 @@
           "documentation": "When ENABLED, segment durations are indicated in the manifest using SegmentTimeline and SegmentTimeline will be promoted down into Representation from AdaptationSet."
         }
       },
-      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.",
-      "required": [
-        "SegmentLength",
-        "FragmentLength"
-      ]
+      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS."
     },
     "DashIsoHbbtvCompliance": {
       "type": "string",
@@ -2604,12 +2549,7 @@
           "documentation": "The number of milliseconds between instances of this table in the output transport stream."
         }
       },
-      "documentation": "Inserts DVB Network Information Table (NIT) at the specified table repetition interval.",
-      "required": [
-        "NetworkName",
-        "NitInterval",
-        "NetworkId"
-      ]
+      "documentation": "Inserts DVB Network Information Table (NIT) at the specified table repetition interval."
     },
     "DvbSdtSettings": {
       "type": "structure",
@@ -2714,13 +2654,7 @@
           "documentation": "Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match."
         }
       },
-      "documentation": "DVB-Sub Destination Settings",
-      "required": [
-        "OutlineColor",
-        "Alignment",
-        "OutlineSize",
-        "FontOpacity"
-      ]
+      "documentation": "DVB-Sub Destination Settings"
     },
     "DvbSubSourceSettings": {
       "type": "structure",
@@ -2800,10 +2734,7 @@
           "documentation": "The number of milliseconds between instances of this table in the output transport stream."
         }
       },
-      "documentation": "Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.",
-      "required": [
-        "TdtInterval"
-      ]
+      "documentation": "Inserts DVB Time and Date Table (TDT) at the specified table repetition interval."
     },
     "Eac3AttenuationControl": {
       "type": "string",
@@ -3133,10 +3064,7 @@
           "documentation": "Specifies a time delta in seconds to offset the captions from the source file."
         }
       },
-      "documentation": "Settings for File-based Captions in Source",
-      "required": [
-        "SourceFile"
-      ]
+      "documentation": "Settings for File-based Captions in Source"
     },
     "ForbiddenException": {
       "type": "structure",
@@ -3423,10 +3351,7 @@
           "documentation": "Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within h264Settings. Specify the target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9."
         }
       },
-      "documentation": "Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.",
-      "required": [
-        "QvbrQualityLevel"
-      ]
+      "documentation": "Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode."
     },
     "H264RateControlMode": {
       "type": "string",
@@ -3825,10 +3750,7 @@
           "documentation": "Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within h265Settings. Specify the target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9."
         }
       },
-      "documentation": "Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.",
-      "required": [
-        "QvbrQualityLevel"
-      ]
+      "documentation": "Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode."
     },
     "H265RateControlMode": {
       "type": "string",
@@ -4163,11 +4085,7 @@
           "documentation": "HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction."
         }
       },
-      "documentation": "Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple specification, you must use the HVC1 for H.265 setting.",
-      "required": [
-        "MaxContentLightLevel",
-        "MaxFrameAverageLightLevel"
-      ]
+      "documentation": "Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple specification, you must use the HVC1 for H.265 setting."
     },
     "HlsAdMarkers": {
       "type": "string",
@@ -4273,10 +4191,7 @@
           "locationName": "type"
         }
       },
-      "documentation": "Settings for HLS encryption",
-      "required": [
-        "Type"
-      ]
+      "documentation": "Settings for HLS encryption"
     },
     "HlsEncryptionType": {
       "type": "string",
@@ -4394,11 +4309,7 @@
           "documentation": "Provides an extra millisecond delta offset to fine tune the timestamps."
         }
       },
-      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.",
-      "required": [
-        "MinSegmentLength",
-        "SegmentLength"
-      ]
+      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS."
     },
     "HlsIFrameOnlyManifest": {
       "type": "string",
@@ -4524,11 +4435,7 @@
           "documentation": "Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format."
         }
       },
-      "documentation": "To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion).",
-      "required": [
-        "Timecode",
-        "Id3"
-      ]
+      "documentation": "To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion)."
     },
     "ImageInserter": {
       "type": "structure",
@@ -4539,10 +4446,7 @@
           "documentation": "Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be  larger than the output frames."
         }
       },
-      "documentation": "Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.",
-      "required": [
-        "InsertableImages"
-      ]
+      "documentation": "Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default."
     },
     "Input": {
       "type": "structure",
@@ -4607,10 +4511,7 @@
           "locationName": "videoSelector"
         }
       },
-      "documentation": "Specifies media input",
-      "required": [
-        "FileInput"
-      ]
+      "documentation": "Specifies media input"
     },
     "InputClipping": {
       "type": "structure",
@@ -4789,14 +4690,7 @@
           "documentation": "Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video resolution width. Leave this setting blank to use the native width of the image."
         }
       },
-      "documentation": "Settings for Insertable Image",
-      "required": [
-        "ImageY",
-        "ImageX",
-        "ImageInserterInput",
-        "Opacity",
-        "Layer"
-      ]
+      "documentation": "Settings for Insertable Image"
     },
     "InternalServerErrorException": {
       "type": "structure",
@@ -4921,11 +4815,7 @@
           "locationName": "timedMetadataInsertion"
         }
       },
-      "documentation": "JobSettings contains all the transcode settings for a job.",
-      "required": [
-        "OutputGroups",
-        "Inputs"
-      ]
+      "documentation": "JobSettings contains all the transcode settings for a job."
     },
     "JobStatus": {
       "type": "string",
@@ -5038,10 +4928,7 @@
           "locationName": "timedMetadataInsertion"
         }
       },
-      "documentation": "JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.",
-      "required": [
-        "OutputGroups"
-      ]
+      "documentation": "JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it."
     },
     "LanguageCode": {
       "type": "string",
@@ -6259,10 +6146,7 @@
           "locationName": "spekeKeyProvider"
         }
       },
-      "documentation": "If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.",
-      "required": [
-        "SpekeKeyProvider"
-      ]
+      "documentation": "If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider."
     },
     "MsSmoothGroupSettings": {
       "type": "structure",
@@ -6290,10 +6174,7 @@
           "locationName": "manifestEncoding"
         }
       },
-      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.",
-      "required": [
-        "FragmentLength"
-      ]
+      "documentation": "Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS."
     },
     "MsSmoothManifestEncoding": {
       "type": "string",
@@ -6335,10 +6216,7 @@
           "locationName": "spatialFilterSettings"
         }
       },
-      "documentation": "Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer (NoiseReducer), you must also select a value for Noise reducer filter (NoiseReducerFilter).",
-      "required": [
-        "Filter"
-      ]
+      "documentation": "Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer (NoiseReducer), you must also select a value for Noise reducer filter (NoiseReducerFilter)."
     },
     "NoiseReducerFilter": {
       "type": "string",
@@ -6460,10 +6338,7 @@
           "documentation": "List of input channels"
         }
       },
-      "documentation": "OutputChannel mapping settings.",
-      "required": [
-        "InputChannels"
-      ]
+      "documentation": "OutputChannel mapping settings."
     },
     "OutputDetail": {
       "type": "structure",
@@ -6503,11 +6378,7 @@
           "documentation": "This object holds groups of encoding settings, one group of settings per output."
         }
       },
-      "documentation": "Group of outputs",
-      "required": [
-        "Outputs",
-        "OutputGroupSettings"
-      ]
+      "documentation": "Group of outputs"
     },
     "OutputGroupDetail": {
       "type": "structure",
@@ -6548,10 +6419,7 @@
           "locationName": "type"
         }
       },
-      "documentation": "Output Group settings, including type",
-      "required": [
-        "Type"
-      ]
+      "documentation": "Output Group settings, including type"
     },
     "OutputGroupType": {
       "type": "string",
@@ -6875,13 +6743,7 @@
           "documentation": "The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers."
         }
       },
-      "documentation": "Use Rectangle to identify a specific area of the video frame.",
-      "required": [
-        "X",
-        "Y",
-        "Height",
-        "Width"
-      ]
+      "documentation": "Use Rectangle to identify a specific area of the video frame."
     },
     "RemixSettings": {
       "type": "structure",
@@ -6901,12 +6763,7 @@
           "documentation": "Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8"
         }
       },
-      "documentation": "Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides.",
-      "required": [
-        "ChannelsOut",
-        "ChannelMapping",
-        "ChannelsIn"
-      ]
+      "documentation": "Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides."
     },
     "ResourceTags": {
       "type": "structure",
@@ -6980,12 +6837,7 @@
           "documentation": "Use URL (Url) to specify the SPEKE-compliant server that will provide keys for content."
         }
       },
-      "documentation": "Settings for use with a SPEKE key provider",
-      "required": [
-        "ResourceId",
-        "SystemIds",
-        "Url"
-      ]
+      "documentation": "Settings for use with a SPEKE key provider"
     },
     "StaticKeyProvider": {
       "type": "structure",
@@ -7011,11 +6863,7 @@
           "documentation": "Relates to DRM implementation. The location of the license server used for protecting content."
         }
       },
-      "documentation": "Settings for use with a SPEKE key provider.",
-      "required": [
-        "Url",
-        "StaticKeyValue"
-      ]
+      "documentation": "Settings for use with a SPEKE key provider."
     },
     "TagResourceRequest": {
       "type": "structure",
@@ -7149,10 +6997,7 @@
           "documentation": "Id3Insertions contains the array of Id3Insertion instances."
         }
       },
-      "documentation": "Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.",
-      "required": [
-        "Id3Insertions"
-      ]
+      "documentation": "Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects."
     },
     "Timing": {
       "type": "structure",
@@ -7384,10 +7229,7 @@
           "locationName": "proresSettings"
         }
       },
-      "documentation": "Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings",
-      "required": [
-        "Codec"
-      ]
+      "documentation": "Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings"
     },
     "VideoDescription": {
       "type": "structure",
@@ -7460,10 +7302,7 @@
           "documentation": "Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width."
         }
       },
-      "documentation": "Settings for video outputs",
-      "required": [
-        "CodecSettings"
-      ]
+      "documentation": "Settings for video outputs"
     },
     "VideoDetail": {
       "type": "structure",

@@ -88,6 +88,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      */
     private StreamSpecification streamSpecification;
+    /**
+     * <p>
+     * The new server-side encryption settings for the specified table.
+     * </p>
+     */
+    private SSESpecification sSESpecification;
 
     /**
      * Default constructor for UpdateTableRequest object. Callers should use the setter or fluent setter (with...)
@@ -593,6 +599,46 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The new server-side encryption settings for the specified table.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        The new server-side encryption settings for the specified table.
+     */
+
+    public void setSSESpecification(SSESpecification sSESpecification) {
+        this.sSESpecification = sSESpecification;
+    }
+
+    /**
+     * <p>
+     * The new server-side encryption settings for the specified table.
+     * </p>
+     * 
+     * @return The new server-side encryption settings for the specified table.
+     */
+
+    public SSESpecification getSSESpecification() {
+        return this.sSESpecification;
+    }
+
+    /**
+     * <p>
+     * The new server-side encryption settings for the specified table.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        The new server-side encryption settings for the specified table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withSSESpecification(SSESpecification sSESpecification) {
+        setSSESpecification(sSESpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -612,7 +658,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getGlobalSecondaryIndexUpdates() != null)
             sb.append("GlobalSecondaryIndexUpdates: ").append(getGlobalSecondaryIndexUpdates()).append(",");
         if (getStreamSpecification() != null)
-            sb.append("StreamSpecification: ").append(getStreamSpecification());
+            sb.append("StreamSpecification: ").append(getStreamSpecification()).append(",");
+        if (getSSESpecification() != null)
+            sb.append("SSESpecification: ").append(getSSESpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -647,6 +695,10 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getStreamSpecification() != null && other.getStreamSpecification().equals(this.getStreamSpecification()) == false)
             return false;
+        if (other.getSSESpecification() == null ^ this.getSSESpecification() == null)
+            return false;
+        if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
+            return false;
         return true;
     }
 
@@ -660,6 +712,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexUpdates() == null) ? 0 : getGlobalSecondaryIndexUpdates().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
+        hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
         return hashCode;
     }
 

@@ -66,7 +66,7 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date backupCreationDateTime;
     /**
      * <p>
-     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
      * backup expires automatically 35 days after its creation.
      * </p>
      */
@@ -84,12 +84,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      * </p>
      * </li>
      * </ul>
@@ -344,13 +344,13 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
      * backup expires automatically 35 days after its creation.
      * </p>
      * 
      * @param backupExpiryDateTime
-     *        Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on
-     *        demand backup expires automatically 35 days after its creation.
+     *        Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+     *        on-demand backup expires automatically 35 days after its creation.
      */
 
     public void setBackupExpiryDateTime(java.util.Date backupExpiryDateTime) {
@@ -359,12 +359,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
      * backup expires automatically 35 days after its creation.
      * </p>
      * 
-     * @return Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on
-     *         demand backup expires automatically 35 days after its creation.
+     * @return Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+     *         on-demand backup expires automatically 35 days after its creation.
      */
 
     public java.util.Date getBackupExpiryDateTime() {
@@ -373,13 +373,13 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on demand
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
      * backup expires automatically 35 days after its creation.
      * </p>
      * 
      * @param backupExpiryDateTime
-     *        Time at which the automatic on demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on
-     *        demand backup expires automatically 35 days after its creation.
+     *        Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+     *        on-demand backup expires automatically 35 days after its creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,12 +454,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      * </p>
      * </li>
      * </ul>
@@ -469,12 +469,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>USER</code> - On demand backup created by you.
+     *        <code>USER</code> - On-demand backup created by you.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      *        </p>
      *        </li>
      * @see BackupType
@@ -491,12 +491,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      * </p>
      * </li>
      * </ul>
@@ -505,12 +505,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>USER</code> - On demand backup created by you.
+     *         <code>USER</code> - On-demand backup created by you.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *         <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      *         </p>
      *         </li>
      * @see BackupType
@@ -527,12 +527,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      * </p>
      * </li>
      * </ul>
@@ -542,12 +542,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>USER</code> - On demand backup created by you.
+     *        <code>USER</code> - On-demand backup created by you.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -566,12 +566,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>USER</code> - On demand backup created by you.
+     * <code>USER</code> - On-demand backup created by you.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      * </p>
      * </li>
      * </ul>
@@ -581,12 +581,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>USER</code> - On demand backup created by you.
+     *        <code>USER</code> - On-demand backup created by you.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+     *        <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

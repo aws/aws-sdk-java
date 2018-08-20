@@ -29,6 +29,10 @@ public class SSESpecificationMarshaller {
 
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<String> SSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SSEType").build();
+    private static final MarshallingInfo<String> KMSMASTERKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSMasterKeyId").build();
 
     private static final SSESpecificationMarshaller instance = new SSESpecificationMarshaller();
 
@@ -47,6 +51,8 @@ public class SSESpecificationMarshaller {
 
         try {
             protocolMarshaller.marshall(sSESpecification.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(sSESpecification.getSSEType(), SSETYPE_BINDING);
+            protocolMarshaller.marshall(sSESpecification.getKMSMasterKeyId(), KMSMASTERKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

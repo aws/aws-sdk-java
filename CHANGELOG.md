@@ -1,4 +1,4 @@
-# __1.11.390__ __2018-08-17__
+# __1.11.391__ __2018-08-20__
 ## __AWS Application Discovery Service__
   - ### Features
     - The Application Discovery Service's Continuous Export APIs allow you to analyze your on-premises server inventory data, including system performance and network dependencies, in Amazon Athena.
@@ -15,6 +15,7 @@
   - ### Features
     - Added WriteSegmentTimelineInRepresentation option for Dash Outputs
     - This release adds support for a new rate control mode, Quality-Defined Variable Bitrate (QVBR) encoding, includes updates to optimize transcoding performance, and resolves previously reported bugs.
+    - This release fixes backward-incompatible changes from a previous release. That previous release changed non-required job settings to required, which prevented jobs and job templates from merging correctly. The current change removes validation of required settings from the SDK and instead centralizes the validation in the service API. For information on required settings, see the Resources chapter of the AWS Elemental MediaConvert API Reference https://docs.aws.amazon.com/mediaconvert/latest/apireference/resources.html
 
 ## __AWS Health APIs and Notifications__
   - ### Features
@@ -44,6 +45,7 @@
 ## __Amazon DynamoDB__
   - ### Features
     -  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
+    - Added SSESpecification block to update-table command which allows users to modify table Server-Side Encryption. Added two new fields (SSEType and KMSMasterKeyId) to SSESpecification block used by create-table and update-table commands. Added new SSEDescription Status value UPDATING.
 
 ## __Amazon DynamoDB Accelerator (DAX)__
   - ### Features

@@ -53,6 +53,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Server-side encryption is being updated.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -106,6 +111,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Server-side encryption is being updated.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -129,6 +139,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DISABLED</code> - Server-side encryption is disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Server-side encryption is being updated.
      *        </p>
      *        </li>
      * @see SSEStatus
@@ -163,6 +178,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Server-side encryption is being updated.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The current state of server-side encryption:</p>
@@ -185,6 +205,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>DISABLED</code> - Server-side encryption is disabled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code> - Server-side encryption is being updated.
      *         </p>
      *         </li>
      * @see SSEStatus
@@ -219,6 +244,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Server-side encryption is being updated.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -242,6 +272,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DISABLED</code> - Server-side encryption is disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Server-side encryption is being updated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -278,6 +313,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Server-side encryption is being updated.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -301,6 +341,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DISABLED</code> - Server-side encryption is disabled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Server-side encryption is being updated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

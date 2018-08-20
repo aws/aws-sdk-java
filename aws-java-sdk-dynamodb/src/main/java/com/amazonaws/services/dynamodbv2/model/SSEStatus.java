@@ -23,7 +23,8 @@ public enum SSEStatus {
     ENABLING("ENABLING"),
     ENABLED("ENABLED"),
     DISABLING("DISABLING"),
-    DISABLED("DISABLED");
+    DISABLED("DISABLED"),
+    UPDATING("UPDATING");
 
     private String value;
 

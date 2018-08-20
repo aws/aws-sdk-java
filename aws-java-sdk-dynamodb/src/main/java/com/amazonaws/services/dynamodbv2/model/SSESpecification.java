@@ -34,6 +34,32 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * Server-side encryption type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String sSEType;
+    /**
+     * <p>
+     * The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID, Amazon
+     * Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is
+     * different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     * </p>
+     */
+    private String kMSMasterKeyId;
 
     /**
      * <p>
@@ -88,6 +114,209 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Server-side encryption type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sSEType
+     *        Server-side encryption type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *        </p>
+     *        </li>
+     * @see SSEType
+     */
+
+    public void setSSEType(String sSEType) {
+        this.sSEType = sSEType;
+    }
+
+    /**
+     * <p>
+     * Server-side encryption type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Server-side encryption type:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *         </p>
+     *         </li>
+     * @see SSEType
+     */
+
+    public String getSSEType() {
+        return this.sSEType;
+    }
+
+    /**
+     * <p>
+     * Server-side encryption type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sSEType
+     *        Server-side encryption type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public SSESpecification withSSEType(String sSEType) {
+        setSSEType(sSEType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Server-side encryption type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sSEType
+     *        Server-side encryption type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. (default)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public SSESpecification withSSEType(SSEType sSEType) {
+        this.sSEType = sSEType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID, Amazon
+     * Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is
+     * different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     * </p>
+     * 
+     * @param kMSMasterKeyId
+     *        The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID,
+     *        Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     *        the key is different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     */
+
+    public void setKMSMasterKeyId(String kMSMasterKeyId) {
+        this.kMSMasterKeyId = kMSMasterKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID, Amazon
+     * Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is
+     * different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     * </p>
+     * 
+     * @return The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID,
+     *         Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     *         the key is different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     */
+
+    public String getKMSMasterKeyId() {
+        return this.kMSMasterKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID, Amazon
+     * Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is
+     * different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     * </p>
+     * 
+     * @param kMSMasterKeyId
+     *        The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a CMK, use its key ID,
+     *        Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     *        the key is different from the default DynamoDB KMS Master Key alias/aws/dynamodb.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SSESpecification withKMSMasterKeyId(String kMSMasterKeyId) {
+        setKMSMasterKeyId(kMSMasterKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -99,7 +328,11 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getSSEType() != null)
+            sb.append("SSEType: ").append(getSSEType()).append(",");
+        if (getKMSMasterKeyId() != null)
+            sb.append("KMSMasterKeyId: ").append(getKMSMasterKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -118,6 +351,14 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getSSEType() == null ^ this.getSSEType() == null)
+            return false;
+        if (other.getSSEType() != null && other.getSSEType().equals(this.getSSEType()) == false)
+            return false;
+        if (other.getKMSMasterKeyId() == null ^ this.getKMSMasterKeyId() == null)
+            return false;
+        if (other.getKMSMasterKeyId() != null && other.getKMSMasterKeyId().equals(this.getKMSMasterKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -127,6 +368,8 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSSEType() == null) ? 0 : getSSEType().hashCode());
+        hashCode = prime * hashCode + ((getKMSMasterKeyId() == null) ? 0 : getKMSMasterKeyId().hashCode());
         return hashCode;
     }
 

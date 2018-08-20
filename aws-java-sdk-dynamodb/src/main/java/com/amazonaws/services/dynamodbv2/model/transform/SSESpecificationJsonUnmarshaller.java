@@ -52,6 +52,14 @@ public class SSESpecificationJsonUnmarshaller implements Unmarshaller<SSESpecifi
                     context.nextToken();
                     sSESpecification.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SSEType", targetDepth)) {
+                    context.nextToken();
+                    sSESpecification.setSSEType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KMSMasterKeyId", targetDepth)) {
+                    context.nextToken();
+                    sSESpecification.setKMSMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
