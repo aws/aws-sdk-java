@@ -19,6 +19,8 @@ import com.amazonaws.SdkClientException;
 import javax.crypto.Mac;
 import java.security.NoSuchAlgorithmException;
 
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
+
 public enum SigningAlgorithm {
 
     HmacSHA1,
@@ -28,18 +30,17 @@ public enum SigningAlgorithm {
 
     private SigningAlgorithm() {
         final String algorithmName = this.toString();
-        macReference = new ThreadLocal<Mac>() {
+        macReference = SdkThreadLocalsRegistry.register(new ThreadLocal<Mac>() {
             @Override
             protected Mac initialValue() {
                 try {
                     return Mac.getInstance(algorithmName);
                 } catch (NoSuchAlgorithmException e) {
-                    throw new SdkClientException("Unable to fetch Mac instance for Algorithm "
-                            + algorithmName + e.getMessage(),e);
-
+                    throw new SdkClientException(
+                            "Unable to fetch Mac instance for Algorithm " + algorithmName + e.getMessage(), e);
                 }
             }
-        };
+        });
     }
 
     /**

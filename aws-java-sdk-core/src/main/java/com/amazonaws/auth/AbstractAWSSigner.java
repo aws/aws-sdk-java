@@ -34,6 +34,7 @@ import com.amazonaws.ReadLimitInfo;
 import com.amazonaws.SDKGlobalTime;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.internal.SdkDigestInputStream;
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.SdkHttpUtils;
@@ -52,18 +53,18 @@ public abstract class AbstractAWSSigner implements Signer {
     private static final ThreadLocal<MessageDigest> SHA256_MESSAGE_DIGEST;
 
     static {
-        SHA256_MESSAGE_DIGEST = new ThreadLocal<MessageDigest>() {
-            @Override
-            protected MessageDigest initialValue() {
-                try {
-                    return MessageDigest.getInstance("SHA-256");
-                } catch (NoSuchAlgorithmException e) {
-                    throw new SdkClientException(
-                            "Unable to get SHA256 Function"
-                                    + e.getMessage(), e);
-                }
-            }
-        };
+        SHA256_MESSAGE_DIGEST = SdkThreadLocalsRegistry.register(
+                new ThreadLocal<MessageDigest>() {
+                    @Override
+                    protected MessageDigest initialValue() {
+                        try {
+                            return MessageDigest.getInstance("SHA-256");
+                        } catch (NoSuchAlgorithmException e) {
+                            throw new SdkClientException(
+                                    "Unable to get SHA256 Function" + e.getMessage(), e);
+                        }
+                    }
+                });
         EMPTY_STRING_SHA256_HEX = BinaryUtils.toHex(doHash(""));
     }
 
