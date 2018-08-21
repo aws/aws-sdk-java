@@ -35,7 +35,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.
+     * The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle
+     * tags.
      * </p>
      */
     private java.util.List<Tag> tagsToAdd;
@@ -94,11 +95,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.
+     * The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle
+     * tags.
      * </p>
      * 
-     * @return The tags to add to policy-created resources. These tags are added in addition to the default lifecycle
-     *         tags.
+     * @return The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added
+     *         lifecycle tags.
      */
 
     public java.util.List<Tag> getTagsToAdd() {
@@ -107,12 +109,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.
+     * The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle
+     * tags.
      * </p>
      * 
      * @param tagsToAdd
-     *        The tags to add to policy-created resources. These tags are added in addition to the default lifecycle
-     *        tags.
+     *        The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added
+     *        lifecycle tags.
      */
 
     public void setTagsToAdd(java.util.Collection<Tag> tagsToAdd) {
@@ -126,7 +129,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.
+     * The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle
+     * tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,8 +139,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tagsToAdd
-     *        The tags to add to policy-created resources. These tags are added in addition to the default lifecycle
-     *        tags.
+     *        The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added
+     *        lifecycle tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,12 +156,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags to add to policy-created resources. These tags are added in addition to the default lifecycle tags.
+     * The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added lifecycle
+     * tags.
      * </p>
      * 
      * @param tagsToAdd
-     *        The tags to add to policy-created resources. These tags are added in addition to the default lifecycle
-     *        tags.
+     *        The tags to apply to policy-created resources. These user-defined tags are in addition to the AWS-added
+     *        lifecycle tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

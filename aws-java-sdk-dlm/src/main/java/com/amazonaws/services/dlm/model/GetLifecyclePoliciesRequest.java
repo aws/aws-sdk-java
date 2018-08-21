@@ -45,22 +45,22 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> resourceTypes;
     /**
      * <p>
-     * The target tags.
+     * The target tag for a policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      */
     private java.util.List<String> targetTags;
     /**
      * <p>
-     * The tags to add to the resources.
+     * The tags to add to objects created by the policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * <p>
-     * These tags are added in addition to the AWS-added lifecycle tags.
+     * These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * </p>
      */
     private java.util.List<String> tagsToAdd;
@@ -294,15 +294,15 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target tags.
+     * The target tag for a policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * 
-     * @return The target tags.</p>
+     * @return The target tag for a policy.</p>
      *         <p>
-     *         Tags are strings in the format <code>key:value</code>.
+     *         Tags are strings in the format <code>key=value</code>.
      */
 
     public java.util.List<String> getTargetTags() {
@@ -311,16 +311,16 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target tags.
+     * The target tag for a policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * 
      * @param targetTags
-     *        The target tags.</p>
+     *        The target tag for a policy.</p>
      *        <p>
-     *        Tags are strings in the format <code>key:value</code>.
+     *        Tags are strings in the format <code>key=value</code>.
      */
 
     public void setTargetTags(java.util.Collection<String> targetTags) {
@@ -334,10 +334,10 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target tags.
+     * The target tag for a policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -346,9 +346,9 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param targetTags
-     *        The target tags.</p>
+     *        The target tag for a policy.</p>
      *        <p>
-     *        Tags are strings in the format <code>key:value</code>.
+     *        Tags are strings in the format <code>key=value</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,16 +364,16 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The target tags.
+     * The target tag for a policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * 
      * @param targetTags
-     *        The target tags.</p>
+     *        The target tag for a policy.</p>
      *        <p>
-     *        Tags are strings in the format <code>key:value</code>.
+     *        Tags are strings in the format <code>key=value</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,21 +384,21 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to add to the resources.
+     * The tags to add to objects created by the policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * <p>
-     * These tags are added in addition to the AWS-added lifecycle tags.
+     * These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * </p>
      * 
-     * @return The tags to add to the resources.</p>
+     * @return The tags to add to objects created by the policy.</p>
      *         <p>
-     *         Tags are strings in the format <code>key:value</code>.
+     *         Tags are strings in the format <code>key=value</code>.
      *         </p>
      *         <p>
-     *         These tags are added in addition to the AWS-added lifecycle tags.
+     *         These user-defined tags are added in addition to the AWS-added lifecycle tags.
      */
 
     public java.util.List<String> getTagsToAdd() {
@@ -407,22 +407,22 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to add to the resources.
+     * The tags to add to objects created by the policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * <p>
-     * These tags are added in addition to the AWS-added lifecycle tags.
+     * These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * </p>
      * 
      * @param tagsToAdd
-     *        The tags to add to the resources.</p>
+     *        The tags to add to objects created by the policy.</p>
      *        <p>
-     *        Tags are strings in the format <code>key:value</code>.
+     *        Tags are strings in the format <code>key=value</code>.
      *        </p>
      *        <p>
-     *        These tags are added in addition to the AWS-added lifecycle tags.
+     *        These user-defined tags are added in addition to the AWS-added lifecycle tags.
      */
 
     public void setTagsToAdd(java.util.Collection<String> tagsToAdd) {
@@ -436,13 +436,13 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to add to the resources.
+     * The tags to add to objects created by the policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * <p>
-     * These tags are added in addition to the AWS-added lifecycle tags.
+     * These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -451,12 +451,12 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param tagsToAdd
-     *        The tags to add to the resources.</p>
+     *        The tags to add to objects created by the policy.</p>
      *        <p>
-     *        Tags are strings in the format <code>key:value</code>.
+     *        Tags are strings in the format <code>key=value</code>.
      *        </p>
      *        <p>
-     *        These tags are added in addition to the AWS-added lifecycle tags.
+     *        These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,22 +472,22 @@ public class GetLifecyclePoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags to add to the resources.
+     * The tags to add to objects created by the policy.
      * </p>
      * <p>
-     * Tags are strings in the format <code>key:value</code>.
+     * Tags are strings in the format <code>key=value</code>.
      * </p>
      * <p>
-     * These tags are added in addition to the AWS-added lifecycle tags.
+     * These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * </p>
      * 
      * @param tagsToAdd
-     *        The tags to add to the resources.</p>
+     *        The tags to add to objects created by the policy.</p>
      *        <p>
-     *        Tags are strings in the format <code>key:value</code>.
+     *        Tags are strings in the format <code>key=value</code>.
      *        </p>
      *        <p>
-     *        These tags are added in addition to the AWS-added lifecycle tags.
+     *        These user-defined tags are added in addition to the AWS-added lifecycle tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

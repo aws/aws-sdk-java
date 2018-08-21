@@ -100,7 +100,6 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
 
         removePrefix(rrset.getAliasTarget());
         rrset.setHealthCheckId(removePrefix(rrset.getHealthCheckId()));
-        rrset.setSetIdentifier(removePrefix(rrset.getSetIdentifier()));
     }
 
     private void removePrefix(AliasTarget aliasTarget) {

@@ -36,13 +36,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> resourceTypes;
     /**
      * <p>
-     * The target tags.
+     * The single tag that identifies targeted resources for this policy.
      * </p>
      */
     private java.util.List<Tag> targetTags;
     /**
      * <p>
-     * The schedule.
+     * The schedule of policy-defined actions.
      * </p>
      */
     private java.util.List<Schedule> schedules;
@@ -147,10 +147,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tags.
+     * The single tag that identifies targeted resources for this policy.
      * </p>
      * 
-     * @return The target tags.
+     * @return The single tag that identifies targeted resources for this policy.
      */
 
     public java.util.List<Tag> getTargetTags() {
@@ -159,11 +159,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tags.
+     * The single tag that identifies targeted resources for this policy.
      * </p>
      * 
      * @param targetTags
-     *        The target tags.
+     *        The single tag that identifies targeted resources for this policy.
      */
 
     public void setTargetTags(java.util.Collection<Tag> targetTags) {
@@ -177,7 +177,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tags.
+     * The single tag that identifies targeted resources for this policy.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,7 +186,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targetTags
-     *        The target tags.
+     *        The single tag that identifies targeted resources for this policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +202,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target tags.
+     * The single tag that identifies targeted resources for this policy.
      * </p>
      * 
      * @param targetTags
-     *        The target tags.
+     *        The single tag that identifies targeted resources for this policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,10 +217,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule.
+     * The schedule of policy-defined actions.
      * </p>
      * 
-     * @return The schedule.
+     * @return The schedule of policy-defined actions.
      */
 
     public java.util.List<Schedule> getSchedules() {
@@ -229,11 +229,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule.
+     * The schedule of policy-defined actions.
      * </p>
      * 
      * @param schedules
-     *        The schedule.
+     *        The schedule of policy-defined actions.
      */
 
     public void setSchedules(java.util.Collection<Schedule> schedules) {
@@ -247,7 +247,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule.
+     * The schedule of policy-defined actions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,7 +256,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param schedules
-     *        The schedule.
+     *        The schedule of policy-defined actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,11 +272,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule.
+     * The schedule of policy-defined actions.
      * </p>
      * 
      * @param schedules
-     *        The schedule.
+     *        The schedule of policy-defined actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,11 +34,17 @@ public class CPUUtilization implements Serializable, Cloneable {
     private Double user;
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      * </p>
      */
     private Double nice;
     /**
+     * <p>
+     * Available on Linux environments only.
+     * </p>
      * <p>
      * Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      * </p>
@@ -52,11 +58,17 @@ public class CPUUtilization implements Serializable, Cloneable {
     private Double idle;
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      * </p>
      */
     private Double iOWait;
     /**
+     * <p>
+     * Available on Linux environments only.
+     * </p>
      * <p>
      * Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      * </p>
@@ -64,10 +76,22 @@ public class CPUUtilization implements Serializable, Cloneable {
     private Double iRQ;
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      * </p>
      */
     private Double softIRQ;
+    /**
+     * <p>
+     * Available on Windows environments only.
+     * </p>
+     * <p>
+     * Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     * </p>
+     */
+    private Double privileged;
 
     /**
      * <p>
@@ -111,10 +135,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      * </p>
      * 
      * @param nice
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      */
 
@@ -124,10 +153,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      * </p>
      * 
-     * @return Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
+     * @return Available on Linux environments only.</p>
+     *         <p>
+     *         Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      */
 
     public Double getNice() {
@@ -136,10 +170,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      * </p>
      * 
      * @param nice
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -151,10 +190,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      * </p>
      * 
      * @param system
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      */
 
@@ -164,10 +208,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      * </p>
      * 
-     * @return Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
+     * @return Available on Linux environments only.</p>
+     *         <p>
+     *         Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      */
 
     public Double getSystem() {
@@ -176,10 +225,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      * </p>
      * 
      * @param system
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -231,10 +285,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      * </p>
      * 
      * @param iOWait
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      */
 
@@ -244,10 +303,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      * </p>
      * 
-     * @return Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
+     * @return Available on Linux environments only.</p>
+     *         <p>
+     *         Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      */
 
     public Double getIOWait() {
@@ -256,10 +320,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      * </p>
      * 
      * @param iOWait
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -271,10 +340,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      * </p>
      * 
      * @param iRQ
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      */
 
@@ -284,10 +358,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      * </p>
      * 
-     * @return Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
+     * @return Available on Linux environments only.</p>
+     *         <p>
+     *         Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      */
 
     public Double getIRQ() {
@@ -296,10 +375,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      * </p>
      * 
      * @param iRQ
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -311,10 +395,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      * </p>
      * 
      * @param softIRQ
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      */
 
@@ -324,10 +413,15 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      * </p>
      * 
-     * @return Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
+     * @return Available on Linux environments only.</p>
+     *         <p>
+     *         Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      */
 
     public Double getSoftIRQ() {
@@ -336,16 +430,76 @@ public class CPUUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Available on Linux environments only.
+     * </p>
+     * <p>
      * Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      * </p>
      * 
      * @param softIRQ
+     *        Available on Linux environments only.</p>
+     *        <p>
      *        Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CPUUtilization withSoftIRQ(Double softIRQ) {
         setSoftIRQ(softIRQ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Available on Windows environments only.
+     * </p>
+     * <p>
+     * Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     * </p>
+     * 
+     * @param privileged
+     *        Available on Windows environments only.</p>
+     *        <p>
+     *        Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     */
+
+    public void setPrivileged(Double privileged) {
+        this.privileged = privileged;
+    }
+
+    /**
+     * <p>
+     * Available on Windows environments only.
+     * </p>
+     * <p>
+     * Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     * </p>
+     * 
+     * @return Available on Windows environments only.</p>
+     *         <p>
+     *         Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     */
+
+    public Double getPrivileged() {
+        return this.privileged;
+    }
+
+    /**
+     * <p>
+     * Available on Windows environments only.
+     * </p>
+     * <p>
+     * Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     * </p>
+     * 
+     * @param privileged
+     *        Available on Windows environments only.</p>
+     *        <p>
+     *        Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CPUUtilization withPrivileged(Double privileged) {
+        setPrivileged(privileged);
         return this;
     }
 
@@ -373,7 +527,9 @@ public class CPUUtilization implements Serializable, Cloneable {
         if (getIRQ() != null)
             sb.append("IRQ: ").append(getIRQ()).append(",");
         if (getSoftIRQ() != null)
-            sb.append("SoftIRQ: ").append(getSoftIRQ());
+            sb.append("SoftIRQ: ").append(getSoftIRQ()).append(",");
+        if (getPrivileged() != null)
+            sb.append("Privileged: ").append(getPrivileged());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +572,10 @@ public class CPUUtilization implements Serializable, Cloneable {
             return false;
         if (other.getSoftIRQ() != null && other.getSoftIRQ().equals(this.getSoftIRQ()) == false)
             return false;
+        if (other.getPrivileged() == null ^ this.getPrivileged() == null)
+            return false;
+        if (other.getPrivileged() != null && other.getPrivileged().equals(this.getPrivileged()) == false)
+            return false;
         return true;
     }
 
@@ -431,6 +591,7 @@ public class CPUUtilization implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIOWait() == null) ? 0 : getIOWait().hashCode());
         hashCode = prime * hashCode + ((getIRQ() == null) ? 0 : getIRQ().hashCode());
         hashCode = prime * hashCode + ((getSoftIRQ() == null) ? 0 : getSoftIRQ().hashCode());
+        hashCode = prime * hashCode + ((getPrivileged() == null) ? 0 : getPrivileged().hashCode());
         return hashCode;
     }
 

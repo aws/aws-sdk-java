@@ -273,6 +273,10 @@ public interface AWSElasticBeanstalk {
      * different versions of the application with the same configuration settings.
      * </p>
      * <p>
+     * Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always
+     * <code>null</code>.
+     * </p>
+     * <p>
      * Related Topics
      * </p>
      * <ul>

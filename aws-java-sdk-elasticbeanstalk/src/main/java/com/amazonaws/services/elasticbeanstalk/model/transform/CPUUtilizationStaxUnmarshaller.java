@@ -77,6 +77,11 @@ public class CPUUtilizationStaxUnmarshaller implements Unmarshaller<CPUUtilizati
                     cPUUtilization.setSoftIRQ(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Privileged", targetDepth)) {
+                    cPUUtilization.setPrivileged(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cPUUtilization;

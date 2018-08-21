@@ -1,3 +1,20 @@
+# __1.11.392__ __2018-08-21__
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Elastic Beanstalk adds the "Privileged" field to the "CPUUtilization" type, to support enhanced health reporting in Windows environments.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Documentation updates for Lifecycle
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added support for T3 Instance type in EC2. To learn more about T3 instances, please see https://aws.amazon.com/ec2/instance-types/t3/
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds a paginator for the DescribeDBClusters operation.
+
 # __1.11.391__ __2018-08-20__
 ## __AWS Application Discovery Service__
   - ### Features
@@ -46,6 +63,108 @@
   - ### Features
     -  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
     - Added SSESpecification block to update-table command which allows users to modify table Server-Side Encryption. Added two new fields (SSEType and KMSMasterKeyId) to SSESpecification block used by create-table and update-table commands. Added new SSEDescription Status value UPDATING.
+
+## __Amazon DynamoDB Accelerator (DAX)__
+  - ### Features
+    - Add the SSESpecification field to CreateCluster to allow creation of clusters with server-side encryption, and add the SSEDescription field to DescribeClusters to display the status of server-side encryption for a cluster. 
+    - DAX CreateClusterRequest is updated to include IamRoleArn as a required request parameter. 
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for Docker volumes and Docker volume drivers. Customers can now configure their ECS Tasks to use Docker volumes, enabling stateful and storage-intensive applications to be deployed on ECS.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon VPC Flow Logs adds support for delivering flow logs directly to S3
+    - The 'Attribute' parameter DescribeVolumeAttribute request has been marked as required - the API has always required this parameter, but up until now this wasn't reflected appropriately in the SDK.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service adds support for no downtime, in-place upgrade for Elasticsearch version 5.1 and above.
+
+## __Amazon Kinesis__
+  - ### Features
+    - This update introduces SubscribeToShard and RegisterStreamConsumer APIs which allows for retrieving records on a data stream over HTTP2 with enhanced fan-out capabilities. With this new feature the Java SDK now supports event streaming natively which will allow you to define payload and exception structures on the client over a persistent connection. For more information, see Developing Consumers with Enhanced Fan-Out in the Kinesis Developer Guide.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release includes a new batch API call for Amazon Pinpoint which can be used to update endpoints and submit events. This call will accept events from clients such as mobile devices and AWS SDKs. This call will accept requests which has multiple endpoints and multiple events attached to those endpoints in a single call. This call will update the endpoints attached and will ingest events for those endpoints. The response from this call will be a multipart response per endpoint/per event submitted.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly enables female voice Aditi to speak Hindi language
+
+## __Amazon Redshift__
+  - ### Features
+    - You can now resize your Amazon Redshift cluster quickly. With the new ResizeCluster action, your cluster is available for read and write operations within minutes
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for rds
+    - Launch RDS Aurora Serverless
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Added an optional boolean parameter, 'DisassociateLifecycleConfig', to the UpdateNotebookInstance operation. When set to true, the lifecycle configuration associated with the notebook instance will be removed, allowing a new one to be set via a new 'LifecycleConfigName' parameter.
+    - SageMaker updated the default endpoint URL to support Private Link via the CLI/SDK.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager Automation is launching two new features for Automation Execution Rate Control based on tags and customized parameter maps. With the first feature, customer can target their resources by specifying a Tag with Key/Value. With the second feature, Parameter maps rate control, customers can benefit from customization of input parameters.
+    - AWS Systems Manager Inventory now supports groups to quickly see a count of which managed instances are and arent configured to collect one or more Inventory types
+    - This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
+    - Two new filters ExecutionStage and DocumentName will be added to ListCommands so that customers will have more approaches to query their commands.
+
+## __Auto Scaling__
+  - ### Features
+    - Add batch operations for creating/updating and deleting scheduled scaling actions.
+
+# __1.11.390__ __2018-08-17__
+## __AWS Application Discovery Service__
+  - ### Features
+    - The Application Discovery Service's Continuous Export APIs allow you to analyze your on-premises server inventory data, including system performance and network dependencies, in Amazon Athena.
+
+## __AWS CodeBuild__
+  - ### Features
+    - Release semantic versioning feature for CodeBuild
+
+## __AWS Device Farm__
+  - ### Features
+    - Support for running tests in a custom environment with live logs/video streaming, full test features parity and reduction in overall test execution time.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Added WriteSegmentTimelineInRepresentation option for Dash Outputs
+    - This release adds support for a new rate control mode, Quality-Defined Variable Bitrate (QVBR) encoding, includes updates to optimize transcoding performance, and resolves previously reported bugs.
+
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - Updates the ARN structure vended by AWS Health API. All ARNs will now include the service and type code of the associated event, as vended by DescribeEventTypes.
+
+## __AWS Resource Groups__
+  - ### Features
+    - AWS Resource Groups service added a new feature to filter group resources by resource-type when using the ListGroupResources operation.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for Secrets Manager
+    - This release introduces a ForceDeleteWithoutRecovery parameter to the DeleteSecret API enabling customers to force the deletion of a secret without any recovery window
+
+## __Alexa For Business__
+  - ### Features
+    - Documentation updates for AWS Alexa For Business
+
+## __Amazon CloudFront__
+  - ### Features
+    - Lambda@Edge Now Provides You Access to the Request Body for HTTP POST/PUT Processing. With this feature, you can now offload more origin logic to the edge and improve end-user latency. Developers typically use Web/HTML forms or Web Beacons/Bugs as a mechanism to collect data from the end users and then process that data at their origins servers. For example, if you are collecting end user behavior data through a web beacon on your website, you can use this feature to access the user behavior data and directly log it to an Amazon Kinesis Firehose endpoint from the Lambda function, thereby simplifying your origin infrastructure.
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation Update
+
+## __Amazon DynamoDB__
+  - ### Features
+    -  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
 
 ## __Amazon DynamoDB Accelerator (DAX)__
   - ### Features

@@ -45,7 +45,7 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
     private String state;
     /**
      * <p>
-     * The configuration of the lifecycle policy.
+     * The configuration details of the lifecycle policy.
      * </p>
      * <p>
      * Target tags cannot be re-used across lifecycle policies.
@@ -197,14 +197,14 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The configuration of the lifecycle policy.
+     * The configuration details of the lifecycle policy.
      * </p>
      * <p>
      * Target tags cannot be re-used across lifecycle policies.
      * </p>
      * 
      * @param policyDetails
-     *        The configuration of the lifecycle policy.</p>
+     *        The configuration details of the lifecycle policy.</p>
      *        <p>
      *        Target tags cannot be re-used across lifecycle policies.
      */
@@ -215,13 +215,13 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The configuration of the lifecycle policy.
+     * The configuration details of the lifecycle policy.
      * </p>
      * <p>
      * Target tags cannot be re-used across lifecycle policies.
      * </p>
      * 
-     * @return The configuration of the lifecycle policy.</p>
+     * @return The configuration details of the lifecycle policy.</p>
      *         <p>
      *         Target tags cannot be re-used across lifecycle policies.
      */
@@ -232,14 +232,14 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The configuration of the lifecycle policy.
+     * The configuration details of the lifecycle policy.
      * </p>
      * <p>
      * Target tags cannot be re-used across lifecycle policies.
      * </p>
      * 
      * @param policyDetails
-     *        The configuration of the lifecycle policy.</p>
+     *        The configuration details of the lifecycle policy.</p>
      *        <p>
      *        Target tags cannot be re-used across lifecycle policies.
      * @return Returns a reference to this object so that method calls can be chained together.

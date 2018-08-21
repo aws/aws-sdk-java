@@ -123,7 +123,7 @@
         {"shape":"TooManyBucketsException"},
         {"shape":"TooManyConfigurationTemplatesException"}
       ],
-      "documentation":"<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> <li> <p> <a>DescribeConfigurationSettings</a> </p> </li> <li> <p> <a>ListAvailableSolutionStacks</a> </p> </li> </ul>"
+      "documentation":"<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> <li> <p> <a>DescribeConfigurationSettings</a> </p> </li> <li> <p> <a>ListAvailableSolutionStacks</a> </p> </li> </ul>"
     },
     "CreateEnvironment":{
       "name":"CreateEnvironment",
@@ -1045,11 +1045,11 @@
         },
         "Nice":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>"
         },
         "System":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>"
         },
         "Idle":{
           "shape":"NullableDouble",
@@ -1057,15 +1057,19 @@
         },
         "IOWait":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>"
         },
         "IRQ":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>"
         },
         "SoftIRQ":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>"
+        },
+        "Privileged":{
+          "shape":"NullableDouble",
+          "documentation":"<p>Available on Windows environments only.</p> <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>"
         }
       },
       "documentation":"<p>CPU utilization metrics for an instance.</p>"
@@ -2047,7 +2051,7 @@
       "members":{
         "InstanceHealthList":{
           "shape":"InstanceHealthList",
-          "documentation":"<p>Detailed health information about each instance.</p>"
+          "documentation":"<p>Detailed health information about each instance.</p> <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>&lt;CPUUtilization&gt;</code> type.</p>"
         },
         "RefreshedAt":{
           "shape":"RefreshedAt",
