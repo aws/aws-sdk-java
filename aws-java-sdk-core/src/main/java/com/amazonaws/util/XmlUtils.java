@@ -24,17 +24,20 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
+
 public class XmlUtils {
 
     /**
      * Shared factory for creating XML event readers
      */
-    private static final ThreadLocal<XMLInputFactory> xmlInputFactory = new ThreadLocal<XMLInputFactory>() {
-        @Override
-        protected XMLInputFactory initialValue() {
-            return createXmlInputFactory();
-        }
-    };
+    private static final ThreadLocal<XMLInputFactory> xmlInputFactory = SdkThreadLocalsRegistry
+            .register(new ThreadLocal<XMLInputFactory>() {
+                @Override
+                protected XMLInputFactory initialValue() {
+                    return createXmlInputFactory();
+                }
+            });
 
     public static XMLReader parse(InputStream in, ContentHandler handler)
         throws SAXException, IOException {

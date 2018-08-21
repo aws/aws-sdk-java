@@ -38,6 +38,8 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
+
 /**
  * Utility methods for extracting data from XML documents using Xpath
  * expressions.
@@ -86,12 +88,13 @@ public class XpathUtils {
     /**
      * Shared factory for creating XML Factory
      */
-    private static final ThreadLocal<XPathFactory> X_PATH_FACTORY = new ThreadLocal<XPathFactory>() {
-        @Override
-        protected XPathFactory initialValue() {
-            return XPathFactory.newInstance();
-        }
-    };
+    private static final ThreadLocal<XPathFactory> X_PATH_FACTORY = SdkThreadLocalsRegistry
+            .register(new ThreadLocal<XPathFactory>() {
+                @Override
+                protected XPathFactory initialValue() {
+                    return XPathFactory.newInstance();
+                }
+            });
 
     /**
      * Used to optimize performance by avoiding expensive file access every time
