@@ -18627,6 +18627,9 @@
         "name" : "InTransitToAWS",
         "value" : "InTransitToAWS"
       }, {
+        "name" : "WithAWSSortingFacility",
+        "value" : "WithAWSSortingFacility"
+      }, {
         "name" : "WithAWS",
         "value" : "WithAWS"
       }, {

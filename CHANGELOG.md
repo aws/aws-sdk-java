@@ -1,3 +1,8 @@
+# __1.11.393__ __2018-08-22__
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - Snowball job states allow customers to track the status of the Snowball job. We are launching a new Snowball job state "WithSortingFacility"!  When customer returns the Snowball to AWS, the device first goes to a sorting facility before it reaches an AWS data center.  Many customers have requested us to add a new state to reflect the presence of the device at the sorting facility for better tracking. Today when a customer returns  the Snowball, the state first changes from "InTransitToAWS" to "WithAWS". With the addition of new state, the device will move from "InTransitToAWS" to "WithAWSSortingFacility", and then to "WithAWS".  There are no other changes to the API at this time besides adding this new state.
+
 # __1.11.392__ __2018-08-21__
 ## __AWS Elastic Beanstalk__
   - ### Features

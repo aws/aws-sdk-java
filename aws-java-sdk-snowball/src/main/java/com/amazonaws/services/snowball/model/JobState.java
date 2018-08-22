@@ -26,6 +26,7 @@ public enum JobState {
     InTransitToCustomer("InTransitToCustomer"),
     WithCustomer("WithCustomer"),
     InTransitToAWS("InTransitToAWS"),
+    WithAWSSortingFacility("WithAWSSortingFacility"),
     WithAWS("WithAWS"),
     InProgress("InProgress"),
     Complete("Complete"),
