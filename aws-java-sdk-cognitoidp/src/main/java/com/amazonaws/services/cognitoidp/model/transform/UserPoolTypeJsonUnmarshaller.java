@@ -150,6 +150,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomDomain", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setCustomDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AdminCreateUserConfig", targetDepth)) {
                     context.nextToken();
                     userPoolType.setAdminCreateUserConfig(AdminCreateUserConfigTypeJsonUnmarshaller.getInstance().unmarshall(context));

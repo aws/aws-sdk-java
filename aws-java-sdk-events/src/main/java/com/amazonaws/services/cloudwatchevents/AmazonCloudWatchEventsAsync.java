@@ -40,8 +40,8 @@ import com.amazonaws.services.cloudwatchevents.model.*;
  * </li>
  * <li>
  * <p>
- * Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security
- * or availability risks.
+ * Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for detailed analysis of potential
+ * security or availability risks.
  * </p>
  * </li>
  * <li>
@@ -63,11 +63,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * Deletes the specified rule.
      * </p>
      * <p>
-     * You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.
+     * Before you can delete the rule, you must remove all targets, using <a>RemoveTargets</a>.
      * </p>
      * <p>
-     * When you delete a rule, incoming events might continue to match to the deleted rule. Please allow a short period
-     * of time for changes to take effect.
+     * When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time
+     * for changes to take effect.
      * </p>
      * 
      * @param deleteRuleRequest
@@ -83,11 +83,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * Deletes the specified rule.
      * </p>
      * <p>
-     * You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.
+     * Before you can delete the rule, you must remove all targets, using <a>RemoveTargets</a>.
      * </p>
      * <p>
-     * When you delete a rule, incoming events might continue to match to the deleted rule. Please allow a short period
-     * of time for changes to take effect.
+     * When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short period of time
+     * for changes to take effect.
      * </p>
      * 
      * @param deleteRuleRequest
@@ -142,6 +142,10 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <p>
      * Describes the specified rule.
      * </p>
+     * <p>
+     * DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
+     * </p>
      * 
      * @param describeRuleRequest
      * @return A Java Future containing the result of the DescribeRule operation returned by the service.
@@ -154,6 +158,10 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
     /**
      * <p>
      * Describes the specified rule.
+     * </p>
+     * <p>
+     * DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
      * </p>
      * 
      * @param describeRuleRequest
@@ -175,8 +183,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * expression.
      * </p>
      * <p>
-     * When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short
-     * period of time for changes to take effect.
+     * When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of
+     * time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
@@ -193,8 +201,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * expression.
      * </p>
      * <p>
-     * When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short
-     * period of time for changes to take effect.
+     * When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of
+     * time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
@@ -215,8 +223,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * Enables the specified rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please
-     * allow a short period of time for changes to take effect.
+     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a
+     * short period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
@@ -232,8 +240,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * Enables the specified rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please
-     * allow a short period of time for changes to take effect.
+     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a
+     * short period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
@@ -287,6 +295,10 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match
      * to the rule names.
      * </p>
+     * <p>
+     * ListRules does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
+     * </p>
      * 
      * @param listRulesRequest
      * @return A Java Future containing the result of the ListRules operation returned by the service.
@@ -300,6 +312,10 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <p>
      * Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match
      * to the rule names.
+     * </p>
+     * <p>
+     * ListRules does not list the targets of a rule. To see the targets associated with a rule, use
+     * <a>ListTargetsByRule</a>.
      * </p>
      * 
      * @param listRulesRequest
@@ -392,7 +408,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * each of these accounts.
      * </p>
      * <p>
-     * The permission policy on the default event bus cannot exceed 10KB in size.
+     * The permission policy on the default event bus cannot exceed 10 KB in size.
      * </p>
      * 
      * @param putPermissionRequest
@@ -418,7 +434,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * each of these accounts.
      * </p>
      * <p>
-     * The permission policy on the default event bus cannot exceed 10KB in size.
+     * The permission policy on the default event bus cannot exceed 10 KB in size.
      * </p>
      * 
      * @param putPermissionRequest
@@ -440,13 +456,13 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * disable a rule using <a>DisableRule</a>.
      * </p>
      * <p>
-     * If you are updating an existing rule, the rule is completely replaced with what you specify in this
-     * <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values for those arguments
-     * are not kept. Instead, they are replaced with null values.
+     * If you are updating an existing rule, the rule is replaced with what you specify in this <code>PutRule</code>
+     * command. If you omit arguments in <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+     * they are replaced with null values.
      * </p>
      * <p>
      * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
-     * Please allow a short period of time for changes to take effect.
+     * Allow a short period of time for changes to take effect.
      * </p>
      * <p>
      * A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a
@@ -474,13 +490,13 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * disable a rule using <a>DisableRule</a>.
      * </p>
      * <p>
-     * If you are updating an existing rule, the rule is completely replaced with what you specify in this
-     * <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values for those arguments
-     * are not kept. Instead, they are replaced with null values.
+     * If you are updating an existing rule, the rule is replaced with what you specify in this <code>PutRule</code>
+     * command. If you omit arguments in <code>PutRule</code>, the old values for those arguments are not kept. Instead,
+     * they are replaced with null values.
      * </p>
      * <p>
      * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
-     * Please allow a short period of time for changes to take effect.
+     * Allow a short period of time for changes to take effect.
      * </p>
      * <p>
      * A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a
@@ -526,17 +542,27 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
+     * SSM Run Command
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSM Automation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * AWS Lambda functions
      * </p>
      * </li>
      * <li>
      * <p>
-     * Streams in Amazon Kinesis Streams
+     * Data streams in Amazon Kinesis Data Streams
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery streams in Amazon Kinesis Firehose
+     * Data delivery streams in Amazon Kinesis Data Firehose
      * </p>
      * </li>
      * <li>
@@ -556,7 +582,12 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
-     * Pipelines in Amazon Code Pipeline
+     * AWS CodeBuild projects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pipelines in AWS CodePipeline
      * </p>
      * </li>
      * <li>
@@ -581,43 +612,45 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * </ul>
      * <p>
-     * Note that creating rules with built-in targets is supported only in the AWS Management Console.
+     * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
+     * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+     * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
      * </p>
      * <p>
-     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon
-     * Kinesis stream, you can optionally specify which shard the event goes to by using the
-     * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use
-     * the <code>RunCommandParameters</code> field.
+     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is a Kinesis
+     * data stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code>
+     * argument. To invoke a command on multiple EC2 instances with one rule, you can use the
+     * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
      * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
      * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
-     * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-     * roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">
-     * Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
+     * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
      * If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>),
-     * you can send events to that account by setting that account's event bus as a target of the rules in your account.
-     * To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when
+     * you can send events to that account. Set that account's event bus as a target of the rules in your account. To
+     * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
-     * each sent event. Each event sent to antoher account is charged as a custom event. The account receiving the event
-     * is not charged. For more information on pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-     * CloudWatch Pricing</a>.
+     * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
+     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.
      * </p>
      * <p>
      * For more information about enabling cross-account events, see <a>PutPermission</a>.
      * </p>
      * <p>
-     * <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+     * <b>Input</b>, <b>InputPath</b>, and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
      * target. When a rule is triggered due to a matched event:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If none of the following arguments are specified for a target, then the entire event is passed to the target in
-     * JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
+     * JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
      * is passed to the target).
      * </p>
      * </li>
@@ -646,7 +679,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </p>
      * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
-     * immediately invoked. Please allow a short period of time for changes to take effect.
+     * immediately invoked. Allow a short period of time for changes to take effect.
      * </p>
      * <p>
      * This action can partially fail if too many requests are made at the same time. If that happens,
@@ -681,17 +714,27 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
+     * SSM Run Command
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSM Automation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * AWS Lambda functions
      * </p>
      * </li>
      * <li>
      * <p>
-     * Streams in Amazon Kinesis Streams
+     * Data streams in Amazon Kinesis Data Streams
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery streams in Amazon Kinesis Firehose
+     * Data delivery streams in Amazon Kinesis Data Firehose
      * </p>
      * </li>
      * <li>
@@ -711,7 +754,12 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
-     * Pipelines in Amazon Code Pipeline
+     * AWS CodeBuild projects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pipelines in AWS CodePipeline
      * </p>
      * </li>
      * <li>
@@ -736,43 +784,45 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * </ul>
      * <p>
-     * Note that creating rules with built-in targets is supported only in the AWS Management Console.
+     * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
+     * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+     * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
      * </p>
      * <p>
-     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon
-     * Kinesis stream, you can optionally specify which shard the event goes to by using the
-     * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use
-     * the <code>RunCommandParameters</code> field.
+     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is a Kinesis
+     * data stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code>
+     * argument. To invoke a command on multiple EC2 instances with one rule, you can use the
+     * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
      * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
      * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
-     * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-     * roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">
-     * Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
+     * that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+     * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * <p>
      * If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>),
-     * you can send events to that account by setting that account's event bus as a target of the rules in your account.
-     * To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when
+     * you can send events to that account. Set that account's event bus as a target of the rules in your account. To
+     * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
-     * each sent event. Each event sent to antoher account is charged as a custom event. The account receiving the event
-     * is not charged. For more information on pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-     * CloudWatch Pricing</a>.
+     * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
+     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.
      * </p>
      * <p>
      * For more information about enabling cross-account events, see <a>PutPermission</a>.
      * </p>
      * <p>
-     * <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+     * <b>Input</b>, <b>InputPath</b>, and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
      * target. When a rule is triggered due to a matched event:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If none of the following arguments are specified for a target, then the entire event is passed to the target in
-     * JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
+     * JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
      * is passed to the target).
      * </p>
      * </li>
@@ -801,7 +851,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </p>
      * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
-     * immediately invoked. Please allow a short period of time for changes to take effect.
+     * immediately invoked. Allow a short period of time for changes to take effect.
      * </p>
      * <p>
      * This action can partially fail if too many requests are made at the same time. If that happens,
@@ -865,8 +915,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * invoked.
      * </p>
      * <p>
-     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please
-     * allow a short period of time for changes to take effect.
+     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow
+     * a short period of time for changes to take effect.
      * </p>
      * <p>
      * This action can partially fail if too many requests are made at the same time. If that happens,
@@ -888,8 +938,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * invoked.
      * </p>
      * <p>
-     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please
-     * allow a short period of time for changes to take effect.
+     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow
+     * a short period of time for changes to take effect.
      * </p>
      * <p>
      * This action can partially fail if too many requests are made at the same time. If that happens,

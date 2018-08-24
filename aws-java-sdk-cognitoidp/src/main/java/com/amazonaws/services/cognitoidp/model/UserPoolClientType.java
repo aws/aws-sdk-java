@@ -114,17 +114,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      */
     private java.util.List<String> callbackURLs;
@@ -154,17 +155,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      */
     private String defaultRedirectURI;
@@ -807,17 +809,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
      * @return A list of allowed redirect (callback) URLs for the identity providers.</p>
@@ -837,17 +840,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         Not include a fragment component.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *         </p>
+     *         <p>
+     *         Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *         </p>
+     *         <p>
+     *         App callback URLs such as myapp://example are also supported.
      */
 
     public java.util.List<String> getCallbackURLs() {
@@ -874,17 +878,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
      * @param callbackURLs
@@ -905,17 +910,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Not include a fragment component.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *        </p>
+     *        <p>
+     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        </p>
+     *        <p>
+     *        App callback URLs such as myapp://example are also supported.
      */
 
     public void setCallbackURLs(java.util.Collection<String> callbackURLs) {
@@ -947,17 +953,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -983,17 +990,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Not include a fragment component.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *        </p>
+     *        <p>
+     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        </p>
+     *        <p>
+     *        App callback URLs such as myapp://example are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,17 +1035,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
      * @param callbackURLs
@@ -1058,17 +1067,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Not include a fragment component.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *        </p>
+     *        <p>
+     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        </p>
+     *        <p>
+     *        App callback URLs such as myapp://example are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1167,17 +1177,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
      * @param defaultRedirectURI
@@ -1198,17 +1209,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Not include a fragment component.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *        </p>
+     *        <p>
+     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        </p>
+     *        <p>
+     *        App callback URLs such as myapp://example are also supported.
      */
 
     public void setDefaultRedirectURI(String defaultRedirectURI) {
@@ -1235,17 +1247,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
      * @return The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -1265,17 +1278,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         Not include a fragment component.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *         </p>
+     *         <p>
+     *         Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *         </p>
+     *         <p>
+     *         App callback URLs such as myapp://example are also supported.
      */
 
     public String getDefaultRedirectURI() {
@@ -1302,17 +1316,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Not include a fragment component.
      * </p>
      * </li>
      * </ul>
      * <p>
      * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
+     * <p>
+     * Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     * </p>
+     * <p>
+     * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
      * @param defaultRedirectURI
@@ -1333,17 +1348,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Not include a fragment component.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     *        </p>
+     *        <p>
+     *        Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
+     *        </p>
+     *        <p>
+     *        App callback URLs such as myapp://example are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

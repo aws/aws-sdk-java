@@ -30,14 +30,14 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      */
     private java.util.Date time;
     /**
      * <p>
-     * The source of the event.
+     * The source of the event. This field is required.
      * </p>
      */
     private String source;
@@ -63,13 +63,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
      * @param time
-     *        The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
-     *        timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+     *        The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *        time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      */
 
     public void setTime(java.util.Date time) {
@@ -78,12 +78,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
-     * @return The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
-     *         timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * @return The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *         time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      */
 
     public java.util.Date getTime() {
@@ -92,13 +92,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
      * @param time
-     *        The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
-     *        timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+     *        The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *        time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +109,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The source of the event.
+     * The source of the event. This field is required.
      * </p>
      * 
      * @param source
-     *        The source of the event.
+     *        The source of the event. This field is required.
      */
 
     public void setSource(String source) {
@@ -122,10 +122,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The source of the event.
+     * The source of the event. This field is required.
      * </p>
      * 
-     * @return The source of the event.
+     * @return The source of the event. This field is required.
      */
 
     public String getSource() {
@@ -134,11 +134,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The source of the event.
+     * The source of the event. This field is required.
      * </p>
      * 
      * @param source
-     *        The source of the event.
+     *        The source of the event. This field is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

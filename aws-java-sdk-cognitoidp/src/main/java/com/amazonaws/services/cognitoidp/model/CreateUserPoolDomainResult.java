@@ -24,6 +24,60 @@ import javax.annotation.Generated;
 public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
+     * </p>
+     */
+    private String cloudFrontDomain;
+
+    /**
+     * <p>
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
+     * </p>
+     * 
+     * @param cloudFrontDomain
+     *        The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
+     *        Name Service (DNS) provider.
+     */
+
+    public void setCloudFrontDomain(String cloudFrontDomain) {
+        this.cloudFrontDomain = cloudFrontDomain;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
+     * </p>
+     * 
+     * @return The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
+     *         Name Service (DNS) provider.
+     */
+
+    public String getCloudFrontDomain() {
+        return this.cloudFrontDomain;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
+     * </p>
+     * 
+     * @param cloudFrontDomain
+     *        The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
+     *        Name Service (DNS) provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolDomainResult withCloudFrontDomain(String cloudFrontDomain) {
+        setCloudFrontDomain(cloudFrontDomain);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -34,6 +88,8 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCloudFrontDomain() != null)
+            sb.append("CloudFrontDomain: ").append(getCloudFrontDomain());
         sb.append("}");
         return sb.toString();
     }
@@ -48,6 +104,10 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreateUserPoolDomainResult == false)
             return false;
         CreateUserPoolDomainResult other = (CreateUserPoolDomainResult) obj;
+        if (other.getCloudFrontDomain() == null ^ this.getCloudFrontDomain() == null)
+            return false;
+        if (other.getCloudFrontDomain() != null && other.getCloudFrontDomain().equals(this.getCloudFrontDomain()) == false)
+            return false;
         return true;
     }
 
@@ -56,6 +116,7 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCloudFrontDomain() == null) ? 0 : getCloudFrontDomain().hashCode());
         return hashCode;
     }
 

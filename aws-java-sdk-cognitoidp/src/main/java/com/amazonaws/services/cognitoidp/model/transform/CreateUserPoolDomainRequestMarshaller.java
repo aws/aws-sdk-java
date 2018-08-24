@@ -31,6 +31,8 @@ public class CreateUserPoolDomainRequestMarshaller {
             .marshallLocationName("Domain").build();
     private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMDOMAINCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDomainConfig").build();
 
     private static final CreateUserPoolDomainRequestMarshaller instance = new CreateUserPoolDomainRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CreateUserPoolDomainRequestMarshaller {
         try {
             protocolMarshaller.marshall(createUserPoolDomainRequest.getDomain(), DOMAIN_BINDING);
             protocolMarshaller.marshall(createUserPoolDomainRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(createUserPoolDomainRequest.getCustomDomainConfig(), CUSTOMDOMAINCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

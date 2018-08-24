@@ -41,6 +41,8 @@ public class DomainDescriptionTypeMarshaller {
             .marshallLocationName("Version").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMDOMAINCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDomainConfig").build();
 
     private static final DomainDescriptionTypeMarshaller instance = new DomainDescriptionTypeMarshaller();
 
@@ -65,6 +67,7 @@ public class DomainDescriptionTypeMarshaller {
             protocolMarshaller.marshall(domainDescriptionType.getCloudFrontDistribution(), CLOUDFRONTDISTRIBUTION_BINDING);
             protocolMarshaller.marshall(domainDescriptionType.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(domainDescriptionType.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(domainDescriptionType.getCustomDomainConfig(), CUSTOMDOMAINCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

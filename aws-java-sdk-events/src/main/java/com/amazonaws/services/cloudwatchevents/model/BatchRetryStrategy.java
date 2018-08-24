@@ -31,18 +31,18 @@ public class BatchRetryStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     * The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      * </p>
      */
     private Integer attempts;
 
     /**
      * <p>
-     * The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     * The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      * </p>
      * 
      * @param attempts
-     *        The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     *        The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      */
 
     public void setAttempts(Integer attempts) {
@@ -51,10 +51,10 @@ public class BatchRetryStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     * The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      * </p>
      * 
-     * @return The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     * @return The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      */
 
     public Integer getAttempts() {
@@ -63,11 +63,11 @@ public class BatchRetryStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     * The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      * </p>
      * 
      * @param attempts
-     *        The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+     *        The number of times to attempt to retry, if the job fails. Valid values are 1–10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

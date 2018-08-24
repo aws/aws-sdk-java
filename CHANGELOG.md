@@ -1,3 +1,12 @@
+# __1.11.395__ __2018-08-24__
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Added Fargate and NetworkConfiguration support to EcsParameters.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Amazon Cognito now has API support for creating custom domains for our hosted UI for User Pools.
+
 # __1.11.394__ __2018-08-23__
 ## __AWS Elemental MediaLive__
   - ### Features

@@ -1996,7 +1996,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Client method for returning the configuration information and metadata of the specified user pool client.
+     * Client method for returning the configuration information and metadata of the specified user pool app client.
      * </p>
      * 
      * @param describeUserPoolClientRequest
@@ -2010,7 +2010,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Client method for returning the configuration information and metadata of the specified user pool client.
+     * Client method for returning the configuration information and metadata of the specified user pool app client.
      * </p>
      * 
      * @param describeUserPoolClientRequest
@@ -3374,7 +3374,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Updates the specified user pool with the specified attributes.
+     * Updates the specified user pool with the specified attributes. If you don't provide a value for an attribute, it
+     * will be set to the default value. You can get a list of the current user pool settings with .
      * </p>
      * 
      * @param updateUserPoolRequest
@@ -3388,7 +3389,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Updates the specified user pool with the specified attributes.
+     * Updates the specified user pool with the specified attributes. If you don't provide a value for an attribute, it
+     * will be set to the default value. You can get a list of the current user pool settings with .
      * </p>
      * 
      * @param updateUserPoolRequest
@@ -3407,7 +3409,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Allows the developer to update the specified user pool client and password policy.
+     * Updates the specified user pool app client with the specified attributes. If you don't provide a value for an
+     * attribute, it will be set to the default value. You can get a list of the current user pool app client settings
+     * with .
      * </p>
      * 
      * @param updateUserPoolClientRequest
@@ -3421,7 +3425,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Allows the developer to update the specified user pool client and password policy.
+     * Updates the specified user pool app client with the specified attributes. If you don't provide a value for an
+     * attribute, it will be set to the default value. You can get a list of the current user pool app client settings
+     * with .
      * </p>
      * 
      * @param updateUserPoolClientRequest

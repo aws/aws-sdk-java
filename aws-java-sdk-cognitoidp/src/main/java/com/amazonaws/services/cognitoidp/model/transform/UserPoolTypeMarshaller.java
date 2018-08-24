@@ -79,6 +79,8 @@ public class UserPoolTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailConfigurationFailure").build();
     private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Domain").build();
+    private static final MarshallingInfo<String> CUSTOMDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDomain").build();
     private static final MarshallingInfo<StructuredPojo> ADMINCREATEUSERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdminCreateUserConfig").build();
     private static final MarshallingInfo<StructuredPojo> USERPOOLADDONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -127,6 +129,7 @@ public class UserPoolTypeMarshaller {
             protocolMarshaller.marshall(userPoolType.getSmsConfigurationFailure(), SMSCONFIGURATIONFAILURE_BINDING);
             protocolMarshaller.marshall(userPoolType.getEmailConfigurationFailure(), EMAILCONFIGURATIONFAILURE_BINDING);
             protocolMarshaller.marshall(userPoolType.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(userPoolType.getCustomDomain(), CUSTOMDOMAIN_BINDING);
             protocolMarshaller.marshall(userPoolType.getAdminCreateUserConfig(), ADMINCREATEUSERCONFIG_BINDING);
             protocolMarshaller.marshall(userPoolType.getUserPoolAddOns(), USERPOOLADDONS_BINDING);
             protocolMarshaller.marshall(userPoolType.getArn(), ARN_BINDING);

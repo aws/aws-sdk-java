@@ -1434,6 +1434,8 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user is not authorized.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.CreateUserPoolDomain
@@ -1771,7 +1773,7 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Client method for returning the configuration information and metadata of the specified user pool client.
+     * Client method for returning the configuration information and metadata of the specified user pool app client.
      * </p>
      * 
      * @param describeUserPoolClientRequest
@@ -3010,7 +3012,8 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Updates the specified user pool with the specified attributes.
+     * Updates the specified user pool with the specified attributes. If you don't provide a value for an attribute, it
+     * will be set to the default value. You can get a list of the current user pool settings with .
      * </p>
      * 
      * @param updateUserPoolRequest
@@ -3051,7 +3054,9 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Allows the developer to update the specified user pool client and password policy.
+     * Updates the specified user pool app client with the specified attributes. If you don't provide a value for an
+     * attribute, it will be set to the default value. You can get a list of the current user pool app client settings
+     * with .
      * </p>
      * 
      * @param updateUserPoolClientRequest

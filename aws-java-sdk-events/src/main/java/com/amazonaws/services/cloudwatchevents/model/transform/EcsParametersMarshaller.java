@@ -31,6 +31,14 @@ public class EcsParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskDefinitionArn").build();
     private static final MarshallingInfo<Integer> TASKCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskCount").build();
+    private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchType").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkConfiguration").build();
+    private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlatformVersion").build();
+    private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Group").build();
 
     private static final EcsParametersMarshaller instance = new EcsParametersMarshaller();
 
@@ -50,6 +58,10 @@ public class EcsParametersMarshaller {
         try {
             protocolMarshaller.marshall(ecsParameters.getTaskDefinitionArn(), TASKDEFINITIONARN_BINDING);
             protocolMarshaller.marshall(ecsParameters.getTaskCount(), TASKCOUNT_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getLaunchType(), LAUNCHTYPE_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getPlatformVersion(), PLATFORMVERSION_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getGroup(), GROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

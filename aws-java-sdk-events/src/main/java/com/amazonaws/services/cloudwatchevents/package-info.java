@@ -27,8 +27,8 @@
  * </li>
  * <li>
  * <p>
- * Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security
- * or availability risks.
+ * Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for detailed analysis of potential
+ * security or availability risks.
  * </p>
  * </li>
  * <li>

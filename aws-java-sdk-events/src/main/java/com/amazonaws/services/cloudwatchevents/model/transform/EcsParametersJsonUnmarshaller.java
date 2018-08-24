@@ -56,6 +56,22 @@ public class EcsParametersJsonUnmarshaller implements Unmarshaller<EcsParameters
                     context.nextToken();
                     ecsParameters.setTaskCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("LaunchType", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NetworkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PlatformVersion", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Group", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
