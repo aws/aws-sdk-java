@@ -36,7 +36,7 @@ public class FilterActivity implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     * An expression that looks like a SQL WHERE clause that must return a Boolean value.
      * </p>
      */
     private String filter;
@@ -89,11 +89,11 @@ public class FilterActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     * An expression that looks like a SQL WHERE clause that must return a Boolean value.
      * </p>
      * 
      * @param filter
-     *        An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     *        An expression that looks like a SQL WHERE clause that must return a Boolean value.
      */
 
     public void setFilter(String filter) {
@@ -102,10 +102,10 @@ public class FilterActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     * An expression that looks like a SQL WHERE clause that must return a Boolean value.
      * </p>
      * 
-     * @return An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     * @return An expression that looks like a SQL WHERE clause that must return a Boolean value.
      */
 
     public String getFilter() {
@@ -114,11 +114,11 @@ public class FilterActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     * An expression that looks like a SQL WHERE clause that must return a Boolean value.
      * </p>
      * 
      * @param filter
-     *        An expression that looks like an SQL WHERE clause that must return a Boolean value.
+     *        An expression that looks like a SQL WHERE clause that must return a Boolean value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

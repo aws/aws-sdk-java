@@ -24,6 +24,12 @@ public class GetIndexingConfigurationResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private ThingIndexingConfiguration thingIndexingConfiguration;
+    /**
+     * <p>
+     * The index configuration.
+     * </p>
+     */
+    private ThingGroupIndexingConfiguration thingGroupIndexingConfiguration;
 
     /**
      * <p>
@@ -66,6 +72,46 @@ public class GetIndexingConfigurationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The index configuration.
+     * </p>
+     * 
+     * @param thingGroupIndexingConfiguration
+     *        The index configuration.
+     */
+
+    public void setThingGroupIndexingConfiguration(ThingGroupIndexingConfiguration thingGroupIndexingConfiguration) {
+        this.thingGroupIndexingConfiguration = thingGroupIndexingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The index configuration.
+     * </p>
+     * 
+     * @return The index configuration.
+     */
+
+    public ThingGroupIndexingConfiguration getThingGroupIndexingConfiguration() {
+        return this.thingGroupIndexingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The index configuration.
+     * </p>
+     * 
+     * @param thingGroupIndexingConfiguration
+     *        The index configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIndexingConfigurationResult withThingGroupIndexingConfiguration(ThingGroupIndexingConfiguration thingGroupIndexingConfiguration) {
+        setThingGroupIndexingConfiguration(thingGroupIndexingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -77,7 +123,9 @@ public class GetIndexingConfigurationResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingIndexingConfiguration() != null)
-            sb.append("ThingIndexingConfiguration: ").append(getThingIndexingConfiguration());
+            sb.append("ThingIndexingConfiguration: ").append(getThingIndexingConfiguration()).append(",");
+        if (getThingGroupIndexingConfiguration() != null)
+            sb.append("ThingGroupIndexingConfiguration: ").append(getThingGroupIndexingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -96,6 +144,11 @@ public class GetIndexingConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getThingIndexingConfiguration() != null && other.getThingIndexingConfiguration().equals(this.getThingIndexingConfiguration()) == false)
             return false;
+        if (other.getThingGroupIndexingConfiguration() == null ^ this.getThingGroupIndexingConfiguration() == null)
+            return false;
+        if (other.getThingGroupIndexingConfiguration() != null
+                && other.getThingGroupIndexingConfiguration().equals(this.getThingGroupIndexingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -105,6 +158,7 @@ public class GetIndexingConfigurationResult extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingIndexingConfiguration() == null) ? 0 : getThingIndexingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getThingGroupIndexingConfiguration() == null) ? 0 : getThingGroupIndexingConfiguration().hashCode());
         return hashCode;
     }
 

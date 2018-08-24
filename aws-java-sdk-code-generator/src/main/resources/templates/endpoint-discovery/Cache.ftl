@@ -1,7 +1,7 @@
 ${fileHeader}
 package ${metadata.packageName}.endpointdiscovery;
 
-import com.amazonaws.cache.EndpointDiscoveryRefreshCache;
+import com.amazonaws.endpointdiscovery.EndpointDiscoveryRefreshCache;
 import com.amazonaws.endpointdiscovery.Constants;
 import ${metadata.packageName}.${metadata.syncInterface};
 import org.apache.commons.logging.Log;

@@ -33,6 +33,8 @@ public class StartCelebrityRecognitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationChannel").build();
+    private static final MarshallingInfo<Boolean> ENABLEPERSONTRACKING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnablePersonTracking").build();
     private static final MarshallingInfo<String> JOBTAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("JobTag").build();
 
@@ -55,6 +57,7 @@ public class StartCelebrityRecognitionRequestMarshaller {
             protocolMarshaller.marshall(startCelebrityRecognitionRequest.getVideo(), VIDEO_BINDING);
             protocolMarshaller.marshall(startCelebrityRecognitionRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startCelebrityRecognitionRequest.getNotificationChannel(), NOTIFICATIONCHANNEL_BINDING);
+            protocolMarshaller.marshall(startCelebrityRecognitionRequest.getEnablePersonTracking(), ENABLEPERSONTRACKING_BINDING);
             protocolMarshaller.marshall(startCelebrityRecognitionRequest.getJobTag(), JOBTAG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

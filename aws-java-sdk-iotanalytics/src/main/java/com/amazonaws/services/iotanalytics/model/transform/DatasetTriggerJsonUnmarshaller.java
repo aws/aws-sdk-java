@@ -52,6 +52,10 @@ public class DatasetTriggerJsonUnmarshaller implements Unmarshaller<DatasetTrigg
                     context.nextToken();
                     datasetTrigger.setSchedule(ScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("dataset", targetDepth)) {
+                    context.nextToken();
+                    datasetTrigger.setDataset(TriggeringDatasetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

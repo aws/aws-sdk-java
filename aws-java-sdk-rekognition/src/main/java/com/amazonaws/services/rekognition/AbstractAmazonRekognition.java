@@ -68,6 +68,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DescribeCollectionResult describeCollection(DescribeCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStreamProcessorResult describeStreamProcessor(DescribeStreamProcessorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

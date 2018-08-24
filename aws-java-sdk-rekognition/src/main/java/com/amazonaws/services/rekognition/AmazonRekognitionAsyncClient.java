@@ -443,6 +443,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCollectionResult> describeCollectionAsync(DescribeCollectionRequest request) {
+
+        return describeCollectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCollectionResult> describeCollectionAsync(final DescribeCollectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCollectionRequest, DescribeCollectionResult> asyncHandler) {
+        final DescribeCollectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCollectionResult>() {
+            @Override
+            public DescribeCollectionResult call() throws Exception {
+                DescribeCollectionResult result = null;
+
+                try {
+                    result = executeDescribeCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(DescribeStreamProcessorRequest request) {
 
         return describeStreamProcessorAsync(request, null);

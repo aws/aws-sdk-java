@@ -12,8 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.cache;
+package com.amazonaws.endpointdiscovery;
 
+import com.amazonaws.cache.CacheLoader;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

@@ -271,8 +271,13 @@ public class ClientConfigurationTest {
             } else if (clzz.isAssignableFrom(InetAddress.class)) {
                 field.set(customConfig, InetAddress.getLocalHost());
             } else if (clzz.isAssignableFrom(Protocol.class)) {
-                // Default is HTTPS so switch to HTTP
-                field.set(customConfig, Protocol.HTTP);
+                if (field.getName().equals("protocol")) {
+                    // Default is HTTPS so switch to HTTP
+                    field.set(customConfig, Protocol.HTTP);
+                } else {
+                    // field proxyProtocol's default is HTTP
+                    field.set(customConfig, Protocol.HTTPS);
+                }
             } else if (clzz.isAssignableFrom(DnsResolver.class)) {
                 field.set(customConfig, new MyCustomDnsResolver());
             } else if (clzz.isAssignableFrom(SecureRandom.class)) {

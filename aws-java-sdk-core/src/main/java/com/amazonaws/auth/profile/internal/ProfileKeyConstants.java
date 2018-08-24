@@ -61,4 +61,9 @@ public class ProfileKeyConstants {
      * AWS Region to use when creating clients.
      */
     public static final String REGION = "region";
+
+    /**
+     * Endpoint discovery setting when creating clients
+     */
+    public static final String ENDPOINT_DISCOVERY = "aws_enable_endpoint_discovery";
 }

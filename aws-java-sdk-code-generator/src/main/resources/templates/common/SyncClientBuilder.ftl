@@ -8,6 +8,8 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.endpointdiscovery.EndpointDiscoveryProviderChain;
+import com.amazonaws.endpointdiscovery.DefaultEndpointDiscoveryProviderChain;
 
 /**
  * Fluent builder for {@link ${metadata.packageName + "." + metadata.syncInterface}}. Use of the
@@ -21,7 +23,10 @@ public final class ${metadata.syncClientBuilderClassName}
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ${clientConfigFactory}();
 
     <#if endpointOperation?has_content>
+    private static final EndpointDiscoveryProviderChain DEFAULT_ENDPOINT_DISCOVERY_PROVIDER = new DefaultEndpointDiscoveryProviderChain();
+
     private boolean endpointDiscoveryEnabled = true;
+    private boolean endpointDiscoveryDisabled = false;
     </#if>
 
     /**
@@ -52,7 +57,7 @@ public final class ${metadata.syncClientBuilderClassName}
 
     <#if endpointOperation?has_content>
     public ${metadata.syncClientBuilderClassName} disableEndpointDiscovery() {
-        this.endpointDiscoveryEnabled = false;
+        this.endpointDiscoveryDisabled = true;
         return this;
     }
     </#if>
@@ -66,7 +71,10 @@ public final class ${metadata.syncClientBuilderClassName}
     @Override
     protected ${metadata.syncInterface} build(AwsSyncClientParams params) {
         <#if endpointOperation?has_content>
-         if (endpointDiscoveryEnabled && getEndpoint() == null) {
+        if (getEndpoint() != null || endpointDiscoveryDisabled) {
+            return new ${metadata.syncClient}(params);
+        }
+        if (endpointDiscoveryEnabled || DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled()) {
             return new ${metadata.syncClient}(params, endpointDiscoveryEnabled);
         }
         </#if>

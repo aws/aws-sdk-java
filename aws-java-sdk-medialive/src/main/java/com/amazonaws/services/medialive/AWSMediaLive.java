@@ -40,6 +40,34 @@ public interface AWSMediaLive {
     String ENDPOINT_PREFIX = "medialive";
 
     /**
+     * Update a channel schedule
+     * 
+     * @param batchUpdateScheduleRequest
+     *        List of actions to create and list of actions to delete.
+     * @return Result of the BatchUpdateSchedule operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The update schedule request failed validation.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the channel schedule.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The specified channel id does not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update schedule calls.
+     * @sample AWSMediaLive.BatchUpdateSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest batchUpdateScheduleRequest);
+
+    /**
      * Creates a new channel
      * 
      * @param createChannelRequest
@@ -354,6 +382,32 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     DescribeReservationResult describeReservation(DescribeReservationRequest describeReservationRequest);
+
+    /**
+     * Get a channel schedule
+     * 
+     * @param describeScheduleRequest
+     *        Request for a describe schedule call.
+     * @return Result of the DescribeSchedule operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe the channel schedule.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel you're requesting a schedule describe for does not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe schedule calls.
+     * @sample AWSMediaLive.DescribeSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeScheduleResult describeSchedule(DescribeScheduleRequest describeScheduleRequest);
 
     /**
      * Produces list of channels that have been created

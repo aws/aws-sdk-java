@@ -335,6 +335,26 @@ public interface AmazonRekognition {
     DeleteStreamProcessorResult deleteStreamProcessor(DeleteStreamProcessorRequest deleteStreamProcessorRequest);
 
     /**
+     * @param describeCollectionRequest
+     * @return Result of the DescribeCollection operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @sample AmazonRekognition.DescribeCollection
+     */
+    DescribeCollectionResult describeCollection(DescribeCollectionRequest describeCollectionRequest);
+
+    /**
      * <p>
      * Provides information about a stream processor created by . You can get information about the input and output
      * streams, the input parameters for the face recognition being performed, and the current status of the stream
@@ -1016,7 +1036,7 @@ public interface AmazonRekognition {
      * of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the
      * service for each face that is detected and stored, and an image ID assigned by the service for the input image.
      * If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
-     * returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other
+     * returns detailed facial attributes such as facial landmarks (for example, location of eye and mouth) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
@@ -1466,7 +1486,7 @@ public interface AmazonRekognition {
      * completion status to the Amazon Simple Notification Service topic that you specify in
      * <code>NotificationChannel</code>. To get the search results, first check that the status value published to the
      * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
-     * initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
+     * initial call to <code>StartFaceSearch</code>. For more information, see <a>procedure-person-search-videos</a>.
      * </p>
      * 
      * @param startFaceSearchRequest

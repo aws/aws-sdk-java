@@ -30,18 +30,24 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An SQL query string.
+     * A SQL query string.
      * </p>
      */
     private String sqlQuery;
+    /**
+     * <p>
+     * Pre-filters applied to message data.
+     * </p>
+     */
+    private java.util.List<QueryFilter> filters;
 
     /**
      * <p>
-     * An SQL query string.
+     * A SQL query string.
      * </p>
      * 
      * @param sqlQuery
-     *        An SQL query string.
+     *        A SQL query string.
      */
 
     public void setSqlQuery(String sqlQuery) {
@@ -50,10 +56,10 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An SQL query string.
+     * A SQL query string.
      * </p>
      * 
-     * @return An SQL query string.
+     * @return A SQL query string.
      */
 
     public String getSqlQuery() {
@@ -62,16 +68,86 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An SQL query string.
+     * A SQL query string.
      * </p>
      * 
      * @param sqlQuery
-     *        An SQL query string.
+     *        A SQL query string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SqlQueryDatasetAction withSqlQuery(String sqlQuery) {
         setSqlQuery(sqlQuery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Pre-filters applied to message data.
+     * </p>
+     * 
+     * @return Pre-filters applied to message data.
+     */
+
+    public java.util.List<QueryFilter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * <p>
+     * Pre-filters applied to message data.
+     * </p>
+     * 
+     * @param filters
+     *        Pre-filters applied to message data.
+     */
+
+    public void setFilters(java.util.Collection<QueryFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<QueryFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * Pre-filters applied to message data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        Pre-filters applied to message data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SqlQueryDatasetAction withFilters(QueryFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<QueryFilter>(filters.length));
+        }
+        for (QueryFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Pre-filters applied to message data.
+     * </p>
+     * 
+     * @param filters
+     *        Pre-filters applied to message data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SqlQueryDatasetAction withFilters(java.util.Collection<QueryFilter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -87,7 +163,9 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlQuery() != null)
-            sb.append("SqlQuery: ").append(getSqlQuery());
+            sb.append("SqlQuery: ").append(getSqlQuery()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +184,10 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
             return false;
         if (other.getSqlQuery() != null && other.getSqlQuery().equals(this.getSqlQuery()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +197,7 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSqlQuery() == null) ? 0 : getSqlQuery().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

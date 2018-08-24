@@ -97,6 +97,10 @@ public class BasicProfile {
         return getPropertyValue(ProfileKeyConstants.REGION);
     }
 
+    public String getEndpointDiscovery() {
+        return getPropertyValue(ProfileKeyConstants.ENDPOINT_DISCOVERY);
+    }
+
     public boolean isRoleBasedProfile() {
         return getRoleArn() != null;
     }

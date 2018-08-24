@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotanalytics.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,10 @@ public class DatasetSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").build();
+    private static final MarshallingInfo<List> TRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("triggers").build();
+    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("actions").build();
 
     private static final DatasetSummaryMarshaller instance = new DatasetSummaryMarshaller();
 
@@ -56,6 +61,8 @@ public class DatasetSummaryMarshaller {
             protocolMarshaller.marshall(datasetSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(datasetSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(datasetSummary.getLastUpdateTime(), LASTUPDATETIME_BINDING);
+            protocolMarshaller.marshall(datasetSummary.getTriggers(), TRIGGERS_BINDING);
+            protocolMarshaller.marshall(datasetSummary.getActions(), ACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

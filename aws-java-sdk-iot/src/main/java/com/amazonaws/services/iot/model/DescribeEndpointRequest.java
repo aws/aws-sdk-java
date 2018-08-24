@@ -27,18 +27,19 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint type.
+     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
      * </p>
      */
     private String endpointType;
 
     /**
      * <p>
-     * The endpoint type.
+     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
      * </p>
      * 
      * @param endpointType
-     *        The endpoint type.
+     *        The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and
+     *        <code>iot:Jobs</code>).
      */
 
     public void setEndpointType(String endpointType) {
@@ -47,10 +48,11 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint type.
+     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
      * </p>
      * 
-     * @return The endpoint type.
+     * @return The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and
+     *         <code>iot:Jobs</code>).
      */
 
     public String getEndpointType() {
@@ -59,11 +61,12 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint type.
+     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
      * </p>
      * 
      * @param endpointType
-     *        The endpoint type.
+     *        The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and
+     *        <code>iot:Jobs</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

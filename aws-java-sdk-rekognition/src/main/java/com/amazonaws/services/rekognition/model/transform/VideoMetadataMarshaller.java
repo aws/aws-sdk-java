@@ -39,6 +39,8 @@ public class VideoMetadataMarshaller {
             .marshallLocationName("FrameHeight").build();
     private static final MarshallingInfo<Long> FRAMEWIDTH_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FrameWidth").build();
+    private static final MarshallingInfo<Integer> ROTATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Rotation").build();
 
     private static final VideoMetadataMarshaller instance = new VideoMetadataMarshaller();
 
@@ -62,6 +64,7 @@ public class VideoMetadataMarshaller {
             protocolMarshaller.marshall(videoMetadata.getFrameRate(), FRAMERATE_BINDING);
             protocolMarshaller.marshall(videoMetadata.getFrameHeight(), FRAMEHEIGHT_BINDING);
             protocolMarshaller.marshall(videoMetadata.getFrameWidth(), FRAMEWIDTH_BINDING);
+            protocolMarshaller.marshall(videoMetadata.getRotation(), ROTATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

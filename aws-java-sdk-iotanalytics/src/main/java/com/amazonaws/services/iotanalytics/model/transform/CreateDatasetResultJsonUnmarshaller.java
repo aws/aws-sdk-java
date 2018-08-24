@@ -56,6 +56,10 @@ public class CreateDatasetResultJsonUnmarshaller implements Unmarshaller<CreateD
                     context.nextToken();
                     createDatasetResult.setDatasetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("retentionPeriod", targetDepth)) {
+                    context.nextToken();
+                    createDatasetResult.setRetentionPeriod(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

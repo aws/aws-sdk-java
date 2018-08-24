@@ -14,6 +14,7 @@
  */
 package com.amazonaws.http.settings;
 
+import com.amazonaws.Protocol;
 import com.amazonaws.ProxyAuthenticationMethod;
 import java.net.InetAddress;
 import java.security.SecureRandom;
@@ -179,5 +180,9 @@ public class HttpClientSettings {
 
     public boolean isAuthenticatedProxy() {
         return getProxyUsername() != null && getProxyPassword() != null;
+    }
+
+    public Protocol getProxyProtocol() {
+        return config.getProxyProtocol();
     }
 }

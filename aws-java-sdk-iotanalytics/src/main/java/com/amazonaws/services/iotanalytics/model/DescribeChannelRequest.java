@@ -33,7 +33,7 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
     private String channelName;
     /**
      * <p>
-     * If true, include statistics about the channel in the response.
+     * If true, additional statistical information about the channel is included in the response.
      * </p>
      */
     private Boolean includeStatistics;
@@ -80,11 +80,11 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, include statistics about the channel in the response.
+     * If true, additional statistical information about the channel is included in the response.
      * </p>
      * 
      * @param includeStatistics
-     *        If true, include statistics about the channel in the response.
+     *        If true, additional statistical information about the channel is included in the response.
      */
 
     public void setIncludeStatistics(Boolean includeStatistics) {
@@ -93,10 +93,10 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, include statistics about the channel in the response.
+     * If true, additional statistical information about the channel is included in the response.
      * </p>
      * 
-     * @return If true, include statistics about the channel in the response.
+     * @return If true, additional statistical information about the channel is included in the response.
      */
 
     public Boolean getIncludeStatistics() {
@@ -105,11 +105,11 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, include statistics about the channel in the response.
+     * If true, additional statistical information about the channel is included in the response.
      * </p>
      * 
      * @param includeStatistics
-     *        If true, include statistics about the channel in the response.
+     *        If true, additional statistical information about the channel is included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, include statistics about the channel in the response.
+     * If true, additional statistical information about the channel is included in the response.
      * </p>
      * 
-     * @return If true, include statistics about the channel in the response.
+     * @return If true, additional statistical information about the channel is included in the response.
      */
 
     public Boolean isIncludeStatistics() {

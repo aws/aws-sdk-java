@@ -5157,7 +5157,7 @@
       "members":{
         "endpointType":{
           "shape":"EndpointType",
-          "documentation":"<p>The endpoint type.</p>",
+          "documentation":"<p>The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>",
           "location":"querystring",
           "locationName":"endpointType"
         }
@@ -6032,6 +6032,10 @@
         "thingIndexingConfiguration":{
           "shape":"ThingIndexingConfiguration",
           "documentation":"<p>Thing indexing configuration.</p>"
+        },
+        "thingGroupIndexingConfiguration":{
+          "shape":"ThingGroupIndexingConfiguration",
+          "documentation":"<p>The index configuration.</p>"
         }
       }
     },
@@ -8815,7 +8819,6 @@
     },
     "QueryString":{
       "type":"string",
-      "max":1000,
       "min":1
     },
     "QueryVersion":{"type":"string"},
@@ -9427,6 +9430,10 @@
         "things":{
           "shape":"ThingDocumentList",
           "documentation":"<p>The things that match the search query.</p>"
+        },
+        "thingGroups":{
+          "shape":"ThingGroupDocumentList",
+          "documentation":"<p>The thing groups that match the search query.</p>"
         }
       }
     },
@@ -10127,11 +10134,59 @@
       "max":2028,
       "pattern":"[\\p{Graph}\\x20]*"
     },
+    "ThingGroupDocument":{
+      "type":"structure",
+      "members":{
+        "thingGroupName":{
+          "shape":"ThingGroupName",
+          "documentation":"<p>The thing group name.</p>"
+        },
+        "thingGroupId":{
+          "shape":"ThingGroupId",
+          "documentation":"<p>The thing group ID.</p>"
+        },
+        "thingGroupDescription":{
+          "shape":"ThingGroupDescription",
+          "documentation":"<p>The thing group description.</p>"
+        },
+        "attributes":{
+          "shape":"Attributes",
+          "documentation":"<p>The thing group attributes.</p>"
+        },
+        "parentGroupNames":{
+          "shape":"ThingGroupNameList",
+          "documentation":"<p>Parent group names.</p>"
+        }
+      },
+      "documentation":"<p>The thing group search index document.</p>"
+    },
+    "ThingGroupDocumentList":{
+      "type":"list",
+      "member":{"shape":"ThingGroupDocument"}
+    },
     "ThingGroupId":{
       "type":"string",
       "max":128,
       "min":1,
       "pattern":"[a-zA-Z0-9\\-]+"
+    },
+    "ThingGroupIndexingConfiguration":{
+      "type":"structure",
+      "required":["thingGroupIndexingMode"],
+      "members":{
+        "thingGroupIndexingMode":{
+          "shape":"ThingGroupIndexingMode",
+          "documentation":"<p>Thing group indexing mode.</p>"
+        }
+      },
+      "documentation":"<p>Thing group indexing configuration.</p>"
+    },
+    "ThingGroupIndexingMode":{
+      "type":"string",
+      "enum":[
+        "OFF",
+        "ON"
+      ]
     },
     "ThingGroupList":{
       "type":"list",
@@ -10186,6 +10241,7 @@
     "ThingId":{"type":"string"},
     "ThingIndexingConfiguration":{
       "type":"structure",
+      "required":["thingIndexingMode"],
       "members":{
         "thingIndexingMode":{
           "shape":"ThingIndexingMode",
@@ -10660,6 +10716,10 @@
         "thingIndexingConfiguration":{
           "shape":"ThingIndexingConfiguration",
           "documentation":"<p>Thing indexing configuration.</p>"
+        },
+        "thingGroupIndexingConfiguration":{
+          "shape":"ThingGroupIndexingConfiguration",
+          "documentation":"<p>Thing group indexing configuration.</p>"
         }
       }
     },

@@ -63,6 +63,8 @@ public class VideoMetadata implements Serializable, Cloneable, StructuredPojo {
      */
     private Long frameWidth;
 
+    private Integer rotation;
+
     /**
      * <p>
      * Type of compression used in the analyzed video.
@@ -304,6 +306,32 @@ public class VideoMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param rotation
+     */
+
+    public void setRotation(Integer rotation) {
+        this.rotation = rotation;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getRotation() {
+        return this.rotation;
+    }
+
+    /**
+     * @param rotation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoMetadata withRotation(Integer rotation) {
+        setRotation(rotation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -325,7 +353,9 @@ public class VideoMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getFrameHeight() != null)
             sb.append("FrameHeight: ").append(getFrameHeight()).append(",");
         if (getFrameWidth() != null)
-            sb.append("FrameWidth: ").append(getFrameWidth());
+            sb.append("FrameWidth: ").append(getFrameWidth()).append(",");
+        if (getRotation() != null)
+            sb.append("Rotation: ").append(getRotation());
         sb.append("}");
         return sb.toString();
     }
@@ -364,6 +394,10 @@ public class VideoMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFrameWidth() != null && other.getFrameWidth().equals(this.getFrameWidth()) == false)
             return false;
+        if (other.getRotation() == null ^ this.getRotation() == null)
+            return false;
+        if (other.getRotation() != null && other.getRotation().equals(this.getRotation()) == false)
+            return false;
         return true;
     }
 
@@ -378,6 +412,7 @@ public class VideoMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFrameRate() == null) ? 0 : getFrameRate().hashCode());
         hashCode = prime * hashCode + ((getFrameHeight() == null) ? 0 : getFrameHeight().hashCode());
         hashCode = prime * hashCode + ((getFrameWidth() == null) ? 0 : getFrameWidth().hashCode());
+        hashCode = prime * hashCode + ((getRotation() == null) ? 0 : getRotation().hashCode());
         return hashCode;
     }
 

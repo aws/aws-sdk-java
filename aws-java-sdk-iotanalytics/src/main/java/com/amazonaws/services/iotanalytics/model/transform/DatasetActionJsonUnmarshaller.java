@@ -56,6 +56,10 @@ public class DatasetActionJsonUnmarshaller implements Unmarshaller<DatasetAction
                     context.nextToken();
                     datasetAction.setQueryAction(SqlQueryDatasetActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("containerAction", targetDepth)) {
+                    context.nextToken();
+                    datasetAction.setContainerAction(ContainerDatasetActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

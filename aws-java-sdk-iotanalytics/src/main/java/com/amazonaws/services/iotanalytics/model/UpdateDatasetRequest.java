@@ -33,7 +33,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String datasetName;
     /**
      * <p>
-     * A list of "DatasetAction" objects. Only one action is supported at this time.
+     * A list of "DatasetAction" objects.
      * </p>
      */
     private java.util.List<DatasetAction> actions;
@@ -44,6 +44,12 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
+    /**
+     * <p>
+     * How long, in days, message data is kept for the data set.
+     * </p>
+     */
+    private RetentionPeriod retentionPeriod;
 
     /**
      * <p>
@@ -87,10 +93,10 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of "DatasetAction" objects. Only one action is supported at this time.
+     * A list of "DatasetAction" objects.
      * </p>
      * 
-     * @return A list of "DatasetAction" objects. Only one action is supported at this time.
+     * @return A list of "DatasetAction" objects.
      */
 
     public java.util.List<DatasetAction> getActions() {
@@ -99,11 +105,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of "DatasetAction" objects. Only one action is supported at this time.
+     * A list of "DatasetAction" objects.
      * </p>
      * 
      * @param actions
-     *        A list of "DatasetAction" objects. Only one action is supported at this time.
+     *        A list of "DatasetAction" objects.
      */
 
     public void setActions(java.util.Collection<DatasetAction> actions) {
@@ -117,7 +123,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of "DatasetAction" objects. Only one action is supported at this time.
+     * A list of "DatasetAction" objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +132,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param actions
-     *        A list of "DatasetAction" objects. Only one action is supported at this time.
+     *        A list of "DatasetAction" objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +148,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of "DatasetAction" objects. Only one action is supported at this time.
+     * A list of "DatasetAction" objects.
      * </p>
      * 
      * @param actions
-     *        A list of "DatasetAction" objects. Only one action is supported at this time.
+     *        A list of "DatasetAction" objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,6 +240,46 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        How long, in days, message data is kept for the data set.
+     */
+
+    public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
+        this.retentionPeriod = retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @return How long, in days, message data is kept for the data set.
+     */
+
+    public RetentionPeriod getRetentionPeriod() {
+        return this.retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        How long, in days, message data is kept for the data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDatasetRequest withRetentionPeriod(RetentionPeriod retentionPeriod) {
+        setRetentionPeriod(retentionPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -249,7 +295,9 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getActions() != null)
             sb.append("Actions: ").append(getActions()).append(",");
         if (getTriggers() != null)
-            sb.append("Triggers: ").append(getTriggers());
+            sb.append("Triggers: ").append(getTriggers()).append(",");
+        if (getRetentionPeriod() != null)
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +324,10 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
             return false;
+        if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
+            return false;
+        if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -287,6 +339,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,35 @@ import com.amazonaws.services.medialive.model.*;
 public interface AWSMediaLiveAsync extends AWSMediaLive {
 
     /**
+     * Update a channel schedule
+     * 
+     * @param batchUpdateScheduleRequest
+     *        List of actions to create and list of actions to delete.
+     * @return A Java Future containing the result of the BatchUpdateSchedule operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchUpdateSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateScheduleResult> batchUpdateScheduleAsync(BatchUpdateScheduleRequest batchUpdateScheduleRequest);
+
+    /**
+     * Update a channel schedule
+     * 
+     * @param batchUpdateScheduleRequest
+     *        List of actions to create and list of actions to delete.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdateSchedule operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchUpdateSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateScheduleResult> batchUpdateScheduleAsync(BatchUpdateScheduleRequest batchUpdateScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateScheduleRequest, BatchUpdateScheduleResult> asyncHandler);
+
+    /**
      * Creates a new channel
      * 
      * @param createChannelRequest
@@ -379,6 +408,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<DescribeReservationResult> describeReservationAsync(DescribeReservationRequest describeReservationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeReservationRequest, DescribeReservationResult> asyncHandler);
+
+    /**
+     * Get a channel schedule
+     * 
+     * @param describeScheduleRequest
+     *        Request for a describe schedule call.
+     * @return A Java Future containing the result of the DescribeSchedule operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeScheduleResult> describeScheduleAsync(DescribeScheduleRequest describeScheduleRequest);
+
+    /**
+     * Get a channel schedule
+     * 
+     * @param describeScheduleRequest
+     *        Request for a describe schedule call.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSchedule operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeScheduleResult> describeScheduleAsync(DescribeScheduleRequest describeScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeScheduleRequest, DescribeScheduleResult> asyncHandler);
 
     /**
      * Produces list of channels that have been created

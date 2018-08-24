@@ -34,6 +34,8 @@ public class UpdateDatasetRequestMarshaller {
             .marshallLocationName("actions").build();
     private static final MarshallingInfo<List> TRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("triggers").build();
+    private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
 
     private static final UpdateDatasetRequestMarshaller instance = new UpdateDatasetRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class UpdateDatasetRequestMarshaller {
             protocolMarshaller.marshall(updateDatasetRequest.getDatasetName(), DATASETNAME_BINDING);
             protocolMarshaller.marshall(updateDatasetRequest.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(updateDatasetRequest.getTriggers(), TRIGGERS_BINDING);
+            protocolMarshaller.marshall(updateDatasetRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

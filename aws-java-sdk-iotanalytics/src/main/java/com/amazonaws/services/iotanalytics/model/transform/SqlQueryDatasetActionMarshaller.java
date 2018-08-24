@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotanalytics.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class SqlQueryDatasetActionMarshaller {
 
     private static final MarshallingInfo<String> SQLQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sqlQuery").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filters").build();
 
     private static final SqlQueryDatasetActionMarshaller instance = new SqlQueryDatasetActionMarshaller();
 
@@ -47,6 +50,7 @@ public class SqlQueryDatasetActionMarshaller {
 
         try {
             protocolMarshaller.marshall(sqlQueryDatasetAction.getSqlQuery(), SQLQUERY_BINDING);
+            protocolMarshaller.marshall(sqlQueryDatasetAction.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

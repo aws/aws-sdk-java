@@ -1,3 +1,28 @@
+# __1.11.394__ __2018-08-23__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Adds two APIs for working with Channel Schedules: BatchUpdateSchedule and DescribeSchedule. These APIs allow scheduling actions for SCTE-35 message insertion and for static image overlays.
+
+## __AWS IoT__
+  - ### Features
+    - This release adds support for IoT Thing Group Indexing and Searching functionality.
+
+## __AWS IoT Analytics__
+  - ### Features
+    - AWS IoT Analytics announces three new features:  (1) Bring Your Custom Container - import your custom authored code containers. (2) Automate Container Execution - lets you automate the execution of containers hosting custom authored analytical code or Jupyter Notebooks to perform continuous analysis. (3) Incremental Data Capture with Customizable Time Windows - enables users to perform analysis on new incremental data captured since the last analysis.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add support for setting the protocol/scheme to use when connecting to a proxy via `ClientConfiguration#withProxyProtocol`; previously the client always used `http`. This allows customers to connect to an HTTP proxy over TLS if the proxy supports it. Fixes [#1709](https://github.com/aws/aws-sdk-java/issues/1709)
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex builds bot in two stages. After the first it sets status to READY_BASIC_TESTING. In this state the bot will match user inputs that exactly match the utterances configured for the bot's intents and values in the slot types. 
+
+## __Amazon Rekognition__
+  - ### Features
+    - This release introduces a new API called DescribeCollection to Amazon Rekognition.  You can use DescribeCollection to get information about an existing face collection. Given the ID for a face collection, DescribeCollection returns the following information: the number of faces indexed into the collection, the version of the face detection model used by the collection, the Amazon Resource Name (ARN) of the collection and the creation date/time of the collection.
+
 # __1.11.393__ __2018-08-22__
 ## __Amazon Import/Export Snowball__
   - ### Features

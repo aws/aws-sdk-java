@@ -154,6 +154,13 @@ public class ClientConfiguration {
      */
     private Protocol protocol = Protocol.HTTPS;
 
+    /**
+     * The protocol to use when connecting to an HTTP proxy.
+     * <p>
+     * The default configuration is to use {@link Protocol#HTTP}.
+     */
+    private Protocol proxyProtocol = Protocol.HTTP;
+
     /** Optionally specifies the proxy host to connect through. */
     private String proxyHost = null;
 
@@ -351,6 +358,7 @@ public class ClientConfiguration {
         this.throttleRetries = other.useThrottledRetries();
         this.localAddress = other.getLocalAddress();
         this.protocol = other.getProtocol();
+        this.proxyProtocol = other.getProxyProtocol();
         this.proxyDomain = other.getProxyDomain();
         this.proxyHost = other.getProxyHost();
         this.proxyPassword = other.getProxyPassword();
@@ -597,6 +605,33 @@ public class ClientConfiguration {
      */
     private String getSystemProperty(String property) {
         return System.getProperty(property);
+    }
+
+    /**
+     * @return The {@link Protocol} to use for connecting to the proxy.
+     */
+    public Protocol getProxyProtocol() {
+        return proxyProtocol;
+    }
+
+    /**
+     * Set the {@link Protocol} to use for connecting to the proxy.
+     *
+     * @param proxyProtocol The protocol.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withProxyProtocol(Protocol proxyProtocol) {
+        this.proxyProtocol = proxyProtocol == null ? Protocol.HTTP : proxyProtocol;
+        return this;
+    }
+
+    /**
+     * Set the {@link Protocol} to use for connecting to the proxy.
+     *
+     * @param proxyProtocol The protocol.
+     */
+    public void setProxyProtocol(Protocol proxyProtocol) {
+        withProxyProtocol(proxyProtocol);
     }
 
     /**

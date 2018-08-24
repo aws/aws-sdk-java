@@ -28,6 +28,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateChannelResult createChannel(CreateChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public DescribeReservationResult describeReservation(DescribeReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeScheduleResult describeSchedule(DescribeScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

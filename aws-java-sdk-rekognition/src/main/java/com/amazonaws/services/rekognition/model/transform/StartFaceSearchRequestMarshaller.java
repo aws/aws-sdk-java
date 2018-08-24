@@ -35,6 +35,8 @@ public class StartFaceSearchRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FaceMatchThreshold").build();
     private static final MarshallingInfo<String> COLLECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionId").build();
+    private static final MarshallingInfo<Boolean> ENABLEPERSONTRACKING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnablePersonTracking").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationChannel").build();
     private static final MarshallingInfo<String> JOBTAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,7 @@ public class StartFaceSearchRequestMarshaller {
             protocolMarshaller.marshall(startFaceSearchRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startFaceSearchRequest.getFaceMatchThreshold(), FACEMATCHTHRESHOLD_BINDING);
             protocolMarshaller.marshall(startFaceSearchRequest.getCollectionId(), COLLECTIONID_BINDING);
+            protocolMarshaller.marshall(startFaceSearchRequest.getEnablePersonTracking(), ENABLEPERSONTRACKING_BINDING);
             protocolMarshaller.marshall(startFaceSearchRequest.getNotificationChannel(), NOTIFICATIONCHANNEL_BINDING);
             protocolMarshaller.marshall(startFaceSearchRequest.getJobTag(), JOBTAG_BINDING);
         } catch (Exception e) {

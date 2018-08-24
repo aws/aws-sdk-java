@@ -37,6 +37,8 @@ public class FaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalImageId").build();
     private static final MarshallingInfo<Float> CONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Confidence").build();
+    private static final MarshallingInfo<Float> ASSOCIATIONSCORE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationScore").build();
 
     private static final FaceMarshaller instance = new FaceMarshaller();
 
@@ -59,6 +61,7 @@ public class FaceMarshaller {
             protocolMarshaller.marshall(face.getImageId(), IMAGEID_BINDING);
             protocolMarshaller.marshall(face.getExternalImageId(), EXTERNALIMAGEID_BINDING);
             protocolMarshaller.marshall(face.getConfidence(), CONFIDENCE_BINDING);
+            protocolMarshaller.marshall(face.getAssociationScore(), ASSOCIATIONSCORE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

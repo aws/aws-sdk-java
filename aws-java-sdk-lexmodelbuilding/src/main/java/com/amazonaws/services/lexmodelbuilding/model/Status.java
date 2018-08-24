@@ -22,6 +22,7 @@ public enum Status {
 
     BUILDING("BUILDING"),
     READY("READY"),
+    READY_BASIC_TESTING("READY_BASIC_TESTING"),
     FAILED("FAILED"),
     NOT_BUILT("NOT_BUILT");
 

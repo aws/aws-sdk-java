@@ -42,7 +42,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      */
     private java.util.List<DatasetAction> actions;
@@ -70,6 +70,12 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     */
+    private RetentionPeriod retentionPeriod;
 
     /**
      * <p>
@@ -153,10 +159,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * 
-     * @return The "DatasetAction" objects that create the data set.
+     * @return The "DatasetAction" objects that automatically create the data set contents.
      */
 
     public java.util.List<DatasetAction> getActions() {
@@ -165,11 +171,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that create the data set.
+     *        The "DatasetAction" objects that automatically create the data set contents.
      */
 
     public void setActions(java.util.Collection<DatasetAction> actions) {
@@ -183,7 +189,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -192,7 +198,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that create the data set.
+     *        The "DatasetAction" objects that automatically create the data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +214,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that create the data set.
+     *        The "DatasetAction" objects that automatically create the data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,6 +437,46 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        [Optional] How long, in days, message data is kept for the data set.
+     */
+
+    public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
+        this.retentionPeriod = retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @return [Optional] How long, in days, message data is kept for the data set.
+     */
+
+    public RetentionPeriod getRetentionPeriod() {
+        return this.retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        [Optional] How long, in days, message data is kept for the data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withRetentionPeriod(RetentionPeriod retentionPeriod) {
+        setRetentionPeriod(retentionPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -454,7 +500,9 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: ").append(getLastUpdateTime());
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getRetentionPeriod() != null)
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -497,6 +545,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
+        if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
+            return false;
+        if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -512,6 +564,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         return hashCode;
     }
 

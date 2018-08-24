@@ -31,6 +31,8 @@ public class DatasetActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionName").build();
     private static final MarshallingInfo<StructuredPojo> QUERYACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryAction").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerAction").build();
 
     private static final DatasetActionMarshaller instance = new DatasetActionMarshaller();
 
@@ -50,6 +52,7 @@ public class DatasetActionMarshaller {
         try {
             protocolMarshaller.marshall(datasetAction.getActionName(), ACTIONNAME_BINDING);
             protocolMarshaller.marshall(datasetAction.getQueryAction(), QUERYACTION_BINDING);
+            protocolMarshaller.marshall(datasetAction.getContainerAction(), CONTAINERACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

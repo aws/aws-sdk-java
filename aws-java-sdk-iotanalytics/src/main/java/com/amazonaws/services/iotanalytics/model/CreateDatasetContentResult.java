@@ -24,6 +24,53 @@ import javax.annotation.Generated;
 public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The version ID of the data set contents which are being created.
+     * </p>
+     */
+    private String versionId;
+
+    /**
+     * <p>
+     * The version ID of the data set contents which are being created.
+     * </p>
+     * 
+     * @param versionId
+     *        The version ID of the data set contents which are being created.
+     */
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    /**
+     * <p>
+     * The version ID of the data set contents which are being created.
+     * </p>
+     * 
+     * @return The version ID of the data set contents which are being created.
+     */
+
+    public String getVersionId() {
+        return this.versionId;
+    }
+
+    /**
+     * <p>
+     * The version ID of the data set contents which are being created.
+     * </p>
+     * 
+     * @param versionId
+     *        The version ID of the data set contents which are being created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetContentResult withVersionId(String versionId) {
+        setVersionId(versionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -34,6 +81,8 @@ public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getVersionId() != null)
+            sb.append("VersionId: ").append(getVersionId());
         sb.append("}");
         return sb.toString();
     }
@@ -48,6 +97,10 @@ public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreateDatasetContentResult == false)
             return false;
         CreateDatasetContentResult other = (CreateDatasetContentResult) obj;
+        if (other.getVersionId() == null ^ this.getVersionId() == null)
+            return false;
+        if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
+            return false;
         return true;
     }
 
@@ -56,6 +109,7 @@ public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
         return hashCode;
     }
 

@@ -42,6 +42,8 @@ public class DatasetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").build();
+    private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
 
     private static final DatasetMarshaller instance = new DatasetMarshaller();
 
@@ -66,6 +68,7 @@ public class DatasetMarshaller {
             protocolMarshaller.marshall(dataset.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(dataset.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(dataset.getLastUpdateTime(), LASTUPDATETIME_BINDING);
+            protocolMarshaller.marshall(dataset.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

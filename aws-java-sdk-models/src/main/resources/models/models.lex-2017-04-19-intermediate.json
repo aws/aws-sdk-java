@@ -61319,6 +61319,9 @@
         "name" : "READY",
         "value" : "READY"
       }, {
+        "name" : "READY_BASIC_TESTING",
+        "value" : "READY_BASIC_TESTING"
+      }, {
         "name" : "FAILED",
         "value" : "FAILED"
       }, {

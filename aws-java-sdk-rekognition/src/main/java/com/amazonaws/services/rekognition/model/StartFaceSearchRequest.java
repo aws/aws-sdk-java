@@ -47,6 +47,8 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String collectionId;
+
+    private Boolean enablePersonTracking;
     /**
      * <p>
      * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
@@ -241,6 +243,40 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * @param enablePersonTracking
+     */
+
+    public void setEnablePersonTracking(Boolean enablePersonTracking) {
+        this.enablePersonTracking = enablePersonTracking;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getEnablePersonTracking() {
+        return this.enablePersonTracking;
+    }
+
+    /**
+     * @param enablePersonTracking
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartFaceSearchRequest withEnablePersonTracking(Boolean enablePersonTracking) {
+        setEnablePersonTracking(enablePersonTracking);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isEnablePersonTracking() {
+        return this.enablePersonTracking;
+    }
+
+    /**
      * <p>
      * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
      * the search.
@@ -351,6 +387,8 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("FaceMatchThreshold: ").append(getFaceMatchThreshold()).append(",");
         if (getCollectionId() != null)
             sb.append("CollectionId: ").append(getCollectionId()).append(",");
+        if (getEnablePersonTracking() != null)
+            sb.append("EnablePersonTracking: ").append(getEnablePersonTracking()).append(",");
         if (getNotificationChannel() != null)
             sb.append("NotificationChannel: ").append(getNotificationChannel()).append(",");
         if (getJobTag() != null)
@@ -385,6 +423,10 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getCollectionId() != null && other.getCollectionId().equals(this.getCollectionId()) == false)
             return false;
+        if (other.getEnablePersonTracking() == null ^ this.getEnablePersonTracking() == null)
+            return false;
+        if (other.getEnablePersonTracking() != null && other.getEnablePersonTracking().equals(this.getEnablePersonTracking()) == false)
+            return false;
         if (other.getNotificationChannel() == null ^ this.getNotificationChannel() == null)
             return false;
         if (other.getNotificationChannel() != null && other.getNotificationChannel().equals(this.getNotificationChannel()) == false)
@@ -405,6 +447,7 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getFaceMatchThreshold() == null) ? 0 : getFaceMatchThreshold().hashCode());
         hashCode = prime * hashCode + ((getCollectionId() == null) ? 0 : getCollectionId().hashCode());
+        hashCode = prime * hashCode + ((getEnablePersonTracking() == null) ? 0 : getEnablePersonTracking().hashCode());
         hashCode = prime * hashCode + ((getNotificationChannel() == null) ? 0 : getNotificationChannel().hashCode());
         hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
         return hashCode;
