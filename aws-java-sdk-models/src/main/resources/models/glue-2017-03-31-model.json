@@ -26,7 +26,8 @@
         {"shape":"ResourceNumberLimitExceededException"},
         {"shape":"InternalServiceException"},
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Creates one or more partitions in a batch operation.</p>"
     },
@@ -74,7 +75,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Deletes multiple tables at once.</p>"
+      "documentation":"<p>Deletes multiple tables at once.</p> <note> <p>After completing this operation, you will no longer have access to the table versions and partitions that belong to the deleted table. AWS Glue deletes these \"orphaned\" resources asynchronously in a timely manner, at the discretion of the service.</p> <p>To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.</p> </note>"
     },
     "BatchDeleteTableVersion":{
       "name":"BatchDeleteTableVersion",
@@ -104,7 +105,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"EntityNotFoundException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"InternalServiceException"}
+        {"shape":"InternalServiceException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves partitions in a batch request.</p>"
     },
@@ -150,7 +152,8 @@
         {"shape":"AlreadyExistsException"},
         {"shape":"InvalidInputException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"ResourceNumberLimitExceededException"}
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Creates a connection definition in the Data Catalog.</p>"
     },
@@ -183,7 +186,8 @@
         {"shape":"AlreadyExistsException"},
         {"shape":"ResourceNumberLimitExceededException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Creates a new database in a Data Catalog.</p>"
     },
@@ -240,7 +244,8 @@
         {"shape":"ResourceNumberLimitExceededException"},
         {"shape":"InternalServiceException"},
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Creates a new partition.</p>"
     },
@@ -259,6 +264,23 @@
       ],
       "documentation":"<p>Transforms a directed acyclic graph (DAG) into code.</p>"
     },
+    "CreateSecurityConfiguration":{
+      "name":"CreateSecurityConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateSecurityConfigurationRequest"},
+      "output":{"shape":"CreateSecurityConfigurationResponse"},
+      "errors":[
+        {"shape":"AlreadyExistsException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ResourceNumberLimitExceededException"}
+      ],
+      "documentation":"<p>Creates a new security configuration.</p>"
+    },
     "CreateTable":{
       "name":"CreateTable",
       "http":{
@@ -273,7 +295,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"ResourceNumberLimitExceededException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Creates a new table definition in the Data Catalog.</p>"
     },
@@ -310,7 +333,8 @@
         {"shape":"InternalServiceException"},
         {"shape":"EntityNotFoundException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"ResourceNumberLimitExceededException"}
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Creates a new function definition in the Data Catalog.</p>"
     },
@@ -372,7 +396,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Removes a specified Database from a Data Catalog.</p>"
+      "documentation":"<p>Removes a specified Database from a Data Catalog.</p> <note> <p>After completing this operation, you will no longer have access to the tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted database. AWS Glue deletes these \"orphaned\" resources asynchronously in a timely manner, at the discretion of the service.</p> <p>To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that belong to the database.</p> </note>"
     },
     "DeleteDevEndpoint":{
       "name":"DeleteDevEndpoint",
@@ -421,6 +445,22 @@
       ],
       "documentation":"<p>Deletes a specified partition.</p>"
     },
+    "DeleteSecurityConfiguration":{
+      "name":"DeleteSecurityConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteSecurityConfigurationRequest"},
+      "output":{"shape":"DeleteSecurityConfigurationResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Deletes a specified security configuration.</p>"
+    },
     "DeleteTable":{
       "name":"DeleteTable",
       "http":{
@@ -435,7 +475,7 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"}
       ],
-      "documentation":"<p>Removes a table definition from the Data Catalog.</p>"
+      "documentation":"<p>Removes a table definition from the Data Catalog.</p> <note> <p>After completing this operation, you will no longer have access to the table versions and partitions that belong to the deleted table. AWS Glue deletes these \"orphaned\" resources asynchronously in a timely manner, at the discretion of the service.</p> <p>To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.</p> </note>"
     },
     "DeleteTableVersion":{
       "name":"DeleteTableVersion",
@@ -536,7 +576,9 @@
       "output":{"shape":"GetConnectionResponse"},
       "errors":[
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves a connection definition from the Data Catalog.</p>"
     },
@@ -550,7 +592,9 @@
       "output":{"shape":"GetConnectionsResponse"},
       "errors":[
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves a list of connection definitions from the Data Catalog.</p>"
     },
@@ -606,7 +650,8 @@
         {"shape":"InvalidInputException"},
         {"shape":"EntityNotFoundException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves the definition of a specified database.</p>"
     },
@@ -621,7 +666,8 @@
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves all Databases defined in a given Data Catalog.</p>"
     },
@@ -764,7 +810,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves information about a specified partition.</p>"
     },
@@ -780,7 +827,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"InternalServiceException"}
+        {"shape":"InternalServiceException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves information about the partitions in a table.</p>"
     },
@@ -799,6 +847,38 @@
       ],
       "documentation":"<p>Gets code to perform a specified mapping.</p>"
     },
+    "GetSecurityConfiguration":{
+      "name":"GetSecurityConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSecurityConfigurationRequest"},
+      "output":{"shape":"GetSecurityConfigurationResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Retrieves a specified security configuration.</p>"
+    },
+    "GetSecurityConfigurations":{
+      "name":"GetSecurityConfigurations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSecurityConfigurationsRequest"},
+      "output":{"shape":"GetSecurityConfigurationsResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Retrieves a list of all security configurations.</p>"
+    },
     "GetTable":{
       "name":"GetTable",
       "http":{
@@ -811,7 +891,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.</p>"
     },
@@ -827,7 +908,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves a specified version of a table.</p>"
     },
@@ -843,7 +925,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves a list of strings that identify available versions of a specified table.</p>"
     },
@@ -859,7 +942,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"InternalServiceException"}
+        {"shape":"InternalServiceException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves the definitions of some or all of the tables in a given <code>Database</code>.</p>"
     },
@@ -907,7 +991,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves a specified function definition from the Data Catalog.</p>"
     },
@@ -923,7 +1008,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"OperationTimeoutException"},
-        {"shape":"InternalServiceException"}
+        {"shape":"InternalServiceException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Retrieves a multiple function definitions from the Data Catalog.</p>"
     },
@@ -940,6 +1026,21 @@
         {"shape":"OperationTimeoutException"}
       ],
       "documentation":"<p>Imports an existing Athena Data Catalog to AWS Glue</p>"
+    },
+    "PutDataCatalogEncryptionSettings":{
+      "name":"PutDataCatalogEncryptionSettings",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutDataCatalogEncryptionSettingsRequest"},
+      "output":{"shape":"PutDataCatalogEncryptionSettingsResponse"},
+      "errors":[
+        {"shape":"InternalServiceException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"OperationTimeoutException"}
+      ],
+      "documentation":"<p>Sets the security configuration for a specified catalog. Once the configuration has been set, the specified encryption is applied to every catalog write thereafter.</p>"
     },
     "ResetJobBookmark":{
       "name":"ResetJobBookmark",
@@ -1101,7 +1202,9 @@
       "errors":[
         {"shape":"InvalidInputException"},
         {"shape":"EntityNotFoundException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Updates a connection definition in the Data Catalog.</p>"
     },
@@ -1151,7 +1254,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Updates an existing database definition in a Data Catalog.</p>"
     },
@@ -1201,7 +1305,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Updates a partition.</p>"
     },
@@ -1219,7 +1324,8 @@
         {"shape":"InternalServiceException"},
         {"shape":"OperationTimeoutException"},
         {"shape":"ConcurrentModificationException"},
-        {"shape":"ResourceNumberLimitExceededException"}
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Updates a metadata table in the Data Catalog.</p>"
     },
@@ -1252,7 +1358,8 @@
         {"shape":"EntityNotFoundException"},
         {"shape":"InvalidInputException"},
         {"shape":"InternalServiceException"},
-        {"shape":"OperationTimeoutException"}
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
       ],
       "documentation":"<p>Updates an existing function definition in the Data Catalog.</p>"
     }
@@ -1278,15 +1385,19 @@
         },
         "Arguments":{
           "shape":"GenericMap",
-          "documentation":"<p>Arguments to be passed to the job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
+          "documentation":"<p>Arguments to be passed to the job run.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\">Calling AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a href=\"http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\">Special Parameters Used by AWS Glue</a> topic in the developer guide.</p>"
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job run timeout in minutes. It overrides the timeout value of the job.</p>"
+          "documentation":"<p>The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>"
         },
         "NotificationProperty":{
           "shape":"NotificationProperty",
           "documentation":"<p>Specifies configuration properties of a job run notification.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this action.</p>"
         }
       },
       "documentation":"<p>Defines an action to be initiated by a trigger.</p>"
@@ -1617,6 +1728,13 @@
       "max":100,
       "min":0
     },
+    "CatalogEncryptionMode":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "SSE-KMS"
+      ]
+    },
     "CatalogEntries":{
       "type":"list",
       "member":{"shape":"CatalogEntry"}
@@ -1689,6 +1807,27 @@
     "ClassifierNameList":{
       "type":"list",
       "member":{"shape":"NameString"}
+    },
+    "CloudWatchEncryption":{
+      "type":"structure",
+      "members":{
+        "CloudWatchEncryptionMode":{
+          "shape":"CloudWatchEncryptionMode",
+          "documentation":"<p>The encryption mode to use for CloudWatch data.</p>"
+        },
+        "KmsKeyArn":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The AWS ARN of the KMS key to be used to encrypt the data.</p>"
+        }
+      },
+      "documentation":"<p>Specifies how CloudWatch data should be encrypted.</p>"
+    },
+    "CloudWatchEncryptionMode":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "SSE-KMS"
+      ]
     },
     "CodeGenArgName":{"type":"string"},
     "CodeGenArgValue":{"type":"string"},
@@ -1881,7 +2020,7 @@
         },
         "ConnectionProperties":{
           "shape":"ConnectionProperties",
-          "documentation":"<p>A list of key-value pairs used as parameters for this connection.</p>"
+          "documentation":"<p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code> - The name under which to log in to the database.</p> </li> <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname matching will be enforced for the JDBC connection on the client. The default is false.</p> </li> </ul>"
         },
         "PhysicalConnectionRequirements":{
           "shape":"PhysicalConnectionRequirements",
@@ -1928,7 +2067,7 @@
         },
         "ConnectionProperties":{
           "shape":"ConnectionProperties",
-          "documentation":"<p>A list of key-value pairs used as parameters for this connection.</p>"
+          "documentation":"<p>These key-value pairs define parameters for the connection.</p>"
         },
         "PhysicalConnectionRequirements":{
           "shape":"PhysicalConnectionRequirements",
@@ -1962,7 +2101,8 @@
         "JDBC_ENGINE_VERSION",
         "CONFIG_FILES",
         "INSTANCE_ID",
-        "JDBC_CONNECTION_URL"
+        "JDBC_CONNECTION_URL",
+        "JDBC_ENFORCE_SSL"
       ]
     },
     "ConnectionType":{
@@ -2047,7 +2187,11 @@
         },
         "Configuration":{
           "shape":"CrawlerConfiguration",
-          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's behavior.</p> <p>You can use this field to force partitions to inherit metadata such as classification, input format, output format, serde information, and schema from their parent table, rather than detect this information separately for each partition. Use the following JSON string to specify that behavior:</p> <p>Example: <code>'{ \"Version\": 1.0, \"CrawlerOutput\": { \"Partitions\": { \"AddOrUpdateBehavior\": \"InheritFromTable\" } } }'</code> </p>"
+        },
+        "CrawlerSecurityConfiguration":{
+          "shape":"CrawlerSecurityConfiguration",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used by this Crawler.</p>"
         }
       },
       "documentation":"<p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.</p>"
@@ -2126,6 +2270,11 @@
       },
       "documentation":"<p>The operation cannot be performed because the crawler is already running.</p>",
       "exception":true
+    },
+    "CrawlerSecurityConfiguration":{
+      "type":"string",
+      "max":128,
+      "min":0
     },
     "CrawlerState":{
       "type":"string",
@@ -2252,7 +2401,11 @@
         },
         "Configuration":{
           "shape":"CrawlerConfiguration",
-          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's behavior.</p> <p>You can use this field to force partitions to inherit metadata such as classification, input format, output format, serde information, and schema from their parent table, rather than detect this information separately for each partition. Use the following JSON string to specify that behavior:</p> <p>Example: <code>'{ \"Version\": 1.0, \"CrawlerOutput\": { \"Partitions\": { \"AddOrUpdateBehavior\": \"InheritFromTable\" } } }'</code> </p>"
+        },
+        "CrawlerSecurityConfiguration":{
+          "shape":"CrawlerSecurityConfiguration",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used by this Crawler.</p>"
         }
       }
     },
@@ -2322,6 +2475,10 @@
         "ExtraJarsS3Path":{
           "shape":"GenericString",
           "documentation":"<p>Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this DevEndpoint.</p>"
         }
       }
     },
@@ -2379,6 +2536,10 @@
         "FailureReason":{
           "shape":"GenericString",
           "documentation":"<p>The reason for a current failure in this DevEndpoint.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure being used with this DevEndpoint.</p>"
         },
         "CreatedTimestamp":{
           "shape":"TimestampValue",
@@ -2463,11 +2624,15 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job timeout in minutes. The default is 2880 minutes (48 hours).</p>"
+          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>"
         },
         "NotificationProperty":{
           "shape":"NotificationProperty",
           "documentation":"<p>Specifies configuration properties of a job notification.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this job.</p>"
         }
       }
     },
@@ -2556,6 +2721,36 @@
         "ScalaCode":{
           "shape":"ScalaCode",
           "documentation":"<p>The Scala code generated from the DAG.</p>"
+        }
+      }
+    },
+    "CreateSecurityConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "EncryptionConfiguration"
+      ],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name for the new security configuration.</p>"
+        },
+        "EncryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>The encryption configuration for the new security configuration.</p>"
+        }
+      }
+    },
+    "CreateSecurityConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name assigned to the new security configuration.</p>"
+        },
+        "CreatedTimestamp":{
+          "shape":"TimestampValue",
+          "documentation":"<p>The time at which the new security configuration was created.</p>"
         }
       }
     },
@@ -2695,6 +2890,16 @@
       "type":"list",
       "member":{"shape":"CodeGenNode"}
     },
+    "DataCatalogEncryptionSettings":{
+      "type":"structure",
+      "members":{
+        "EncryptionAtRest":{
+          "shape":"EncryptionAtRest",
+          "documentation":"<p>Specifies encryption-at-rest configuration for the Data Catalog.</p>"
+        }
+      },
+      "documentation":"<p>Contains configuration information for maintaining Data Catalog security.</p>"
+    },
     "Database":{
       "type":"structure",
       "required":["Name"],
@@ -2713,7 +2918,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>A list of key-value pairs that define parameters and properties of the database.</p>"
+          "documentation":"<p>These key-value pairs define parameters and properties of the database.</p>"
         },
         "CreateTime":{
           "shape":"Timestamp",
@@ -2740,7 +2945,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>A list of key-value pairs that define parameters and properties of the database.</p>"
+          "documentation":"<p>Thes key-value pairs define parameters and properties of the database.</p>"
         }
       },
       "documentation":"<p>The structure used to create or update a database.</p>"
@@ -2893,6 +3098,21 @@
       }
     },
     "DeletePartitionResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteSecurityConfigurationRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the security configuration to delete.</p>"
+        }
+      }
+    },
+    "DeleteSecurityConfigurationResponse":{
       "type":"structure",
       "members":{
       }
@@ -3093,6 +3313,10 @@
         "PublicKeys":{
           "shape":"PublicKeysList",
           "documentation":"<p>A list of public keys to be used by the DevEndpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note> <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this DevEndpoint.</p>"
         }
       },
       "documentation":"<p>A development endpoint where a developer can remotely debug ETL scripts.</p>"
@@ -3128,6 +3352,39 @@
     "DynamoDBTargetList":{
       "type":"list",
       "member":{"shape":"DynamoDBTarget"}
+    },
+    "EncryptionAtRest":{
+      "type":"structure",
+      "required":["CatalogEncryptionMode"],
+      "members":{
+        "CatalogEncryptionMode":{
+          "shape":"CatalogEncryptionMode",
+          "documentation":"<p>The encryption-at-rest mode for encrypting Data Catalog data.</p>"
+        },
+        "SseAwsKmsKeyId":{
+          "shape":"NameString",
+          "documentation":"<p>The ID of the AWS KMS key to use for encryption at rest.</p>"
+        }
+      },
+      "documentation":"<p>Specifies encryption-at-rest configuration for the Data Catalog.</p>"
+    },
+    "EncryptionConfiguration":{
+      "type":"structure",
+      "members":{
+        "S3Encryption":{
+          "shape":"S3EncryptionList",
+          "documentation":"<p>The encryption configuration for S3 data.</p>"
+        },
+        "CloudWatchEncryption":{
+          "shape":"CloudWatchEncryption",
+          "documentation":"<p>The encryption configuration for CloudWatch.</p>"
+        },
+        "JobBookmarksEncryption":{
+          "shape":"JobBookmarksEncryption",
+          "documentation":"<p>The encryption configuration for Job Bookmarks.</p>"
+        }
+      },
+      "documentation":"<p>Specifies an encryption configuration.</p>"
     },
     "EntityNotFoundException":{
       "type":"structure",
@@ -3780,6 +4037,51 @@
         }
       }
     },
+    "GetSecurityConfigurationRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the security configuration to retrieve.</p>"
+        }
+      }
+    },
+    "GetSecurityConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "SecurityConfiguration":{
+          "shape":"SecurityConfiguration",
+          "documentation":"<p>The requested security configuration</p>"
+        }
+      }
+    },
+    "GetSecurityConfigurationsRequest":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{
+          "shape":"PageSize",
+          "documentation":"<p>The maximum number of results to return.</p>"
+        },
+        "NextToken":{
+          "shape":"GenericString",
+          "documentation":"<p>A continuation token, if this is a continuation call.</p>"
+        }
+      }
+    },
+    "GetSecurityConfigurationsResponse":{
+      "type":"structure",
+      "members":{
+        "SecurityConfigurations":{
+          "shape":"SecurityConfigurationList",
+          "documentation":"<p>A list of security configurations.</p>"
+        },
+        "NextToken":{
+          "shape":"GenericString",
+          "documentation":"<p>A continuation token, if there are more security configurations to return.</p>"
+        }
+      }
+    },
     "GetTableRequest":{
       "type":"structure",
       "required":[
@@ -4050,6 +4352,17 @@
         }
       }
     },
+    "GlueEncryptionException":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"MessageString",
+          "documentation":"<p>A message describing the problem.</p>"
+        }
+      },
+      "documentation":"<p>An encryption operation failed.</p>",
+      "exception":true
+    },
     "GrokClassifier":{
       "type":"structure",
       "required":[
@@ -4231,11 +4544,15 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job timeout in minutes.</p>"
+          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>"
         },
         "NotificationProperty":{
           "shape":"NotificationProperty",
           "documentation":"<p>Specifies configuration properties of a job notification.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this job.</p>"
         }
       },
       "documentation":"<p>Specifies a job definition.</p>"
@@ -4265,6 +4582,27 @@
         }
       },
       "documentation":"<p>Defines a point which a job can resume processing.</p>"
+    },
+    "JobBookmarksEncryption":{
+      "type":"structure",
+      "members":{
+        "JobBookmarksEncryptionMode":{
+          "shape":"JobBookmarksEncryptionMode",
+          "documentation":"<p>The encryption mode to use for Job bookmarks data.</p>"
+        },
+        "KmsKeyArn":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The AWS ARN of the KMS key to be used to encrypt the data.</p>"
+        }
+      },
+      "documentation":"<p>Specifies how Job bookmark data should be encrypted.</p>"
+    },
+    "JobBookmarksEncryptionMode":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "CSE-KMS"
+      ]
     },
     "JobCommand":{
       "type":"structure",
@@ -4346,11 +4684,19 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job run timeout in minutes.</p>"
+          "documentation":"<p>The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>"
         },
         "NotificationProperty":{
           "shape":"NotificationProperty",
           "documentation":"<p>Specifies configuration properties of a job run notification.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this job run.</p>"
+        },
+        "LogGroupName":{
+          "shape":"GenericString",
+          "documentation":"<p>The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and SecurityConfiguration name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration will be used to encrypt the log group.</p>"
         }
       },
       "documentation":"<p>Contains information about a job run.</p>"
@@ -4412,11 +4758,15 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job timeout in minutes. The default is 2880 minutes (48 hours).</p>"
+          "documentation":"<p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>"
         },
         "NotificationProperty":{
           "shape":"NotificationProperty",
           "documentation":"<p>Specifies configuration properties of a job notification.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this job.</p>"
         }
       },
       "documentation":"<p>Specifies information used to update an existing job definition. Note that the previous job definition will be completely overwritten by this information.</p>"
@@ -4458,6 +4808,10 @@
       "max":255,
       "min":1,
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
+    },
+    "KmsKeyArn":{
+      "type":"string",
+      "pattern":"arn:aws:kms:.*"
     },
     "Language":{
       "type":"string",
@@ -4726,7 +5080,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Partition parameters, in the form of a list of key-value pairs.</p>"
+          "documentation":"<p>These key-value pairs define partition parameters.</p>"
         },
         "LastAnalyzedTime":{
           "shape":"Timestamp",
@@ -4770,7 +5124,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Partition parameters, in the form of a list of key-value pairs.</p>"
+          "documentation":"<p>These key-value pairs define partition parameters.</p>"
         },
         "LastAnalyzedTime":{
           "shape":"Timestamp",
@@ -4818,7 +5172,7 @@
         },
         "AvailabilityZone":{
           "shape":"NameString",
-          "documentation":"<p>The connection's availability zone. This field is deprecated and has no effect.</p>"
+          "documentation":"<p>The connection's availability zone. This field is redundant, since the specified subnet implies the availability zone to be used. The field must be populated now, but will be deprecated in the future.</p>"
         }
       },
       "documentation":"<p>Specifies the physical requirements for a connection.</p>"
@@ -4873,6 +5227,25 @@
       "type":"list",
       "member":{"shape":"GenericString"},
       "max":5
+    },
+    "PutDataCatalogEncryptionSettingsRequest":{
+      "type":"structure",
+      "required":["DataCatalogEncryptionSettings"],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog for which to set the security configuration. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DataCatalogEncryptionSettings":{
+          "shape":"DataCatalogEncryptionSettings",
+          "documentation":"<p>The security configuration to set.</p>"
+        }
+      }
+    },
+    "PutDataCatalogEncryptionSettingsResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "PythonScript":{"type":"string"},
     "ResetJobBookmarkRequest":{
@@ -4940,6 +5313,32 @@
     },
     "RoleString":{"type":"string"},
     "RowTag":{"type":"string"},
+    "S3Encryption":{
+      "type":"structure",
+      "members":{
+        "S3EncryptionMode":{
+          "shape":"S3EncryptionMode",
+          "documentation":"<p>The encryption mode to use for S3 data.</p>"
+        },
+        "KmsKeyArn":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>The AWS ARN of the KMS key to be used to encrypt the data.</p>"
+        }
+      },
+      "documentation":"<p>Specifies how S3 data should be encrypted.</p>"
+    },
+    "S3EncryptionList":{
+      "type":"list",
+      "member":{"shape":"S3Encryption"}
+    },
+    "S3EncryptionMode":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "SSE-KMS",
+        "SSE-S3"
+      ]
+    },
     "S3Target":{
       "type":"structure",
       "members":{
@@ -5030,6 +5429,28 @@
     },
     "SchemaPathString":{"type":"string"},
     "ScriptLocationString":{"type":"string"},
+    "SecurityConfiguration":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the security configuration.</p>"
+        },
+        "CreatedTimeStamp":{
+          "shape":"TimestampValue",
+          "documentation":"<p>The time at which this security configuration was created.</p>"
+        },
+        "EncryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>The encryption configuration associated with this security configuration.</p>"
+        }
+      },
+      "documentation":"<p>Specifies a security configuration.</p>"
+    },
+    "SecurityConfigurationList":{
+      "type":"list",
+      "member":{"shape":"SecurityConfiguration"}
+    },
     "SecurityGroupIdList":{
       "type":"list",
       "member":{"shape":"NameString"},
@@ -5067,7 +5488,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>A list of initialization parameters for the SerDe, in key-value form.</p>"
+          "documentation":"<p>These key-value pairs define initialization parameters for the SerDe.</p>"
         }
       },
       "documentation":"<p>Information about a serialization/deserialization program (SerDe) which serves as an extractor and loader.</p>"
@@ -5142,11 +5563,15 @@
         },
         "Timeout":{
           "shape":"Timeout",
-          "documentation":"<p>The job run timeout in minutes. It overrides the timeout value of the job.</p>"
+          "documentation":"<p>The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>"
         },
         "NotificationProperty":{
           "shape":"NotificationProperty",
           "documentation":"<p>Specifies configuration properties of a job run notification.</p>"
+        },
+        "SecurityConfiguration":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used with this job run.</p>"
         }
       }
     },
@@ -5347,7 +5772,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Properties associated with this table, as a list of key-value pairs.</p>"
+          "documentation":"<p>These key-value pairs define properties associated with the table.</p>"
         },
         "CreatedBy":{
           "shape":"NameString",
@@ -5424,7 +5849,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Properties associated with this table, as a list of key-value pairs.</p>"
+          "documentation":"<p>These key-value pairs define properties associated with the table.</p>"
         }
       },
       "documentation":"<p>Structure used to create or update the table.</p>"
@@ -5684,7 +6109,11 @@
         },
         "Configuration":{
           "shape":"CrawlerConfiguration",
-          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's behavior.</p> <p>You can use this field to force partitions to inherit metadata such as classification, input format, output format, serde information, and schema from their parent table, rather than detect this information separately for each partition. Use the following JSON string to specify that behavior:</p> <p>Example: <code>'{ \"Version\": 1.0, \"CrawlerOutput\": { \"Partitions\": { \"AddOrUpdateBehavior\": \"InheritFromTable\" } } }'</code> </p>"
+        },
+        "CrawlerSecurityConfiguration":{
+          "shape":"CrawlerSecurityConfiguration",
+          "documentation":"<p>The name of the SecurityConfiguration structure to be used by this Crawler.</p>"
         }
       }
     },
@@ -5756,7 +6185,7 @@
         },
         "DeletePublicKeys":{
           "shape":"PublicKeysList",
-          "documentation":"<p>The list of public keys to be deleted from the DevEndpoint. </p>"
+          "documentation":"<p>The list of public keys to be deleted from the DevEndpoint.</p>"
         },
         "CustomLibraries":{
           "shape":"DevEndpointCustomLibraries",

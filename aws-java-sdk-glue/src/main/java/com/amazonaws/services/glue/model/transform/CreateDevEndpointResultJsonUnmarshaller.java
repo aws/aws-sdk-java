@@ -100,6 +100,10 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
                     context.nextToken();
                     createDevEndpointResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createDevEndpointResult.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
                     createDevEndpointResult.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

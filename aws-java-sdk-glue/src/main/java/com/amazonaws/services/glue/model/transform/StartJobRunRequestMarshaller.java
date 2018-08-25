@@ -41,6 +41,8 @@ public class StartJobRunRequestMarshaller {
             .marshallLocationName("Timeout").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONPROPERTY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationProperty").build();
+    private static final MarshallingInfo<String> SECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
 
     private static final StartJobRunRequestMarshaller instance = new StartJobRunRequestMarshaller();
 
@@ -64,6 +66,7 @@ public class StartJobRunRequestMarshaller {
             protocolMarshaller.marshall(startJobRunRequest.getAllocatedCapacity(), ALLOCATEDCAPACITY_BINDING);
             protocolMarshaller.marshall(startJobRunRequest.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(startJobRunRequest.getNotificationProperty(), NOTIFICATIONPROPERTY_BINDING);
+            protocolMarshaller.marshall(startJobRunRequest.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

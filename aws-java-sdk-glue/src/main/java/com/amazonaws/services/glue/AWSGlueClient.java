@@ -129,6 +129,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withModeledClass(
                                     com.amazonaws.services.glue.model.EntityNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GlueEncryptionException").withModeledClass(
+                                    com.amazonaws.services.glue.model.GlueEncryptionException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationTimeoutException").withModeledClass(
                                     com.amazonaws.services.glue.model.OperationTimeoutException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.glue.model.AWSGlueException.class));
@@ -199,6 +202,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.BatchCreatePartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition" target="_top">AWS API
      *      Documentation</a>
@@ -368,6 +373,18 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Deletes multiple tables at once.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the table versions and partitions that belong
+     * to the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
+     * discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+     * </p>
+     * </note>
      * 
      * @param batchDeleteTableRequest
      * @return Result of the BatchDeleteTable operation returned by the service.
@@ -503,6 +520,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws InternalServiceException
      *         An internal service error occurred.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.BatchGetPartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition" target="_top">AWS API
      *      Documentation</a>
@@ -684,6 +703,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.CreateConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection" target="_top">AWS API
      *      Documentation</a>
@@ -810,6 +831,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.CreateDatabase
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase" target="_top">AWS API
      *      Documentation</a>
@@ -1011,6 +1034,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.CreatePartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition" target="_top">AWS API
      *      Documentation</a>
@@ -1118,6 +1143,71 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Creates a new security configuration.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return Result of the CreateSecurityConfiguration operation returned by the service.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @sample AWSGlue.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateSecurityConfigurationResult executeCreateSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSecurityConfigurationRequest> request = null;
+        Response<CreateSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSecurityConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecurityConfiguration");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new table definition in the Data Catalog.
      * </p>
      * 
@@ -1135,6 +1225,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.CreateTable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTable" target="_top">AWS API
      *      Documentation</a>
@@ -1267,6 +1359,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.CreateUserDefinedFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction" target="_top">AWS
      *      API Documentation</a>
@@ -1494,6 +1588,19 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Removes a specified Database from a Data Catalog.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the tables (and all table versions and
+     * partitions that might belong to the tables) and the user-defined functions in the deleted database. AWS Glue
+     * deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or
+     * <code>BatchDeleteTable</code>, to delete any resources that belong to the database.
+     * </p>
+     * </note>
      * 
      * @param deleteDatabaseRequest
      * @return Result of the DeleteDatabase operation returned by the service.
@@ -1734,8 +1841,83 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @return Result of the DeleteSecurityConfiguration operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.DeleteSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSecurityConfigurationResult executeDeleteSecurityConfiguration(DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSecurityConfigurationRequest> request = null;
+        Response<DeleteSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSecurityConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSecurityConfiguration");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes a table definition from the Data Catalog.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the table versions and partitions that belong
+     * to the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
+     * discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+     * </p>
+     * </note>
      * 
      * @param deleteTableRequest
      * @return Result of the DeleteTable operation returned by the service.
@@ -2159,6 +2341,10 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection" target="_top">AWS API
      *      Documentation</a>
@@ -2216,6 +2402,10 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetConnections
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections" target="_top">AWS API
      *      Documentation</a>
@@ -2444,6 +2634,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetDatabase
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase" target="_top">AWS API
      *      Documentation</a>
@@ -2503,6 +2695,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetDatabases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases" target="_top">AWS API
      *      Documentation</a>
@@ -3050,6 +3244,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetPartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition" target="_top">AWS API
      *      Documentation</a>
@@ -3111,6 +3307,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws InternalServiceException
      *         An internal service error occurred.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetPartitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions" target="_top">AWS API
      *      Documentation</a>
@@ -3218,6 +3416,132 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Retrieves a specified security configuration.
+     * </p>
+     * 
+     * @param getSecurityConfigurationRequest
+     * @return Result of the GetSecurityConfiguration operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSecurityConfigurationResult getSecurityConfiguration(GetSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetSecurityConfigurationResult executeGetSecurityConfiguration(GetSecurityConfigurationRequest getSecurityConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSecurityConfigurationRequest> request = null;
+        Response<GetSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSecurityConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSecurityConfiguration");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of all security configurations.
+     * </p>
+     * 
+     * @param getSecurityConfigurationsRequest
+     * @return Result of the GetSecurityConfigurations operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSecurityConfigurationsResult getSecurityConfigurations(GetSecurityConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSecurityConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final GetSecurityConfigurationsResult executeGetSecurityConfigurations(GetSecurityConfigurationsRequest getSecurityConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSecurityConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSecurityConfigurationsRequest> request = null;
+        Response<GetSecurityConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSecurityConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSecurityConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSecurityConfigurations");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSecurityConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSecurityConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.
      * </p>
      * 
@@ -3231,6 +3555,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetTable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable" target="_top">AWS API
      *      Documentation</a>
@@ -3292,6 +3618,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetTableVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
      *      Documentation</a>
@@ -3353,6 +3681,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetTableVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersions" target="_top">AWS API
      *      Documentation</a>
@@ -3414,6 +3744,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws InternalServiceException
      *         An internal service error occurred.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetTables
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables" target="_top">AWS API
      *      Documentation</a>
@@ -3597,6 +3929,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetUserDefinedFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction" target="_top">AWS
      *      API Documentation</a>
@@ -3659,6 +3993,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws InternalServiceException
      *         An internal service error occurred.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.GetUserDefinedFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions" target="_top">AWS
      *      API Documentation</a>
@@ -3754,6 +4090,69 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<ImportCatalogToGlueResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportCatalogToGlueResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the security configuration for a specified catalog. Once the configuration has been set, the specified
+     * encryption is applied to every catalog write thereafter.
+     * </p>
+     * 
+     * @param putDataCatalogEncryptionSettingsRequest
+     * @return Result of the PutDataCatalogEncryptionSettings operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.PutDataCatalogEncryptionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutDataCatalogEncryptionSettingsResult putDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDataCatalogEncryptionSettings(request);
+    }
+
+    @SdkInternalApi
+    final PutDataCatalogEncryptionSettingsResult executePutDataCatalogEncryptionSettings(
+            PutDataCatalogEncryptionSettingsRequest putDataCatalogEncryptionSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDataCatalogEncryptionSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDataCatalogEncryptionSettingsRequest> request = null;
+        Response<PutDataCatalogEncryptionSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDataCatalogEncryptionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putDataCatalogEncryptionSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDataCatalogEncryptionSettings");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutDataCatalogEncryptionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutDataCatalogEncryptionSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4343,6 +4742,10 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.UpdateConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection" target="_top">AWS API
      *      Documentation</a>
@@ -4531,6 +4934,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.UpdateDatabase
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDatabase" target="_top">AWS API
      *      Documentation</a>
@@ -4718,6 +5123,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.UpdatePartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition" target="_top">AWS API
      *      Documentation</a>
@@ -4783,6 +5190,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         Two processes are trying to modify a resource simultaneously.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.UpdateTable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable" target="_top">AWS API
      *      Documentation</a>
@@ -4907,6 +5316,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
      * @sample AWSGlue.UpdateUserDefinedFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUserDefinedFunction" target="_top">AWS
      *      API Documentation</a>

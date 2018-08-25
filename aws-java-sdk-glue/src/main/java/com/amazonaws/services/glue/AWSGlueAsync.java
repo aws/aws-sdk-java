@@ -130,6 +130,18 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Deletes multiple tables at once.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the table versions and partitions that belong
+     * to the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
+     * discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+     * </p>
+     * </note>
      * 
      * @param batchDeleteTableRequest
      * @return A Java Future containing the result of the BatchDeleteTable operation returned by the service.
@@ -143,6 +155,18 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Deletes multiple tables at once.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the table versions and partitions that belong
+     * to the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
+     * discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+     * </p>
+     * </note>
      * 
      * @param batchDeleteTableRequest
      * @param asyncHandler
@@ -508,6 +532,39 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Creates a new security configuration.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return A Java Future containing the result of the CreateSecurityConfiguration operation returned by the service.
+     * @sample AWSGlueAsync.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a new security configuration.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSecurityConfiguration operation returned by the service.
+     * @sample AWSGlueAsyncHandler.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new table definition in the Data Catalog.
      * </p>
      * 
@@ -698,6 +755,19 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Removes a specified Database from a Data Catalog.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the tables (and all table versions and
+     * partitions that might belong to the tables) and the user-defined functions in the deleted database. AWS Glue
+     * deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or
+     * <code>BatchDeleteTable</code>, to delete any resources that belong to the database.
+     * </p>
+     * </note>
      * 
      * @param deleteDatabaseRequest
      * @return A Java Future containing the result of the DeleteDatabase operation returned by the service.
@@ -711,6 +781,19 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Removes a specified Database from a Data Catalog.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the tables (and all table versions and
+     * partitions that might belong to the tables) and the user-defined functions in the deleted database. AWS Glue
+     * deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or
+     * <code>BatchDeleteTable</code>, to delete any resources that belong to the database.
+     * </p>
+     * </note>
      * 
      * @param deleteDatabaseRequest
      * @param asyncHandler
@@ -820,8 +903,53 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @return A Java Future containing the result of the DeleteSecurityConfiguration operation returned by the service.
+     * @sample AWSGlueAsync.DeleteSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a specified security configuration.
+     * </p>
+     * 
+     * @param deleteSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSecurityConfiguration operation returned by the service.
+     * @sample AWSGlueAsyncHandler.DeleteSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(
+            DeleteSecurityConfigurationRequest deleteSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes a table definition from the Data Catalog.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the table versions and partitions that belong
+     * to the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
+     * discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+     * </p>
+     * </note>
      * 
      * @param deleteTableRequest
      * @return A Java Future containing the result of the DeleteTable operation returned by the service.
@@ -835,6 +963,18 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Removes a table definition from the Data Catalog.
      * </p>
+     * <note>
+     * <p>
+     * After completing this operation, you will no longer have access to the table versions and partitions that belong
+     * to the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
+     * discretion of the service.
+     * </p>
+     * <p>
+     * To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>, use
+     * <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
+     * <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+     * </p>
+     * </note>
      * 
      * @param deleteTableRequest
      * @param asyncHandler
@@ -1597,6 +1737,70 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Retrieves a specified security configuration.
+     * </p>
+     * 
+     * @param getSecurityConfigurationRequest
+     * @return A Java Future containing the result of the GetSecurityConfiguration operation returned by the service.
+     * @sample AWSGlueAsync.GetSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSecurityConfigurationResult> getSecurityConfigurationAsync(GetSecurityConfigurationRequest getSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves a specified security configuration.
+     * </p>
+     * 
+     * @param getSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSecurityConfiguration operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSecurityConfigurationResult> getSecurityConfigurationAsync(GetSecurityConfigurationRequest getSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSecurityConfigurationRequest, GetSecurityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of all security configurations.
+     * </p>
+     * 
+     * @param getSecurityConfigurationsRequest
+     * @return A Java Future containing the result of the GetSecurityConfigurations operation returned by the service.
+     * @sample AWSGlueAsync.GetSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSecurityConfigurationsResult> getSecurityConfigurationsAsync(
+            GetSecurityConfigurationsRequest getSecurityConfigurationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of all security configurations.
+     * </p>
+     * 
+     * @param getSecurityConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSecurityConfigurations operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSecurityConfigurationsResult> getSecurityConfigurationsAsync(
+            GetSecurityConfigurationsRequest getSecurityConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSecurityConfigurationsRequest, GetSecurityConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.
      * </p>
      * 
@@ -1873,6 +2077,43 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<ImportCatalogToGlueResult> importCatalogToGlueAsync(ImportCatalogToGlueRequest importCatalogToGlueRequest,
             com.amazonaws.handlers.AsyncHandler<ImportCatalogToGlueRequest, ImportCatalogToGlueResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the security configuration for a specified catalog. Once the configuration has been set, the specified
+     * encryption is applied to every catalog write thereafter.
+     * </p>
+     * 
+     * @param putDataCatalogEncryptionSettingsRequest
+     * @return A Java Future containing the result of the PutDataCatalogEncryptionSettings operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.PutDataCatalogEncryptionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataCatalogEncryptionSettingsResult> putDataCatalogEncryptionSettingsAsync(
+            PutDataCatalogEncryptionSettingsRequest putDataCatalogEncryptionSettingsRequest);
+
+    /**
+     * <p>
+     * Sets the security configuration for a specified catalog. Once the configuration has been set, the specified
+     * encryption is applied to every catalog write thereafter.
+     * </p>
+     * 
+     * @param putDataCatalogEncryptionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDataCatalogEncryptionSettings operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.PutDataCatalogEncryptionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataCatalogEncryptionSettingsResult> putDataCatalogEncryptionSettingsAsync(
+            PutDataCatalogEncryptionSettingsRequest putDataCatalogEncryptionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDataCatalogEncryptionSettingsRequest, PutDataCatalogEncryptionSettingsResult> asyncHandler);
 
     /**
      * <p>

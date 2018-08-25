@@ -35,7 +35,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private String jobName;
     /**
      * <p>
-     * Arguments to be passed to the job.
+     * Arguments to be passed to the job run.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -55,7 +55,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> arguments;
     /**
      * <p>
-     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      */
     private Integer timeout;
@@ -65,6 +67,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NotificationProperty notificationProperty;
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this action.
+     * </p>
+     */
+    private String securityConfiguration;
 
     /**
      * <p>
@@ -108,7 +116,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arguments to be passed to the job.
+     * Arguments to be passed to the job run.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -125,7 +133,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
-     * @return Arguments to be passed to the job.</p>
+     * @return Arguments to be passed to the job run.</p>
      *         <p>
      *         You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *         Glue itself consumes.
@@ -147,7 +155,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arguments to be passed to the job.
+     * Arguments to be passed to the job run.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -165,7 +173,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arguments
-     *        Arguments to be passed to the job.</p>
+     *        Arguments to be passed to the job run.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -187,7 +195,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arguments to be passed to the job.
+     * Arguments to be passed to the job run.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -205,7 +213,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arguments
-     *        Arguments to be passed to the job.</p>
+     *        Arguments to be passed to the job run.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -250,11 +258,15 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      * 
      * @param timeout
-     *        The job run timeout in minutes. It overrides the timeout value of the job.
+     *        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     *        the timeout value set in the parent job.
      */
 
     public void setTimeout(Integer timeout) {
@@ -263,10 +275,14 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      * 
-     * @return The job run timeout in minutes. It overrides the timeout value of the job.
+     * @return The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *         terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
+     *         overrides the timeout value set in the parent job.
      */
 
     public Integer getTimeout() {
@@ -275,11 +291,15 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      * 
      * @param timeout
-     *        The job run timeout in minutes. It overrides the timeout value of the job.
+     *        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     *        the timeout value set in the parent job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,6 +349,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this action.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this action.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this action.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure to be used with this action.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this action.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -346,7 +406,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getNotificationProperty() != null)
-            sb.append("NotificationProperty: ").append(getNotificationProperty());
+            sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +439,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -389,6 +455,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 

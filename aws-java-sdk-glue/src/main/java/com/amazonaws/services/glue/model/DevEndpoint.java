@@ -166,6 +166,12 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private java.util.List<String> publicKeys;
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     */
+    private String securityConfiguration;
 
     /**
      * <p>
@@ -1146,6 +1152,46 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevEndpoint withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1195,7 +1241,9 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         if (getPublicKey() != null)
             sb.append("PublicKey: ").append(getPublicKey()).append(",");
         if (getPublicKeys() != null)
-            sb.append("PublicKeys: ").append(getPublicKeys());
+            sb.append("PublicKeys: ").append(getPublicKeys()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1291,6 +1339,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPublicKeys() != null && other.getPublicKeys().equals(this.getPublicKeys()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1319,6 +1371,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastModifiedTimestamp() == null) ? 0 : getLastModifiedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getPublicKey() == null) ? 0 : getPublicKey().hashCode());
         hashCode = prime * hashCode + ((getPublicKeys() == null) ? 0 : getPublicKeys().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 

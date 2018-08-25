@@ -33,17 +33,21 @@ public class EndpointDiscoveryProviderChain implements EndpointDiscoveryProvider
     }
 
     @Override
-    public boolean endpointDiscoveryEnabled() {
+    public Boolean endpointDiscoveryEnabled() {
+        Boolean endpointDiscoveryEnabled = null;
+
         for (EndpointDiscoveryProvider provider : providers) {
             try {
-                return provider.endpointDiscoveryEnabled();
+                endpointDiscoveryEnabled = provider.endpointDiscoveryEnabled();
+                if (endpointDiscoveryEnabled != null) {
+                    return endpointDiscoveryEnabled;
+                }
             } catch (Exception e) {
                 // Ignore any exceptions and move onto the next provider
                 LOG.debug("Unable to discover endpoint discovery setting " + provider.toString() +
                           ": " + e.getMessage());
             }
         }
-
-        return false;
+        return endpointDiscoveryEnabled;
     }
 }

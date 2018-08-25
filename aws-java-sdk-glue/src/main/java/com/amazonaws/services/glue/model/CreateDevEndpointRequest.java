@@ -94,6 +94,12 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String extraJarsS3Path;
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     */
+    private String securityConfiguration;
 
     /**
      * <p>
@@ -619,6 +625,46 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointRequest withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -646,7 +692,9 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getExtraPythonLibsS3Path() != null)
             sb.append("ExtraPythonLibsS3Path: ").append(getExtraPythonLibsS3Path()).append(",");
         if (getExtraJarsS3Path() != null)
-            sb.append("ExtraJarsS3Path: ").append(getExtraJarsS3Path());
+            sb.append("ExtraJarsS3Path: ").append(getExtraJarsS3Path()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -697,6 +745,10 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getExtraJarsS3Path() != null && other.getExtraJarsS3Path().equals(this.getExtraJarsS3Path()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -714,6 +766,7 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
         hashCode = prime * hashCode + ((getExtraPythonLibsS3Path() == null) ? 0 : getExtraPythonLibsS3Path().hashCode());
         hashCode = prime * hashCode + ((getExtraJarsS3Path() == null) ? 0 : getExtraJarsS3Path().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 

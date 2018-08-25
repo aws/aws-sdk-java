@@ -113,6 +113,14 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                     context.nextToken();
                     jobRun.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LogGroupName", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

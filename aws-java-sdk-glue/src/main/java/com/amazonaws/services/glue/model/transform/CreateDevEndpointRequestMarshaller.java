@@ -46,6 +46,8 @@ public class CreateDevEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExtraPythonLibsS3Path").build();
     private static final MarshallingInfo<String> EXTRAJARSS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExtraJarsS3Path").build();
+    private static final MarshallingInfo<String> SECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
 
     private static final CreateDevEndpointRequestMarshaller instance = new CreateDevEndpointRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateDevEndpointRequestMarshaller {
             protocolMarshaller.marshall(createDevEndpointRequest.getNumberOfNodes(), NUMBEROFNODES_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getExtraPythonLibsS3Path(), EXTRAPYTHONLIBSS3PATH_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getExtraJarsS3Path(), EXTRAJARSS3PATH_BINDING);
+            protocolMarshaller.marshall(createDevEndpointRequest.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

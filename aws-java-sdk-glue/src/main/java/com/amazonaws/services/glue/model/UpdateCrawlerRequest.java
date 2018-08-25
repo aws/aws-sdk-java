@@ -86,12 +86,26 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private SchemaChangePolicy schemaChangePolicy;
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
-     * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition. Use the following JSON string to specify that behavior:
+     * </p>
+     * <p>
+     * Example:
+     * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      */
     private String configuration;
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * </p>
+     */
+    private String crawlerSecurityConfiguration;
 
     /**
      * <p>
@@ -521,15 +535,30 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
-     * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition. Use the following JSON string to specify that behavior:
+     * </p>
+     * <p>
+     * Example:
+     * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      * 
      * @param configuration
      *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
-     *        crawler's behavior. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     *        Crawler's behavior.</p>
+     *        <p>
+     *        You can use this field to force partitions to inherit metadata such as classification, input format,
+     *        output format, serde information, and schema from their parent table, rather than detect this information
+     *        separately for each partition. Use the following JSON string to specify that behavior:
+     *        </p>
+     *        <p>
+     *        Example:
+     *        <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      */
 
     public void setConfiguration(String configuration) {
@@ -538,14 +567,29 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
-     * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition. Use the following JSON string to specify that behavior:
+     * </p>
+     * <p>
+     * Example:
+     * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      * 
      * @return Crawler configuration information. This versioned JSON string allows users to specify aspects of a
-     *         crawler's behavior. For more information, see <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     *         Crawler's behavior.</p>
+     *         <p>
+     *         You can use this field to force partitions to inherit metadata such as classification, input format,
+     *         output format, serde information, and schema from their parent table, rather than detect this information
+     *         separately for each partition. Use the following JSON string to specify that behavior:
+     *         </p>
+     *         <p>
+     *         Example:
+     *         <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      */
 
     public String getConfiguration() {
@@ -554,20 +598,75 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
-     * behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition. Use the following JSON string to specify that behavior:
+     * </p>
+     * <p>
+     * Example:
+     * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      * 
      * @param configuration
      *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
-     *        crawler's behavior. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
+     *        Crawler's behavior.</p>
+     *        <p>
+     *        You can use this field to force partitions to inherit metadata such as classification, input format,
+     *        output format, serde information, and schema from their parent table, rather than detect this information
+     *        separately for each partition. Use the following JSON string to specify that behavior:
+     *        </p>
+     *        <p>
+     *        Example:
+     *        <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateCrawlerRequest withConfiguration(String configuration) {
         setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * </p>
+     * 
+     * @param crawlerSecurityConfiguration
+     *        The name of the SecurityConfiguration structure to be used by this Crawler.
+     */
+
+    public void setCrawlerSecurityConfiguration(String crawlerSecurityConfiguration) {
+        this.crawlerSecurityConfiguration = crawlerSecurityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure to be used by this Crawler.
+     */
+
+    public String getCrawlerSecurityConfiguration() {
+        return this.crawlerSecurityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * </p>
+     * 
+     * @param crawlerSecurityConfiguration
+     *        The name of the SecurityConfiguration structure to be used by this Crawler.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withCrawlerSecurityConfiguration(String crawlerSecurityConfiguration) {
+        setCrawlerSecurityConfiguration(crawlerSecurityConfiguration);
         return this;
     }
 
@@ -601,7 +700,9 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getSchemaChangePolicy() != null)
             sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getCrawlerSecurityConfiguration() != null)
+            sb.append("CrawlerSecurityConfiguration: ").append(getCrawlerSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +757,10 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getCrawlerSecurityConfiguration() == null ^ this.getCrawlerSecurityConfiguration() == null)
+            return false;
+        if (other.getCrawlerSecurityConfiguration() != null && other.getCrawlerSecurityConfiguration().equals(this.getCrawlerSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -674,6 +779,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());
         hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCrawlerSecurityConfiguration() == null) ? 0 : getCrawlerSecurityConfiguration().hashCode());
         return hashCode;
     }
 

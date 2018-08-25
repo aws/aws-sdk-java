@@ -54,8 +54,73 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> matchCriteria;
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the
+     * database host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening
+     * for database connections.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_ID</code> - The instance ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname matching will
+     * be enforced for the JDBC connection on the client. The default is false.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
     /**
@@ -295,10 +360,139 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the
+     * database host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening
+     * for database connections.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_ID</code> - The instance ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname matching will
+     * be enforced for the JDBC connection on the client. The default is false.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A list of key-value pairs used as parameters for this connection.
+     * @return These key-value pairs define parameters for the connection:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of
+     *         the database host.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is
+     *         listening for database connections.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>USER_NAME</code> - The name under which to log in to the database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PASSWORD</code> - A password, if one is used, for the user name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONFIG_FILES</code> - (Reserved for future use).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INSTANCE_ID</code> - The instance ID to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname
+     *         matching will be enforced for the JDBC connection on the client. The default is false.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getConnectionProperties() {
@@ -307,11 +501,140 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the
+     * database host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening
+     * for database connections.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_ID</code> - The instance ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname matching will
+     * be enforced for the JDBC connection on the client. The default is false.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param connectionProperties
-     *        A list of key-value pairs used as parameters for this connection.
+     *        These key-value pairs define parameters for the connection:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the
+     *        database host.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is
+     *        listening for database connections.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_NAME</code> - The name under which to log in to the database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PASSWORD</code> - A password, if one is used, for the user name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONFIG_FILES</code> - (Reserved for future use).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE_ID</code> - The instance ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname
+     *        matching will be enforced for the JDBC connection on the client. The default is false.
+     *        </p>
+     *        </li>
      */
 
     public void setConnectionProperties(java.util.Map<String, String> connectionProperties) {
@@ -320,11 +643,140 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the
+     * database host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening
+     * for database connections.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_NAME</code> - The name under which to log in to the database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONFIG_FILES</code> - (Reserved for future use).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_ID</code> - The instance ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname matching will
+     * be enforced for the JDBC connection on the client. The default is false.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param connectionProperties
-     *        A list of key-value pairs used as parameters for this connection.
+     *        These key-value pairs define parameters for the connection:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the
+     *        database host.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is
+     *        listening for database connections.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_NAME</code> - The name under which to log in to the database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PASSWORD</code> - A password, if one is used, for the user name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the JDBC driver to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONFIG_FILES</code> - (Reserved for future use).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE_ID</code> - The instance ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether SSL with hostname
+     *        matching will be enforced for the JDBC connection on the client. The default is false.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

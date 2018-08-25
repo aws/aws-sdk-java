@@ -38,6 +38,8 @@ public class InternalConfigJsonHelper {
 
     private String userAgentTemplate;
 
+    private boolean endpointDiscoveryEnabled;
+
     public SignerConfigJsonHelper getDefaultSigner() {
         return defaultSigner;
     }
@@ -92,5 +94,13 @@ public class InternalConfigJsonHelper {
 
     public void setUserAgentTemplate(String userAgentTemplate) {
         this.userAgentTemplate = userAgentTemplate;
+    }
+
+    public boolean isEndpointDiscoveryEnabled() {
+        return endpointDiscoveryEnabled;
+    }
+
+    public void setEndpointDiscoveryEnabled(boolean endpointDiscoveryEnabled) {
+        this.endpointDiscoveryEnabled = endpointDiscoveryEnabled;
     }
 }

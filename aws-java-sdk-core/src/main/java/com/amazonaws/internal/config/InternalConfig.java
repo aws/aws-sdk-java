@@ -65,6 +65,8 @@ public class InternalConfig {
 
     private final String userAgentTemplate;
 
+    private final boolean endpointDiscoveryEnabled;
+
     /**
      * @param defaults
      *            default configuration
@@ -88,6 +90,12 @@ public class InternalConfig {
             userAgentTemplate = override.getUserAgentTemplate();
         } else {
             userAgentTemplate = defaults.getUserAgentTemplate();
+        }
+
+        if (override.isEndpointDiscoveryEnabled()) {
+            endpointDiscoveryEnabled = true;
+        } else {
+            endpointDiscoveryEnabled = false;
         }
     }
 
@@ -228,6 +236,10 @@ public class InternalConfig {
      */
     public String getUserAgentTemplate() {
         return userAgentTemplate;
+    }
+
+    public boolean endpointDiscoveryEnabled() {
+        return endpointDiscoveryEnabled;
     }
 
     static InternalConfigJsonHelper loadfrom(URL url) throws JsonParseException, JsonMappingException, IOException {

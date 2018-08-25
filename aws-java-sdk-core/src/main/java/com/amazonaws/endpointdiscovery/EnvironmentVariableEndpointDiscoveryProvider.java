@@ -20,17 +20,20 @@ import static com.amazonaws.endpointdiscovery.Constants.ENDPOINT_DISCOVERY_ENVIR
 public class EnvironmentVariableEndpointDiscoveryProvider implements EndpointDiscoveryProvider {
 
     @Override
-    public boolean endpointDiscoveryEnabled() {
-        String endpointDiscoveryEnabled = System.getenv(ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE);
+    public Boolean endpointDiscoveryEnabled() {
 
-        if (endpointDiscoveryEnabled != null) {
+        Boolean endpointDiscoveryEnabled = null;
+
+        String endpointDiscoveryEnabledString = System.getenv(ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE);
+
+        if (endpointDiscoveryEnabledString != null) {
             try {
-                return Boolean.parseBoolean(endpointDiscoveryEnabled);
+                endpointDiscoveryEnabled = Boolean.parseBoolean(endpointDiscoveryEnabledString);
             } catch (Exception e) {
                 throw new RuntimeException("Unable to parse environment variable " + ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE);
             }
         }
 
-        return false;
+        return endpointDiscoveryEnabled;
     }
 }

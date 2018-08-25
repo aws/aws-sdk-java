@@ -18,17 +18,19 @@ import static com.amazonaws.endpointdiscovery.Constants.ENDPOINT_DISCOVERY_SYSTE
 
 public class SystemPropertyEndpointDiscoveryProvider implements EndpointDiscoveryProvider {
     @Override
-    public boolean endpointDiscoveryEnabled() {
-        String endpointDiscoveryEnabled = System.getProperty(ENDPOINT_DISCOVERY_SYSTEM_PROPERTY);
+    public Boolean endpointDiscoveryEnabled() {
+        Boolean endpointDiscoveryEnabled = null;
 
-        if (endpointDiscoveryEnabled != null) {
+        String endpointDiscoveryEnabledString = System.getProperty(ENDPOINT_DISCOVERY_SYSTEM_PROPERTY);
+
+        if (endpointDiscoveryEnabledString != null) {
             try {
-                return Boolean.parseBoolean(endpointDiscoveryEnabled);
+                endpointDiscoveryEnabled = Boolean.parseBoolean(endpointDiscoveryEnabledString);
             } catch (Exception e) {
                 throw new RuntimeException("Unable to parse environment variable " + ENDPOINT_DISCOVERY_SYSTEM_PROPERTY);
             }
         }
 
-        return false;
+        return endpointDiscoveryEnabled;
     }
 }

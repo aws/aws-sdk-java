@@ -10,6 +10,7 @@ import com.amazonaws.client.builder.AwsSyncClientBuilder;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.endpointdiscovery.EndpointDiscoveryProviderChain;
 import com.amazonaws.endpointdiscovery.DefaultEndpointDiscoveryProviderChain;
+import com.amazonaws.internal.config.InternalConfig;
 
 /**
  * Fluent builder for {@link ${metadata.packageName + "." + metadata.syncInterface}}. Use of the
@@ -53,12 +54,37 @@ public final class ${metadata.syncClientBuilderClassName}
         this.endpointDiscoveryEnabled = true;
         return this;
     }
-    </#if>
 
-    <#if endpointOperation?has_content>
     public ${metadata.syncClientBuilderClassName} disableEndpointDiscovery() {
         this.endpointDiscoveryDisabled = true;
         return this;
+    }
+
+    private boolean endpointDiscoveryEnabled() {
+
+        Boolean endpointDiscoveryChainSetting = DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled();
+
+        if (endpointDiscoveryDisabled) {
+            return false;
+        }
+
+        if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting == false) {
+            return false;
+        }
+
+        if (endpointDiscoveryEnabled) {
+            return true;
+        }
+
+        if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting) {
+            return true;
+        }
+
+        if (InternalConfig.Factory.getInternalConfig().endpointDiscoveryEnabled()) {
+            return true;
+        }
+
+        return false;
     }
     </#if>
 
@@ -71,10 +97,7 @@ public final class ${metadata.syncClientBuilderClassName}
     @Override
     protected ${metadata.syncInterface} build(AwsSyncClientParams params) {
         <#if endpointOperation?has_content>
-        if (getEndpoint() != null || endpointDiscoveryDisabled) {
-            return new ${metadata.syncClient}(params);
-        }
-        if (endpointDiscoveryEnabled || DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled()) {
+        if (endpointDiscoveryEnabled()) {
             return new ${metadata.syncClient}(params, endpointDiscoveryEnabled);
         }
         </#if>

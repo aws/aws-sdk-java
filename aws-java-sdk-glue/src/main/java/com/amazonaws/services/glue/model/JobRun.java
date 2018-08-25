@@ -130,7 +130,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private Integer executionTime;
     /**
      * <p>
-     * The job run timeout in minutes.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      */
     private Integer timeout;
@@ -140,6 +142,22 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NotificationProperty notificationProperty;
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job run.
+     * </p>
+     */
+    private String securityConfiguration;
+    /**
+     * <p>
+     * The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS. This
+     * name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a
+     * role name and SecurityConfiguration name (in other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration will
+     * be used to encrypt the log group.
+     * </p>
+     */
+    private String logGroupName;
 
     /**
      * <p>
@@ -875,11 +893,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job run timeout in minutes.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      * 
      * @param timeout
-     *        The job run timeout in minutes.
+     *        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     *        the timeout value set in the parent job.
      */
 
     public void setTimeout(Integer timeout) {
@@ -888,10 +910,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job run timeout in minutes.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      * 
-     * @return The job run timeout in minutes.
+     * @return The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *         terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
+     *         overrides the timeout value set in the parent job.
      */
 
     public Integer getTimeout() {
@@ -900,11 +926,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job run timeout in minutes.
+     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
+     * timeout value set in the parent job.
      * </p>
      * 
      * @param timeout
-     *        The job run timeout in minutes.
+     *        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     *        the timeout value set in the parent job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -954,6 +984,110 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job run.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this job run.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job run.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure to be used with this job run.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job run.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this job run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS. This
+     * name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a
+     * role name and SecurityConfiguration name (in other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration will
+     * be used to encrypt the log group.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS.
+     *        This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>.
+     *        If you add a role name and SecurityConfiguration name (in other words,
+     *        <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration
+     *        will be used to encrypt the log group.
+     */
+
+    public void setLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS. This
+     * name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a
+     * role name and SecurityConfiguration name (in other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration will
+     * be used to encrypt the log group.
+     * </p>
+     * 
+     * @return The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS.
+     *         This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>.
+     *         If you add a role name and SecurityConfiguration name (in other words,
+     *         <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
+     *         configuration will be used to encrypt the log group.
+     */
+
+    public String getLogGroupName() {
+        return this.logGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS. This
+     * name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a
+     * role name and SecurityConfiguration name (in other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration will
+     * be used to encrypt the log group.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the log group for secure logging, that can be server-side encrypted in CloudWatch using KMS.
+     *        This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>.
+     *        If you add a role name and SecurityConfiguration name (in other words,
+     *        <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration
+     *        will be used to encrypt the log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withLogGroupName(String logGroupName) {
+        setLogGroupName(logGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -995,7 +1129,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getNotificationProperty() != null)
-            sb.append("NotificationProperty: ").append(getNotificationProperty());
+            sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
+        if (getLogGroupName() != null)
+            sb.append("LogGroupName: ").append(getLogGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -1074,6 +1212,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
+        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
+            return false;
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -1098,6 +1244,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         return hashCode;
     }
 

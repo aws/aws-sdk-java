@@ -54,7 +54,7 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> matchCriteria;
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -277,10 +277,10 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      * 
-     * @return A list of key-value pairs used as parameters for this connection.
+     * @return These key-value pairs define parameters for the connection.
      */
 
     public java.util.Map<String, String> getConnectionProperties() {
@@ -289,11 +289,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      * 
      * @param connectionProperties
-     *        A list of key-value pairs used as parameters for this connection.
+     *        These key-value pairs define parameters for the connection.
      */
 
     public void setConnectionProperties(java.util.Map<String, String> connectionProperties) {
@@ -302,11 +302,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      * 
      * @param connectionProperties
-     *        A list of key-value pairs used as parameters for this connection.
+     *        These key-value pairs define parameters for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

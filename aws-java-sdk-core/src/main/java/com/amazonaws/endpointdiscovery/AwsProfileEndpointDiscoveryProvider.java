@@ -50,19 +50,20 @@ public class AwsProfileEndpointDiscoveryProvider implements EndpointDiscoveryPro
     }
 
     @Override
-    public boolean endpointDiscoveryEnabled () {
+    public Boolean endpointDiscoveryEnabled() {
+        Boolean endpointDiscoveryEnabled = null;
         File configFile = locationProvider.getLocation();
         if (configFile != null && configFile.exists()) {
             BasicProfile profile = loadProfile(configFile);
             if (profile != null && !StringUtils.isNullOrEmpty(profile.getEndpointDiscovery())) {
                 try {
-                    return Boolean.parseBoolean(profile.getEndpointDiscovery());
+                    endpointDiscoveryEnabled = Boolean.parseBoolean(profile.getEndpointDiscovery());
                 } catch (Exception e) {
                     throw new RuntimeException("Unable to parse value for " + ProfileKeyConstants.ENDPOINT_DISCOVERY);
                 }
             }
         }
-        return false;
+        return endpointDiscoveryEnabled;
     }
 
     private BasicProfile loadProfile(File configFile) {

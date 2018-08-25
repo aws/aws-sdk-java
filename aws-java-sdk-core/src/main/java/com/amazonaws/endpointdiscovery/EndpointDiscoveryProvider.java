@@ -15,5 +15,5 @@
 package com.amazonaws.endpointdiscovery;
 
 public interface EndpointDiscoveryProvider {
-    boolean endpointDiscoveryEnabled();
+    Boolean endpointDiscoveryEnabled();
 }

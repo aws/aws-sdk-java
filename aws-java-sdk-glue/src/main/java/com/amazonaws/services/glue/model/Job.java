@@ -118,7 +118,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Integer allocatedCapacity;
     /**
      * <p>
-     * The job timeout in minutes.
+     * The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated
+     * and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      * </p>
      */
     private Integer timeout;
@@ -128,6 +129,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NotificationProperty notificationProperty;
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job.
+     * </p>
+     */
+    private String securityConfiguration;
 
     /**
      * <p>
@@ -731,11 +738,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job timeout in minutes.
+     * The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated
+     * and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      * </p>
      * 
      * @param timeout
-     *        The job timeout in minutes.
+     *        The job timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      */
 
     public void setTimeout(Integer timeout) {
@@ -744,10 +753,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job timeout in minutes.
+     * The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated
+     * and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      * </p>
      * 
-     * @return The job timeout in minutes.
+     * @return The job timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *         terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      */
 
     public Integer getTimeout() {
@@ -756,11 +767,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job timeout in minutes.
+     * The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated
+     * and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      * </p>
      * 
      * @param timeout
-     *        The job timeout in minutes.
+     *        The job timeout in minutes. This is the maximum time that a job run can consume resources before it is
+     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -810,6 +823,46 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this job.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure to be used with this job.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure to be used with this job.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure to be used with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -847,7 +900,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getNotificationProperty() != null)
-            sb.append("NotificationProperty: ").append(getNotificationProperty());
+            sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -918,6 +973,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -940,6 +999,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         return hashCode;
     }
 

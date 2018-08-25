@@ -103,6 +103,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTableResult createTable(CreateTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,6 +154,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeletePartitionResult deletePartition(DeletePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSecurityConfigurationResult deleteSecurityConfiguration(DeleteSecurityConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -278,6 +288,16 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetSecurityConfigurationResult getSecurityConfiguration(GetSecurityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSecurityConfigurationsResult getSecurityConfigurations(GetSecurityConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTableResult getTable(GetTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -319,6 +339,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public ImportCatalogToGlueResult importCatalogToGlue(ImportCatalogToGlueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDataCatalogEncryptionSettingsResult putDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

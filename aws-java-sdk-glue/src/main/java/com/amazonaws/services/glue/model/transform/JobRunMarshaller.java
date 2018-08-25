@@ -61,6 +61,10 @@ public class JobRunMarshaller {
             .marshallLocationName("Timeout").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONPROPERTY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationProperty").build();
+    private static final MarshallingInfo<String> SECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogGroupName").build();
 
     private static final JobRunMarshaller instance = new JobRunMarshaller();
 
@@ -94,6 +98,8 @@ public class JobRunMarshaller {
             protocolMarshaller.marshall(jobRun.getExecutionTime(), EXECUTIONTIME_BINDING);
             protocolMarshaller.marshall(jobRun.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(jobRun.getNotificationProperty(), NOTIFICATIONPROPERTY_BINDING);
+            protocolMarshaller.marshall(jobRun.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(jobRun.getLogGroupName(), LOGGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

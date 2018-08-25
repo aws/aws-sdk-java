@@ -66,7 +66,7 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
     private StorageDescriptor storageDescriptor;
     /**
      * <p>
-     * Partition parameters, in the form of a list of key-value pairs.
+     * These key-value pairs define partition parameters.
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -349,10 +349,10 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Partition parameters, in the form of a list of key-value pairs.
+     * These key-value pairs define partition parameters.
      * </p>
      * 
-     * @return Partition parameters, in the form of a list of key-value pairs.
+     * @return These key-value pairs define partition parameters.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -361,11 +361,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Partition parameters, in the form of a list of key-value pairs.
+     * These key-value pairs define partition parameters.
      * </p>
      * 
      * @param parameters
-     *        Partition parameters, in the form of a list of key-value pairs.
+     *        These key-value pairs define partition parameters.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -374,11 +374,11 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Partition parameters, in the form of a list of key-value pairs.
+     * These key-value pairs define partition parameters.
      * </p>
      * 
      * @param parameters
-     *        Partition parameters, in the form of a list of key-value pairs.
+     *        These key-value pairs define partition parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

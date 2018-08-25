@@ -42,7 +42,8 @@ public class PhysicalConnectionRequirements implements Serializable, Cloneable, 
     private java.util.List<String> securityGroupIdList;
     /**
      * <p>
-     * The connection's availability zone. This field is deprecated and has no effect.
+     * The connection's availability zone. This field is redundant, since the specified subnet implies the availability
+     * zone to be used. The field must be populated now, but will be deprecated in the future.
      * </p>
      */
     private String availabilityZone;
@@ -159,11 +160,13 @@ public class PhysicalConnectionRequirements implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The connection's availability zone. This field is deprecated and has no effect.
+     * The connection's availability zone. This field is redundant, since the specified subnet implies the availability
+     * zone to be used. The field must be populated now, but will be deprecated in the future.
      * </p>
      * 
      * @param availabilityZone
-     *        The connection's availability zone. This field is deprecated and has no effect.
+     *        The connection's availability zone. This field is redundant, since the specified subnet implies the
+     *        availability zone to be used. The field must be populated now, but will be deprecated in the future.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -172,10 +175,12 @@ public class PhysicalConnectionRequirements implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The connection's availability zone. This field is deprecated and has no effect.
+     * The connection's availability zone. This field is redundant, since the specified subnet implies the availability
+     * zone to be used. The field must be populated now, but will be deprecated in the future.
      * </p>
      * 
-     * @return The connection's availability zone. This field is deprecated and has no effect.
+     * @return The connection's availability zone. This field is redundant, since the specified subnet implies the
+     *         availability zone to be used. The field must be populated now, but will be deprecated in the future.
      */
 
     public String getAvailabilityZone() {
@@ -184,11 +189,13 @@ public class PhysicalConnectionRequirements implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The connection's availability zone. This field is deprecated and has no effect.
+     * The connection's availability zone. This field is redundant, since the specified subnet implies the availability
+     * zone to be used. The field must be populated now, but will be deprecated in the future.
      * </p>
      * 
      * @param availabilityZone
-     *        The connection's availability zone. This field is deprecated and has no effect.
+     *        The connection's availability zone. This field is redundant, since the specified subnet implies the
+     *        availability zone to be used. The field must be populated now, but will be deprecated in the future.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

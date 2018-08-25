@@ -48,7 +48,7 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
     private String locationUri;
     /**
      * <p>
-     * A list of key-value pairs that define parameters and properties of the database.
+     * Thes key-value pairs define parameters and properties of the database.
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -175,10 +175,10 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs that define parameters and properties of the database.
+     * Thes key-value pairs define parameters and properties of the database.
      * </p>
      * 
-     * @return A list of key-value pairs that define parameters and properties of the database.
+     * @return Thes key-value pairs define parameters and properties of the database.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -187,11 +187,11 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs that define parameters and properties of the database.
+     * Thes key-value pairs define parameters and properties of the database.
      * </p>
      * 
      * @param parameters
-     *        A list of key-value pairs that define parameters and properties of the database.
+     *        Thes key-value pairs define parameters and properties of the database.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -200,11 +200,11 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs that define parameters and properties of the database.
+     * Thes key-value pairs define parameters and properties of the database.
      * </p>
      * 
      * @param parameters
-     *        A list of key-value pairs that define parameters and properties of the database.
+     *        Thes key-value pairs define parameters and properties of the database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

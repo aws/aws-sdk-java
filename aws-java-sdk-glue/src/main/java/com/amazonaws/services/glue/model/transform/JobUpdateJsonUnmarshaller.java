@@ -93,6 +93,10 @@ public class JobUpdateJsonUnmarshaller implements Unmarshaller<JobUpdate, JsonUn
                     context.nextToken();
                     jobUpdate.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    jobUpdate.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
