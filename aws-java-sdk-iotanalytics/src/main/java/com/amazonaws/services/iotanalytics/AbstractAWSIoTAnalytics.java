@@ -123,6 +123,11 @@ public class AbstractAWSIoTAnalytics implements AWSIoTAnalytics {
     }
 
     @Override
+    public ListDatasetContentsResult listDatasetContents(ListDatasetContentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDatasetsResult listDatasets(ListDatasetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

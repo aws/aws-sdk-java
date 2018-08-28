@@ -33,8 +33,8 @@ public class OTAUpdateFileMarshaller {
             .marshallLocationName("fileName").build();
     private static final MarshallingInfo<String> FILEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileVersion").build();
-    private static final MarshallingInfo<StructuredPojo> FILESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSource").build();
+    private static final MarshallingInfo<StructuredPojo> FILELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileLocation").build();
     private static final MarshallingInfo<StructuredPojo> CODESIGNING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeSigning").build();
     private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,7 +58,7 @@ public class OTAUpdateFileMarshaller {
         try {
             protocolMarshaller.marshall(oTAUpdateFile.getFileName(), FILENAME_BINDING);
             protocolMarshaller.marshall(oTAUpdateFile.getFileVersion(), FILEVERSION_BINDING);
-            protocolMarshaller.marshall(oTAUpdateFile.getFileSource(), FILESOURCE_BINDING);
+            protocolMarshaller.marshall(oTAUpdateFile.getFileLocation(), FILELOCATION_BINDING);
             protocolMarshaller.marshall(oTAUpdateFile.getCodeSigning(), CODESIGNING_BINDING);
             protocolMarshaller.marshall(oTAUpdateFile.getAttributes(), ATTRIBUTES_BINDING);
         } catch (Exception e) {

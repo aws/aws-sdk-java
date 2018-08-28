@@ -26,7 +26,7 @@ public final class ${metadata.syncClientBuilderClassName}
     <#if endpointOperation?has_content>
     private static final EndpointDiscoveryProviderChain DEFAULT_ENDPOINT_DISCOVERY_PROVIDER = new DefaultEndpointDiscoveryProviderChain();
 
-    private boolean endpointDiscoveryEnabled = true;
+    private boolean endpointDiscoveryEnabled = false;
     private boolean endpointDiscoveryDisabled = false;
     </#if>
 
@@ -68,12 +68,12 @@ public final class ${metadata.syncClientBuilderClassName}
             return false;
         }
 
-        if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting == false) {
-            return false;
-        }
-
         if (endpointDiscoveryEnabled) {
             return true;
+        }
+
+        if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting == false) {
+            return false;
         }
 
         if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting) {

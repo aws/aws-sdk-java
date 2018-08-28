@@ -572,6 +572,8 @@ public interface AWSIot {
      * @return Result of the CreateOTAUpdate operation returned by the service.
      * @throws InvalidRequestException
      *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws ResourceAlreadyExistsException
@@ -728,6 +730,8 @@ public interface AWSIot {
      * @return Result of the CreateStream operation returned by the service.
      * @throws InvalidRequestException
      *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws ResourceAlreadyExistsException
@@ -1027,6 +1031,9 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
      * @sample AWSIot.DeleteOTAUpdate
      */
     DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest deleteOTAUpdateRequest);

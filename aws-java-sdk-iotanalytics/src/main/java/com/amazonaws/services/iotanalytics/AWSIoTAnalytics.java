@@ -511,6 +511,29 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
+     * Lists information about data set contents that have been created.
+     * </p>
+     * 
+     * @param listDatasetContentsRequest
+     * @return Result of the ListDatasetContents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.ListDatasetContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDatasetContentsResult listDatasetContents(ListDatasetContentsRequest listDatasetContentsRequest);
+
+    /**
+     * <p>
      * Retrieves information about data sets.
      * </p>
      * 

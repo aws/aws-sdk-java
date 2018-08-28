@@ -56,9 +56,9 @@ public class OTAUpdateFileJsonUnmarshaller implements Unmarshaller<OTAUpdateFile
                     context.nextToken();
                     oTAUpdateFile.setFileVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("fileSource", targetDepth)) {
+                if (context.testExpression("fileLocation", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateFile.setFileSource(StreamJsonUnmarshaller.getInstance().unmarshall(context));
+                    oTAUpdateFile.setFileLocation(FileLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("codeSigning", targetDepth)) {
                     context.nextToken();

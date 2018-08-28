@@ -48,10 +48,6 @@ public class CodeSigningCertificateChainJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("stream", targetDepth)) {
-                    context.nextToken();
-                    codeSigningCertificateChain.setStream(StreamJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("certificateName", targetDepth)) {
                     context.nextToken();
                     codeSigningCertificateChain.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));

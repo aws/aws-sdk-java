@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.397-SNAPSHOT</version>
+    <version>1.11.397</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-signer</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-dlm</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -993,6 +999,10 @@
                           </taglets>
                           <groups>
                               <group>
+                                  <title>AWS Signer</title>
+                                  <packages>com.amazonaws.services.signer*</packages>
+                              </group>
+                              <group>
                                   <title>Amazon Data Lifecycle Manager</title>
                                   <packages>com.amazonaws.services.dlm*</packages>
                               </group>
@@ -1618,10 +1628,6 @@
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE-->');
                           });
                           &lt;/script>
-                          &lt;!-- BEGIN-URCHIN-TRACKER -->
-                          &lt;script src="http://l0.awsstatic.com/js/urchin.js" type="text/javascript">&lt;/script>
-                          &lt;script type="text/javascript">urchinTracker();&lt;/script>
-                          &lt;!-- END-URCHIN-TRACKER -->
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com -->

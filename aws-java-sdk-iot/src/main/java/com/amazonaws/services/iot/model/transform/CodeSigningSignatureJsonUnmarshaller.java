@@ -48,10 +48,6 @@ public class CodeSigningSignatureJsonUnmarshaller implements Unmarshaller<CodeSi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("stream", targetDepth)) {
-                    context.nextToken();
-                    codeSigningSignature.setStream(StreamJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("inlineDocument", targetDepth)) {
                     context.nextToken();
                     codeSigningSignature.setInlineDocument(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));

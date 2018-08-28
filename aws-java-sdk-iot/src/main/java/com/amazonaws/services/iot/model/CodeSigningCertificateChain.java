@@ -27,12 +27,6 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A stream of the certificate chain files.
-     * </p>
-     */
-    private Stream stream;
-    /**
-     * <p>
      * The name of the certificate.
      * </p>
      */
@@ -43,46 +37,6 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
      * </p>
      */
     private String inlineDocument;
-
-    /**
-     * <p>
-     * A stream of the certificate chain files.
-     * </p>
-     * 
-     * @param stream
-     *        A stream of the certificate chain files.
-     */
-
-    public void setStream(Stream stream) {
-        this.stream = stream;
-    }
-
-    /**
-     * <p>
-     * A stream of the certificate chain files.
-     * </p>
-     * 
-     * @return A stream of the certificate chain files.
-     */
-
-    public Stream getStream() {
-        return this.stream;
-    }
-
-    /**
-     * <p>
-     * A stream of the certificate chain files.
-     * </p>
-     * 
-     * @param stream
-     *        A stream of the certificate chain files.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CodeSigningCertificateChain withStream(Stream stream) {
-        setStream(stream);
-        return this;
-    }
 
     /**
      * <p>
@@ -175,8 +129,6 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStream() != null)
-            sb.append("Stream: ").append(getStream()).append(",");
         if (getCertificateName() != null)
             sb.append("CertificateName: ").append(getCertificateName()).append(",");
         if (getInlineDocument() != null)
@@ -195,10 +147,6 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
         if (obj instanceof CodeSigningCertificateChain == false)
             return false;
         CodeSigningCertificateChain other = (CodeSigningCertificateChain) obj;
-        if (other.getStream() == null ^ this.getStream() == null)
-            return false;
-        if (other.getStream() != null && other.getStream().equals(this.getStream()) == false)
-            return false;
         if (other.getCertificateName() == null ^ this.getCertificateName() == null)
             return false;
         if (other.getCertificateName() != null && other.getCertificateName().equals(this.getCertificateName()) == false)
@@ -215,7 +163,6 @@ public class CodeSigningCertificateChain implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStream() == null) ? 0 : getStream().hashCode());
         hashCode = prime * hashCode + ((getCertificateName() == null) ? 0 : getCertificateName().hashCode());
         hashCode = prime * hashCode + ((getInlineDocument() == null) ? 0 : getInlineDocument().hashCode());
         return hashCode;

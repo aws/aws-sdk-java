@@ -658,6 +658,37 @@ public interface AWSIoTAnalyticsAsync extends AWSIoTAnalytics {
 
     /**
      * <p>
+     * Lists information about data set contents that have been created.
+     * </p>
+     * 
+     * @param listDatasetContentsRequest
+     * @return A Java Future containing the result of the ListDatasetContents operation returned by the service.
+     * @sample AWSIoTAnalyticsAsync.ListDatasetContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatasetContentsResult> listDatasetContentsAsync(ListDatasetContentsRequest listDatasetContentsRequest);
+
+    /**
+     * <p>
+     * Lists information about data set contents that have been created.
+     * </p>
+     * 
+     * @param listDatasetContentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDatasetContents operation returned by the service.
+     * @sample AWSIoTAnalyticsAsyncHandler.ListDatasetContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatasetContentsResult> listDatasetContentsAsync(ListDatasetContentsRequest listDatasetContentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDatasetContentsRequest, ListDatasetContentsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about data sets.
      * </p>
      * 

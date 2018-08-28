@@ -275,6 +275,19 @@ public class AbstractAWSIoTAnalyticsAsync extends AbstractAWSIoTAnalytics implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatasetContentsResult> listDatasetContentsAsync(ListDatasetContentsRequest request) {
+
+        return listDatasetContentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetContentsResult> listDatasetContentsAsync(ListDatasetContentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDatasetContentsRequest, ListDatasetContentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest request) {
 
         return listDatasetsAsync(request, null);

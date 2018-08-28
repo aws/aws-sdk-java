@@ -33,6 +33,12 @@ public class CodeSigning implements Serializable, Cloneable, StructuredPojo {
     private String awsSignerJobId;
     /**
      * <p>
+     * Describes the code-signing job.
+     * </p>
+     */
+    private StartSigningJobParameter startSigningJobParameter;
+    /**
+     * <p>
      * A custom method for code signing a file.
      * </p>
      */
@@ -75,6 +81,46 @@ public class CodeSigning implements Serializable, Cloneable, StructuredPojo {
 
     public CodeSigning withAwsSignerJobId(String awsSignerJobId) {
         setAwsSignerJobId(awsSignerJobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the code-signing job.
+     * </p>
+     * 
+     * @param startSigningJobParameter
+     *        Describes the code-signing job.
+     */
+
+    public void setStartSigningJobParameter(StartSigningJobParameter startSigningJobParameter) {
+        this.startSigningJobParameter = startSigningJobParameter;
+    }
+
+    /**
+     * <p>
+     * Describes the code-signing job.
+     * </p>
+     * 
+     * @return Describes the code-signing job.
+     */
+
+    public StartSigningJobParameter getStartSigningJobParameter() {
+        return this.startSigningJobParameter;
+    }
+
+    /**
+     * <p>
+     * Describes the code-signing job.
+     * </p>
+     * 
+     * @param startSigningJobParameter
+     *        Describes the code-signing job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeSigning withStartSigningJobParameter(StartSigningJobParameter startSigningJobParameter) {
+        setStartSigningJobParameter(startSigningJobParameter);
         return this;
     }
 
@@ -131,6 +177,8 @@ public class CodeSigning implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAwsSignerJobId() != null)
             sb.append("AwsSignerJobId: ").append(getAwsSignerJobId()).append(",");
+        if (getStartSigningJobParameter() != null)
+            sb.append("StartSigningJobParameter: ").append(getStartSigningJobParameter()).append(",");
         if (getCustomCodeSigning() != null)
             sb.append("CustomCodeSigning: ").append(getCustomCodeSigning());
         sb.append("}");
@@ -151,6 +199,10 @@ public class CodeSigning implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsSignerJobId() != null && other.getAwsSignerJobId().equals(this.getAwsSignerJobId()) == false)
             return false;
+        if (other.getStartSigningJobParameter() == null ^ this.getStartSigningJobParameter() == null)
+            return false;
+        if (other.getStartSigningJobParameter() != null && other.getStartSigningJobParameter().equals(this.getStartSigningJobParameter()) == false)
+            return false;
         if (other.getCustomCodeSigning() == null ^ this.getCustomCodeSigning() == null)
             return false;
         if (other.getCustomCodeSigning() != null && other.getCustomCodeSigning().equals(this.getCustomCodeSigning()) == false)
@@ -164,6 +216,7 @@ public class CodeSigning implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAwsSignerJobId() == null) ? 0 : getAwsSignerJobId().hashCode());
+        hashCode = prime * hashCode + ((getStartSigningJobParameter() == null) ? 0 : getStartSigningJobParameter().hashCode());
         hashCode = prime * hashCode + ((getCustomCodeSigning() == null) ? 0 : getCustomCodeSigning().hashCode());
         return hashCode;
     }

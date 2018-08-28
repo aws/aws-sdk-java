@@ -52,6 +52,10 @@ public class CodeSigningJsonUnmarshaller implements Unmarshaller<CodeSigning, Js
                     context.nextToken();
                     codeSigning.setAwsSignerJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("startSigningJobParameter", targetDepth)) {
+                    context.nextToken();
+                    codeSigning.setStartSigningJobParameter(StartSigningJobParameterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("customCodeSigning", targetDepth)) {
                     context.nextToken();
                     codeSigning.setCustomCodeSigning(CustomCodeSigningJsonUnmarshaller.getInstance().unmarshall(context));

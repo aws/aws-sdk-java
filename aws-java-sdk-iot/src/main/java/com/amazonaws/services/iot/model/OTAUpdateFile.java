@@ -39,10 +39,10 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
     private String fileVersion;
     /**
      * <p>
-     * The source of the file.
+     * The location of the updated firmware.
      * </p>
      */
-    private Stream fileSource;
+    private FileLocation fileLocation;
     /**
      * <p>
      * The code signing method of the file.
@@ -138,41 +138,41 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the file.
+     * The location of the updated firmware.
      * </p>
      * 
-     * @param fileSource
-     *        The source of the file.
+     * @param fileLocation
+     *        The location of the updated firmware.
      */
 
-    public void setFileSource(Stream fileSource) {
-        this.fileSource = fileSource;
+    public void setFileLocation(FileLocation fileLocation) {
+        this.fileLocation = fileLocation;
     }
 
     /**
      * <p>
-     * The source of the file.
+     * The location of the updated firmware.
      * </p>
      * 
-     * @return The source of the file.
+     * @return The location of the updated firmware.
      */
 
-    public Stream getFileSource() {
-        return this.fileSource;
+    public FileLocation getFileLocation() {
+        return this.fileLocation;
     }
 
     /**
      * <p>
-     * The source of the file.
+     * The location of the updated firmware.
      * </p>
      * 
-     * @param fileSource
-     *        The source of the file.
+     * @param fileLocation
+     *        The location of the updated firmware.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OTAUpdateFile withFileSource(Stream fileSource) {
-        setFileSource(fileSource);
+    public OTAUpdateFile withFileLocation(FileLocation fileLocation) {
+        setFileLocation(fileLocation);
         return this;
     }
 
@@ -292,8 +292,8 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
             sb.append("FileName: ").append(getFileName()).append(",");
         if (getFileVersion() != null)
             sb.append("FileVersion: ").append(getFileVersion()).append(",");
-        if (getFileSource() != null)
-            sb.append("FileSource: ").append(getFileSource()).append(",");
+        if (getFileLocation() != null)
+            sb.append("FileLocation: ").append(getFileLocation()).append(",");
         if (getCodeSigning() != null)
             sb.append("CodeSigning: ").append(getCodeSigning()).append(",");
         if (getAttributes() != null)
@@ -320,9 +320,9 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFileVersion() != null && other.getFileVersion().equals(this.getFileVersion()) == false)
             return false;
-        if (other.getFileSource() == null ^ this.getFileSource() == null)
+        if (other.getFileLocation() == null ^ this.getFileLocation() == null)
             return false;
-        if (other.getFileSource() != null && other.getFileSource().equals(this.getFileSource()) == false)
+        if (other.getFileLocation() != null && other.getFileLocation().equals(this.getFileLocation()) == false)
             return false;
         if (other.getCodeSigning() == null ^ this.getCodeSigning() == null)
             return false;
@@ -342,7 +342,7 @@ public class OTAUpdateFile implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getFileName() == null) ? 0 : getFileName().hashCode());
         hashCode = prime * hashCode + ((getFileVersion() == null) ? 0 : getFileVersion().hashCode());
-        hashCode = prime * hashCode + ((getFileSource() == null) ? 0 : getFileSource().hashCode());
+        hashCode = prime * hashCode + ((getFileLocation() == null) ? 0 : getFileLocation().hashCode());
         hashCode = prime * hashCode + ((getCodeSigning() == null) ? 0 : getCodeSigning().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;

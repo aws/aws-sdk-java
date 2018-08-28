@@ -3181,8 +3181,47 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Changes the cluster's type, node type, or number of nodes.
+     * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
+     * default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read
+     * and write operations more quickly than with the classic resize method.
      * </p>
+     * <p>
+     * Elastic resize operations have the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can only resize clusters of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * dc2.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * dc2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ds2.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ds2.8xlarge
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The type of nodes you add must match the node type for the cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resizeClusterRequest
      * @return A Java Future containing the result of the ResizeCluster operation returned by the service.
@@ -3194,8 +3233,47 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Changes the cluster's type, node type, or number of nodes.
+     * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
+     * default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read
+     * and write operations more quickly than with the classic resize method.
      * </p>
+     * <p>
+     * Elastic resize operations have the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can only resize clusters of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * dc2.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * dc2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ds2.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ds2.8xlarge
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The type of nodes you add must match the node type for the cluster.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resizeClusterRequest
      * @param asyncHandler

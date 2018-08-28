@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.396</version>
+    <version>1.11.397</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.396</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.397</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.396</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.397</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Signer</title>
+                      <packages>com.amazonaws.services.signer*</packages>
+                    </group>
                     <group>
                       <title>Amazon Data Lifecycle Manager</title>
                       <packages>com.amazonaws.services.dlm*</packages>
@@ -751,10 +755,6 @@
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE--&gt;');
                           });
                           &lt;/script&gt;
-                          &lt;!-- BEGIN-URCHIN-TRACKER --&gt;
-                          &lt;script src="http://l0.awsstatic.com/js/urchin.js" type="text/javascript"&gt;&lt;/script&gt;
-                          &lt;script type="text/javascript"&gt;urchinTracker();&lt;/script&gt;
-                          &lt;!-- END-URCHIN-TRACKER --&gt;
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com --&gt;
@@ -798,10 +798,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.396</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.397</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.396</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.397</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -815,6 +815,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Signer</title>
+                      <packages>com.amazonaws.services.signer*</packages>
+                    </group>
                     <group>
                       <title>Amazon Data Lifecycle Manager</title>
                       <packages>com.amazonaws.services.dlm*</packages>
@@ -1435,10 +1439,6 @@
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE--&gt;');
                           });
                           &lt;/script&gt;
-                          &lt;!-- BEGIN-URCHIN-TRACKER --&gt;
-                          &lt;script src="http://l0.awsstatic.com/js/urchin.js" type="text/javascript"&gt;&lt;/script&gt;
-                          &lt;script type="text/javascript"&gt;urchinTracker();&lt;/script&gt;
-                          &lt;!-- END-URCHIN-TRACKER --&gt;
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com --&gt;
@@ -1478,10 +1478,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.396</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.397</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.396</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.397</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1495,6 +1495,10 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS Signer</title>
+                  <packages>com.amazonaws.services.signer*</packages>
+                </group>
                 <group>
                   <title>Amazon Data Lifecycle Manager</title>
                   <packages>com.amazonaws.services.dlm*</packages>
@@ -2115,10 +2119,6 @@
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE--&gt;');
                           });
                           &lt;/script&gt;
-                          &lt;!-- BEGIN-URCHIN-TRACKER --&gt;
-                          &lt;script src="http://l0.awsstatic.com/js/urchin.js" type="text/javascript"&gt;&lt;/script&gt;
-                          &lt;script type="text/javascript"&gt;urchinTracker();&lt;/script&gt;
-                          &lt;!-- END-URCHIN-TRACKER --&gt;
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com --&gt;
@@ -2371,7 +2371,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.396-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.397-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

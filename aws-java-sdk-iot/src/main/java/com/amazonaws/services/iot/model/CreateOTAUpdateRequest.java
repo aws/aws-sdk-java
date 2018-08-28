@@ -50,6 +50,12 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
     private String targetSelection;
     /**
      * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     */
+    private AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig;
+    /**
+     * <p>
      * The files to be streamed by the OTA update.
      * </p>
      */
@@ -310,6 +316,46 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @param awsJobExecutionsRolloutConfig
+     *        Configuration for the rollout of OTA updates.
+     */
+
+    public void setAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
+        this.awsJobExecutionsRolloutConfig = awsJobExecutionsRolloutConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @return Configuration for the rollout of OTA updates.
+     */
+
+    public AwsJobExecutionsRolloutConfig getAwsJobExecutionsRolloutConfig() {
+        return this.awsJobExecutionsRolloutConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @param awsJobExecutionsRolloutConfig
+     *        Configuration for the rollout of OTA updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
+        setAwsJobExecutionsRolloutConfig(awsJobExecutionsRolloutConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The files to be streamed by the OTA update.
      * </p>
      * 
@@ -498,6 +544,8 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getTargetSelection() != null)
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
+        if (getAwsJobExecutionsRolloutConfig() != null)
+            sb.append("AwsJobExecutionsRolloutConfig: ").append(getAwsJobExecutionsRolloutConfig()).append(",");
         if (getFiles() != null)
             sb.append("Files: ").append(getFiles()).append(",");
         if (getRoleArn() != null)
@@ -534,6 +582,11 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTargetSelection() != null && other.getTargetSelection().equals(this.getTargetSelection()) == false)
             return false;
+        if (other.getAwsJobExecutionsRolloutConfig() == null ^ this.getAwsJobExecutionsRolloutConfig() == null)
+            return false;
+        if (other.getAwsJobExecutionsRolloutConfig() != null
+                && other.getAwsJobExecutionsRolloutConfig().equals(this.getAwsJobExecutionsRolloutConfig()) == false)
+            return false;
         if (other.getFiles() == null ^ this.getFiles() == null)
             return false;
         if (other.getFiles() != null && other.getFiles().equals(this.getFiles()) == false)
@@ -558,6 +611,7 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
+        hashCode = prime * hashCode + ((getAwsJobExecutionsRolloutConfig() == null) ? 0 : getAwsJobExecutionsRolloutConfig().hashCode());
         hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getAdditionalParameters() == null) ? 0 : getAdditionalParameters().hashCode());

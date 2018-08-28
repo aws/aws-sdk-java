@@ -37,6 +37,8 @@ public class CreateOTAUpdateRequestMarshaller {
             .marshallLocationName("targets").build();
     private static final MarshallingInfo<String> TARGETSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSelection").build();
+    private static final MarshallingInfo<StructuredPojo> AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobExecutionsRolloutConfig").build();
     private static final MarshallingInfo<List> FILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("files").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class CreateOTAUpdateRequestMarshaller {
             protocolMarshaller.marshall(createOTAUpdateRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getTargetSelection(), TARGETSELECTION_BINDING);
+            protocolMarshaller.marshall(createOTAUpdateRequest.getAwsJobExecutionsRolloutConfig(), AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getFiles(), FILES_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getAdditionalParameters(), ADDITIONALPARAMETERS_BINDING);

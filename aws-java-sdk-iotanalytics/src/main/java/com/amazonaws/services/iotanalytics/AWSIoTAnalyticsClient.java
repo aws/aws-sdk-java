@@ -1377,6 +1377,69 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists information about data set contents that have been created.
+     * </p>
+     * 
+     * @param listDatasetContentsRequest
+     * @return Result of the ListDatasetContents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.ListDatasetContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDatasetContentsResult listDatasetContents(ListDatasetContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatasetContents(request);
+    }
+
+    @SdkInternalApi
+    final ListDatasetContentsResult executeListDatasetContents(ListDatasetContentsRequest listDatasetContentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDatasetContentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDatasetContentsRequest> request = null;
+        Response<ListDatasetContentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDatasetContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetContentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetContents");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDatasetContentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDatasetContentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about data sets.
      * </p>
      * 
