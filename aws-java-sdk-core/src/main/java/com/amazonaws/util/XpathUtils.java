@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.util;
+
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +22,6 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Date;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -28,7 +29,6 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
@@ -37,8 +37,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
-
-import com.amazonaws.internal.SdkThreadLocalsRegistry;
 
 /**
  * Utility methods for extracting data from XML documents using Xpath
@@ -88,8 +86,8 @@ public class XpathUtils {
     /**
      * Shared factory for creating XML Factory
      */
-    private static final ThreadLocal<XPathFactory> X_PATH_FACTORY = SdkThreadLocalsRegistry
-            .register(new ThreadLocal<XPathFactory>() {
+    private static final ThreadLocal<XPathFactory> X_PATH_FACTORY = SdkThreadLocalsRegistry.register(
+            new ThreadLocal<XPathFactory>() {
                 @Override
                 protected XPathFactory initialValue() {
                     return XPathFactory.newInstance();

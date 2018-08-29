@@ -45,8 +45,7 @@ public class DeleteTableVersionRequest extends com.amazonaws.AmazonWebServiceReq
     private String tableName;
     /**
      * <p>
-     * The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer.
-     * Each version is incremented by 1.
+     * The ID of the table version to be deleted.
      * </p>
      */
     private String versionId;
@@ -179,13 +178,11 @@ public class DeleteTableVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer.
-     * Each version is incremented by 1.
+     * The ID of the table version to be deleted.
      * </p>
      * 
      * @param versionId
-     *        The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an
-     *        integer. Each version is incremented by 1.
+     *        The ID of the table version to be deleted.
      */
 
     public void setVersionId(String versionId) {
@@ -194,12 +191,10 @@ public class DeleteTableVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer.
-     * Each version is incremented by 1.
+     * The ID of the table version to be deleted.
      * </p>
      * 
-     * @return The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an
-     *         integer. Each version is incremented by 1.
+     * @return The ID of the table version to be deleted.
      */
 
     public String getVersionId() {
@@ -208,13 +203,11 @@ public class DeleteTableVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer.
-     * Each version is incremented by 1.
+     * The ID of the table version to be deleted.
      * </p>
      * 
      * @param versionId
-     *        The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an
-     *        integer. Each version is incremented by 1.
+     *        The ID of the table version to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

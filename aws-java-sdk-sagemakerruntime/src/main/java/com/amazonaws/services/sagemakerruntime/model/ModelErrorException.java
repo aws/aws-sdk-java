@@ -37,7 +37,7 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
     private String originalMessage;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      */
     private String logStreamArn;
@@ -138,11 +138,11 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      * 
      * @param logStreamArn
-     *        Amazon Resource Name (ARN) of the log stream.
+     *        The Amazon Resource Name (ARN) of the log stream.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("LogStreamArn")
@@ -152,10 +152,10 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the log stream.
+     * @return The Amazon Resource Name (ARN) of the log stream.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("LogStreamArn")
@@ -165,11 +165,11 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      * 
      * @param logStreamArn
-     *        Amazon Resource Name (ARN) of the log stream.
+     *        The Amazon Resource Name (ARN) of the log stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

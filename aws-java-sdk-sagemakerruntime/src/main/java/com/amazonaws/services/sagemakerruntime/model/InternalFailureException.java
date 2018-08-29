@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Internal failure occurred.
+ * An internal failure occurred.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

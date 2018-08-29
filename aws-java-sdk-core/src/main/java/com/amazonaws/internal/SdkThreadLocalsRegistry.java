@@ -14,27 +14,26 @@
  */
 package com.amazonaws.internal;
 
+import com.amazonaws.annotation.SdkProtectedApi;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.amazonaws.annotation.SdkProtectedApi;
-
 @SdkProtectedApi
 public final class SdkThreadLocalsRegistry {
-    
+
     private static final List<ThreadLocal<?>> threadLocals = new ArrayList<ThreadLocal<?>>();
 
     private SdkThreadLocalsRegistry() {
         // prevent instantiation
     }
-    
+
     /**
      * Registers {@link ThreadLocal} objects in use by the AWS SDK so that their values can 
      * be removed via the {@link #remove()} method.
-     * 
+     *
      * <p>To avoid memory leaks and reduce contention this method should only be called when 
      * setting static final locations (for example finals in enums or static final fields).
-     * 
+     *
      * @param threadLocal ThreadLocal to register
      * @return the input ThreadLocal
      */
@@ -46,7 +45,7 @@ public final class SdkThreadLocalsRegistry {
     public synchronized static void remove() {
         for (ThreadLocal<?> t: threadLocals) {
             t.remove();
-        }        
+        }
     }
-    
+
 }

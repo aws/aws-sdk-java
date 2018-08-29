@@ -68,7 +68,13 @@ public class AbstractAWSMediaPackage implements AWSMediaPackage {
     }
 
     @Override
+    @Deprecated
     public RotateChannelCredentialsResult rotateChannelCredentials(RotateChannelCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RotateIngestEndpointCredentialsResult rotateIngestEndpointCredentials(RotateIngestEndpointCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

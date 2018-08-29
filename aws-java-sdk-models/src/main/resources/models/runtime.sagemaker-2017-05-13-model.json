@@ -26,13 +26,18 @@
         {"shape":"ValidationError"},
         {"shape":"ModelError"}
       ],
-      "documentation":"<p>After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html\">How It Works</a> </p> <p> Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax. </p>"
+      "documentation":"<p>After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html\">How It Works</a>. </p> <p>Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax. </p> <p>Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version 4. For information, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html\">Authenticating Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.</p> <note> <p>Endpoints are scoped to an individual account, and are not public. The URL does not contain the account ID, but Amazon SageMaker determines the account ID from the authentication token that is supplied by the caller.</p> </note>"
     }
   },
   "shapes":{
     "BodyBlob":{
       "type":"blob",
       "max":5242880,
+      "sensitive":true
+    },
+    "CustomAttributesHeader":{
+      "type":"string",
+      "max":1024,
       "sensitive":true
     },
     "EndpointName":{
@@ -49,10 +54,11 @@
       "members":{
         "Message":{"shape":"Message"}
       },
-      "documentation":"<p> Internal failure occurred. </p>",
+      "documentation":"<p> An internal failure occurred. </p>",
       "error":{"httpStatusCode":500},
       "exception":true,
-      "fault":true
+      "fault":true,
+      "synthetic":true
     },
     "InvokeEndpointInput":{
       "type":"structure",
@@ -69,7 +75,7 @@
         },
         "Body":{
           "shape":"BodyBlob",
-          "documentation":"<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p>"
+          "documentation":"<p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.</p>"
         },
         "ContentType":{
           "shape":"Header",
@@ -82,6 +88,12 @@
           "documentation":"<p>The desired MIME type of the inference in the response.</p>",
           "location":"header",
           "locationName":"Accept"
+        },
+        "CustomAttributes":{
+          "shape":"CustomAttributesHeader",
+          "documentation":"<p/>",
+          "location":"header",
+          "locationName":"X-Amzn-SageMaker-Custom-Attributes"
         }
       },
       "payload":"Body"
@@ -92,7 +104,7 @@
       "members":{
         "Body":{
           "shape":"BodyBlob",
-          "documentation":"<p>Includes the inference provided by the model.</p>"
+          "documentation":"<p>Includes the inference provided by the model.</p> <p>For information about the format of the response body, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html\">Common Data Formats—Inference</a>.</p>"
         },
         "ContentType":{
           "shape":"Header",
@@ -105,6 +117,12 @@
           "documentation":"<p>Identifies the production variant that was invoked.</p>",
           "location":"header",
           "locationName":"x-Amzn-Invoked-Production-Variant"
+        },
+        "CustomAttributes":{
+          "shape":"CustomAttributesHeader",
+          "documentation":"<p/>",
+          "location":"header",
+          "locationName":"X-Amzn-SageMaker-Custom-Attributes"
         }
       },
       "payload":"Body"
@@ -128,7 +146,7 @@
         },
         "LogStreamArn":{
           "shape":"LogStreamArn",
-          "documentation":"<p> Amazon Resource Name (ARN) of the log stream. </p>"
+          "documentation":"<p> The Amazon Resource Name (ARN) of the log stream. </p>"
         }
       },
       "documentation":"<p> Model (owned by the customer in the container) returned an error 500. </p>",
@@ -140,10 +158,11 @@
       "members":{
         "Message":{"shape":"Message"}
       },
-      "documentation":"<p> Service is unavailable. Try your call again. </p>",
+      "documentation":"<p> The service is unavailable. Try your call again. </p>",
       "error":{"httpStatusCode":503},
       "exception":true,
-      "fault":true
+      "fault":true,
+      "synthetic":true
     },
     "StatusCode":{"type":"integer"},
     "ValidationError":{
@@ -153,8 +172,9 @@
       },
       "documentation":"<p> Inspect your request and try again. </p>",
       "error":{"httpStatusCode":400},
-      "exception":true
+      "exception":true,
+      "synthetic":true
     }
   },
-  "documentation":"<p> Amazon SageMaker runtime API. </p>"
+  "documentation":"<p> The Amazon SageMaker runtime API. </p>"
 }

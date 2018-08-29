@@ -132,14 +132,31 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest request) {
 
         return rotateChannelCredentialsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateChannelCredentialsRequest, RotateChannelCredentialsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
+            RotateIngestEndpointCredentialsRequest request) {
+
+        return rotateIngestEndpointCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
+            RotateIngestEndpointCredentialsRequest request,
+            com.amazonaws.handlers.AsyncHandler<RotateIngestEndpointCredentialsRequest, RotateIngestEndpointCredentialsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

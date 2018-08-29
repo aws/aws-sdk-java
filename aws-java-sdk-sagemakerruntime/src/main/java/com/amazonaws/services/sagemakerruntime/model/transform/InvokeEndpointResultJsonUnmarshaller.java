@@ -40,6 +40,10 @@ public class InvokeEndpointResultJsonUnmarshaller implements Unmarshaller<Invoke
                 context.setCurrentHeader("x-Amzn-Invoked-Production-Variant");
                 invokeEndpointResult.setInvokedProductionVariant(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("X-Amzn-SageMaker-Custom-Attributes") != null) {
+                context.setCurrentHeader("X-Amzn-SageMaker-Custom-Attributes");
+                invokeEndpointResult.setCustomAttributes(context.getUnmarshaller(String.class).unmarshall(context));
+            }
         }
 
         java.io.InputStream is = context.getHttpResponse().getContent();

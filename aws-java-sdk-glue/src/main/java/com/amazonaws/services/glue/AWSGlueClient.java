@@ -129,9 +129,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withModeledClass(
                                     com.amazonaws.services.glue.model.EntityNotFoundException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConditionCheckFailureException").withModeledClass(
-                                    com.amazonaws.services.glue.model.ConditionCheckFailureException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("GlueEncryptionException").withModeledClass(
                                     com.amazonaws.services.glue.model.GlueEncryptionException.class))
                     .addErrorMetadata(
@@ -1844,68 +1841,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified policy.
-     * </p>
-     * 
-     * @param deleteResourcePolicyRequest
-     * @return Result of the DeleteResourcePolicy operation returned by the service.
-     * @throws EntityNotFoundException
-     *         A specified entity does not exist
-     * @throws InternalServiceException
-     *         An internal service error occurred.
-     * @throws OperationTimeoutException
-     *         The operation timed out.
-     * @throws InvalidInputException
-     *         The input provided was not valid.
-     * @throws ConditionCheckFailureException
-     * @sample AWSGlue.DeleteResourcePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteResourcePolicy(request);
-    }
-
-    @SdkInternalApi
-    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteResourcePolicyRequest> request = null;
-        Response<DeleteResourcePolicyResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            URI cachedEndpoint = null;
-
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
      * Deletes a specified security configuration.
      * </p>
      * 
@@ -3481,67 +3416,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieves a specified resource policy.
-     * </p>
-     * 
-     * @param getResourcePolicyRequest
-     * @return Result of the GetResourcePolicy operation returned by the service.
-     * @throws EntityNotFoundException
-     *         A specified entity does not exist
-     * @throws InternalServiceException
-     *         An internal service error occurred.
-     * @throws OperationTimeoutException
-     *         The operation timed out.
-     * @throws InvalidInputException
-     *         The input provided was not valid.
-     * @sample AWSGlue.GetResourcePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetResourcePolicy(request);
-    }
-
-    @SdkInternalApi
-    final GetResourcePolicyResult executeGetResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getResourcePolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetResourcePolicyRequest> request = null;
-        Response<GetResourcePolicyResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            URI cachedEndpoint = null;
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
      * Retrieves a specified security configuration.
      * </p>
      * 
@@ -4279,68 +4153,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             HttpResponseHandler<AmazonWebServiceResponse<PutDataCatalogEncryptionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutDataCatalogEncryptionSettingsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Sets the Data Catalog resource policy for access control.
-     * </p>
-     * 
-     * @param putResourcePolicyRequest
-     * @return Result of the PutResourcePolicy operation returned by the service.
-     * @throws EntityNotFoundException
-     *         A specified entity does not exist
-     * @throws InternalServiceException
-     *         An internal service error occurred.
-     * @throws OperationTimeoutException
-     *         The operation timed out.
-     * @throws InvalidInputException
-     *         The input provided was not valid.
-     * @throws ConditionCheckFailureException
-     * @sample AWSGlue.PutResourcePolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutResourcePolicy" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
-        request = beforeClientExecution(request);
-        return executePutResourcePolicy(request);
-    }
-
-    @SdkInternalApi
-    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<PutResourcePolicyRequest> request = null;
-        Response<PutResourcePolicyResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            URI cachedEndpoint = null;
-
-            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class IngestEndpointMarshaller {
 
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("password").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +52,7 @@ public class IngestEndpointMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(ingestEndpoint.getId(), ID_BINDING);
             protocolMarshaller.marshall(ingestEndpoint.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(ingestEndpoint.getUrl(), URL_BINDING);
             protocolMarshaller.marshall(ingestEndpoint.getUsername(), USERNAME_BINDING);

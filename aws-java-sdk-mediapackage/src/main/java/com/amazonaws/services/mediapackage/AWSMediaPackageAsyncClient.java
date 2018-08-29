@@ -324,12 +324,14 @@ public class AWSMediaPackageAsyncClient extends AWSMediaPackageClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest request) {
 
         return rotateChannelCredentialsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(final RotateChannelCredentialsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RotateChannelCredentialsRequest, RotateChannelCredentialsResult> asyncHandler) {
         final RotateChannelCredentialsRequest finalRequest = beforeClientExecution(request);
@@ -341,6 +343,41 @@ public class AWSMediaPackageAsyncClient extends AWSMediaPackageClient implements
 
                 try {
                     result = executeRotateChannelCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
+            RotateIngestEndpointCredentialsRequest request) {
+
+        return rotateIngestEndpointCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
+            final RotateIngestEndpointCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RotateIngestEndpointCredentialsRequest, RotateIngestEndpointCredentialsResult> asyncHandler) {
+        final RotateIngestEndpointCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RotateIngestEndpointCredentialsResult>() {
+            @Override
+            public RotateIngestEndpointCredentialsResult call() throws Exception {
+                RotateIngestEndpointCredentialsResult result = null;
+
+                try {
+                    result = executeRotateIngestEndpointCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

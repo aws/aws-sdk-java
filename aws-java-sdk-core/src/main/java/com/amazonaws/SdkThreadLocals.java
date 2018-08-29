@@ -14,12 +14,11 @@
  */
 package com.amazonaws;
 
-import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.internal.SdkThreadLocalsRegistry;
 
 /**
  * Utility class to manage {@link ThreadLocal} storage within the AWS SDK.
- * 
+ *
  * <p>
  * {@code ThreadLocal} removal is especially relevant when the AWS SDK is used
  * in an application server that manages a pool of threads across many

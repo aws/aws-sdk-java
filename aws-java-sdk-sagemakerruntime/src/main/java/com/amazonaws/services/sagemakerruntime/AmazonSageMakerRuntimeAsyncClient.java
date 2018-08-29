@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon SageMaker runtime API.
+ * The Amazon SageMaker runtime API.
  * </p>
  */
 @ThreadSafe

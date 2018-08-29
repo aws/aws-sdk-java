@@ -251,7 +251,8 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
             com.amazonaws.handlers.AsyncHandler<ListOriginEndpointsRequest, ListOriginEndpointsResult> asyncHandler);
 
     /**
-     * Changes the Channel ingest username and password.
+     * Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use
+     * RotateIngestEndpointCredentials instead
      * 
      * @param rotateChannelCredentialsRequest
      * @return A Java Future containing the result of the RotateChannelCredentials operation returned by the service.
@@ -259,10 +260,12 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest rotateChannelCredentialsRequest);
 
     /**
-     * Changes the Channel ingest username and password.
+     * Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use
+     * RotateIngestEndpointCredentials instead
      * 
      * @param rotateChannelCredentialsRequest
      * @param asyncHandler
@@ -274,8 +277,40 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest rotateChannelCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<RotateChannelCredentialsRequest, RotateChannelCredentialsResult> asyncHandler);
+
+    /**
+     * Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id.
+     * 
+     * @param rotateIngestEndpointCredentialsRequest
+     * @return A Java Future containing the result of the RotateIngestEndpointCredentials operation returned by the
+     *         service.
+     * @sample AWSMediaPackageAsync.RotateIngestEndpointCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
+            RotateIngestEndpointCredentialsRequest rotateIngestEndpointCredentialsRequest);
+
+    /**
+     * Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id.
+     * 
+     * @param rotateIngestEndpointCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RotateIngestEndpointCredentials operation returned by the
+     *         service.
+     * @sample AWSMediaPackageAsyncHandler.RotateIngestEndpointCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RotateIngestEndpointCredentialsResult> rotateIngestEndpointCredentialsAsync(
+            RotateIngestEndpointCredentialsRequest rotateIngestEndpointCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<RotateIngestEndpointCredentialsRequest, RotateIngestEndpointCredentialsResult> asyncHandler);
 
     /**
      * Updates an existing Channel.

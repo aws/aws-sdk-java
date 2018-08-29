@@ -46,8 +46,7 @@ import java.util.TreeMap;
 @ThreadSafe
 public class SignatureChecker {
 
-    private static final ThreadLocal<Signature> SIG_CHECKER = SdkThreadLocalsRegistry.register(
-            new ThreadLocal<Signature>() {
+    private static final ThreadLocal<Signature> SIG_CHECKER = SdkThreadLocalsRegistry.register(new ThreadLocal<Signature>() {
         @Override
         protected Signature initialValue() {
             try {

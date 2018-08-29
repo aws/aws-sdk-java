@@ -97,7 +97,7 @@ public final class ${metadata.syncClientBuilderClassName}
     @Override
     protected ${metadata.syncInterface} build(AwsSyncClientParams params) {
         <#if endpointOperation?has_content>
-        if (endpointDiscoveryEnabled()) {
+        if (endpointDiscoveryEnabled() && getEndpoint() == null) {
             return new ${metadata.syncClient}(params, true);
         }
         </#if>

@@ -17,9 +17,8 @@ package com.amazonaws;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import org.junit.Test;
-
 import com.amazonaws.internal.SdkThreadLocalsRegistry;
+import org.junit.Test;
 
 public class SdkThreadLocalsTest {
 
@@ -32,7 +31,7 @@ public class SdkThreadLocalsTest {
         SdkThreadLocals.remove();
         assertNull(t.get());
     }
-    
+
     @Test
     public void testMultipleThreadLocalsRemoved() {
         ThreadLocal<Integer> t1 = new ThreadLocal<Integer>();

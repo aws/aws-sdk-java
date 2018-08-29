@@ -647,7 +647,8 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
-     * Changes the Channel ingest username and password.
+     * Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use
+     * RotateIngestEndpointCredentials instead
      * 
      * @param rotateChannelCredentialsRequest
      * @return Result of the RotateChannelCredentials operation returned by the service.
@@ -668,6 +669,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public RotateChannelCredentialsResult rotateChannelCredentials(RotateChannelCredentialsRequest request) {
         request = beforeClientExecution(request);
         return executeRotateChannelCredentials(request);
@@ -701,6 +703,72 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<RotateChannelCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RotateChannelCredentialsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id.
+     * 
+     * @param rotateIngestEndpointCredentialsRequest
+     * @return Result of the RotateIngestEndpointCredentials operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.RotateIngestEndpointCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RotateIngestEndpointCredentialsResult rotateIngestEndpointCredentials(RotateIngestEndpointCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRotateIngestEndpointCredentials(request);
+    }
+
+    @SdkInternalApi
+    final RotateIngestEndpointCredentialsResult executeRotateIngestEndpointCredentials(
+            RotateIngestEndpointCredentialsRequest rotateIngestEndpointCredentialsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rotateIngestEndpointCredentialsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RotateIngestEndpointCredentialsRequest> request = null;
+        Response<RotateIngestEndpointCredentialsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RotateIngestEndpointCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rotateIngestEndpointCredentialsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateIngestEndpointCredentials");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<RotateIngestEndpointCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RotateIngestEndpointCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

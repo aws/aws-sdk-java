@@ -48,6 +48,10 @@ public class IngestEndpointJsonUnmarshaller implements Unmarshaller<IngestEndpoi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    ingestEndpoint.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("password", targetDepth)) {
                     context.nextToken();
                     ingestEndpoint.setPassword(context.getUnmarshaller(String.class).unmarshall(context));

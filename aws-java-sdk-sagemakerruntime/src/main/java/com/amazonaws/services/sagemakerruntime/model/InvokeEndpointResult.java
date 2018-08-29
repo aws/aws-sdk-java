@@ -27,6 +27,10 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Includes the inference provided by the model.
      * </p>
+     * <p>
+     * For information about the format of the response body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * </p>
      */
     private java.nio.ByteBuffer body;
     /**
@@ -41,10 +45,16 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String invokedProductionVariant;
+    /** <p/> */
+    private String customAttributes;
 
     /**
      * <p>
      * Includes the inference provided by the model.
+     * </p>
+     * <p>
+     * For information about the format of the response body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -58,7 +68,11 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param body
-     *        Includes the inference provided by the model.
+     *        Includes the inference provided by the model.</p>
+     *        <p>
+     *        For information about the format of the response body, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        Formats—Inference</a>.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -70,6 +84,10 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * Includes the inference provided by the model.
      * </p>
      * <p>
+     * For information about the format of the response body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
      * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
@@ -77,7 +95,11 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * {@code position}.
      * </p>
      * 
-     * @return Includes the inference provided by the model.
+     * @return Includes the inference provided by the model.</p>
+     *         <p>
+     *         For information about the format of the response body, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *         Formats—Inference</a>.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -87,6 +109,10 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Includes the inference provided by the model.
+     * </p>
+     * <p>
+     * For information about the format of the response body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -100,7 +126,11 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param body
-     *        Includes the inference provided by the model.
+     *        Includes the inference provided by the model.</p>
+     *        <p>
+     *        For information about the format of the response body, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        Formats—Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,6 +220,38 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p/>
+     * 
+     * @param customAttributes
+     */
+
+    public void setCustomAttributes(String customAttributes) {
+        this.customAttributes = customAttributes;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getCustomAttributes() {
+        return this.customAttributes;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param customAttributes
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointResult withCustomAttributes(String customAttributes) {
+        setCustomAttributes(customAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -205,7 +267,9 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getInvokedProductionVariant() != null)
-            sb.append("InvokedProductionVariant: ").append(getInvokedProductionVariant());
+            sb.append("InvokedProductionVariant: ").append(getInvokedProductionVariant()).append(",");
+        if (getCustomAttributes() != null)
+            sb.append("CustomAttributes: ").append(getCustomAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +296,10 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getInvokedProductionVariant() != null && other.getInvokedProductionVariant().equals(this.getInvokedProductionVariant()) == false)
             return false;
+        if (other.getCustomAttributes() == null ^ this.getCustomAttributes() == null)
+            return false;
+        if (other.getCustomAttributes() != null && other.getCustomAttributes().equals(this.getCustomAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +311,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getInvokedProductionVariant() == null) ? 0 : getInvokedProductionVariant().hashCode());
+        hashCode = prime * hashCode + ((getCustomAttributes() == null) ? 0 : getCustomAttributes().hashCode());
         return hashCode;
     }
 

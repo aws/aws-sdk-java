@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Amazon SageMaker runtime API.
+ * The Amazon SageMaker runtime API.
  * </p>
  */
 package com.amazonaws.services.sagemakerruntime;
