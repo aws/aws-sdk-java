@@ -81,6 +81,9 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottledException").withModeledClass(
                                     com.amazonaws.services.xray.model.ThrottledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RuleLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.xray.model.RuleLimitExceededException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.xray.model.AWSXRayException.class));
 
     /**
@@ -340,6 +343,126 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
+     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
+     * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
+     * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
+     * back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule
+     * contains a trace quota that the service can use instead of borrowing from the reservoir.
+     * </p>
+     * 
+     * @param createSamplingRuleRequest
+     * @return Result of the CreateSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws RuleLimitExceededException
+     *         You have reached the maximum number of sampling rules.
+     * @sample AWSXRay.CreateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSamplingRuleResult createSamplingRule(CreateSamplingRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSamplingRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateSamplingRuleResult executeCreateSamplingRule(CreateSamplingRuleRequest createSamplingRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSamplingRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSamplingRuleRequest> request = null;
+        Response<CreateSamplingRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSamplingRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSamplingRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSamplingRule");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSamplingRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSamplingRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a sampling rule.
+     * </p>
+     * 
+     * @param deleteSamplingRuleRequest
+     * @return Result of the DeleteSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.DeleteSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSamplingRuleResult deleteSamplingRule(DeleteSamplingRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSamplingRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSamplingRuleResult executeDeleteSamplingRule(DeleteSamplingRuleRequest deleteSamplingRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSamplingRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSamplingRuleRequest> request = null;
+        Response<DeleteSamplingRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSamplingRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSamplingRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSamplingRule");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSamplingRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSamplingRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the current encryption configuration for X-Ray data.
      * </p>
      * 
@@ -385,6 +508,179 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetEncryptionConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEncryptionConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingRulesRequest
+     * @return Result of the GetSamplingRules operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSamplingRulesResult getSamplingRules(GetSamplingRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSamplingRules(request);
+    }
+
+    @SdkInternalApi
+    final GetSamplingRulesResult executeGetSamplingRules(GetSamplingRulesRequest getSamplingRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSamplingRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSamplingRulesRequest> request = null;
+        Response<GetSamplingRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSamplingRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSamplingRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSamplingRules");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSamplingRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSamplingRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about recent sampling results for all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingStatisticSummariesRequest
+     * @return Result of the GetSamplingStatisticSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingStatisticSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSamplingStatisticSummariesResult getSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSamplingStatisticSummaries(request);
+    }
+
+    @SdkInternalApi
+    final GetSamplingStatisticSummariesResult executeGetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest getSamplingStatisticSummariesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSamplingStatisticSummariesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSamplingStatisticSummariesRequest> request = null;
+        Response<GetSamplingStatisticSummariesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSamplingStatisticSummariesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSamplingStatisticSummariesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSamplingStatisticSummaries");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSamplingStatisticSummariesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSamplingStatisticSummariesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests a sampling quota for rules that the service is using to sample requests.
+     * </p>
+     * 
+     * @param getSamplingTargetsRequest
+     * @return Result of the GetSamplingTargets operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSamplingTargetsResult getSamplingTargets(GetSamplingTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSamplingTargets(request);
+    }
+
+    @SdkInternalApi
+    final GetSamplingTargetsResult executeGetSamplingTargets(GetSamplingTargetsRequest getSamplingTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSamplingTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSamplingTargetsRequest> request = null;
+        Response<GetSamplingTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSamplingTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSamplingTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSamplingTargets");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSamplingTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSamplingTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -825,6 +1121,63 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
             HttpResponseHandler<AmazonWebServiceResponse<PutTraceSegmentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutTraceSegmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a sampling rule's configuration.
+     * </p>
+     * 
+     * @param updateSamplingRuleRequest
+     * @return Result of the UpdateSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.UpdateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateSamplingRuleResult updateSamplingRule(UpdateSamplingRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSamplingRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSamplingRuleResult executeUpdateSamplingRule(UpdateSamplingRuleRequest updateSamplingRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSamplingRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSamplingRuleRequest> request = null;
+        Response<UpdateSamplingRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSamplingRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSamplingRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSamplingRule");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSamplingRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSamplingRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

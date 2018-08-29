@@ -112,6 +112,46 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
+     * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
+     * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
+     * back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule
+     * contains a trace quota that the service can use instead of borrowing from the reservoir.
+     * </p>
+     * 
+     * @param createSamplingRuleRequest
+     * @return Result of the CreateSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws RuleLimitExceededException
+     *         You have reached the maximum number of sampling rules.
+     * @sample AWSXRay.CreateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSamplingRuleResult createSamplingRule(CreateSamplingRuleRequest createSamplingRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a sampling rule.
+     * </p>
+     * 
+     * @param deleteSamplingRuleRequest
+     * @return Result of the DeleteSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.DeleteSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSamplingRuleResult deleteSamplingRule(DeleteSamplingRuleRequest deleteSamplingRuleRequest);
+
+    /**
+     * <p>
      * Retrieves the current encryption configuration for X-Ray data.
      * </p>
      * 
@@ -126,6 +166,57 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest getEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingRulesRequest
+     * @return Result of the GetSamplingRules operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSamplingRulesResult getSamplingRules(GetSamplingRulesRequest getSamplingRulesRequest);
+
+    /**
+     * <p>
+     * Retrieves information about recent sampling results for all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingStatisticSummariesRequest
+     * @return Result of the GetSamplingStatisticSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingStatisticSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSamplingStatisticSummariesResult getSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest getSamplingStatisticSummariesRequest);
+
+    /**
+     * <p>
+     * Requests a sampling quota for rules that the service is using to sample requests.
+     * </p>
+     * 
+     * @param getSamplingTargetsRequest
+     * @return Result of the GetSamplingTargets operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSamplingTargetsResult getSamplingTargets(GetSamplingTargetsRequest getSamplingTargetsRequest);
 
     /**
      * <p>
@@ -326,6 +417,23 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest);
+
+    /**
+     * <p>
+     * Modifies a sampling rule's configuration.
+     * </p>
+     * 
+     * @param updateSamplingRuleRequest
+     * @return Result of the UpdateSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.UpdateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSamplingRuleResult updateSamplingRule(UpdateSamplingRuleRequest updateSamplingRuleRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -36,8 +36,8 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
     private String keyId;
     /**
      * <p>
-     * The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the status can
-     * be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new key.
+     * The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of
+     * the new and old settings.
      * </p>
      */
     private String status;
@@ -91,14 +91,13 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the status can
-     * be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new key.
+     * The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of
+     * the new and old settings.
      * </p>
      * 
      * @param status
-     *        The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the
-     *        status can be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new
-     *        key.
+     *        The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a
+     *        combination of the new and old settings.
      * @see EncryptionStatus
      */
 
@@ -108,13 +107,12 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the status can
-     * be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new key.
+     * The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of
+     * the new and old settings.
      * </p>
      * 
-     * @return The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the
-     *         status can be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new
-     *         key.
+     * @return The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a
+     *         combination of the new and old settings.
      * @see EncryptionStatus
      */
 
@@ -124,14 +122,13 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the status can
-     * be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new key.
+     * The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of
+     * the new and old settings.
      * </p>
      * 
      * @param status
-     *        The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the
-     *        status can be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new
-     *        key.
+     *        The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a
+     *        combination of the new and old settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionStatus
      */
@@ -143,14 +140,13 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the status can
-     * be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new key.
+     * The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of
+     * the new and old settings.
      * </p>
      * 
      * @param status
-     *        The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the
-     *        status can be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new
-     *        key.
+     *        The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a
+     *        combination of the new and old settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionStatus
      */

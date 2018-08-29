@@ -172,14 +172,8 @@ public final class IdleConnectionReaper extends Thread {
     @SuppressWarnings("unchecked")
     @Override
     public void run() {
-        while (true) {
-            if (shuttingDown) {
-                LOG.debug("Shutting down reaper thread.");
-                return;
-            }
+        while (!shuttingDown) {
             try {
-                Thread.sleep(PERIOD_MILLISECONDS);
-
                 for (Map.Entry<HttpClientConnectionManager, Long> entry : connectionManagers.entrySet()) {
                     // When we release connections, the connection manager leaves them
                     // open so they can be reused.  We want to close out any idle
@@ -190,9 +184,13 @@ public final class IdleConnectionReaper extends Thread {
                         LOG.warn("Unable to close idle connections", t);
                     }
                 }
+
+                Thread.sleep(PERIOD_MILLISECONDS);
             } catch (Throwable t) {
                 LOG.debug("Reaper thread: ", t);
             }
         }
+
+        LOG.debug("Shutting down reaper thread.");
     }
 }

@@ -43,7 +43,32 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public CreateSamplingRuleResult createSamplingRule(CreateSamplingRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSamplingRuleResult deleteSamplingRule(DeleteSamplingRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSamplingRulesResult getSamplingRules(GetSamplingRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSamplingStatisticSummariesResult getSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSamplingTargetsResult getSamplingTargets(GetSamplingTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +99,11 @@ public class AbstractAWSXRay implements AWSXRay {
 
     @Override
     public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSamplingRuleResult updateSamplingRule(UpdateSamplingRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

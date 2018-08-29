@@ -68,6 +68,76 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
+     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
+     * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
+     * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
+     * back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule
+     * contains a trace quota that the service can use instead of borrowing from the reservoir.
+     * </p>
+     * 
+     * @param createSamplingRuleRequest
+     * @return A Java Future containing the result of the CreateSamplingRule operation returned by the service.
+     * @sample AWSXRayAsync.CreateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSamplingRuleResult> createSamplingRuleAsync(CreateSamplingRuleRequest createSamplingRuleRequest);
+
+    /**
+     * <p>
+     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
+     * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
+     * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
+     * back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule
+     * contains a trace quota that the service can use instead of borrowing from the reservoir.
+     * </p>
+     * 
+     * @param createSamplingRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSamplingRule operation returned by the service.
+     * @sample AWSXRayAsyncHandler.CreateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSamplingRuleResult> createSamplingRuleAsync(CreateSamplingRuleRequest createSamplingRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSamplingRuleRequest, CreateSamplingRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a sampling rule.
+     * </p>
+     * 
+     * @param deleteSamplingRuleRequest
+     * @return A Java Future containing the result of the DeleteSamplingRule operation returned by the service.
+     * @sample AWSXRayAsync.DeleteSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSamplingRuleResult> deleteSamplingRuleAsync(DeleteSamplingRuleRequest deleteSamplingRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a sampling rule.
+     * </p>
+     * 
+     * @param deleteSamplingRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSamplingRule operation returned by the service.
+     * @sample AWSXRayAsyncHandler.DeleteSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSamplingRuleResult> deleteSamplingRuleAsync(DeleteSamplingRuleRequest deleteSamplingRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSamplingRuleRequest, DeleteSamplingRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the current encryption configuration for X-Ray data.
      * </p>
      * 
@@ -96,6 +166,103 @@ public interface AWSXRayAsync extends AWSXRay {
      */
     java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest getEncryptionConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigRequest, GetEncryptionConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingRulesRequest
+     * @return A Java Future containing the result of the GetSamplingRules operation returned by the service.
+     * @sample AWSXRayAsync.GetSamplingRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(GetSamplingRulesRequest getSamplingRulesRequest);
+
+    /**
+     * <p>
+     * Retrieves all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSamplingRules operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetSamplingRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(GetSamplingRulesRequest getSamplingRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSamplingRulesRequest, GetSamplingRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about recent sampling results for all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingStatisticSummariesRequest
+     * @return A Java Future containing the result of the GetSamplingStatisticSummaries operation returned by the
+     *         service.
+     * @sample AWSXRayAsync.GetSamplingStatisticSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSamplingStatisticSummariesResult> getSamplingStatisticSummariesAsync(
+            GetSamplingStatisticSummariesRequest getSamplingStatisticSummariesRequest);
+
+    /**
+     * <p>
+     * Retrieves information about recent sampling results for all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingStatisticSummariesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSamplingStatisticSummaries operation returned by the
+     *         service.
+     * @sample AWSXRayAsyncHandler.GetSamplingStatisticSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSamplingStatisticSummariesResult> getSamplingStatisticSummariesAsync(
+            GetSamplingStatisticSummariesRequest getSamplingStatisticSummariesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSamplingStatisticSummariesRequest, GetSamplingStatisticSummariesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests a sampling quota for rules that the service is using to sample requests.
+     * </p>
+     * 
+     * @param getSamplingTargetsRequest
+     * @return A Java Future containing the result of the GetSamplingTargets operation returned by the service.
+     * @sample AWSXRayAsync.GetSamplingTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSamplingTargetsResult> getSamplingTargetsAsync(GetSamplingTargetsRequest getSamplingTargetsRequest);
+
+    /**
+     * <p>
+     * Requests a sampling quota for rules that the service is using to sample requests.
+     * </p>
+     * 
+     * @param getSamplingTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSamplingTargets operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetSamplingTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSamplingTargetsResult> getSamplingTargetsAsync(GetSamplingTargetsRequest getSamplingTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSamplingTargetsRequest, GetSamplingTargetsResult> asyncHandler);
 
     /**
      * <p>
@@ -478,5 +645,36 @@ public interface AWSXRayAsync extends AWSXRay {
      */
     java.util.concurrent.Future<PutTraceSegmentsResult> putTraceSegmentsAsync(PutTraceSegmentsRequest putTraceSegmentsRequest,
             com.amazonaws.handlers.AsyncHandler<PutTraceSegmentsRequest, PutTraceSegmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a sampling rule's configuration.
+     * </p>
+     * 
+     * @param updateSamplingRuleRequest
+     * @return A Java Future containing the result of the UpdateSamplingRule operation returned by the service.
+     * @sample AWSXRayAsync.UpdateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSamplingRuleResult> updateSamplingRuleAsync(UpdateSamplingRuleRequest updateSamplingRuleRequest);
+
+    /**
+     * <p>
+     * Modifies a sampling rule's configuration.
+     * </p>
+     * 
+     * @param updateSamplingRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSamplingRule operation returned by the service.
+     * @sample AWSXRayAsyncHandler.UpdateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSamplingRuleResult> updateSamplingRuleAsync(UpdateSamplingRuleRequest updateSamplingRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSamplingRuleRequest, UpdateSamplingRuleResult> asyncHandler);
 
 }

@@ -36,7 +36,8 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
     private String tableName;
     /**
      * <p>
-     * The ID value of the version in question.
+     * The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each
+     * version is incremented by 1.
      * </p>
      */
     private String versionId;
@@ -89,11 +90,13 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID value of the version in question.
+     * The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each
+     * version is incremented by 1.
      * </p>
      * 
      * @param versionId
-     *        The ID value of the version in question.
+     *        The ID value of the version in question. A <code>VersionID</code> is a string representation of an
+     *        integer. Each version is incremented by 1.
      */
 
     public void setVersionId(String versionId) {
@@ -102,10 +105,12 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID value of the version in question.
+     * The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each
+     * version is incremented by 1.
      * </p>
      * 
-     * @return The ID value of the version in question.
+     * @return The ID value of the version in question. A <code>VersionID</code> is a string representation of an
+     *         integer. Each version is incremented by 1.
      */
 
     public String getVersionId() {
@@ -114,11 +119,13 @@ public class TableVersionError implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID value of the version in question.
+     * The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each
+     * version is incremented by 1.
      * </p>
      * 
      * @param versionId
-     *        The ID value of the version in question.
+     *        The ID value of the version in question. A <code>VersionID</code> is a string representation of an
+     *        integer. Each version is incremented by 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

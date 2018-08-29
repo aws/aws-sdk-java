@@ -1,3 +1,12 @@
+# __1.11.398__ __2018-08-28__
+## __AWS Glue__
+  - ### Features
+    - New Glue APIs for creating, updating, reading and deleting Data Catalog resource-based policies.
+
+## __AWS X-Ray__
+  - ### Features
+    - Support for new APIs that enable management of sampling rules.
+
 # __1.11.397__ __2018-08-27__
 ## __AWS IoT__
   - ### Features

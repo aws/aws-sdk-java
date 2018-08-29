@@ -5,6 +5,7 @@
     "endpointPrefix":"xray",
     "protocol":"rest-json",
     "serviceFullName":"AWS X-Ray",
+    "serviceId":"XRay",
     "signatureVersion":"v4",
     "uid":"xray-2016-04-12"
   },
@@ -23,6 +24,35 @@
       ],
       "documentation":"<p>Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use <code>GetTraceSummaries</code> to get a list of trace IDs.</p>"
     },
+    "CreateSamplingRule":{
+      "name":"CreateSamplingRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/CreateSamplingRule"
+      },
+      "input":{"shape":"CreateSamplingRuleRequest"},
+      "output":{"shape":"CreateSamplingRuleResult"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottledException"},
+        {"shape":"RuleLimitExceededException"}
+      ],
+      "documentation":"<p>Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule contains a trace quota that the service can use instead of borrowing from the reservoir.</p>"
+    },
+    "DeleteSamplingRule":{
+      "name":"DeleteSamplingRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/DeleteSamplingRule"
+      },
+      "input":{"shape":"DeleteSamplingRuleRequest"},
+      "output":{"shape":"DeleteSamplingRuleResult"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottledException"}
+      ],
+      "documentation":"<p>Deletes a sampling rule.</p>"
+    },
     "GetEncryptionConfig":{
       "name":"GetEncryptionConfig",
       "http":{
@@ -36,6 +66,48 @@
         {"shape":"ThrottledException"}
       ],
       "documentation":"<p>Retrieves the current encryption configuration for X-Ray data.</p>"
+    },
+    "GetSamplingRules":{
+      "name":"GetSamplingRules",
+      "http":{
+        "method":"POST",
+        "requestUri":"/GetSamplingRules"
+      },
+      "input":{"shape":"GetSamplingRulesRequest"},
+      "output":{"shape":"GetSamplingRulesResult"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottledException"}
+      ],
+      "documentation":"<p>Retrieves all sampling rules.</p>"
+    },
+    "GetSamplingStatisticSummaries":{
+      "name":"GetSamplingStatisticSummaries",
+      "http":{
+        "method":"POST",
+        "requestUri":"/SamplingStatisticSummaries"
+      },
+      "input":{"shape":"GetSamplingStatisticSummariesRequest"},
+      "output":{"shape":"GetSamplingStatisticSummariesResult"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottledException"}
+      ],
+      "documentation":"<p>Retrieves information about recent sampling results for all sampling rules.</p>"
+    },
+    "GetSamplingTargets":{
+      "name":"GetSamplingTargets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/SamplingTargets"
+      },
+      "input":{"shape":"GetSamplingTargetsRequest"},
+      "output":{"shape":"GetSamplingTargetsResult"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottledException"}
+      ],
+      "documentation":"<p>Requests a sampling quota for rules that the service is using to sample requests. </p>"
     },
     "GetServiceGraph":{
       "name":"GetServiceGraph",
@@ -120,6 +192,20 @@
         {"shape":"ThrottledException"}
       ],
       "documentation":"<p>Uploads segment documents to AWS X-Ray. The X-Ray SDK generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document can be a completed segment, an in-progress segment, or an array of subsegments.</p> <p>Segments must include the following fields. For the full segment document schema, see <a href=\"https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html\">AWS X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.</p> <p class=\"title\"> <b>Required Segment Document Fields</b> </p> <ul> <li> <p> <code>name</code> - The name of the service that handled the request.</p> </li> <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among segments in the same trace, in 16 hexadecimal digits.</p> </li> <li> <p> <code>trace_id</code> - A unique identifier that connects all segments and subsegments originating from a single client request.</p> </li> <li> <p> <code>start_time</code> - Time the segment or subsegment was created, in floating point seconds in epoch time, accurate to milliseconds. For example, <code>1480615200.010</code> or <code>1.480615200010E9</code>.</p> </li> <li> <p> <code>end_time</code> - Time the segment or subsegment was closed. For example, <code>1480615200.090</code> or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or <code>in_progress</code>.</p> </li> <li> <p> <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code> to record that a segment has been started, but is not complete. Send an in progress segment when your application receives a request that will take a long time to serve, to trace the fact that the request was received. When the response is sent, send the complete segment to overwrite the in-progress segment.</p> </li> </ul> <p>A <code>trace_id</code> consists of three numbers separated by hyphens. For example, 1-58406520-a006649127e371903a2de979. This includes:</p> <p class=\"title\"> <b>Trace ID Format</b> </p> <ul> <li> <p>The version number, i.e. <code>1</code>.</p> </li> <li> <p>The time of the original request, in Unix epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.</p> </li> </ul>"
+    },
+    "UpdateSamplingRule":{
+      "name":"UpdateSamplingRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/UpdateSamplingRule"
+      },
+      "input":{"shape":"UpdateSamplingRuleRequest"},
+      "output":{"shape":"UpdateSamplingRuleResult"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottledException"}
+      ],
+      "documentation":"<p>Modifies a sampling rule's configuration.</p>"
     }
   },
   "shapes":{
@@ -172,6 +258,22 @@
       "type":"map",
       "key":{"shape":"AnnotationKey"},
       "value":{"shape":"ValuesWithServiceIds"}
+    },
+    "AttributeKey":{
+      "type":"string",
+      "max":32,
+      "min":1
+    },
+    "AttributeMap":{
+      "type":"map",
+      "key":{"shape":"AttributeKey"},
+      "value":{"shape":"AttributeValue"},
+      "max":5
+    },
+    "AttributeValue":{
+      "type":"string",
+      "max":32,
+      "min":1
     },
     "BackendConnectionErrors":{
       "type":"structure",
@@ -231,6 +333,56 @@
         "NextToken":{
           "shape":"String",
           "documentation":"<p>Pagination token. Not used.</p>"
+        }
+      }
+    },
+    "BorrowCount":{
+      "type":"integer",
+      "min":0
+    },
+    "ClientID":{
+      "type":"string",
+      "max":24,
+      "min":24
+    },
+    "CreateSamplingRuleRequest":{
+      "type":"structure",
+      "required":["SamplingRule"],
+      "members":{
+        "SamplingRule":{
+          "shape":"SamplingRule",
+          "documentation":"<p>The rule definition.</p>"
+        }
+      }
+    },
+    "CreateSamplingRuleResult":{
+      "type":"structure",
+      "members":{
+        "SamplingRuleRecord":{
+          "shape":"SamplingRuleRecord",
+          "documentation":"<p>The saved rule definition and metadata.</p>"
+        }
+      }
+    },
+    "DeleteSamplingRuleRequest":{
+      "type":"structure",
+      "members":{
+        "RuleName":{
+          "shape":"String",
+          "documentation":"<p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>"
+        },
+        "RuleARN":{
+          "shape":"String",
+          "documentation":"<p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>"
+        }
+      }
+    },
+    "DeleteSamplingRuleResult":{
+      "type":"structure",
+      "members":{
+        "SamplingRuleRecord":{
+          "shape":"SamplingRuleRecord",
+          "documentation":"<p>The deleted rule definition and metadata.</p>"
         }
       }
     },
@@ -308,7 +460,7 @@
         },
         "Status":{
           "shape":"EncryptionStatus",
-          "documentation":"<p>The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>, the status can be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting data with the new key.</p>"
+          "documentation":"<p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>"
         },
         "Type":{
           "shape":"EncryptionType",
@@ -374,6 +526,11 @@
       "max":2000,
       "min":1
     },
+    "FixedRate":{
+      "type":"double",
+      "max":1,
+      "min":0
+    },
     "GetEncryptionConfigRequest":{
       "type":"structure",
       "members":{
@@ -385,6 +542,77 @@
         "EncryptionConfig":{
           "shape":"EncryptionConfig",
           "documentation":"<p>The encryption configuration document.</p>"
+        }
+      }
+    },
+    "GetSamplingRulesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>Pagination token. Not used.</p>"
+        }
+      }
+    },
+    "GetSamplingRulesResult":{
+      "type":"structure",
+      "members":{
+        "SamplingRuleRecords":{
+          "shape":"SamplingRuleRecordList",
+          "documentation":"<p>Rule definitions and metadata.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>Pagination token. Not used.</p>"
+        }
+      }
+    },
+    "GetSamplingStatisticSummariesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>Pagination token. Not used.</p>"
+        }
+      }
+    },
+    "GetSamplingStatisticSummariesResult":{
+      "type":"structure",
+      "members":{
+        "SamplingStatisticSummaries":{
+          "shape":"SamplingStatisticSummaryList",
+          "documentation":"<p>Information about the number of requests instrumented for each sampling rule.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>Pagination token. Not used.</p>"
+        }
+      }
+    },
+    "GetSamplingTargetsRequest":{
+      "type":"structure",
+      "required":["SamplingStatisticsDocuments"],
+      "members":{
+        "SamplingStatisticsDocuments":{
+          "shape":"SamplingStatisticsDocumentList",
+          "documentation":"<p>Information about rules that the service is using to sample requests.</p>"
+        }
+      }
+    },
+    "GetSamplingTargetsResult":{
+      "type":"structure",
+      "members":{
+        "SamplingTargetDocuments":{
+          "shape":"SamplingTargetDocumentList",
+          "documentation":"<p>Updated rules that the service should use to sample requests.</p>"
+        },
+        "LastRuleModification":{
+          "shape":"Timestamp",
+          "documentation":"<p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a>GetSamplingRules</a> to get the latest version.</p>"
+        },
+        "UnprocessedStatistics":{
+          "shape":"UnprocessedStatisticsList",
+          "documentation":"<p>Information about <a>SamplingStatisticsDocument</a> that X-Ray could not process.</p>"
         }
       }
     },
@@ -507,6 +735,10 @@
         }
       }
     },
+    "HTTPMethod":{
+      "type":"string",
+      "max":10
+    },
     "Histogram":{
       "type":"list",
       "member":{"shape":"HistogramEntry"}
@@ -524,6 +756,10 @@
         }
       },
       "documentation":"<p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>"
+    },
+    "Host":{
+      "type":"string",
+      "max":64
     },
     "Hostname":{
       "type":"string",
@@ -568,6 +804,11 @@
     "NullableDouble":{"type":"double"},
     "NullableInteger":{"type":"integer"},
     "NullableLong":{"type":"long"},
+    "Priority":{
+      "type":"integer",
+      "max":9999,
+      "min":1
+    },
     "PutEncryptionConfigRequest":{
       "type":"structure",
       "required":["Type"],
@@ -637,9 +878,282 @@
         }
       }
     },
+    "RequestCount":{
+      "type":"integer",
+      "min":0
+    },
+    "ReservoirSize":{
+      "type":"integer",
+      "min":0
+    },
     "ResourceARN":{
       "type":"string",
       "max":500
+    },
+    "RuleLimitExceededException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>You have reached the maximum number of sampling rules.</p>",
+      "exception":true
+    },
+    "RuleName":{
+      "type":"string",
+      "max":32,
+      "min":1
+    },
+    "SampledCount":{
+      "type":"integer",
+      "min":0
+    },
+    "SamplingRule":{
+      "type":"structure",
+      "required":[
+        "ResourceARN",
+        "Priority",
+        "FixedRate",
+        "ReservoirSize",
+        "ServiceName",
+        "ServiceType",
+        "Host",
+        "HTTPMethod",
+        "URLPath",
+        "Version"
+      ],
+      "members":{
+        "RuleName":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>"
+        },
+        "RuleARN":{
+          "shape":"String",
+          "documentation":"<p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>"
+        },
+        "ResourceARN":{
+          "shape":"ResourceARN",
+          "documentation":"<p>Matches the ARN of the AWS resource on which the service runs.</p>"
+        },
+        "Priority":{
+          "shape":"Priority",
+          "documentation":"<p>The priority of the sampling rule.</p>"
+        },
+        "FixedRate":{
+          "shape":"FixedRate",
+          "documentation":"<p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>"
+        },
+        "ReservoirSize":{
+          "shape":"ReservoirSize",
+          "documentation":"<p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>"
+        },
+        "ServiceName":{
+          "shape":"ServiceName",
+          "documentation":"<p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>"
+        },
+        "ServiceType":{
+          "shape":"ServiceType",
+          "documentation":"<p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>"
+        },
+        "Host":{
+          "shape":"Host",
+          "documentation":"<p>Matches the hostname from a request URL.</p>"
+        },
+        "HTTPMethod":{
+          "shape":"HTTPMethod",
+          "documentation":"<p>Matches the HTTP method of a request.</p>"
+        },
+        "URLPath":{
+          "shape":"URLPath",
+          "documentation":"<p>Matches the path from a request URL.</p>"
+        },
+        "Version":{
+          "shape":"Version",
+          "documentation":"<p>The version of the sampling rule format (<code>1</code>).</p>"
+        },
+        "Attributes":{
+          "shape":"AttributeMap",
+          "documentation":"<p>Matches attributes derived from the request.</p>"
+        }
+      },
+      "documentation":"<p>A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.</p>"
+    },
+    "SamplingRuleRecord":{
+      "type":"structure",
+      "members":{
+        "SamplingRule":{
+          "shape":"SamplingRule",
+          "documentation":"<p>The sampling rule.</p>"
+        },
+        "CreatedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>When the rule was created.</p>"
+        },
+        "ModifiedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>When the rule was last modified.</p>"
+        }
+      },
+      "documentation":"<p>A <a>SamplingRule</a> and its metadata.</p>"
+    },
+    "SamplingRuleRecordList":{
+      "type":"list",
+      "member":{"shape":"SamplingRuleRecord"}
+    },
+    "SamplingRuleUpdate":{
+      "type":"structure",
+      "members":{
+        "RuleName":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>"
+        },
+        "RuleARN":{
+          "shape":"String",
+          "documentation":"<p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>"
+        },
+        "ResourceARN":{
+          "shape":"ResourceARN",
+          "documentation":"<p>Matches the ARN of the AWS resource on which the service runs.</p>"
+        },
+        "Priority":{
+          "shape":"NullableInteger",
+          "documentation":"<p>The priority of the sampling rule.</p>"
+        },
+        "FixedRate":{
+          "shape":"NullableDouble",
+          "documentation":"<p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>"
+        },
+        "ReservoirSize":{
+          "shape":"NullableInteger",
+          "documentation":"<p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>"
+        },
+        "Host":{
+          "shape":"Host",
+          "documentation":"<p>Matches the hostname from a request URL.</p>"
+        },
+        "ServiceName":{
+          "shape":"ServiceName",
+          "documentation":"<p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>"
+        },
+        "ServiceType":{
+          "shape":"ServiceType",
+          "documentation":"<p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>"
+        },
+        "HTTPMethod":{
+          "shape":"HTTPMethod",
+          "documentation":"<p>Matches the HTTP method of a request.</p>"
+        },
+        "URLPath":{
+          "shape":"URLPath",
+          "documentation":"<p>Matches the path from a request URL.</p>"
+        },
+        "Attributes":{
+          "shape":"AttributeMap",
+          "documentation":"<p>Matches attributes derived from the request.</p>"
+        }
+      },
+      "documentation":"<p>A document specifying changes to a sampling rule's configuration.</p>"
+    },
+    "SamplingStatisticSummary":{
+      "type":"structure",
+      "members":{
+        "RuleName":{
+          "shape":"String",
+          "documentation":"<p>The name of the sampling rule.</p>"
+        },
+        "Timestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The start time of the reporting window.</p>"
+        },
+        "RequestCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of requests that matched the rule.</p>"
+        },
+        "BorrowCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of requests recorded with borrowed reservoir quota.</p>"
+        },
+        "SampledCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of requests recorded.</p>"
+        }
+      },
+      "documentation":"<p>Aggregated request sampling data for a sampling rule across all services for a 10 second window.</p>"
+    },
+    "SamplingStatisticSummaryList":{
+      "type":"list",
+      "member":{"shape":"SamplingStatisticSummary"}
+    },
+    "SamplingStatisticsDocument":{
+      "type":"structure",
+      "required":[
+        "RuleName",
+        "ClientID",
+        "Timestamp",
+        "RequestCount",
+        "SampledCount"
+      ],
+      "members":{
+        "RuleName":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the sampling rule.</p>"
+        },
+        "ClientID":{
+          "shape":"ClientID",
+          "documentation":"<p>A unique identifier for the service in hexadecimal.</p>"
+        },
+        "Timestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The current time.</p>"
+        },
+        "RequestCount":{
+          "shape":"RequestCount",
+          "documentation":"<p>The number of requests that matched the rule.</p>"
+        },
+        "SampledCount":{
+          "shape":"SampledCount",
+          "documentation":"<p>The number of requests recorded.</p>"
+        },
+        "BorrowCount":{
+          "shape":"BorrowCount",
+          "documentation":"<p>The number of requests recorded with borrowed reservoir quota.</p>"
+        }
+      },
+      "documentation":"<p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a>GetSamplingTargets</a>.</p>"
+    },
+    "SamplingStatisticsDocumentList":{
+      "type":"list",
+      "member":{"shape":"SamplingStatisticsDocument"},
+      "max":25
+    },
+    "SamplingTargetDocument":{
+      "type":"structure",
+      "members":{
+        "RuleName":{
+          "shape":"String",
+          "documentation":"<p>The name of the sampling rule.</p>"
+        },
+        "FixedRate":{
+          "shape":"Double",
+          "documentation":"<p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>"
+        },
+        "ReservoirQuota":{
+          "shape":"NullableInteger",
+          "documentation":"<p>The number of requests per second that X-Ray allocated this service.</p>"
+        },
+        "ReservoirQuotaTTL":{
+          "shape":"Timestamp",
+          "documentation":"<p>When the reservoir quota expires.</p>"
+        },
+        "Interval":{
+          "shape":"NullableInteger",
+          "documentation":"<p>The number of seconds for the service to wait before getting sampling targets again.</p>"
+        }
+      },
+      "documentation":"<p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>.</p>"
+    },
+    "SamplingTargetDocumentList":{
+      "type":"list",
+      "member":{"shape":"SamplingTargetDocument"}
     },
     "Segment":{
       "type":"structure",
@@ -752,6 +1266,10 @@
       "type":"list",
       "member":{"shape":"Service"}
     },
+    "ServiceName":{
+      "type":"string",
+      "max":64
+    },
     "ServiceNames":{
       "type":"list",
       "member":{"shape":"String"}
@@ -781,6 +1299,10 @@
         }
       },
       "documentation":"<p>Response statistics for a service.</p>"
+    },
+    "ServiceType":{
+      "type":"string",
+      "max":64
     },
     "String":{"type":"string"},
     "TelemetryRecord":{
@@ -936,6 +1458,32 @@
       "type":"list",
       "member":{"shape":"TraceUser"}
     },
+    "URLPath":{
+      "type":"string",
+      "max":128
+    },
+    "UnprocessedStatistics":{
+      "type":"structure",
+      "members":{
+        "RuleName":{
+          "shape":"String",
+          "documentation":"<p>The name of the sampling rule.</p>"
+        },
+        "ErrorCode":{
+          "shape":"String",
+          "documentation":"<p>The error code.</p>"
+        },
+        "Message":{
+          "shape":"String",
+          "documentation":"<p>The error message.</p>"
+        }
+      },
+      "documentation":"<p>Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could not process.</p>"
+    },
+    "UnprocessedStatisticsList":{
+      "type":"list",
+      "member":{"shape":"UnprocessedStatistics"}
+    },
     "UnprocessedTraceIdList":{
       "type":"list",
       "member":{"shape":"TraceId"}
@@ -962,6 +1510,25 @@
       "type":"list",
       "member":{"shape":"UnprocessedTraceSegment"}
     },
+    "UpdateSamplingRuleRequest":{
+      "type":"structure",
+      "required":["SamplingRuleUpdate"],
+      "members":{
+        "SamplingRuleUpdate":{
+          "shape":"SamplingRuleUpdate",
+          "documentation":"<p>The rule and fields to change.</p>"
+        }
+      }
+    },
+    "UpdateSamplingRuleResult":{
+      "type":"structure",
+      "members":{
+        "SamplingRuleRecord":{
+          "shape":"SamplingRuleRecord",
+          "documentation":"<p>The updated rule definition and metadata.</p>"
+        }
+      }
+    },
     "ValueWithServiceIds":{
       "type":"structure",
       "members":{
@@ -979,6 +1546,10 @@
     "ValuesWithServiceIds":{
       "type":"list",
       "member":{"shape":"ValueWithServiceIds"}
+    },
+    "Version":{
+      "type":"integer",
+      "min":1
     }
   },
   "documentation":"<p>AWS X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing those traces.</p>"

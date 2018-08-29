@@ -278,6 +278,72 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSamplingRuleResult> createSamplingRuleAsync(CreateSamplingRuleRequest request) {
+
+        return createSamplingRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSamplingRuleResult> createSamplingRuleAsync(final CreateSamplingRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSamplingRuleRequest, CreateSamplingRuleResult> asyncHandler) {
+        final CreateSamplingRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSamplingRuleResult>() {
+            @Override
+            public CreateSamplingRuleResult call() throws Exception {
+                CreateSamplingRuleResult result = null;
+
+                try {
+                    result = executeCreateSamplingRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSamplingRuleResult> deleteSamplingRuleAsync(DeleteSamplingRuleRequest request) {
+
+        return deleteSamplingRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSamplingRuleResult> deleteSamplingRuleAsync(final DeleteSamplingRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSamplingRuleRequest, DeleteSamplingRuleResult> asyncHandler) {
+        final DeleteSamplingRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSamplingRuleResult>() {
+            @Override
+            public DeleteSamplingRuleResult call() throws Exception {
+                DeleteSamplingRuleResult result = null;
+
+                try {
+                    result = executeDeleteSamplingRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest request) {
 
         return getEncryptionConfigAsync(request, null);
@@ -295,6 +361,106 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
 
                 try {
                     result = executeGetEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(GetSamplingRulesRequest request) {
+
+        return getSamplingRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(final GetSamplingRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSamplingRulesRequest, GetSamplingRulesResult> asyncHandler) {
+        final GetSamplingRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSamplingRulesResult>() {
+            @Override
+            public GetSamplingRulesResult call() throws Exception {
+                GetSamplingRulesResult result = null;
+
+                try {
+                    result = executeGetSamplingRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSamplingStatisticSummariesResult> getSamplingStatisticSummariesAsync(GetSamplingStatisticSummariesRequest request) {
+
+        return getSamplingStatisticSummariesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSamplingStatisticSummariesResult> getSamplingStatisticSummariesAsync(
+            final GetSamplingStatisticSummariesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSamplingStatisticSummariesRequest, GetSamplingStatisticSummariesResult> asyncHandler) {
+        final GetSamplingStatisticSummariesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSamplingStatisticSummariesResult>() {
+            @Override
+            public GetSamplingStatisticSummariesResult call() throws Exception {
+                GetSamplingStatisticSummariesResult result = null;
+
+                try {
+                    result = executeGetSamplingStatisticSummaries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSamplingTargetsResult> getSamplingTargetsAsync(GetSamplingTargetsRequest request) {
+
+        return getSamplingTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSamplingTargetsResult> getSamplingTargetsAsync(final GetSamplingTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSamplingTargetsRequest, GetSamplingTargetsResult> asyncHandler) {
+        final GetSamplingTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSamplingTargetsResult>() {
+            @Override
+            public GetSamplingTargetsResult call() throws Exception {
+                GetSamplingTargetsResult result = null;
+
+                try {
+                    result = executeGetSamplingTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -493,6 +659,39 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
 
                 try {
                     result = executePutTraceSegments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSamplingRuleResult> updateSamplingRuleAsync(UpdateSamplingRuleRequest request) {
+
+        return updateSamplingRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSamplingRuleResult> updateSamplingRuleAsync(final UpdateSamplingRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSamplingRuleRequest, UpdateSamplingRuleResult> asyncHandler) {
+        final UpdateSamplingRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSamplingRuleResult>() {
+            @Override
+            public UpdateSamplingRuleResult call() throws Exception {
+                UpdateSamplingRuleResult result = null;
+
+                try {
+                    result = executeUpdateSamplingRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
