@@ -309,6 +309,14 @@ public interface AmazonSageMaker {
      * the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the
      * page.
      * </p>
+     * <p>
+     * You can restrict access to this API and to the URL that it returns to a list of IP addresses that you specify. To
+     * restrict access, attach an IAM policy that denies access to this API unless the call comes from an IP address in
+     * the specified list to every AWS Identity and Access Management user, group, or role used to access the notebook
+     * instance. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code> condition
+     * context key to specify the list of IP addresses that you want to have access to the notebook instance. For more
+     * information, see <a>nbi-ip-filter</a>.
+     * </p>
      * 
      * @param createPresignedNotebookInstanceUrlRequest
      * @return Result of the CreatePresignedNotebookInstanceUrl operation returned by the service.

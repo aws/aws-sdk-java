@@ -64,9 +64,17 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setSource(ProjectSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("secondarySources", targetDepth)) {
+                    context.nextToken();
+                    project.setSecondarySources(new ListUnmarshaller<ProjectSource>(ProjectSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
                     project.setArtifacts(ProjectArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("secondaryArtifacts", targetDepth)) {
+                    context.nextToken();
+                    project.setSecondaryArtifacts(new ListUnmarshaller<ProjectArtifacts>(ProjectArtifactsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("cache", targetDepth)) {
                     context.nextToken();

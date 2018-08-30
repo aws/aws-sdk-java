@@ -80,6 +80,10 @@ public class ProjectArtifactsJsonUnmarshaller implements Unmarshaller<ProjectArt
                     context.nextToken();
                     projectArtifacts.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("artifactIdentifier", targetDepth)) {
+                    context.nextToken();
+                    projectArtifacts.setArtifactIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

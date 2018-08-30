@@ -68,6 +68,10 @@ public class BuildArtifactsJsonUnmarshaller implements Unmarshaller<BuildArtifac
                     context.nextToken();
                     buildArtifacts.setEncryptionDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("artifactIdentifier", targetDepth)) {
+                    context.nextToken();
+                    buildArtifacts.setArtifactIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

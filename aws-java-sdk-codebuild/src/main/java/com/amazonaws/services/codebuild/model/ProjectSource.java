@@ -155,6 +155,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean insecureSsl;
+    /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     */
+    private String sourceIdentifier;
 
     /**
      * <p>
@@ -1109,6 +1115,46 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     * 
+     * @param sourceIdentifier
+     *        An identifier for this project source.
+     */
+
+    public void setSourceIdentifier(String sourceIdentifier) {
+        this.sourceIdentifier = sourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     * 
+     * @return An identifier for this project source.
+     */
+
+    public String getSourceIdentifier() {
+        return this.sourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     * 
+     * @param sourceIdentifier
+     *        An identifier for this project source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withSourceIdentifier(String sourceIdentifier) {
+        setSourceIdentifier(sourceIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1132,7 +1178,9 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         if (getReportBuildStatus() != null)
             sb.append("ReportBuildStatus: ").append(getReportBuildStatus()).append(",");
         if (getInsecureSsl() != null)
-            sb.append("InsecureSsl: ").append(getInsecureSsl());
+            sb.append("InsecureSsl: ").append(getInsecureSsl()).append(",");
+        if (getSourceIdentifier() != null)
+            sb.append("SourceIdentifier: ").append(getSourceIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -1175,6 +1223,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInsecureSsl() != null && other.getInsecureSsl().equals(this.getInsecureSsl()) == false)
             return false;
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null)
+            return false;
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -1190,6 +1242,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
         hashCode = prime * hashCode + ((getReportBuildStatus() == null) ? 0 : getReportBuildStatus().hashCode());
         hashCode = prime * hashCode + ((getInsecureSsl() == null) ? 0 : getInsecureSsl().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
         return hashCode;
     }
 

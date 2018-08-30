@@ -45,10 +45,22 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private ProjectSource source;
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectSource> secondarySources;
+    /**
+     * <p>
      * Information about the build output artifacts for the build project.
      * </p>
      */
     private ProjectArtifacts artifacts;
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectArtifacts> secondaryArtifacts;
     /**
      * <p>
      * Stores recently used information so that it can be quickly accessed at a later time.
@@ -230,6 +242,76 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectSource</code> objects.
+     */
+
+    public java.util.List<ProjectSource> getSecondarySources() {
+        return secondarySources;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     */
+
+    public void setSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
+        if (secondarySources == null) {
+            this.secondarySources = null;
+            return;
+        }
+
+        this.secondarySources = new java.util.ArrayList<ProjectSource>(secondarySources);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySources(java.util.Collection)} or {@link #withSecondarySources(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withSecondarySources(ProjectSource... secondarySources) {
+        if (this.secondarySources == null) {
+            setSecondarySources(new java.util.ArrayList<ProjectSource>(secondarySources.length));
+        }
+        for (ProjectSource ele : secondarySources) {
+            this.secondarySources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
+        setSecondarySources(secondarySources);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the build output artifacts for the build project.
      * </p>
      * 
@@ -265,6 +347,76 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateProjectRequest withArtifacts(ProjectArtifacts artifacts) {
         setArtifacts(artifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectArtifacts</code> objects.
+     */
+
+    public java.util.List<ProjectArtifacts> getSecondaryArtifacts() {
+        return secondaryArtifacts;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectArtifacts</code> objects.
+     */
+
+    public void setSecondaryArtifacts(java.util.Collection<ProjectArtifacts> secondaryArtifacts) {
+        if (secondaryArtifacts == null) {
+            this.secondaryArtifacts = null;
+            return;
+        }
+
+        this.secondaryArtifacts = new java.util.ArrayList<ProjectArtifacts>(secondaryArtifacts);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondaryArtifacts(java.util.Collection)} or {@link #withSecondaryArtifacts(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectArtifacts</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withSecondaryArtifacts(ProjectArtifacts... secondaryArtifacts) {
+        if (this.secondaryArtifacts == null) {
+            setSecondaryArtifacts(new java.util.ArrayList<ProjectArtifacts>(secondaryArtifacts.length));
+        }
+        for (ProjectArtifacts ele : secondaryArtifacts) {
+            this.secondaryArtifacts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectArtifacts</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withSecondaryArtifacts(java.util.Collection<ProjectArtifacts> secondaryArtifacts) {
+        setSecondaryArtifacts(secondaryArtifacts);
         return this;
     }
 
@@ -706,8 +858,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getSecondarySources() != null)
+            sb.append("SecondarySources: ").append(getSecondarySources()).append(",");
         if (getArtifacts() != null)
             sb.append("Artifacts: ").append(getArtifacts()).append(",");
+        if (getSecondaryArtifacts() != null)
+            sb.append("SecondaryArtifacts: ").append(getSecondaryArtifacts()).append(",");
         if (getCache() != null)
             sb.append("Cache: ").append(getCache()).append(",");
         if (getEnvironment() != null)
@@ -750,9 +906,17 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getSecondarySources() == null ^ this.getSecondarySources() == null)
+            return false;
+        if (other.getSecondarySources() != null && other.getSecondarySources().equals(this.getSecondarySources()) == false)
+            return false;
         if (other.getArtifacts() == null ^ this.getArtifacts() == null)
             return false;
         if (other.getArtifacts() != null && other.getArtifacts().equals(this.getArtifacts()) == false)
+            return false;
+        if (other.getSecondaryArtifacts() == null ^ this.getSecondaryArtifacts() == null)
+            return false;
+        if (other.getSecondaryArtifacts() != null && other.getSecondaryArtifacts().equals(this.getSecondaryArtifacts()) == false)
             return false;
         if (other.getCache() == null ^ this.getCache() == null)
             return false;
@@ -797,7 +961,9 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySources() == null) ? 0 : getSecondarySources().hashCode());
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryArtifacts() == null) ? 0 : getSecondaryArtifacts().hashCode());
         hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());

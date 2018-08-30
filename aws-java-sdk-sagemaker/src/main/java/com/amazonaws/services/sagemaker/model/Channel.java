@@ -60,7 +60,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
      * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
      * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
-     * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
+     * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
@@ -271,7 +271,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
      * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
      * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
-     * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
+     * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
@@ -284,8 +284,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
      *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
-     *        see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
-     *        Using RecordIO</a>.
+     *        see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
+     *        Dataset Using RecordIO</a>.
      *        </p>
      *        <p>
      *        In FILE mode, leave this field unset or set it to None.
@@ -303,7 +303,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
      * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
      * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
-     * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
+     * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
@@ -315,8 +315,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      *         Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
      *         RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *         the input data is already in RecordIO format, you don't need to set this attribute. For more information,
-     *         see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
-     *         Using RecordIO</a>.
+     *         see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
+     *         Dataset Using RecordIO</a>.
      *         </p>
      *         <p>
      *         In FILE mode, leave this field unset or set it to None.
@@ -334,7 +334,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
      * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
      * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
-     * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
+     * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
@@ -347,8 +347,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
      *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
-     *        see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
-     *        Using RecordIO</a>.
+     *        see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
+     *        Dataset Using RecordIO</a>.
      *        </p>
      *        <p>
      *        In FILE mode, leave this field unset or set it to None.
@@ -368,7 +368,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
      * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
      * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
-     * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
+     * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using
      * RecordIO</a>.
      * </p>
      * <p>
@@ -381,8 +381,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
      *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
-     *        see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
-     *        Using RecordIO</a>.
+     *        see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a
+     *        Dataset Using RecordIO</a>.
      *        </p>
      *        <p>
      *        In FILE mode, leave this field unset or set it to None.

@@ -1,3 +1,16 @@
+# __1.11.400__ __2018-08-30__
+## __AWS CodeBuild__
+  - ### Features
+    - Support multiple sources and artifacts for CodeBuild projects. 
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fixed an issue where isDone would not transition to true when a parallel upload failed. See https://github.com/aws/aws-sdk-java/issues/1667.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - VolumeKmsKeyId now available in Batch Transform Job 
+
 # __1.11.399__ __2018-08-29__
 ## __AWS Elemental MediaPackage__
   - ### Features

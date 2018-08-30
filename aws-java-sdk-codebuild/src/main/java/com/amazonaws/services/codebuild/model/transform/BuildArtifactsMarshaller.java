@@ -37,6 +37,8 @@ public class BuildArtifactsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overrideArtifactName").build();
     private static final MarshallingInfo<Boolean> ENCRYPTIONDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionDisabled").build();
+    private static final MarshallingInfo<String> ARTIFACTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactIdentifier").build();
 
     private static final BuildArtifactsMarshaller instance = new BuildArtifactsMarshaller();
 
@@ -59,6 +61,7 @@ public class BuildArtifactsMarshaller {
             protocolMarshaller.marshall(buildArtifacts.getMd5sum(), MD5SUM_BINDING);
             protocolMarshaller.marshall(buildArtifacts.getOverrideArtifactName(), OVERRIDEARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(buildArtifacts.getEncryptionDisabled(), ENCRYPTIONDISABLED_BINDING);
+            protocolMarshaller.marshall(buildArtifacts.getArtifactIdentifier(), ARTIFACTIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

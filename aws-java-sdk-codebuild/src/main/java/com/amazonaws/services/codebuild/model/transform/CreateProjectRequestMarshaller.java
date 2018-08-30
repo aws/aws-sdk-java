@@ -34,8 +34,12 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
+    private static final MarshallingInfo<List> SECONDARYSOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySources").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
+    private static final MarshallingInfo<List> SECONDARYARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondaryArtifacts").build();
     private static final MarshallingInfo<StructuredPojo> CACHE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cache").build();
     private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -72,7 +76,9 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getSecondarySources(), SECONDARYSOURCES_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getArtifacts(), ARTIFACTS_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getSecondaryArtifacts(), SECONDARYARTIFACTS_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getCache(), CACHE_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getServiceRole(), SERVICEROLE_BINDING);

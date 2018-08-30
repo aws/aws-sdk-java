@@ -31,6 +31,8 @@ public class TransformResourcesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<Integer> INSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCount").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final TransformResourcesMarshaller instance = new TransformResourcesMarshaller();
 
@@ -50,6 +52,7 @@ public class TransformResourcesMarshaller {
         try {
             protocolMarshaller.marshall(transformResources.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(transformResources.getInstanceCount(), INSTANCECOUNT_BINDING);
+            protocolMarshaller.marshall(transformResources.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

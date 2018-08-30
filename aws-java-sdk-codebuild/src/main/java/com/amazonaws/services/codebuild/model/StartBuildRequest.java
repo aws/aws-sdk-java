@@ -33,6 +33,19 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String projectName;
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectSource> secondarySourcesOverride;
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     * secondary sources to be used for this build only.
+     * </p>
+     */
+    private java.util.List<ProjectSourceVersion> secondarySourcesVersionOverride;
+    /**
+     * <p>
      * A version of the build input to be built, for this build only. If not specified, the latest version will be used.
      * If specified, must be one of:
      * </p>
@@ -73,6 +86,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private ProjectArtifacts artifactsOverride;
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectArtifacts> secondaryArtifactsOverride;
     /**
      * <p>
      * A set of environment variables that overrides, for this build only, the latest ones already defined in the build
@@ -223,6 +242,154 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public StartBuildRequest withProjectName(String projectName) {
         setProjectName(projectName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectSource</code> objects.
+     */
+
+    public java.util.List<ProjectSource> getSecondarySourcesOverride() {
+        return secondarySourcesOverride;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySourcesOverride
+     *        An array of <code>ProjectSource</code> objects.
+     */
+
+    public void setSecondarySourcesOverride(java.util.Collection<ProjectSource> secondarySourcesOverride) {
+        if (secondarySourcesOverride == null) {
+            this.secondarySourcesOverride = null;
+            return;
+        }
+
+        this.secondarySourcesOverride = new java.util.ArrayList<ProjectSource>(secondarySourcesOverride);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySourcesOverride(java.util.Collection)} or
+     * {@link #withSecondarySourcesOverride(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySourcesOverride
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withSecondarySourcesOverride(ProjectSource... secondarySourcesOverride) {
+        if (this.secondarySourcesOverride == null) {
+            setSecondarySourcesOverride(new java.util.ArrayList<ProjectSource>(secondarySourcesOverride.length));
+        }
+        for (ProjectSource ele : secondarySourcesOverride) {
+            this.secondarySourcesOverride.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySourcesOverride
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withSecondarySourcesOverride(java.util.Collection<ProjectSource> secondarySourcesOverride) {
+        setSecondarySourcesOverride(secondarySourcesOverride);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     * secondary sources to be used for this build only.
+     * </p>
+     * 
+     * @return An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     *         secondary sources to be used for this build only.
+     */
+
+    public java.util.List<ProjectSourceVersion> getSecondarySourcesVersionOverride() {
+        return secondarySourcesVersionOverride;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     * secondary sources to be used for this build only.
+     * </p>
+     * 
+     * @param secondarySourcesVersionOverride
+     *        An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     *        secondary sources to be used for this build only.
+     */
+
+    public void setSecondarySourcesVersionOverride(java.util.Collection<ProjectSourceVersion> secondarySourcesVersionOverride) {
+        if (secondarySourcesVersionOverride == null) {
+            this.secondarySourcesVersionOverride = null;
+            return;
+        }
+
+        this.secondarySourcesVersionOverride = new java.util.ArrayList<ProjectSourceVersion>(secondarySourcesVersionOverride);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     * secondary sources to be used for this build only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySourcesVersionOverride(java.util.Collection)} or
+     * {@link #withSecondarySourcesVersionOverride(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySourcesVersionOverride
+     *        An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     *        secondary sources to be used for this build only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withSecondarySourcesVersionOverride(ProjectSourceVersion... secondarySourcesVersionOverride) {
+        if (this.secondarySourcesVersionOverride == null) {
+            setSecondarySourcesVersionOverride(new java.util.ArrayList<ProjectSourceVersion>(secondarySourcesVersionOverride.length));
+        }
+        for (ProjectSourceVersion ele : secondarySourcesVersionOverride) {
+            this.secondarySourcesVersionOverride.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     * secondary sources to be used for this build only.
+     * </p>
+     * 
+     * @param secondarySourcesVersionOverride
+     *        An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's
+     *        secondary sources to be used for this build only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withSecondarySourcesVersionOverride(java.util.Collection<ProjectSourceVersion> secondarySourcesVersionOverride) {
+        setSecondarySourcesVersionOverride(secondarySourcesVersionOverride);
         return this;
     }
 
@@ -480,6 +647,76 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public StartBuildRequest withArtifactsOverride(ProjectArtifacts artifactsOverride) {
         setArtifactsOverride(artifactsOverride);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectArtifacts</code> objects.
+     */
+
+    public java.util.List<ProjectArtifacts> getSecondaryArtifactsOverride() {
+        return secondaryArtifactsOverride;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifactsOverride
+     *        An array of <code>ProjectArtifacts</code> objects.
+     */
+
+    public void setSecondaryArtifactsOverride(java.util.Collection<ProjectArtifacts> secondaryArtifactsOverride) {
+        if (secondaryArtifactsOverride == null) {
+            this.secondaryArtifactsOverride = null;
+            return;
+        }
+
+        this.secondaryArtifactsOverride = new java.util.ArrayList<ProjectArtifacts>(secondaryArtifactsOverride);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondaryArtifactsOverride(java.util.Collection)} or
+     * {@link #withSecondaryArtifactsOverride(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param secondaryArtifactsOverride
+     *        An array of <code>ProjectArtifacts</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withSecondaryArtifactsOverride(ProjectArtifacts... secondaryArtifactsOverride) {
+        if (this.secondaryArtifactsOverride == null) {
+            setSecondaryArtifactsOverride(new java.util.ArrayList<ProjectArtifacts>(secondaryArtifactsOverride.length));
+        }
+        for (ProjectArtifacts ele : secondaryArtifactsOverride) {
+            this.secondaryArtifactsOverride.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifactsOverride
+     *        An array of <code>ProjectArtifacts</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withSecondaryArtifactsOverride(java.util.Collection<ProjectArtifacts> secondaryArtifactsOverride) {
+        setSecondaryArtifactsOverride(secondaryArtifactsOverride);
         return this;
     }
 
@@ -1367,10 +1604,16 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getProjectName() != null)
             sb.append("ProjectName: ").append(getProjectName()).append(",");
+        if (getSecondarySourcesOverride() != null)
+            sb.append("SecondarySourcesOverride: ").append(getSecondarySourcesOverride()).append(",");
+        if (getSecondarySourcesVersionOverride() != null)
+            sb.append("SecondarySourcesVersionOverride: ").append(getSecondarySourcesVersionOverride()).append(",");
         if (getSourceVersion() != null)
             sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
         if (getArtifactsOverride() != null)
             sb.append("ArtifactsOverride: ").append(getArtifactsOverride()).append(",");
+        if (getSecondaryArtifactsOverride() != null)
+            sb.append("SecondaryArtifactsOverride: ").append(getSecondaryArtifactsOverride()).append(",");
         if (getEnvironmentVariablesOverride() != null)
             sb.append("EnvironmentVariablesOverride: ").append(getEnvironmentVariablesOverride()).append(",");
         if (getSourceTypeOverride() != null)
@@ -1423,6 +1666,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
             return false;
+        if (other.getSecondarySourcesOverride() == null ^ this.getSecondarySourcesOverride() == null)
+            return false;
+        if (other.getSecondarySourcesOverride() != null && other.getSecondarySourcesOverride().equals(this.getSecondarySourcesOverride()) == false)
+            return false;
+        if (other.getSecondarySourcesVersionOverride() == null ^ this.getSecondarySourcesVersionOverride() == null)
+            return false;
+        if (other.getSecondarySourcesVersionOverride() != null
+                && other.getSecondarySourcesVersionOverride().equals(this.getSecondarySourcesVersionOverride()) == false)
+            return false;
         if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
             return false;
         if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
@@ -1430,6 +1682,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getArtifactsOverride() == null ^ this.getArtifactsOverride() == null)
             return false;
         if (other.getArtifactsOverride() != null && other.getArtifactsOverride().equals(this.getArtifactsOverride()) == false)
+            return false;
+        if (other.getSecondaryArtifactsOverride() == null ^ this.getSecondaryArtifactsOverride() == null)
+            return false;
+        if (other.getSecondaryArtifactsOverride() != null && other.getSecondaryArtifactsOverride().equals(this.getSecondaryArtifactsOverride()) == false)
             return false;
         if (other.getEnvironmentVariablesOverride() == null ^ this.getEnvironmentVariablesOverride() == null)
             return false;
@@ -1508,8 +1764,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySourcesOverride() == null) ? 0 : getSecondarySourcesOverride().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySourcesVersionOverride() == null) ? 0 : getSecondarySourcesVersionOverride().hashCode());
         hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
         hashCode = prime * hashCode + ((getArtifactsOverride() == null) ? 0 : getArtifactsOverride().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryArtifactsOverride() == null) ? 0 : getSecondaryArtifactsOverride().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariablesOverride() == null) ? 0 : getEnvironmentVariablesOverride().hashCode());
         hashCode = prime * hashCode + ((getSourceTypeOverride() == null) ? 0 : getSourceTypeOverride().hashCode());
         hashCode = prime * hashCode + ((getSourceLocationOverride() == null) ? 0 : getSourceLocationOverride().hashCode());

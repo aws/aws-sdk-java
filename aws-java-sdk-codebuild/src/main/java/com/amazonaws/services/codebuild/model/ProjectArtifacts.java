@@ -257,6 +257,12 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Boolean encryptionDisabled;
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     */
+    private String artifactIdentifier;
 
     /**
      * <p>
@@ -2125,6 +2131,46 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     * 
+     * @param artifactIdentifier
+     *        An identifier for this artifact definition.
+     */
+
+    public void setArtifactIdentifier(String artifactIdentifier) {
+        this.artifactIdentifier = artifactIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     * 
+     * @return An identifier for this artifact definition.
+     */
+
+    public String getArtifactIdentifier() {
+        return this.artifactIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     * 
+     * @param artifactIdentifier
+     *        An identifier for this artifact definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectArtifacts withArtifactIdentifier(String artifactIdentifier) {
+        setArtifactIdentifier(artifactIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2150,7 +2196,9 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         if (getOverrideArtifactName() != null)
             sb.append("OverrideArtifactName: ").append(getOverrideArtifactName()).append(",");
         if (getEncryptionDisabled() != null)
-            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled());
+            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled()).append(",");
+        if (getArtifactIdentifier() != null)
+            sb.append("ArtifactIdentifier: ").append(getArtifactIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -2197,6 +2245,10 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getEncryptionDisabled() != null && other.getEncryptionDisabled().equals(this.getEncryptionDisabled()) == false)
             return false;
+        if (other.getArtifactIdentifier() == null ^ this.getArtifactIdentifier() == null)
+            return false;
+        if (other.getArtifactIdentifier() != null && other.getArtifactIdentifier().equals(this.getArtifactIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -2213,6 +2265,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getPackaging() == null) ? 0 : getPackaging().hashCode());
         hashCode = prime * hashCode + ((getOverrideArtifactName() == null) ? 0 : getOverrideArtifactName().hashCode());
         hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
+        hashCode = prime * hashCode + ((getArtifactIdentifier() == null) ? 0 : getArtifactIdentifier().hashCode());
         return hashCode;
     }
 

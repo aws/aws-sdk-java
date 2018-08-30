@@ -88,9 +88,22 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setSource(ProjectSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("secondarySources", targetDepth)) {
+                    context.nextToken();
+                    build.setSecondarySources(new ListUnmarshaller<ProjectSource>(ProjectSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("secondarySourceVersions", targetDepth)) {
+                    context.nextToken();
+                    build.setSecondarySourceVersions(new ListUnmarshaller<ProjectSourceVersion>(ProjectSourceVersionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
                     build.setArtifacts(BuildArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("secondaryArtifacts", targetDepth)) {
+                    context.nextToken();
+                    build.setSecondaryArtifacts(new ListUnmarshaller<BuildArtifacts>(BuildArtifactsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("cache", targetDepth)) {
                     context.nextToken();

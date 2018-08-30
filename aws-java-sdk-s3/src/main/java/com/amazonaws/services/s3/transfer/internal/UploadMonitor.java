@@ -179,6 +179,13 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     }
 
     /**
+     * Marks the upload as a failure.
+     */
+    void uploadFailure() {
+        transfer.setState(TransferState.Failed);
+    }
+
+    /**
      * Cancels the futures in the following cases - If the user has requested
      * for forcefully aborting the transfers. - If the upload is a multi part
      * parellel upload. - If the upload operation hasn't started. Cancels all

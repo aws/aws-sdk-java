@@ -30,10 +30,16 @@ public class StartBuildRequestMarshaller {
 
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectName").build();
+    private static final MarshallingInfo<List> SECONDARYSOURCESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySourcesOverride").build();
+    private static final MarshallingInfo<List> SECONDARYSOURCESVERSIONOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySourcesVersionOverride").build();
     private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceVersion").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTSOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactsOverride").build();
+    private static final MarshallingInfo<List> SECONDARYARTIFACTSOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondaryArtifactsOverride").build();
     private static final MarshallingInfo<List> ENVIRONMENTVARIABLESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariablesOverride").build();
     private static final MarshallingInfo<String> SOURCETYPEOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -86,8 +92,11 @@ public class StartBuildRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startBuildRequest.getProjectName(), PROJECTNAME_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getSecondarySourcesOverride(), SECONDARYSOURCESOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getSecondarySourcesVersionOverride(), SECONDARYSOURCESVERSIONOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getSourceVersion(), SOURCEVERSION_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getArtifactsOverride(), ARTIFACTSOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getSecondaryArtifactsOverride(), SECONDARYARTIFACTSOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getEnvironmentVariablesOverride(), ENVIRONMENTVARIABLESOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getSourceTypeOverride(), SOURCETYPEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getSourceLocationOverride(), SOURCELOCATIONOVERRIDE_BINDING);

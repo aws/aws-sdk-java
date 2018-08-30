@@ -43,6 +43,13 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Integer instanceCount;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     * </p>
+     */
+    private String volumeKmsKeyId;
 
     /**
      * <p>
@@ -166,6 +173,52 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     * </p>
+     * 
+     * @param volumeKmsKeyId
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     */
+
+    public void setVolumeKmsKeyId(String volumeKmsKeyId) {
+        this.volumeKmsKeyId = volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *         data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     */
+
+    public String getVolumeKmsKeyId() {
+        return this.volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     * </p>
+     * 
+     * @param volumeKmsKeyId
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransformResources withVolumeKmsKeyId(String volumeKmsKeyId) {
+        setVolumeKmsKeyId(volumeKmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -179,7 +232,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: ").append(getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
+        if (getVolumeKmsKeyId() != null)
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -202,6 +257,10 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
             return false;
+        if (other.getVolumeKmsKeyId() == null ^ this.getVolumeKmsKeyId() == null)
+            return false;
+        if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -212,6 +271,7 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         return hashCode;
     }
 

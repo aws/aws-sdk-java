@@ -25,7 +25,8 @@ public enum SourceType {
     GITHUB("GITHUB"),
     S3("S3"),
     BITBUCKET("BITBUCKET"),
-    GITHUB_ENTERPRISE("GITHUB_ENTERPRISE");
+    GITHUB_ENTERPRISE("GITHUB_ENTERPRISE"),
+    NO_SOURCE("NO_SOURCE");
 
     private String value;
 

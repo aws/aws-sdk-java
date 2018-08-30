@@ -123,10 +123,56 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private ProjectSource source;
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectSource> secondarySources;
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
+     * default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
+     * to use.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<ProjectSourceVersion> secondarySourceVersions;
+    /**
+     * <p>
      * Information about the output artifacts for the build.
      * </p>
      */
     private BuildArtifacts artifacts;
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     */
+    private java.util.List<BuildArtifacts> secondaryArtifacts;
     /**
      * <p>
      * Information about the cache for the build.
@@ -1003,6 +1049,370 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectSource</code> objects.
+     */
+
+    public java.util.List<ProjectSource> getSecondarySources() {
+        return secondarySources;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     */
+
+    public void setSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
+        if (secondarySources == null) {
+            this.secondarySources = null;
+            return;
+        }
+
+        this.secondarySources = new java.util.ArrayList<ProjectSource>(secondarySources);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySources(java.util.Collection)} or {@link #withSecondarySources(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withSecondarySources(ProjectSource... secondarySources) {
+        if (this.secondarySources == null) {
+            setSecondarySources(new java.util.ArrayList<ProjectSource>(secondarySources.length));
+        }
+        for (ProjectSource ele : secondarySources) {
+            this.secondarySources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
+        setSecondarySources(secondarySources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
+     * default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
+     * to use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one
+     *         of: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For AWS CodeCommit: the commit ID to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *         the source code you want to build. If a pull request ID is specified, it must use the format
+     *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *         branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *         you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
+     *         specified, the default branch's HEAD commit ID will be used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
+     *         ZIP file to use.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<ProjectSourceVersion> getSecondarySourceVersions() {
+        return secondarySourceVersions;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
+     * default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
+     * to use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param secondarySourceVersions
+     *        An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one
+     *        of: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit: the commit ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *        the source code you want to build. If a pull request ID is specified, it must use the format
+     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
+     *        specified, the default branch's HEAD commit ID will be used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
+     *        ZIP file to use.
+     *        </p>
+     *        </li>
+     */
+
+    public void setSecondarySourceVersions(java.util.Collection<ProjectSourceVersion> secondarySourceVersions) {
+        if (secondarySourceVersions == null) {
+            this.secondarySourceVersions = null;
+            return;
+        }
+
+        this.secondarySourceVersions = new java.util.ArrayList<ProjectSourceVersion>(secondarySourceVersions);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
+     * default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
+     * to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySourceVersions(java.util.Collection)} or
+     * {@link #withSecondarySourceVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySourceVersions
+     *        An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one
+     *        of: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit: the commit ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *        the source code you want to build. If a pull request ID is specified, it must use the format
+     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
+     *        specified, the default branch's HEAD commit ID will be used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
+     *        ZIP file to use.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withSecondarySourceVersions(ProjectSourceVersion... secondarySourceVersions) {
+        if (this.secondarySourceVersions == null) {
+            setSecondarySourceVersions(new java.util.ArrayList<ProjectSourceVersion>(secondarySourceVersions.length));
+        }
+        for (ProjectSourceVersion ele : secondarySourceVersions) {
+            this.secondarySourceVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit: the commit ID to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use the format
+     * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
+     * want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the
+     * default branch's HEAD commit ID will be used.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file
+     * to use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param secondarySourceVersions
+     *        An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one
+     *        of: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit: the commit ID to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of
+     *        the source code you want to build. If a pull request ID is specified, it must use the format
+     *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
+     *        branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code
+     *        you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not
+     *        specified, the default branch's HEAD commit ID will be used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input
+     *        ZIP file to use.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withSecondarySourceVersions(java.util.Collection<ProjectSourceVersion> secondarySourceVersions) {
+        setSecondarySourceVersions(secondarySourceVersions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the output artifacts for the build.
      * </p>
      * 
@@ -1038,6 +1448,76 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     public Build withArtifacts(BuildArtifacts artifacts) {
         setArtifacts(artifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectArtifacts</code> objects.
+     */
+
+    public java.util.List<BuildArtifacts> getSecondaryArtifacts() {
+        return secondaryArtifacts;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectArtifacts</code> objects.
+     */
+
+    public void setSecondaryArtifacts(java.util.Collection<BuildArtifacts> secondaryArtifacts) {
+        if (secondaryArtifacts == null) {
+            this.secondaryArtifacts = null;
+            return;
+        }
+
+        this.secondaryArtifacts = new java.util.ArrayList<BuildArtifacts>(secondaryArtifacts);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondaryArtifacts(java.util.Collection)} or {@link #withSecondaryArtifacts(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectArtifacts</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withSecondaryArtifacts(BuildArtifacts... secondaryArtifacts) {
+        if (this.secondaryArtifacts == null) {
+            setSecondaryArtifacts(new java.util.ArrayList<BuildArtifacts>(secondaryArtifacts.length));
+        }
+        for (BuildArtifacts ele : secondaryArtifacts) {
+            this.secondaryArtifacts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectArtifacts</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectArtifacts</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withSecondaryArtifacts(java.util.Collection<BuildArtifacts> secondaryArtifacts) {
+        setSecondaryArtifacts(secondaryArtifacts);
         return this;
     }
 
@@ -1643,8 +2123,14 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             sb.append("Phases: ").append(getPhases()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getSecondarySources() != null)
+            sb.append("SecondarySources: ").append(getSecondarySources()).append(",");
+        if (getSecondarySourceVersions() != null)
+            sb.append("SecondarySourceVersions: ").append(getSecondarySourceVersions()).append(",");
         if (getArtifacts() != null)
             sb.append("Artifacts: ").append(getArtifacts()).append(",");
+        if (getSecondaryArtifacts() != null)
+            sb.append("SecondaryArtifacts: ").append(getSecondaryArtifacts()).append(",");
         if (getCache() != null)
             sb.append("Cache: ").append(getCache()).append(",");
         if (getEnvironment() != null)
@@ -1719,9 +2205,21 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getSecondarySources() == null ^ this.getSecondarySources() == null)
+            return false;
+        if (other.getSecondarySources() != null && other.getSecondarySources().equals(this.getSecondarySources()) == false)
+            return false;
+        if (other.getSecondarySourceVersions() == null ^ this.getSecondarySourceVersions() == null)
+            return false;
+        if (other.getSecondarySourceVersions() != null && other.getSecondarySourceVersions().equals(this.getSecondarySourceVersions()) == false)
+            return false;
         if (other.getArtifacts() == null ^ this.getArtifacts() == null)
             return false;
         if (other.getArtifacts() != null && other.getArtifacts().equals(this.getArtifacts()) == false)
+            return false;
+        if (other.getSecondaryArtifacts() == null ^ this.getSecondaryArtifacts() == null)
+            return false;
+        if (other.getSecondaryArtifacts() != null && other.getSecondaryArtifacts().equals(this.getSecondaryArtifacts()) == false)
             return false;
         if (other.getCache() == null ^ this.getCache() == null)
             return false;
@@ -1781,7 +2279,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getPhases() == null) ? 0 : getPhases().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySources() == null) ? 0 : getSecondarySources().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySourceVersions() == null) ? 0 : getSecondarySourceVersions().hashCode());
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryArtifacts() == null) ? 0 : getSecondaryArtifacts().hashCode());
         hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
