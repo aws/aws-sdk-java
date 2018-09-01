@@ -44,6 +44,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code>
      * for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection.
      * </p>
@@ -277,6 +280,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code>
      * for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection.
      * </p>
@@ -419,6 +425,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose
      *        <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192
@@ -572,6 +581,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code>
      * for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection.
      * </p>
@@ -713,6 +725,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *         effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *         <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *         <p>
+     *         You can only specify a single type of TextTransformation.
+     *         </p>
      *         <p>
      *         Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose
      *         <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192
@@ -866,6 +881,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code>
      * for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection.
      * </p>
@@ -1008,6 +1026,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose
      *        <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192
@@ -1163,6 +1184,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code>
      * for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection.
      * </p>
@@ -1305,6 +1329,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose
      *        <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192
@@ -1458,6 +1485,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code>
      * for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection.
      * </p>
@@ -1600,6 +1630,9 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose
      *        <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192

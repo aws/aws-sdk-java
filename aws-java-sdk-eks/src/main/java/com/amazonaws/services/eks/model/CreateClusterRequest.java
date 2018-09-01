@@ -43,7 +43,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
      * AWS API operations on your behalf. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>
+     * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private String roleArn;
@@ -53,7 +53,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * requirements to work properly with Kubernetes. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up
+     * to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.
      * </p>
      */
     private VpcConfigRequest resourcesVpcConfig;
@@ -155,14 +156,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
      * AWS API operations on your behalf. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>
+     * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
      *        other AWS API operations on your behalf. For more information, see <a
      *        href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
-     *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>
+     *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -174,13 +175,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
      * AWS API operations on your behalf. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>
+     * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
      *         other AWS API operations on your behalf. For more information, see <a
      *         href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
-     *         Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>
+     *         Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public String getRoleArn() {
@@ -192,14 +193,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
      * AWS API operations on your behalf. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>
+     * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
      *        other AWS API operations on your behalf. For more information, see <a
      *        href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
-     *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>
+     *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,7 +215,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * requirements to work properly with Kubernetes. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up
+     * to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.
      * </p>
      * 
      * @param resourcesVpcConfig
@@ -222,7 +224,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        specific requirements to work properly with Kubernetes. For more information, see <a
      *        href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
      *        and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     *        Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     *        Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may
+     *        specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster
+     *        control plane.
      */
 
     public void setResourcesVpcConfig(VpcConfigRequest resourcesVpcConfig) {
@@ -235,14 +239,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * requirements to work properly with Kubernetes. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up
+     * to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.
      * </p>
      * 
      * @return The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have
      *         specific requirements to work properly with Kubernetes. For more information, see <a
      *         href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
      *         and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     *         Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     *         Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may
+     *         specify up to 5 security groups, but we recommend that you use a dedicated security group for your
+     *         cluster control plane.
      */
 
     public VpcConfigRequest getResourcesVpcConfig() {
@@ -255,7 +262,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * requirements to work properly with Kubernetes. For more information, see <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up
+     * to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.
      * </p>
      * 
      * @param resourcesVpcConfig
@@ -263,7 +271,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        specific requirements to work properly with Kubernetes. For more information, see <a
      *        href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
      *        and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     *        Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     *        Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may
+     *        specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster
+     *        control plane.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

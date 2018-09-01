@@ -39,8 +39,9 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or <code>waf-regional:UpdateWebACL</code>
- * . Any extra or wildcard actions in the policy will be rejected.
+ * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>,
+ * <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the
+ * policy will be rejected.
  * </p>
  * </li>
  * <li>

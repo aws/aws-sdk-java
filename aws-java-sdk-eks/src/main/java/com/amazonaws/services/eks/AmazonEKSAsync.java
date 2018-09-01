@@ -31,33 +31,7 @@ import com.amazonaws.services.eks.model.*;
  * open-source system for automating the deployment, scaling, and management of containerized applications.
  * </p>
  * <p>
- * Amazon EKS runs three Kubernetes control plane instances across three Availability Zones to ensure high availability.
- * Amazon EKS automatically detects and replaces unhealthy control plane instances, and it provides automated version
- * upgrades and patching for them.
- * </p>
- * <p>
- * Amazon EKS is also integrated with many AWS services to provide scalability and security for your applications,
- * including the following:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Elastic Load Balancing for load distribution
- * </p>
- * </li>
- * <li>
- * <p>
- * IAM for authentication
- * </p>
- * </li>
- * <li>
- * <p>
- * Amazon VPC for isolation
- * </p>
- * </li>
- * </ul>
- * <p>
- * Amazon EKS runs up to date versions of the open-source Kubernetes software, so you can use all the existing plugins
+ * Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins
  * and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications
  * running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This
  * means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification
@@ -248,7 +222,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Lists the Amazon EKS clusters in your AWS account in the specified region.
+     * Lists the Amazon EKS clusters in your AWS account in the specified Region.
      * </p>
      * 
      * @param listClustersRequest
@@ -261,7 +235,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Lists the Amazon EKS clusters in your AWS account in the specified region.
+     * Lists the Amazon EKS clusters in your AWS account in the specified Region.
      * </p>
      * 
      * @param listClustersRequest

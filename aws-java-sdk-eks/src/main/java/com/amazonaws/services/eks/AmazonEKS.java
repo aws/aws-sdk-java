@@ -32,33 +32,7 @@ import com.amazonaws.services.eks.model.*;
  * open-source system for automating the deployment, scaling, and management of containerized applications.
  * </p>
  * <p>
- * Amazon EKS runs three Kubernetes control plane instances across three Availability Zones to ensure high availability.
- * Amazon EKS automatically detects and replaces unhealthy control plane instances, and it provides automated version
- * upgrades and patching for them.
- * </p>
- * <p>
- * Amazon EKS is also integrated with many AWS services to provide scalability and security for your applications,
- * including the following:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Elastic Load Balancing for load distribution
- * </p>
- * </li>
- * <li>
- * <p>
- * IAM for authentication
- * </p>
- * </li>
- * <li>
- * <p>
- * Amazon VPC for isolation
- * </p>
- * </li>
- * </ul>
- * <p>
- * Amazon EKS runs up to date versions of the open-source Kubernetes software, so you can use all the existing plugins
+ * Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins
  * and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications
  * running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This
  * means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification
@@ -118,11 +92,11 @@ public interface AmazonEKS {
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
-     *         The service is unavailable, back off and retry the operation.
+     *         The service is unavailable. Back off and retry the operation.
      * @throws UnsupportedAvailabilityZoneException
      *         At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon
-     *         EKS. The exception output will specify the supported Availability Zones for your account, from which you
-     *         can choose subnets for your cluster.
+     *         EKS. The exception output specifies the supported Availability Zones for your account, from which you can
+     *         choose subnets for your cluster.
      * @sample AmazonEKS.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -149,7 +123,7 @@ public interface AmazonEKS {
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are region-specific.
+     *         Amazon EKS clusters are Region-specific.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
      *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
@@ -157,7 +131,7 @@ public interface AmazonEKS {
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
-     *         The service is unavailable, back off and retry the operation.
+     *         The service is unavailable. Back off and retry the operation.
      * @sample AmazonEKS.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -185,7 +159,7 @@ public interface AmazonEKS {
      * @return Result of the DescribeCluster operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are region-specific.
+     *         Amazon EKS clusters are Region-specific.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
      *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
@@ -193,7 +167,7 @@ public interface AmazonEKS {
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
-     *         The service is unavailable, back off and retry the operation.
+     *         The service is unavailable. Back off and retry the operation.
      * @sample AmazonEKS.DescribeCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster" target="_top">AWS API
      *      Documentation</a>
@@ -202,7 +176,7 @@ public interface AmazonEKS {
 
     /**
      * <p>
-     * Lists the Amazon EKS clusters in your AWS account in the specified region.
+     * Lists the Amazon EKS clusters in your AWS account in the specified Region.
      * </p>
      * 
      * @param listClustersRequest
@@ -216,7 +190,7 @@ public interface AmazonEKS {
      * @throws ServerException
      *         These errors are usually caused by a server-side issue.
      * @throws ServiceUnavailableException
-     *         The service is unavailable, back off and retry the operation.
+     *         The service is unavailable. Back off and retry the operation.
      * @sample AmazonEKS.ListClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters" target="_top">AWS API
      *      Documentation</a>

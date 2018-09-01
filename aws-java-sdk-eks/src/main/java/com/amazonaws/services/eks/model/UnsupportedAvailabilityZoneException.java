@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The
- * exception output will specify the supported Availability Zones for your account, from which you can choose subnets
- * for your cluster.
+ * exception output specifies the supported Availability Zones for your account, from which you can choose subnets for
+ * your cluster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

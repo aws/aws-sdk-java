@@ -25,7 +25,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified region.
+     * A list of all of the clusters for your account in the specified Region.
      * </p>
      */
     private java.util.List<String> clusters;
@@ -40,10 +40,10 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified region.
+     * A list of all of the clusters for your account in the specified Region.
      * </p>
      * 
-     * @return A list of all of the clusters for your account in the specified region.
+     * @return A list of all of the clusters for your account in the specified Region.
      */
 
     public java.util.List<String> getClusters() {
@@ -52,11 +52,11 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified region.
+     * A list of all of the clusters for your account in the specified Region.
      * </p>
      * 
      * @param clusters
-     *        A list of all of the clusters for your account in the specified region.
+     *        A list of all of the clusters for your account in the specified Region.
      */
 
     public void setClusters(java.util.Collection<String> clusters) {
@@ -70,7 +70,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified region.
+     * A list of all of the clusters for your account in the specified Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param clusters
-     *        A list of all of the clusters for your account in the specified region.
+     *        A list of all of the clusters for your account in the specified Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified region.
+     * A list of all of the clusters for your account in the specified Region.
      * </p>
      * 
      * @param clusters
-     *        A list of all of the clusters for your account in the specified region.
+     *        A list of all of the clusters for your account in the specified Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

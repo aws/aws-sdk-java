@@ -2648,6 +2648,68 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
+     * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return Result of the DeleteLoggingConfiguration operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @sample AWSWAFRegional.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoggingConfigurationResult executeDeleteLoggingConfiguration(DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLoggingConfigurationRequest> request = null;
+        Response<DeleteLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggingConfiguration");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Permanently deletes an IAM policy from the specified RuleGroup.
      * </p>
      * <p>
@@ -3268,6 +3330,39 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <li>
      *         <p>
      *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+     *         </p>
+     *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in
+     *         the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified
+     *         <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
+     *         in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
      *         </li>
      * @sample AWSWAFRegional.DeleteRuleGroup
@@ -4256,6 +4351,65 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIPSetResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return Result of the GetLoggingConfiguration operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAFRegional.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetLoggingConfigurationResult executeGetLoggingConfiguration(GetLoggingConfigurationRequest getLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoggingConfigurationRequest> request = null;
+        Response<GetLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingConfiguration");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5461,6 +5615,120 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
+     * Returns an array of <a>LoggingConfiguration</a> objects.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return Result of the ListLoggingConfigurations operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLoggingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListLoggingConfigurationsResult executeListLoggingConfigurations(ListLoggingConfigurationsRequest listLoggingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLoggingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLoggingConfigurationsRequest> request = null;
+        Response<ListLoggingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLoggingConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLoggingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggingConfigurations");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLoggingConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLoggingConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
      * 
@@ -6105,6 +6373,92 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
+     * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+     * </p>
+     * <p>
+     * You can access information about all traffic that AWS WAF inspects using the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create an Amazon Kinesis Data Firehose delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating an Amazon Kinesis Data
+     * Firehose Delivery Stream</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose delivery
+     * stream. For more information, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>
+     * in the <i>AWS WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param putLoggingConfigurationRequest
+     * @return Result of the PutLoggingConfiguration operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @sample AWSWAFRegional.PutLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutLoggingConfigurationResult putLoggingConfiguration(PutLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutLoggingConfigurationResult executePutLoggingConfiguration(PutLoggingConfigurationRequest putLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutLoggingConfigurationRequest> request = null;
+        Response<PutLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingConfiguration");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
      * across accounts.
      * </p>
@@ -6129,8 +6483,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * </li>
      * <li>
      * <p>
-     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
-     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     * <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code>
+     * . Any extra or wildcard actions in the policy will be rejected.
      * </p>
      * </li>
      * <li>
@@ -6194,8 +6549,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         </li>
      *         <li>
      *         <p>
-     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or
-     *         <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     *         <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and
+     *         <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.
      *         </p>
      *         </li>
      *         <li>
@@ -6365,12 +6721,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -6610,12 +6960,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -6794,9 +7138,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+     * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry
+     * <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
      * IPv6 addresses can be represented using any of the following formats:
@@ -6856,6 +7200,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * one.
      * </p>
      * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
+     * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
      * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
@@ -6895,12 +7242,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -7157,12 +7498,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -7455,12 +7790,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -7655,12 +7984,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -7817,12 +8140,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -8089,12 +8406,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -8229,6 +8540,9 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * length. Note that transformations of the request body are not supported because the AWS resource forwards only
      * the first <code>8192</code> bytes of your request to AWS WAF.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -8310,12 +8624,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -8489,13 +8797,16 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for snippets of malicious SQL code.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * </ul>
@@ -8565,12 +8876,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -8842,12 +9147,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -9017,13 +9316,16 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for cross-site scripting attacks.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * </ul>
@@ -9093,12 +9395,6 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>

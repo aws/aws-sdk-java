@@ -20,15 +20,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
- * notation. AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for
- * IPv6.
+ * notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6
+ * address ranges: /16, /24, /32, /48, /56, /64, and /128.
  * </p>
  * <p>
  * To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for
- * example, 192.0.2.0/31. To block a range of IP addresses, you can specify a <code>/128</code>, <code>/64</code>,
- * <code>/56</code>, <code>/48</code>, <code>/32</code>, <code>/24</code>, <code>/16</code>, or <code>/8</code> CIDR.
- * For more information about CIDR notation, see the Wikipedia entry <a
- * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+ * example, 192.0.2.0/31. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for
+ * IPv4) or /16, /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the
+ * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
+ * Routing</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSet" target="_top">AWS API

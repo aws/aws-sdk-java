@@ -79,6 +79,19 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     * parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you
+     * specify in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
@@ -111,10 +124,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -402,6 +418,19 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     * parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you
+     * specify in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
@@ -479,6 +508,20 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *        <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *        characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     *        parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you
+     *        specify in <code>TargetString</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case
@@ -549,6 +592,19 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For
      * more information, see <a>CreateSizeConstraintSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     * parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you
+     * specify in <code>TargetString</code>.
      * </p>
      * </li>
      * </ul>
@@ -624,6 +680,20 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *         constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *         <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *         characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     *         parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that
+     *         you specify in <code>TargetString</code>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case
@@ -694,6 +764,19 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for
      * inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For
      * more information, see <a>CreateSizeConstraintSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     * parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you
+     * specify in <code>TargetString</code>.
      * </p>
      * </li>
      * </ul>
@@ -773,6 +856,20 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *        <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *        characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single
+     *        parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you
+     *        specify in <code>TargetString</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case
@@ -811,10 +908,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -950,10 +1050,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>TargetString</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -1097,10 +1200,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -1235,10 +1341,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *         effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *         <code>TargetString</code> before inspecting a request for a match.</p>
      *         <p>
+     *         You can only specify a single type of TextTransformation.
+     *         </p>
+     *         <p>
      *         <b>CMD_LINE</b>
      *         </p>
      *         <p>
-     *         When you're concerned that attackers are injecting an operating system commandline command and using
+     *         When you're concerned that attackers are injecting an operating system command line command and using
      *         unusual formatting to disguise some or all of the command, use this option to perform the following
      *         transformations:
      *         </p>
@@ -1382,10 +1491,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -1521,10 +1633,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>TargetString</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -1670,10 +1785,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -1809,10 +1927,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>TargetString</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -1956,10 +2077,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -2095,10 +2219,13 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>TargetString</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>

@@ -55,6 +55,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
      */
     private java.util.List<IPSetUpdate> updates;
 
@@ -161,6 +164,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
      * 
      * @return An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
      *         For more information, see the applicable data types:</p>
@@ -175,6 +181,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         You can insert a maximum of 1000 addresses in a single request.
      */
 
     public java.util.List<IPSetUpdate> getUpdates() {
@@ -198,6 +207,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
      * 
      * @param updates
      *        An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
@@ -213,6 +225,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can insert a maximum of 1000 addresses in a single request.
      */
 
     public void setUpdates(java.util.Collection<IPSetUpdate> updates) {
@@ -242,6 +257,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUpdates(java.util.Collection)} or {@link #withUpdates(java.util.Collection)} if you want to override
      * the existing values.
@@ -261,6 +279,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can insert a maximum of 1000 addresses in a single request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,6 +312,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
      * 
      * @param updates
      *        An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
@@ -306,6 +330,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can insert a maximum of 1000 addresses in a single request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

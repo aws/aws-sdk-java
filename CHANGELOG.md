@@ -1,3 +1,16 @@
+# __1.11.401__ __2018-08-31__
+## __AWS WAF__
+  - ### Features
+    - This change includes support for the WAF FullLogging feature through which Customers will have access to all the logs of requests that are inspected by a WAF WebACL. The new APIs allow Customers to manage association of a WebACL with one or more supported "LogDestination" and redact any request fields from the logs. 
+
+## __AWS WAF Regional__
+  - ### Features
+    - This change includes support for the WAF FullLogging feature through which Customers will have access to all the logs of requests that are inspected by a WAF WebACL. The new APIs allow Customers to manage association of a WebACL with one or more supported "LogDestination" and redact any request fields from the logs. 
+
+## __Amazon Elastic Container Service for Kubernetes__
+  - ### Features
+    - Amazon EKS DescribeCluster API returns a platformVersion attribute which allows you to identify the features that are currently enabled for your clusters. The Amazon EKS platform version represents capabilities of the cluster control plane, such as which Kubernetes API server flags are enabled, as well as the current Kubernetes patch version. 
+
 # __1.11.400__ __2018-08-30__
 ## __AWS CodeBuild__
   - ### Features

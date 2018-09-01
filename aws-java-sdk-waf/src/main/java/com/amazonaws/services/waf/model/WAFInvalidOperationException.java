@@ -45,12 +45,6 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the specified
- * <code>IPSet</code>.
- * </p>
- * </li>
- * <li>
- * <p>
  * You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
  * already exists in the specified <code>WebACL</code>.
  * </p>

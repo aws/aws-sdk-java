@@ -62,6 +62,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      * <code>RegexPatternSet</code> before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
@@ -258,6 +261,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      * <code>RegexPatternSet</code> before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
@@ -396,6 +402,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>RegexPatternSet</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
@@ -544,6 +553,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      * <code>RegexPatternSet</code> before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
@@ -681,6 +693,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *         effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *         <code>RegexPatternSet</code> before inspecting a request for a match.</p>
+     *         <p>
+     *         You can only specify a single type of TextTransformation.
+     *         </p>
      *         <p>
      *         <b>CMD_LINE</b>
      *         </p>
@@ -829,6 +844,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      * <code>RegexPatternSet</code> before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
@@ -967,6 +985,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>RegexPatternSet</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
@@ -1117,6 +1138,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      * <code>RegexPatternSet</code> before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
@@ -1255,6 +1279,9 @@ public class RegexMatchTuple implements Serializable, Cloneable, StructuredPojo 
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>RegexPatternSet</code> before inspecting a request for a match.</p>
+     *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
      *        <p>
      *        <b>CMD_LINE</b>
      *        </p>

@@ -92,6 +92,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.
+     * </p>
+     */
+    private String platformVersion;
 
     /**
      * <p>
@@ -543,6 +551,58 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version of your Amazon EKS cluster. For more information, see <a
+     *        href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User
+     *        Guide</i> </i>.
+     */
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.
+     * </p>
+     * 
+     * @return The platform version of your Amazon EKS cluster. For more information, see <a
+     *         href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User
+     *         Guide</i> </i>.
+     */
+
+    public String getPlatformVersion() {
+        return this.platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version of your Amazon EKS cluster. For more information, see <a
+     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version of your Amazon EKS cluster. For more information, see <a
+     *        href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User
+     *        Guide</i> </i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPlatformVersion(String platformVersion) {
+        setPlatformVersion(platformVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -572,7 +632,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getCertificateAuthority() != null)
             sb.append("CertificateAuthority: ").append(getCertificateAuthority()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getPlatformVersion() != null)
+            sb.append("PlatformVersion: ").append(getPlatformVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -627,6 +689,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
+            return false;
+        if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
+            return false;
         return true;
     }
 
@@ -645,6 +711,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthority() == null) ? 0 : getCertificateAuthority().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         return hashCode;
     }
 

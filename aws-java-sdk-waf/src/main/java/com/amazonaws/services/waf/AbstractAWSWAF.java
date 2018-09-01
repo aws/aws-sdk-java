@@ -113,6 +113,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +189,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public GetIPSetResult getIPSet(GetIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,6 +278,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRateBasedRulesResult listRateBasedRules(ListRateBasedRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +329,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutLoggingConfigurationResult putLoggingConfiguration(PutLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -79,7 +79,7 @@
         {"shape":"ServerException"},
         {"shape":"ServiceUnavailableException"}
       ],
-      "documentation":"<p>Lists the Amazon EKS clusters in your AWS account in the specified region.</p>"
+      "documentation":"<p>Lists the Amazon EKS clusters in your AWS account in the specified Region.</p>"
     }
   },
   "shapes":{
@@ -148,6 +148,10 @@
         "clientRequestToken":{
           "shape":"String",
           "documentation":"<p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>"
+        },
+        "platformVersion":{
+          "shape":"String",
+          "documentation":"<p>The platform version of your Amazon EKS cluster. For more information, see <a href=\"eks/latest/userguide/platform-versions.html\">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>"
         }
       },
       "documentation":"<p>An object representing an Amazon EKS cluster.</p>"
@@ -185,11 +189,11 @@
         },
         "roleArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html\">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>"
         },
         "resourcesVpcConfig":{
           "shape":"VpcConfigRequest",
-          "documentation":"<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>"
+          "documentation":"<p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html\">Cluster VPC Considerations</a> and <a href=\"http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html\">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You may specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.</p>"
         },
         "clientRequestToken":{
           "shape":"String",
@@ -290,7 +294,7 @@
       "members":{
         "clusters":{
           "shape":"StringList",
-          "documentation":"<p>A list of all of the clusters for your account in the specified region.</p>"
+          "documentation":"<p>A list of all of the clusters for your account in the specified Region.</p>"
         },
         "nextToken":{
           "shape":"String",
@@ -333,7 +337,7 @@
         },
         "message":{"shape":"String"}
       },
-      "documentation":"<p>The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon EKS clusters are region-specific.</p>",
+      "documentation":"<p>The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon EKS clusters are Region-specific.</p>",
       "error":{"httpStatusCode":404},
       "exception":true
     },
@@ -356,7 +360,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>The service is unavailable, back off and retry the operation.</p>",
+      "documentation":"<p>The service is unavailable. Back off and retry the operation.</p>",
       "error":{"httpStatusCode":503},
       "exception":true,
       "fault":true
@@ -380,7 +384,7 @@
           "documentation":"<p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>"
         }
       },
-      "documentation":"<p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output will specify the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>",
+      "documentation":"<p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
     },
@@ -418,5 +422,5 @@
       "documentation":"<p>An object representing an Amazon EKS cluster VPC configuration response.</p>"
     }
   },
-  "documentation":"<p>Amazon Elastic Container Service for Kubernetes (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on AWS without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. </p> <p>Amazon EKS runs three Kubernetes control plane instances across three Availability Zones to ensure high availability. Amazon EKS automatically detects and replaces unhealthy control plane instances, and it provides automated version upgrades and patching for them.</p> <p>Amazon EKS is also integrated with many AWS services to provide scalability and security for your applications, including the following: </p> <ul> <li> <p>Elastic Load Balancing for load distribution</p> </li> <li> <p>IAM for authentication</p> </li> <li> <p>Amazon VPC for isolation</p> </li> </ul> <p>Amazon EKS runs up to date versions of the open-source Kubernetes software, so you can use all the existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification required.</p>"
+  "documentation":"<p>Amazon Elastic Container Service for Kubernetes (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on AWS without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. </p> <p>Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification required.</p>"
 }

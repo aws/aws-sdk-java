@@ -1740,6 +1740,39 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsync.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes an IAM policy from the specified RuleGroup.
      * </p>
      * <p>
@@ -2720,6 +2753,37 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return A Java Future containing the result of the GetLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsync.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the IAM policy attached to the RuleGroup.
      * </p>
      * 
@@ -3289,6 +3353,39 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Returns an array of <a>LoggingConfiguration</a> objects.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return A Java Future containing the result of the ListLoggingConfigurations operation returned by the service.
+     * @sample AWSWAFRegionalAsync.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(
+            ListLoggingConfigurationsRequest listLoggingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>LoggingConfiguration</a> objects.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLoggingConfigurations operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(
+            ListLoggingConfigurationsRequest listLoggingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLoggingConfigurationsRequest, ListLoggingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
      * 
@@ -3636,6 +3733,85 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+     * </p>
+     * <p>
+     * You can access information about all traffic that AWS WAF inspects using the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create an Amazon Kinesis Data Firehose delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating an Amazon Kinesis Data
+     * Firehose Delivery Stream</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose delivery
+     * stream. For more information, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>
+     * in the <i>AWS WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param putLoggingConfigurationRequest
+     * @return A Java Future containing the result of the PutLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsync.PutLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+     * </p>
+     * <p>
+     * You can access information about all traffic that AWS WAF inspects using the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create an Amazon Kinesis Data Firehose delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating an Amazon Kinesis Data
+     * Firehose Delivery Stream</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose delivery
+     * stream. For more information, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>
+     * in the <i>AWS WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param putLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.PutLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLoggingConfigurationRequest, PutLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
      * across accounts.
      * </p>
@@ -3660,8 +3836,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
-     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     * <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code>
+     * . Any extra or wildcard actions in the policy will be rejected.
      * </p>
      * </li>
      * <li>
@@ -3727,8 +3904,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
-     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     * <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code>
+     * . Any extra or wildcard actions in the policy will be rejected.
      * </p>
      * </li>
      * <li>
@@ -4087,9 +4265,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+     * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry
+     * <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
      * IPv6 addresses can be represented using any of the following formats:
@@ -4147,6 +4325,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * When you update an <code>IPSet</code>, you specify the IP addresses that you want to add and/or the IP addresses
      * that you want to delete. If you want to change an IP address, you delete the existing IP address and add the new
      * one.
+     * </p>
+     * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -4187,9 +4368,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+     * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+     * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry
+     * <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
      * IPv6 addresses can be represented using any of the following formats:
@@ -4247,6 +4428,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * When you update an <code>IPSet</code>, you specify the IP addresses that you want to add and/or the IP addresses
      * that you want to delete. If you want to change an IP address, you delete the existing IP address and add the new
      * one.
+     * </p>
+     * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
@@ -5015,6 +5199,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * length. Note that transformations of the request body are not supported because the AWS resource forwards only
      * the first <code>8192</code> bytes of your request to AWS WAF.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -5093,6 +5280,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * length. Note that transformations of the request body are not supported because the AWS resource forwards only
      * the first <code>8192</code> bytes of your request to AWS WAF.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -5167,13 +5357,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for snippets of malicious SQL code.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * </ul>
@@ -5235,13 +5428,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for snippets of malicious SQL code.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * </ul>
@@ -5497,13 +5693,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for cross-site scripting attacks.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * </ul>
@@ -5564,13 +5763,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for cross-site scripting attacks.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * </ul>

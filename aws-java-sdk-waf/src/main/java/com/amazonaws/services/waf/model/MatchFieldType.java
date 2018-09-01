@@ -24,7 +24,9 @@ public enum MatchFieldType {
     QUERY_STRING("QUERY_STRING"),
     HEADER("HEADER"),
     METHOD("METHOD"),
-    BODY("BODY");
+    BODY("BODY"),
+    SINGLE_QUERY_ARG("SINGLE_QUERY_ARG"),
+    ALL_QUERY_ARGS("ALL_QUERY_ARGS");
 
     private String value;
 
