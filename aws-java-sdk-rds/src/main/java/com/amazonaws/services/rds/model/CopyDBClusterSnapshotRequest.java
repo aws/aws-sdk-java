@@ -50,8 +50,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -197,8 +198,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -228,9 +230,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot
-     *        ARN. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot
-     *        or DB Cluster Snapshot</a>.
+     *        ARN. For more information, go to <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     *        > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -266,8 +268,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -296,9 +299,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         <li>
      *         <p>
      *         If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot
-     *         ARN. For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB
-     *         Snapshot or DB Cluster Snapshot</a>.
+     *         ARN. For more information, go to <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     *         > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -334,8 +337,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -365,9 +369,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot
-     *        ARN. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot
-     *        or DB Cluster Snapshot</a>.
+     *        ARN. For more information, go to <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     *        > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        </li>
      *        </ul>

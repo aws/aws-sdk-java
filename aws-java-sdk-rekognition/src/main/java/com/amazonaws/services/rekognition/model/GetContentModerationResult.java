@@ -51,12 +51,6 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
      */
     private String nextToken;
 
-    private Integer billableDurationSeconds;
-
-    private String errorCode;
-
-    private java.util.List<Warning> warnings;
-
     /**
      * <p>
      * The current status of the content moderation job.
@@ -319,110 +313,6 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @param billableDurationSeconds
-     */
-
-    public void setBillableDurationSeconds(Integer billableDurationSeconds) {
-        this.billableDurationSeconds = billableDurationSeconds;
-    }
-
-    /**
-     * @return
-     */
-
-    public Integer getBillableDurationSeconds() {
-        return this.billableDurationSeconds;
-    }
-
-    /**
-     * @param billableDurationSeconds
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetContentModerationResult withBillableDurationSeconds(Integer billableDurationSeconds) {
-        setBillableDurationSeconds(billableDurationSeconds);
-        return this;
-    }
-
-    /**
-     * @param errorCode
-     */
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getErrorCode() {
-        return this.errorCode;
-    }
-
-    /**
-     * @param errorCode
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetContentModerationResult withErrorCode(String errorCode) {
-        setErrorCode(errorCode);
-        return this;
-    }
-
-    /**
-     * @return
-     */
-
-    public java.util.List<Warning> getWarnings() {
-        return warnings;
-    }
-
-    /**
-     * @param warnings
-     */
-
-    public void setWarnings(java.util.Collection<Warning> warnings) {
-        if (warnings == null) {
-            this.warnings = null;
-            return;
-        }
-
-        this.warnings = new java.util.ArrayList<Warning>(warnings);
-    }
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param warnings
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetContentModerationResult withWarnings(Warning... warnings) {
-        if (this.warnings == null) {
-            setWarnings(new java.util.ArrayList<Warning>(warnings.length));
-        }
-        for (Warning ele : warnings) {
-            this.warnings.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * @param warnings
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetContentModerationResult withWarnings(java.util.Collection<Warning> warnings) {
-        setWarnings(warnings);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -442,13 +332,7 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
         if (getModerationLabels() != null)
             sb.append("ModerationLabels: ").append(getModerationLabels()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getBillableDurationSeconds() != null)
-            sb.append("BillableDurationSeconds: ").append(getBillableDurationSeconds()).append(",");
-        if (getErrorCode() != null)
-            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
-        if (getWarnings() != null)
-            sb.append("Warnings: ").append(getWarnings());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -483,18 +367,6 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getBillableDurationSeconds() == null ^ this.getBillableDurationSeconds() == null)
-            return false;
-        if (other.getBillableDurationSeconds() != null && other.getBillableDurationSeconds().equals(this.getBillableDurationSeconds()) == false)
-            return false;
-        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
-            return false;
-        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
-            return false;
-        if (other.getWarnings() == null ^ this.getWarnings() == null)
-            return false;
-        if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
-            return false;
         return true;
     }
 
@@ -508,9 +380,6 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getVideoMetadata() == null) ? 0 : getVideoMetadata().hashCode());
         hashCode = prime * hashCode + ((getModerationLabels() == null) ? 0 : getModerationLabels().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getBillableDurationSeconds() == null) ? 0 : getBillableDurationSeconds().hashCode());
-        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

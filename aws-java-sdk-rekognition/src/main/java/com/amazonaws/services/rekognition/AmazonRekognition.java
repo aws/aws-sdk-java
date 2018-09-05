@@ -335,6 +335,14 @@ public interface AmazonRekognition {
     DeleteStreamProcessorResult deleteStreamProcessor(DeleteStreamProcessorRequest deleteStreamProcessorRequest);
 
     /**
+     * <p>
+     * Describes the specified collection. You can use <code>DescribeCollection</code> to get information, such as the
+     * number of faces indexed into a collection and the version of the model used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Describing a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
      * @param describeCollectionRequest
      * @return Result of the DescribeCollection operation returned by the service.
      * @throws InvalidParameterException
@@ -602,7 +610,7 @@ public interface AmazonRekognition {
      * <code>TextDetection</code> object <code>Type</code> field.
      * </p>
      * <p>
-     * To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+     * To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.
      * </p>
      * <p>
      * For more information, see DetectText in the Amazon Rekognition Developer Guide.
@@ -1017,10 +1025,13 @@ public interface AmazonRekognition {
      * operations using the and operations.
      * </p>
      * <p>
+     * To get the number of faces in a collection, call .
+     * </p>
+     * <p>
      * If you are using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
      * the input image. Later versions of the face detection model index the 100 largest faces in the input image. To
-     * determine which version of the model you are using, check the the value of <code>FaceModelVersion</code> in the
-     * response from <code>IndexFaces</code>.
+     * determine which version of the model you are using, call and supply the collection ID. You also get the model
+     * version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.
      * </p>
      * <p>
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.

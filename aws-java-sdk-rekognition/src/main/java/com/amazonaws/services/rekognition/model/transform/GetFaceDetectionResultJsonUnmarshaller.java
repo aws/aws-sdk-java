@@ -68,18 +68,6 @@ public class GetFaceDetectionResultJsonUnmarshaller implements Unmarshaller<GetF
                     context.nextToken();
                     getFaceDetectionResult.setFaces(new ListUnmarshaller<FaceDetection>(FaceDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("BillableDurationSeconds", targetDepth)) {
-                    context.nextToken();
-                    getFaceDetectionResult.setBillableDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("ErrorCode", targetDepth)) {
-                    context.nextToken();
-                    getFaceDetectionResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Warnings", targetDepth)) {
-                    context.nextToken();
-                    getFaceDetectionResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

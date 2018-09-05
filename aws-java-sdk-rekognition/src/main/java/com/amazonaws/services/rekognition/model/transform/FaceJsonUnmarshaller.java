@@ -68,10 +68,6 @@ public class FaceJsonUnmarshaller implements Unmarshaller<Face, JsonUnmarshaller
                     context.nextToken();
                     face.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
-                if (context.testExpression("AssociationScore", targetDepth)) {
-                    context.nextToken();
-                    face.setAssociationScore(context.getUnmarshaller(Float.class).unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

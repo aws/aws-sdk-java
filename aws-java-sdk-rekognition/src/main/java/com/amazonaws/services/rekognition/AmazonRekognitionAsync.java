@@ -371,6 +371,14 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
             com.amazonaws.handlers.AsyncHandler<DeleteStreamProcessorRequest, DeleteStreamProcessorResult> asyncHandler);
 
     /**
+     * <p>
+     * Describes the specified collection. You can use <code>DescribeCollection</code> to get information, such as the
+     * number of faces indexed into a collection and the version of the model used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Describing a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
      * @param describeCollectionRequest
      * @return A Java Future containing the result of the DescribeCollection operation returned by the service.
      * @sample AmazonRekognitionAsync.DescribeCollection
@@ -378,6 +386,14 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
     java.util.concurrent.Future<DescribeCollectionResult> describeCollectionAsync(DescribeCollectionRequest describeCollectionRequest);
 
     /**
+     * <p>
+     * Describes the specified collection. You can use <code>DescribeCollection</code> to get information, such as the
+     * number of faces indexed into a collection and the version of the model used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Describing a Collection in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
      * @param describeCollectionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -739,7 +755,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code>TextDetection</code> object <code>Type</code> field.
      * </p>
      * <p>
-     * To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+     * To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.
      * </p>
      * <p>
      * For more information, see DetectText in the Amazon Rekognition Developer Guide.
@@ -783,7 +799,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code>TextDetection</code> object <code>Type</code> field.
      * </p>
      * <p>
-     * To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+     * To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.
      * </p>
      * <p>
      * For more information, see DetectText in the Amazon Rekognition Developer Guide.
@@ -1388,10 +1404,13 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * operations using the and operations.
      * </p>
      * <p>
+     * To get the number of faces in a collection, call .
+     * </p>
+     * <p>
      * If you are using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
      * the input image. Later versions of the face detection model index the 100 largest faces in the input image. To
-     * determine which version of the model you are using, check the the value of <code>FaceModelVersion</code> in the
-     * response from <code>IndexFaces</code>.
+     * determine which version of the model you are using, call and supply the collection ID. You also get the model
+     * version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.
      * </p>
      * <p>
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
@@ -1440,10 +1459,13 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * operations using the and operations.
      * </p>
      * <p>
+     * To get the number of faces in a collection, call .
+     * </p>
+     * <p>
      * If you are using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
      * the input image. Later versions of the face detection model index the 100 largest faces in the input image. To
-     * determine which version of the model you are using, check the the value of <code>FaceModelVersion</code> in the
-     * response from <code>IndexFaces</code>.
+     * determine which version of the model you are using, call and supply the collection ID. You also get the model
+     * version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.
      * </p>
      * <p>
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.

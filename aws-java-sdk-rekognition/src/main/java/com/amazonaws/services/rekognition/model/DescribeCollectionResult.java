@@ -18,16 +18,42 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * </p>
+     */
     private Long faceCount;
-
+    /**
+     * <p>
+     * The version of the face model that's used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * </p>
+     */
     private String faceModelVersion;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the collection.
+     * </p>
+     */
     private String collectionARN;
-
+    /**
+     * <p>
+     * The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is
+     * 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
+     * </p>
+     */
     private java.util.Date creationTimestamp;
 
     /**
+     * <p>
+     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * </p>
+     * 
      * @param faceCount
+     *        The number of faces that are indexed into the collection. To index faces into a collection, use .
      */
 
     public void setFaceCount(Long faceCount) {
@@ -35,7 +61,11 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * </p>
+     * 
+     * @return The number of faces that are indexed into the collection. To index faces into a collection, use .
      */
 
     public Long getFaceCount() {
@@ -43,7 +73,12 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * </p>
+     * 
      * @param faceCount
+     *        The number of faces that are indexed into the collection. To index faces into a collection, use .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -53,7 +88,17 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The version of the face model that's used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
      * @param faceModelVersion
+     *        The version of the face model that's used by the collection for face detection.</p>
+     *        <p>
+     *        For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      */
 
     public void setFaceModelVersion(String faceModelVersion) {
@@ -61,7 +106,16 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the face model that's used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @return The version of the face model that's used by the collection for face detection.</p>
+     *         <p>
+     *         For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      */
 
     public String getFaceModelVersion() {
@@ -69,7 +123,17 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The version of the face model that's used by the collection for face detection.
+     * </p>
+     * <p>
+     * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
      * @param faceModelVersion
+     *        The version of the face model that's used by the collection for face detection.</p>
+     *        <p>
+     *        For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +143,12 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the collection.
+     * </p>
+     * 
      * @param collectionARN
+     *        The Amazon Resource Name (ARN) of the collection.
      */
 
     public void setCollectionARN(String collectionARN) {
@@ -87,7 +156,11 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the collection.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the collection.
      */
 
     public String getCollectionARN() {
@@ -95,7 +168,12 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the collection.
+     * </p>
+     * 
      * @param collectionARN
+     *        The Amazon Resource Name (ARN) of the collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +183,14 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is
+     * 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
+     * </p>
+     * 
      * @param creationTimestamp
+     *        The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch
+     *        time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
      */
 
     public void setCreationTimestamp(java.util.Date creationTimestamp) {
@@ -113,7 +198,13 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is
+     * 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
+     * </p>
+     * 
+     * @return The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch
+     *         time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
      */
 
     public java.util.Date getCreationTimestamp() {
@@ -121,7 +212,14 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is
+     * 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
+     * </p>
+     * 
      * @param creationTimestamp
+     *        The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch
+     *        time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

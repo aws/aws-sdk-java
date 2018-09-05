@@ -80,11 +80,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
+     * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -165,9 +166,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -205,9 +206,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * on a random day of the week. To see the time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -558,11 +559,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
+     * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -574,11 +576,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *        applied during the next maintenance window.</p>
      *        <p>
-     *        The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *        <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *        false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *        are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *        the value of the <code>ApplyImmediately</code> parameter.
+     *        The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     *        <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *        <code>ApplyImmediately</code> parameter value to false, then changes to the
+     *        <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     *        <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *        changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -596,11 +599,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
+     * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -611,11 +615,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *         applied during the next maintenance window.</p>
      *         <p>
-     *         The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *         <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *         false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *         are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *         the value of the <code>ApplyImmediately</code> parameter.
+     *         The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes to the
+     *         <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     *         <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *         changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -633,11 +637,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
+     * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -649,11 +654,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *        applied during the next maintenance window.</p>
      *        <p>
-     *        The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *        <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *        false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *        are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *        the value of the <code>ApplyImmediately</code> parameter.
+     *        The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     *        <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *        <code>ApplyImmediately</code> parameter value to false, then changes to the
+     *        <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     *        <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *        changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -673,11 +679,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
+     * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -688,11 +695,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *         applied during the next maintenance window.</p>
      *         <p>
-     *         The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *         <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *         false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *         are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *         the value of the <code>ApplyImmediately</code> parameter.
+     *         The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes to the
+     *         <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
+     *         <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *         changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1159,9 +1166,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1194,9 +1201,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        see the time blocks available, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1235,9 +1242,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1269,9 +1276,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *         see the time blocks available, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *         see the time blocks available, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     *         > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
      *         <p>
      *         Constraints:
@@ -1310,9 +1317,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1345,9 +1352,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        see the time blocks available, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1390,9 +1397,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * on a random day of the week. To see the time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1408,9 +1415,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week. To see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        occurring on a random day of the week. To see the time blocks available, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1432,9 +1439,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * on a random day of the week. To see the time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1449,9 +1456,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *         occurring on a random day of the week. To see the time blocks available, see <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *         occurring on a random day of the week. To see the time blocks available, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     *         > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1473,9 +1480,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
-     * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * on a random day of the week. To see the time blocks available, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1491,9 +1498,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week. To see the time blocks available, see <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
-     *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        occurring on a random day of the week. To see the time blocks available, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
+     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.

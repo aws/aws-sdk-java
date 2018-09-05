@@ -31,7 +31,7 @@ public abstract class EndpointDiscoveryRefreshCache<K> {
 
     private static final Log log = LogFactory.getLog(EndpointDiscoveryRefreshCache.class);
 
-    private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+    private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor(DaemonThreadFactory.INSTANCE);
     private final CacheLoader<String, Map<String, String>> cacheLoader;
 
     protected final Map<String, URI> cache = new HashMap<String, URI>();
@@ -95,5 +95,9 @@ public abstract class EndpointDiscoveryRefreshCache<K> {
                 }
             }
         }, refreshPeriod, TimeUnit.MINUTES);
+    }
+
+    public void shutdown() {
+        executorService.shutdownNow();
     }
 }

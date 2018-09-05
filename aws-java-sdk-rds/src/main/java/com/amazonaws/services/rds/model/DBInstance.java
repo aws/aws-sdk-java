@@ -198,7 +198,10 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBInstanceIdentifiers;
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
@@ -332,8 +335,8 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
     private Integer promotionTier;
@@ -1676,10 +1679,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
      * 
-     * @return Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * @return Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *         Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *         MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *         cross region Aurora Read Replicas.
      */
 
     public java.util.List<String> getReadReplicaDBClusterIdentifiers() {
@@ -1691,11 +1700,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *        cross region Aurora Read Replicas.
      */
 
     public void setReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
@@ -1709,7 +1724,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1718,7 +1736,10 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *        cross region Aurora Read Replicas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1734,11 +1755,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *        cross region Aurora Read Replicas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2730,15 +2757,15 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
      *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
      *        failure of the existing primary instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *        > Fault Tolerance for an Aurora DB Cluster</a>.
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setPromotionTier(Integer promotionTier) {
@@ -2749,14 +2776,14 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @return A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
      *         failure of the existing primary instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *         > Fault Tolerance for an Aurora DB Cluster</a>.
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *         > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Integer getPromotionTier() {
@@ -2767,15 +2794,15 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
      *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
      *        failure of the existing primary instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *        > Fault Tolerance for an Aurora DB Cluster</a>.
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

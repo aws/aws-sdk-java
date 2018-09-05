@@ -41,8 +41,6 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private NotificationChannel notificationChannel;
-
-    private Boolean enablePersonTracking;
     /**
      * <p>
      * Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
@@ -190,40 +188,6 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @param enablePersonTracking
-     */
-
-    public void setEnablePersonTracking(Boolean enablePersonTracking) {
-        this.enablePersonTracking = enablePersonTracking;
-    }
-
-    /**
-     * @return
-     */
-
-    public Boolean getEnablePersonTracking() {
-        return this.enablePersonTracking;
-    }
-
-    /**
-     * @param enablePersonTracking
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartCelebrityRecognitionRequest withEnablePersonTracking(Boolean enablePersonTracking) {
-        setEnablePersonTracking(enablePersonTracking);
-        return this;
-    }
-
-    /**
-     * @return
-     */
-
-    public Boolean isEnablePersonTracking() {
-        return this.enablePersonTracking;
-    }
-
-    /**
      * <p>
      * Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
      * Notification Service topic.
@@ -286,8 +250,6 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getNotificationChannel() != null)
             sb.append("NotificationChannel: ").append(getNotificationChannel()).append(",");
-        if (getEnablePersonTracking() != null)
-            sb.append("EnablePersonTracking: ").append(getEnablePersonTracking()).append(",");
         if (getJobTag() != null)
             sb.append("JobTag: ").append(getJobTag());
         sb.append("}");
@@ -316,10 +278,6 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getNotificationChannel() != null && other.getNotificationChannel().equals(this.getNotificationChannel()) == false)
             return false;
-        if (other.getEnablePersonTracking() == null ^ this.getEnablePersonTracking() == null)
-            return false;
-        if (other.getEnablePersonTracking() != null && other.getEnablePersonTracking().equals(this.getEnablePersonTracking()) == false)
-            return false;
         if (other.getJobTag() == null ^ this.getJobTag() == null)
             return false;
         if (other.getJobTag() != null && other.getJobTag().equals(this.getJobTag()) == false)
@@ -335,7 +293,6 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVideo() == null) ? 0 : getVideo().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getNotificationChannel() == null) ? 0 : getNotificationChannel().hashCode());
-        hashCode = prime * hashCode + ((getEnablePersonTracking() == null) ? 0 : getEnablePersonTracking().hashCode());
         hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
         return hashCode;
     }

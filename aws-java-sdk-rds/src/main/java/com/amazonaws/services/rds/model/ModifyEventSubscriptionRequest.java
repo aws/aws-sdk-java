@@ -54,8 +54,8 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories
      * for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS
-     * User Guide or by using the <b>DescribeEventCategories</b> action.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
+     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> eventCategories;
@@ -223,14 +223,14 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories
      * for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS
-     * User Guide or by using the <b>DescribeEventCategories</b> action.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
+     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * </p>
      * 
      * @return A list of event categories for a SourceType that you want to subscribe to. You can see a list of the
      *         categories for a given SourceType in the <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the
-     *         Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.
+     *         <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      */
 
     public java.util.List<String> getEventCategories() {
@@ -244,15 +244,15 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories
      * for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS
-     * User Guide or by using the <b>DescribeEventCategories</b> action.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
+     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * </p>
      * 
      * @param eventCategories
      *        A list of event categories for a SourceType that you want to subscribe to. You can see a list of the
      *        categories for a given SourceType in the <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the
-     *        Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.
+     *        <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      */
 
     public void setEventCategories(java.util.Collection<String> eventCategories) {
@@ -268,8 +268,8 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories
      * for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS
-     * User Guide or by using the <b>DescribeEventCategories</b> action.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
+     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -281,7 +281,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        A list of event categories for a SourceType that you want to subscribe to. You can see a list of the
      *        categories for a given SourceType in the <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the
-     *        Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.
+     *        <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,15 +299,15 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories
      * for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the Amazon RDS
-     * User Guide or by using the <b>DescribeEventCategories</b> action.
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
+     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * </p>
      * 
      * @param eventCategories
      *        A list of event categories for a SourceType that you want to subscribe to. You can see a list of the
      *        categories for a given SourceType in the <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the
-     *        Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.
+     *        <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

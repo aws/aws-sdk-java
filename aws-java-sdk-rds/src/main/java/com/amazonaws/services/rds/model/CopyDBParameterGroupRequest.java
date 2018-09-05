@@ -30,7 +30,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -96,7 +96,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -118,7 +118,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      *        The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -144,7 +144,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -165,7 +165,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * @return The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
      *         href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *         > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -191,7 +191,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -213,7 +213,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      *        The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        Constraints:
      *        </p>

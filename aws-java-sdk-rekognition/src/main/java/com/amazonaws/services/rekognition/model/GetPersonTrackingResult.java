@@ -52,12 +52,6 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
      */
     private java.util.List<PersonDetection> persons;
 
-    private Integer billableDurationSeconds;
-
-    private String errorCode;
-
-    private java.util.List<Warning> warnings;
-
     /**
      * <p>
      * The current status of the person tracking job.
@@ -328,110 +322,6 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * @param billableDurationSeconds
-     */
-
-    public void setBillableDurationSeconds(Integer billableDurationSeconds) {
-        this.billableDurationSeconds = billableDurationSeconds;
-    }
-
-    /**
-     * @return
-     */
-
-    public Integer getBillableDurationSeconds() {
-        return this.billableDurationSeconds;
-    }
-
-    /**
-     * @param billableDurationSeconds
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPersonTrackingResult withBillableDurationSeconds(Integer billableDurationSeconds) {
-        setBillableDurationSeconds(billableDurationSeconds);
-        return this;
-    }
-
-    /**
-     * @param errorCode
-     */
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getErrorCode() {
-        return this.errorCode;
-    }
-
-    /**
-     * @param errorCode
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPersonTrackingResult withErrorCode(String errorCode) {
-        setErrorCode(errorCode);
-        return this;
-    }
-
-    /**
-     * @return
-     */
-
-    public java.util.List<Warning> getWarnings() {
-        return warnings;
-    }
-
-    /**
-     * @param warnings
-     */
-
-    public void setWarnings(java.util.Collection<Warning> warnings) {
-        if (warnings == null) {
-            this.warnings = null;
-            return;
-        }
-
-        this.warnings = new java.util.ArrayList<Warning>(warnings);
-    }
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param warnings
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPersonTrackingResult withWarnings(Warning... warnings) {
-        if (this.warnings == null) {
-            setWarnings(new java.util.ArrayList<Warning>(warnings.length));
-        }
-        for (Warning ele : warnings) {
-            this.warnings.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * @param warnings
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPersonTrackingResult withWarnings(java.util.Collection<Warning> warnings) {
-        setWarnings(warnings);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -451,13 +341,7 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getPersons() != null)
-            sb.append("Persons: ").append(getPersons()).append(",");
-        if (getBillableDurationSeconds() != null)
-            sb.append("BillableDurationSeconds: ").append(getBillableDurationSeconds()).append(",");
-        if (getErrorCode() != null)
-            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
-        if (getWarnings() != null)
-            sb.append("Warnings: ").append(getWarnings());
+            sb.append("Persons: ").append(getPersons());
         sb.append("}");
         return sb.toString();
     }
@@ -492,18 +376,6 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getPersons() != null && other.getPersons().equals(this.getPersons()) == false)
             return false;
-        if (other.getBillableDurationSeconds() == null ^ this.getBillableDurationSeconds() == null)
-            return false;
-        if (other.getBillableDurationSeconds() != null && other.getBillableDurationSeconds().equals(this.getBillableDurationSeconds()) == false)
-            return false;
-        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
-            return false;
-        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
-            return false;
-        if (other.getWarnings() == null ^ this.getWarnings() == null)
-            return false;
-        if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
-            return false;
         return true;
     }
 
@@ -517,9 +389,6 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getVideoMetadata() == null) ? 0 : getVideoMetadata().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getPersons() == null) ? 0 : getPersons().hashCode());
-        hashCode = prime * hashCode + ((getBillableDurationSeconds() == null) ? 0 : getBillableDurationSeconds().hashCode());
-        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
-        hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

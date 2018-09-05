@@ -69,18 +69,6 @@ public class GetPersonTrackingResultJsonUnmarshaller implements Unmarshaller<Get
                     getPersonTrackingResult
                             .setPersons(new ListUnmarshaller<PersonDetection>(PersonDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("BillableDurationSeconds", targetDepth)) {
-                    context.nextToken();
-                    getPersonTrackingResult.setBillableDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("ErrorCode", targetDepth)) {
-                    context.nextToken();
-                    getPersonTrackingResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("Warnings", targetDepth)) {
-                    context.nextToken();
-                    getPersonTrackingResult.setWarnings(new ListUnmarshaller<Warning>(WarningJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

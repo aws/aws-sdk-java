@@ -440,6 +440,11 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         if (waiters != null) {
             waiters.shutdown();
         }
+        <#if endpointOperation?has_content>
+        if (cache != null) {
+            cache.shutdown();
+        }
+        </#if>
     }
     </#if>
 

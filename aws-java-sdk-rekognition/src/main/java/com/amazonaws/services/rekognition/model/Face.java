@@ -57,8 +57,6 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
      */
     private Float confidence;
 
-    private Float associationScore;
-
     /**
      * <p>
      * Unique identifier that Amazon Rekognition assigns to the face.
@@ -260,32 +258,6 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @param associationScore
-     */
-
-    public void setAssociationScore(Float associationScore) {
-        this.associationScore = associationScore;
-    }
-
-    /**
-     * @return
-     */
-
-    public Float getAssociationScore() {
-        return this.associationScore;
-    }
-
-    /**
-     * @param associationScore
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Face withAssociationScore(Float associationScore) {
-        setAssociationScore(associationScore);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -305,9 +277,7 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
         if (getExternalImageId() != null)
             sb.append("ExternalImageId: ").append(getExternalImageId()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: ").append(getConfidence()).append(",");
-        if (getAssociationScore() != null)
-            sb.append("AssociationScore: ").append(getAssociationScore());
+            sb.append("Confidence: ").append(getConfidence());
         sb.append("}");
         return sb.toString();
     }
@@ -342,10 +312,6 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConfidence() != null && other.getConfidence().equals(this.getConfidence()) == false)
             return false;
-        if (other.getAssociationScore() == null ^ this.getAssociationScore() == null)
-            return false;
-        if (other.getAssociationScore() != null && other.getAssociationScore().equals(this.getAssociationScore()) == false)
-            return false;
         return true;
     }
 
@@ -359,7 +325,6 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getExternalImageId() == null) ? 0 : getExternalImageId().hashCode());
         hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
-        hashCode = prime * hashCode + ((getAssociationScore() == null) ? 0 : getAssociationScore().hashCode());
         return hashCode;
     }
 
