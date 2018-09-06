@@ -334,7 +334,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param addTagsRequest
@@ -399,7 +399,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups"
-     * >Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
+     * >Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param applySecurityGroupsToLoadBalancerRequest
@@ -466,7 +466,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * The load balancer evenly distributes requests across all registered subnets. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add or Remove
-     * Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
+     * Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param attachLoadBalancerToSubnetsRequest
@@ -533,7 +533,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure Health
-     * Checks for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param configureHealthCheckRequest
@@ -605,7 +605,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application"
-     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
+     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param createAppCookieStickinessPolicyRequest
@@ -685,7 +685,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration"
-     * >Duration-Based Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
+     * >Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param createLBCookieStickinessPolicyRequest
@@ -763,7 +763,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
      * balancers for your account. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic
-     * Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -851,7 +851,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerListenersRequest
@@ -1172,7 +1172,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html"
-     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
+     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param deregisterInstancesFromLoadBalancerRequest
@@ -1238,7 +1238,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic
-     * Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeAccountLimitsRequest
@@ -1565,6 +1565,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @throws DependencyThrottleException
+     *         A request made by Elastic Load Balancing to another service exceeds the maximum request rate permitted
+     *         for your account.
      * @sample AmazonElasticLoadBalancing.DescribeLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers"
      *      target="_top">AWS API Documentation</a>
@@ -1737,7 +1739,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.
+     * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in
+     * EC2-Classic or a default VPC.
+     * </p>
+     * <p>
+     * For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.
      * </p>
      * <p>
      * There must be at least one Availability Zone registered with a load balancer at all times. After an Availability
@@ -1748,7 +1754,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove
-     * Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
+     * Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param disableAvailabilityZonesForLoadBalancerRequest
@@ -1809,16 +1815,17 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.
+     * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer in
+     * EC2-Classic or a default VPC.
+     * </p>
+     * <p>
+     * For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.
      * </p>
      * <p>
      * The load balancer evenly distributes requests across all its registered Availability Zones that contain
-     * instances.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove
-     * Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
+     * Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param enableAvailabilityZonesForLoadBalancerRequest
@@ -1886,7 +1893,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * balancer.
      * </p>
      * <p>
-     * For more information, see the following in the <i>Classic Load Balancer Guide</i>:
+     * For more information, see the following in the <i>Classic Load Balancers Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -1998,7 +2005,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html"
-     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
+     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param registerInstancesWithLoadBalancerRequest
@@ -2119,7 +2126,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information about updating your SSL certificate, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace the SSL
-     * Certificate for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerListenerSSLCertificateRequest
@@ -2203,10 +2210,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information about enabling back-end instance authentication, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt"
-     * >Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancer Guide</i>. For more information
+     * >Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For more information
      * about Proxy Protocol, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure Proxy
-     * Protocol Support</a> in the <i>Classic Load Balancer Guide</i>.
+     * Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerPoliciesForBackendServerRequest
@@ -2281,7 +2288,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration"
      * >Duration-Based Session Stickiness</a>, and <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application"
-     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
+     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerPoliciesOfListenerRequest

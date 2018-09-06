@@ -15,7 +15,10 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * A request made by Elastic Load Balancing to another service exceeds the maximum request rate permitted for your
+ * account.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DependencyThrottleException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {

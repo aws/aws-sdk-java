@@ -88,6 +88,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setUserSettings(new ListUnmarshaller<UserSetting>(UserSettingJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ApplicationSettings", targetDepth)) {
+                    context.nextToken();
+                    stack.setApplicationSettings(ApplicationSettingsResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

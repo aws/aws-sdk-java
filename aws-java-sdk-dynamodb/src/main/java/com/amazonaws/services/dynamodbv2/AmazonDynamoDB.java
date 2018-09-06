@@ -778,6 +778,15 @@ public interface AmazonDynamoDB {
     DescribeContinuousBackupsResult describeContinuousBackups(DescribeContinuousBackupsRequest describeContinuousBackupsRequest);
 
     /**
+     * @param describeEndpointsRequest
+     * @return Result of the DescribeEndpoints operation returned by the service.
+     * @sample AmazonDynamoDB.DescribeEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest describeEndpointsRequest);
+
+    /**
      * <p>
      * Returns information about the specified global table.
      * </p>

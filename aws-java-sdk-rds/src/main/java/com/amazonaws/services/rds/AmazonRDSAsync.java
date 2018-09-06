@@ -474,9 +474,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide.</i> </a>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -574,9 +574,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide.</i> </a>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -714,9 +714,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameter.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide.</i> </a>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterRequest
@@ -738,9 +738,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameter.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide.</i> </a>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterRequest
@@ -784,9 +784,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * </important>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterParameterGroupRequest
@@ -827,9 +827,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * </important>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterParameterGroupRequest
@@ -849,9 +849,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterSnapshotRequest
@@ -864,9 +864,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterSnapshotRequest
@@ -1252,9 +1252,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p/>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterRequest
@@ -1273,9 +1273,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p/>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterRequest
@@ -1297,9 +1297,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * with any DB clusters.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterParameterGroupRequest
@@ -1318,9 +1318,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * with any DB clusters.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterParameterGroupRequest
@@ -1348,9 +1348,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * </note>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterSnapshotRequest
@@ -1371,9 +1371,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * </note>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterSnapshotRequest
@@ -1813,9 +1813,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns information about backtracks for a DB cluster.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterBacktracksRequest
@@ -1832,9 +1832,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns information about backtracks for a DB cluster.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterBacktracksRequest
@@ -1858,9 +1858,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * the specified DB cluster parameter group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterParameterGroupsRequest
@@ -1880,9 +1880,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * the specified DB cluster parameter group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterParameterGroupsRequest
@@ -1921,9 +1921,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns the detailed parameter list for a particular DB cluster parameter group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterParametersRequest
@@ -1940,9 +1940,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns the detailed parameter list for a particular DB cluster parameter group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterParametersRequest
@@ -2019,9 +2019,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns information about DB cluster snapshots. This API action supports pagination.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterSnapshotsRequest
@@ -2038,9 +2038,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns information about DB cluster snapshots. This API action supports pagination.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterSnapshotsRequest
@@ -2077,9 +2077,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns information about provisioned Aurora DB clusters. This API supports pagination.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClustersRequest
@@ -2095,9 +2095,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns information about provisioned Aurora DB clusters. This API supports pagination.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClustersRequest
@@ -2557,9 +2557,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns the default engine and system parameter information for the cluster database engine.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeEngineDefaultClusterParametersRequest
@@ -2577,9 +2577,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns the default engine and system parameter information for the cluster database engine.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeEngineDefaultClusterParametersRequest
@@ -3170,9 +3170,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * connections that use those endpoint addresses when the failover is complete.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param failoverDBClusterRequest
@@ -3198,9 +3198,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * connections that use those endpoint addresses when the failover is complete.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param failoverDBClusterRequest
@@ -3355,9 +3355,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by
-     * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param modifyDBClusterRequest
@@ -3371,9 +3371,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by
-     * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param modifyDBClusterRequest
@@ -3396,9 +3396,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameters can be modified in a single request.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <note>
      * <p>
@@ -3435,9 +3435,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameters can be modified in a single request.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <note>
      * <p>
@@ -4155,9 +4155,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameter to apply to.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param resetDBClusterParameterGroupRequest
@@ -4184,9 +4184,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * parameter to apply to.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param resetDBClusterParameterGroupRequest
@@ -4296,9 +4296,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * default security group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param restoreDBClusterFromSnapshotRequest
@@ -4324,9 +4324,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * default security group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param restoreDBClusterFromSnapshotRequest
@@ -4359,9 +4359,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * </note>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param restoreDBClusterToPointInTimeRequest
@@ -4389,9 +4389,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * </note>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param restoreDBClusterToPointInTimeRequest

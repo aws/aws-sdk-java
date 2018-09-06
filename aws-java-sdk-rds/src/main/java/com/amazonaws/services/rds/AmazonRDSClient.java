@@ -946,9 +946,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide.</i> </a>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -1208,9 +1208,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * parameter.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide.</i> </a>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterRequest
@@ -1322,9 +1322,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * </important>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterParameterGroupRequest
@@ -1381,9 +1381,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param createDBClusterSnapshotRequest
@@ -2053,9 +2053,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p/>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterRequest
@@ -2121,9 +2121,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * with any DB clusters.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterParameterGroupRequest
@@ -2189,9 +2189,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * </note>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param deleteDBClusterSnapshotRequest
@@ -2827,9 +2827,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns information about backtracks for a DB cluster.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterBacktracksRequest
@@ -2891,9 +2891,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * the specified DB cluster parameter group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterParameterGroupsRequest
@@ -2957,9 +2957,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns the detailed parameter list for a particular DB cluster parameter group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterParametersRequest
@@ -3084,9 +3084,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns information about DB cluster snapshots. This API action supports pagination.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClusterSnapshotsRequest
@@ -3149,9 +3149,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns information about provisioned Aurora DB clusters. This API supports pagination.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeDBClustersRequest
@@ -3759,9 +3759,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns the default engine and system parameter information for the cluster database engine.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param describeEngineDefaultClusterParametersRequest
@@ -4587,9 +4587,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * connections that use those endpoint addresses when the failover is complete.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param failoverDBClusterRequest
@@ -4801,9 +4801,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by
-     * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param modifyDBClusterRequest
@@ -4883,9 +4883,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * parameters can be modified in a single request.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <note>
      * <p>
@@ -5974,9 +5974,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * parameter to apply to.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param resetDBClusterParameterGroupRequest
@@ -6195,9 +6195,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * default security group.
      * </p>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param restoreDBClusterFromSnapshotRequest
@@ -6303,9 +6303,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * </note>
      * <p>
-     * For more information on Amazon Aurora, see the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> <i>Amazon Aurora
-     * User Guide</i> </a>.
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
+     * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param restoreDBClusterToPointInTimeRequest

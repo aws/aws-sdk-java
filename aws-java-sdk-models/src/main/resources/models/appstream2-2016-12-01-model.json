@@ -296,7 +296,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Retrieves a list that describes the permissions for a private image that you own. </p>"
+      "documentation":"<p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own. </p>"
     },
     "DescribeImages":{
       "name":"DescribeImages",
@@ -310,7 +310,7 @@
         {"shape":"InvalidParameterCombinationException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Retrieves a list that describes one or more specified images, if the image names are provided. Otherwise, all images in the account are described.</p>"
+      "documentation":"<p>Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described.</p>"
     },
     "DescribeSessions":{
       "name":"DescribeSessions",
@@ -615,6 +615,39 @@
         }
       },
       "documentation":"<p>Describes an application in the application catalog.</p>"
+    },
+    "ApplicationSettings":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables or disables persistent application settings for users during their streaming sessions. </p>"
+        },
+        "SettingsGroup":{
+          "shape":"SettingsGroup",
+          "documentation":"<p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>"
+        }
+      },
+      "documentation":"<p>The persistent application settings for users of a stack.</p>"
+    },
+    "ApplicationSettingsResponse":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>"
+        },
+        "SettingsGroup":{
+          "shape":"SettingsGroup",
+          "documentation":"<p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>"
+        },
+        "S3BucketName":{
+          "shape":"String",
+          "documentation":"<p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>"
+        }
+      },
+      "documentation":"<p>Describes the persistent application settings for users of a stack.</p>"
     },
     "Applications":{
       "type":"list",
@@ -970,6 +1003,10 @@
         "UserSettings":{
           "shape":"UserSettingList",
           "documentation":"<p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>"
+        },
+        "ApplicationSettings":{
+          "shape":"ApplicationSettings",
+          "documentation":"<p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>"
         }
       }
     },
@@ -1270,7 +1307,7 @@
       "members":{
         "Names":{
           "shape":"StringList",
-          "documentation":"<p>The names of the images to describe.</p>"
+          "documentation":"<p>The names of the public or private images to describe.</p>"
         },
         "Arns":{
           "shape":"ArnList",
@@ -2190,6 +2227,10 @@
         "EXPIRED"
       ]
     },
+    "SettingsGroup":{
+      "type":"string",
+      "max":100
+    },
     "SharedImagePermissions":{
       "type":"structure",
       "required":[
@@ -2255,6 +2296,10 @@
         "UserSettings":{
           "shape":"UserSettingList",
           "documentation":"<p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>"
+        },
+        "ApplicationSettings":{
+          "shape":"ApplicationSettingsResponse",
+          "documentation":"<p>The persistent application settings for users of the stack.</p>"
         }
       },
       "documentation":"<p>Describes a stack.</p>"
@@ -2666,6 +2711,10 @@
         "UserSettings":{
           "shape":"UserSettingList",
           "documentation":"<p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>"
+        },
+        "ApplicationSettings":{
+          "shape":"ApplicationSettings",
+          "documentation":"<p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>"
         }
       }
     },

@@ -324,6 +324,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest request) {
+
+        return describeEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest request) {
 
         return describeGlobalTableAsync(request, null);

@@ -45,6 +45,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeBackup("dynamodb:DescribeBackup"),
     /** Action for the DescribeContinuousBackups operation. */
     DescribeContinuousBackups("dynamodb:DescribeContinuousBackups"),
+    /** Action for the DescribeEndpoints operation. */
+    DescribeEndpoints("dynamodb:DescribeEndpoints"),
     /** Action for the DescribeGlobalTable operation. */
     DescribeGlobalTable("dynamodb:DescribeGlobalTable"),
     /** Action for the DescribeGlobalTableSettings operation. */

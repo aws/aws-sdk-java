@@ -755,6 +755,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest request) {
+
+        return describeEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(final DescribeEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler) {
+        final DescribeEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEndpointsResult>() {
+            @Override
+            public DescribeEndpointsResult call() throws Exception {
+                DescribeEndpointsResult result = null;
+
+                try {
+                    result = executeDescribeEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest request) {
 
         return describeGlobalTableAsync(request, null);

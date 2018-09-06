@@ -45,7 +45,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private String canonicalHostedZoneName;
@@ -225,7 +225,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param canonicalHostedZoneName
@@ -233,7 +233,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
-     *        >Configure a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     *        >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setCanonicalHostedZoneName(String canonicalHostedZoneName) {
@@ -247,14 +247,14 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return The DNS name of the load balancer.</p>
      *         <p>
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
-     *         >Configure a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     *         >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public String getCanonicalHostedZoneName() {
@@ -268,7 +268,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param canonicalHostedZoneName
@@ -276,7 +276,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
-     *        >Configure a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.
+     *        >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1385,7 +1385,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Retrieves a list that describes the permissions for a private image that you own.
+     * Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own.
      * </p>
      * 
      * @param describeImagePermissionsRequest
@@ -1442,8 +1442,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Retrieves a list that describes one or more specified images, if the image names are provided. Otherwise, all
-     * images in the account are described.
+     * Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided.
+     * Otherwise, all images in the account are described.
      * </p>
      * 
      * @param describeImagesRequest

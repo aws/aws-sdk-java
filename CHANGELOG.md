@@ -1,3 +1,24 @@
+# __1.11.403__ __2018-09-05__
+## __Amazon AppStream__
+  - ### Features
+    - Added support for enabling persistent application settings for a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - New feature for Amazon DynamoDB.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Fix broken links in the RDS CLI Reference to the Aurora User Guide
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Parquet input format support added for the SelectObjectContent API
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Documentation update for DescribeAccountLimits API to include classic-registered-instances.
+
 # __1.11.402__ __2018-09-04__
 ## __Amazon Rekognition__
   - ### Features

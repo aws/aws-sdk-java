@@ -188,6 +188,11 @@ public class RequestXmlFactory {
                 xml.end();
             }
 
+            if (inputSerialization.getParquet() != null) {
+                xml.start("Parquet");
+                xml.end();
+            }
+
             addIfNotNull(xml, "CompressionType", inputSerialization.getCompressionType());
 
             xml.end();

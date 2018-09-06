@@ -34,6 +34,11 @@ public class InputSerialization implements Serializable, Cloneable {
      */
     private JSONInput json;
 
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    private ParquetInput parquet;
+
     private String compressionType;
 
     /**
@@ -82,6 +87,28 @@ public class InputSerialization implements Serializable, Cloneable {
      */
     public InputSerialization withJson(JSONInput json) {
         setJson(json);
+        return this;
+    }
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    public ParquetInput getParquet() {
+        return parquet;
+    }
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    public void setParquet(ParquetInput parquet) {
+        this.parquet = parquet;
+    }
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    public InputSerialization withParquet(ParquetInput parquet) {
+        setParquet(parquet);
         return this;
     }
 

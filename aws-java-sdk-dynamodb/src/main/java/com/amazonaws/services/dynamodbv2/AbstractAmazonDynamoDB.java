@@ -126,6 +126,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

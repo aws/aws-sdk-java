@@ -1127,6 +1127,29 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
             com.amazonaws.handlers.AsyncHandler<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResult> asyncHandler);
 
     /**
+     * @param describeEndpointsRequest
+     * @return A Java Future containing the result of the DescribeEndpoints operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest);
+
+    /**
+     * @param describeEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEndpoints operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler);
+
+    /**
      * <p>
      * Returns information about the specified global table.
      * </p>

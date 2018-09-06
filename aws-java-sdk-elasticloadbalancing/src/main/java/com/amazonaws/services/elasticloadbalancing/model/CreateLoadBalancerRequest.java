@@ -45,7 +45,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Listener> listeners;
@@ -97,7 +97,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -138,7 +138,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * @param availabilityZones
      *        One or more Availability Zones from the same region as the load balancer.
      *        </p>
@@ -223,14 +223,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return The listeners.</p>
      *         <p>
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     *         for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *         for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public java.util.List<Listener> getListeners() {
@@ -247,7 +247,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param listeners
@@ -255,7 +255,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setListeners(java.util.Collection<Listener> listeners) {
@@ -274,7 +274,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -287,7 +287,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,7 +308,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param listeners
@@ -316,7 +316,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,14 +708,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return A list of tags to assign to the load balancer.</p>
      *         <p>
      *         For more information about tagging your load balancer, see <a
      *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
-     *         Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *         Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -732,7 +732,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param tags
@@ -740,7 +740,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information about tagging your load balancer, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
-     *        Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -759,7 +759,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -772,7 +772,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information about tagging your load balancer, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
-     *        Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,7 +793,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param tags
@@ -801,7 +801,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information about tagging your load balancer, see <a
      *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your
-     *        Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     *        Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

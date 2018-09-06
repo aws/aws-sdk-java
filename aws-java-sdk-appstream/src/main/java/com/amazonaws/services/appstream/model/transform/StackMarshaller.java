@@ -48,6 +48,8 @@ public class StackMarshaller {
             .marshallLocationName("StackErrors").build();
     private static final MarshallingInfo<List> USERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserSettings").build();
+    private static final MarshallingInfo<StructuredPojo> APPLICATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSettings").build();
 
     private static final StackMarshaller instance = new StackMarshaller();
 
@@ -75,6 +77,7 @@ public class StackMarshaller {
             protocolMarshaller.marshall(stack.getFeedbackURL(), FEEDBACKURL_BINDING);
             protocolMarshaller.marshall(stack.getStackErrors(), STACKERRORS_BINDING);
             protocolMarshaller.marshall(stack.getUserSettings(), USERSETTINGS_BINDING);
+            protocolMarshaller.marshall(stack.getApplicationSettings(), APPLICATIONSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
