@@ -32,6 +32,8 @@ public class FilterLogEventsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
     private static final MarshallingInfo<List> LOGSTREAMNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamNames").build();
+    private static final MarshallingInfo<String> LOGSTREAMNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamNamePrefix").build();
     private static final MarshallingInfo<Long> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("startTime").build();
     private static final MarshallingInfo<Long> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class FilterLogEventsRequestMarshaller {
         try {
             protocolMarshaller.marshall(filterLogEventsRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getLogStreamNames(), LOGSTREAMNAMES_BINDING);
+            protocolMarshaller.marshall(filterLogEventsRequest.getLogStreamNamePrefix(), LOGSTREAMNAMEPREFIX_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getFilterPattern(), FILTERPATTERN_BINDING);

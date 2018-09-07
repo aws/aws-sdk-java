@@ -1132,11 +1132,15 @@
       "members":{
         "logGroupName":{
           "shape":"LogGroupName",
-          "documentation":"<p>The name of the log group.</p>"
+          "documentation":"<p>The name of the log group to search.</p>"
         },
         "logStreamNames":{
           "shape":"InputLogStreamNames",
-          "documentation":"<p>Optional list of log stream names.</p>"
+          "documentation":"<p>Filters the results to only logs from the log streams in this list.</p> <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>"
+        },
+        "logStreamNamePrefix":{
+          "shape":"LogStreamName",
+          "documentation":"<p>Filters the results to include only events from log streams that have names starting with this prefix.</p> <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>"
         },
         "startTime":{
           "shape":"Timestamp",
@@ -1148,7 +1152,7 @@
         },
         "filterPattern":{
           "shape":"FilterPattern",
-          "documentation":"<p>The filter pattern to use. If not provided, all the events are matched.</p>"
+          "documentation":"<p>The filter pattern to use. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html\">Filter and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>"
         },
         "nextToken":{
           "shape":"NextToken",

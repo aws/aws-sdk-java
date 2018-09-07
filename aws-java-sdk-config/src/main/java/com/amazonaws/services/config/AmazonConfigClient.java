@@ -2938,8 +2938,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws LimitExceededException
-     *         This exception is thrown if an evaluation is in progress or if you call the
-     *         <a>StartConfigRulesEvaluation</a> API more than once per minute.
+     *         For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress
+     *         or if you call the <a>StartConfigRulesEvaluation</a> API more than once per minute.</p>
+     *         <p>
+     *         For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and
+     *         aggregators exceeds the limit.
      * @throws InvalidRoleException
      *         You have provided a null or empty role ARN.
      * @throws OrganizationAccessDeniedException
@@ -3346,8 +3349,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @throws LimitExceededException
-     *         This exception is thrown if an evaluation is in progress or if you call the
-     *         <a>StartConfigRulesEvaluation</a> API more than once per minute.
+     *         For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress
+     *         or if you call the <a>StartConfigRulesEvaluation</a> API more than once per minute.</p>
+     *         <p>
+     *         For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and
+     *         aggregators exceeds the limit.
      * @throws ResourceInUseException
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.

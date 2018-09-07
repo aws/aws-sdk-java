@@ -27,16 +27,32 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group.
+     * The name of the log group to search.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * Optional list of log stream names.
+     * Filters the results to only logs from the log streams in this list.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> logStreamNames;
+    /**
+     * <p>
+     * Filters the results to include only events from log streams that have names starting with this prefix.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
+     * </p>
+     */
+    private String logStreamNamePrefix;
     /**
      * <p>
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
@@ -53,7 +69,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     private Long endTime;
     /**
      * <p>
-     * The filter pattern to use. If not provided, all the events are matched.
+     * The filter pattern to use. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * Syntax</a>.
+     * </p>
+     * <p>
+     * If not provided, all the events are matched.
      * </p>
      */
     private String filterPattern;
@@ -81,11 +102,11 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group.
+     * The name of the log group to search.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group to search.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -94,10 +115,10 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group.
+     * The name of the log group to search.
      * </p>
      * 
-     * @return The name of the log group.
+     * @return The name of the log group to search.
      */
 
     public String getLogGroupName() {
@@ -106,11 +127,11 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the log group.
+     * The name of the log group to search.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group to search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,10 +142,19 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional list of log stream names.
+     * Filters the results to only logs from the log streams in this list.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
      * </p>
      * 
-     * @return Optional list of log stream names.
+     * @return Filters the results to only logs from the log streams in this list.</p>
+     *         <p>
+     *         If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *         value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *         <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
      */
 
     public java.util.List<String> getLogStreamNames() {
@@ -136,11 +166,20 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional list of log stream names.
+     * Filters the results to only logs from the log streams in this list.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param logStreamNames
-     *        Optional list of log stream names.
+     *        Filters the results to only logs from the log streams in this list.</p>
+     *        <p>
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
      */
 
     public void setLogStreamNames(java.util.Collection<String> logStreamNames) {
@@ -154,7 +193,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional list of log stream names.
+     * Filters the results to only logs from the log streams in this list.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +207,11 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param logStreamNames
-     *        Optional list of log stream names.
+     *        Filters the results to only logs from the log streams in this list.</p>
+     *        <p>
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,16 +227,93 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional list of log stream names.
+     * Filters the results to only logs from the log streams in this list.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param logStreamNames
-     *        Optional list of log stream names.
+     *        Filters the results to only logs from the log streams in this list.</p>
+     *        <p>
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilterLogEventsRequest withLogStreamNames(java.util.Collection<String> logStreamNames) {
         setLogStreamNames(logStreamNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results to include only events from log streams that have names starting with this prefix.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @param logStreamNamePrefix
+     *        Filters the results to include only events from log streams that have names starting with this prefix.</p>
+     *        <p>
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     */
+
+    public void setLogStreamNamePrefix(String logStreamNamePrefix) {
+        this.logStreamNamePrefix = logStreamNamePrefix;
+    }
+
+    /**
+     * <p>
+     * Filters the results to include only events from log streams that have names starting with this prefix.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @return Filters the results to include only events from log streams that have names starting with this
+     *         prefix.</p>
+     *         <p>
+     *         If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *         value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *         <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     */
+
+    public String getLogStreamNamePrefix() {
+        return this.logStreamNamePrefix;
+    }
+
+    /**
+     * <p>
+     * Filters the results to include only events from log streams that have names starting with this prefix.
+     * </p>
+     * <p>
+     * If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>
+     * , the action returns an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @param logStreamNamePrefix
+     *        Filters the results to include only events from log streams that have names starting with this prefix.</p>
+     *        <p>
+     *        If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the
+     *        value for <code>logStreamNamePrefix</code> does not match any log stream names specified in
+     *        <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterLogEventsRequest withLogStreamNamePrefix(String logStreamNamePrefix) {
+        setLogStreamNamePrefix(logStreamNamePrefix);
         return this;
     }
 
@@ -286,11 +411,20 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The filter pattern to use. If not provided, all the events are matched.
+     * The filter pattern to use. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * Syntax</a>.
+     * </p>
+     * <p>
+     * If not provided, all the events are matched.
      * </p>
      * 
      * @param filterPattern
-     *        The filter pattern to use. If not provided, all the events are matched.
+     *        The filter pattern to use. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *        Pattern Syntax</a>.</p>
+     *        <p>
+     *        If not provided, all the events are matched.
      */
 
     public void setFilterPattern(String filterPattern) {
@@ -299,10 +433,19 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The filter pattern to use. If not provided, all the events are matched.
+     * The filter pattern to use. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * Syntax</a>.
+     * </p>
+     * <p>
+     * If not provided, all the events are matched.
      * </p>
      * 
-     * @return The filter pattern to use. If not provided, all the events are matched.
+     * @return The filter pattern to use. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *         Pattern Syntax</a>.</p>
+     *         <p>
+     *         If not provided, all the events are matched.
      */
 
     public String getFilterPattern() {
@@ -311,11 +454,20 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The filter pattern to use. If not provided, all the events are matched.
+     * The filter pattern to use. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern
+     * Syntax</a>.
+     * </p>
+     * <p>
+     * If not provided, all the events are matched.
      * </p>
      * 
      * @param filterPattern
-     *        The filter pattern to use. If not provided, all the events are matched.
+     *        The filter pattern to use. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and
+     *        Pattern Syntax</a>.</p>
+     *        <p>
+     *        If not provided, all the events are matched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,6 +647,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamNames() != null)
             sb.append("LogStreamNames: ").append(getLogStreamNames()).append(",");
+        if (getLogStreamNamePrefix() != null)
+            sb.append("LogStreamNamePrefix: ").append(getLogStreamNamePrefix()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
@@ -528,6 +682,10 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getLogStreamNames() == null ^ this.getLogStreamNames() == null)
             return false;
         if (other.getLogStreamNames() != null && other.getLogStreamNames().equals(this.getLogStreamNames()) == false)
+            return false;
+        if (other.getLogStreamNamePrefix() == null ^ this.getLogStreamNamePrefix() == null)
+            return false;
+        if (other.getLogStreamNamePrefix() != null && other.getLogStreamNamePrefix().equals(this.getLogStreamNamePrefix()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
@@ -563,6 +721,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getLogStreamNames() == null) ? 0 : getLogStreamNames().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamNamePrefix() == null) ? 0 : getLogStreamNamePrefix().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getFilterPattern() == null) ? 0 : getFilterPattern().hashCode());
