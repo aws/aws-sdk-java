@@ -35,6 +35,8 @@ public class PullRequestEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestEventType").build();
     private static final MarshallingInfo<String> ACTORARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("actorArn").build();
+    private static final MarshallingInfo<StructuredPojo> PULLREQUESTCREATEDEVENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestCreatedEventMetadata").build();
     private static final MarshallingInfo<StructuredPojo> PULLREQUESTSTATUSCHANGEDEVENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestStatusChangedEventMetadata").build();
     private static final MarshallingInfo<StructuredPojo> PULLREQUESTSOURCEREFERENCEUPDATEDEVENTMETADATA_BINDING = MarshallingInfo
@@ -64,6 +66,7 @@ public class PullRequestEventMarshaller {
             protocolMarshaller.marshall(pullRequestEvent.getEventDate(), EVENTDATE_BINDING);
             protocolMarshaller.marshall(pullRequestEvent.getPullRequestEventType(), PULLREQUESTEVENTTYPE_BINDING);
             protocolMarshaller.marshall(pullRequestEvent.getActorArn(), ACTORARN_BINDING);
+            protocolMarshaller.marshall(pullRequestEvent.getPullRequestCreatedEventMetadata(), PULLREQUESTCREATEDEVENTMETADATA_BINDING);
             protocolMarshaller.marshall(pullRequestEvent.getPullRequestStatusChangedEventMetadata(), PULLREQUESTSTATUSCHANGEDEVENTMETADATA_BINDING);
             protocolMarshaller.marshall(pullRequestEvent.getPullRequestSourceReferenceUpdatedEventMetadata(),
                     PULLREQUESTSOURCEREFERENCEUPDATEDEVENTMETADATA_BINDING);

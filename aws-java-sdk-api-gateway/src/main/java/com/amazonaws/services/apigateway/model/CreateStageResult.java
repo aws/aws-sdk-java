@@ -103,6 +103,12 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private CanarySettings canarySettings;
     /**
      * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     */
+    private Boolean tracingEnabled;
+    /**
+     * <p>
      * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
@@ -716,6 +722,58 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @param tracingEnabled
+     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     */
+
+    public void setTracingEnabled(Boolean tracingEnabled) {
+        this.tracingEnabled = tracingEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     */
+
+    public Boolean getTracingEnabled() {
+        return this.tracingEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @param tracingEnabled
+     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStageResult withTracingEnabled(Boolean tracingEnabled) {
+        setTracingEnabled(tracingEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     */
+
+    public Boolean isTracingEnabled() {
+        return this.tracingEnabled;
+    }
+
+    /**
+     * <p>
      * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
@@ -890,6 +948,8 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
         if (getCanarySettings() != null)
             sb.append("CanarySettings: ").append(getCanarySettings()).append(",");
+        if (getTracingEnabled() != null)
+            sb.append("TracingEnabled: ").append(getTracingEnabled()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedDate() != null)
@@ -958,6 +1018,10 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
             return false;
+        if (other.getTracingEnabled() == null ^ this.getTracingEnabled() == null)
+            return false;
+        if (other.getTracingEnabled() != null && other.getTracingEnabled().equals(this.getTracingEnabled()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -990,6 +1054,7 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
         hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
         hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
+        hashCode = prime * hashCode + ((getTracingEnabled() == null) ? 0 : getTracingEnabled().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());

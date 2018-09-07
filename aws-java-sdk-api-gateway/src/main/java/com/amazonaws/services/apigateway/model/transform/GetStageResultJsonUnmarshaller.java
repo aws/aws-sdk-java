@@ -98,6 +98,10 @@ public class GetStageResultJsonUnmarshaller implements Unmarshaller<GetStageResu
                     context.nextToken();
                     getStageResult.setCanarySettings(CanarySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tracingEnabled", targetDepth)) {
+                    context.nextToken();
+                    getStageResult.setTracingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     getStageResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

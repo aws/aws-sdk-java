@@ -33,6 +33,8 @@ public class PullRequestSourceReferenceUpdatedEventMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("beforeCommitId").build();
     private static final MarshallingInfo<String> AFTERCOMMITID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("afterCommitId").build();
+    private static final MarshallingInfo<String> MERGEBASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mergeBase").build();
 
     private static final PullRequestSourceReferenceUpdatedEventMetadataMarshaller instance = new PullRequestSourceReferenceUpdatedEventMetadataMarshaller();
 
@@ -53,6 +55,7 @@ public class PullRequestSourceReferenceUpdatedEventMetadataMarshaller {
             protocolMarshaller.marshall(pullRequestSourceReferenceUpdatedEventMetadata.getRepositoryName(), REPOSITORYNAME_BINDING);
             protocolMarshaller.marshall(pullRequestSourceReferenceUpdatedEventMetadata.getBeforeCommitId(), BEFORECOMMITID_BINDING);
             protocolMarshaller.marshall(pullRequestSourceReferenceUpdatedEventMetadata.getAfterCommitId(), AFTERCOMMITID_BINDING);
+            protocolMarshaller.marshall(pullRequestSourceReferenceUpdatedEventMetadata.getMergeBase(), MERGEBASE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

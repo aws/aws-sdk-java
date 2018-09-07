@@ -49,6 +49,12 @@ public class PullRequestSourceReferenceUpdatedEventMetadata implements Serializa
      * </p>
      */
     private String afterCommitId;
+    /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     */
+    private String mergeBase;
 
     /**
      * <p>
@@ -183,6 +189,46 @@ public class PullRequestSourceReferenceUpdatedEventMetadata implements Serializa
     }
 
     /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     * 
+     * @param mergeBase
+     *        The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     */
+
+    public void setMergeBase(String mergeBase) {
+        this.mergeBase = mergeBase;
+    }
+
+    /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     * 
+     * @return The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     */
+
+    public String getMergeBase() {
+        return this.mergeBase;
+    }
+
+    /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     * 
+     * @param mergeBase
+     *        The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequestSourceReferenceUpdatedEventMetadata withMergeBase(String mergeBase) {
+        setMergeBase(mergeBase);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -198,7 +244,9 @@ public class PullRequestSourceReferenceUpdatedEventMetadata implements Serializa
         if (getBeforeCommitId() != null)
             sb.append("BeforeCommitId: ").append(getBeforeCommitId()).append(",");
         if (getAfterCommitId() != null)
-            sb.append("AfterCommitId: ").append(getAfterCommitId());
+            sb.append("AfterCommitId: ").append(getAfterCommitId()).append(",");
+        if (getMergeBase() != null)
+            sb.append("MergeBase: ").append(getMergeBase());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +273,10 @@ public class PullRequestSourceReferenceUpdatedEventMetadata implements Serializa
             return false;
         if (other.getAfterCommitId() != null && other.getAfterCommitId().equals(this.getAfterCommitId()) == false)
             return false;
+        if (other.getMergeBase() == null ^ this.getMergeBase() == null)
+            return false;
+        if (other.getMergeBase() != null && other.getMergeBase().equals(this.getMergeBase()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +288,7 @@ public class PullRequestSourceReferenceUpdatedEventMetadata implements Serializa
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getBeforeCommitId() == null) ? 0 : getBeforeCommitId().hashCode());
         hashCode = prime * hashCode + ((getAfterCommitId() == null) ? 0 : getAfterCommitId().hashCode());
+        hashCode = prime * hashCode + ((getMergeBase() == null) ? 0 : getMergeBase().hashCode());
         return hashCode;
     }
 

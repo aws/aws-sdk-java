@@ -680,7 +680,7 @@
         {"shape":"FileNameConflictsWithDirectoryNameException"},
         {"shape":"DirectoryNameConflictsWithFileNameException"}
       ],
-      "documentation":"<p>Adds or updates a file in an AWS CodeCommit repository.</p>"
+      "documentation":"<p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>"
     },
     "PutRepositoryTriggers":{
       "name":"PutRepositoryTriggers",
@@ -2725,6 +2725,28 @@
       "documentation":"<p>The pull request status cannot be updated because it is already closed.</p>",
       "exception":true
     },
+    "PullRequestCreatedEventMetadata":{
+      "type":"structure",
+      "members":{
+        "repositoryName":{
+          "shape":"RepositoryName",
+          "documentation":"<p>The name of the repository where the pull request was created.</p>"
+        },
+        "sourceCommitId":{
+          "shape":"CommitId",
+          "documentation":"<p>The commit ID on the source branch used when the pull request was created.</p>"
+        },
+        "destinationCommitId":{
+          "shape":"CommitId",
+          "documentation":"<p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>"
+        },
+        "mergeBase":{
+          "shape":"CommitId",
+          "documentation":"<p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>"
+        }
+      },
+      "documentation":"<p>Metadata about the pull request that is used when comparing the pull request source with its destination.</p>"
+    },
     "PullRequestDoesNotExistException":{
       "type":"structure",
       "members":{
@@ -2750,6 +2772,10 @@
         "actorArn":{
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with additional commits or changing the status of a pull request.</p>"
+        },
+        "pullRequestCreatedEventMetadata":{
+          "shape":"PullRequestCreatedEventMetadata",
+          "documentation":"<p>Information about the source and destination branches for the pull request.</p>"
         },
         "pullRequestStatusChangedEventMetadata":{
           "shape":"PullRequestStatusChangedEventMetadata",
@@ -2823,6 +2849,10 @@
         "afterCommitId":{
           "shape":"CommitId",
           "documentation":"<p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>"
+        },
+        "mergeBase":{
+          "shape":"CommitId",
+          "documentation":"<p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>"
         }
       },
       "documentation":"<p>Information about an update to the source branch of a pull request.</p>"
@@ -2870,6 +2900,10 @@
           "shape":"CommitId",
           "documentation":"<p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>"
         },
+        "mergeBase":{
+          "shape":"CommitId",
+          "documentation":"<p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>"
+        },
         "sourceCommit":{
           "shape":"CommitId",
           "documentation":"<p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID will change to reflect the new tip of the branch.</p>"
@@ -2900,7 +2934,7 @@
         },
         "branchName":{
           "shape":"BranchName",
-          "documentation":"<p>The name of the branch where you want to add or update the file.</p>"
+          "documentation":"<p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch will be created.</p>"
         },
         "fileContent":{
           "shape":"FileContent",
@@ -2916,7 +2950,7 @@
         },
         "parentCommitId":{
           "shape":"CommitId",
-          "documentation":"<p>The full commit ID of the head commit in the branch where you want to add or update the file. If the commit ID does not match the ID of the head commit at the time of the operation, an error will occur, and the file will not be added or updated.</p>"
+          "documentation":"<p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> <p>The commit ID must match the ID of the head commit at the time of the operation, or an error will occur, and the file will not be added or updated.</p>"
         },
         "commitMessage":{
           "shape":"Message",
@@ -2950,7 +2984,7 @@
         },
         "treeId":{
           "shape":"ObjectId",
-          "documentation":"<p>Tree information for the commit that contains this file change.</p>"
+          "documentation":"<p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>"
         }
       }
     },

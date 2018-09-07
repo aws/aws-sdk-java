@@ -31,8 +31,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UntagResourceRequestProtocolMarshaller implements Marshaller<Request<UntagResourceRequest>, UntagResourceRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2017-08-29/tags")
-            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSMediaConvert").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/2017-08-29/tags/{arn}")
+            .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSMediaConvert").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

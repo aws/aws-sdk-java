@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * The service encountered an unexpected condition and cannot fulfill your request.
+ * The service encountered an unexpected condition and can't fulfill your request.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.mediaconvert.model.AWSMediaConvertException {

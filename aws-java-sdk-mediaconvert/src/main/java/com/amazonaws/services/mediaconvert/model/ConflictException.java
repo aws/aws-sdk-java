@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * The service could not complete your request because there is a conflict with the current state of the resource.
+ * The service couldn't complete your request because there is a conflict with the current state of the resource.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.mediaconvert.model.AWSMediaConvertException {

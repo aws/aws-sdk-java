@@ -1,3 +1,16 @@
+# __1.11.404__ __2018-09-06__
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds additional optional fields to the pull request APIs.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - This release adds support for Cost Allocation through tagging and also enables adding, editing, and removal of tags from the MediaConvert console.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Add support for Active X-Ray with API Gateway
+
 # __1.11.403__ __2018-09-05__
 ## __Amazon AppStream__
   - ### Features

@@ -64,6 +64,10 @@ public class PullRequestEventJsonUnmarshaller implements Unmarshaller<PullReques
                     context.nextToken();
                     pullRequestEvent.setActorArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("pullRequestCreatedEventMetadata", targetDepth)) {
+                    context.nextToken();
+                    pullRequestEvent.setPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("pullRequestStatusChangedEventMetadata", targetDepth)) {
                     context.nextToken();
                     pullRequestEvent.setPullRequestStatusChangedEventMetadata(PullRequestStatusChangedEventMetadataJsonUnmarshaller.getInstance().unmarshall(

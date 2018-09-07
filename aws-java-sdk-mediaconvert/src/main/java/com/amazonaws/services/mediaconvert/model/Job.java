@@ -29,6 +29,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
+
+    private String billingTagsSource;
     /** The time, in Unix epoch format in seconds, when the job got created. */
     private java.util.Date createdAt;
     /** Error code for the job */
@@ -95,6 +97,46 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param billingTagsSource
+     * @see BillingTagsSource
+     */
+
+    public void setBillingTagsSource(String billingTagsSource) {
+        this.billingTagsSource = billingTagsSource;
+    }
+
+    /**
+     * @return
+     * @see BillingTagsSource
+     */
+
+    public String getBillingTagsSource() {
+        return this.billingTagsSource;
+    }
+
+    /**
+     * @param billingTagsSource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingTagsSource
+     */
+
+    public Job withBillingTagsSource(String billingTagsSource) {
+        setBillingTagsSource(billingTagsSource);
+        return this;
+    }
+
+    /**
+     * @param billingTagsSource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingTagsSource
+     */
+
+    public Job withBillingTagsSource(BillingTagsSource billingTagsSource) {
+        this.billingTagsSource = billingTagsSource.toString();
         return this;
     }
 
@@ -582,6 +624,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getBillingTagsSource() != null)
+            sb.append("BillingTagsSource: ").append(getBillingTagsSource()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getErrorCode() != null)
@@ -623,6 +667,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getBillingTagsSource() == null ^ this.getBillingTagsSource() == null)
+            return false;
+        if (other.getBillingTagsSource() != null && other.getBillingTagsSource().equals(this.getBillingTagsSource()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -681,6 +729,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getBillingTagsSource() == null) ? 0 : getBillingTagsSource().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());

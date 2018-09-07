@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue will not begin. Jobs running when a queue is
+ * Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs running when a queue is
  * paused continue to run until they finish or error out.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

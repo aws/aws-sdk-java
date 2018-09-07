@@ -56,6 +56,12 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
     private String actorArn;
     /**
      * <p>
+     * Information about the source and destination branches for the pull request.
+     * </p>
+     */
+    private PullRequestCreatedEventMetadata pullRequestCreatedEventMetadata;
+    /**
+     * <p>
      * Information about the change in status for the pull request event.
      * </p>
      */
@@ -268,6 +274,46 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Information about the source and destination branches for the pull request.
+     * </p>
+     * 
+     * @param pullRequestCreatedEventMetadata
+     *        Information about the source and destination branches for the pull request.
+     */
+
+    public void setPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadata pullRequestCreatedEventMetadata) {
+        this.pullRequestCreatedEventMetadata = pullRequestCreatedEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about the source and destination branches for the pull request.
+     * </p>
+     * 
+     * @return Information about the source and destination branches for the pull request.
+     */
+
+    public PullRequestCreatedEventMetadata getPullRequestCreatedEventMetadata() {
+        return this.pullRequestCreatedEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about the source and destination branches for the pull request.
+     * </p>
+     * 
+     * @param pullRequestCreatedEventMetadata
+     *        Information about the source and destination branches for the pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequestEvent withPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadata pullRequestCreatedEventMetadata) {
+        setPullRequestCreatedEventMetadata(pullRequestCreatedEventMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the change in status for the pull request event.
      * </p>
      * 
@@ -406,6 +452,8 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
             sb.append("PullRequestEventType: ").append(getPullRequestEventType()).append(",");
         if (getActorArn() != null)
             sb.append("ActorArn: ").append(getActorArn()).append(",");
+        if (getPullRequestCreatedEventMetadata() != null)
+            sb.append("PullRequestCreatedEventMetadata: ").append(getPullRequestCreatedEventMetadata()).append(",");
         if (getPullRequestStatusChangedEventMetadata() != null)
             sb.append("PullRequestStatusChangedEventMetadata: ").append(getPullRequestStatusChangedEventMetadata()).append(",");
         if (getPullRequestSourceReferenceUpdatedEventMetadata() != null)
@@ -442,6 +490,11 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getActorArn() != null && other.getActorArn().equals(this.getActorArn()) == false)
             return false;
+        if (other.getPullRequestCreatedEventMetadata() == null ^ this.getPullRequestCreatedEventMetadata() == null)
+            return false;
+        if (other.getPullRequestCreatedEventMetadata() != null
+                && other.getPullRequestCreatedEventMetadata().equals(this.getPullRequestCreatedEventMetadata()) == false)
+            return false;
         if (other.getPullRequestStatusChangedEventMetadata() == null ^ this.getPullRequestStatusChangedEventMetadata() == null)
             return false;
         if (other.getPullRequestStatusChangedEventMetadata() != null
@@ -469,6 +522,7 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEventDate() == null) ? 0 : getEventDate().hashCode());
         hashCode = prime * hashCode + ((getPullRequestEventType() == null) ? 0 : getPullRequestEventType().hashCode());
         hashCode = prime * hashCode + ((getActorArn() == null) ? 0 : getActorArn().hashCode());
+        hashCode = prime * hashCode + ((getPullRequestCreatedEventMetadata() == null) ? 0 : getPullRequestCreatedEventMetadata().hashCode());
         hashCode = prime * hashCode + ((getPullRequestStatusChangedEventMetadata() == null) ? 0 : getPullRequestStatusChangedEventMetadata().hashCode());
         hashCode = prime * hashCode
                 + ((getPullRequestSourceReferenceUpdatedEventMetadata() == null) ? 0 : getPullRequestSourceReferenceUpdatedEventMetadata().hashCode());

@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * The resource you requested does not exist.
+ * The resource you requested doesn't exist.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotFoundException extends com.amazonaws.services.mediaconvert.model.AWSMediaConvertException {

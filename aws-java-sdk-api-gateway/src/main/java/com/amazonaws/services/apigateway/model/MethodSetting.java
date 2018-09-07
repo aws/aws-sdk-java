@@ -34,7 +34,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     private Boolean metricsEnabled;
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
@@ -42,7 +42,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
     private String loggingLevel;
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
@@ -164,13 +164,13 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch
+     *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
      *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      */
@@ -181,12 +181,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
      * 
-     * @return Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch
+     * @return Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *         Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
      *         available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      */
@@ -197,13 +197,13 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch
+     *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
      *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -216,13 +216,13 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
      * @param dataTraceEnabled
-     *        Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     *        Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *        Amazon CloudWatch Logs. The PATCH path for this setting is
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      */
@@ -233,12 +233,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
-     * @return Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     * @return Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *         Amazon CloudWatch Logs. The PATCH path for this setting is
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      */
@@ -249,13 +249,13 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
      * @param dataTraceEnabled
-     *        Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     *        Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *        Amazon CloudWatch Logs. The PATCH path for this setting is
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -268,12 +268,12 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
-     * @return Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     * @return Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *         Amazon CloudWatch Logs. The PATCH path for this setting is
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      */

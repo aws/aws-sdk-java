@@ -3051,7 +3051,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
-     * Adds or updates a file in an AWS CodeCommit repository.
+     * Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in
+     * the specified branch.
      * </p>
      * 
      * @param putFileRequest

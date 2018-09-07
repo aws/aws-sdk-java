@@ -539,8 +539,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
-     * Tag a MediaConvert queue, preset, or job template. For information about these resource types, see the User Guide
-     * at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Add tags to a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
      * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
@@ -551,8 +551,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
-     * Tag a MediaConvert queue, preset, or job template. For information about these resource types, see the User Guide
-     * at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Add tags to a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
      * 
      * @param tagResourceRequest
      * @param asyncHandler
@@ -568,8 +568,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
-     * Untag a MediaConvert queue, preset, or job template. For information about these resource types, see the User
-     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Remove tags from a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide
+     * at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -580,8 +580,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
-     * Untag a MediaConvert queue, preset, or job template. For information about these resource types, see the User
-     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Remove tags from a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide
+     * at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
      * 
      * @param untagResourceRequest
      * @param asyncHandler

@@ -2490,6 +2490,10 @@
         "canarySettings":{
           "shape":"DeploymentCanarySettings",
           "documentation":"<p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>"
+        },
+        "tracingEnabled":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>"
         }
       },
       "documentation":"<p>Requests API Gateway to create a <a>Deployment</a> resource.</p>"
@@ -2763,6 +2767,10 @@
         "canarySettings":{
           "shape":"CanarySettings",
           "documentation":"<p>The canary deployment settings of this stage.</p>"
+        },
+        "tracingEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>"
         },
         "tags":{
           "shape":"MapOfStringToString",
@@ -5253,11 +5261,11 @@
         },
         "loggingLevel":{
           "shape":"String",
-          "documentation":"<p>Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>"
+          "documentation":"<p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>"
         },
         "dataTraceEnabled":{
           "shape":"Boolean",
-          "documentation":"<p>Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>"
+          "documentation":"<p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>"
         },
         "throttlingBurstLimit":{
           "shape":"Integer",
@@ -6020,6 +6028,10 @@
         "canarySettings":{
           "shape":"CanarySettings",
           "documentation":"<p>Settings for the canary deployment in this stage.</p>"
+        },
+        "tracingEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>"
         },
         "tags":{
           "shape":"MapOfStringToString",

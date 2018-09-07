@@ -37,7 +37,7 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String blobId;
     /**
      * <p>
-     * Tree information for the commit that contains this file change.
+     * The full SHA-1 pointer of the tree information for the commit that contains this file change.
      * </p>
      */
     private String treeId;
@@ -124,11 +124,11 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Tree information for the commit that contains this file change.
+     * The full SHA-1 pointer of the tree information for the commit that contains this file change.
      * </p>
      * 
      * @param treeId
-     *        Tree information for the commit that contains this file change.
+     *        The full SHA-1 pointer of the tree information for the commit that contains this file change.
      */
 
     public void setTreeId(String treeId) {
@@ -137,10 +137,10 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Tree information for the commit that contains this file change.
+     * The full SHA-1 pointer of the tree information for the commit that contains this file change.
      * </p>
      * 
-     * @return Tree information for the commit that contains this file change.
+     * @return The full SHA-1 pointer of the tree information for the commit that contains this file change.
      */
 
     public String getTreeId() {
@@ -149,11 +149,11 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Tree information for the commit that contains this file change.
+     * The full SHA-1 pointer of the tree information for the commit that contains this file change.
      * </p>
      * 
      * @param treeId
-     *        Tree information for the commit that contains this file change.
+     *        The full SHA-1 pointer of the tree information for the commit that contains this file change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
