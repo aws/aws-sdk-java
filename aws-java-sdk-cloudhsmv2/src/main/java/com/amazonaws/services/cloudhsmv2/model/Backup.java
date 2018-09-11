@@ -60,6 +60,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private String sourceBackup;
 
     private String sourceCluster;
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     */
+    private java.util.Date deleteTimestamp;
 
     /**
      * <p>
@@ -345,6 +351,46 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     * 
+     * @param deleteTimestamp
+     *        The date and time when the backup will be permanently deleted.
+     */
+
+    public void setDeleteTimestamp(java.util.Date deleteTimestamp) {
+        this.deleteTimestamp = deleteTimestamp;
+    }
+
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     * 
+     * @return The date and time when the backup will be permanently deleted.
+     */
+
+    public java.util.Date getDeleteTimestamp() {
+        return this.deleteTimestamp;
+    }
+
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     * 
+     * @param deleteTimestamp
+     *        The date and time when the backup will be permanently deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withDeleteTimestamp(java.util.Date deleteTimestamp) {
+        setDeleteTimestamp(deleteTimestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -370,7 +416,9 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         if (getSourceBackup() != null)
             sb.append("SourceBackup: ").append(getSourceBackup()).append(",");
         if (getSourceCluster() != null)
-            sb.append("SourceCluster: ").append(getSourceCluster());
+            sb.append("SourceCluster: ").append(getSourceCluster()).append(",");
+        if (getDeleteTimestamp() != null)
+            sb.append("DeleteTimestamp: ").append(getDeleteTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -417,6 +465,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSourceCluster() != null && other.getSourceCluster().equals(this.getSourceCluster()) == false)
             return false;
+        if (other.getDeleteTimestamp() == null ^ this.getDeleteTimestamp() == null)
+            return false;
+        if (other.getDeleteTimestamp() != null && other.getDeleteTimestamp().equals(this.getDeleteTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -433,6 +485,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         hashCode = prime * hashCode + ((getSourceBackup() == null) ? 0 : getSourceBackup().hashCode());
         hashCode = prime * hashCode + ((getSourceCluster() == null) ? 0 : getSourceCluster().hashCode());
+        hashCode = prime * hashCode + ((getDeleteTimestamp() == null) ? 0 : getDeleteTimestamp().hashCode());
         return hashCode;
     }
 

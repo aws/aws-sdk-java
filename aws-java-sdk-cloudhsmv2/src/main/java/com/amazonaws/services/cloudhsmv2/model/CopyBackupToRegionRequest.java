@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The AWS region that will contain your copied CloudHSM cluster backup.
+     * </p>
+     */
     private String destinationRegion;
-
+    /**
+     * <p>
+     * The ID of the backup that will be copied to the destination region.
+     * </p>
+     */
     private String backupId;
 
     /**
+     * <p>
+     * The AWS region that will contain your copied CloudHSM cluster backup.
+     * </p>
+     * 
      * @param destinationRegion
+     *        The AWS region that will contain your copied CloudHSM cluster backup.
      */
 
     public void setDestinationRegion(String destinationRegion) {
@@ -38,7 +52,11 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS region that will contain your copied CloudHSM cluster backup.
+     * </p>
+     * 
+     * @return The AWS region that will contain your copied CloudHSM cluster backup.
      */
 
     public String getDestinationRegion() {
@@ -46,7 +64,12 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The AWS region that will contain your copied CloudHSM cluster backup.
+     * </p>
+     * 
      * @param destinationRegion
+     *        The AWS region that will contain your copied CloudHSM cluster backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ID of the backup that will be copied to the destination region.
+     * </p>
+     * 
      * @param backupId
+     *        The ID of the backup that will be copied to the destination region.
      */
 
     public void setBackupId(String backupId) {
@@ -64,7 +92,11 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the backup that will be copied to the destination region.
+     * </p>
+     * 
+     * @return The ID of the backup that will be copied to the destination region.
      */
 
     public String getBackupId() {
@@ -72,7 +104,12 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ID of the backup that will be copied to the destination region.
+     * </p>
+     * 
      * @param backupId
+     *        The ID of the backup that will be copied to the destination region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

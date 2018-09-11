@@ -138,6 +138,14 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("MaintenanceTrackName", StringUtils.fromString(modifyClusterRequest.getMaintenanceTrackName()));
         }
 
+        if (modifyClusterRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(modifyClusterRequest.getEncrypted()));
+        }
+
+        if (modifyClusterRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(modifyClusterRequest.getKmsKeyId()));
+        }
+
         return request;
     }
 

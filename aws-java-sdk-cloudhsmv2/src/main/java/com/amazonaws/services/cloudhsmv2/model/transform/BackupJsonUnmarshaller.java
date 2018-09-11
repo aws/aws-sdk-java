@@ -80,6 +80,10 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                     context.nextToken();
                     backup.setSourceCluster(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeleteTimestamp", targetDepth)) {
+                    context.nextToken();
+                    backup.setDeleteTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

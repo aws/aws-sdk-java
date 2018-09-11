@@ -139,6 +139,10 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
     }
 
     /**
+     * <p>
+     * Copy an AWS CloudHSM cluster backup to a different region.
+     * </p>
+     * 
      * @param copyBackupToRegionRequest
      * @return Result of the CopyBackupToRegion operation returned by the service.
      * @throws CloudHsmInternalFailureException
@@ -316,6 +320,71 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateHsmResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateHsmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request.
+     * For more information on restoring a backup, see <a>RestoreBackup</a>
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @return Result of the DeleteBackup operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBackup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBackupResult executeDeleteBackup(DeleteBackupRequest deleteBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBackupRequest> request = null;
+        Response<DeleteBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBackupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -722,6 +791,71 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information
+     * on deleting a backup, see <a>DeleteBackup</a>.
+     * </p>
+     * 
+     * @param restoreBackupRequest
+     * @return Result of the RestoreBackup operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.RestoreBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RestoreBackupResult restoreBackup(RestoreBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreBackup(request);
+    }
+
+    @SdkInternalApi
+    final RestoreBackupResult executeRestoreBackup(RestoreBackupRequest restoreBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreBackupRequest> request = null;
+        Response<RestoreBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreBackup");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreBackupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

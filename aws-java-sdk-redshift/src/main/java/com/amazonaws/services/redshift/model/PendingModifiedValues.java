@@ -96,6 +96,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private String maintenanceTrackName;
+    /**
+     * <p>
+     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
+     * are None, and Legacy.
+     * </p>
+     */
+    private String encryptionType;
 
     /**
      * <p>
@@ -590,6 +597,52 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
+     * are None, and Legacy.
+     * </p>
+     * 
+     * @param encryptionType
+     *        The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible
+     *        values are None, and Legacy.
+     */
+
+    public void setEncryptionType(String encryptionType) {
+        this.encryptionType = encryptionType;
+    }
+
+    /**
+     * <p>
+     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
+     * are None, and Legacy.
+     * </p>
+     * 
+     * @return The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible
+     *         values are None, and Legacy.
+     */
+
+    public String getEncryptionType() {
+        return this.encryptionType;
+    }
+
+    /**
+     * <p>
+     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
+     * are None, and Legacy.
+     * </p>
+     * 
+     * @param encryptionType
+     *        The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible
+     *        values are None, and Legacy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withEncryptionType(String encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -619,7 +672,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getMaintenanceTrackName() != null)
-            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
+        if (getEncryptionType() != null)
+            sb.append("EncryptionType: ").append(getEncryptionType());
         sb.append("}");
         return sb.toString();
     }
@@ -675,6 +730,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
             return false;
+        if (other.getEncryptionType() == null ^ this.getEncryptionType() == null)
+            return false;
+        if (other.getEncryptionType() != null && other.getEncryptionType().equals(this.getEncryptionType()) == false)
+            return false;
         return true;
     }
 
@@ -693,6 +752,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
         return hashCode;
     }
 

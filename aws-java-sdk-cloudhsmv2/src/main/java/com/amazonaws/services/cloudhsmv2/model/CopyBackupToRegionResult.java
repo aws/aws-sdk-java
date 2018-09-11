@@ -23,10 +23,37 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CopyBackupToRegionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup,
+     * SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the
+     * source backup.
+     * </p>
+     * <p>
+     * You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a>
+     * operation on the backup that will be copied to the destination region.
+     * </p>
+     */
     private DestinationBackup destinationBackup;
 
     /**
+     * <p>
+     * Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup,
+     * SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the
+     * source backup.
+     * </p>
+     * <p>
+     * You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a>
+     * operation on the backup that will be copied to the destination region.
+     * </p>
+     * 
      * @param destinationBackup
+     *        Information on the backup that will be copied to the destination region, including CreateTimestamp,
+     *        SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same
+     *        as that of the source backup.</p>
+     *        <p>
+     *        You will need to use the <code>sourceBackupID</code> returned in this operation to use the
+     *        <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.
      */
 
     public void setDestinationBackup(DestinationBackup destinationBackup) {
@@ -34,7 +61,22 @@ public class CopyBackupToRegionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup,
+     * SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the
+     * source backup.
+     * </p>
+     * <p>
+     * You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a>
+     * operation on the backup that will be copied to the destination region.
+     * </p>
+     * 
+     * @return Information on the backup that will be copied to the destination region, including CreateTimestamp,
+     *         SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the
+     *         same as that of the source backup.</p>
+     *         <p>
+     *         You will need to use the <code>sourceBackupID</code> returned in this operation to use the
+     *         <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.
      */
 
     public DestinationBackup getDestinationBackup() {
@@ -42,7 +84,23 @@ public class CopyBackupToRegionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup,
+     * SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the
+     * source backup.
+     * </p>
+     * <p>
+     * You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a>
+     * operation on the backup that will be copied to the destination region.
+     * </p>
+     * 
      * @param destinationBackup
+     *        Information on the backup that will be copied to the destination region, including CreateTimestamp,
+     *        SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same
+     *        as that of the source backup.</p>
+     *        <p>
+     *        You will need to use the <code>sourceBackupID</code> returned in this operation to use the
+     *        <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

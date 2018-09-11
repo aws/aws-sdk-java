@@ -350,6 +350,22 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String maintenanceTrackName;
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -2507,6 +2523,128 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *        <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *        you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *        will use legacy encryption if you specify that the cluster is encrypted.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @return Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *         <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *         you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *         will use legacy encryption if you specify that the cluster is encrypted.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *        <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *        you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *        will use legacy encryption if you specify that the cluster is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @return Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *         <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *         you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *         will use legacy encryption if you specify that the cluster is encrypted.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
+     *        the cluster.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     * 
+     * @return The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
+     *         the cluster.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
+     *        the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2554,7 +2692,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getMaintenanceTrackName() != null)
-            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName());
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -2647,6 +2789,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -2674,6 +2824,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

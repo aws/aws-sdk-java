@@ -47,6 +47,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * identifier (ID).
      * </p>
      * <p>
+     * Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     * <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
+     * </p>
+     * <p>
      * Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by
      * their cluster identifier (ID).
      * </p>
@@ -156,6 +160,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * identifier (ID).
      * </p>
      * <p>
+     * Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     * <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
+     * </p>
+     * <p>
      * Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by
      * their cluster identifier (ID).
      * </p>
@@ -167,6 +175,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their
      *         backup identifier (ID).
+     *         </p>
+     *         <p>
+     *         Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     *         <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
      *         </p>
      *         <p>
      *         Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify
@@ -189,6 +201,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * identifier (ID).
      * </p>
      * <p>
+     * Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     * <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
+     * </p>
+     * <p>
      * Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by
      * their cluster identifier (ID).
      * </p>
@@ -201,6 +217,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their
      *        backup identifier (ID).
+     *        </p>
+     *        <p>
+     *        Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     *        <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
      *        </p>
      *        <p>
      *        Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify
@@ -223,6 +243,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * identifier (ID).
      * </p>
      * <p>
+     * Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     * <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
+     * </p>
+     * <p>
      * Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by
      * their cluster identifier (ID).
      * </p>
@@ -235,6 +259,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their
      *        backup identifier (ID).
+     *        </p>
+     *        <p>
+     *        Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The
+     *        <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.
      *        </p>
      *        <p>
      *        Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify

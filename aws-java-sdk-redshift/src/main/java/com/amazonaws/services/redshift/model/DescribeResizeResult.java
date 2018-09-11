@@ -133,6 +133,16 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * The type of encryption for the cluster after the resize is complete.
+     * </p>
+     * <p>
+     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     * <code>Legacy</code> and <code>None</code>.
+     * </p>
+     */
+    private String targetEncryptionType;
 
     /**
      * <p>
@@ -932,6 +942,67 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The type of encryption for the cluster after the resize is complete.
+     * </p>
+     * <p>
+     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     * <code>Legacy</code> and <code>None</code>.
+     * </p>
+     * 
+     * @param targetEncryptionType
+     *        The type of encryption for the cluster after the resize is complete.</p>
+     *        <p>
+     *        Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     *        <code>Legacy</code> and <code>None</code>.
+     */
+
+    public void setTargetEncryptionType(String targetEncryptionType) {
+        this.targetEncryptionType = targetEncryptionType;
+    }
+
+    /**
+     * <p>
+     * The type of encryption for the cluster after the resize is complete.
+     * </p>
+     * <p>
+     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     * <code>Legacy</code> and <code>None</code>.
+     * </p>
+     * 
+     * @return The type of encryption for the cluster after the resize is complete.</p>
+     *         <p>
+     *         Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     *         <code>Legacy</code> and <code>None</code>.
+     */
+
+    public String getTargetEncryptionType() {
+        return this.targetEncryptionType;
+    }
+
+    /**
+     * <p>
+     * The type of encryption for the cluster after the resize is complete.
+     * </p>
+     * <p>
+     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     * <code>Legacy</code> and <code>None</code>.
+     * </p>
+     * 
+     * @param targetEncryptionType
+     *        The type of encryption for the cluster after the resize is complete.</p>
+     *        <p>
+     *        Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
+     *        <code>Legacy</code> and <code>None</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResizeResult withTargetEncryptionType(String targetEncryptionType) {
+        setTargetEncryptionType(targetEncryptionType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -969,7 +1040,9 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getResizeType() != null)
             sb.append("ResizeType: ").append(getResizeType()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getTargetEncryptionType() != null)
+            sb.append("TargetEncryptionType: ").append(getTargetEncryptionType());
         sb.append("}");
         return sb.toString();
     }
@@ -1042,6 +1115,10 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getTargetEncryptionType() == null ^ this.getTargetEncryptionType() == null)
+            return false;
+        if (other.getTargetEncryptionType() != null && other.getTargetEncryptionType().equals(this.getTargetEncryptionType()) == false)
+            return false;
         return true;
     }
 
@@ -1064,6 +1141,7 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getEstimatedTimeToCompletionInSeconds() == null) ? 0 : getEstimatedTimeToCompletionInSeconds().hashCode());
         hashCode = prime * hashCode + ((getResizeType() == null) ? 0 : getResizeType().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getTargetEncryptionType() == null) ? 0 : getTargetEncryptionType().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,12 @@
+# __1.11.406__ __2018-09-10__
+## __AWS CloudHSM V2__
+  - ### Features
+    - With this release, we are adding 2 new APIs. DeleteBackup deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request. During this 7-day period, the backup will be in state PENDING_DELETION. Backups can be restored using the RestoreBackup API, which will move the backup from state PENDING_DELETION back to ACTIVE.
+
+## __Amazon Redshift__
+  - ### Features
+    - Adding support to Redshift to change the encryption type after cluster creation completes.
+
 # __1.11.405__ __2018-09-07__
 ## __AWS Config__
   - ### Features

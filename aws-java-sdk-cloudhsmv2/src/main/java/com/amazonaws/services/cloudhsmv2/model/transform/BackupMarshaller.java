@@ -43,6 +43,8 @@ public class BackupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackup").build();
     private static final MarshallingInfo<String> SOURCECLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCluster").build();
+    private static final MarshallingInfo<java.util.Date> DELETETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteTimestamp").build();
 
     private static final BackupMarshaller instance = new BackupMarshaller();
 
@@ -68,6 +70,7 @@ public class BackupMarshaller {
             protocolMarshaller.marshall(backup.getSourceRegion(), SOURCEREGION_BINDING);
             protocolMarshaller.marshall(backup.getSourceBackup(), SOURCEBACKUP_BINDING);
             protocolMarshaller.marshall(backup.getSourceCluster(), SOURCECLUSTER_BINDING);
+            protocolMarshaller.marshall(backup.getDeleteTimestamp(), DELETETIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

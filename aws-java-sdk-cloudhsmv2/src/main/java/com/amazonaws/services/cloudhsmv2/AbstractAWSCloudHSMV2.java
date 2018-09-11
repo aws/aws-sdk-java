@@ -43,6 +43,11 @@ public class AbstractAWSCloudHSMV2 implements AWSCloudHSMV2 {
     }
 
     @Override
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAWSCloudHSMV2 implements AWSCloudHSMV2 {
 
     @Override
     public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreBackupResult restoreBackup(RestoreBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

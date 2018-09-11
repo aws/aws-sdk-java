@@ -22,7 +22,8 @@ public enum BackupState {
 
     CREATE_IN_PROGRESS("CREATE_IN_PROGRESS"),
     READY("READY"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    PENDING_DELETION("PENDING_DELETION");
 
     private String value;
 

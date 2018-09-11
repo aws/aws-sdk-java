@@ -34,6 +34,10 @@ import com.amazonaws.services.cloudhsmv2.model.*;
 public interface AWSCloudHSMV2Async extends AWSCloudHSMV2 {
 
     /**
+     * <p>
+     * Copy an AWS CloudHSM cluster backup to a different region.
+     * </p>
+     * 
      * @param copyBackupToRegionRequest
      * @return A Java Future containing the result of the CopyBackupToRegion operation returned by the service.
      * @sample AWSCloudHSMV2Async.CopyBackupToRegion
@@ -43,6 +47,10 @@ public interface AWSCloudHSMV2Async extends AWSCloudHSMV2 {
     java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest copyBackupToRegionRequest);
 
     /**
+     * <p>
+     * Copy an AWS CloudHSM cluster backup to a different region.
+     * </p>
+     * 
      * @param copyBackupToRegionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -117,6 +125,39 @@ public interface AWSCloudHSMV2Async extends AWSCloudHSMV2 {
      */
     java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest createHsmRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request.
+     * For more information on restoring a backup, see <a>RestoreBackup</a>
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @return A Java Future containing the result of the DeleteBackup operation returned by the service.
+     * @sample AWSCloudHSMV2Async.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest deleteBackupRequest);
+
+    /**
+     * <p>
+     * Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request.
+     * For more information on restoring a backup, see <a>RestoreBackup</a>
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBackup operation returned by the service.
+     * @sample AWSCloudHSMV2AsyncHandler.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest deleteBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBackupRequest, DeleteBackupResult> asyncHandler);
 
     /**
      * <p>
@@ -351,6 +392,39 @@ public interface AWSCloudHSMV2Async extends AWSCloudHSMV2 {
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information
+     * on deleting a backup, see <a>DeleteBackup</a>.
+     * </p>
+     * 
+     * @param restoreBackupRequest
+     * @return A Java Future containing the result of the RestoreBackup operation returned by the service.
+     * @sample AWSCloudHSMV2Async.RestoreBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest restoreBackupRequest);
+
+    /**
+     * <p>
+     * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information
+     * on deleting a backup, see <a>DeleteBackup</a>.
+     * </p>
+     * 
+     * @param restoreBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreBackup operation returned by the service.
+     * @sample AWSCloudHSMV2AsyncHandler.RestoreBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest restoreBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreBackupRequest, RestoreBackupResult> asyncHandler);
 
     /**
      * <p>
