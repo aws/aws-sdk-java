@@ -22,7 +22,8 @@ public enum DocumentType {
 
     Command("Command"),
     Policy("Policy"),
-    Automation("Automation");
+    Automation("Automation"),
+    Session("Session");
 
     private String value;
 

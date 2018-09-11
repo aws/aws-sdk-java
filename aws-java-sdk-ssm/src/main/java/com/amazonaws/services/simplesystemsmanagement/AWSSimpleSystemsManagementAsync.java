@@ -1855,6 +1855,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30
+     * days.
+     * </p>
+     * 
+     * @param describeSessionsRequest
+     * @return A Java Future containing the result of the DescribeSessions operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest describeSessionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30
+     * days.
+     * </p>
+     * 
+     * @param describeSessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSessions operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest describeSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSessionsRequest, DescribeSessionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -1914,6 +1947,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest getCommandInvocationRequest,
             com.amazonaws.handlers.AsyncHandler<GetCommandInvocationRequest, GetCommandInvocationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * receive Session Manager connections.
+     * </p>
+     * 
+     * @param getConnectionStatusRequest
+     * @return A Java Future containing the result of the GetConnectionStatus operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetConnectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionStatusResult> getConnectionStatusAsync(GetConnectionStatusRequest getConnectionStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * receive Session Manager connections.
+     * </p>
+     * 
+     * @param getConnectionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnectionStatus operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetConnectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionStatusResult> getConnectionStatusAsync(GetConnectionStatusRequest getConnectionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectionStatusRequest, GetConnectionStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -3504,6 +3570,51 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
+     * sessions, but not terminated sessions.
+     * </p>
+     * <note>
+     * <p>
+     * This command is primarily for use by client machines to automatically reconnect during intermittent network
+     * issues. It is not intended for any other use.
+     * </p>
+     * </note>
+     * 
+     * @param resumeSessionRequest
+     * @return A Java Future containing the result of the ResumeSession operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ResumeSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResumeSessionResult> resumeSessionAsync(ResumeSessionRequest resumeSessionRequest);
+
+    /**
+     * <p>
+     * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
+     * sessions, but not terminated sessions.
+     * </p>
+     * <note>
+     * <p>
+     * This command is primarily for use by client machines to automatically reconnect during intermittent network
+     * issues. It is not intended for any other use.
+     * </p>
+     * </note>
+     * 
+     * @param resumeSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResumeSession operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ResumeSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResumeSessionResult> resumeSessionAsync(ResumeSessionRequest resumeSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<ResumeSessionRequest, ResumeSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends a signal to an Automation execution to change the current behavior or status of the execution.
      * </p>
      * 
@@ -3630,6 +3741,55 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
+     * token that can be used to open a WebSocket connection for sending input and receiving outputs.
+     * </p>
+     * <note>
+     * <p>
+     * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
+     * be installed on the client machine making the call. For information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startSessionRequest
+     * @return A Java Future containing the result of the StartSession operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest startSessionRequest);
+
+    /**
+     * <p>
+     * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
+     * token that can be used to open a WebSocket connection for sending input and receiving outputs.
+     * </p>
+     * <note>
+     * <p>
+     * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
+     * be installed on the client machine making the call. For information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSession operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest startSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSessionRequest, StartSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Stop an Automation that is currently executing.
      * </p>
      * 
@@ -3658,6 +3818,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(StopAutomationExecutionRequest stopAutomationExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StopAutomationExecutionRequest, StopAutomationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the
+     * instance. A terminated session cannot be resumed.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @return A Java Future containing the result of the TerminateSession operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest terminateSessionRequest);
+
+    /**
+     * <p>
+     * Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the
+     * instance. A terminated session cannot be resumed.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TerminateSession operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest terminateSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<TerminateSessionRequest, TerminateSessionResult> asyncHandler);
 
     /**
      * <p>

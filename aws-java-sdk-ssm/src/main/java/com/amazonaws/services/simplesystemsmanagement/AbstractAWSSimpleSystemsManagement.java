@@ -284,12 +284,22 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeSessionsResult describeSessions(DescribeSessionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectionStatusResult getConnectionStatus(GetConnectionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -490,6 +500,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public ResumeSessionResult resumeSession(ResumeSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendAutomationSignalResult sendAutomationSignal(SendAutomationSignalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -510,7 +525,17 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public StartSessionResult startSession(StartSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TerminateSessionResult terminateSession(TerminateSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

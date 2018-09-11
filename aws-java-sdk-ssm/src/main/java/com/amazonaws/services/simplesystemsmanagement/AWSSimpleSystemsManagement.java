@@ -1387,6 +1387,26 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30
+     * days.
+     * </p>
+     * 
+     * @param describeSessionsRequest
+     * @return Result of the DescribeSessions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeSessionsResult describeSessions(DescribeSessionsRequest describeSessionsRequest);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -1438,6 +1458,22 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest);
+
+    /**
+     * <p>
+     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * receive Session Manager connections.
+     * </p>
+     * 
+     * @param getConnectionStatusRequest
+     * @return Result of the GetConnectionStatus operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetConnectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetConnectionStatusResult getConnectionStatus(GetConnectionStatusRequest getConnectionStatusRequest);
 
     /**
      * <p>
@@ -2564,6 +2600,35 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
+     * sessions, but not terminated sessions.
+     * </p>
+     * <note>
+     * <p>
+     * This command is primarily for use by client machines to automatically reconnect during intermittent network
+     * issues. It is not intended for any other use.
+     * </p>
+     * </note>
+     * 
+     * @param resumeSessionRequest
+     * @return Result of the ResumeSession operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ResumeSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResumeSessionResult resumeSession(ResumeSessionRequest resumeSessionRequest);
+
+    /**
+     * <p>
      * Sends a signal to an Automation execution to change the current behavior or status of the execution.
      * </p>
      * 
@@ -2689,6 +2754,37 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
+     * token that can be used to open a WebSocket connection for sending input and receiving outputs.
+     * </p>
+     * <note>
+     * <p>
+     * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
+     * be installed on the client machine making the call. For information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startSessionRequest
+     * @return Result of the StartSession operation returned by the service.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws TargetNotConnectedException
+     *         The specified target instance for the session is not fully configured for use with Session Manager. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
+     *         >Getting Started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartSessionResult startSession(StartSessionRequest startSessionRequest);
+
+    /**
+     * <p>
      * Stop an Automation that is currently executing.
      * </p>
      * 
@@ -2705,6 +2801,29 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest);
+
+    /**
+     * <p>
+     * Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the
+     * instance. A terminated session cannot be resumed.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @return Result of the TerminateSession operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TerminateSessionResult terminateSession(TerminateSessionRequest terminateSessionRequest);
 
     /**
      * <p>

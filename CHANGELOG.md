@@ -1,3 +1,12 @@
+# __1.11.407__ __2018-09-11__
+## __AWS OpsWorks for Chef Automate__
+  - ### Features
+    - Documentation updates for opsworkscm
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Session Manager is a fully managed AWS Systems Manager capability that provides interactive one-click access to Amazon EC2 Linux and Windows instances.
+
 # __1.11.406__ __2018-09-10__
 ## __AWS CloudHSM V2__
   - ### Features

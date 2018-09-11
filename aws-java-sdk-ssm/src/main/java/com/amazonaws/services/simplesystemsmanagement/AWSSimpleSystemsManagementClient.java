@@ -94,6 +94,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TargetNotConnected").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ItemSizeLimitExceededException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException.class))
                     .addErrorMetadata(
@@ -3884,6 +3887,66 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30
+     * days.
+     * </p>
+     * 
+     * @param describeSessionsRequest
+     * @return Result of the DescribeSessions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeSessionsResult describeSessions(DescribeSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSessionsResult executeDescribeSessions(DescribeSessionsRequest describeSessionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSessionsRequest> request = null;
+        Response<DescribeSessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSessions");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSessionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSessionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -4007,6 +4070,62 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCommandInvocationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCommandInvocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * receive Session Manager connections.
+     * </p>
+     * 
+     * @param getConnectionStatusRequest
+     * @return Result of the GetConnectionStatus operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetConnectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetConnectionStatusResult getConnectionStatus(GetConnectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectionStatusResult executeGetConnectionStatus(GetConnectionStatusRequest getConnectionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConnectionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConnectionStatusRequest> request = null;
+        Response<GetConnectionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConnectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectionStatus");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConnectionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectionStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6697,6 +6816,75 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Reconnects a session to an instance after it has been disconnected. Connections can be resumed for disconnected
+     * sessions, but not terminated sessions.
+     * </p>
+     * <note>
+     * <p>
+     * This command is primarily for use by client machines to automatically reconnect during intermittent network
+     * issues. It is not intended for any other use.
+     * </p>
+     * </note>
+     * 
+     * @param resumeSessionRequest
+     * @return Result of the ResumeSession operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ResumeSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResumeSessionResult resumeSession(ResumeSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeResumeSession(request);
+    }
+
+    @SdkInternalApi
+    final ResumeSessionResult executeResumeSession(ResumeSessionRequest resumeSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resumeSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResumeSessionRequest> request = null;
+        Response<ResumeSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResumeSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeSession");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResumeSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResumeSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends a signal to an Automation execution to change the current behavior or status of the execution.
      * </p>
      * 
@@ -6985,6 +7173,77 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
+     * token that can be used to open a WebSocket connection for sending input and receiving outputs.
+     * </p>
+     * <note>
+     * <p>
+     * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
+     * be installed on the client machine making the call. For information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startSessionRequest
+     * @return Result of the StartSession operation returned by the service.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws TargetNotConnectedException
+     *         The specified target instance for the session is not fully configured for use with Session Manager. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
+     *         >Getting Started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartSessionResult startSession(StartSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSession(request);
+    }
+
+    @SdkInternalApi
+    final StartSessionResult executeStartSession(StartSessionRequest startSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSessionRequest> request = null;
+        Response<StartSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSession");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stop an Automation that is currently executing.
      * </p>
      * 
@@ -7034,6 +7293,69 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<StopAutomationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StopAutomationExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the
+     * instance. A terminated session cannot be resumed.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @return Result of the TerminateSession operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TerminateSessionResult terminateSession(TerminateSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateSession(request);
+    }
+
+    @SdkInternalApi
+    final TerminateSessionResult executeTerminateSession(TerminateSessionRequest terminateSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(terminateSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TerminateSessionRequest> request = null;
+        Response<TerminateSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TerminateSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateSession");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<TerminateSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

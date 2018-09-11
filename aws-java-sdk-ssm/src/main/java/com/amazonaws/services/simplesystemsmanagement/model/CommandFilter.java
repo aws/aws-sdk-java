@@ -36,8 +36,91 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The filter value.
+     * The filter value. Valid values for each filter key are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results occurring July 7, 2018, and later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results before July 7, 2018.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Status: Specify a valid command status to see a list of all command executions with that status. Status values
+     * you can specify include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelled
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TimedOut
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelling
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentName: The name of the SSM document for which you want to see command results.
+     * </p>
+     * <p>
+     * For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
+     * perform security patching operations on instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String value;
 
@@ -116,11 +199,176 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter value.
+     * The filter value. Valid values for each filter key are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results occurring July 7, 2018, and later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results before July 7, 2018.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Status: Specify a valid command status to see a list of all command executions with that status. Status values
+     * you can specify include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelled
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TimedOut
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelling
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentName: The name of the SSM document for which you want to see command results.
+     * </p>
+     * <p>
+     * For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
+     * perform security patching operations on instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param value
-     *        The filter value.
+     *        The filter value. Valid values for each filter key are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to
+     *        see results occurring July 7, 2018, and later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code>
+     *        to see results before July 7, 2018.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Status: Specify a valid command status to see a list of all command executions with that status. Status
+     *        values you can specify include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Pending
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InProgress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Success
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cancelled
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TimedOut
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cancelling
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DocumentName: The name of the SSM document for which you want to see command results.
+     *        </p>
+     *        <p>
+     *        For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
+     *        document to perform security patching operations on instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setValue(String value) {
@@ -129,10 +377,175 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter value.
+     * The filter value. Valid values for each filter key are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results occurring July 7, 2018, and later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results before July 7, 2018.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Status: Specify a valid command status to see a list of all command executions with that status. Status values
+     * you can specify include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelled
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TimedOut
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelling
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentName: The name of the SSM document for which you want to see command results.
+     * </p>
+     * <p>
+     * For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
+     * perform security patching operations on instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return The filter value.
+     * @return The filter value. Valid values for each filter key are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code>
+     *         to see results occurring July 7, 2018, and later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code>
+     *         to see results before July 7, 2018.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Status: Specify a valid command status to see a list of all command executions with that status. Status
+     *         values you can specify include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Pending
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         InProgress
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Success
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cancelled
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TimedOut
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cancelling
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DocumentName: The name of the SSM document for which you want to see command results.
+     *         </p>
+     *         <p>
+     *         For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
+     *         document to perform security patching operations on instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public String getValue() {
@@ -141,11 +554,176 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter value.
+     * The filter value. Valid values for each filter key are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results occurring July 7, 2018, and later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to see
+     * results before July 7, 2018.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Status: Specify a valid command status to see a list of all command executions with that status. Status values
+     * you can specify include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Pending
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InProgress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Success
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelled
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TimedOut
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cancelling
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentName: The name of the SSM document for which you want to see command results.
+     * </p>
+     * <p>
+     * For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
+     * perform security patching operations on instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param value
-     *        The filter value.
+     *        The filter value. Valid values for each filter key are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        InvokedAfter: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code> to
+     *        see results occurring July 7, 2018, and later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InvokedBefore: A timestamp to limit your results. For example, specify <code>2018-07-07T00:00:00Z</code>
+     *        to see results before July 7, 2018.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Status: Specify a valid command status to see a list of all command executions with that status. Status
+     *        values you can specify include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Pending
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InProgress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Success
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cancelled
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TimedOut
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cancelling
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DocumentName: The name of the SSM document for which you want to see command results.
+     *        </p>
+     *        <p>
+     *        For example, specify <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
+     *        document to perform security patching operations on instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ExecutionStage: An enum whose value can be either <code>Executing</code> or <code>Complete</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>Executing</code> to see a list of command executions that are currently still running.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>Complete</code> to see a list of command exeuctions that have already completed.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

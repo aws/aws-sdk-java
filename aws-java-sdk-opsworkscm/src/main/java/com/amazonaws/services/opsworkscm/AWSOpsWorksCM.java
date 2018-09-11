@@ -30,6 +30,8 @@ import com.amazonaws.services.opsworkscm.waiters.AWSOpsWorksCMWaiters;
  * <fullname>AWS OpsWorks CM</fullname>
  * <p>
  * AWS OpsWorks for configuration management (CM) is a service that runs and manages configuration management servers.
+ * You can use AWS OpsWorks CM to create and manage AWS OpsWorks for Chef Automate and AWS OpsWorks for Puppet
+ * Enterprise servers, and add or remove nodes for the servers to manage.
  * </p>
  * <p>
  * <b>Glossary of terms</b>
@@ -86,7 +88,37 @@ import com.amazonaws.services.opsworkscm.waiters.AWSOpsWorksCMWaiters;
  * </li>
  * <li>
  * <p>
+ * opsworks-cm.us-east-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.us-west-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * opsworks-cm.us-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.ap-northeast-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.ap-southeast-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.ap-southeast-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.eu-central-1.amazonaws.com
  * </p>
  * </li>
  * <li>
