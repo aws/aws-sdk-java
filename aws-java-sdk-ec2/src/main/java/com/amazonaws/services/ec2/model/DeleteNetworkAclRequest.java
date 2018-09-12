@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeleteNetworkAcl.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteNetworkAclRequest> {

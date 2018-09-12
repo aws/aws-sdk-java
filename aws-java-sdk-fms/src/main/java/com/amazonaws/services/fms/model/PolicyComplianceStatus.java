@@ -65,6 +65,14 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date lastUpdated;
+    /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
+     * the problem with the service.
+     * </p>
+     */
+    private java.util.Map<String, String> issueInfoMap;
 
     /**
      * <p>
@@ -337,6 +345,79 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
+     * the problem with the service.
+     * </p>
+     * 
+     * @return Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a
+     *         resource to be non-compliant. The details include the name of the dependent service and the error message
+     *         recieved indicating the problem with the service.
+     */
+
+    public java.util.Map<String, String> getIssueInfoMap() {
+        return issueInfoMap;
+    }
+
+    /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
+     * the problem with the service.
+     * </p>
+     * 
+     * @param issueInfoMap
+     *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
+     *        to be non-compliant. The details include the name of the dependent service and the error message recieved
+     *        indicating the problem with the service.
+     */
+
+    public void setIssueInfoMap(java.util.Map<String, String> issueInfoMap) {
+        this.issueInfoMap = issueInfoMap;
+    }
+
+    /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
+     * the problem with the service.
+     * </p>
+     * 
+     * @param issueInfoMap
+     *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
+     *        to be non-compliant. The details include the name of the dependent service and the error message recieved
+     *        indicating the problem with the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyComplianceStatus withIssueInfoMap(java.util.Map<String, String> issueInfoMap) {
+        setIssueInfoMap(issueInfoMap);
+        return this;
+    }
+
+    public PolicyComplianceStatus addIssueInfoMapEntry(String key, String value) {
+        if (null == this.issueInfoMap) {
+            this.issueInfoMap = new java.util.HashMap<String, String>();
+        }
+        if (this.issueInfoMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.issueInfoMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into IssueInfoMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyComplianceStatus clearIssueInfoMapEntries() {
+        this.issueInfoMap = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -358,7 +439,9 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
         if (getEvaluationResults() != null)
             sb.append("EvaluationResults: ").append(getEvaluationResults()).append(",");
         if (getLastUpdated() != null)
-            sb.append("LastUpdated: ").append(getLastUpdated());
+            sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
+        if (getIssueInfoMap() != null)
+            sb.append("IssueInfoMap: ").append(getIssueInfoMap());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +480,10 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
             return false;
         if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
             return false;
+        if (other.getIssueInfoMap() == null ^ this.getIssueInfoMap() == null)
+            return false;
+        if (other.getIssueInfoMap() != null && other.getIssueInfoMap().equals(this.getIssueInfoMap()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +498,7 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMemberAccount() == null) ? 0 : getMemberAccount().hashCode());
         hashCode = prime * hashCode + ((getEvaluationResults() == null) ? 0 : getEvaluationResults().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
+        hashCode = prime * hashCode + ((getIssueInfoMap() == null) ? 0 : getIssueInfoMap().hashCode());
         return hashCode;
     }
 

@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateDefaultVpcRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreateDefaultVpc.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDefaultVpcRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateDefaultVpcRequest> {

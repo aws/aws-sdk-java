@@ -26,7 +26,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalErrorException"}
       ],
-      "documentation":"<p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with a master account in AWS Organizations or associated with a member account that has the appropriate permissions. If the account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the appropriate permissions for the given member account.</p> <p>The account that you associate with AWS Firewall Manager is called the AWS Firewall manager administrator account. </p>"
+      "documentation":"<p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master account your AWS organization or associated with a member account that has the appropriate permissions. If the account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the appropriate permissions for the given member account.</p> <p>The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator account. </p>"
     },
     "DeleteNotificationChannel":{
       "name":"DeleteNotificationChannel",
@@ -125,7 +125,8 @@
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidOperationException"},
-        {"shape":"InternalErrorException"}
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidTypeException"}
       ],
       "documentation":"<p>Returns information about the specified AWS Firewall Manager policy.</p>"
     },
@@ -142,6 +143,20 @@
         {"shape":"InternalErrorException"}
       ],
       "documentation":"<p>Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>"
+    },
+    "ListMemberAccounts":{
+      "name":"ListMemberAccounts",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListMemberAccountsRequest"},
+      "output":{"shape":"ListMemberAccountsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalErrorException"}
+      ],
+      "documentation":"<p>Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS organization.</p> <p>The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager administrator.</p>"
     },
     "ListPolicies":{
       "name":"ListPolicies",
@@ -185,7 +200,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidOperationException"},
         {"shape":"InvalidInputException"},
-        {"shape":"InternalErrorException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidTypeException"}
       ],
       "documentation":"<p>Creates an AWS Firewall Manager policy.</p>"
     }
@@ -195,6 +212,16 @@
       "type":"string",
       "max":1024,
       "min":1
+    },
+    "AccountRoleStatus":{
+      "type":"string",
+      "enum":[
+        "READY",
+        "CREATING",
+        "PENDING_DELETION",
+        "DELETING",
+        "DELETED"
+      ]
     },
     "AssociateAdminAccountRequest":{
       "type":"structure",
@@ -229,6 +256,24 @@
       "type":"list",
       "member":{"shape":"ComplianceViolator"}
     },
+    "CustomerPolicyScopeId":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "CustomerPolicyScopeIdList":{
+      "type":"list",
+      "member":{"shape":"CustomerPolicyScopeId"}
+    },
+    "CustomerPolicyScopeIdType":{
+      "type":"string",
+      "enum":["ACCOUNT"]
+    },
+    "CustomerPolicyScopeMap":{
+      "type":"map",
+      "key":{"shape":"CustomerPolicyScopeIdType"},
+      "value":{"shape":"CustomerPolicyScopeIdList"}
+    },
     "DeleteNotificationChannelRequest":{
       "type":"structure",
       "members":{
@@ -243,6 +288,18 @@
           "documentation":"<p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>"
         }
       }
+    },
+    "DependentServiceName":{
+      "type":"string",
+      "enum":[
+        "AWSCONFIG",
+        "AWSWAF"
+      ]
+    },
+    "DetailedInfo":{
+      "type":"string",
+      "max":1024,
+      "min":1
     },
     "DisassociateAdminAccountRequest":{
       "type":"structure",
@@ -283,6 +340,10 @@
         "AdminAccount":{
           "shape":"AWSAccountId",
           "documentation":"<p>The AWS account that is set as the AWS Firewall Manager administrator.</p>"
+        },
+        "RoleStatus":{
+          "shape":"AccountRoleStatus",
+          "documentation":"<p>The status of the AWS account that you set as the AWS Firewall Manager administrator.</p>"
         }
       }
     },
@@ -377,6 +438,19 @@
       "documentation":"<p>The operation failed because there was nothing to do. For example, you might have submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the AWS Firewall Manager administrator.</p>",
       "exception":true
     },
+    "InvalidTypeException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The value of the <code>Type</code> parameter is invalid.</p>",
+      "exception":true
+    },
+    "IssueInfoMap":{
+      "type":"map",
+      "key":{"shape":"DependentServiceName"},
+      "value":{"shape":"DetailedInfo"}
+    },
     "LimitExceededException":{
       "type":"structure",
       "members":{
@@ -416,6 +490,32 @@
         }
       }
     },
+    "ListMemberAccountsRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>"
+        },
+        "MaxResults":{
+          "shape":"PaginationMaxResults",
+          "documentation":"<p>Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.</p>"
+        }
+      }
+    },
+    "ListMemberAccountsResponse":{
+      "type":"structure",
+      "members":{
+        "MemberAccounts":{
+          "shape":"MemberAccounts",
+          "documentation":"<p>An array of account IDs.</p>"
+        },
+        "NextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>"
+        }
+      }
+    },
     "ListPoliciesRequest":{
       "type":"structure",
       "members":{
@@ -446,6 +546,10 @@
       "type":"string",
       "max":1024,
       "min":1
+    },
+    "MemberAccounts":{
+      "type":"list",
+      "member":{"shape":"AWSAccountId"}
     },
     "PaginationMaxResults":{
       "type":"integer",
@@ -497,6 +601,14 @@
         "RemediationEnabled":{
           "shape":"Boolean",
           "documentation":"<p>Indicates if the policy should be automatically applied to new resources.</p>"
+        },
+        "IncludeMap":{
+          "shape":"CustomerPolicyScopeMap",
+          "documentation":"<p>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>"
+        },
+        "ExcludeMap":{
+          "shape":"CustomerPolicyScopeMap",
+          "documentation":"<p>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>"
         }
       },
       "documentation":"<p>An AWS Firewall Manager policy.</p>"
@@ -527,6 +639,10 @@
         "ExpiredAt":{
           "shape":"TimeStamp",
           "documentation":"<p>A time stamp that indicates when the returned information should be considered out-of-date.</p>"
+        },
+        "IssueInfoMap":{
+          "shape":"IssueInfoMap",
+          "documentation":"<p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>"
         }
       },
       "documentation":"<p>Describes the non-compliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are non-compliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.</p>"
@@ -557,6 +673,10 @@
         "LastUpdated":{
           "shape":"TimeStamp",
           "documentation":"<p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>"
+        },
+        "IssueInfoMap":{
+          "shape":"IssueInfoMap",
+          "documentation":"<p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>"
         }
       },
       "documentation":"<p>Indicates whether the account is compliant with the specified policy. An account is considered non-compliant if it includes resources that are not protected by the policy.</p>"

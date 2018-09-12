@@ -82,6 +82,14 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
             }
         }
 
+        if (describeNetworkInterfacesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeNetworkInterfacesRequest.getNextToken()));
+        }
+
+        if (describeNetworkInterfacesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeNetworkInterfacesRequest.getMaxResults()));
+        }
+
         return request;
     }
 

@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteVpcPeeringConnectionRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeleteVpcPeeringConnection.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteVpcPeeringConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

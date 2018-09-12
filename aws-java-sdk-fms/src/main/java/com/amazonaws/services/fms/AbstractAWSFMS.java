@@ -73,6 +73,11 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public ListMemberAccountsResult listMemberAccounts(ListMemberAccountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPoliciesResult listPolicies(ListPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

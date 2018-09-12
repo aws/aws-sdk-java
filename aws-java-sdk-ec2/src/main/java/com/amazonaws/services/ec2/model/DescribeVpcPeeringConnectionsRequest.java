@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcPeeringConnectionsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVpcPeeringConnections.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

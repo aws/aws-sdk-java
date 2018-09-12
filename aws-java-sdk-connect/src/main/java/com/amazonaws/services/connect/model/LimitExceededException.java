@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The limit exceeded the maximum allowed active calls in a queue.
+ * The allowed limit for the resource has been reached.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeNetworkAclsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeNetworkAcls.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeNetworkAclsRequest> {
@@ -55,11 +53,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
      * </p>
      * </li>
      * <li>
@@ -100,7 +93,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of entries.
+     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
      * <li>
@@ -172,11 +165,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      * </p>
      * </li>
@@ -213,7 +201,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of entries.
+     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
      * <li>
@@ -271,11 +259,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      *         </p>
      *         </li>
@@ -313,8 +296,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of
-     *         entries.
+     *         <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      *         </p>
      *         </li>
      *         <li>
@@ -382,11 +364,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      * </p>
      * </li>
@@ -423,7 +400,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of entries.
+     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
      * <li>
@@ -482,11 +459,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      *        </p>
      *        </li>
@@ -524,8 +496,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of
-     *        entries.
+     *        <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      *        </p>
      *        </li>
      *        <li>
@@ -595,11 +566,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      * </p>
      * </li>
@@ -636,7 +602,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of entries.
+     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
      * <li>
@@ -700,11 +666,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      *        </p>
      *        </li>
@@ -742,8 +703,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of
-     *        entries.
+     *        <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      *        </p>
      *        </li>
      *        <li>
@@ -815,11 +775,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      * </p>
      * </li>
@@ -856,7 +811,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of entries.
+     * <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      * </p>
      * </li>
      * <li>
@@ -915,11 +870,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
      *        </p>
      *        </li>
@@ -957,8 +907,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the ACL's set of
-     *        entries.
+     *        <code>entry.rule-number</code> - The number of an entry (in other words, rule) in the set of ACL entries.
      *        </p>
      *        </li>
      *        <li>

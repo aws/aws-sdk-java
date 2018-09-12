@@ -84,6 +84,30 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean remediationEnabled;
+    /**
+     * <p>
+     * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
+     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
+     * <code>IncludeMap</code> will be included in the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> includeMap;
+    /**
+     * <p>
+     * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
+     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
+     * are removed, resulting in the final list of accounts to add to the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> excludeMap;
 
     /**
      * <p>
@@ -518,6 +542,194 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
+     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
+     * <code>IncludeMap</code> will be included in the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     * 
+     * @return Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts
+     *         in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values
+     *         listed in <code>IncludeMap</code> will be included in the policy.</p>
+     *         <p>
+     *         The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     *         <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getIncludeMap() {
+        return includeMap;
+    }
+
+    /**
+     * <p>
+     * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
+     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
+     * <code>IncludeMap</code> will be included in the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     * 
+     * @param includeMap
+     *        Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts
+     *        in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values
+     *        listed in <code>IncludeMap</code> will be included in the policy.</p>
+     *        <p>
+     *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     *        <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     */
+
+    public void setIncludeMap(java.util.Map<String, java.util.List<String>> includeMap) {
+        this.includeMap = includeMap;
+    }
+
+    /**
+     * <p>
+     * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
+     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
+     * <code>IncludeMap</code> will be included in the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     * 
+     * @param includeMap
+     *        Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts
+     *        in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values
+     *        listed in <code>IncludeMap</code> will be included in the policy.</p>
+     *        <p>
+     *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
+     *        <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withIncludeMap(java.util.Map<String, java.util.List<String>> includeMap) {
+        setIncludeMap(includeMap);
+        return this;
+    }
+
+    public Policy addIncludeMapEntry(String key, java.util.List<String> value) {
+        if (null == this.includeMap) {
+            this.includeMap = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.includeMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.includeMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into IncludeMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy clearIncludeMapEntries() {
+        this.includeMap = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
+     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
+     * are removed, resulting in the final list of accounts to add to the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     * 
+     * @return Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are
+     *         evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in
+     *         <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>
+     *         <p>
+     *         The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     *         <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getExcludeMap() {
+        return excludeMap;
+    }
+
+    /**
+     * <p>
+     * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
+     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
+     * are removed, resulting in the final list of accounts to add to the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     * 
+     * @param excludeMap
+     *        Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated
+     *        first, with all of the appropriate account IDs added to the policy. Then the accounts listed in
+     *        <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>
+     *        <p>
+     *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     *        <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     */
+
+    public void setExcludeMap(java.util.Map<String, java.util.List<String>> excludeMap) {
+        this.excludeMap = excludeMap;
+    }
+
+    /**
+     * <p>
+     * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
+     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
+     * are removed, resulting in the final list of accounts to add to the policy.
+     * </p>
+     * <p>
+     * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * </p>
+     * 
+     * @param excludeMap
+     *        Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated
+     *        first, with all of the appropriate account IDs added to the policy. Then the accounts listed in
+     *        <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>
+     *        <p>
+     *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
+     *        <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withExcludeMap(java.util.Map<String, java.util.List<String>> excludeMap) {
+        setExcludeMap(excludeMap);
+        return this;
+    }
+
+    public Policy addExcludeMapEntry(String key, java.util.List<String> value) {
+        if (null == this.excludeMap) {
+            this.excludeMap = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.excludeMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.excludeMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ExcludeMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy clearExcludeMapEntries() {
+        this.excludeMap = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -543,7 +755,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         if (getExcludeResourceTags() != null)
             sb.append("ExcludeResourceTags: ").append(getExcludeResourceTags()).append(",");
         if (getRemediationEnabled() != null)
-            sb.append("RemediationEnabled: ").append(getRemediationEnabled());
+            sb.append("RemediationEnabled: ").append(getRemediationEnabled()).append(",");
+        if (getIncludeMap() != null)
+            sb.append("IncludeMap: ").append(getIncludeMap()).append(",");
+        if (getExcludeMap() != null)
+            sb.append("ExcludeMap: ").append(getExcludeMap());
         sb.append("}");
         return sb.toString();
     }
@@ -590,6 +806,14 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRemediationEnabled() != null && other.getRemediationEnabled().equals(this.getRemediationEnabled()) == false)
             return false;
+        if (other.getIncludeMap() == null ^ this.getIncludeMap() == null)
+            return false;
+        if (other.getIncludeMap() != null && other.getIncludeMap().equals(this.getIncludeMap()) == false)
+            return false;
+        if (other.getExcludeMap() == null ^ this.getExcludeMap() == null)
+            return false;
+        if (other.getExcludeMap() != null && other.getExcludeMap().equals(this.getExcludeMap()) == false)
+            return false;
         return true;
     }
 
@@ -606,6 +830,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
         hashCode = prime * hashCode + ((getExcludeResourceTags() == null) ? 0 : getExcludeResourceTags().hashCode());
         hashCode = prime * hashCode + ((getRemediationEnabled() == null) ? 0 : getRemediationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getIncludeMap() == null) ? 0 : getIncludeMap().hashCode());
+        hashCode = prime * hashCode + ((getExcludeMap() == null) ? 0 : getExcludeMap().hashCode());
         return hashCode;
     }
 

@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclEntryRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ReplaceNetworkAclEntry.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

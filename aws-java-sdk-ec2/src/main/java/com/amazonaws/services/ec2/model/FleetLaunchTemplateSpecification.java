@@ -40,7 +40,7 @@ public class FleetLaunchTemplateSpecification implements Serializable, Cloneable
     private String launchTemplateName;
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number of the launch template. You must specify a version number.
      * </p>
      */
     private String version;
@@ -127,11 +127,11 @@ public class FleetLaunchTemplateSpecification implements Serializable, Cloneable
 
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number of the launch template. You must specify a version number.
      * </p>
      * 
      * @param version
-     *        The version number. By default, the default version of the launch template is used.
+     *        The version number of the launch template. You must specify a version number.
      */
 
     public void setVersion(String version) {
@@ -140,10 +140,10 @@ public class FleetLaunchTemplateSpecification implements Serializable, Cloneable
 
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number of the launch template. You must specify a version number.
      * </p>
      * 
-     * @return The version number. By default, the default version of the launch template is used.
+     * @return The version number of the launch template. You must specify a version number.
      */
 
     public String getVersion() {
@@ -152,11 +152,11 @@ public class FleetLaunchTemplateSpecification implements Serializable, Cloneable
 
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number of the launch template. You must specify a version number.
      * </p>
      * 
      * @param version
-     *        The version number. By default, the default version of the launch template is used.
+     *        The version number of the launch template. You must specify a version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

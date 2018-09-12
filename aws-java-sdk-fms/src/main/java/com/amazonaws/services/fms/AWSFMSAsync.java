@@ -38,13 +38,13 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with a master
-     * account in AWS Organizations or associated with a member account that has the appropriate permissions. If the
+     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
+     * account your AWS organization or associated with a member account that has the appropriate permissions. If the
      * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
      * appropriate permissions for the given member account.
      * </p>
      * <p>
-     * The account that you associate with AWS Firewall Manager is called the AWS Firewall manager administrator
+     * The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator
      * account.
      * </p>
      * 
@@ -58,13 +58,13 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with a master
-     * account in AWS Organizations or associated with a member account that has the appropriate permissions. If the
+     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
+     * account your AWS organization or associated with a member account that has the appropriate permissions. If the
      * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
      * appropriate permissions for the given member account.
      * </p>
      * <p>
-     * The account that you associate with AWS Firewall Manager is called the AWS Firewall manager administrator
+     * The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator
      * account.
      * </p>
      * 
@@ -346,6 +346,47 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<ListComplianceStatusResult> listComplianceStatusAsync(ListComplianceStatusRequest listComplianceStatusRequest,
             com.amazonaws.handlers.AsyncHandler<ListComplianceStatusRequest, ListComplianceStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS
+     * organization.
+     * </p>
+     * <p>
+     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+     * administrator.
+     * </p>
+     * 
+     * @param listMemberAccountsRequest
+     * @return A Java Future containing the result of the ListMemberAccounts operation returned by the service.
+     * @sample AWSFMSAsync.ListMemberAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMemberAccountsResult> listMemberAccountsAsync(ListMemberAccountsRequest listMemberAccountsRequest);
+
+    /**
+     * <p>
+     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS
+     * organization.
+     * </p>
+     * <p>
+     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+     * administrator.
+     * </p>
+     * 
+     * @param listMemberAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMemberAccounts operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListMemberAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMemberAccountsResult> listMemberAccountsAsync(ListMemberAccountsRequest listMemberAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMemberAccountsRequest, ListMemberAccountsResult> asyncHandler);
 
     /**
      * <p>

@@ -292,11 +292,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      * </p>
      */
     private CreditSpecificationRequest creditSpecification;
@@ -2410,21 +2411,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      * </p>
      * 
      * @param creditSpecification
      *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>. To change this attribute after launch, use
      *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     *        Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      */
 
     public void setCreditSpecification(CreditSpecificationRequest creditSpecification) {
@@ -2435,20 +2437,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      * </p>
      * 
      * @return The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      *         <code>unlimited</code>. To change this attribute after launch, use
      *         <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     *         Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
-     *         Default: <code>standard</code>
+     *         Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      */
 
     public CreditSpecificationRequest getCreditSpecification() {
@@ -2459,21 +2462,22 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      * </p>
      * 
      * @param creditSpecification
      *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>. To change this attribute after launch, use
      *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     *        Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the credit option for CPU usage of a T2 instance.
+ * Describes the credit option for CPU usage of a T2 or T3 instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreditSpecification" target="_top">AWS API
@@ -28,7 +28,7 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      */
@@ -36,12 +36,12 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     *        The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>.
      */
 
@@ -51,11 +51,11 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      * 
-     * @return The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * @return The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      *         <code>unlimited</code>.
      */
 
@@ -65,12 +65,12 @@ public class CreditSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2 instance. Valid values are <code>standard</code> and
+     *        The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteInternetGatewayRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeleteInternetGateway.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

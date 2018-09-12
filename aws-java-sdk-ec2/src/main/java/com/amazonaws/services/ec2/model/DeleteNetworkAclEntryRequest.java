@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeleteNetworkAclEntry.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

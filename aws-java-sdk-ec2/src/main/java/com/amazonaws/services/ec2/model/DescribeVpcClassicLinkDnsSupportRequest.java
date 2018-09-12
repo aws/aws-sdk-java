@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcClassicLinkDnsSupportRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVpcClassicLinkDnsSupport.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

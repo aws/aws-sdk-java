@@ -461,6 +461,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateContactAttributesResult> updateContactAttributesAsync(UpdateContactAttributesRequest request) {
+
+        return updateContactAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactAttributesResult> updateContactAttributesAsync(final UpdateContactAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactAttributesRequest, UpdateContactAttributesResult> asyncHandler) {
+        final UpdateContactAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactAttributesResult>() {
+            @Override
+            public UpdateContactAttributesResult call() throws Exception {
+                UpdateContactAttributesResult result = null;
+
+                try {
+                    result = executeUpdateContactAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateUserHierarchyResult> updateUserHierarchyAsync(UpdateUserHierarchyRequest request) {
 
         return updateUserHierarchyAsync(request, null);

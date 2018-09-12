@@ -88,6 +88,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public UpdateContactAttributesResult updateContactAttributes(UpdateContactAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateUserHierarchyResult updateUserHierarchy(UpdateUserHierarchyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,3 +1,20 @@
+# __1.11.408__ __2018-09-12__
+## __Amazon Connect Service__
+  - ### Features
+    - This update adds the Amazon Connect Update Contact Attributes API, which lets you update contact attributes for contacts in your Amazon Connect instance.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Pagination Support for DescribeNetworkInterfaces API
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Documentation updates for Amazon Simple Email Service
+
+## __Firewall Management Service__
+  - ### Features
+    - This update of Amazon Fire Wall Manager adds the ability to scope down the policy as well as to get all the member accounts belonging to a certain Fire Wall Manager admin account.
+
 # __1.11.407__ __2018-09-11__
 ## __AWS OpsWorks for Chef Automate__
   - ### Features

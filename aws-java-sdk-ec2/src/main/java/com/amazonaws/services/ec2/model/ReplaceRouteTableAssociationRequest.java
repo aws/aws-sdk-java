@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ReplaceRouteTableAssociation.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [EC2-VPC only] The ID of the prefix.
+ * Describes a prefix list ID.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixListId" target="_top">AWS API

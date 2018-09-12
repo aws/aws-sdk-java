@@ -55,7 +55,7 @@ public interface AmazonConnect {
      * @throws InvalidParameterException
      *         One or more of the parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The limit exceeded the maximum allowed active calls in a queue.
+     *         The allowed limit for the resource has been reached.
      * @throws DuplicateResourceException
      *         A resource with that name already exisits.
      * @throws ResourceNotFoundException
@@ -309,7 +309,7 @@ public interface AmazonConnect {
      * @throws InternalServiceException
      *         Request processing failed due to an error or failure with the service.
      * @throws LimitExceededException
-     *         The limit exceeded the maximum allowed active calls in a queue.
+     *         The allowed limit for the resource has been reached.
      * @throws DestinationNotAllowedException
      *         Outbound calls to the destination number are not allowed.
      * @throws OutboundContactNotPermittedException
@@ -345,6 +345,36 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     StopContactResult stopContact(StopContactRequest stopContactRequest);
+
+    /**
+     * <p>
+     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new or update existing
+     * contact attributes associated with a contact. You can use the operation to add or update attributes for both
+     * ongoing and completed contacts. For example, you can update the customer's name or the reason the customer called
+     * while the call is active, or add notes about steps that the agent took during the call that are displayed to the
+     * next agent that takes the call. You can also use the <code>UpdateContactAttributes</code> operation to update
+     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
+     * Connect. You could also flag calls for additional analysis, or flag abusive callers.
+     * </p>
+     * <p>
+     * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+     * </p>
+     * 
+     * @param updateContactAttributesRequest
+     * @return Result of the UpdateContactAttributes operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateContactAttributesResult updateContactAttributes(UpdateContactAttributesRequest updateContactAttributesRequest);
 
     /**
      * <p>

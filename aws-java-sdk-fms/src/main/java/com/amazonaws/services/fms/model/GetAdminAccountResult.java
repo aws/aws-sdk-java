@@ -29,6 +29,12 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String adminAccount;
+    /**
+     * <p>
+     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * </p>
+     */
+    private String roleStatus;
 
     /**
      * <p>
@@ -71,6 +77,65 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * </p>
+     * 
+     * @param roleStatus
+     *        The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * @see AccountRoleStatus
+     */
+
+    public void setRoleStatus(String roleStatus) {
+        this.roleStatus = roleStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * </p>
+     * 
+     * @return The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * @see AccountRoleStatus
+     */
+
+    public String getRoleStatus() {
+        return this.roleStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * </p>
+     * 
+     * @param roleStatus
+     *        The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountRoleStatus
+     */
+
+    public GetAdminAccountResult withRoleStatus(String roleStatus) {
+        setRoleStatus(roleStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * </p>
+     * 
+     * @param roleStatus
+     *        The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountRoleStatus
+     */
+
+    public GetAdminAccountResult withRoleStatus(AccountRoleStatus roleStatus) {
+        this.roleStatus = roleStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +147,9 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdminAccount() != null)
-            sb.append("AdminAccount: ").append(getAdminAccount());
+            sb.append("AdminAccount: ").append(getAdminAccount()).append(",");
+        if (getRoleStatus() != null)
+            sb.append("RoleStatus: ").append(getRoleStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +168,10 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getAdminAccount() != null && other.getAdminAccount().equals(this.getAdminAccount()) == false)
             return false;
+        if (other.getRoleStatus() == null ^ this.getRoleStatus() == null)
+            return false;
+        if (other.getRoleStatus() != null && other.getRoleStatus().equals(this.getRoleStatus()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +181,7 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdminAccount() == null) ? 0 : getAdminAccount().hashCode());
+        hashCode = prime * hashCode + ((getRoleStatus() == null) ? 0 : getRoleStatus().hashCode());
         return hashCode;
     }
 

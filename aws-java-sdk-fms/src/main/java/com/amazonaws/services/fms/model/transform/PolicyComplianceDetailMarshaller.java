@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.fms.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -40,6 +41,8 @@ public class PolicyComplianceDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationLimitExceeded").build();
     private static final MarshallingInfo<java.util.Date> EXPIREDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiredAt").build();
+    private static final MarshallingInfo<Map> ISSUEINFOMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IssueInfoMap").build();
 
     private static final PolicyComplianceDetailMarshaller instance = new PolicyComplianceDetailMarshaller();
 
@@ -63,6 +66,7 @@ public class PolicyComplianceDetailMarshaller {
             protocolMarshaller.marshall(policyComplianceDetail.getViolators(), VIOLATORS_BINDING);
             protocolMarshaller.marshall(policyComplianceDetail.getEvaluationLimitExceeded(), EVALUATIONLIMITEXCEEDED_BINDING);
             protocolMarshaller.marshall(policyComplianceDetail.getExpiredAt(), EXPIREDAT_BINDING);
+            protocolMarshaller.marshall(policyComplianceDetail.getIssueInfoMap(), ISSUEINFOMAP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

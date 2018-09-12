@@ -52,6 +52,10 @@ public class GetAdminAccountResultJsonUnmarshaller implements Unmarshaller<GetAd
                     context.nextToken();
                     getAdminAccountResult.setAdminAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RoleStatus", targetDepth)) {
+                    context.nextToken();
+                    getAdminAccountResult.setRoleStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

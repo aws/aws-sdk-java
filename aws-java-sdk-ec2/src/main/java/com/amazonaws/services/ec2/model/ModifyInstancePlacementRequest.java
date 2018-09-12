@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyInstancePlacementRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ModifyInstancePlacement.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

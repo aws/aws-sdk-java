@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for UpdateSecurityGroupRuleDescriptionsEgress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

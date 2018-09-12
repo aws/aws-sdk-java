@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the T2 instance whose credit option for CPU usage was not modified.
+ * Describes the T2 or T3 instance whose credit option for CPU usage was not modified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulInstanceCreditSpecificationItem"
@@ -34,7 +34,7 @@ public class UnsuccessfulInstanceCreditSpecificationItem implements Serializable
     private String instanceId;
     /**
      * <p>
-     * The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     * The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      * </p>
      */
     private UnsuccessfulInstanceCreditSpecificationItemError error;
@@ -81,11 +81,11 @@ public class UnsuccessfulInstanceCreditSpecificationItem implements Serializable
 
     /**
      * <p>
-     * The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     * The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      * </p>
      * 
      * @param error
-     *        The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     *        The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      */
 
     public void setError(UnsuccessfulInstanceCreditSpecificationItemError error) {
@@ -94,10 +94,10 @@ public class UnsuccessfulInstanceCreditSpecificationItem implements Serializable
 
     /**
      * <p>
-     * The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     * The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      * </p>
      * 
-     * @return The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     * @return The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      */
 
     public UnsuccessfulInstanceCreditSpecificationItemError getError() {
@@ -106,11 +106,11 @@ public class UnsuccessfulInstanceCreditSpecificationItem implements Serializable
 
     /**
      * <p>
-     * The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     * The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      * </p>
      * 
      * @param error
-     *        The applicable error for the T2 instance whose credit option for CPU usage was not modified.
+     *        The applicable error for the T2 or T3 instance whose credit option for CPU usage was not modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

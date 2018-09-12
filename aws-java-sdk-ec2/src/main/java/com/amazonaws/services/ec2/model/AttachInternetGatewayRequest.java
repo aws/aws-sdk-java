@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AttachInternetGatewayRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AttachInternetGateway.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

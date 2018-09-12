@@ -170,7 +170,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * @throws InvalidParameterException
      *         One or more of the parameters provided to the operation are not valid.
      * @throws LimitExceededException
-     *         The limit exceeded the maximum allowed active calls in a queue.
+     *         The allowed limit for the resource has been reached.
      * @throws DuplicateResourceException
      *         A resource with that name already exisits.
      * @throws ResourceNotFoundException
@@ -830,7 +830,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * @throws InternalServiceException
      *         Request processing failed due to an error or failure with the service.
      * @throws LimitExceededException
-     *         The limit exceeded the maximum allowed active calls in a queue.
+     *         The allowed limit for the resource has been reached.
      * @throws DestinationNotAllowedException
      *         Outbound calls to the destination number are not allowed.
      * @throws OutboundContactNotPermittedException
@@ -939,6 +939,78 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<StopContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new or update existing
+     * contact attributes associated with a contact. You can use the operation to add or update attributes for both
+     * ongoing and completed contacts. For example, you can update the customer's name or the reason the customer called
+     * while the call is active, or add notes about steps that the agent took during the call that are displayed to the
+     * next agent that takes the call. You can also use the <code>UpdateContactAttributes</code> operation to update
+     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
+     * Connect. You could also flag calls for additional analysis, or flag abusive callers.
+     * </p>
+     * <p>
+     * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+     * </p>
+     * 
+     * @param updateContactAttributesRequest
+     * @return Result of the UpdateContactAttributes operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @sample AmazonConnect.UpdateContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateContactAttributesResult updateContactAttributes(UpdateContactAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContactAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactAttributesResult executeUpdateContactAttributes(UpdateContactAttributesRequest updateContactAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactAttributesRequest> request = null;
+        Response<UpdateContactAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateContactAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactAttributes");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateContactAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

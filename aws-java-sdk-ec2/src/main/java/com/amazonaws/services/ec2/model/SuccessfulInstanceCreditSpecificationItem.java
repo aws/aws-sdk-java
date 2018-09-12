@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the T2 instance whose credit option for CPU usage was successfully modified.
+ * Describes the T2 or T3 instance whose credit option for CPU usage was successfully modified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SuccessfulInstanceCreditSpecificationItem"

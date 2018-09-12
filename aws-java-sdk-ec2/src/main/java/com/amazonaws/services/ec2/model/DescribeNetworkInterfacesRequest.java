@@ -240,6 +240,19 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkInterfaceIds;
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -1992,6 +2005,92 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfacesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of items to return for this request. The request returns a token that you can specify
+     *        in a subsequent call to get the next set of results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     * 
+     * @return The maximum number of items to return for this request. The request returns a token that you can specify
+     *         in a subsequent call to get the next set of results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return for this request. The request returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of items to return for this request. The request returns a token that you can specify
+     *        in a subsequent call to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfacesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2016,7 +2115,11 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getNetworkInterfaceIds() != null)
-            sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds());
+            sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -2039,6 +2142,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
             return false;
         if (other.getNetworkInterfaceIds() != null && other.getNetworkInterfaceIds().equals(this.getNetworkInterfaceIds()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -2049,6 +2160,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

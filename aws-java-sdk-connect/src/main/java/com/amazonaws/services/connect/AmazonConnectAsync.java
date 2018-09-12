@@ -450,6 +450,55 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new or update existing
+     * contact attributes associated with a contact. You can use the operation to add or update attributes for both
+     * ongoing and completed contacts. For example, you can update the customer's name or the reason the customer called
+     * while the call is active, or add notes about steps that the agent took during the call that are displayed to the
+     * next agent that takes the call. You can also use the <code>UpdateContactAttributes</code> operation to update
+     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
+     * Connect. You could also flag calls for additional analysis, or flag abusive callers.
+     * </p>
+     * <p>
+     * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+     * </p>
+     * 
+     * @param updateContactAttributesRequest
+     * @return A Java Future containing the result of the UpdateContactAttributes operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactAttributesResult> updateContactAttributesAsync(UpdateContactAttributesRequest updateContactAttributesRequest);
+
+    /**
+     * <p>
+     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new or update existing
+     * contact attributes associated with a contact. You can use the operation to add or update attributes for both
+     * ongoing and completed contacts. For example, you can update the customer's name or the reason the customer called
+     * while the call is active, or add notes about steps that the agent took during the call that are displayed to the
+     * next agent that takes the call. You can also use the <code>UpdateContactAttributes</code> operation to update
+     * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
+     * Connect. You could also flag calls for additional analysis, or flag abusive callers.
+     * </p>
+     * <p>
+     * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+     * </p>
+     * 
+     * @param updateContactAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContactAttributes operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateContactAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContactAttributesResult> updateContactAttributesAsync(UpdateContactAttributesRequest updateContactAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContactAttributesRequest, UpdateContactAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns the specified hierarchy group to the user.
      * </p>
      * 

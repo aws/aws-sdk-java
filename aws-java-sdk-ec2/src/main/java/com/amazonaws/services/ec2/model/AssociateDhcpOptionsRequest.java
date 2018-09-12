@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateDhcpOptionsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AssociateDhcpOptions.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

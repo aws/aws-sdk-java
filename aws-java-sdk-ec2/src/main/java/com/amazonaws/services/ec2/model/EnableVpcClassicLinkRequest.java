@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.EnableVpcClassicLinkRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for EnableVpcClassicLink.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EnableVpcClassicLinkRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.fms.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -40,6 +41,8 @@ public class PolicyComplianceStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationResults").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdated").build();
+    private static final MarshallingInfo<Map> ISSUEINFOMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IssueInfoMap").build();
 
     private static final PolicyComplianceStatusMarshaller instance = new PolicyComplianceStatusMarshaller();
 
@@ -63,6 +66,7 @@ public class PolicyComplianceStatusMarshaller {
             protocolMarshaller.marshall(policyComplianceStatus.getMemberAccount(), MEMBERACCOUNT_BINDING);
             protocolMarshaller.marshall(policyComplianceStatus.getEvaluationResults(), EVALUATIONRESULTS_BINDING);
             protocolMarshaller.marshall(policyComplianceStatus.getLastUpdated(), LASTUPDATED_BINDING);
+            protocolMarshaller.marshall(policyComplianceStatus.getIssueInfoMap(), ISSUEINFOMAP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

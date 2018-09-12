@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVpcAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

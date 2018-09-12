@@ -92,6 +92,9 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.fms.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withModeledClass(
+                                    com.amazonaws.services.fms.model.InvalidTypeException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.fms.model.AWSFMSException.class));
 
     public static AWSFMSClientBuilder builder() {
@@ -143,13 +146,13 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
-     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with a master
-     * account in AWS Organizations or associated with a member account that has the appropriate permissions. If the
+     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
+     * account your AWS organization or associated with a member account that has the appropriate permissions. If the
      * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
      * appropriate permissions for the given member account.
      * </p>
      * <p>
-     * The account that you associate with AWS Firewall Manager is called the AWS Firewall manager administrator
+     * The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator
      * account.
      * </p>
      * 
@@ -600,6 +603,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      *         AWS Firewall Manager administrator.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidTypeException
+     *         The value of the <code>Type</code> parameter is invalid.
      * @sample AWSFMS.GetPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -695,6 +700,68 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListComplianceStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListComplianceStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS
+     * organization.
+     * </p>
+     * <p>
+     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+     * administrator.
+     * </p>
+     * 
+     * @param listMemberAccountsRequest
+     * @return Result of the ListMemberAccounts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.ListMemberAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListMemberAccountsResult listMemberAccounts(ListMemberAccountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMemberAccounts(request);
+    }
+
+    @SdkInternalApi
+    final ListMemberAccountsResult executeListMemberAccounts(ListMemberAccountsRequest listMemberAccountsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMemberAccountsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMemberAccountsRequest> request = null;
+        Response<ListMemberAccountsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMemberAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMemberAccountsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMemberAccounts");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMemberAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMemberAccountsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -849,8 +916,15 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      *         AWS Firewall Manager administrator.
      * @throws InvalidInputException
      *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidTypeException
+     *         The value of the <code>Type</code> parameter is invalid.
      * @sample AWSFMS.PutPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy" target="_top">AWS API
      *      Documentation</a>

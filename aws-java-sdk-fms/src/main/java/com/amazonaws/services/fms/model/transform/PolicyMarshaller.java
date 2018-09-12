@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.fms.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -44,6 +45,10 @@ public class PolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeResourceTags").build();
     private static final MarshallingInfo<Boolean> REMEDIATIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemediationEnabled").build();
+    private static final MarshallingInfo<Map> INCLUDEMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IncludeMap").build();
+    private static final MarshallingInfo<Map> EXCLUDEMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ExcludeMap").build();
 
     private static final PolicyMarshaller instance = new PolicyMarshaller();
 
@@ -69,6 +74,8 @@ public class PolicyMarshaller {
             protocolMarshaller.marshall(policy.getResourceTags(), RESOURCETAGS_BINDING);
             protocolMarshaller.marshall(policy.getExcludeResourceTags(), EXCLUDERESOURCETAGS_BINDING);
             protocolMarshaller.marshall(policy.getRemediationEnabled(), REMEDIATIONENABLED_BINDING);
+            protocolMarshaller.marshall(policy.getIncludeMap(), INCLUDEMAP_BINDING);
+            protocolMarshaller.marshall(policy.getExcludeMap(), EXCLUDEMAP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

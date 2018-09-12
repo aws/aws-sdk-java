@@ -55,6 +55,10 @@ public class DescribeNetworkInterfacesResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeNetworkInterfacesResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeNetworkInterfacesResult;

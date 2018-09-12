@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for UpdateSecurityGroupRuleDescriptionsIngress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

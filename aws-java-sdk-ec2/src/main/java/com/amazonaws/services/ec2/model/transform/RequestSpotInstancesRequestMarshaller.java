@@ -91,11 +91,6 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                     EbsBlockDevice ebs = launchSpecificationBlockDeviceMappingsListValue.getEbs();
                     if (ebs != null) {
 
-                        if (ebs.getEncrypted() != null) {
-                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                    StringUtils.fromBoolean(ebs.getEncrypted()));
-                        }
-
                         if (ebs.getDeleteOnTermination() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
                                     StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
@@ -104,11 +99,6 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                         if (ebs.getIops() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops",
                                     StringUtils.fromInteger(ebs.getIops()));
-                        }
-
-                        if (ebs.getKmsKeyId() != null) {
-                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId",
-                                    StringUtils.fromString(ebs.getKmsKeyId()));
                         }
 
                         if (ebs.getSnapshotId() != null) {
@@ -124,6 +114,16 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                         if (ebs.getVolumeType() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                     StringUtils.fromString(ebs.getVolumeType()));
+                        }
+
+                        if (ebs.getEncrypted() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                    StringUtils.fromBoolean(ebs.getEncrypted()));
+                        }
+
+                        if (ebs.getKmsKeyId() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId",
+                                    StringUtils.fromString(ebs.getKmsKeyId()));
                         }
                     }
 
