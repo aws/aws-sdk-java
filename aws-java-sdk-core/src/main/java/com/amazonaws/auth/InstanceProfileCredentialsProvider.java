@@ -108,7 +108,13 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
 
         if (!SDKGlobalConfiguration.isEc2MetadataDisabled()) {
             if (refreshCredentialsAsync) {
-                executor = Executors.newScheduledThreadPool(1);
+                executor = Executors.newScheduledThreadPool(1, new ThreadFactory() {
+                    public Thread newThread(Runnable r) {
+                        Thread t = Executors.defaultThreadFactory().newThread(r);
+                        t.setDaemon(true);
+                        return t;
+                    }
+                });
                 executor.scheduleWithFixedDelay(new Runnable() {
                     @Override
                     public void run() {
