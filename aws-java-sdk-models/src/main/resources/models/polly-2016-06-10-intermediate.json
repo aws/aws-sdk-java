@@ -2808,6 +2808,9 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
+        "name" : "CmnCN",
+        "value" : "cmn-CN"
+      }, {
         "name" : "CyGB",
         "value" : "cy-GB"
       }, {
@@ -11018,11 +11021,11 @@
         "c2jName" : "OutputFormat",
         "c2jShape" : "OutputFormat",
         "deprecated" : false,
-        "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
+        "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>",
         "enumType" : "OutputFormat",
-        "fluentSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+        "fluentSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
         "fluentSetterMethodName" : "withOutputFormat",
-        "getterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
+        "getterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@see OutputFormat*/",
         "getterMethodName" : "getOutputFormat",
         "getterModel" : {
           "returnType" : "String",
@@ -11054,7 +11057,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "OutputFormat",
-        "setterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
+        "setterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@see OutputFormat*/",
         "setterMethodName" : "setOutputFormat",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11068,13 +11071,13 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+        "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "outputFormat",
           "variableType" : "String",
-          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
+          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11767,11 +11770,11 @@
           "c2jName" : "OutputFormat",
           "c2jShape" : "OutputFormat",
           "deprecated" : false,
-          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
+          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>",
           "enumType" : "OutputFormat",
-          "fluentSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+          "fluentSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
           "fluentSetterMethodName" : "withOutputFormat",
-          "getterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
+          "getterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@see OutputFormat*/",
           "getterMethodName" : "getOutputFormat",
           "getterModel" : {
             "returnType" : "String",
@@ -11803,7 +11806,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "OutputFormat",
-          "setterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
+          "setterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@see OutputFormat*/",
           "setterMethodName" : "setOutputFormat",
           "setterModel" : {
             "timestampFormat" : null,
@@ -11817,13 +11820,13 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+          "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "outputFormat",
             "variableType" : "String",
-            "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
+            "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14057,6 +14060,9 @@
       }, {
         "name" : "Aditi",
         "value" : "Aditi"
+      }, {
+        "name" : "Zhiyu",
+        "value" : "Zhiyu"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

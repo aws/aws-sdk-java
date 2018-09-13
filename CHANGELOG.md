@@ -1,3 +1,8 @@
+# __1.11.409__ __2018-09-13__
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds Mandarin Chinese language support with new female voice - "Zhiyu"
+
 # __1.11.408__ __2018-09-12__
 ## __Amazon Connect Service__
   - ### Features

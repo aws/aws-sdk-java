@@ -14,6 +14,7 @@
  */
 package com.amazonaws.endpointdiscovery;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.cache.CacheLoader;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -22,11 +23,13 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+@SdkInternalApi
 public abstract class EndpointDiscoveryRefreshCache<K> {
 
     private static final Log log = LogFactory.getLog(EndpointDiscoveryRefreshCache.class);
@@ -34,7 +37,7 @@ public abstract class EndpointDiscoveryRefreshCache<K> {
     private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor(DaemonThreadFactory.INSTANCE);
     private final CacheLoader<String, Map<String, String>> cacheLoader;
 
-    protected final Map<String, URI> cache = new HashMap<String, URI>();
+    protected final Map<String, URI> cache = new ConcurrentHashMap<String, URI>();
 
     public EndpointDiscoveryRefreshCache(CacheLoader cacheLoader) {
         this.cacheLoader = cacheLoader;

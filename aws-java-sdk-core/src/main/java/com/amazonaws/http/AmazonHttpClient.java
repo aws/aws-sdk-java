@@ -766,7 +766,9 @@ public class AmazonHttpClient {
             try {
                 closeQuietly(c, log);
             } catch (RuntimeException e) {
-                log.warn("Unable to close closeable", e);
+                if (log.isDebugEnabled()) {
+                    log.debug("Unable to close closeable", e);
+                }
             }
         }
 

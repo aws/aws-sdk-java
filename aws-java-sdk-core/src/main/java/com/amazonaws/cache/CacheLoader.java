@@ -14,15 +14,15 @@
  */
 package com.amazonaws.cache;
 
+import com.amazonaws.annotation.SdkInternalApi;
+
 /**
- * Calls downstream service to get the endpoint for a service.
+ * Interface for providing objects to be loaded into a {@link Cache}.
  *
- * Requires a client instance and must transform request into endpoint discovery request
- * Reload uses an executor to asynchronously reload
  * @param <K>
  * @param <V>
  */
+@SdkInternalApi
 public interface CacheLoader<K, V> {
-
-    V load(String key);
+    V load(K key);
 }
