@@ -148,6 +148,14 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setDockerSecurityOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("interactive", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setInteractive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("pseudoTerminal", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setPseudoTerminal(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("dockerLabels", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setDockerLabels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
@@ -164,6 +172,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                 if (context.testExpression("healthCheck", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setHealthCheck(HealthCheckJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("systemControls", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setSystemControls(new ListUnmarshaller<SystemControl>(SystemControlJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

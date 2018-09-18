@@ -37,7 +37,7 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String namespace;
     /**
      * <p>
-     * The data for the metric.
+     * The data for the metric. The array can include no more than 20 metrics per call.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricDatum> metricData;
@@ -105,10 +105,10 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data for the metric.
+     * The data for the metric. The array can include no more than 20 metrics per call.
      * </p>
      * 
-     * @return The data for the metric.
+     * @return The data for the metric. The array can include no more than 20 metrics per call.
      */
 
     public java.util.List<MetricDatum> getMetricData() {
@@ -120,11 +120,11 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data for the metric.
+     * The data for the metric. The array can include no more than 20 metrics per call.
      * </p>
      * 
      * @param metricData
-     *        The data for the metric.
+     *        The data for the metric. The array can include no more than 20 metrics per call.
      */
 
     public void setMetricData(java.util.Collection<MetricDatum> metricData) {
@@ -138,7 +138,7 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data for the metric.
+     * The data for the metric. The array can include no more than 20 metrics per call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param metricData
-     *        The data for the metric.
+     *        The data for the metric. The array can include no more than 20 metrics per call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The data for the metric.
+     * The data for the metric. The array can include no more than 20 metrics per call.
      * </p>
      * 
      * @param metricData
-     *        The data for the metric.
+     *        The data for the metric. The array can include no more than 20 metrics per call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

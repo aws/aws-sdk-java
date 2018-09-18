@@ -45,6 +45,11 @@ public class NodeGroupConfigurationStaxUnmarshaller implements Unmarshaller<Node
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("NodeGroupId", targetDepth)) {
+                    nodeGroupConfiguration.setNodeGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Slots", targetDepth)) {
                     nodeGroupConfiguration.setSlots(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -43,6 +43,8 @@ public enum ElastiCacheActions implements Action {
     CreateReplicationGroup("elasticache:CreateReplicationGroup"),
     /** Action for the CreateSnapshot operation. */
     CreateSnapshot("elasticache:CreateSnapshot"),
+    /** Action for the DecreaseReplicaCount operation. */
+    DecreaseReplicaCount("elasticache:DecreaseReplicaCount"),
     /** Action for the DeleteCacheCluster operation. */
     DeleteCacheCluster("elasticache:DeleteCacheCluster"),
     /** Action for the DeleteCacheParameterGroup operation. */
@@ -79,6 +81,8 @@ public enum ElastiCacheActions implements Action {
     DescribeReservedCacheNodesOfferings("elasticache:DescribeReservedCacheNodesOfferings"),
     /** Action for the DescribeSnapshots operation. */
     DescribeSnapshots("elasticache:DescribeSnapshots"),
+    /** Action for the IncreaseReplicaCount operation. */
+    IncreaseReplicaCount("elasticache:IncreaseReplicaCount"),
     /** Action for the ListAllowedNodeTypeModifications operation. */
     ListAllowedNodeTypeModifications("elasticache:ListAllowedNodeTypeModifications"),
     /** Action for the ListTagsForResource operation. */

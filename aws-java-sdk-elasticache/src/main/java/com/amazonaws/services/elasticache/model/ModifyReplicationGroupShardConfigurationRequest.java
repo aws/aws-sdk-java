@@ -66,11 +66,28 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
     private com.amazonaws.internal.SdkInternalList<ReshardingConfiguration> reshardingConfiguration;
     /**
      * <p>
-     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     * <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the
+     * cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> nodeGroupsToRemove;
+    /**
+     * <p>
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups except those listed by
+     * <code>NodeGroupsToRetain</code> from the cluster.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> nodeGroupsToRetain;
 
     /**
      * <p>
@@ -365,12 +382,21 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
 
     /**
      * <p>
-     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     * <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the
+     * cluster.
      * </p>
      * 
-     * @return If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     *         <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     * @return If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *         <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids
+     *         to remove from or retain in the cluster.</p>
+     *         <p>
+     *         ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+     *         from the cluster.
      */
 
     public java.util.List<String> getNodeGroupsToRemove() {
@@ -382,13 +408,22 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
 
     /**
      * <p>
-     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     * <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the
+     * cluster.
      * </p>
      * 
      * @param nodeGroupsToRemove
-     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     *        <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *        <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to
+     *        remove from or retain in the cluster.</p>
+     *        <p>
+     *        ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+     *        from the cluster.
      */
 
     public void setNodeGroupsToRemove(java.util.Collection<String> nodeGroupsToRemove) {
@@ -402,8 +437,13 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
 
     /**
      * <p>
-     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     * <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the
+     * cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -412,8 +452,12 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
      * </p>
      * 
      * @param nodeGroupsToRemove
-     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     *        <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *        <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to
+     *        remove from or retain in the cluster.</p>
+     *        <p>
+     *        ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+     *        from the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,18 +473,144 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
 
     /**
      * <p>
-     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     * <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the
+     * cluster.
      * </p>
      * 
      * @param nodeGroupsToRemove
-     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards),
-     *        <code>NodeGroupsToRemove</code> is a required list of node group ids to remove from the cluster.
+     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *        <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to
+     *        remove from or retain in the cluster.</p>
+     *        <p>
+     *        ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+     *        from the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyReplicationGroupShardConfigurationRequest withNodeGroupsToRemove(java.util.Collection<String> nodeGroupsToRemove) {
         setNodeGroupsToRemove(nodeGroupsToRemove);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups except those listed by
+     * <code>NodeGroupsToRetain</code> from the cluster.
+     * </p>
+     * 
+     * @return If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *         <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids
+     *         to remove from or retain in the cluster.</p>
+     *         <p>
+     *         ElastiCache for Redis will attempt to remove all node groups except those listed by
+     *         <code>NodeGroupsToRetain</code> from the cluster.
+     */
+
+    public java.util.List<String> getNodeGroupsToRetain() {
+        if (nodeGroupsToRetain == null) {
+            nodeGroupsToRetain = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return nodeGroupsToRetain;
+    }
+
+    /**
+     * <p>
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups except those listed by
+     * <code>NodeGroupsToRetain</code> from the cluster.
+     * </p>
+     * 
+     * @param nodeGroupsToRetain
+     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *        <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to
+     *        remove from or retain in the cluster.</p>
+     *        <p>
+     *        ElastiCache for Redis will attempt to remove all node groups except those listed by
+     *        <code>NodeGroupsToRetain</code> from the cluster.
+     */
+
+    public void setNodeGroupsToRetain(java.util.Collection<String> nodeGroupsToRetain) {
+        if (nodeGroupsToRetain == null) {
+            this.nodeGroupsToRetain = null;
+            return;
+        }
+
+        this.nodeGroupsToRetain = new com.amazonaws.internal.SdkInternalList<String>(nodeGroupsToRetain);
+    }
+
+    /**
+     * <p>
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups except those listed by
+     * <code>NodeGroupsToRetain</code> from the cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNodeGroupsToRetain(java.util.Collection)} or {@link #withNodeGroupsToRetain(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param nodeGroupsToRetain
+     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *        <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to
+     *        remove from or retain in the cluster.</p>
+     *        <p>
+     *        ElastiCache for Redis will attempt to remove all node groups except those listed by
+     *        <code>NodeGroupsToRetain</code> from the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupShardConfigurationRequest withNodeGroupsToRetain(String... nodeGroupsToRetain) {
+        if (this.nodeGroupsToRetain == null) {
+            setNodeGroupsToRetain(new com.amazonaws.internal.SdkInternalList<String>(nodeGroupsToRetain.length));
+        }
+        for (String ele : nodeGroupsToRetain) {
+            this.nodeGroupsToRetain.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     * <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.
+     * </p>
+     * <p>
+     * ElastiCache for Redis will attempt to remove all node groups except those listed by
+     * <code>NodeGroupsToRetain</code> from the cluster.
+     * </p>
+     * 
+     * @param nodeGroupsToRetain
+     *        If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), the
+     *        <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is a required list of node group ids to
+     *        remove from or retain in the cluster.</p>
+     *        <p>
+     *        ElastiCache for Redis will attempt to remove all node groups except those listed by
+     *        <code>NodeGroupsToRetain</code> from the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupShardConfigurationRequest withNodeGroupsToRetain(java.util.Collection<String> nodeGroupsToRetain) {
+        setNodeGroupsToRetain(nodeGroupsToRetain);
         return this;
     }
 
@@ -464,7 +634,9 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
         if (getReshardingConfiguration() != null)
             sb.append("ReshardingConfiguration: ").append(getReshardingConfiguration()).append(",");
         if (getNodeGroupsToRemove() != null)
-            sb.append("NodeGroupsToRemove: ").append(getNodeGroupsToRemove());
+            sb.append("NodeGroupsToRemove: ").append(getNodeGroupsToRemove()).append(",");
+        if (getNodeGroupsToRetain() != null)
+            sb.append("NodeGroupsToRetain: ").append(getNodeGroupsToRetain());
         sb.append("}");
         return sb.toString();
     }
@@ -499,6 +671,10 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
             return false;
         if (other.getNodeGroupsToRemove() != null && other.getNodeGroupsToRemove().equals(this.getNodeGroupsToRemove()) == false)
             return false;
+        if (other.getNodeGroupsToRetain() == null ^ this.getNodeGroupsToRetain() == null)
+            return false;
+        if (other.getNodeGroupsToRetain() != null && other.getNodeGroupsToRetain().equals(this.getNodeGroupsToRetain()) == false)
+            return false;
         return true;
     }
 
@@ -512,6 +688,7 @@ public class ModifyReplicationGroupShardConfigurationRequest extends com.amazona
         hashCode = prime * hashCode + ((getApplyImmediately() == null) ? 0 : getApplyImmediately().hashCode());
         hashCode = prime * hashCode + ((getReshardingConfiguration() == null) ? 0 : getReshardingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNodeGroupsToRemove() == null) ? 0 : getNodeGroupsToRemove().hashCode());
+        hashCode = prime * hashCode + ((getNodeGroupsToRetain() == null) ? 0 : getNodeGroupsToRetain().hashCode());
         return hashCode;
     }
 

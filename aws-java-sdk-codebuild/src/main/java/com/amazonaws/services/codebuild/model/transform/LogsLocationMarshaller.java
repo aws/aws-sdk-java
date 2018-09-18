@@ -33,6 +33,12 @@ public class LogsLocationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamName").build();
     private static final MarshallingInfo<String> DEEPLINK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("deepLink").build();
+    private static final MarshallingInfo<String> S3DEEPLINK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3DeepLink").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudWatchLogs").build();
+    private static final MarshallingInfo<StructuredPojo> S3LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3Logs").build();
 
     private static final LogsLocationMarshaller instance = new LogsLocationMarshaller();
 
@@ -53,6 +59,9 @@ public class LogsLocationMarshaller {
             protocolMarshaller.marshall(logsLocation.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(logsLocation.getStreamName(), STREAMNAME_BINDING);
             protocolMarshaller.marshall(logsLocation.getDeepLink(), DEEPLINK_BINDING);
+            protocolMarshaller.marshall(logsLocation.getS3DeepLink(), S3DEEPLINK_BINDING);
+            protocolMarshaller.marshall(logsLocation.getCloudWatchLogs(), CLOUDWATCHLOGS_BINDING);
+            protocolMarshaller.marshall(logsLocation.getS3Logs(), S3LOGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

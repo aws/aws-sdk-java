@@ -103,7 +103,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -153,7 +153,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -388,10 +388,9 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine
-     * version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.
      * </p>
      */
     private String engineVersion;
@@ -857,7 +856,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -881,7 +880,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      * @see AZMode
@@ -911,7 +910,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -934,7 +933,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *         existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *         section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *         Considerations for Memcached</a>.
      *         </p>
      * @see AZMode
@@ -964,7 +963,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -988,7 +987,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1020,7 +1019,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -1044,7 +1043,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      * @see AZMode
@@ -1074,7 +1073,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * </note>
@@ -1098,7 +1097,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1154,7 +1153,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -1299,7 +1298,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to
      *         move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone
      *         Considerations</b> section of <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *         Considerations for Memcached</a>.
      *         </p>
      *         <p>
@@ -1452,7 +1451,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -1597,7 +1596,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes can be located in different Availability Zones. For guidance on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      *        <p>
@@ -1752,7 +1751,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -1902,7 +1901,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes can be located in different Availability Zones. For guidance on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      *        <p>
@@ -2059,7 +2058,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only
      * newly created nodes can be located in different Availability Zones. For guidance on how to move existing
      * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      * Considerations for Memcached</a>.
      * </p>
      * <p>
@@ -2204,7 +2203,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Only newly created nodes can be located in different Availability Zones. For guidance on how to move
      *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
      *        section of <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache Node
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNode.Memcached.html">Cache Node
      *        Considerations for Memcached</a>.
      *        </p>
      *        <p>
@@ -3221,17 +3220,16 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine
-     * version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.
      * </p>
      * 
      * @param engineVersion
      *        The upgraded version of the cache engine to be run on the cache nodes.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *        want to use an earlier engine version, you must delete the existing cluster and create it anew with the
      *        earlier engine version.
@@ -3247,16 +3245,15 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine
-     * version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.
      * </p>
      * 
      * @return The upgraded version of the cache engine to be run on the cache nodes.</p>
      *         <p>
-     *         <b>Important:</b> You can upgrade to a newer engine version (see <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *         <b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *         >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *         want to use an earlier engine version, you must delete the existing cluster and create it anew with the
      *         earlier engine version.
@@ -3272,17 +3269,16 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine
-     * version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.
      * </p>
      * 
      * @param engineVersion
      *        The upgraded version of the cache engine to be run on the cache nodes.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *        want to use an earlier engine version, you must delete the existing cluster and create it anew with the
      *        earlier engine version.

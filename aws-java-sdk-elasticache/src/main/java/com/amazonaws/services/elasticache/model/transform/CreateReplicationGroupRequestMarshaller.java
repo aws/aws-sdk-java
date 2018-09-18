@@ -92,6 +92,11 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
 
             for (NodeGroupConfiguration nodeGroupConfigurationListValue : nodeGroupConfigurationList) {
 
+                if (nodeGroupConfigurationListValue.getNodeGroupId() != null) {
+                    request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".NodeGroupId",
+                            StringUtils.fromString(nodeGroupConfigurationListValue.getNodeGroupId()));
+                }
+
                 if (nodeGroupConfigurationListValue.getSlots() != null) {
                     request.addParameter("NodeGroupConfiguration.NodeGroupConfiguration." + nodeGroupConfigurationListIndex + ".Slots",
                             StringUtils.fromString(nodeGroupConfigurationListValue.getSlots()));

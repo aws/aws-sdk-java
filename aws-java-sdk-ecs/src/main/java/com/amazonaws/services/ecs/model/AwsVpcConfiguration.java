@@ -30,7 +30,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     * The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      * <code>AwsVpcConfiguration</code>.
      * </p>
      * <note>
@@ -63,7 +63,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     * The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      * <code>AwsVpcConfiguration</code>.
      * </p>
      * <note>
@@ -72,7 +72,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     * @return The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      *         <code>AwsVpcConfiguration</code>.</p> <note>
      *         <p>
      *         All specified subnets must be from the same VPC.
@@ -88,7 +88,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     * The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      * <code>AwsVpcConfiguration</code>.
      * </p>
      * <note>
@@ -98,7 +98,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param subnets
-     *        The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     *        The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      *        <code>AwsVpcConfiguration</code>.</p> <note>
      *        <p>
      *        All specified subnets must be from the same VPC.
@@ -116,7 +116,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     * The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      * <code>AwsVpcConfiguration</code>.
      * </p>
      * <note>
@@ -131,7 +131,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param subnets
-     *        The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     *        The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      *        <code>AwsVpcConfiguration</code>.</p> <note>
      *        <p>
      *        All specified subnets must be from the same VPC.
@@ -151,7 +151,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     * The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      * <code>AwsVpcConfiguration</code>.
      * </p>
      * <note>
@@ -161,7 +161,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param subnets
-     *        The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
+     *        The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per
      *        <code>AwsVpcConfiguration</code>.</p> <note>
      *        <p>
      *        All specified subnets must be from the same VPC.

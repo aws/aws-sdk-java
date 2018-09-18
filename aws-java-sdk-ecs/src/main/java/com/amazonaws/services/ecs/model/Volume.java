@@ -57,7 +57,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private HostVolumeProperties host;
     /**
      * <p>
-     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * This parameter is specified when using Docker volumes. Docker volumes are only supported when using the EC2
+     * launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts,
+     * specify a <code>host</code> instead.
      * </p>
      */
     private DockerVolumeConfiguration dockerVolumeConfiguration;
@@ -214,11 +216,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * This parameter is specified when using Docker volumes. Docker volumes are only supported when using the EC2
+     * launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts,
+     * specify a <code>host</code> instead.
      * </p>
      * 
      * @param dockerVolumeConfiguration
-     *        The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     *        This parameter is specified when using Docker volumes. Docker volumes are only supported when using the
+     *        EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
+     *        mounts, specify a <code>host</code> instead.
      */
 
     public void setDockerVolumeConfiguration(DockerVolumeConfiguration dockerVolumeConfiguration) {
@@ -227,10 +233,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * This parameter is specified when using Docker volumes. Docker volumes are only supported when using the EC2
+     * launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts,
+     * specify a <code>host</code> instead.
      * </p>
      * 
-     * @return The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * @return This parameter is specified when using Docker volumes. Docker volumes are only supported when using the
+     *         EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
+     *         mounts, specify a <code>host</code> instead.
      */
 
     public DockerVolumeConfiguration getDockerVolumeConfiguration() {
@@ -239,11 +249,15 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     * This parameter is specified when using Docker volumes. Docker volumes are only supported when using the EC2
+     * launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts,
+     * specify a <code>host</code> instead.
      * </p>
      * 
      * @param dockerVolumeConfiguration
-     *        The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+     *        This parameter is specified when using Docker volumes. Docker volumes are only supported when using the
+     *        EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
+     *        mounts, specify a <code>host</code> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

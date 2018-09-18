@@ -124,6 +124,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean badgeEnabled;
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     */
+    private LogsConfig logsConfig;
 
     /**
      * <p>
@@ -871,6 +878,52 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     * 
+     * @param logsConfig
+     *        Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
+     *        bucket, or both.
+     */
+
+    public void setLogsConfig(LogsConfig logsConfig) {
+        this.logsConfig = logsConfig;
+    }
+
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     * 
+     * @return Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
+     *         bucket, or both.
+     */
+
+    public LogsConfig getLogsConfig() {
+        return this.logsConfig;
+    }
+
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     * 
+     * @param logsConfig
+     *        Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
+     *        bucket, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withLogsConfig(LogsConfig logsConfig) {
+        setLogsConfig(logsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -908,7 +961,9 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getBadgeEnabled() != null)
-            sb.append("BadgeEnabled: ").append(getBadgeEnabled());
+            sb.append("BadgeEnabled: ").append(getBadgeEnabled()).append(",");
+        if (getLogsConfig() != null)
+            sb.append("LogsConfig: ").append(getLogsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -979,6 +1034,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getBadgeEnabled() != null && other.getBadgeEnabled().equals(this.getBadgeEnabled()) == false)
             return false;
+        if (other.getLogsConfig() == null ^ this.getLogsConfig() == null)
+            return false;
+        if (other.getLogsConfig() != null && other.getLogsConfig().equals(this.getLogsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1001,6 +1060,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getBadgeEnabled() == null) ? 0 : getBadgeEnabled().hashCode());
+        hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         return hashCode;
     }
 

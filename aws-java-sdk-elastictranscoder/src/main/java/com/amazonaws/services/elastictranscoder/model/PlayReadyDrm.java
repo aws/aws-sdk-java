@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * this playlist.
  * </p>
  * <p>
- * PlayReady DRM encrypts your media files using <code>AES-CTR</code> encryption.
+ * PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
  * </p>
  * <p>
  * If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.

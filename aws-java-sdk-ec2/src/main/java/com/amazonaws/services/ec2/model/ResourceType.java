@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ResourceType {
 
     CustomerGateway("customer-gateway"),
+    DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
     Image("image"),
     Instance("instance"),

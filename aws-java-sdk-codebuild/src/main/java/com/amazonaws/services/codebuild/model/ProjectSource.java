@@ -56,6 +56,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -190,6 +195,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -217,6 +227,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>
@@ -259,6 +274,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -285,6 +305,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>GITHUB</code>: The source code is in a GitHub repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NO_SOURCE</code>: The project does not have input source code.
      *         </p>
      *         </li>
      *         <li>
@@ -327,6 +352,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -354,6 +384,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>
@@ -398,6 +433,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -425,6 +465,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>
@@ -467,6 +512,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -494,6 +544,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>

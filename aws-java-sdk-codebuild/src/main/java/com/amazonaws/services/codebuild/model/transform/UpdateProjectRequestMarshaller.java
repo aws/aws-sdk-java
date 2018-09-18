@@ -56,6 +56,8 @@ public class UpdateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
     private static final MarshallingInfo<Boolean> BADGEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("badgeEnabled").build();
+    private static final MarshallingInfo<StructuredPojo> LOGSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logsConfig").build();
 
     private static final UpdateProjectRequestMarshaller instance = new UpdateProjectRequestMarshaller();
 
@@ -87,6 +89,7 @@ public class UpdateProjectRequestMarshaller {
             protocolMarshaller.marshall(updateProjectRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(updateProjectRequest.getBadgeEnabled(), BADGEENABLED_BINDING);
+            protocolMarshaller.marshall(updateProjectRequest.getLogsConfig(), LOGSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

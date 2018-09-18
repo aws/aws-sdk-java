@@ -79,6 +79,10 @@ public class ContainerDefinitionMarshaller {
             .marshallLocationName("extraHosts").build();
     private static final MarshallingInfo<List> DOCKERSECURITYOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dockerSecurityOptions").build();
+    private static final MarshallingInfo<Boolean> INTERACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interactive").build();
+    private static final MarshallingInfo<Boolean> PSEUDOTERMINAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pseudoTerminal").build();
     private static final MarshallingInfo<Map> DOCKERLABELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dockerLabels").build();
     private static final MarshallingInfo<List> ULIMITS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -87,6 +91,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
+    private static final MarshallingInfo<List> SYSTEMCONTROLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("systemControls").build();
 
     private static final ContainerDefinitionMarshaller instance = new ContainerDefinitionMarshaller();
 
@@ -129,10 +135,13 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getDnsSearchDomains(), DNSSEARCHDOMAINS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getExtraHosts(), EXTRAHOSTS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getDockerSecurityOptions(), DOCKERSECURITYOPTIONS_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getInteractive(), INTERACTIVE_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getPseudoTerminal(), PSEUDOTERMINAL_BINDING);
             protocolMarshaller.marshall(containerDefinition.getDockerLabels(), DOCKERLABELS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getUlimits(), ULIMITS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getLogConfiguration(), LOGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(containerDefinition.getHealthCheck(), HEALTHCHECK_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getSystemControls(), SYSTEMCONTROLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

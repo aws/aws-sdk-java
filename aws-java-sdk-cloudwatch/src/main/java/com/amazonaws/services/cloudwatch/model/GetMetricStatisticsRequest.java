@@ -144,7 +144,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
-     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile
+     * statistics are not available for metrics when any of the metric values are negative numbers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> extendedStatistics;
@@ -995,12 +996,14 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
-     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile
+     * statistics are not available for metrics when any of the metric values are negative numbers.
      * </p>
      * 
      * @return The percentile statistics. Specify values between p0.0 and p100. When calling
      *         <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or
-     *         <code>ExtendedStatistics</code>, but not both.
+     *         <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when
+     *         any of the metric values are negative numbers.
      */
 
     public java.util.List<String> getExtendedStatistics() {
@@ -1013,13 +1016,15 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
-     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile
+     * statistics are not available for metrics when any of the metric values are negative numbers.
      * </p>
      * 
      * @param extendedStatistics
      *        The percentile statistics. Specify values between p0.0 and p100. When calling
      *        <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or
-     *        <code>ExtendedStatistics</code>, but not both.
+     *        <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when
+     *        any of the metric values are negative numbers.
      */
 
     public void setExtendedStatistics(java.util.Collection<String> extendedStatistics) {
@@ -1034,7 +1039,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
-     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile
+     * statistics are not available for metrics when any of the metric values are negative numbers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1045,7 +1051,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * @param extendedStatistics
      *        The percentile statistics. Specify values between p0.0 and p100. When calling
      *        <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or
-     *        <code>ExtendedStatistics</code>, but not both.
+     *        <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when
+     *        any of the metric values are negative numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1062,13 +1069,15 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
-     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile
+     * statistics are not available for metrics when any of the metric values are negative numbers.
      * </p>
      * 
      * @param extendedStatistics
      *        The percentile statistics. Specify values between p0.0 and p100. When calling
      *        <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or
-     *        <code>ExtendedStatistics</code>, but not both.
+     *        <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when
+     *        any of the metric values are negative numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

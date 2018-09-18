@@ -37,11 +37,23 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the earliest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
+     * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
      * The time stamp indicating the latest data to be returned.
+     * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster
+     * response from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
      * </p>
      */
     private java.util.Date endTime;
@@ -160,9 +172,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the earliest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
+     * </p>
      * 
      * @param startTime
-     *        The time stamp indicating the earliest data to be returned.
+     *        The time stamp indicating the earliest data to be returned.</p>
+     *        <p>
+     *        For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the
+     *        value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example,
+     *        if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code>
+     *        can get a faster response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -173,8 +196,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the earliest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
+     * </p>
      * 
-     * @return The time stamp indicating the earliest data to be returned.
+     * @return The time stamp indicating the earliest data to be returned.</p>
+     *         <p>
+     *         For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with
+     *         the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For
+     *         example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as
+     *         <code>StartTime</code> can get a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     *         <code>StartTime</code>.
      */
 
     public java.util.Date getStartTime() {
@@ -185,9 +220,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the earliest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
+     * </p>
      * 
      * @param startTime
-     *        The time stamp indicating the earliest data to be returned.
+     *        The time stamp indicating the earliest data to be returned.</p>
+     *        <p>
+     *        For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the
+     *        value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example,
+     *        if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code>
+     *        can get a faster response from CloudWatch then setting 12:07 or 12:29 as the <code>StartTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,9 +246,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the latest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster
+     * response from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
+     * </p>
      * 
      * @param endTime
-     *        The time stamp indicating the latest data to be returned.
+     *        The time stamp indicating the latest data to be returned.</p>
+     *        <p>
+     *        For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the
+     *        value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example,
+     *        if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can
+     *        get a faster response from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -213,8 +270,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the latest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster
+     * response from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
+     * </p>
      * 
-     * @return The time stamp indicating the latest data to be returned.
+     * @return The time stamp indicating the latest data to be returned.</p>
+     *         <p>
+     *         For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with
+     *         the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For
+     *         example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as
+     *         <code>EndTime</code> can get a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     *         <code>EndTime</code>.
      */
 
     public java.util.Date getEndTime() {
@@ -225,9 +294,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The time stamp indicating the latest data to be returned.
      * </p>
+     * <p>
+     * For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value
+     * of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the
+     * <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster
+     * response from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
+     * </p>
      * 
      * @param endTime
-     *        The time stamp indicating the latest data to be returned.
+     *        The time stamp indicating the latest data to be returned.</p>
+     *        <p>
+     *        For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the
+     *        value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example,
+     *        if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can
+     *        get a faster response from CloudWatch then setting 12:07 or 12:29 as the <code>EndTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

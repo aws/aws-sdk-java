@@ -75,6 +75,26 @@ public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, St
                     continue;
                 }
 
+                if (context.testExpression("Values", targetDepth)) {
+                    metricDatum.withValues(new ArrayList<Double>());
+                    continue;
+                }
+
+                if (context.testExpression("Values/member", targetDepth)) {
+                    metricDatum.withValues(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Counts", targetDepth)) {
+                    metricDatum.withCounts(new ArrayList<Double>());
+                    continue;
+                }
+
+                if (context.testExpression("Counts/member", targetDepth)) {
+                    metricDatum.withCounts(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Unit", targetDepth)) {
                     metricDatum.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

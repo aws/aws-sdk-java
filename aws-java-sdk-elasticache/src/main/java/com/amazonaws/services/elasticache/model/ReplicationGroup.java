@@ -54,7 +54,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private ReplicationGroupPendingModifiedValues pendingModifiedValues;
     /**
      * <p>
-     * The identifiers of all the nodes that are part of this replication group.
+     * The names of all the cache clusters that are part of this replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> memberClusters;
@@ -170,6 +170,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      */
@@ -182,6 +186,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable
      * encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you
      * create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -363,10 +371,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifiers of all the nodes that are part of this replication group.
+     * The names of all the cache clusters that are part of this replication group.
      * </p>
      * 
-     * @return The identifiers of all the nodes that are part of this replication group.
+     * @return The names of all the cache clusters that are part of this replication group.
      */
 
     public java.util.List<String> getMemberClusters() {
@@ -378,11 +386,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifiers of all the nodes that are part of this replication group.
+     * The names of all the cache clusters that are part of this replication group.
      * </p>
      * 
      * @param memberClusters
-     *        The identifiers of all the nodes that are part of this replication group.
+     *        The names of all the cache clusters that are part of this replication group.
      */
 
     public void setMemberClusters(java.util.Collection<String> memberClusters) {
@@ -396,7 +404,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifiers of all the nodes that are part of this replication group.
+     * The names of all the cache clusters that are part of this replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -405,7 +413,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param memberClusters
-     *        The identifiers of all the nodes that are part of this replication group.
+     *        The names of all the cache clusters that are part of this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +429,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifiers of all the nodes that are part of this replication group.
+     * The names of all the cache clusters that are part of this replication group.
      * </p>
      * 
      * @param memberClusters
-     *        The identifiers of all the nodes that are part of this replication group.
+     *        The names of all the cache clusters that are part of this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1261,6 +1269,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1270,6 +1282,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1289,6 +1305,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1297,6 +1317,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1316,6 +1340,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1325,6 +1353,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1346,6 +1378,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1354,6 +1390,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1373,6 +1413,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1382,6 +1426,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *        enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1401,6 +1449,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1409,6 +1461,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *         enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -1428,6 +1484,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1437,6 +1497,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *        You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *        enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -1458,6 +1522,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -1466,6 +1534,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
      *         You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *         enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>

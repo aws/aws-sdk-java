@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for the Docker volume. This parameter is specified when using Docker volumes.
+ * This parameter is specified when using Docker volumes. Docker volumes are only supported when using the EC2 launch
+ * type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a
+ * <code>host</code> instead.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DockerVolumeConfiguration" target="_top">AWS API

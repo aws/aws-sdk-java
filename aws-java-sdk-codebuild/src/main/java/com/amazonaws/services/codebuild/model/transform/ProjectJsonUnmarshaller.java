@@ -120,6 +120,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setBadge(ProjectBadgeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("logsConfig", targetDepth)) {
+                    context.nextToken();
+                    project.setLogsConfig(LogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

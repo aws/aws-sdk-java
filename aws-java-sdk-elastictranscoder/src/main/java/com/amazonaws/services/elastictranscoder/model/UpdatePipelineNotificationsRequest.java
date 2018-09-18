@@ -51,7 +51,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -131,7 +131,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -166,7 +166,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *        <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *        has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *        </p>
      *        </li>
@@ -208,7 +208,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -242,7 +242,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *         <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *         has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *         </p>
      *         </li>
@@ -284,7 +284,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -319,7 +319,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *        <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *        has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *        </p>
      *        </li>

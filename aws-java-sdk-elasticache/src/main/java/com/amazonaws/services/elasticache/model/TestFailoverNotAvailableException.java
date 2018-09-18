@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticache.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The <code>TestFailover</code> action is not available.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TestFailoverNotAvailableException extends com.amazonaws.services.elasticache.model.AmazonElastiCacheException {

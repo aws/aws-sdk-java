@@ -146,6 +146,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ProjectBadge badge;
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     */
+    private LogsConfig logsConfig;
 
     /**
      * <p>
@@ -1018,6 +1025,52 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     * 
+     * @param logsConfig
+     *        Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
+     *        bucket, or both.
+     */
+
+    public void setLogsConfig(LogsConfig logsConfig) {
+        this.logsConfig = logsConfig;
+    }
+
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     * 
+     * @return Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
+     *         bucket, or both.
+     */
+
+    public LogsConfig getLogsConfig() {
+        return this.logsConfig;
+    }
+
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket,
+     * or both.
+     * </p>
+     * 
+     * @param logsConfig
+     *        Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3
+     *        bucket, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withLogsConfig(LogsConfig logsConfig) {
+        setLogsConfig(logsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1063,7 +1116,9 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getBadge() != null)
-            sb.append("Badge: ").append(getBadge());
+            sb.append("Badge: ").append(getBadge()).append(",");
+        if (getLogsConfig() != null)
+            sb.append("LogsConfig: ").append(getLogsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1150,6 +1205,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBadge() != null && other.getBadge().equals(this.getBadge()) == false)
             return false;
+        if (other.getLogsConfig() == null ^ this.getLogsConfig() == null)
+            return false;
+        if (other.getLogsConfig() != null && other.getLogsConfig().equals(this.getLogsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1176,6 +1235,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWebhook() == null) ? 0 : getWebhook().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getBadge() == null) ? 0 : getBadge().hashCode());
+        hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         return hashCode;
     }
 

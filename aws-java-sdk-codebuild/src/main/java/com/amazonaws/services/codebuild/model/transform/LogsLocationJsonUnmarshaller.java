@@ -60,6 +60,18 @@ public class LogsLocationJsonUnmarshaller implements Unmarshaller<LogsLocation, 
                     context.nextToken();
                     logsLocation.setDeepLink(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("s3DeepLink", targetDepth)) {
+                    context.nextToken();
+                    logsLocation.setS3DeepLink(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cloudWatchLogs", targetDepth)) {
+                    context.nextToken();
+                    logsLocation.setCloudWatchLogs(CloudWatchLogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("s3Logs", targetDepth)) {
+                    context.nextToken();
+                    logsLocation.setS3Logs(S3LogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

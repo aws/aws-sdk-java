@@ -112,6 +112,36 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
                     }
                 }
 
+                if (!metricDataListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<Double>) metricDataListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<Double> valuesList = (com.amazonaws.internal.SdkInternalList<Double>) metricDataListValue
+                            .getValues();
+                    int valuesListIndex = 1;
+
+                    for (Double valuesListValue : valuesList) {
+                        if (valuesListValue != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".Values.member." + valuesListIndex,
+                                    StringUtils.fromDouble(valuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+
+                if (!metricDataListValue.getCounts().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<Double>) metricDataListValue.getCounts()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<Double> countsList = (com.amazonaws.internal.SdkInternalList<Double>) metricDataListValue
+                            .getCounts();
+                    int countsListIndex = 1;
+
+                    for (Double countsListValue : countsList) {
+                        if (countsListValue != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".Counts.member." + countsListIndex,
+                                    StringUtils.fromDouble(countsListValue));
+                        }
+                        countsListIndex++;
+                    }
+                }
+
                 if (metricDataListValue.getUnit() != null) {
                     request.addParameter("MetricData.member." + metricDataListIndex + ".Unit", StringUtils.fromString(metricDataListValue.getUnit()));
                 }

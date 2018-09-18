@@ -45,6 +45,11 @@ public class ReshardingConfigurationStaxUnmarshaller implements Unmarshaller<Res
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("NodeGroupId", targetDepth)) {
+                    reshardingConfiguration.setNodeGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PreferredAvailabilityZones", targetDepth)) {
                     reshardingConfiguration.withPreferredAvailabilityZones(new ArrayList<String>());
                     continue;

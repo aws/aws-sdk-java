@@ -23,6 +23,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * override any Docker health checks that exist in the container image (such as those specified in a parent image or
  * from the image's Dockerfile).
  * </p>
+ * <p>
+ * The following are notes about container health check support:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information,
+ * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon
+ * ECS Container Agent</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Container health checks are supported for Fargate tasks if using platform version version 1.1.0 or greater. For more
+ * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+ * Fargate Platform Versions</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic
+ * Load Balancer.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck" target="_top">AWS API
  *      Documentation</a>
@@ -41,8 +66,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> command;
@@ -93,8 +119,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * 
      * @return A string array representing the command that the container runs to determine if it is healthy. The string
@@ -106,8 +133,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *         <code>HealthCheck</code> in the <a
-     *         href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
-     *         <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      */
 
     public java.util.List<String> getCommand() {
@@ -128,8 +155,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * 
      * @param command
@@ -142,8 +170,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *        <code>HealthCheck</code> in the <a
-     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
-     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      */
 
     public void setCommand(java.util.Collection<String> command) {
@@ -166,8 +194,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -185,8 +214,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *        <code>HealthCheck</code> in the <a
-     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
-     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,8 +240,9 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     * <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * </p>
      * 
      * @param command
@@ -225,8 +255,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see
      *        <code>HealthCheck</code> in the <a
-     *        href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a container</a> section of the
-     *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

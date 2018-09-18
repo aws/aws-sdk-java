@@ -84,6 +84,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public ReplicationGroup decreaseReplicaCount(DecreaseReplicaCountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -221,6 +226,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     @Override
     public DescribeSnapshotsResult describeSnapshots() {
         return describeSnapshots(new DescribeSnapshotsRequest());
+    }
+
+    @Override
+    public ReplicationGroup increaseReplicaCount(IncreaseReplicaCountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

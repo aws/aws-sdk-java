@@ -101,7 +101,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<EnvironmentVariable> environmentVariablesOverride;
     /**
      * <p>
-     * A source input type for this build that overrides the source input defined in the build project
+     * A source input type for this build that overrides the source input defined in the build project.
      * </p>
      */
     private String sourceTypeOverride;
@@ -204,6 +204,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String idempotencyToken;
+    /**
+     * <p>
+     * Log settings for this build that override the log settings defined in the build project.
+     * </p>
+     */
+    private LogsConfig logsConfigOverride;
 
     /**
      * <p>
@@ -800,11 +806,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A source input type for this build that overrides the source input defined in the build project
+     * A source input type for this build that overrides the source input defined in the build project.
      * </p>
      * 
      * @param sourceTypeOverride
-     *        A source input type for this build that overrides the source input defined in the build project
+     *        A source input type for this build that overrides the source input defined in the build project.
      * @see SourceType
      */
 
@@ -814,10 +820,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A source input type for this build that overrides the source input defined in the build project
+     * A source input type for this build that overrides the source input defined in the build project.
      * </p>
      * 
-     * @return A source input type for this build that overrides the source input defined in the build project
+     * @return A source input type for this build that overrides the source input defined in the build project.
      * @see SourceType
      */
 
@@ -827,11 +833,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A source input type for this build that overrides the source input defined in the build project
+     * A source input type for this build that overrides the source input defined in the build project.
      * </p>
      * 
      * @param sourceTypeOverride
-     *        A source input type for this build that overrides the source input defined in the build project
+     *        A source input type for this build that overrides the source input defined in the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -843,11 +849,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A source input type for this build that overrides the source input defined in the build project
+     * A source input type for this build that overrides the source input defined in the build project.
      * </p>
      * 
      * @param sourceTypeOverride
-     *        A source input type for this build that overrides the source input defined in the build project
+     *        A source input type for this build that overrides the source input defined in the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -1592,6 +1598,46 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Log settings for this build that override the log settings defined in the build project.
+     * </p>
+     * 
+     * @param logsConfigOverride
+     *        Log settings for this build that override the log settings defined in the build project.
+     */
+
+    public void setLogsConfigOverride(LogsConfig logsConfigOverride) {
+        this.logsConfigOverride = logsConfigOverride;
+    }
+
+    /**
+     * <p>
+     * Log settings for this build that override the log settings defined in the build project.
+     * </p>
+     * 
+     * @return Log settings for this build that override the log settings defined in the build project.
+     */
+
+    public LogsConfig getLogsConfigOverride() {
+        return this.logsConfigOverride;
+    }
+
+    /**
+     * <p>
+     * Log settings for this build that override the log settings defined in the build project.
+     * </p>
+     * 
+     * @param logsConfigOverride
+     *        Log settings for this build that override the log settings defined in the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withLogsConfigOverride(LogsConfig logsConfigOverride) {
+        setLogsConfigOverride(logsConfigOverride);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1647,7 +1693,9 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getTimeoutInMinutesOverride() != null)
             sb.append("TimeoutInMinutesOverride: ").append(getTimeoutInMinutesOverride()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: ").append(getIdempotencyToken());
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
+        if (getLogsConfigOverride() != null)
+            sb.append("LogsConfigOverride: ").append(getLogsConfigOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -1755,6 +1803,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
             return false;
+        if (other.getLogsConfigOverride() == null ^ this.getLogsConfigOverride() == null)
+            return false;
+        if (other.getLogsConfigOverride() != null && other.getLogsConfigOverride().equals(this.getLogsConfigOverride()) == false)
+            return false;
         return true;
     }
 
@@ -1786,6 +1838,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getPrivilegedModeOverride() == null) ? 0 : getPrivilegedModeOverride().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutesOverride() == null) ? 0 : getTimeoutInMinutesOverride().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
+        hashCode = prime * hashCode + ((getLogsConfigOverride() == null) ? 0 : getLogsConfigOverride().hashCode());
         return hashCode;
     }
 

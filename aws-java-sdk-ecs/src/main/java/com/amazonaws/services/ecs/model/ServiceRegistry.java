@@ -38,7 +38,7 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
     private String registryArn;
     /**
      * <p>
-     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * The port value used if your service discovery service specified an SRV record. This field may be used if both the
      * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      */
@@ -120,12 +120,12 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * The port value used if your service discovery service specified an SRV record. This field may be used if both the
      * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      * 
      * @param port
-     *        The port value used if your service discovery service specified an SRV record. This field is required if
+     *        The port value used if your service discovery service specified an SRV record. This field may be used if
      *        both the <code>awsvpc</code> network mode and SRV records are used.
      */
 
@@ -135,11 +135,11 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * The port value used if your service discovery service specified an SRV record. This field may be used if both the
      * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      * 
-     * @return The port value used if your service discovery service specified an SRV record. This field is required if
+     * @return The port value used if your service discovery service specified an SRV record. This field may be used if
      *         both the <code>awsvpc</code> network mode and SRV records are used.
      */
 
@@ -149,12 +149,12 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * The port value used if your service discovery service specified an SRV record. This field may be used if both the
      * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      * 
      * @param port
-     *        The port value used if your service discovery service specified an SRV record. This field is required if
+     *        The port value used if your service discovery service specified an SRV record. This field may be used if
      *        both the <code>awsvpc</code> network mode and SRV records are used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
