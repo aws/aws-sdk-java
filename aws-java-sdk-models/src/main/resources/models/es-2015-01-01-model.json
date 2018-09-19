@@ -545,6 +545,10 @@
           "shape":"EncryptionAtRestOptions",
           "documentation":"<p>Specifies the Encryption At Rest Options.</p>"
         },
+        "NodeToNodeEncryptionOptions":{
+          "shape":"NodeToNodeEncryptionOptions",
+          "documentation":"<p>Specifies the NodeToNodeEncryptionOptions.</p>"
+        },
         "AdvancedOptions":{
           "shape":"AdvancedOptions",
           "documentation":"<p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.</p>"
@@ -978,6 +982,10 @@
           "shape":"EncryptionAtRestOptionsStatus",
           "documentation":"<p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.</p>"
         },
+        "NodeToNodeEncryptionOptions":{
+          "shape":"NodeToNodeEncryptionOptionsStatus",
+          "documentation":"<p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>"
+        },
         "AdvancedOptions":{
           "shape":"AdvancedOptionsStatus",
           "documentation":"<p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuring Advanced Options</a> for more information.</p>"
@@ -1062,6 +1070,10 @@
         "EncryptionAtRestOptions":{
           "shape":"EncryptionAtRestOptions",
           "documentation":"<p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>"
+        },
+        "NodeToNodeEncryptionOptions":{
+          "shape":"NodeToNodeEncryptionOptions",
+          "documentation":"<p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>"
         },
         "AdvancedOptions":{
           "shape":"AdvancedOptions",
@@ -1485,6 +1497,34 @@
     "NextToken":{
       "type":"string",
       "documentation":"<p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>"
+    },
+    "NodeToNodeEncryptionOptions":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specify true to enable node-to-node encryption.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the node-to-node encryption options.</p>"
+    },
+    "NodeToNodeEncryptionOptionsStatus":{
+      "type":"structure",
+      "required":[
+        "Options",
+        "Status"
+      ],
+      "members":{
+        "Options":{
+          "shape":"NodeToNodeEncryptionOptions",
+          "documentation":"<p>Specifies the node-to-node encryption options for the specified Elasticsearch domain.</p>"
+        },
+        "Status":{
+          "shape":"OptionStatus",
+          "documentation":"<p>Specifies the status of the node-to-node encryption options for the specified Elasticsearch domain.</p>"
+        }
+      },
+      "documentation":"<p>Status of the node-to-node encryption options for the specified Elasticsearch domain.</p>"
     },
     "OptionState":{
       "type":"string",

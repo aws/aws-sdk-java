@@ -86,6 +86,12 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     private EncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     */
+    private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
+    /**
+     * <p>
      * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
      * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
@@ -526,6 +532,46 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the NodeToNodeEncryptionOptions.
+     */
+
+    public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        this.nodeToNodeEncryptionOptions = nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     * 
+     * @return Specifies the NodeToNodeEncryptionOptions.
+     */
+
+    public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
+        return this.nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the NodeToNodeEncryptionOptions.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the NodeToNodeEncryptionOptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
      * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
@@ -699,6 +745,8 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
             sb.append("CognitoOptions: ").append(getCognitoOptions()).append(",");
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getNodeToNodeEncryptionOptions() != null)
+            sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
@@ -753,6 +801,10 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
             return false;
+        if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -778,6 +830,7 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;

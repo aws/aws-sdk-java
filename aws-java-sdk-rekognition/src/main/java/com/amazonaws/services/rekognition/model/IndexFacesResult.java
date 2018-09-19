@@ -47,6 +47,14 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private String faceModelVersion;
+    /**
+     * <p>
+     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
+     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
+     * specify the <code>QualityFilter</code> request parameter.
+     * </p>
+     */
+    private java.util.List<UnindexedFace> unindexedFaces;
 
     /**
      * <p>
@@ -333,6 +341,92 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
+     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
+     * specify the <code>QualityFilter</code> request parameter.
+     * </p>
+     * 
+     * @return An array of faces that detected in the image but not indexed either because the quality filter deemed
+     *         them to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the
+     *         quality filter, you specify the <code>QualityFilter</code> request parameter.
+     */
+
+    public java.util.List<UnindexedFace> getUnindexedFaces() {
+        return unindexedFaces;
+    }
+
+    /**
+     * <p>
+     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
+     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
+     * specify the <code>QualityFilter</code> request parameter.
+     * </p>
+     * 
+     * @param unindexedFaces
+     *        An array of faces that detected in the image but not indexed either because the quality filter deemed them
+     *        to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality
+     *        filter, you specify the <code>QualityFilter</code> request parameter.
+     */
+
+    public void setUnindexedFaces(java.util.Collection<UnindexedFace> unindexedFaces) {
+        if (unindexedFaces == null) {
+            this.unindexedFaces = null;
+            return;
+        }
+
+        this.unindexedFaces = new java.util.ArrayList<UnindexedFace>(unindexedFaces);
+    }
+
+    /**
+     * <p>
+     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
+     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
+     * specify the <code>QualityFilter</code> request parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUnindexedFaces(java.util.Collection)} or {@link #withUnindexedFaces(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param unindexedFaces
+     *        An array of faces that detected in the image but not indexed either because the quality filter deemed them
+     *        to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality
+     *        filter, you specify the <code>QualityFilter</code> request parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IndexFacesResult withUnindexedFaces(UnindexedFace... unindexedFaces) {
+        if (this.unindexedFaces == null) {
+            setUnindexedFaces(new java.util.ArrayList<UnindexedFace>(unindexedFaces.length));
+        }
+        for (UnindexedFace ele : unindexedFaces) {
+            this.unindexedFaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
+     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
+     * specify the <code>QualityFilter</code> request parameter.
+     * </p>
+     * 
+     * @param unindexedFaces
+     *        An array of faces that detected in the image but not indexed either because the quality filter deemed them
+     *        to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality
+     *        filter, you specify the <code>QualityFilter</code> request parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IndexFacesResult withUnindexedFaces(java.util.Collection<UnindexedFace> unindexedFaces) {
+        setUnindexedFaces(unindexedFaces);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -348,7 +442,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getOrientationCorrection() != null)
             sb.append("OrientationCorrection: ").append(getOrientationCorrection()).append(",");
         if (getFaceModelVersion() != null)
-            sb.append("FaceModelVersion: ").append(getFaceModelVersion());
+            sb.append("FaceModelVersion: ").append(getFaceModelVersion()).append(",");
+        if (getUnindexedFaces() != null)
+            sb.append("UnindexedFaces: ").append(getUnindexedFaces());
         sb.append("}");
         return sb.toString();
     }
@@ -375,6 +471,10 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getFaceModelVersion() != null && other.getFaceModelVersion().equals(this.getFaceModelVersion()) == false)
             return false;
+        if (other.getUnindexedFaces() == null ^ this.getUnindexedFaces() == null)
+            return false;
+        if (other.getUnindexedFaces() != null && other.getUnindexedFaces().equals(this.getUnindexedFaces()) == false)
+            return false;
         return true;
     }
 
@@ -386,6 +486,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getFaceRecords() == null) ? 0 : getFaceRecords().hashCode());
         hashCode = prime * hashCode + ((getOrientationCorrection() == null) ? 0 : getOrientationCorrection().hashCode());
         hashCode = prime * hashCode + ((getFaceModelVersion() == null) ? 0 : getFaceModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getUnindexedFaces() == null) ? 0 : getUnindexedFaces().hashCode());
         return hashCode;
     }
 

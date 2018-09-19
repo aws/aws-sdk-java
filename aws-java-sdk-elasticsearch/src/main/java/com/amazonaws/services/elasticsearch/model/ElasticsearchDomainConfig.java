@@ -79,6 +79,12 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     private EncryptionAtRestOptionsStatus encryptionAtRestOptions;
     /**
      * <p>
+     * Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     * </p>
+     */
+    private NodeToNodeEncryptionOptionsStatus nodeToNodeEncryptionOptions;
+    /**
+     * <p>
      * Specifies the <code>AdvancedOptions</code> for the domain. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.
@@ -438,6 +444,46 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     */
+
+    public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatus nodeToNodeEncryptionOptions) {
+        this.nodeToNodeEncryptionOptions = nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     */
+
+    public NodeToNodeEncryptionOptionsStatus getNodeToNodeEncryptionOptions() {
+        return this.nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatus nodeToNodeEncryptionOptions) {
+        setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the <code>AdvancedOptions</code> for the domain. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.
@@ -555,6 +601,8 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             sb.append("CognitoOptions: ").append(getCognitoOptions()).append(",");
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getNodeToNodeEncryptionOptions() != null)
+            sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
@@ -605,6 +653,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
             return false;
+        if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -629,6 +681,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;

@@ -1422,14 +1422,78 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * can then use the index to find all faces in an image.
      * </p>
      * <p>
-     * In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box
-     * of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the
-     * service for each face that is detected and stored, and an image ID assigned by the service for the input image.
-     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
+     * You can specify the maximum number of faces to index with the <code>MaxFaces</code> input parameter. This is
+     * useful when you want to index the largest faces in an image, and you don't want to index other faces detected in
+     * the image.
+     * </p>
+     * <p>
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet the
+     * required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases.
+     * </p>
+     * <p>
+     * In response, the operation returns an array of metadata for all detected faces, <code>FaceRecords</code>. This
+     * includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The bounding box, <code>BoundingBox</code>, of the detected face.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A confidence value, <code>Confidence</code>, indicating the confidence that the bounding box contains a face.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A face ID, <code>faceId</code>, assigned by the service for each face that is detected and stored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An image ID, <code>ImageId</code>, assigned by the service for the input image.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter), Amazon Rekognition
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mouth) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
+     * <p>
+     * Information about faces detected in an image, but not indexed, is returned in an array of objects,
+     * <code>UnindexedFaces</code>. Faces are not indexed for reasons such as:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The face is too blurry.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The image is too dark.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The face has an extreme pose.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The face is too small.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of faces detected exceeds the value of the <code>MaxFaces</code> request parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
      * <p>
      * For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.
      * </p>
@@ -1477,14 +1541,78 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * can then use the index to find all faces in an image.
      * </p>
      * <p>
-     * In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box
-     * of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the
-     * service for each face that is detected and stored, and an image ID assigned by the service for the input image.
-     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
+     * You can specify the maximum number of faces to index with the <code>MaxFaces</code> input parameter. This is
+     * useful when you want to index the largest faces in an image, and you don't want to index other faces detected in
+     * the image.
+     * </p>
+     * <p>
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet the
+     * required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases.
+     * </p>
+     * <p>
+     * In response, the operation returns an array of metadata for all detected faces, <code>FaceRecords</code>. This
+     * includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The bounding box, <code>BoundingBox</code>, of the detected face.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A confidence value, <code>Confidence</code>, indicating the confidence that the bounding box contains a face.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A face ID, <code>faceId</code>, assigned by the service for each face that is detected and stored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An image ID, <code>ImageId</code>, assigned by the service for the input image.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter), Amazon Rekognition
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mouth) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
+     * <p>
+     * Information about faces detected in an image, but not indexed, is returned in an array of objects,
+     * <code>UnindexedFaces</code>. Faces are not indexed for reasons such as:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The face is too blurry.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The image is too dark.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The face has an extreme pose.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The face is too small.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of faces detected exceeds the value of the <code>MaxFaces</code> request parameter.
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
      * <p>
      * For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.
      * </p>

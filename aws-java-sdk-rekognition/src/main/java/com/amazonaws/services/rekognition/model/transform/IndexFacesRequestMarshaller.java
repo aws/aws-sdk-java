@@ -36,6 +36,10 @@ public class IndexFacesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalImageId").build();
     private static final MarshallingInfo<List> DETECTIONATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetectionAttributes").build();
+    private static final MarshallingInfo<Integer> MAXFACES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxFaces").build();
+    private static final MarshallingInfo<String> QUALITYFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QualityFilter").build();
 
     private static final IndexFacesRequestMarshaller instance = new IndexFacesRequestMarshaller();
 
@@ -57,6 +61,8 @@ public class IndexFacesRequestMarshaller {
             protocolMarshaller.marshall(indexFacesRequest.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(indexFacesRequest.getExternalImageId(), EXTERNALIMAGEID_BINDING);
             protocolMarshaller.marshall(indexFacesRequest.getDetectionAttributes(), DETECTIONATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(indexFacesRequest.getMaxFaces(), MAXFACES_BINDING);
+            protocolMarshaller.marshall(indexFacesRequest.getQualityFilter(), QUALITYFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

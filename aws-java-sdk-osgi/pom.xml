@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.411-SNAPSHOT</version>
+    <version>1.11.411</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -1542,15 +1542,15 @@
                           <header>
                   <![CDATA[
                   <!-- Scripts for Syntax Highlighter START-->
-                  <script id="syntaxhighlight_script_core" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shCore.js">
+                  <script id="syntaxhighlight_script_core" type="text/javascript" src = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shCore.js">
                   </script>
-                  <script id="syntaxhighlight_script_java" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shBrushJava.js">
+                  <script id="syntaxhighlight_script_java" type="text/javascript" src = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shBrushJava.js">
                   </script>
                   <!-- Script for GDPR highlighting -->
                   <script src="/SdkStatic/sdk-priv.js" async="true">
                   </script>
-                  <link id="syntaxhighlight_css_core" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shCoreDefault.css"/>
-                  <link id="syntaxhighlight_css_theme" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shThemeDefault.css"/>
+                  <link id="syntaxhighlight_css_core" rel="stylesheet" type="text/css" href = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shCoreDefault.css"/>
+                  <link id="syntaxhighlight_css_theme" rel="stylesheet" type="text/css" href = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shThemeDefault.css"/>
                   <!-- Scripts for Syntax Highlighter END-->
                   <div>
                       <!-- BEGIN-SECTION -->
@@ -1569,7 +1569,7 @@
                                   </div>
                                   <div id="nav-search-button" class="nav-sprite">
                                       <button type="submit" style="border: 0;background: transparent;padding: 0;">
-                                          <img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="40" height="37" alt="submit">
+                                          <img src="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="40" height="37" alt="submit">
                                       </button>
                                   </div>
                                       <input name="searchPath" type="hidden" value="documentation-guide" />
@@ -1622,7 +1622,7 @@
                               <!-- Script for Syntax Highlighter END -->
                           </div>
                           ]]>
-                          &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript">&lt;/script>
+                          &lt;script src="https://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript">&lt;/script>
                           &lt;script>
                           jQuery(function ($) {
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE-->');

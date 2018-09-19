@@ -143,6 +143,12 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
     private EncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     */
+    private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
+    /**
+     * <p>
      * Specifies the status of the <code>AdvancedOptions</code>
      * </p>
      */
@@ -1009,6 +1015,46 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     */
+
+    public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        this.nodeToNodeEncryptionOptions = nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @return Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     */
+
+    public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
+        return this.nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the status of the <code>AdvancedOptions</code>
      * </p>
      * 
@@ -1174,6 +1220,8 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             sb.append("CognitoOptions: ").append(getCognitoOptions()).append(",");
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getNodeToNodeEncryptionOptions() != null)
+            sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
@@ -1260,6 +1308,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
             return false;
+        if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -1293,6 +1345,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;

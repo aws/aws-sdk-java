@@ -243,8 +243,8 @@ public abstract class AmazonWebServiceClient {
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
      * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * <a href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint">
+     * https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint</a>
      *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,

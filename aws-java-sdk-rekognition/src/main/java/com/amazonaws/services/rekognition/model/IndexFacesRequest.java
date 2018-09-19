@@ -53,6 +53,36 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<String> detectionAttributes;
+    /**
+     * <p>
+     * The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1.
+     * <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a larger value
+     * for <code>MaxFaces</code>.
+     * </p>
+     * <p>
+     * If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest
+     * quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces
+     * with the smallest bounding boxes are filtered out (up to the number needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code>
+     * array.
+     * </p>
+     * <p>
+     * The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face bounding box
+     * size, to the smallest.
+     * </p>
+     */
+    private Integer maxFaces;
+    /**
+     * <p>
+     * Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not indexed.
+     * If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. Low quality
+     * detections can arise for a number of reasons. For example, an object misidentified as a face, a face that is too
+     * blurry, or a face with a pose that is too extreme to use. If you specify <code>NONE</code>, no filtering is
+     * performed. The default value is NONE.
+     * </p>
+     */
+    private String qualityFilter;
 
     /**
      * <p>
@@ -360,6 +390,220 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1.
+     * <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a larger value
+     * for <code>MaxFaces</code>.
+     * </p>
+     * <p>
+     * If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest
+     * quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces
+     * with the smallest bounding boxes are filtered out (up to the number needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code>
+     * array.
+     * </p>
+     * <p>
+     * The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face bounding box
+     * size, to the smallest.
+     * </p>
+     * 
+     * @param maxFaces
+     *        The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to
+     *        1. <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a
+     *        larger value for <code>MaxFaces</code>.</p>
+     *        <p>
+     *        If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the
+     *        lowest quality are filtered out first. If there are still more faces than the value of
+     *        <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number
+     *        needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available
+     *        in the <code>UnindexedFaces</code> array.
+     *        </p>
+     *        <p>
+     *        The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face
+     *        bounding box size, to the smallest.
+     */
+
+    public void setMaxFaces(Integer maxFaces) {
+        this.maxFaces = maxFaces;
+    }
+
+    /**
+     * <p>
+     * The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1.
+     * <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a larger value
+     * for <code>MaxFaces</code>.
+     * </p>
+     * <p>
+     * If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest
+     * quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces
+     * with the smallest bounding boxes are filtered out (up to the number needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code>
+     * array.
+     * </p>
+     * <p>
+     * The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face bounding box
+     * size, to the smallest.
+     * </p>
+     * 
+     * @return The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to
+     *         1. <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a
+     *         larger value for <code>MaxFaces</code>.</p>
+     *         <p>
+     *         If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the
+     *         lowest quality are filtered out first. If there are still more faces than the value of
+     *         <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number
+     *         needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available
+     *         in the <code>UnindexedFaces</code> array.
+     *         </p>
+     *         <p>
+     *         The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face
+     *         bounding box size, to the smallest.
+     */
+
+    public Integer getMaxFaces() {
+        return this.maxFaces;
+    }
+
+    /**
+     * <p>
+     * The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1.
+     * <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a larger value
+     * for <code>MaxFaces</code>.
+     * </p>
+     * <p>
+     * If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest
+     * quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces
+     * with the smallest bounding boxes are filtered out (up to the number needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code>
+     * array.
+     * </p>
+     * <p>
+     * The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face bounding box
+     * size, to the smallest.
+     * </p>
+     * 
+     * @param maxFaces
+     *        The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to
+     *        1. <code>IndexFaces</code> returns no more that 100 detected faces in an image, even if you specify a
+     *        larger value for <code>MaxFaces</code>.</p>
+     *        <p>
+     *        If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the
+     *        lowest quality are filtered out first. If there are still more faces than the value of
+     *        <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number
+     *        needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available
+     *        in the <code>UnindexedFaces</code> array.
+     *        </p>
+     *        <p>
+     *        The faces returned by <code>IndexFaces</code> are sorted, in descending order, by the largest face
+     *        bounding box size, to the smallest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IndexFacesRequest withMaxFaces(Integer maxFaces) {
+        setMaxFaces(maxFaces);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not indexed.
+     * If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. Low quality
+     * detections can arise for a number of reasons. For example, an object misidentified as a face, a face that is too
+     * blurry, or a face with a pose that is too extreme to use. If you specify <code>NONE</code>, no filtering is
+     * performed. The default value is NONE.
+     * </p>
+     * 
+     * @param qualityFilter
+     *        Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not
+     *        indexed. If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     *        meet the required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of
+     *        common use cases. Low quality detections can arise for a number of reasons. For example, an object
+     *        misidentified as a face, a face that is too blurry, or a face with a pose that is too extreme to use. If
+     *        you specify <code>NONE</code>, no filtering is performed. The default value is NONE.
+     * @see QualityFilter
+     */
+
+    public void setQualityFilter(String qualityFilter) {
+        this.qualityFilter = qualityFilter;
+    }
+
+    /**
+     * <p>
+     * Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not indexed.
+     * If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. Low quality
+     * detections can arise for a number of reasons. For example, an object misidentified as a face, a face that is too
+     * blurry, or a face with a pose that is too extreme to use. If you specify <code>NONE</code>, no filtering is
+     * performed. The default value is NONE.
+     * </p>
+     * 
+     * @return Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not
+     *         indexed. If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     *         meet the required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of
+     *         common use cases. Low quality detections can arise for a number of reasons. For example, an object
+     *         misidentified as a face, a face that is too blurry, or a face with a pose that is too extreme to use. If
+     *         you specify <code>NONE</code>, no filtering is performed. The default value is NONE.
+     * @see QualityFilter
+     */
+
+    public String getQualityFilter() {
+        return this.qualityFilter;
+    }
+
+    /**
+     * <p>
+     * Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not indexed.
+     * If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. Low quality
+     * detections can arise for a number of reasons. For example, an object misidentified as a face, a face that is too
+     * blurry, or a face with a pose that is too extreme to use. If you specify <code>NONE</code>, no filtering is
+     * performed. The default value is NONE.
+     * </p>
+     * 
+     * @param qualityFilter
+     *        Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not
+     *        indexed. If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     *        meet the required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of
+     *        common use cases. Low quality detections can arise for a number of reasons. For example, an object
+     *        misidentified as a face, a face that is too blurry, or a face with a pose that is too extreme to use. If
+     *        you specify <code>NONE</code>, no filtering is performed. The default value is NONE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QualityFilter
+     */
+
+    public IndexFacesRequest withQualityFilter(String qualityFilter) {
+        setQualityFilter(qualityFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not indexed.
+     * If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. Low quality
+     * detections can arise for a number of reasons. For example, an object misidentified as a face, a face that is too
+     * blurry, or a face with a pose that is too extreme to use. If you specify <code>NONE</code>, no filtering is
+     * performed. The default value is NONE.
+     * </p>
+     * 
+     * @param qualityFilter
+     *        Specifies how much filtering is done to identify faces detected with low quality. Filtered faces are not
+     *        indexed. If you specify <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     *        meet the required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of
+     *        common use cases. Low quality detections can arise for a number of reasons. For example, an object
+     *        misidentified as a face, a face that is too blurry, or a face with a pose that is too extreme to use. If
+     *        you specify <code>NONE</code>, no filtering is performed. The default value is NONE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QualityFilter
+     */
+
+    public IndexFacesRequest withQualityFilter(QualityFilter qualityFilter) {
+        this.qualityFilter = qualityFilter.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -377,7 +621,11 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getExternalImageId() != null)
             sb.append("ExternalImageId: ").append(getExternalImageId()).append(",");
         if (getDetectionAttributes() != null)
-            sb.append("DetectionAttributes: ").append(getDetectionAttributes());
+            sb.append("DetectionAttributes: ").append(getDetectionAttributes()).append(",");
+        if (getMaxFaces() != null)
+            sb.append("MaxFaces: ").append(getMaxFaces()).append(",");
+        if (getQualityFilter() != null)
+            sb.append("QualityFilter: ").append(getQualityFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +656,14 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDetectionAttributes() != null && other.getDetectionAttributes().equals(this.getDetectionAttributes()) == false)
             return false;
+        if (other.getMaxFaces() == null ^ this.getMaxFaces() == null)
+            return false;
+        if (other.getMaxFaces() != null && other.getMaxFaces().equals(this.getMaxFaces()) == false)
+            return false;
+        if (other.getQualityFilter() == null ^ this.getQualityFilter() == null)
+            return false;
+        if (other.getQualityFilter() != null && other.getQualityFilter().equals(this.getQualityFilter()) == false)
+            return false;
         return true;
     }
 
@@ -420,6 +676,8 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getExternalImageId() == null) ? 0 : getExternalImageId().hashCode());
         hashCode = prime * hashCode + ((getDetectionAttributes() == null) ? 0 : getDetectionAttributes().hashCode());
+        hashCode = prime * hashCode + ((getMaxFaces() == null) ? 0 : getMaxFaces().hashCode());
+        hashCode = prime * hashCode + ((getQualityFilter() == null) ? 0 : getQualityFilter().hashCode());
         return hashCode;
     }
 
