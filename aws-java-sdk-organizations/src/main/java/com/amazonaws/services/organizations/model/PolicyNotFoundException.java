@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find a policy with the PolicyId that you specified.
+ * We can't find a policy with the <code>PolicyId</code> that you specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

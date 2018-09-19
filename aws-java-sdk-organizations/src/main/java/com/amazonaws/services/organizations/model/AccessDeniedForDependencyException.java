@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> so that Organizations
- * can create the required service-linked role. You do not have that permission.
+ * The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> so that AWS
+ * Organizations can create the required service-linked role. You don't have that permission.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -45,13 +45,13 @@ public class ListHandshakesForAccountRequest extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
-     * (Optional) Use this to limit the number of results you want included in the response. If you do not include this
-     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Organizations might return fewer results than the maximum even when there are more results
-     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * (Optional) Use this to limit the number of results you want included per page in the response. If you do not
+     * include this parameter, it defaults to a value that is specific to the operation. If additional items exist
+     * beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     * null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     * get the next part of the results. Note that Organizations might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after every operation to ensure that
+     * you receive all of the results.
      * </p>
      */
     private Integer maxResults;
@@ -177,18 +177,18 @@ public class ListHandshakesForAccountRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) Use this to limit the number of results you want included in the response. If you do not include this
-     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Organizations might return fewer results than the maximum even when there are more results
-     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * (Optional) Use this to limit the number of results you want included per page in the response. If you do not
+     * include this parameter, it defaults to a value that is specific to the operation. If additional items exist
+     * beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     * null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     * get the next part of the results. Note that Organizations might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after every operation to ensure that
+     * you receive all of the results.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Use this to limit the number of results you want included in the response. If you do not
-     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        (Optional) Use this to limit the number of results you want included per page in the response. If you do
+     *        not include this parameter, it defaults to a value that is specific to the operation. If additional items
      *        exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a
      *        value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call
      *        to the operation to get the next part of the results. Note that Organizations might return fewer results
@@ -202,17 +202,17 @@ public class ListHandshakesForAccountRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) Use this to limit the number of results you want included in the response. If you do not include this
-     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Organizations might return fewer results than the maximum even when there are more results
-     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * (Optional) Use this to limit the number of results you want included per page in the response. If you do not
+     * include this parameter, it defaults to a value that is specific to the operation. If additional items exist
+     * beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     * null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     * get the next part of the results. Note that Organizations might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after every operation to ensure that
+     * you receive all of the results.
      * </p>
      * 
-     * @return (Optional) Use this to limit the number of results you want included in the response. If you do not
-     *         include this parameter, it defaults to a value that is specific to the operation. If additional items
+     * @return (Optional) Use this to limit the number of results you want included per page in the response. If you do
+     *         not include this parameter, it defaults to a value that is specific to the operation. If additional items
      *         exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a
      *         value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call
      *         to the operation to get the next part of the results. Note that Organizations might return fewer results
@@ -226,18 +226,18 @@ public class ListHandshakesForAccountRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Optional) Use this to limit the number of results you want included in the response. If you do not include this
-     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Organizations might return fewer results than the maximum even when there are more results
-     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * (Optional) Use this to limit the number of results you want included per page in the response. If you do not
+     * include this parameter, it defaults to a value that is specific to the operation. If additional items exist
+     * beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     * null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     * get the next part of the results. Note that Organizations might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after every operation to ensure that
+     * you receive all of the results.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Use this to limit the number of results you want included in the response. If you do not
-     *        include this parameter, it defaults to a value that is specific to the operation. If additional items
+     *        (Optional) Use this to limit the number of results you want included per page in the response. If you do
+     *        not include this parameter, it defaults to a value that is specific to the operation. If additional items
      *        exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a
      *        value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call
      *        to the operation to get the next part of the results. Note that Organizations might return fewer results

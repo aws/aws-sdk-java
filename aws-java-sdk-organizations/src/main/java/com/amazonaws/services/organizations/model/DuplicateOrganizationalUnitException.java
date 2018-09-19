@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An organizational unit (OU) with the same name already exists.
+ * An OU with the same name already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

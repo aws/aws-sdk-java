@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find a root or organizational unit (OU) with the ParentId that you specified.
+ * We can't find a root or OU with the <code>ParentId</code> that you specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

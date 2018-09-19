@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find an organizational unit (OU) with the OrganizationalUnitId that you specified.
+ * We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

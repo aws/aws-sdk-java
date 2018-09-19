@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find a root with the RootId that you specified.
+ * We can't find a root with the <code>RootId</code> that you specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The organization isn't empty. To delete an organization, you must first remove all accounts except the master
- * account, delete all organizational units (OUs), and delete all policies.
+ * account, delete all OUs, and delete all policies.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

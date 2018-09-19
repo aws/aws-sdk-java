@@ -27,7 +27,7 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+ * IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
  * </p>
  * </li>
  * <li>
@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * INVALID_ENUM: You specified a value that is not valid for that parameter.
+ * INVALID_ENUM: You specified a value that isn't valid for that parameter.
  * </p>
  * </li>
  * <li>
@@ -57,8 +57,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call of the
- * operation.
+ * INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a previous call
+ * of the operation.
  * </p>
  * </li>
  * <li>
@@ -73,13 +73,13 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * INVALID_ROLE_NAME: You provided a role name that is not valid. A role name can’t begin with the reserved prefix
- * 'AWSServiceRoleFor'.
+ * INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix
+ * <code>AWSServiceRoleFor</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+ * INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.
  * </p>
  * </li>
  * <li>

@@ -99,6 +99,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public GetMetricWidgetImageResult getMetricWidgetImage(GetMetricWidgetImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDashboardsResult listDashboards(ListDashboardsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

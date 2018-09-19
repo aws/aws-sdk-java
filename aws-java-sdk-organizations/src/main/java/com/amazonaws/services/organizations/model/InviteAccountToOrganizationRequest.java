@@ -45,7 +45,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code>
      * </p>
      */
     private HandshakeParty target;
@@ -76,7 +76,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code>
      * </p>
      * 
      * @param target
@@ -97,7 +97,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        is associated with the account.
      *        </p>
      *        <p>
-     *        <code>--target Id=bill@example.com,Type=EMAIL</code>
+     *        <code>--target Id=diego@example.com,Type=EMAIL</code>
      */
 
     public void setTarget(HandshakeParty target) {
@@ -124,7 +124,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code>
      * </p>
      * 
      * @return The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON
@@ -144,7 +144,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *         that is associated with the account.
      *         </p>
      *         <p>
-     *         <code>--target Id=bill@example.com,Type=EMAIL</code>
+     *         <code>--target Id=diego@example.com,Type=EMAIL</code>
      */
 
     public HandshakeParty getTarget() {
@@ -171,7 +171,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code>
      * </p>
      * 
      * @param target
@@ -192,7 +192,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        is associated with the account.
      *        </p>
      *        <p>
-     *        <code>--target Id=bill@example.com,Type=EMAIL</code>
+     *        <code>--target Id=diego@example.com,Type=EMAIL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

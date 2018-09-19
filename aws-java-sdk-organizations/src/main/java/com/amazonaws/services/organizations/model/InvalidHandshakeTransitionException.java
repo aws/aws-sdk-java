@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You can't perform the operation on the handshake in its current state. For example, you can't cancel a handshake that
- * was already accepted, or accept a handshake that was already declined.
+ * was already accepted or accept a handshake that was already declined.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your account is not a member of an organization. To make this request, you must use the credentials of an account
- * that belongs to an organization.
+ * Your account isn't a member of an organization. To make this request, you must use the credentials of an account that
+ * belongs to an organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -994,6 +994,82 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon
+     * CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki
+     * pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your
+     * own custom live dashboard.
+     * </p>
+     * <p>
+     * The graph you retrieve can include all CloudWatch metric graph features, including metric math and horizontal and
+     * vertical annotations.
+     * </p>
+     * <p>
+     * There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code> action has
+     * the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * As many as 100 metrics in the graph.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Up to 100 KB uncompressed payload.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getMetricWidgetImageRequest
+     * @return Result of the GetMetricWidgetImage operation returned by the service.
+     * @sample AmazonCloudWatch.GetMetricWidgetImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMetricWidgetImageResult getMetricWidgetImage(GetMetricWidgetImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricWidgetImage(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricWidgetImageResult executeGetMetricWidgetImage(GetMetricWidgetImageRequest getMetricWidgetImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricWidgetImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricWidgetImageRequest> request = null;
+        Response<GetMetricWidgetImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricWidgetImageRequestMarshaller().marshall(super.beforeMarshalling(getMetricWidgetImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricWidgetImage");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            StaxResponseHandler<GetMetricWidgetImageResult> responseHandler = new StaxResponseHandler<GetMetricWidgetImageResult>(
+                    new GetMetricWidgetImageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those
      * dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed.
      * </p>

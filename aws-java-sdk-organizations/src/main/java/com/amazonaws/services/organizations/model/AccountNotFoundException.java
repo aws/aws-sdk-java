@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find an AWS account with the AccountId that you specified, or the account whose credentials you used to make
- * this request is not a member of an organization.
+ * We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose credentials you
+ * used to make this request isn't a member of an organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

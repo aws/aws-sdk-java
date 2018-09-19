@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified organizational unit (OU) is not empty. Move all accounts to another root or to other OUs, remove all
- * child OUs, and then try the operation again.
+ * The specified OU is not empty. Move all accounts to another root or to other OUs, remove all child OUs, and try the
+ * operation again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

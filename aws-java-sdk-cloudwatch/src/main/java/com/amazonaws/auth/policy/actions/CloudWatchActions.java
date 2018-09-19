@@ -45,6 +45,8 @@ public enum CloudWatchActions implements Action {
     GetMetricData("cloudwatch:GetMetricData"),
     /** Action for the GetMetricStatistics operation. */
     GetMetricStatistics("cloudwatch:GetMetricStatistics"),
+    /** Action for the GetMetricWidgetImage operation. */
+    GetMetricWidgetImage("cloudwatch:GetMetricWidgetImage"),
     /** Action for the ListDashboards operation. */
     ListDashboards("cloudwatch:ListDashboards"),
     /** Action for the ListMetrics operation. */

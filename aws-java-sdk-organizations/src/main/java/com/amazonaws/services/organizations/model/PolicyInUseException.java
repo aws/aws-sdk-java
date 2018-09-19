@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The policy is attached to one or more entities. You must detach it from all roots, organizational units (OUs), and
- * accounts before performing this operation.
+ * The policy is attached to one or more entities. You must detach it from all roots, OUs, and accounts before
+ * performing this operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
