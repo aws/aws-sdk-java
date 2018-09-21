@@ -237,6 +237,10 @@ public interface AmazonRDS {
      * @return Result of the ApplyPendingMaintenanceAction operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.ApplyPendingMaintenanceAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction"
      *      target="_top">AWS API Documentation</a>
@@ -542,7 +546,7 @@ public interface AmazonRDS {
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBClusterParameterGroupNotFoundException
      *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @throws KMSKeyNotAccessibleException
@@ -725,7 +729,7 @@ public interface AmazonRDS {
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBSubnetGroupNotFoundException
      *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
@@ -825,7 +829,7 @@ public interface AmazonRDS {
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws SnapshotQuotaExceededException
@@ -1045,7 +1049,7 @@ public interface AmazonRDS {
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws SnapshotQuotaExceededException
@@ -1818,7 +1822,7 @@ public interface AmazonRDS {
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.DescribeValidDBInstanceModifications
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications"
      *      target="_top">AWS API Documentation</a>
@@ -1870,7 +1874,7 @@ public interface AmazonRDS {
      * @throws InvalidDBClusterStateException
      *         The DB cluster isn't in a valid state.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.FailoverDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1982,7 +1986,7 @@ public interface AmazonRDS {
      * @throws InvalidDBSecurityGroupStateException
      *         The state of the DB security group doesn't allow deletion.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBClusterAlreadyExistsException
      *         The user already has a DB cluster with the given identifier.
      * @sample AmazonRDS.ModifyDBCluster
@@ -2076,7 +2080,7 @@ public interface AmazonRDS {
      * @param modifyDBInstanceRequest
      * @return Result of the ModifyDBInstance operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws InvalidDBSecurityGroupStateException
      *         The state of the DB security group doesn't allow deletion.
      * @throws DBInstanceAlreadyExistsException
@@ -2305,7 +2309,7 @@ public interface AmazonRDS {
      * @param promoteReadReplicaRequest
      * @return Result of the PromoteReadReplica operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @sample AmazonRDS.PromoteReadReplica
@@ -2369,7 +2373,7 @@ public interface AmazonRDS {
      * @param rebootDBInstanceRequest
      * @return Result of the RebootDBInstance operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @sample AmazonRDS.RebootDBInstance
@@ -2843,7 +2847,7 @@ public interface AmazonRDS {
      * @throws InsufficientDBInstanceCapacityException
      *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws PointInTimeRestoreNotEnabledException
      *         <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0.
      * @throws StorageQuotaExceededException
@@ -2912,12 +2916,38 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
-     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
+     * or the StopDBCluster action.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return Result of the StartDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBCluster startDBCluster(StartDBClusterRequest startDBClusterRequest);
+
+    /**
+     * <p>
+     * Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or
+     * the StopDBInstance action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
+     * Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
+     * <a>StartDBCluster</a> instead.
      * </p>
      * </note>
      * 
@@ -2926,7 +2956,7 @@ public interface AmazonRDS {
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws InsufficientDBInstanceCapacityException
      *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws DBSubnetGroupNotFoundException
@@ -2957,14 +2987,39 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
-     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
-     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
-     * AWS RDS user guide.
+     * Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's metadata,
+     * including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a
+     * point-in-time restore if necessary.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return Result of the StopDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBCluster stopDBCluster(StopDBClusterRequest stopDBClusterRequest);
+
+    /**
+     * <p>
+     * Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata,
+     * including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction
+     * logs so you can do a point-in-time restore if necessary.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
+     * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters, use <a>StopDBCluster</a>
+     * instead.
      * </p>
      * </note>
      * 
@@ -2973,7 +3028,7 @@ public interface AmazonRDS {
      * @throws DBInstanceNotFoundException
      *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The DB instance isn't in a valid state.
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws SnapshotQuotaExceededException

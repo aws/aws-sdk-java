@@ -384,6 +384,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
+     * CloudWatch log group in your AWS account.
+     * </p>
+     * 
+     * @param createLogSubscriptionRequest
+     * @return A Java Future containing the result of the CreateLogSubscription operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.CreateLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLogSubscriptionResult> createLogSubscriptionAsync(CreateLogSubscriptionRequest createLogSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
+     * CloudWatch log group in your AWS account.
+     * </p>
+     * 
+     * @param createLogSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLogSubscription operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.CreateLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLogSubscriptionResult> createLogSubscriptionAsync(CreateLogSubscriptionRequest createLogSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLogSubscriptionRequest, CreateLogSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a Microsoft AD in the AWS cloud.
      * </p>
      * <p>
@@ -612,6 +645,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(DeleteDirectoryRequest deleteDirectoryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDirectoryRequest, DeleteDirectoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified log subscription.
+     * </p>
+     * 
+     * @param deleteLogSubscriptionRequest
+     * @return A Java Future containing the result of the DeleteLogSubscription operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DeleteLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLogSubscriptionResult> deleteLogSubscriptionAsync(DeleteLogSubscriptionRequest deleteLogSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified log subscription.
+     * </p>
+     * 
+     * @param deleteLogSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLogSubscription operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DeleteLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLogSubscriptionResult> deleteLogSubscriptionAsync(DeleteLogSubscriptionRequest deleteLogSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLogSubscriptionRequest, DeleteLogSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -1259,6 +1323,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(ListIpRoutesRequest listIpRoutesRequest,
             com.amazonaws.handlers.AsyncHandler<ListIpRoutesRequest, ListIpRoutesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the active log subscriptions for the AWS account.
+     * </p>
+     * 
+     * @param listLogSubscriptionsRequest
+     * @return A Java Future containing the result of the ListLogSubscriptions operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.ListLogSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLogSubscriptionsResult> listLogSubscriptionsAsync(ListLogSubscriptionsRequest listLogSubscriptionsRequest);
+
+    /**
+     * <p>
+     * Lists the active log subscriptions for the AWS account.
+     * </p>
+     * 
+     * @param listLogSubscriptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLogSubscriptions operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.ListLogSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLogSubscriptionsResult> listLogSubscriptionsAsync(ListLogSubscriptionsRequest listLogSubscriptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLogSubscriptionsRequest, ListLogSubscriptionsResult> asyncHandler);
 
     /**
      * <p>

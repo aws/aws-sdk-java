@@ -70,7 +70,9 @@
         "resultWrapper":"ApplyPendingMaintenanceActionResult"
       },
       "errors":[
-        {"shape":"ResourceNotFoundFault"}
+        {"shape":"ResourceNotFoundFault"},
+        {"shape":"InvalidDBClusterStateFault"},
+        {"shape":"InvalidDBInstanceStateFault"}
       ],
       "documentation":"<p>Applies a pending maintenance action to a resource (for example, to a DB instance).</p>"
     },
@@ -1699,6 +1701,24 @@
       ],
       "documentation":"<p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).</p>"
     },
+    "StartDBCluster":{
+      "name":"StartDBCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartDBClusterMessage"},
+      "output":{
+        "shape":"StartDBClusterResult",
+        "resultWrapper":"StartDBClusterResult"
+      },
+      "errors":[
+        {"shape":"DBClusterNotFoundFault"},
+        {"shape":"InvalidDBClusterStateFault"},
+        {"shape":"InvalidDBInstanceStateFault"}
+      ],
+      "documentation":"<p>Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command, or the StopDBCluster action.</p>"
+    },
     "StartDBInstance":{
       "name":"StartDBInstance",
       "http":{
@@ -1723,7 +1743,25 @@
         {"shape":"AuthorizationNotFoundFault"},
         {"shape":"KMSKeyNotAccessibleFault"}
       ],
-      "documentation":"<p> Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide. </p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </note>"
+      "documentation":"<p> Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the StopDBInstance action. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html\"> Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i> </p> <note> <p> This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use <a>StartDBCluster</a> instead. </p> </note>"
+    },
+    "StopDBCluster":{
+      "name":"StopDBCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopDBClusterMessage"},
+      "output":{
+        "shape":"StopDBClusterResult",
+        "resultWrapper":"StopDBClusterResult"
+      },
+      "errors":[
+        {"shape":"DBClusterNotFoundFault"},
+        {"shape":"InvalidDBClusterStateFault"},
+        {"shape":"InvalidDBInstanceStateFault"}
+      ],
+      "documentation":"<p> Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's metadata, including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a point-in-time restore if necessary. </p>"
     },
     "StopDBInstance":{
       "name":"StopDBInstance",
@@ -1743,7 +1781,7 @@
         {"shape":"SnapshotQuotaExceededFault"},
         {"shape":"InvalidDBClusterStateFault"}
       ],
-      "documentation":"<p> Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide. </p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p> </note>"
+      "documentation":"<p> Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time restore if necessary. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html\"> Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i> </p> <note> <p> This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters, use <a>StopDBCluster</a> instead. </p> </note>"
     }
   },
   "shapes":{
@@ -2404,7 +2442,7 @@
         },
         "EngineMode":{
           "shape":"String",
-          "documentation":"<p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>"
+          "documentation":"<p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or <code>parallelquery</code>.</p>"
         },
         "ScalingConfiguration":{
           "shape":"ScalingConfiguration",
@@ -3127,11 +3165,11 @@
         "Capacity":{"shape":"IntegerOptional"},
         "EngineMode":{
           "shape":"String",
-          "documentation":"<p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>"
+          "documentation":"<p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or <code>parallelquery</code>.</p>"
         },
         "ScalingConfigurationInfo":{"shape":"ScalingConfigurationInfo"}
       },
-      "documentation":"<p>Contains the details of an Amazon RDS DB cluster. </p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action. </p>",
+      "documentation":"<p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a>, <a>StopDBCluster</a>, and <a>StartDBCluster</a> actions. </p>",
       "wrapper":true
     },
     "DBClusterAlreadyExistsFault":{
@@ -6128,7 +6166,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> The specified DB instance isn't in the <i>available</i> state. </p>",
+      "documentation":"<p>The DB instance isn't in a valid state.</p>",
       "error":{
         "code":"InvalidDBInstanceState",
         "httpStatusCode":400,
@@ -8258,7 +8296,7 @@
         },
         "EngineMode":{
           "shape":"String",
-          "documentation":"<p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>"
+          "documentation":"<p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or <code>parallelquery</code>.</p>"
         },
         "ScalingConfiguration":{
           "shape":"ScalingConfiguration",
@@ -8970,6 +9008,22 @@
         "db-cluster-snapshot"
       ]
     },
+    "StartDBClusterMessage":{
+      "type":"structure",
+      "required":["DBClusterIdentifier"],
+      "members":{
+        "DBClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as a lowercase string.</p>"
+        }
+      }
+    },
+    "StartDBClusterResult":{
+      "type":"structure",
+      "members":{
+        "DBCluster":{"shape":"DBCluster"}
+      }
+    },
     "StartDBInstanceMessage":{
       "type":"structure",
       "required":["DBInstanceIdentifier"],
@@ -8984,6 +9038,22 @@
       "type":"structure",
       "members":{
         "DBInstance":{"shape":"DBInstance"}
+      }
+    },
+    "StopDBClusterMessage":{
+      "type":"structure",
+      "required":["DBClusterIdentifier"],
+      "members":{
+        "DBClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as a lowercase string.</p>"
+        }
+      }
+    },
+    "StopDBClusterResult":{
+      "type":"structure",
+      "members":{
+        "DBCluster":{"shape":"DBCluster"}
       }
     },
     "StopDBInstanceMessage":{

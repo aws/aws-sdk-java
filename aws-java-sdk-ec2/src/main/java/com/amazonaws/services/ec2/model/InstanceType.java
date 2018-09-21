@@ -146,6 +146,7 @@ public enum InstanceType {
     D24xlarge("d2.4xlarge"),
     D28xlarge("d2.8xlarge"),
     F12xlarge("f1.2xlarge"),
+    F14xlarge("f1.4xlarge"),
     F116xlarge("f1.16xlarge"),
     M5Large("m5.large"),
     M5Xlarge("m5.xlarge"),

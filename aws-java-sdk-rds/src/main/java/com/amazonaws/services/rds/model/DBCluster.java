@@ -17,10 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the details of an Amazon RDS DB cluster.
+ * Contains the details of an Amazon Aurora DB cluster.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBClusters</a> action.
+ * This data type is used as a response element in the <a>DescribeDBClusters</a>, <a>StopDBCluster</a>, and
+ * <a>StartDBCluster</a> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster" target="_top">AWS API
@@ -290,7 +291,8 @@ public class DBCluster implements Serializable, Cloneable {
     private Integer capacity;
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      */
     private String engineMode;
@@ -2308,11 +2310,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     *        <code>parallelquery</code>.
      */
 
     public void setEngineMode(String engineMode) {
@@ -2321,10 +2325,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      * 
-     * @return The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     *         <code>parallelquery</code>.
      */
 
     public String getEngineMode() {
@@ -2333,11 +2339,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     *        <code>parallelquery</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

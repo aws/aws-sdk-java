@@ -152,6 +152,24 @@
       ],
       "documentation":"<p>Creates a Simple AD directory.</p> <p>Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>"
     },
+    "CreateLogSubscription":{
+      "name":"CreateLogSubscription",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateLogSubscriptionRequest"},
+      "output":{"shape":"CreateLogSubscriptionResult"},
+      "errors":[
+        {"shape":"EntityAlreadyExistsException"},
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"InsufficientPermissionsException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Creates a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account.</p>"
+    },
     "CreateMicrosoftAD":{
       "name":"CreateMicrosoftAD",
       "http":{
@@ -236,6 +254,22 @@
         {"shape":"ServiceException"}
       ],
       "documentation":"<p>Deletes an AWS Directory Service directory.</p> <p>Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>"
+    },
+    "DeleteLogSubscription":{
+      "name":"DeleteLogSubscription",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteLogSubscriptionRequest"},
+      "output":{"shape":"DeleteLogSubscriptionResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Deletes the specified log subscription.</p>"
     },
     "DeleteSnapshot":{
       "name":"DeleteSnapshot",
@@ -502,6 +536,22 @@
         {"shape":"ServiceException"}
       ],
       "documentation":"<p>Lists the address blocks that you have added to a directory.</p>"
+    },
+    "ListLogSubscriptions":{
+      "name":"ListLogSubscriptions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListLogSubscriptionsRequest"},
+      "output":{"shape":"ListLogSubscriptionsResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Lists the active log subscriptions for the AWS account.</p>"
     },
     "ListSchemaExtensions":{
       "name":"ListSchemaExtensions",
@@ -1105,6 +1155,28 @@
       },
       "documentation":"<p>Contains the results of the <a>CreateDirectory</a> operation.</p>"
     },
+    "CreateLogSubscriptionRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "LogGroupName"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>"
+        },
+        "LogGroupName":{
+          "shape":"LogGroupName",
+          "documentation":"<p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>"
+        }
+      }
+    },
+    "CreateLogSubscriptionResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "CreateMicrosoftADRequest":{
       "type":"structure",
       "required":[
@@ -1274,6 +1346,21 @@
         }
       },
       "documentation":"<p>Contains the results of the <a>DeleteDirectory</a> operation.</p>"
+    },
+    "DeleteLogSubscriptionRequest":{
+      "type":"structure",
+      "required":["DirectoryId"],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>Identifier (ID) of the directory whose log subscription you want to delete.</p>"
+        }
+      }
+    },
+    "DeleteLogSubscriptionResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "DeleteSnapshotRequest":{
       "type":"structure",
@@ -2271,6 +2358,36 @@
         }
       }
     },
+    "ListLogSubscriptionsRequest":{
+      "type":"structure",
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your AWS account. If there are no log subscriptions for the AWS account or the directory, an empty list will be returned.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token for the next set of items to return.</p>"
+        },
+        "Limit":{
+          "shape":"Limit",
+          "documentation":"<p>The maximum number of items returned.</p>"
+        }
+      }
+    },
+    "ListLogSubscriptionsResult":{
+      "type":"structure",
+      "members":{
+        "LogSubscriptions":{
+          "shape":"LogSubscriptions",
+          "documentation":"<p>A list of active <a>LogSubscription</a> objects for calling the AWS account.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token for the next set of items to return.</p>"
+        }
+      }
+    },
     "ListSchemaExtensionsRequest":{
       "type":"structure",
       "required":["DirectoryId"],
@@ -2332,6 +2449,34 @@
           "documentation":"<p>Reserved for future use.</p>"
         }
       }
+    },
+    "LogGroupName":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[-._/#A-Za-z0-9]+"
+    },
+    "LogSubscription":{
+      "type":"structure",
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>"
+        },
+        "LogGroupName":{
+          "shape":"LogGroupName",
+          "documentation":"<p>The name of the log group.</p>"
+        },
+        "SubscriptionCreatedDateTime":{
+          "shape":"SubscriptionCreatedDateTime",
+          "documentation":"<p>The date and time that the log subscription was created.</p>"
+        }
+      },
+      "documentation":"<p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>"
+    },
+    "LogSubscriptions":{
+      "type":"list",
+      "member":{"shape":"LogSubscription"}
     },
     "ManualSnapshotsLimitReached":{"type":"boolean"},
     "NextToken":{"type":"string"},
@@ -2786,6 +2931,7 @@
       "type":"list",
       "member":{"shape":"SubnetId"}
     },
+    "SubscriptionCreatedDateTime":{"type":"timestamp"},
     "Tag":{
       "type":"structure",
       "required":[

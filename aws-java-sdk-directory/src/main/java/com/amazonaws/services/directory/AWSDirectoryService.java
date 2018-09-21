@@ -344,6 +344,32 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
+     * CloudWatch log group in your AWS account.
+     * </p>
+     * 
+     * @param createLogSubscriptionRequest
+     * @return Result of the CreateLogSubscription operation returned by the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InsufficientPermissionsException
+     *         The account does not have sufficient permission to perform the operation.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLogSubscriptionResult createLogSubscription(CreateLogSubscriptionRequest createLogSubscriptionRequest);
+
+    /**
+     * <p>
      * Creates a Microsoft AD in the AWS cloud.
      * </p>
      * <p>
@@ -495,6 +521,27 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest);
+
+    /**
+     * <p>
+     * Deletes the specified log subscription.
+     * </p>
+     * 
+     * @param deleteLogSubscriptionRequest
+     * @return Result of the DeleteLogSubscription operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLogSubscriptionResult deleteLogSubscription(DeleteLogSubscriptionRequest deleteLogSubscriptionRequest);
 
     /**
      * <p>
@@ -922,6 +969,27 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     ListIpRoutesResult listIpRoutes(ListIpRoutesRequest listIpRoutesRequest);
+
+    /**
+     * <p>
+     * Lists the active log subscriptions for the AWS account.
+     * </p>
+     * 
+     * @param listLogSubscriptionsRequest
+     * @return Result of the ListLogSubscriptions operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListLogSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLogSubscriptionsResult listLogSubscriptions(ListLogSubscriptionsRequest listLogSubscriptionsRequest);
 
     /**
      * <p>

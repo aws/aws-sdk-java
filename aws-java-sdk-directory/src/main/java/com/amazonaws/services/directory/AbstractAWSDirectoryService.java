@@ -78,6 +78,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public CreateLogSubscriptionResult createLogSubscription(CreateLogSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMicrosoftADResult createMicrosoftAD(CreateMicrosoftADRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLogSubscriptionResult deleteLogSubscription(DeleteLogSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +204,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public ListIpRoutesResult listIpRoutes(ListIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLogSubscriptionsResult listLogSubscriptions(ListLogSubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

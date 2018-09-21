@@ -410,7 +410,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      */
     private String engineMode;
@@ -2952,11 +2953,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     *        <code>parallelquery</code>.
      */
 
     public void setEngineMode(String engineMode) {
@@ -2965,10 +2968,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      * 
-     * @return The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     *         <code>parallelquery</code>.
      */
 
     public String getEngineMode() {
@@ -2977,11 +2982,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     * <code>parallelquery</code>.
      * </p>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, or
+     *        <code>parallelquery</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

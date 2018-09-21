@@ -4626,12 +4626,51 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
-     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
+     * or the StopDBCluster action.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return A Java Future containing the result of the StartDBCluster operation returned by the service.
+     * @sample AmazonRDSAsync.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest startDBClusterRequest);
+
+    /**
+     * <p>
+     * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
+     * or the StopDBCluster action.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDBCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest startDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or
+     * the StopDBInstance action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
+     * Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
+     * <a>StartDBCluster</a> instead.
      * </p>
      * </note>
      * 
@@ -4645,12 +4684,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
-     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or
+     * the StopDBInstance action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html"> Starting an Amazon RDS DB
+     * Instance That Was Previously Stopped</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
+     * <a>StartDBCluster</a> instead.
      * </p>
      * </note>
      * 
@@ -4669,14 +4714,53 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
-     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
-     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
-     * AWS RDS user guide.
+     * Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's metadata,
+     * including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a
+     * point-in-time restore if necessary.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return A Java Future containing the result of the StopDBCluster operation returned by the service.
+     * @sample AmazonRDSAsync.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> stopDBClusterAsync(StopDBClusterRequest stopDBClusterRequest);
+
+    /**
+     * <p>
+     * Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's metadata,
+     * including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a
+     * point-in-time restore if necessary.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopDBCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBCluster> stopDBClusterAsync(StopDBClusterRequest stopDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<StopDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata,
+     * including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction
+     * logs so you can do a point-in-time restore if necessary.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
+     * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters, use <a>StopDBCluster</a>
+     * instead.
      * </p>
      * </note>
      * 
@@ -4690,14 +4774,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
-     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
-     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
-     * AWS RDS user guide.
+     * Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata,
+     * including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction
+     * logs so you can do a point-in-time restore if necessary.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
+     * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters, use <a>StopDBCluster</a>
+     * instead.
      * </p>
      * </note>
      * 

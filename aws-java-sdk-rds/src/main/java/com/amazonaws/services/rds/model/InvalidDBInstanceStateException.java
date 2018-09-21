@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified DB instance isn't in the <i>available</i> state.
+ * The DB instance isn't in a valid state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
