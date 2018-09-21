@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetQueueRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The name of the queue. */
+    /** The name of the queue that you want information about. */
     private String name;
 
     /**
-     * The name of the queue.
+     * The name of the queue that you want information about.
      * 
      * @param name
-     *        The name of the queue.
+     *        The name of the queue that you want information about.
      */
 
     public void setName(String name) {
@@ -40,9 +40,9 @@ public class GetQueueRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of the queue.
+     * The name of the queue that you want information about.
      * 
-     * @return The name of the queue.
+     * @return The name of the queue that you want information about.
      */
 
     public String getName() {
@@ -50,10 +50,10 @@ public class GetQueueRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * The name of the queue.
+     * The name of the queue that you want information about.
      * 
      * @param name
-     *        The name of the queue.
+     *        The name of the queue that you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

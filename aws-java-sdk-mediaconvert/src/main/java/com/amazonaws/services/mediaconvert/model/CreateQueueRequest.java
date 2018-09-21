@@ -25,18 +25,30 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Optional. A description of the queue you are creating. */
+    /** Optional. A description of the queue that you are creating. */
     private String description;
-    /** The name of the queue you are creating. */
+    /** The name of the queue that you are creating. */
     private String name;
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved. The
+     * pricing plan for the queue determines whether you pay on-demand or reserved pricing for the transcoding jobs you
+     * run through the queue. For reserved queue pricing, you must set up a contract. You can create a reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     */
+    private String pricingPlan;
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     */
+    private ReservationPlanSettings reservationPlanSettings;
     /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
     private java.util.Map<String, String> tags;
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      * 
      * @param description
-     *        Optional. A description of the queue you are creating.
+     *        Optional. A description of the queue that you are creating.
      */
 
     public void setDescription(String description) {
@@ -44,9 +56,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      * 
-     * @return Optional. A description of the queue you are creating.
+     * @return Optional. A description of the queue that you are creating.
      */
 
     public String getDescription() {
@@ -54,10 +66,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      * 
      * @param description
-     *        Optional. A description of the queue you are creating.
+     *        Optional. A description of the queue that you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +79,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      * 
      * @param name
-     *        The name of the queue you are creating.
+     *        The name of the queue that you are creating.
      */
 
     public void setName(String name) {
@@ -78,9 +90,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      * 
-     * @return The name of the queue you are creating.
+     * @return The name of the queue that you are creating.
      */
 
     public String getName() {
@@ -88,15 +100,130 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      * 
      * @param name
-     *        The name of the queue you are creating.
+     *        The name of the queue that you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateQueueRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved. The
+     * pricing plan for the queue determines whether you pay on-demand or reserved pricing for the transcoding jobs you
+     * run through the queue. For reserved queue pricing, you must set up a contract. You can create a reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     * 
+     * @param pricingPlan
+     *        Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved.
+     *        The pricing plan for the queue determines whether you pay on-demand or reserved pricing for the
+     *        transcoding jobs you run through the queue. For reserved queue pricing, you must set up a contract. You
+     *        can create a reserved queue contract through the AWS Elemental MediaConvert console.
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved. The
+     * pricing plan for the queue determines whether you pay on-demand or reserved pricing for the transcoding jobs you
+     * run through the queue. For reserved queue pricing, you must set up a contract. You can create a reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     * 
+     * @return Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or
+     *         reserved. The pricing plan for the queue determines whether you pay on-demand or reserved pricing for the
+     *         transcoding jobs you run through the queue. For reserved queue pricing, you must set up a contract. You
+     *         can create a reserved queue contract through the AWS Elemental MediaConvert console.
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved. The
+     * pricing plan for the queue determines whether you pay on-demand or reserved pricing for the transcoding jobs you
+     * run through the queue. For reserved queue pricing, you must set up a contract. You can create a reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     * 
+     * @param pricingPlan
+     *        Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved.
+     *        The pricing plan for the queue determines whether you pay on-demand or reserved pricing for the
+     *        transcoding jobs you run through the queue. For reserved queue pricing, you must set up a contract. You
+     *        can create a reserved queue contract through the AWS Elemental MediaConvert console.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public CreateQueueRequest withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved. The
+     * pricing plan for the queue determines whether you pay on-demand or reserved pricing for the transcoding jobs you
+     * run through the queue. For reserved queue pricing, you must set up a contract. You can create a reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     * 
+     * @param pricingPlan
+     *        Optional; default is on-demand. Specifies whether the pricing plan for the queue is on-demand or reserved.
+     *        The pricing plan for the queue determines whether you pay on-demand or reserved pricing for the
+     *        transcoding jobs you run through the queue. For reserved queue pricing, you must set up a contract. You
+     *        can create a reserved queue contract through the AWS Elemental MediaConvert console.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public CreateQueueRequest withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @param reservationPlanSettings
+     *        Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     *        on-demand queues.
+     */
+
+    public void setReservationPlanSettings(ReservationPlanSettings reservationPlanSettings) {
+        this.reservationPlanSettings = reservationPlanSettings;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @return Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable
+     *         to on-demand queues.
+     */
+
+    public ReservationPlanSettings getReservationPlanSettings() {
+        return this.reservationPlanSettings;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @param reservationPlanSettings
+     *        Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     *        on-demand queues.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQueueRequest withReservationPlanSettings(ReservationPlanSettings reservationPlanSettings) {
+        setReservationPlanSettings(reservationPlanSettings);
         return this;
     }
 
@@ -173,6 +300,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getReservationPlanSettings() != null)
+            sb.append("ReservationPlanSettings: ").append(getReservationPlanSettings()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -197,6 +328,14 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
+        if (other.getReservationPlanSettings() == null ^ this.getReservationPlanSettings() == null)
+            return false;
+        if (other.getReservationPlanSettings() != null && other.getReservationPlanSettings().equals(this.getReservationPlanSettings()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -211,6 +350,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getReservationPlanSettings() == null) ? 0 : getReservationPlanSettings().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -45,7 +45,7 @@ public class CsmConfigurationProviderChain implements CsmConfigurationProvider {
                 return p.getConfiguration();
             } catch (SdkClientException e) {
                 if (log.isDebugEnabled()) {
-                    log.debug("Unable to load configuration from " + p.toString(), e);
+                    log.debug("Unable to load configuration from " + p.toString() + ": " + e.getMessage());
                 }
             }
         }

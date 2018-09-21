@@ -25,7 +25,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /** Use this string to request the next batch of queues. */
     private String nextToken;
-    /** List of queues */
+    /** List of queues. */
     private java.util.List<Queue> queues;
 
     /**
@@ -63,9 +63,9 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * List of queues
+     * List of queues.
      * 
-     * @return List of queues
+     * @return List of queues.
      */
 
     public java.util.List<Queue> getQueues() {
@@ -73,10 +73,10 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * List of queues
+     * List of queues.
      * 
      * @param queues
-     *        List of queues
+     *        List of queues.
      */
 
     public void setQueues(java.util.Collection<Queue> queues) {
@@ -89,7 +89,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * List of queues
+     * List of queues.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setQueues(java.util.Collection)} or {@link #withQueues(java.util.Collection)} if you want to override the
@@ -97,7 +97,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param queues
-     *        List of queues
+     *        List of queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,10 +112,10 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * List of queues
+     * List of queues.
      * 
      * @param queues
-     *        List of queues
+     *        List of queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

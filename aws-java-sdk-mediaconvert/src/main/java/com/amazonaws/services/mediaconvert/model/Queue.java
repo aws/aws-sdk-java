@@ -18,8 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * MediaConvert jobs are submitted to a queue. Unless specified otherwise jobs are submitted to a built-in default
- * queue. User can create additional queues to separate the jobs of different categories or priority.
+ * You can use queues to manage the resources that are available to your AWS account for running multiple transcoding
+ * jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more
+ * information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/about-resource-allocation-and-job-prioritization.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Queue" target="_top">AWS API
  *      Documentation</a>
@@ -29,23 +31,38 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
 
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
-    /** The timestamp in epoch seconds for queue creation. */
+    /** The time stamp in epoch seconds for queue creation. */
     private java.util.Date createdAt;
-    /** An optional description you create for each queue. */
+    /** An optional description that you create for each queue. */
     private String description;
-    /** The timestamp in epoch seconds when the queue was last updated. */
+    /** The time stamp in epoch seconds when the queue was last updated. */
     private java.util.Date lastUpdated;
-    /** A name you create for each queue. Each name must be unique within your account. */
+    /** A name that you create for each queue. Each name must be unique within your account. */
     private String name;
-    /** Estimated number of jobs in PROGRESSING status. */
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
+     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
+     * Elemental MediaConvert console.
+     */
+    private String pricingPlan;
+    /** The estimated number of jobs with a PROGRESSING status. */
     private Integer progressingJobsCount;
-
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     */
+    private ReservationPlan reservationPlan;
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs
+     * that are running when you pause the queue continue to run until they finish or result in an error.
+     */
     private String status;
-    /** Estimated number of jobs in SUBMITTED status. */
+    /** The estimated number of jobs with a SUBMITTED status. */
     private Integer submittedJobsCount;
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by the
-     * user.
+     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
+     * queues. You can create and modify custom queues.
      */
     private String type;
 
@@ -84,10 +101,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      * 
      * @param createdAt
-     *        The timestamp in epoch seconds for queue creation.
+     *        The time stamp in epoch seconds for queue creation.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -95,9 +112,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      * 
-     * @return The timestamp in epoch seconds for queue creation.
+     * @return The time stamp in epoch seconds for queue creation.
      */
 
     public java.util.Date getCreatedAt() {
@@ -105,10 +122,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      * 
      * @param createdAt
-     *        The timestamp in epoch seconds for queue creation.
+     *        The time stamp in epoch seconds for queue creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,10 +135,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      * 
      * @param description
-     *        An optional description you create for each queue.
+     *        An optional description that you create for each queue.
      */
 
     public void setDescription(String description) {
@@ -129,9 +146,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      * 
-     * @return An optional description you create for each queue.
+     * @return An optional description that you create for each queue.
      */
 
     public String getDescription() {
@@ -139,10 +156,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      * 
      * @param description
-     *        An optional description you create for each queue.
+     *        An optional description that you create for each queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,10 +169,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      * 
      * @param lastUpdated
-     *        The timestamp in epoch seconds when the queue was last updated.
+     *        The time stamp in epoch seconds when the queue was last updated.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -163,9 +180,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      * 
-     * @return The timestamp in epoch seconds when the queue was last updated.
+     * @return The time stamp in epoch seconds when the queue was last updated.
      */
 
     public java.util.Date getLastUpdated() {
@@ -173,10 +190,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      * 
      * @param lastUpdated
-     *        The timestamp in epoch seconds when the queue was last updated.
+     *        The time stamp in epoch seconds when the queue was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,10 +203,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your account.
      * 
      * @param name
-     *        A name you create for each queue. Each name must be unique within your account.
+     *        A name that you create for each queue. Each name must be unique within your account.
      */
 
     public void setName(String name) {
@@ -197,9 +214,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your account.
      * 
-     * @return A name you create for each queue. Each name must be unique within your account.
+     * @return A name that you create for each queue. Each name must be unique within your account.
      */
 
     public String getName() {
@@ -207,10 +224,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your account.
      * 
      * @param name
-     *        A name you create for each queue. Each name must be unique within your account.
+     *        A name that you create for each queue. Each name must be unique within your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,10 +237,85 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Estimated number of jobs in PROGRESSING status.
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
+     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
+     * Elemental MediaConvert console.
+     * 
+     * @param pricingPlan
+     *        Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     *        determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the
+     *        queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract
+     *        through the AWS Elemental MediaConvert console.
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
+     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
+     * Elemental MediaConvert console.
+     * 
+     * @return Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     *         determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through
+     *         the queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue
+     *         contract through the AWS Elemental MediaConvert console.
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
+     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
+     * Elemental MediaConvert console.
+     * 
+     * @param pricingPlan
+     *        Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     *        determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the
+     *        queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract
+     *        through the AWS Elemental MediaConvert console.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public Queue withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     * determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue.
+     * For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS
+     * Elemental MediaConvert console.
+     * 
+     * @param pricingPlan
+     *        Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue
+     *        determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the
+     *        queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract
+     *        through the AWS Elemental MediaConvert console.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public Queue withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * The estimated number of jobs with a PROGRESSING status.
      * 
      * @param progressingJobsCount
-     *        Estimated number of jobs in PROGRESSING status.
+     *        The estimated number of jobs with a PROGRESSING status.
      */
 
     public void setProgressingJobsCount(Integer progressingJobsCount) {
@@ -231,9 +323,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Estimated number of jobs in PROGRESSING status.
+     * The estimated number of jobs with a PROGRESSING status.
      * 
-     * @return Estimated number of jobs in PROGRESSING status.
+     * @return The estimated number of jobs with a PROGRESSING status.
      */
 
     public Integer getProgressingJobsCount() {
@@ -241,10 +333,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Estimated number of jobs in PROGRESSING status.
+     * The estimated number of jobs with a PROGRESSING status.
      * 
      * @param progressingJobsCount
-     *        Estimated number of jobs in PROGRESSING status.
+     *        The estimated number of jobs with a PROGRESSING status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,7 +346,53 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @param reservationPlan
+     *        Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     *        on-demand queues.
+     */
+
+    public void setReservationPlan(ReservationPlan reservationPlan) {
+        this.reservationPlan = reservationPlan;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @return Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable
+     *         to on-demand queues.
+     */
+
+    public ReservationPlan getReservationPlan() {
+        return this.reservationPlan;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @param reservationPlan
+     *        Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     *        on-demand queues.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Queue withReservationPlan(ReservationPlan reservationPlan) {
+        setReservationPlan(reservationPlan);
+        return this;
+    }
+
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs
+     * that are running when you pause the queue continue to run until they finish or result in an error.
+     * 
      * @param status
+     *        Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that
+     *        queue. Jobs that are running when you pause the queue continue to run until they finish or result in an
+     *        error.
      * @see QueueStatus
      */
 
@@ -263,7 +401,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs
+     * that are running when you pause the queue continue to run until they finish or result in an error.
+     * 
+     * @return Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that
+     *         queue. Jobs that are running when you pause the queue continue to run until they finish or result in an
+     *         error.
      * @see QueueStatus
      */
 
@@ -272,7 +415,13 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs
+     * that are running when you pause the queue continue to run until they finish or result in an error.
+     * 
      * @param status
+     *        Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that
+     *        queue. Jobs that are running when you pause the queue continue to run until they finish or result in an
+     *        error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueStatus
      */
@@ -283,7 +432,13 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs
+     * that are running when you pause the queue continue to run until they finish or result in an error.
+     * 
      * @param status
+     *        Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that
+     *        queue. Jobs that are running when you pause the queue continue to run until they finish or result in an
+     *        error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueStatus
      */
@@ -294,10 +449,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Estimated number of jobs in SUBMITTED status.
+     * The estimated number of jobs with a SUBMITTED status.
      * 
      * @param submittedJobsCount
-     *        Estimated number of jobs in SUBMITTED status.
+     *        The estimated number of jobs with a SUBMITTED status.
      */
 
     public void setSubmittedJobsCount(Integer submittedJobsCount) {
@@ -305,9 +460,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Estimated number of jobs in SUBMITTED status.
+     * The estimated number of jobs with a SUBMITTED status.
      * 
-     * @return Estimated number of jobs in SUBMITTED status.
+     * @return The estimated number of jobs with a SUBMITTED status.
      */
 
     public Integer getSubmittedJobsCount() {
@@ -315,10 +470,10 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Estimated number of jobs in SUBMITTED status.
+     * The estimated number of jobs with a SUBMITTED status.
      * 
      * @param submittedJobsCount
-     *        Estimated number of jobs in SUBMITTED status.
+     *        The estimated number of jobs with a SUBMITTED status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,12 +483,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by the
-     * user.
+     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
+     * queues. You can create and modify custom queues.
      * 
      * @param type
-     *        A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by
-     *        the user.
+     *        Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
+     *        system queues. You can create and modify custom queues.
      * @see Type
      */
 
@@ -342,11 +497,11 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by the
-     * user.
+     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
+     * queues. You can create and modify custom queues.
      * 
-     * @return A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by
-     *         the user.
+     * @return Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
+     *         system queues. You can create and modify custom queues.
      * @see Type
      */
 
@@ -355,12 +510,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by the
-     * user.
+     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
+     * queues. You can create and modify custom queues.
      * 
      * @param type
-     *        A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by
-     *        the user.
+     *        Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
+     *        system queues. You can create and modify custom queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -371,12 +526,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by the
-     * user.
+     * Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete system
+     * queues. You can create and modify custom queues.
      * 
      * @param type
-     *        A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by
-     *        the user.
+     *        Specifies whether this queue is system or custom. System queues are built in. You can't modify or delete
+     *        system queues. You can create and modify custom queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -407,8 +562,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getProgressingJobsCount() != null)
             sb.append("ProgressingJobsCount: ").append(getProgressingJobsCount()).append(",");
+        if (getReservationPlan() != null)
+            sb.append("ReservationPlan: ").append(getReservationPlan()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getSubmittedJobsCount() != null)
@@ -449,9 +608,17 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
         if (other.getProgressingJobsCount() == null ^ this.getProgressingJobsCount() == null)
             return false;
         if (other.getProgressingJobsCount() != null && other.getProgressingJobsCount().equals(this.getProgressingJobsCount()) == false)
+            return false;
+        if (other.getReservationPlan() == null ^ this.getReservationPlan() == null)
+            return false;
+        if (other.getReservationPlan() != null && other.getReservationPlan().equals(this.getReservationPlan()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -478,7 +645,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getProgressingJobsCount() == null) ? 0 : getProgressingJobsCount().hashCode());
+        hashCode = prime * hashCode + ((getReservationPlan() == null) ? 0 : getReservationPlan().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getSubmittedJobsCount() == null) ? 0 : getSubmittedJobsCount().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
