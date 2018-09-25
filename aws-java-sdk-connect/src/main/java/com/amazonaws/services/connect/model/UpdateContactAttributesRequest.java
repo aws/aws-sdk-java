@@ -34,10 +34,10 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
     private String initialContactId;
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the AWS
-     * console and select Amazon Connect. Select the instance alias of the instance. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the set of characters at the end of
-     * the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      */
     private String instanceId;
@@ -96,15 +96,15 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the AWS
-     * console and select Amazon Connect. Select the instance alias of the instance. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the set of characters at the end of
-     * the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the
-     *        AWS console and select Amazon Connect. Select the instance alias of the instance. The instance ID is
+     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
+     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
      *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
      *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      */
@@ -115,16 +115,17 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the AWS
-     * console and select Amazon Connect. Select the instance alias of the instance. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the set of characters at the end of
-     * the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      * 
-     * @return The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the
-     *         AWS console and select Amazon Connect. Select the instance alias of the instance. The instance ID is
-     *         displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *         characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * @return The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console
+     *         and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID
+     *         is displayed in the Overview section of your instance settings. For example, the instance ID is the set
+     *         of characters at the end of the instance ARN, after instance/, such as
+     *         10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      */
 
     public String getInstanceId() {
@@ -133,15 +134,15 @@ public class UpdateContactAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the AWS
-     * console and select Amazon Connect. Select the instance alias of the instance. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the set of characters at the end of
-     * the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
+     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
+     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
+     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the
-     *        AWS console and select Amazon Connect. Select the instance alias of the instance. The instance ID is
+     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
+     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
      *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
      *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
      * @return Returns a reference to this object so that method calls can be chained together.

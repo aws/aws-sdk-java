@@ -1,3 +1,12 @@
+# __1.11.415__ __2018-09-24__
+## __Amazon Connect Service__
+  - ### Features
+    - This update adds the Amazon Connect Metrics API, which lets you get current metric data and historical metric data within 24 hours for the queues in your Amazon Connect instance.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    -  Adds DB engine version requirements for option group option settings, and specifies if an option setting requires a value.
+
 # __1.11.414__ __2018-09-21__
 ## __AWS Elemental MediaConvert__
   - ### Features

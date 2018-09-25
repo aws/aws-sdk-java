@@ -54,6 +54,10 @@ import com.amazonaws.services.connect.model.transform.*;
  * actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution that makes it
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
+ * <p>
+ * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
+ * second, and a BurstLimit of 5 per second.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -172,7 +176,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The allowed limit for the resource has been reached.
      * @throws DuplicateResourceException
-     *         A resource with that name already exisits.
+     *         A resource with that name already exists.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ThrottlingException
@@ -485,6 +489,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * The <code>GetCurrentMetricData</code> operation retrieves current metric data from your Amazon Connect instance.
+     * </p>
+     * <p>
+     * If you are using an IAM account, it must have permission to the <code>connect:GetCurrentMetricData</code> action.
+     * </p>
+     * 
+     * @param getCurrentMetricDataRequest
+     * @return Result of the GetCurrentMetricData operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.GetCurrentMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCurrentMetricDataResult getCurrentMetricData(GetCurrentMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCurrentMetricData(request);
+    }
+
+    @SdkInternalApi
+    final GetCurrentMetricDataResult executeGetCurrentMetricData(GetCurrentMetricDataRequest getCurrentMetricDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCurrentMetricDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCurrentMetricDataRequest> request = null;
+        Response<GetCurrentMetricDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCurrentMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCurrentMetricDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCurrentMetricData");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCurrentMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCurrentMetricDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a token for federation.
      * </p>
      * 
@@ -501,7 +571,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * @throws InternalServiceException
      *         Request processing failed due to an error or failure with the service.
      * @throws DuplicateResourceException
-     *         A resource with that name already exisits.
+     *         A resource with that name already exists.
      * @sample AmazonConnect.GetFederationToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken" target="_top">AWS API
      *      Documentation</a>
@@ -538,6 +608,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFederationTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFederationTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The <code>GetMetricData</code> operation retrieves historical metrics data from your Amazon Connect instance.
+     * </p>
+     * <p>
+     * If you are using an IAM account, it must have permission to the <code>connect:GetMetricData</code> action.
+     * </p>
+     * 
+     * @param getMetricDataRequest
+     * @return Result of the GetMetricData operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.GetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMetricDataResult getMetricData(GetMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricData(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricDataResult executeGetMetricData(GetMetricDataRequest getMetricDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricDataRequest> request = null;
+        Response<GetMetricDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetricDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricData");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMetricDataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -811,10 +947,6 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * customer.
      * </p>
      * <p>
-     * There is a throttling limit placed on usage of the API that includes a RateLimit of 2 per second, and a
-     * BurstLimit of 5 per second.
-     * </p>
-     * <p>
      * If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
      * action.
      * </p>
@@ -951,16 +1083,26 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new or update existing
+     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new, or update existing,
      * contact attributes associated with a contact. You can use the operation to add or update attributes for both
      * ongoing and completed contacts. For example, you can update the customer's name or the reason the customer called
      * while the call is active, or add notes about steps that the agent took during the call that are displayed to the
      * next agent that takes the call. You can also use the <code>UpdateContactAttributes</code> operation to update
      * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
-     * Connect. You could also flag calls for additional analysis, or flag abusive callers.
+     * Connect. You could also flag calls for additional analysis, such as legal review or identifying abusive callers.
      * </p>
      * <p>
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+     * </p>
+     * <p>
+     * <i>Important:</i>
+     * </p>
+     * <p>
+     * You cannot use the operation to update attributes for contacts that occurred prior to the release of the API,
+     * September 12, 2018. You can update attributes only for contacts that started after the release of the API. If you
+     * attempt to update attributes for a contact that occurred prior to the release of the API, a 400 error is
+     * returned. This applies also to queued callbacks that were initiated prior to the release of the API but are still
+     * active in your instance.
      * </p>
      * 
      * @param updateContactAttributesRequest
@@ -1280,7 +1422,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Update the security profiles assigned to the user.
+     * Updates the security profiles assigned to the user.
      * </p>
      * 
      * @param updateUserSecurityProfilesRequest

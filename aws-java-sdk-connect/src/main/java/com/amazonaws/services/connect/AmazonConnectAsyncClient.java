@@ -30,6 +30,10 @@ import java.util.concurrent.ExecutorService;
  * actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution that makes it
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
+ * <p>
+ * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
+ * second, and a BurstLimit of 5 per second.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -230,6 +234,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetCurrentMetricDataResult> getCurrentMetricDataAsync(GetCurrentMetricDataRequest request) {
+
+        return getCurrentMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCurrentMetricDataResult> getCurrentMetricDataAsync(final GetCurrentMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCurrentMetricDataRequest, GetCurrentMetricDataResult> asyncHandler) {
+        final GetCurrentMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCurrentMetricDataResult>() {
+            @Override
+            public GetCurrentMetricDataResult call() throws Exception {
+                GetCurrentMetricDataResult result = null;
+
+                try {
+                    result = executeGetCurrentMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFederationTokenResult> getFederationTokenAsync(GetFederationTokenRequest request) {
 
         return getFederationTokenAsync(request, null);
@@ -247,6 +284,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeGetFederationToken(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricDataResult> getMetricDataAsync(GetMetricDataRequest request) {
+
+        return getMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricDataResult> getMetricDataAsync(final GetMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetricDataRequest, GetMetricDataResult> asyncHandler) {
+        final GetMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetricDataResult>() {
+            @Override
+            public GetMetricDataResult call() throws Exception {
+                GetMetricDataResult result = null;
+
+                try {
+                    result = executeGetMetricData(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -31,6 +31,10 @@ import com.amazonaws.services.connect.model.*;
  * actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution that makes it
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
+ * <p>
+ * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
+ * second, and a BurstLimit of 5 per second.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonConnect {
@@ -57,7 +61,7 @@ public interface AmazonConnect {
      * @throws LimitExceededException
      *         The allowed limit for the resource has been reached.
      * @throws DuplicateResourceException
-     *         A resource with that name already exisits.
+     *         A resource with that name already exists.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ThrottlingException
@@ -166,6 +170,32 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * The <code>GetCurrentMetricData</code> operation retrieves current metric data from your Amazon Connect instance.
+     * </p>
+     * <p>
+     * If you are using an IAM account, it must have permission to the <code>connect:GetCurrentMetricData</code> action.
+     * </p>
+     * 
+     * @param getCurrentMetricDataRequest
+     * @return Result of the GetCurrentMetricData operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.GetCurrentMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCurrentMetricDataResult getCurrentMetricData(GetCurrentMetricDataRequest getCurrentMetricDataRequest);
+
+    /**
+     * <p>
      * Retrieves a token for federation.
      * </p>
      * 
@@ -182,12 +212,38 @@ public interface AmazonConnect {
      * @throws InternalServiceException
      *         Request processing failed due to an error or failure with the service.
      * @throws DuplicateResourceException
-     *         A resource with that name already exisits.
+     *         A resource with that name already exists.
      * @sample AmazonConnect.GetFederationToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken" target="_top">AWS API
      *      Documentation</a>
      */
     GetFederationTokenResult getFederationToken(GetFederationTokenRequest getFederationTokenRequest);
+
+    /**
+     * <p>
+     * The <code>GetMetricData</code> operation retrieves historical metrics data from your Amazon Connect instance.
+     * </p>
+     * <p>
+     * If you are using an IAM account, it must have permission to the <code>connect:GetMetricData</code> action.
+     * </p>
+     * 
+     * @param getMetricDataRequest
+     * @return Result of the GetMetricData operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the parameters provided to the operation are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.GetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMetricDataResult getMetricData(GetMetricDataRequest getMetricDataRequest);
 
     /**
      * <p>
@@ -290,10 +346,6 @@ public interface AmazonConnect {
      * customer.
      * </p>
      * <p>
-     * There is a throttling limit placed on usage of the API that includes a RateLimit of 2 per second, and a
-     * BurstLimit of 5 per second.
-     * </p>
-     * <p>
      * If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
      * action.
      * </p>
@@ -348,16 +400,26 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new or update existing
+     * The <code>UpdateContactAttributes</code> operation lets you programmatically create new, or update existing,
      * contact attributes associated with a contact. You can use the operation to add or update attributes for both
      * ongoing and completed contacts. For example, you can update the customer's name or the reason the customer called
      * while the call is active, or add notes about steps that the agent took during the call that are displayed to the
      * next agent that takes the call. You can also use the <code>UpdateContactAttributes</code> operation to update
      * attributes for a contact using data from your CRM application and save the data with the contact in Amazon
-     * Connect. You could also flag calls for additional analysis, or flag abusive callers.
+     * Connect. You could also flag calls for additional analysis, such as legal review or identifying abusive callers.
      * </p>
      * <p>
      * Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+     * </p>
+     * <p>
+     * <i>Important:</i>
+     * </p>
+     * <p>
+     * You cannot use the operation to update attributes for contacts that occurred prior to the release of the API,
+     * September 12, 2018. You can update attributes only for contacts that started after the release of the API. If you
+     * attempt to update attributes for a contact that occurred prior to the release of the API, a 400 error is
+     * returned. This applies also to queued callbacks that were initiated prior to the release of the API but are still
+     * active in your instance.
      * </p>
      * 
      * @param updateContactAttributesRequest
@@ -471,7 +533,7 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Update the security profiles assigned to the user.
+     * Updates the security profiles assigned to the user.
      * </p>
      * 
      * @param updateUserSecurityProfilesRequest

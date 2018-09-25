@@ -27,7 +27,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The user name in Amazon Connect for the user to create.
+     * The user name in Amazon Connect for the account to create.
      * </p>
      */
     private String username;
@@ -97,11 +97,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The user name in Amazon Connect for the user to create.
+     * The user name in Amazon Connect for the account to create.
      * </p>
      * 
      * @param username
-     *        The user name in Amazon Connect for the user to create.
+     *        The user name in Amazon Connect for the account to create.
      */
 
     public void setUsername(String username) {
@@ -110,10 +110,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The user name in Amazon Connect for the user to create.
+     * The user name in Amazon Connect for the account to create.
      * </p>
      * 
-     * @return The user name in Amazon Connect for the user to create.
+     * @return The user name in Amazon Connect for the account to create.
      */
 
     public String getUsername() {
@@ -122,11 +122,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The user name in Amazon Connect for the user to create.
+     * The user name in Amazon Connect for the account to create.
      * </p>
      * 
      * @param username
-     *        The user name in Amazon Connect for the user to create.
+     *        The user name in Amazon Connect for the account to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

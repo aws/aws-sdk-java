@@ -53,7 +53,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public GetCurrentMetricDataResult getCurrentMetricData(GetCurrentMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFederationTokenResult getFederationToken(GetFederationTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMetricDataResult getMetricData(GetMetricDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

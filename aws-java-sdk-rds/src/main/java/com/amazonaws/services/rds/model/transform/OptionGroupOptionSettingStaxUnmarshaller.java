@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -72,6 +74,23 @@ public class OptionGroupOptionSettingStaxUnmarshaller implements Unmarshaller<Op
                     optionGroupOptionSetting.setIsModifiable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("IsRequired", targetDepth)) {
+                    optionGroupOptionSetting.setIsRequired(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinimumEngineVersionPerAllowedValue", targetDepth)) {
+                    optionGroupOptionSetting.withMinimumEngineVersionPerAllowedValue(new ArrayList<MinimumEngineVersionPerAllowedValue>());
+                    continue;
+                }
+
+                if (context.testExpression("MinimumEngineVersionPerAllowedValue/MinimumEngineVersionPerAllowedValue", targetDepth)) {
+                    optionGroupOptionSetting.withMinimumEngineVersionPerAllowedValue(MinimumEngineVersionPerAllowedValueStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroupOptionSetting;

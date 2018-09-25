@@ -17,6 +17,10 @@
  * actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution that makes it
  * easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
  * </p>
+ * <p>
+ * There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per
+ * second, and a BurstLimit of 5 per second.
+ * </p>
  */
 package com.amazonaws.services.connect;
 
