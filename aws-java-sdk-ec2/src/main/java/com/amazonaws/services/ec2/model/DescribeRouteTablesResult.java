@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeRouteTables.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -29,6 +31,13 @@ public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteTable> routeTables;
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -104,6 +113,52 @@ public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRouteTablesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -115,7 +170,9 @@ public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTables() != null)
-            sb.append("RouteTables: ").append(getRouteTables());
+            sb.append("RouteTables: ").append(getRouteTables()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -134,6 +191,10 @@ public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getRouteTables() != null && other.getRouteTables().equals(this.getRouteTables()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -143,6 +204,7 @@ public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRouteTables() == null) ? 0 : getRouteTables().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

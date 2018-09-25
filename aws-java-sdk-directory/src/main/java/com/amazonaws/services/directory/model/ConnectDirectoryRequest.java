@@ -30,7 +30,7 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      */
     private String name;
@@ -67,11 +67,11 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      * 
      * @param name
-     *        The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     *        The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      */
 
     public void setName(String name) {
@@ -80,10 +80,10 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      * 
-     * @return The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     * @return The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      */
 
     public String getName() {
@@ -92,11 +92,11 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     * The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * </p>
      * 
      * @param name
-     *        The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+     *        The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

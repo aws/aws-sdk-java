@@ -33,7 +33,7 @@ public class ResetUserPasswordRequest extends com.amazonaws.AmazonWebServiceRequ
     private String directoryId;
     /**
      * <p>
-     * The username of the user whose password will be reset.
+     * The user name of the user whose password will be reset.
      * </p>
      */
     private String userName;
@@ -86,11 +86,11 @@ public class ResetUserPasswordRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The username of the user whose password will be reset.
+     * The user name of the user whose password will be reset.
      * </p>
      * 
      * @param userName
-     *        The username of the user whose password will be reset.
+     *        The user name of the user whose password will be reset.
      */
 
     public void setUserName(String userName) {
@@ -99,10 +99,10 @@ public class ResetUserPasswordRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The username of the user whose password will be reset.
+     * The user name of the user whose password will be reset.
      * </p>
      * 
-     * @return The username of the user whose password will be reset.
+     * @return The user name of the user whose password will be reset.
      */
 
     public String getUserName() {
@@ -111,11 +111,11 @@ public class ResetUserPasswordRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The username of the user whose password will be reset.
+     * The user name of the user whose password will be reset.
      * </p>
      * 
      * @param userName
-     *        The username of the user whose password will be reset.
+     *        The user name of the user whose password will be reset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

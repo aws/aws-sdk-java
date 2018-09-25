@@ -260,6 +260,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptSharedDirectoryResult> acceptSharedDirectoryAsync(AcceptSharedDirectoryRequest request) {
+
+        return acceptSharedDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptSharedDirectoryResult> acceptSharedDirectoryAsync(final AcceptSharedDirectoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptSharedDirectoryRequest, AcceptSharedDirectoryResult> asyncHandler) {
+        final AcceptSharedDirectoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptSharedDirectoryResult>() {
+            @Override
+            public AcceptSharedDirectoryResult call() throws Exception {
+                AcceptSharedDirectoryResult result = null;
+
+                try {
+                    result = executeAcceptSharedDirectory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(AddIpRoutesRequest request) {
 
         return addIpRoutesAsync(request, null);
@@ -1010,6 +1043,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request) {
+
+        return describeSharedDirectoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(final DescribeSharedDirectoriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSharedDirectoriesRequest, DescribeSharedDirectoriesResult> asyncHandler) {
+        final DescribeSharedDirectoriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSharedDirectoriesResult>() {
+            @Override
+            public DescribeSharedDirectoriesResult call() throws Exception {
+                DescribeSharedDirectoriesResult result = null;
+
+                try {
+                    result = executeDescribeSharedDirectories(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(DescribeSnapshotsRequest request) {
 
         return describeSnapshotsAsync(request, null);
@@ -1485,6 +1551,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<RejectSharedDirectoryResult> rejectSharedDirectoryAsync(RejectSharedDirectoryRequest request) {
+
+        return rejectSharedDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectSharedDirectoryResult> rejectSharedDirectoryAsync(final RejectSharedDirectoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectSharedDirectoryRequest, RejectSharedDirectoryResult> asyncHandler) {
+        final RejectSharedDirectoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectSharedDirectoryResult>() {
+            @Override
+            public RejectSharedDirectoryResult call() throws Exception {
+                RejectSharedDirectoryResult result = null;
+
+                try {
+                    result = executeRejectSharedDirectory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(RemoveIpRoutesRequest request) {
 
         return removeIpRoutesAsync(request, null);
@@ -1617,6 +1716,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ShareDirectoryResult> shareDirectoryAsync(ShareDirectoryRequest request) {
+
+        return shareDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ShareDirectoryResult> shareDirectoryAsync(final ShareDirectoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ShareDirectoryRequest, ShareDirectoryResult> asyncHandler) {
+        final ShareDirectoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ShareDirectoryResult>() {
+            @Override
+            public ShareDirectoryResult call() throws Exception {
+                ShareDirectoryResult result = null;
+
+                try {
+                    result = executeShareDirectory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest request) {
 
         return startSchemaExtensionAsync(request, null);
@@ -1634,6 +1766,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeStartSchemaExtension(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnshareDirectoryResult> unshareDirectoryAsync(UnshareDirectoryRequest request) {
+
+        return unshareDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnshareDirectoryResult> unshareDirectoryAsync(final UnshareDirectoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnshareDirectoryRequest, UnshareDirectoryResult> asyncHandler) {
+        final UnshareDirectoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UnshareDirectoryResult>() {
+            @Override
+            public UnshareDirectoryResult call() throws Exception {
+                UnshareDirectoryResult result = null;
+
+                try {
+                    result = executeUnshareDirectory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

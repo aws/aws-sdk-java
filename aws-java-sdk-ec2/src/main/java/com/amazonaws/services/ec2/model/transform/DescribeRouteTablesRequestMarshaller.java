@@ -80,6 +80,14 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
             }
         }
 
+        if (describeRouteTablesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeRouteTablesRequest.getNextToken()));
+        }
+
+        if (describeRouteTablesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeRouteTablesRequest.getMaxResults()));
+        }
+
         return request;
     }
 

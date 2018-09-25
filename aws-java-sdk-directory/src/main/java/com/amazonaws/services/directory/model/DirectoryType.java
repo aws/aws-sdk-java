@@ -22,7 +22,8 @@ public enum DirectoryType {
 
     SimpleAD("SimpleAD"),
     ADConnector("ADConnector"),
-    MicrosoftAD("MicrosoftAD");
+    MicrosoftAD("MicrosoftAD"),
+    SharedMicrosoftAD("SharedMicrosoftAD");
 
     private String value;
 

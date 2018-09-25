@@ -43,7 +43,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      */
     private String password;
@@ -149,12 +149,12 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
-     *        administrator account with the username <code>Administrator</code> and this password.
+     *        administrator account with the user name <code>Administrator</code> and this password.
      */
 
     public void setPassword(String password) {
@@ -164,11 +164,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      * 
      * @return The password for the directory administrator. The directory creation process creates a directory
-     *         administrator account with the username <code>Administrator</code> and this password.
+     *         administrator account with the user name <code>Administrator</code> and this password.
      */
 
     public String getPassword() {
@@ -178,12 +178,12 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
-     *        administrator account with the username <code>Administrator</code> and this password.
+     *        administrator account with the user name <code>Administrator</code> and this password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

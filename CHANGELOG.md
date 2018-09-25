@@ -1,3 +1,16 @@
+# __1.11.416__ __2018-09-25__
+## __AWS Directory Service__
+  - ### Features
+    - API changes related to launch of cross account for Directory Service.
+
+## __Amazon CloudFront__
+  - ### Features
+    - Documentation updates for cloudfront
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Add pagination support for ec2.describe-route-tables API. 
+
 # __1.11.415__ __2018-09-24__
 ## __Amazon Connect Service__
   - ### Features

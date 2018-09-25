@@ -40,8 +40,8 @@ public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<String> directoryIds;
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
-     * null if this is the first call.
+     * The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>.
+     * Pass null if this is the first call.
      * </p>
      */
     private String nextToken;
@@ -156,13 +156,13 @@ public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
-     * null if this is the first call.
+     * The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>.
+     * Pass null if this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>.
-     *        Pass null if this is the first call.
+     *        The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to
+     *        <a>DescribeDirectories</a>. Pass null if this is the first call.
      */
 
     public void setNextToken(String nextToken) {
@@ -171,12 +171,12 @@ public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
-     * null if this is the first call.
+     * The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>.
+     * Pass null if this is the first call.
      * </p>
      * 
-     * @return The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>.
-     *         Pass null if this is the first call.
+     * @return The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to
+     *         <a>DescribeDirectories</a>. Pass null if this is the first call.
      */
 
     public String getNextToken() {
@@ -185,13 +185,13 @@ public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>. Pass
-     * null if this is the first call.
+     * The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>.
+     * Pass null if this is the first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to <a>DescribeDirectories</a>.
-     *        Pass null if this is the first call.
+     *        The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to
+     *        <a>DescribeDirectories</a>. Pass null if this is the first call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -91,7 +91,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
      * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
-     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You
+     * cannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.
      * </p>
      */
     private String logDestination;
@@ -602,7 +603,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
      * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
-     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You
+     * cannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.
      * </p>
      * 
      * @param logDestination
@@ -617,7 +619,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
      *        subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      *        <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in
-     *        a bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     *        a bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>
+     *        . You cannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.
      */
 
     public void setLogDestination(String logDestination) {
@@ -638,7 +641,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
      * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
-     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You
+     * cannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.
      * </p>
      * 
      * @return Specifies the destination to which the flow log data is to be published. Flow log data can be published
@@ -653,7 +657,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *         subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      *         <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code>
      *         in a bucket named <code>my-bucket</code>, use the following ARN:
-     *         <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     *         <code>arn:aws:s3:::my-bucket/my-logs/</code>. You cannot use <code>AWSLogs</code> as a subfolder name.
+     *         This is a reserved term.
      */
 
     public String getLogDestination() {
@@ -674,7 +679,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
      * subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a
-     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     * bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You
+     * cannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.
      * </p>
      * 
      * @param logDestination
@@ -689,7 +695,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
      *        subfolder in the bucket. To specify a subfolder in the bucket, use the following ARN format:
      *        <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in
-     *        a bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+     *        a bucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>
+     *        . You cannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

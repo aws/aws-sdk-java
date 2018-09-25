@@ -88,11 +88,17 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryAlreadySharedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DirectoryAlreadySharedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withModeledClass(
                                     com.amazonaws.services.directory.model.DirectoryUnavailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
                                     com.amazonaws.services.directory.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryNotSharedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DirectoryNotSharedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
                                     com.amazonaws.services.directory.model.ServiceException.class))
@@ -112,6 +118,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.directory.model.InvalidNextTokenException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.AccessDeniedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DomainControllerLimitExceededException").withModeledClass(
                                     com.amazonaws.services.directory.model.DomainControllerLimitExceededException.class))
                     .addErrorMetadata(
@@ -123,6 +132,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
                                     com.amazonaws.services.directory.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withModeledClass(
+                                    com.amazonaws.services.directory.model.InvalidTargetException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
                                     com.amazonaws.services.directory.model.ClientException.class))
@@ -138,6 +150,12 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
                                     com.amazonaws.services.directory.model.TagLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ShareLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.ShareLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsException").withModeledClass(
+                                    com.amazonaws.services.directory.model.OrganizationsException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.directory.model.AWSDirectoryServiceException.class));
 
     /**
@@ -337,6 +355,70 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/directory/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/directory/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Accepts a directory sharing request that was sent from the directory owner account.
+     * </p>
+     * 
+     * @param acceptSharedDirectoryRequest
+     * @return Result of the AcceptSharedDirectory operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AcceptSharedDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AcceptSharedDirectoryResult acceptSharedDirectory(AcceptSharedDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptSharedDirectory(request);
+    }
+
+    @SdkInternalApi
+    final AcceptSharedDirectoryResult executeAcceptSharedDirectory(AcceptSharedDirectoryRequest acceptSharedDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptSharedDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptSharedDirectoryRequest> request = null;
+        Response<AcceptSharedDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptSharedDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptSharedDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptSharedDirectory");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptSharedDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AcceptSharedDirectoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -548,9 +630,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * <p>
-     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
-     * see <a
+     * Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the
+     * <code>ConnectDirectory</code> operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -832,9 +914,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * Creates a Simple AD directory.
      * </p>
      * <p>
-     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
-     * see <a
+     * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <code>CreateDirectory</code>
+     * operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -1258,9 +1340,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * Deletes an AWS Directory Service directory.
      * </p>
      * <p>
-     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
-     * see <a
+     * Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <code>DeleteDirectory</code>
+     * operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -1649,15 +1731,15 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * You can retrieve information about specific directories by passing the directory identifiers in the
-     * <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the current account are returned.
+     * <code>DirectoryIds</code> parameter. Otherwise, all directories that belong to the current account are returned.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> request and response parameters. If more
-     * results are available, the <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass in
-     * the next call to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
+     * more results are available, the <code>DescribeDirectoriesResult.NextToken</code> member contains a token that you
+     * pass in the next call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      * <p>
-     * You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+     * You can also specify a maximum number of return results with the <code>Limit</code> parameter.
      * </p>
      * 
      * @param describeDirectoriesRequest
@@ -1668,7 +1750,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1734,7 +1816,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -1859,6 +1941,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns the shared directories in your account.
+     * </p>
+     * 
+     * @param describeSharedDirectoriesRequest
+     * @return Result of the DescribeSharedDirectories operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeSharedDirectories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSharedDirectories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSharedDirectoriesResult executeDescribeSharedDirectories(DescribeSharedDirectoriesRequest describeSharedDirectoriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSharedDirectoriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSharedDirectoriesRequest> request = null;
+        Response<DescribeSharedDirectoriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSharedDirectoriesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSharedDirectoriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSharedDirectories");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSharedDirectoriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSharedDirectoriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Obtains information about the directory snapshots that belong to this account.
      * </p>
      * <p>
@@ -1878,7 +2027,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1950,7 +2099,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -2008,7 +2157,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server
-     * for an AD Connector directory.
+     * for an AD Connector or Microsoft AD directory.
      * </p>
      * 
      * @param disableRadiusRequest
@@ -2133,7 +2282,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for
-     * an AD Connector directory.
+     * an AD Connector or Microsoft AD directory.
      * </p>
      * 
      * @param enableRadiusRequest
@@ -2394,7 +2543,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -2457,7 +2606,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -2516,7 +2665,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @param listSchemaExtensionsRequest
      * @return Result of the ListSchemaExtensions operation returned by the service.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws ClientException
@@ -2579,7 +2728,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -2687,6 +2836,70 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterEventTopicResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterEventTopicResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Rejects a directory sharing request that was sent from the directory owner account.
+     * </p>
+     * 
+     * @param rejectSharedDirectoryRequest
+     * @return Result of the RejectSharedDirectory operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RejectSharedDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RejectSharedDirectoryResult rejectSharedDirectory(RejectSharedDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectSharedDirectory(request);
+    }
+
+    @SdkInternalApi
+    final RejectSharedDirectoryResult executeRejectSharedDirectory(RejectSharedDirectoryRequest rejectSharedDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectSharedDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectSharedDirectoryRequest> request = null;
+        Response<RejectSharedDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectSharedDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectSharedDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectSharedDirectory");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectSharedDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new RejectSharedDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2963,6 +3176,95 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Shares a specified directory (<code>DirectoryId</code>) in your AWS account (directory owner) with another AWS
+     * account (directory consumer). With this operation you can use your directory from any AWS account and from any
+     * Amazon VPC within an AWS Region.
+     * </p>
+     * <p>
+     * When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates a shared directory in the
+     * directory consumer account. This shared directory contains the metadata to provide access to the directory within
+     * the directory owner account. The shared directory is visible in all VPCs in the directory consumer account.
+     * </p>
+     * <p>
+     * The <code>ShareMethod</code> parameter determines whether the specified directory can be shared between AWS
+     * accounts inside the same AWS organization (<code>ORGANIZATIONS</code>). It also determines whether you can share
+     * the directory with any other AWS account either inside or outside of the organization (<code>HANDSHAKE</code>).
+     * </p>
+     * <p>
+     * The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is called, which sends a directory
+     * sharing request to the directory consumer.
+     * </p>
+     * 
+     * @param shareDirectoryRequest
+     * @return Result of the ShareDirectory operation returned by the service.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidTargetException
+     *         The specified shared target is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ShareLimitExceededException
+     *         The maximum number of AWS accounts that you can share with this directory has been reached.
+     * @throws OrganizationsException
+     *         Exception encountered while trying to access your AWS organization.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ShareDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ShareDirectoryResult shareDirectory(ShareDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeShareDirectory(request);
+    }
+
+    @SdkInternalApi
+    final ShareDirectoryResult executeShareDirectory(ShareDirectoryRequest shareDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(shareDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ShareDirectoryRequest> request = null;
+        Response<ShareDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ShareDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(shareDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ShareDirectory");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ShareDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ShareDirectoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Applies a schema extension to a Microsoft AD directory.
      * </p>
      * 
@@ -3017,6 +3319,69 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSchemaExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the directory sharing between the directory owner and consumer accounts.
+     * </p>
+     * 
+     * @param unshareDirectoryRequest
+     * @return Result of the UnshareDirectory operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidTargetException
+     *         The specified shared target is not valid.
+     * @throws DirectoryNotSharedException
+     *         The specified directory has not been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UnshareDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UnshareDirectoryResult unshareDirectory(UnshareDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnshareDirectory(request);
+    }
+
+    @SdkInternalApi
+    final UnshareDirectoryResult executeUnshareDirectory(UnshareDirectoryRequest unshareDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unshareDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnshareDirectoryRequest> request = null;
+        Response<UnshareDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnshareDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unshareDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnshareDirectory");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnshareDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnshareDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3171,7 +3536,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory.
+     * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or
+     * Microsoft AD directory.
      * </p>
      * 
      * @param updateRadiusRequest

@@ -48,6 +48,12 @@ public class DirectoryDescriptionMarshaller {
             .marshallLocationName("DnsIpAddrs").build();
     private static final MarshallingInfo<String> STAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Stage").build();
+    private static final MarshallingInfo<String> SHARESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareStatus").build();
+    private static final MarshallingInfo<String> SHAREMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareMethod").build();
+    private static final MarshallingInfo<String> SHARENOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareNotes").build();
     private static final MarshallingInfo<java.util.Date> LAUNCHTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchTime").build();
     private static final MarshallingInfo<java.util.Date> STAGELASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -68,6 +74,8 @@ public class DirectoryDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SsoEnabled").build();
     private static final MarshallingInfo<Integer> DESIREDNUMBEROFDOMAINCONTROLLERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredNumberOfDomainControllers").build();
+    private static final MarshallingInfo<StructuredPojo> OWNERDIRECTORYDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerDirectoryDescription").build();
 
     private static final DirectoryDescriptionMarshaller instance = new DirectoryDescriptionMarshaller();
 
@@ -95,6 +103,9 @@ public class DirectoryDescriptionMarshaller {
             protocolMarshaller.marshall(directoryDescription.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(directoryDescription.getDnsIpAddrs(), DNSIPADDRS_BINDING);
             protocolMarshaller.marshall(directoryDescription.getStage(), STAGE_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getShareStatus(), SHARESTATUS_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getShareMethod(), SHAREMETHOD_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getShareNotes(), SHARENOTES_BINDING);
             protocolMarshaller.marshall(directoryDescription.getLaunchTime(), LAUNCHTIME_BINDING);
             protocolMarshaller.marshall(directoryDescription.getStageLastUpdatedDateTime(), STAGELASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(directoryDescription.getType(), TYPE_BINDING);
@@ -105,6 +116,7 @@ public class DirectoryDescriptionMarshaller {
             protocolMarshaller.marshall(directoryDescription.getStageReason(), STAGEREASON_BINDING);
             protocolMarshaller.marshall(directoryDescription.getSsoEnabled(), SSOENABLED_BINDING);
             protocolMarshaller.marshall(directoryDescription.getDesiredNumberOfDomainControllers(), DESIREDNUMBEROFDOMAINCONTROLLERS_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getOwnerDirectoryDescription(), OWNERDIRECTORYDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

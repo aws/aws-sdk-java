@@ -55,6 +55,10 @@ public class DescribeRouteTablesResultStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeRouteTablesResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeRouteTablesResult;

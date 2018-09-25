@@ -29,7 +29,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings.
+     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
+     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
+     * action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -90,10 +92,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings.
+     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
+     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
+     * action.
      * </p>
      * 
-     * @return Information about one or more block device mappings.
+     * @return Information about one or more block device mappings. This parameter cannot be used to modify the
+     *         encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
+     *         <a>CopyImage</a> action.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -105,11 +111,15 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings.
+     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
+     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
+     * action.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Information about one or more block device mappings.
+     *        Information about one or more block device mappings. This parameter cannot be used to modify the
+     *        encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
+     *        <a>CopyImage</a> action.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -123,7 +133,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings.
+     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
+     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
+     * action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,7 +144,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Information about one or more block device mappings.
+     *        Information about one or more block device mappings. This parameter cannot be used to modify the
+     *        encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
+     *        <a>CopyImage</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +162,15 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings.
+     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
+     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
+     * action.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Information about one or more block device mappings.
+     *        Information about one or more block device mappings. This parameter cannot be used to modify the
+     *        encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
+     *        <a>CopyImage</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

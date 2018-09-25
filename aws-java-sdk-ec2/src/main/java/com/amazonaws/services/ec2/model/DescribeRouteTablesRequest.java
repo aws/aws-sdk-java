@@ -146,6 +146,19 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -1166,6 +1179,92 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRouteTablesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *        call with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     * </p>
+     * 
+     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *         call with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
+     * with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *        call with the returned <b>NextToken</b> value. This value can be between 5 and 100.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRouteTablesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1190,7 +1289,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getRouteTableIds() != null)
-            sb.append("RouteTableIds: ").append(getRouteTableIds());
+            sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -1213,6 +1316,14 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
             return false;
         if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -1223,6 +1334,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

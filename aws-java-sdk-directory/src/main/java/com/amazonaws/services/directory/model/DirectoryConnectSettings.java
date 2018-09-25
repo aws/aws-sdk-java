@@ -48,8 +48,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
     private com.amazonaws.internal.SdkInternalList<String> customerDnsIps;
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to connect to the directory. This account
-     * must have the following privileges:
+     * The user name of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following permissions:
      * </p>
      * <ul>
      * <li>
@@ -259,8 +259,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to connect to the directory. This account
-     * must have the following privileges:
+     * The user name of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following permissions:
      * </p>
      * <ul>
      * <li>
@@ -281,8 +281,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
      * </ul>
      * 
      * @param customerUserName
-     *        The username of an account in the on-premises directory that is used to connect to the directory. This
-     *        account must have the following privileges:</p>
+     *        The user name of an account in the on-premises directory that is used to connect to the directory. This
+     *        account must have the following permissions:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -307,8 +307,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to connect to the directory. This account
-     * must have the following privileges:
+     * The user name of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following permissions:
      * </p>
      * <ul>
      * <li>
@@ -328,8 +328,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
      * </li>
      * </ul>
      * 
-     * @return The username of an account in the on-premises directory that is used to connect to the directory. This
-     *         account must have the following privileges:</p>
+     * @return The user name of an account in the on-premises directory that is used to connect to the directory. This
+     *         account must have the following permissions:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -354,8 +354,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The username of an account in the on-premises directory that is used to connect to the directory. This account
-     * must have the following privileges:
+     * The user name of an account in the on-premises directory that is used to connect to the directory. This account
+     * must have the following permissions:
      * </p>
      * <ul>
      * <li>
@@ -376,8 +376,8 @@ public class DirectoryConnectSettings implements Serializable, Cloneable, Struct
      * </ul>
      * 
      * @param customerUserName
-     *        The username of an account in the on-premises directory that is used to connect to the directory. This
-     *        account must have the following privileges:</p>
+     *        The user name of an account in the on-premises directory that is used to connect to the directory. This
+     *        account must have the following permissions:</p>
      *        <ul>
      *        <li>
      *        <p>

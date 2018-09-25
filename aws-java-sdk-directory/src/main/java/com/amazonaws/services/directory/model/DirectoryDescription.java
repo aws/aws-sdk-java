@@ -36,7 +36,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     private String directoryId;
     /**
      * <p>
-     * The fully-qualified name of the directory.
+     * The fully qualified name of the directory.
      * </p>
      */
     private String name;
@@ -96,6 +96,28 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     private String stage;
     /**
      * <p>
+     * Current directory status of the shared AWS Managed Microsoft AD directory.
+     * </p>
+     */
+    private String shareStatus;
+    /**
+     * <p>
+     * The method used when sharing a directory to determine whether the directory should be shared within your AWS
+     * organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory request (
+     * <code>HANDSHAKE</code>).
+     * </p>
+     */
+    private String shareMethod;
+    /**
+     * <p>
+     * A directory share request that is sent by the directory owner to the directory consumer. The request includes a
+     * typed message to help the directory consumer administrator determine whether to approve or reject the share
+     * invitation.
+     * </p>
+     */
+    private String shareNotes;
+    /**
+     * <p>
      * Specifies when the directory was created.
      * </p>
      */
@@ -146,7 +168,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     private String stageReason;
     /**
      * <p>
-     * Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      * <a>DisableSso</a>.
      * </p>
      */
@@ -157,6 +179,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private Integer desiredNumberOfDomainControllers;
+    /**
+     * <p>
+     * Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     * </p>
+     */
+    private OwnerDirectoryDescription ownerDirectoryDescription;
 
     /**
      * <p>
@@ -200,11 +228,11 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The fully-qualified name of the directory.
+     * The fully qualified name of the directory.
      * </p>
      * 
      * @param name
-     *        The fully-qualified name of the directory.
+     *        The fully qualified name of the directory.
      */
 
     public void setName(String name) {
@@ -213,10 +241,10 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The fully-qualified name of the directory.
+     * The fully qualified name of the directory.
      * </p>
      * 
-     * @return The fully-qualified name of the directory.
+     * @return The fully qualified name of the directory.
      */
 
     public String getName() {
@@ -225,11 +253,11 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The fully-qualified name of the directory.
+     * The fully qualified name of the directory.
      * </p>
      * 
      * @param name
-     *        The fully-qualified name of the directory.
+     *        The fully qualified name of the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -734,6 +762,224 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * Current directory status of the shared AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param shareStatus
+     *        Current directory status of the shared AWS Managed Microsoft AD directory.
+     * @see ShareStatus
+     */
+
+    public void setShareStatus(String shareStatus) {
+        this.shareStatus = shareStatus;
+    }
+
+    /**
+     * <p>
+     * Current directory status of the shared AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @return Current directory status of the shared AWS Managed Microsoft AD directory.
+     * @see ShareStatus
+     */
+
+    public String getShareStatus() {
+        return this.shareStatus;
+    }
+
+    /**
+     * <p>
+     * Current directory status of the shared AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param shareStatus
+     *        Current directory status of the shared AWS Managed Microsoft AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareStatus
+     */
+
+    public DirectoryDescription withShareStatus(String shareStatus) {
+        setShareStatus(shareStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Current directory status of the shared AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param shareStatus
+     *        Current directory status of the shared AWS Managed Microsoft AD directory.
+     * @see ShareStatus
+     */
+
+    public void setShareStatus(ShareStatus shareStatus) {
+        withShareStatus(shareStatus);
+    }
+
+    /**
+     * <p>
+     * Current directory status of the shared AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param shareStatus
+     *        Current directory status of the shared AWS Managed Microsoft AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareStatus
+     */
+
+    public DirectoryDescription withShareStatus(ShareStatus shareStatus) {
+        this.shareStatus = shareStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method used when sharing a directory to determine whether the directory should be shared within your AWS
+     * organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory request (
+     * <code>HANDSHAKE</code>).
+     * </p>
+     * 
+     * @param shareMethod
+     *        The method used when sharing a directory to determine whether the directory should be shared within your
+     *        AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory
+     *        request (<code>HANDSHAKE</code>).
+     * @see ShareMethod
+     */
+
+    public void setShareMethod(String shareMethod) {
+        this.shareMethod = shareMethod;
+    }
+
+    /**
+     * <p>
+     * The method used when sharing a directory to determine whether the directory should be shared within your AWS
+     * organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory request (
+     * <code>HANDSHAKE</code>).
+     * </p>
+     * 
+     * @return The method used when sharing a directory to determine whether the directory should be shared within your
+     *         AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory
+     *         request (<code>HANDSHAKE</code>).
+     * @see ShareMethod
+     */
+
+    public String getShareMethod() {
+        return this.shareMethod;
+    }
+
+    /**
+     * <p>
+     * The method used when sharing a directory to determine whether the directory should be shared within your AWS
+     * organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory request (
+     * <code>HANDSHAKE</code>).
+     * </p>
+     * 
+     * @param shareMethod
+     *        The method used when sharing a directory to determine whether the directory should be shared within your
+     *        AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory
+     *        request (<code>HANDSHAKE</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareMethod
+     */
+
+    public DirectoryDescription withShareMethod(String shareMethod) {
+        setShareMethod(shareMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method used when sharing a directory to determine whether the directory should be shared within your AWS
+     * organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory request (
+     * <code>HANDSHAKE</code>).
+     * </p>
+     * 
+     * @param shareMethod
+     *        The method used when sharing a directory to determine whether the directory should be shared within your
+     *        AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory
+     *        request (<code>HANDSHAKE</code>).
+     * @see ShareMethod
+     */
+
+    public void setShareMethod(ShareMethod shareMethod) {
+        withShareMethod(shareMethod);
+    }
+
+    /**
+     * <p>
+     * The method used when sharing a directory to determine whether the directory should be shared within your AWS
+     * organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory request (
+     * <code>HANDSHAKE</code>).
+     * </p>
+     * 
+     * @param shareMethod
+     *        The method used when sharing a directory to determine whether the directory should be shared within your
+     *        AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by sending a shared directory
+     *        request (<code>HANDSHAKE</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareMethod
+     */
+
+    public DirectoryDescription withShareMethod(ShareMethod shareMethod) {
+        this.shareMethod = shareMethod.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A directory share request that is sent by the directory owner to the directory consumer. The request includes a
+     * typed message to help the directory consumer administrator determine whether to approve or reject the share
+     * invitation.
+     * </p>
+     * 
+     * @param shareNotes
+     *        A directory share request that is sent by the directory owner to the directory consumer. The request
+     *        includes a typed message to help the directory consumer administrator determine whether to approve or
+     *        reject the share invitation.
+     */
+
+    public void setShareNotes(String shareNotes) {
+        this.shareNotes = shareNotes;
+    }
+
+    /**
+     * <p>
+     * A directory share request that is sent by the directory owner to the directory consumer. The request includes a
+     * typed message to help the directory consumer administrator determine whether to approve or reject the share
+     * invitation.
+     * </p>
+     * 
+     * @return A directory share request that is sent by the directory owner to the directory consumer. The request
+     *         includes a typed message to help the directory consumer administrator determine whether to approve or
+     *         reject the share invitation.
+     */
+
+    public String getShareNotes() {
+        return this.shareNotes;
+    }
+
+    /**
+     * <p>
+     * A directory share request that is sent by the directory owner to the directory consumer. The request includes a
+     * typed message to help the directory consumer administrator determine whether to approve or reject the share
+     * invitation.
+     * </p>
+     * 
+     * @param shareNotes
+     *        A directory share request that is sent by the directory owner to the directory consumer. The request
+     *        includes a typed message to help the directory consumer administrator determine whether to approve or
+     *        reject the share invitation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectoryDescription withShareNotes(String shareNotes) {
+        setShareNotes(shareNotes);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies when the directory was created.
      * </p>
      * 
@@ -1135,12 +1381,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      * <a>DisableSso</a>.
      * </p>
      * 
      * @param ssoEnabled
-     *        Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     *        Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      *        <a>DisableSso</a>.
      */
 
@@ -1150,11 +1396,11 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      * <a>DisableSso</a>.
      * </p>
      * 
-     * @return Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * @return Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      *         <a>DisableSso</a>.
      */
 
@@ -1164,12 +1410,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      * <a>DisableSso</a>.
      * </p>
      * 
      * @param ssoEnabled
-     *        Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     *        Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      *        <a>DisableSso</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1181,11 +1427,11 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      * <a>DisableSso</a>.
      * </p>
      * 
-     * @return Indicates if single-sign on is enabled for the directory. For more information, see <a>EnableSso</a> and
+     * @return Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and
      *         <a>DisableSso</a>.
      */
 
@@ -1234,6 +1480,46 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     * </p>
+     * 
+     * @param ownerDirectoryDescription
+     *        Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     */
+
+    public void setOwnerDirectoryDescription(OwnerDirectoryDescription ownerDirectoryDescription) {
+        this.ownerDirectoryDescription = ownerDirectoryDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     * </p>
+     * 
+     * @return Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     */
+
+    public OwnerDirectoryDescription getOwnerDirectoryDescription() {
+        return this.ownerDirectoryDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     * </p>
+     * 
+     * @param ownerDirectoryDescription
+     *        Describes the AWS Managed Microsoft AD directory in the directory owner account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectoryDescription withOwnerDirectoryDescription(OwnerDirectoryDescription ownerDirectoryDescription) {
+        setOwnerDirectoryDescription(ownerDirectoryDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1264,6 +1550,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
             sb.append("DnsIpAddrs: ").append(getDnsIpAddrs()).append(",");
         if (getStage() != null)
             sb.append("Stage: ").append(getStage()).append(",");
+        if (getShareStatus() != null)
+            sb.append("ShareStatus: ").append(getShareStatus()).append(",");
+        if (getShareMethod() != null)
+            sb.append("ShareMethod: ").append(getShareMethod()).append(",");
+        if (getShareNotes() != null)
+            sb.append("ShareNotes: ").append(getShareNotes()).append(",");
         if (getLaunchTime() != null)
             sb.append("LaunchTime: ").append(getLaunchTime()).append(",");
         if (getStageLastUpdatedDateTime() != null)
@@ -1283,7 +1575,9 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         if (getSsoEnabled() != null)
             sb.append("SsoEnabled: ").append(getSsoEnabled()).append(",");
         if (getDesiredNumberOfDomainControllers() != null)
-            sb.append("DesiredNumberOfDomainControllers: ").append(getDesiredNumberOfDomainControllers());
+            sb.append("DesiredNumberOfDomainControllers: ").append(getDesiredNumberOfDomainControllers()).append(",");
+        if (getOwnerDirectoryDescription() != null)
+            sb.append("OwnerDirectoryDescription: ").append(getOwnerDirectoryDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -1338,6 +1632,18 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getStage() != null && other.getStage().equals(this.getStage()) == false)
             return false;
+        if (other.getShareStatus() == null ^ this.getShareStatus() == null)
+            return false;
+        if (other.getShareStatus() != null && other.getShareStatus().equals(this.getShareStatus()) == false)
+            return false;
+        if (other.getShareMethod() == null ^ this.getShareMethod() == null)
+            return false;
+        if (other.getShareMethod() != null && other.getShareMethod().equals(this.getShareMethod()) == false)
+            return false;
+        if (other.getShareNotes() == null ^ this.getShareNotes() == null)
+            return false;
+        if (other.getShareNotes() != null && other.getShareNotes().equals(this.getShareNotes()) == false)
+            return false;
         if (other.getLaunchTime() == null ^ this.getLaunchTime() == null)
             return false;
         if (other.getLaunchTime() != null && other.getLaunchTime().equals(this.getLaunchTime()) == false)
@@ -1379,6 +1685,10 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         if (other.getDesiredNumberOfDomainControllers() != null
                 && other.getDesiredNumberOfDomainControllers().equals(this.getDesiredNumberOfDomainControllers()) == false)
             return false;
+        if (other.getOwnerDirectoryDescription() == null ^ this.getOwnerDirectoryDescription() == null)
+            return false;
+        if (other.getOwnerDirectoryDescription() != null && other.getOwnerDirectoryDescription().equals(this.getOwnerDirectoryDescription()) == false)
+            return false;
         return true;
     }
 
@@ -1397,6 +1707,9 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDnsIpAddrs() == null) ? 0 : getDnsIpAddrs().hashCode());
         hashCode = prime * hashCode + ((getStage() == null) ? 0 : getStage().hashCode());
+        hashCode = prime * hashCode + ((getShareStatus() == null) ? 0 : getShareStatus().hashCode());
+        hashCode = prime * hashCode + ((getShareMethod() == null) ? 0 : getShareMethod().hashCode());
+        hashCode = prime * hashCode + ((getShareNotes() == null) ? 0 : getShareNotes().hashCode());
         hashCode = prime * hashCode + ((getLaunchTime() == null) ? 0 : getLaunchTime().hashCode());
         hashCode = prime * hashCode + ((getStageLastUpdatedDateTime() == null) ? 0 : getStageLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
@@ -1407,6 +1720,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getStageReason() == null) ? 0 : getStageReason().hashCode());
         hashCode = prime * hashCode + ((getSsoEnabled() == null) ? 0 : getSsoEnabled().hashCode());
         hashCode = prime * hashCode + ((getDesiredNumberOfDomainControllers() == null) ? 0 : getDesiredNumberOfDomainControllers().hashCode());
+        hashCode = prime * hashCode + ((getOwnerDirectoryDescription() == null) ? 0 : getOwnerDirectoryDescription().hashCode());
         return hashCode;
     }
 

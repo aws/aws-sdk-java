@@ -31,16 +31,16 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
      * The list of <a>DirectoryDescription</a> objects that were retrieved.
      * </p>
      * <p>
-     * It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the
-     * request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations
-     * of the operation have been exceeded.
+     * It is possible that this list contains less than the number of items specified in the <code>Limit</code> member
+     * of the request. This occurs if there are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DirectoryDescription> directoryDescriptions;
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      */
     private String nextToken;
@@ -50,16 +50,16 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
      * The list of <a>DirectoryDescription</a> objects that were retrieved.
      * </p>
      * <p>
-     * It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the
-     * request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations
-     * of the operation have been exceeded.
+     * It is possible that this list contains less than the number of items specified in the <code>Limit</code> member
+     * of the request. This occurs if there are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
      * </p>
      * 
      * @return The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
      *         <p>
-     *         It is possible that this list contains less than the number of items specified in the <i>Limit</i> member
-     *         of the request. This occurs if there are less than the requested number of items left to retrieve, or if
-     *         the limitations of the operation have been exceeded.
+     *         It is possible that this list contains less than the number of items specified in the <code>Limit</code>
+     *         member of the request. This occurs if there are less than the requested number of items left to retrieve,
+     *         or if the limitations of the operation have been exceeded.
      */
 
     public java.util.List<DirectoryDescription> getDirectoryDescriptions() {
@@ -74,17 +74,17 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
      * The list of <a>DirectoryDescription</a> objects that were retrieved.
      * </p>
      * <p>
-     * It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the
-     * request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations
-     * of the operation have been exceeded.
+     * It is possible that this list contains less than the number of items specified in the <code>Limit</code> member
+     * of the request. This occurs if there are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
      * </p>
      * 
      * @param directoryDescriptions
      *        The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
      *        <p>
-     *        It is possible that this list contains less than the number of items specified in the <i>Limit</i> member
-     *        of the request. This occurs if there are less than the requested number of items left to retrieve, or if
-     *        the limitations of the operation have been exceeded.
+     *        It is possible that this list contains less than the number of items specified in the <code>Limit</code>
+     *        member of the request. This occurs if there are less than the requested number of items left to retrieve,
+     *        or if the limitations of the operation have been exceeded.
      */
 
     public void setDirectoryDescriptions(java.util.Collection<DirectoryDescription> directoryDescriptions) {
@@ -101,9 +101,9 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
      * The list of <a>DirectoryDescription</a> objects that were retrieved.
      * </p>
      * <p>
-     * It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the
-     * request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations
-     * of the operation have been exceeded.
+     * It is possible that this list contains less than the number of items specified in the <code>Limit</code> member
+     * of the request. This occurs if there are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -114,9 +114,9 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
      * @param directoryDescriptions
      *        The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
      *        <p>
-     *        It is possible that this list contains less than the number of items specified in the <i>Limit</i> member
-     *        of the request. This occurs if there are less than the requested number of items left to retrieve, or if
-     *        the limitations of the operation have been exceeded.
+     *        It is possible that this list contains less than the number of items specified in the <code>Limit</code>
+     *        member of the request. This occurs if there are less than the requested number of items left to retrieve,
+     *        or if the limitations of the operation have been exceeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,17 +135,17 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
      * The list of <a>DirectoryDescription</a> objects that were retrieved.
      * </p>
      * <p>
-     * It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the
-     * request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations
-     * of the operation have been exceeded.
+     * It is possible that this list contains less than the number of items specified in the <code>Limit</code> member
+     * of the request. This occurs if there are less than the requested number of items left to retrieve, or if the
+     * limitations of the operation have been exceeded.
      * </p>
      * 
      * @param directoryDescriptions
      *        The list of <a>DirectoryDescription</a> objects that were retrieved.</p>
      *        <p>
-     *        It is possible that this list contains less than the number of items specified in the <i>Limit</i> member
-     *        of the request. This occurs if there are less than the requested number of items left to retrieve, or if
-     *        the limitations of the operation have been exceeded.
+     *        It is possible that this list contains less than the number of items specified in the <code>Limit</code>
+     *        member of the request. This occurs if there are less than the requested number of items left to retrieve,
+     *        or if the limitations of the operation have been exceeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,12 +156,12 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a
+     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
      *        subsequent call to <a>DescribeDirectories</a> to retrieve the next set of items.
      */
 
@@ -171,11 +171,11 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a
+     * @return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
      *         subsequent call to <a>DescribeDirectories</a> to retrieve the next set of items.
      */
 
@@ -185,12 +185,12 @@ public class DescribeDirectoriesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call
-     * to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
+     * call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a
+     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
      *        subsequent call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

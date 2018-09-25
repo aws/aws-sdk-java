@@ -82,8 +82,24 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Creates a new web distribution. Send a <code>POST</code> request to the
-     * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * Creates a new web distribution. You create a CloudFront distribution to tell CloudFront where you want content to
+     * be delivered from, and the details about how to track and manage content delivery. Send a <code>POST</code>
+     * request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a distribution, there are more required fields than when you create a distribution. When you
+     * update your distribution by using <a>UpdateDistribution</a>, follow the steps included in the documentation to
+     * get the current configuration and then make your updates. This helps to make sure that you include all of the
+     * required fields. To view a summary, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html"
+     * >Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using Adobe Flash Media Server's RTMP protocol, you set up a different kind of CloudFront
+     * distribution. For more information, see <a>CreateStreamingDistribution</a>.
      * </p>
      * 
      * @param createDistributionRequest
@@ -97,8 +113,24 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Creates a new web distribution. Send a <code>POST</code> request to the
-     * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * Creates a new web distribution. You create a CloudFront distribution to tell CloudFront where you want content to
+     * be delivered from, and the details about how to track and manage content delivery. Send a <code>POST</code>
+     * request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a distribution, there are more required fields than when you create a distribution. When you
+     * update your distribution by using <a>UpdateDistribution</a>, follow the steps included in the documentation to
+     * get the current configuration and then make your updates. This helps to make sure that you include all of the
+     * required fields. To view a summary, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html"
+     * >Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using Adobe Flash Media Server's RTMP protocol, you set up a different kind of CloudFront
+     * distribution. For more information, see <a>CreateStreamingDistribution</a>.
      * </p>
      * 
      * @param createDistributionRequest
@@ -1719,13 +1751,27 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Updates the configuration for a web distribution. Perform the following steps.
+     * Updates the configuration for a web distribution.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a distribution, there are more required fields than when you create a distribution. When you
+     * update your distribution by using this API action, follow the steps here to get the current configuration and
+     * then make your updates, to make sure that you include all of the required fields. To view a summary, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html"
+     * >Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * The update process includes getting the current distribution configuration, updating the XML document that is
+     * returned to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the
+     * updates.
      * </p>
      * <p>
-     * For information about updating a distribution using the CloudFront console, see <a
+     * For information about updating a distribution using the CloudFront console instead, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html"
-     * >Creating or Updating a Web Distribution Using the CloudFront Console </a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * >Creating a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * <b>To update a web distribution using the CloudFront API</b>
@@ -1738,24 +1784,47 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <note>
      * <p>
-     * If you update the distribution again, you need to get a new <code>Etag</code> header.
+     * If you update the distribution again, you must get a new <code>Etag</code> header.
      * </p>
      * </note></li>
      * <li>
      * <p>
      * Update the XML document that was returned in the response to your <code>GetDistributionConfig</code> request to
-     * include the desired changes. You can't change the value of <code>CallerReference</code>. If you try to change
-     * this value, CloudFront returns an <code>IllegalUpdate</code> error. Note that you must strip out the ETag
-     * parameter that is returned.
+     * include your changes.
      * </p>
      * <important>
      * <p>
+     * When you edit the XML file, be aware of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must strip out the ETag parameter that is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Additional fields are required when you update a distribution. There may be fields included in the XML file for
+     * features that you haven't configured for your distribution. This is expected and required to successfully update
+     * the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of <code>CallerReference</code>. If you try to change this value, CloudFront returns
+     * an <code>IllegalUpdate</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The new configuration replaces the existing configuration; the values that you specify in an
-     * <code>UpdateDistribution</code> request are not merged into the existing configuration. When you add, delete, or
+     * <code>UpdateDistribution</code> request are not merged into your existing configuration. When you add, delete, or
      * replace values in an element that allows multiple values (for example, <code>CNAME</code>), you must specify all
      * of the values that you want to appear in the updated distribution. In addition, you must update the corresponding
      * <code>Quantity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * </important></li>
      * <li>
      * <p>
@@ -1787,16 +1856,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Optional: Submit a <a>GetDistribution</a> request to confirm that your changes have propagated. When propagation
      * is complete, the value of <code>Status</code> is <code>Deployed</code>.
      * </p>
-     * <important>
-     * <p>
-     * Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML
-     * document that you include in the request body when you create or update a distribution. With previous versions of
-     * the API, we discovered that it was too easy to accidentally delete one or more values for an element that accepts
-     * multiple values, for example, CNAMEs and trusted signers. Our changes for the 2012-05-05 release are intended to
-     * prevent these accidental deletions and to notify you when there's a mismatch between the number of values you say
-     * you're specifying in the <code>Quantity</code> element and the number of values you're actually specifying.
-     * </p>
-     * </important></li>
+     * </li>
      * </ol>
      * 
      * @param updateDistributionRequest
@@ -1810,13 +1870,27 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Updates the configuration for a web distribution. Perform the following steps.
+     * Updates the configuration for a web distribution.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a distribution, there are more required fields than when you create a distribution. When you
+     * update your distribution by using this API action, follow the steps here to get the current configuration and
+     * then make your updates, to make sure that you include all of the required fields. To view a summary, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html"
+     * >Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * The update process includes getting the current distribution configuration, updating the XML document that is
+     * returned to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the
+     * updates.
      * </p>
      * <p>
-     * For information about updating a distribution using the CloudFront console, see <a
+     * For information about updating a distribution using the CloudFront console instead, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html"
-     * >Creating or Updating a Web Distribution Using the CloudFront Console </a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * >Creating a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * <b>To update a web distribution using the CloudFront API</b>
@@ -1829,24 +1903,47 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <note>
      * <p>
-     * If you update the distribution again, you need to get a new <code>Etag</code> header.
+     * If you update the distribution again, you must get a new <code>Etag</code> header.
      * </p>
      * </note></li>
      * <li>
      * <p>
      * Update the XML document that was returned in the response to your <code>GetDistributionConfig</code> request to
-     * include the desired changes. You can't change the value of <code>CallerReference</code>. If you try to change
-     * this value, CloudFront returns an <code>IllegalUpdate</code> error. Note that you must strip out the ETag
-     * parameter that is returned.
+     * include your changes.
      * </p>
      * <important>
      * <p>
+     * When you edit the XML file, be aware of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must strip out the ETag parameter that is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Additional fields are required when you update a distribution. There may be fields included in the XML file for
+     * features that you haven't configured for your distribution. This is expected and required to successfully update
+     * the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of <code>CallerReference</code>. If you try to change this value, CloudFront returns
+     * an <code>IllegalUpdate</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The new configuration replaces the existing configuration; the values that you specify in an
-     * <code>UpdateDistribution</code> request are not merged into the existing configuration. When you add, delete, or
+     * <code>UpdateDistribution</code> request are not merged into your existing configuration. When you add, delete, or
      * replace values in an element that allows multiple values (for example, <code>CNAME</code>), you must specify all
      * of the values that you want to appear in the updated distribution. In addition, you must update the corresponding
      * <code>Quantity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * </important></li>
      * <li>
      * <p>
@@ -1878,16 +1975,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Optional: Submit a <a>GetDistribution</a> request to confirm that your changes have propagated. When propagation
      * is complete, the value of <code>Status</code> is <code>Deployed</code>.
      * </p>
-     * <important>
-     * <p>
-     * Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML
-     * document that you include in the request body when you create or update a distribution. With previous versions of
-     * the API, we discovered that it was too easy to accidentally delete one or more values for an element that accepts
-     * multiple values, for example, CNAMEs and trusted signers. Our changes for the 2012-05-05 release are intended to
-     * prevent these accidental deletions and to notify you when there's a mismatch between the number of values you say
-     * you're specifying in the <code>Quantity</code> element and the number of values you're actually specifying.
-     * </p>
-     * </important></li>
+     * </li>
      * </ol>
      * 
      * @param updateDistributionRequest

@@ -38,6 +38,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public AcceptSharedDirectoryResult acceptSharedDirectory(AcceptSharedDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -153,6 +158,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -228,6 +238,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public RejectSharedDirectoryResult rejectSharedDirectory(RejectSharedDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -248,7 +263,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public ShareDirectoryResult shareDirectory(ShareDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UnshareDirectoryResult unshareDirectory(UnshareDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

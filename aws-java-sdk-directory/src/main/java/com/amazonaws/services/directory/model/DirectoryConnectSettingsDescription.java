@@ -42,7 +42,7 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * The username of the service account in the on-premises directory.
+     * The user name of the service account in the on-premises directory.
      * </p>
      */
     private String customerUserName;
@@ -180,11 +180,11 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The username of the service account in the on-premises directory.
+     * The user name of the service account in the on-premises directory.
      * </p>
      * 
      * @param customerUserName
-     *        The username of the service account in the on-premises directory.
+     *        The user name of the service account in the on-premises directory.
      */
 
     public void setCustomerUserName(String customerUserName) {
@@ -193,10 +193,10 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The username of the service account in the on-premises directory.
+     * The user name of the service account in the on-premises directory.
      * </p>
      * 
-     * @return The username of the service account in the on-premises directory.
+     * @return The user name of the service account in the on-premises directory.
      */
 
     public String getCustomerUserName() {
@@ -205,11 +205,11 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The username of the service account in the on-premises directory.
+     * The user name of the service account in the on-premises directory.
      * </p>
      * 
      * @param customerUserName
-     *        The username of the service account in the on-premises directory.
+     *        The user name of the service account in the on-premises directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

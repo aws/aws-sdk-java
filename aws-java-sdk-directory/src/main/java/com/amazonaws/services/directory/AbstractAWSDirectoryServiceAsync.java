@@ -28,6 +28,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptSharedDirectoryResult> acceptSharedDirectoryAsync(AcceptSharedDirectoryRequest request) {
+
+        return acceptSharedDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptSharedDirectoryResult> acceptSharedDirectoryAsync(AcceptSharedDirectoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptSharedDirectoryRequest, AcceptSharedDirectoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(AddIpRoutesRequest request) {
 
         return addIpRoutesAsync(request, null);
@@ -337,6 +350,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request) {
+
+        return describeSharedDirectoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSharedDirectoriesRequest, DescribeSharedDirectoriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(DescribeSnapshotsRequest request) {
 
         return describeSnapshotsAsync(request, null);
@@ -552,6 +578,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<RejectSharedDirectoryResult> rejectSharedDirectoryAsync(RejectSharedDirectoryRequest request) {
+
+        return rejectSharedDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectSharedDirectoryResult> rejectSharedDirectoryAsync(RejectSharedDirectoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectSharedDirectoryRequest, RejectSharedDirectoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(RemoveIpRoutesRequest request) {
 
         return removeIpRoutesAsync(request, null);
@@ -604,6 +643,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<ShareDirectoryResult> shareDirectoryAsync(ShareDirectoryRequest request) {
+
+        return shareDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ShareDirectoryResult> shareDirectoryAsync(ShareDirectoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ShareDirectoryRequest, ShareDirectoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest request) {
 
         return startSchemaExtensionAsync(request, null);
@@ -612,6 +664,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSchemaExtensionRequest, StartSchemaExtensionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnshareDirectoryResult> unshareDirectoryAsync(UnshareDirectoryRequest request) {
+
+        return unshareDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnshareDirectoryResult> unshareDirectoryAsync(UnshareDirectoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<UnshareDirectoryRequest, UnshareDirectoryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

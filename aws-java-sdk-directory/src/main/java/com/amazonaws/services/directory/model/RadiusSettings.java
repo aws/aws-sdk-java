@@ -56,7 +56,7 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer radiusRetries;
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      */
     private String sharedSecret;
@@ -288,11 +288,11 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      * 
      * @param sharedSecret
-     *        Not currently used.
+     *        Required for enabling RADIUS on the directory.
      */
 
     public void setSharedSecret(String sharedSecret) {
@@ -301,10 +301,10 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      * 
-     * @return Not currently used.
+     * @return Required for enabling RADIUS on the directory.
      */
 
     public String getSharedSecret() {
@@ -313,11 +313,11 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      * 
      * @param sharedSecret
-     *        Not currently used.
+     *        Required for enabling RADIUS on the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
