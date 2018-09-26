@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The message referred to isn't in flight.
+ * The specified message isn't in flight.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The receipt handle isn't valid for the current version.
+ * The specified receipt handle isn't valid for the current version.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -6791,6 +6791,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
      * or the StopDBCluster action.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param startDBClusterRequest
      * @return Result of the StartDBCluster operation returned by the service.
@@ -6940,6 +6945,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's metadata,
      * including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a
      * point-in-time restore if necessary.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param stopDBClusterRequest

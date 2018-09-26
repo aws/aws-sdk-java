@@ -171,6 +171,19 @@ public class AbstractAWSOpsWorksCMAsync extends AbstractAWSOpsWorksCM implements
     }
 
     @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request) {
+
+        return exportServerEngineAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportServerEngineAttributeRequest, ExportServerEngineAttributeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreServerResult> restoreServerAsync(RestoreServerRequest request) {
 
         return restoreServerAsync(request, null);

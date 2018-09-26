@@ -1350,6 +1350,41 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataCatalogEncryptionSettingsResult> getDataCatalogEncryptionSettingsAsync(
+            GetDataCatalogEncryptionSettingsRequest request) {
+
+        return getDataCatalogEncryptionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataCatalogEncryptionSettingsResult> getDataCatalogEncryptionSettingsAsync(
+            final GetDataCatalogEncryptionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataCatalogEncryptionSettingsRequest, GetDataCatalogEncryptionSettingsResult> asyncHandler) {
+        final GetDataCatalogEncryptionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataCatalogEncryptionSettingsResult>() {
+            @Override
+            public GetDataCatalogEncryptionSettingsResult call() throws Exception {
+                GetDataCatalogEncryptionSettingsResult result = null;
+
+                try {
+                    result = executeGetDataCatalogEncryptionSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDatabaseResult> getDatabaseAsync(GetDatabaseRequest request) {
 
         return getDatabaseAsync(request, null);

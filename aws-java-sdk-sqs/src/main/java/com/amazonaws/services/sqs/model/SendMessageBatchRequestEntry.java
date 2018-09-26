@@ -34,6 +34,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * The <code>Id</code>s of a batch request need to be unique within a request
      * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
+     * </p>
      * </note>
      */
     private String id;
@@ -60,9 +64,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue> messageAttributes;
@@ -127,12 +131,16 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful for
+     * The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for
      * troubleshooting delivery issues).
      * </p>
      * <p>
      * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
+     * </p>
+     * <p>
+     * Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     * deleted.
      * </p>
      * </note>
      * <p>
@@ -142,7 +150,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -155,8 +163,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * The tag that specifies that a message belongs to a specific message group. Messages that belong to the same
      * message group are processed in a FIFO manner (however, messages in different message groups might be processed
      * out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code>
-     * values (for example, session data for multiple users). In this scenario, multiple readers can process the queue,
-     * but the session data of each user is processed in a FIFO fashion.
+     * values (for example, session data for multiple users). In this scenario, multiple consumers can process the
+     * queue, but the session data of each user is processed in a FIFO fashion.
      * </p>
      * <ul>
      * <li>
@@ -174,12 +182,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -206,6 +214,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        <p>
      *        The <code>Id</code>s of a batch request need to be unique within a request
      *        </p>
+     *        <p>
+     *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *        characters, hyphens(-), and underscores (_).
+     *        </p>
      * @param messageBody
      *        The body of the message.
      */
@@ -222,12 +234,20 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * The <code>Id</code>s of a batch request need to be unique within a request
      * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
+     * </p>
      * </note>
      * 
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
      *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
+     *        <p>
+     *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *        characters, hyphens(-), and underscores (_).
      *        </p>
      */
 
@@ -243,11 +263,19 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * The <code>Id</code>s of a batch request need to be unique within a request
      * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
+     * </p>
      * </note>
      * 
      * @return An identifier for a message in this batch used to communicate the result.</p> <note>
      *         <p>
      *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         </p>
+     *         <p>
+     *         This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *         characters, hyphens(-), and underscores (_).
      *         </p>
      */
 
@@ -263,12 +291,20 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <p>
      * The <code>Id</code>s of a batch request need to be unique within a request
      * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
+     * </p>
      * </note>
      * 
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
      *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
+     *        <p>
+     *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *        characters, hyphens(-), and underscores (_).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -406,15 +442,15 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     *         >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -427,16 +463,16 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     *        >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -446,16 +482,16 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     *        >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -546,12 +582,16 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful for
+     * The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for
      * troubleshooting delivery issues).
      * </p>
      * <p>
      * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
+     * </p>
+     * <p>
+     * Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     * deleted.
      * </p>
      * </note>
      * <p>
@@ -561,7 +601,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -624,13 +664,17 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </ul>
      *        <note>
      *        <p>
-     *        The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful
+     *        The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful
      *        for troubleshooting delivery issues).
      *        </p>
      *        <p>
      *        If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      *        <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate
      *        messages.
+     *        </p>
+     *        <p>
+     *        Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     *        deleted.
      *        </p>
      *        </note>
      *        <p>
@@ -640,7 +684,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -709,12 +753,16 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful for
+     * The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for
      * troubleshooting delivery issues).
      * </p>
      * <p>
      * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
+     * </p>
+     * <p>
+     * Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     * deleted.
      * </p>
      * </note>
      * <p>
@@ -724,7 +772,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -787,13 +835,17 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         </ul>
      *         <note>
      *         <p>
-     *         The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful
+     *         The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful
      *         for troubleshooting delivery issues).
      *         </p>
      *         <p>
      *         If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      *         <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate
      *         messages.
+     *         </p>
+     *         <p>
+     *         Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     *         deleted.
      *         </p>
      *         </note>
      *         <p>
@@ -803,7 +855,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      *         >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -872,12 +924,16 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </ul>
      * <note>
      * <p>
-     * The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful for
+     * The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for
      * troubleshooting delivery issues).
      * </p>
      * <p>
      * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
+     * </p>
+     * <p>
+     * Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     * deleted.
      * </p>
      * </note>
      * <p>
@@ -887,7 +943,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -950,13 +1006,17 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </ul>
      *        <note>
      *        <p>
-     *        The <code>MessageDeduplicationId</code> is available to the recipient of the message (this can be useful
+     *        The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful
      *        for troubleshooting delivery issues).
      *        </p>
      *        <p>
      *        If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      *        <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate
      *        messages.
+     *        </p>
+     *        <p>
+     *        Amazon SQS continues to keep track of the message deduplication ID even after the message is received and
+     *        deleted.
      *        </p>
      *        </note>
      *        <p>
@@ -966,7 +1026,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property"
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
      *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -984,8 +1044,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * The tag that specifies that a message belongs to a specific message group. Messages that belong to the same
      * message group are processed in a FIFO manner (however, messages in different message groups might be processed
      * out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code>
-     * values (for example, session data for multiple users). In this scenario, multiple readers can process the queue,
-     * but the session data of each user is processed in a FIFO fashion.
+     * values (for example, session data for multiple users). In this scenario, multiple consumers can process the
+     * queue, but the session data of each user is processed in a FIFO fashion.
      * </p>
      * <ul>
      * <li>
@@ -1003,12 +1063,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -1024,7 +1084,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        same message group are processed in a FIFO manner (however, messages in different message groups might be
      *        processed out of order). To interleave multiple ordered streams within a single queue, use
      *        <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario,
-     *        multiple readers can process the queue, but the session data of each user is processed in a FIFO fashion.
+     *        multiple consumers can process the queue, but the session data of each user is processed in a FIFO
+     *        fashion.
      *        </p>
      *        <ul>
      *        <li>
@@ -1042,12 +1103,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     *        The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      *        punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <important>
@@ -1068,8 +1129,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * The tag that specifies that a message belongs to a specific message group. Messages that belong to the same
      * message group are processed in a FIFO manner (however, messages in different message groups might be processed
      * out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code>
-     * values (for example, session data for multiple users). In this scenario, multiple readers can process the queue,
-     * but the session data of each user is processed in a FIFO fashion.
+     * values (for example, session data for multiple users). In this scenario, multiple consumers can process the
+     * queue, but the session data of each user is processed in a FIFO fashion.
      * </p>
      * <ul>
      * <li>
@@ -1087,12 +1148,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -1107,7 +1168,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         same message group are processed in a FIFO manner (however, messages in different message groups might be
      *         processed out of order). To interleave multiple ordered streams within a single queue, use
      *         <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario,
-     *         multiple readers can process the queue, but the session data of each user is processed in a FIFO fashion.
+     *         multiple consumers can process the queue, but the session data of each user is processed in a FIFO
+     *         fashion.
      *         </p>
      *         <ul>
      *         <li>
@@ -1125,12 +1187,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     *         The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      *         punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageGroupId</code>, see <a href=
-     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      *         >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <important>
@@ -1151,8 +1213,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * The tag that specifies that a message belongs to a specific message group. Messages that belong to the same
      * message group are processed in a FIFO manner (however, messages in different message groups might be processed
      * out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code>
-     * values (for example, session data for multiple users). In this scenario, multiple readers can process the queue,
-     * but the session data of each user is processed in a FIFO fashion.
+     * values (for example, session data for multiple users). In this scenario, multiple consumers can process the
+     * queue, but the session data of each user is processed in a FIFO fashion.
      * </p>
      * <ul>
      * <li>
@@ -1170,12 +1232,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <important>
@@ -1191,7 +1253,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        same message group are processed in a FIFO manner (however, messages in different message groups might be
      *        processed out of order). To interleave multiple ordered streams within a single queue, use
      *        <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario,
-     *        multiple readers can process the queue, but the session data of each user is processed in a FIFO fashion.
+     *        multiple consumers can process the queue, but the session data of each user is processed in a FIFO
+     *        fashion.
      *        </p>
      *        <ul>
      *        <li>
@@ -1209,12 +1272,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric characters and
+     *        The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      *        punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
-     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
+     *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <important>

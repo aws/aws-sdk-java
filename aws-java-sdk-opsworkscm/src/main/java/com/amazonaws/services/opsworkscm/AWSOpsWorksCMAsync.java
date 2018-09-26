@@ -726,6 +726,59 @@ public interface AWSOpsWorksCMAsync extends AWSOpsWorksCM {
 
     /**
      * <p>
+     * Exports a specified server engine attribute as a base64-encoded string. For example, you can export user data
+     * that you can use in EC2 to associate nodes with a server.
+     * </p>
+     * <p>
+     * This operation is synchronous.
+     * </p>
+     * <p>
+     * A <code>ValidationException</code> is raised when parameters of the request are not valid. A
+     * <code>ResourceNotFoundException</code> is thrown when the server does not exist. An
+     * <code>InvalidStateException</code> is thrown when the server is in any of the following states: CREATING,
+     * TERMINATED, FAILED or DELETING.
+     * </p>
+     * 
+     * @param exportServerEngineAttributeRequest
+     * @return A Java Future containing the result of the ExportServerEngineAttribute operation returned by the service.
+     * @sample AWSOpsWorksCMAsync.ExportServerEngineAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(
+            ExportServerEngineAttributeRequest exportServerEngineAttributeRequest);
+
+    /**
+     * <p>
+     * Exports a specified server engine attribute as a base64-encoded string. For example, you can export user data
+     * that you can use in EC2 to associate nodes with a server.
+     * </p>
+     * <p>
+     * This operation is synchronous.
+     * </p>
+     * <p>
+     * A <code>ValidationException</code> is raised when parameters of the request are not valid. A
+     * <code>ResourceNotFoundException</code> is thrown when the server does not exist. An
+     * <code>InvalidStateException</code> is thrown when the server is in any of the following states: CREATING,
+     * TERMINATED, FAILED or DELETING.
+     * </p>
+     * 
+     * @param exportServerEngineAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportServerEngineAttribute operation returned by the service.
+     * @sample AWSOpsWorksCMAsyncHandler.ExportServerEngineAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(
+            ExportServerEngineAttributeRequest exportServerEngineAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportServerEngineAttributeRequest, ExportServerEngineAttributeResult> asyncHandler);
+
+    /**
+     * <p>
      * Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
      * <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When you run RestoreServer, the
      * server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing

@@ -298,6 +298,13 @@ public class DBCluster implements Serializable, Cloneable {
     private String engineMode;
 
     private ScalingConfigurationInfo scalingConfigurationInfo;
+    /**
+     * <p>
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -2381,6 +2388,66 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
+     *        is set to true.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
+     * </p>
+     * 
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
+     *        is set to true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
+     * </p>
+     * 
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2474,7 +2541,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getEngineMode() != null)
             sb.append("EngineMode: ").append(getEngineMode()).append(",");
         if (getScalingConfigurationInfo() != null)
-            sb.append("ScalingConfigurationInfo: ").append(getScalingConfigurationInfo());
+            sb.append("ScalingConfigurationInfo: ").append(getScalingConfigurationInfo()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -2660,6 +2729,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getScalingConfigurationInfo() != null && other.getScalingConfigurationInfo().equals(this.getScalingConfigurationInfo()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -2710,6 +2783,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCapacity() == null) ? 0 : getCapacity().hashCode());
         hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
         hashCode = prime * hashCode + ((getScalingConfigurationInfo() == null) ? 0 : getScalingConfigurationInfo().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

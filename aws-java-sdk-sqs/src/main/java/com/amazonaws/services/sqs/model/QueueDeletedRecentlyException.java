@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You must wait 60 seconds after deleting a queue before you can create another one with the same name.
+ * You must wait 60 seconds after deleting a queue before you can create another queue with the same name.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

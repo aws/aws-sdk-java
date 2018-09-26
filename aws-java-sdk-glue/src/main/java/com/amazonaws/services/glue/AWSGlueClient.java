@@ -2621,6 +2621,68 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Retrieves the security configuration for a specified catalog.
+     * </p>
+     * 
+     * @param getDataCatalogEncryptionSettingsRequest
+     * @return Result of the GetDataCatalogEncryptionSettings operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetDataCatalogEncryptionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataCatalogEncryptionSettingsResult getDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataCatalogEncryptionSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetDataCatalogEncryptionSettingsResult executeGetDataCatalogEncryptionSettings(
+            GetDataCatalogEncryptionSettingsRequest getDataCatalogEncryptionSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataCatalogEncryptionSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataCatalogEncryptionSettingsRequest> request = null;
+        Response<GetDataCatalogEncryptionSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataCatalogEncryptionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDataCatalogEncryptionSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataCatalogEncryptionSettings");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataCatalogEncryptionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDataCatalogEncryptionSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the definition of a specified database.
      * </p>
      * 

@@ -31,7 +31,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -57,7 +57,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * @param queueUrl
      *        The URL of the Amazon SQS queue from which permissions are removed.</p>
      *        <p>
-     *        Queue URLs are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      * @param label
      *        The identification of the permission to remove. This is the label added using the
      *        <code> <a>AddPermission</a> </code> action.
@@ -72,13 +72,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueUrl
      *        The URL of the Amazon SQS queue from which permissions are removed.</p>
      *        <p>
-     *        Queue URLs are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -90,12 +90,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @return The URL of the Amazon SQS queue from which permissions are removed.</p>
      *         <p>
-     *         Queue URLs are case-sensitive.
+     *         Queue URLs and names are case-sensitive.
      */
 
     public String getQueueUrl() {
@@ -107,13 +107,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueUrl
      *        The URL of the Amazon SQS queue from which permissions are removed.</p>
      *        <p>
-     *        Queue URLs are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

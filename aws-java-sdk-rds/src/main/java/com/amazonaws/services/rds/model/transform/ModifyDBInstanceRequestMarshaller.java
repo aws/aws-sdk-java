@@ -266,6 +266,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(modifyDBInstanceRequest.getUseDefaultProcessorFeatures()));
         }
 
+        if (modifyDBInstanceRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(modifyDBInstanceRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

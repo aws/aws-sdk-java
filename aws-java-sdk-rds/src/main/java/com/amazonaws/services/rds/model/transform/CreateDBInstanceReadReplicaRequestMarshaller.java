@@ -186,6 +186,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getUseDefaultProcessorFeatures()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getDeletionProtection()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
         }

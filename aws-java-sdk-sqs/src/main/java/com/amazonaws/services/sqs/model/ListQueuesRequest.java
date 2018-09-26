@@ -32,7 +32,7 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * returned.
      * </p>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      */
     private String queueNamePrefix;
@@ -52,7 +52,7 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        A string to use for filtering the list results. Only those queues whose name begins with the specified
      *        string are returned.</p>
      *        <p>
-     *        Queue names are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      */
     public ListQueuesRequest(String queueNamePrefix) {
         setQueueNamePrefix(queueNamePrefix);
@@ -64,14 +64,14 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * returned.
      * </p>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueNamePrefix
      *        A string to use for filtering the list results. Only those queues whose name begins with the specified
      *        string are returned.</p>
      *        <p>
-     *        Queue names are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      */
 
     public void setQueueNamePrefix(String queueNamePrefix) {
@@ -84,13 +84,13 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * returned.
      * </p>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @return A string to use for filtering the list results. Only those queues whose name begins with the specified
      *         string are returned.</p>
      *         <p>
-     *         Queue names are case-sensitive.
+     *         Queue URLs and names are case-sensitive.
      */
 
     public String getQueueNamePrefix() {
@@ -103,14 +103,14 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * returned.
      * </p>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueNamePrefix
      *        A string to use for filtering the list results. Only those queues whose name begins with the specified
      *        string are returned.</p>
      *        <p>
-     *        Queue names are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -273,6 +273,10 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getUseDefaultProcessorFeatures()));
         }
 
+        if (restoreDBInstanceFromS3Request.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getDeletionProtection()));
+        }
+
         return request;
     }
 

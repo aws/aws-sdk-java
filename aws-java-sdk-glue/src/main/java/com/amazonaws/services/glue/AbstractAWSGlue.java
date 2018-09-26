@@ -223,6 +223,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetDataCatalogEncryptionSettingsResult getDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDatabaseResult getDatabase(GetDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

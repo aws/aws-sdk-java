@@ -908,6 +908,25 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Retrieves the security configuration for a specified catalog.
+     * </p>
+     * 
+     * @param getDataCatalogEncryptionSettingsRequest
+     * @return Result of the GetDataCatalogEncryptionSettings operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetDataCatalogEncryptionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDataCatalogEncryptionSettingsResult getDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest getDataCatalogEncryptionSettingsRequest);
+
+    /**
+     * <p>
      * Retrieves the definition of a specified database.
      * </p>
      * 

@@ -189,6 +189,10 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getUseDefaultProcessorFeatures()));
         }
 
+        if (restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

@@ -711,6 +711,39 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request) {
+
+        return exportServerEngineAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(final ExportServerEngineAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportServerEngineAttributeRequest, ExportServerEngineAttributeResult> asyncHandler) {
+        final ExportServerEngineAttributeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportServerEngineAttributeResult>() {
+            @Override
+            public ExportServerEngineAttributeResult call() throws Exception {
+                ExportServerEngineAttributeResult result = null;
+
+                try {
+                    result = executeExportServerEngineAttribute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreServerResult> restoreServerAsync(RestoreServerRequest request) {
 
         return restoreServerAsync(request, null);

@@ -1169,6 +1169,77 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
+     * Exports a specified server engine attribute as a base64-encoded string. For example, you can export user data
+     * that you can use in EC2 to associate nodes with a server.
+     * </p>
+     * <p>
+     * This operation is synchronous.
+     * </p>
+     * <p>
+     * A <code>ValidationException</code> is raised when parameters of the request are not valid. A
+     * <code>ResourceNotFoundException</code> is thrown when the server does not exist. An
+     * <code>InvalidStateException</code> is thrown when the server is in any of the following states: CREATING,
+     * TERMINATED, FAILED or DELETING.
+     * </p>
+     * 
+     * @param exportServerEngineAttributeRequest
+     * @return Result of the ExportServerEngineAttribute operation returned by the service.
+     * @throws ValidationException
+     *         One or more of the provided request parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws InvalidStateException
+     *         The resource is in a state that does not allow you to perform a specified action.
+     * @sample AWSOpsWorksCM.ExportServerEngineAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportServerEngineAttributeResult exportServerEngineAttribute(ExportServerEngineAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportServerEngineAttribute(request);
+    }
+
+    @SdkInternalApi
+    final ExportServerEngineAttributeResult executeExportServerEngineAttribute(ExportServerEngineAttributeRequest exportServerEngineAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportServerEngineAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportServerEngineAttributeRequest> request = null;
+        Response<ExportServerEngineAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportServerEngineAttributeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportServerEngineAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorksCM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportServerEngineAttribute");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportServerEngineAttributeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportServerEngineAttributeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
      * <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When you run RestoreServer, the
      * server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing

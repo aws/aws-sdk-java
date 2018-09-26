@@ -94,6 +94,11 @@ public class AbstractAWSOpsWorksCM implements AWSOpsWorksCM {
     }
 
     @Override
+    public ExportServerEngineAttributeResult exportServerEngineAttribute(ExportServerEngineAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RestoreServerResult restoreServer(RestoreServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

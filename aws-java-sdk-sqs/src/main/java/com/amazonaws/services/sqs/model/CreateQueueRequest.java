@@ -48,7 +48,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      */
     private String queueName;
@@ -64,20 +64,19 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the queue
-     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a message.
-     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4
-     * days).
+     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -91,7 +90,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20
-     * (seconds). The default is 0 (zero).
+     * (seconds). Default: 0.
      * </p>
      * </li>
      * <li>
@@ -111,7 +110,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved
-     * to the dead-letter queue.
+     * to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      * </p>
      * </li>
      * </ul>
@@ -123,8 +123,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to 43,200
-     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An integer from
+     * 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
@@ -152,8 +152,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse a <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or
      * decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and
-     * 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period provides better security but
-     * results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
+     * 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results
+     * in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -231,41 +231,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * </ul>
-     * <p>
-     * Any other valid special request parameters (such as the following) are ignored:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessages</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CreatedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>LastModifiedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QueueArn</code>
-     * </p>
      * </li>
      * </ul>
      */
@@ -302,7 +267,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        Queue names are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      */
     public CreateQueueRequest(String queueName) {
         setQueueName(queueName);
@@ -330,7 +295,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueName
@@ -353,7 +318,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        Queue names are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      */
 
     public void setQueueName(String queueName) {
@@ -382,7 +347,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @return The name of the new queue. The following limits apply to this name:</p>
@@ -404,7 +369,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         <p>
-     *         Queue names are case-sensitive.
+     *         Queue URLs and names are case-sensitive.
      */
 
     public String getQueueName() {
@@ -433,7 +398,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * Queue names are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueName
@@ -456,7 +421,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        Queue names are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,20 +442,19 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the queue
-     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a message.
-     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4
-     * days).
+     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -504,7 +468,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20
-     * (seconds). The default is 0 (zero).
+     * (seconds). Default: 0.
      * </p>
      * </li>
      * <li>
@@ -524,7 +488,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved
-     * to the dead-letter queue.
+     * to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      * </p>
      * </li>
      * </ul>
@@ -536,8 +501,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to 43,200
-     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An integer from
+     * 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
@@ -565,8 +530,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse a <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or
      * decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and
-     * 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period provides better security but
-     * results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
+     * 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results
+     * in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -646,41 +611,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Any other valid special request parameters (such as the following) are ignored:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessages</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CreatedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>LastModifiedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QueueArn</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
@@ -691,21 +621,21 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the
-     *         queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     *         queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *         rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is
+     *         rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default:
      *         262,144 (256 KiB).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a
-     *         message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default
-     *         is 345,600 (4 days).
+     *         message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default:
+     *         345,600 (4 days).
      *         </p>
      *         </li>
      *         <li>
@@ -719,7 +649,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      *         <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from
-     *         0 to 20 (seconds). The default is 0 (zero).
+     *         0 to 20 (seconds). Default: 0.
      *         </p>
      *         </li>
      *         <li>
@@ -740,7 +670,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before
-     *         being moved to the dead-letter queue.
+     *         being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     *         <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      *         </p>
      *         </li>
      *         </ul>
@@ -752,8 +683,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </note></li>
      *         <li>
      *         <p>
-     *         <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to
-     *         43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *         <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An
+     *         integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
+     *         <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *         >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
@@ -782,9 +714,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can
      *         reuse a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      *         key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds,
-     *         between 60 seconds (1 minute) and 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter
-     *         time period provides better security but results in more calls to KMS which might incur charges after
-     *         Free Tier. For more information, see <a href=
+     *         between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time
+     *         period provides better security but results in more calls to KMS which might incur charges after Free
+     *         Tier. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *         >How Does the Data Key Reuse Period Work?</a>.
      *         </p>
@@ -865,41 +797,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         Any other valid special request parameters (such as the following) are ignored:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>ApproximateNumberOfMessages</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ApproximateNumberOfMessagesDelayed</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ApproximateNumberOfMessagesNotVisible</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>CreatedTimestamp</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>LastModifiedTimestamp</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>QueueArn</code>
-     *         </p>
-     *         </li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -921,20 +818,19 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the queue
-     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a message.
-     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4
-     * days).
+     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -948,7 +844,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20
-     * (seconds). The default is 0 (zero).
+     * (seconds). Default: 0.
      * </p>
      * </li>
      * <li>
@@ -968,7 +864,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved
-     * to the dead-letter queue.
+     * to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      * </p>
      * </li>
      * </ul>
@@ -980,8 +877,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to 43,200
-     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An integer from
+     * 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
@@ -1009,8 +906,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse a <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or
      * decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and
-     * 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period provides better security but
-     * results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
+     * 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results
+     * in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -1090,41 +987,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Any other valid special request parameters (such as the following) are ignored:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessages</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CreatedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>LastModifiedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QueueArn</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1136,21 +998,21 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the
-     *        queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     *        queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is
-     *        262,144 (256 KiB).
+     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144
+     *        (256 KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a
-     *        message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default
-     *        is 345,600 (4 days).
+     *        message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default:
+     *        345,600 (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -1164,7 +1026,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      *        <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0
-     *        to 20 (seconds). The default is 0 (zero).
+     *        to 20 (seconds). Default: 0.
      *        </p>
      *        </li>
      *        <li>
@@ -1185,7 +1047,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being
-     *        moved to the dead-letter queue.
+     *        moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     *        <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      *        </p>
      *        </li>
      *        </ul>
@@ -1197,8 +1060,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to
-     *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An
+     *        integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
@@ -1227,9 +1091,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse
      *        a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to
      *        encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60
-     *        seconds (1 minute) and 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period
-     *        provides better security but results in more calls to KMS which might incur charges after Free Tier. For
-     *        more information, see <a href=
+     *        seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides
+     *        better security but results in more calls to KMS which might incur charges after Free Tier. For more
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -1308,41 +1172,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Any other valid special request parameters (such as the following) are ignored:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ApproximateNumberOfMessages</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ApproximateNumberOfMessagesDelayed</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ApproximateNumberOfMessagesNotVisible</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CreatedTimestamp</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>LastModifiedTimestamp</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QueueArn</code>
-     *        </p>
      *        </li>
      */
 
@@ -1362,20 +1191,19 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the queue
-     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     * is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a message.
-     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4
-     * days).
+     * Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -1389,7 +1217,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20
-     * (seconds). The default is 0 (zero).
+     * (seconds). Default: 0.
      * </p>
      * </li>
      * <li>
@@ -1409,7 +1237,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved
-     * to the dead-letter queue.
+     * to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      * </p>
      * </li>
      * </ul>
@@ -1421,8 +1250,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to 43,200
-     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An integer from
+     * 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
@@ -1450,8 +1279,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse a <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or
      * decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and
-     * 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period provides better security but
-     * results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
+     * 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results
+     * in more calls to KMS which might incur charges after Free Tier. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -1531,41 +1360,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Any other valid special request parameters (such as the following) are ignored:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessages</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>CreatedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>LastModifiedTimestamp</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QueueArn</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1577,21 +1371,21 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the
-     *        queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). The default is 0 (zero).
+     *        queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). The default is
-     *        262,144 (256 KiB).
+     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144
+     *        (256 KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a
-     *        message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). The default
-     *        is 345,600 (4 days).
+     *        message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default:
+     *        345,600 (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -1605,7 +1399,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a
      *        <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0
-     *        to 20 (seconds). The default is 0 (zero).
+     *        to 20 (seconds). Default: 0.
      *        </p>
      *        </li>
      *        <li>
@@ -1626,7 +1420,8 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being
-     *        moved to the dead-letter queue.
+     *        moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the
+     *        <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.
      *        </p>
      *        </li>
      *        </ul>
@@ -1638,8 +1433,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: An integer from 0 to
-     *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: An
+     *        integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
+     *        <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
@@ -1668,9 +1464,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse
      *        a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to
      *        encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60
-     *        seconds (1 minute) and 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period
-     *        provides better security but results in more calls to KMS which might incur charges after Free Tier. For
-     *        more information, see <a href=
+     *        seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides
+     *        better security but results in more calls to KMS which might incur charges after Free Tier. For more
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -1749,41 +1545,6 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Any other valid special request parameters (such as the following) are ignored:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ApproximateNumberOfMessages</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ApproximateNumberOfMessagesDelayed</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ApproximateNumberOfMessagesNotVisible</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CreatedTimestamp</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>LastModifiedTimestamp</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QueueArn</code>
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

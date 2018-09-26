@@ -4629,6 +4629,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
      * or the StopDBCluster action.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param startDBClusterRequest
      * @return A Java Future containing the result of the StartDBCluster operation returned by the service.
@@ -4642,6 +4647,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
      * or the StopDBCluster action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param startDBClusterRequest
@@ -4718,6 +4728,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a
      * point-in-time restore if necessary.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param stopDBClusterRequest
      * @return A Java Future containing the result of the StopDBCluster operation returned by the service.
@@ -4732,6 +4747,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's metadata,
      * including its endpoints and DB parameter groups. Aurora also retains the transaction logs so you can do a
      * point-in-time restore if necessary.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and
+     * Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
      * @param stopDBClusterRequest

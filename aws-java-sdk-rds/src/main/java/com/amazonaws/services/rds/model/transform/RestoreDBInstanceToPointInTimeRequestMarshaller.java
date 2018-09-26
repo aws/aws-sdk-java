@@ -194,6 +194,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getUseDefaultProcessorFeatures()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

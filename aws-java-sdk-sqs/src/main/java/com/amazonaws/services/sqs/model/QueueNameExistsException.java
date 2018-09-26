@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A queue already exists with this name. Amazon SQS returns this error only if the request includes attributes whose
+ * A queue with this name already exists. Amazon SQS returns this error only if the request includes attributes whose
  * values differ from those of the existing queue.
  * </p>
  */
