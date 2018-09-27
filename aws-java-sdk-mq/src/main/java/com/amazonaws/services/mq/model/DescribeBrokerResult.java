@@ -50,7 +50,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private String deploymentMode;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
-    /** The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0. */
+    /** The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0. */
     private String engineVersion;
     /** The broker's instance type. */
     private String hostInstanceType;
@@ -58,6 +58,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private LogsSummary logs;
     /** The parameters that determine the WeeklyStartTime. */
     private WeeklyStartTime maintenanceWindowStartTime;
+    /** The version of the broker engine to upgrade to. */
+    private String pendingEngineVersion;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
     private Boolean publiclyAccessible;
     /** Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers. */
@@ -521,10 +523,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * 
      * @param engineVersion
-     *        The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     *        The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -532,9 +534,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * 
-     * @return The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * @return The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      */
 
     public String getEngineVersion() {
@@ -542,10 +544,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * 
      * @param engineVersion
-     *        The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     *        The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -653,6 +655,40 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public DescribeBrokerResult withMaintenanceWindowStartTime(WeeklyStartTime maintenanceWindowStartTime) {
         setMaintenanceWindowStartTime(maintenanceWindowStartTime);
+        return this;
+    }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     * 
+     * @param pendingEngineVersion
+     *        The version of the broker engine to upgrade to.
+     */
+
+    public void setPendingEngineVersion(String pendingEngineVersion) {
+        this.pendingEngineVersion = pendingEngineVersion;
+    }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     * 
+     * @return The version of the broker engine to upgrade to.
+     */
+
+    public String getPendingEngineVersion() {
+        return this.pendingEngineVersion;
+    }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     * 
+     * @param pendingEngineVersion
+     *        The version of the broker engine to upgrade to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withPendingEngineVersion(String pendingEngineVersion) {
+        setPendingEngineVersion(pendingEngineVersion);
         return this;
     }
 
@@ -941,6 +977,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("Logs: ").append(getLogs()).append(",");
         if (getMaintenanceWindowStartTime() != null)
             sb.append("MaintenanceWindowStartTime: ").append(getMaintenanceWindowStartTime()).append(",");
+        if (getPendingEngineVersion() != null)
+            sb.append("PendingEngineVersion: ").append(getPendingEngineVersion()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecurityGroups() != null)
@@ -1019,6 +1057,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getMaintenanceWindowStartTime() != null && other.getMaintenanceWindowStartTime().equals(this.getMaintenanceWindowStartTime()) == false)
             return false;
+        if (other.getPendingEngineVersion() == null ^ this.getPendingEngineVersion() == null)
+            return false;
+        if (other.getPendingEngineVersion() != null && other.getPendingEngineVersion().equals(this.getPendingEngineVersion()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -1057,6 +1099,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
+        hashCode = prime * hashCode + ((getPendingEngineVersion() == null) ? 0 : getPendingEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());

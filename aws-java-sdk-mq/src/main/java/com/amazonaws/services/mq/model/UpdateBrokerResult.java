@@ -23,12 +23,60 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** The new value of automatic upgrades to new minor version for brokers. */
+    private Boolean autoMinorVersionUpgrade;
     /** Required. The unique ID that Amazon MQ generates for the broker. */
     private String brokerId;
     /** The ID of the updated configuration. */
     private ConfigurationId configuration;
+    /** The version of the broker engine to upgrade to. */
+    private String engineVersion;
     /** The list of information about logs to be enabled for the specified broker. */
     private Logs logs;
+
+    /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     * 
+     * @param autoMinorVersionUpgrade
+     *        The new value of automatic upgrades to new minor version for brokers.
+     */
+
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+
+    /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     * 
+     * @return The new value of automatic upgrades to new minor version for brokers.
+     */
+
+    public Boolean getAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
+
+    /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     * 
+     * @param autoMinorVersionUpgrade
+     *        The new value of automatic upgrades to new minor version for brokers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        setAutoMinorVersionUpgrade(autoMinorVersionUpgrade);
+        return this;
+    }
+
+    /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     * 
+     * @return The new value of automatic upgrades to new minor version for brokers.
+     */
+
+    public Boolean isAutoMinorVersionUpgrade() {
+        return this.autoMinorVersionUpgrade;
+    }
 
     /**
      * Required. The unique ID that Amazon MQ generates for the broker.
@@ -99,6 +147,40 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * The version of the broker engine to upgrade to.
+     * 
+     * @param engineVersion
+     *        The version of the broker engine to upgrade to.
+     */
+
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     * 
+     * @return The version of the broker engine to upgrade to.
+     */
+
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     * 
+     * @param engineVersion
+     *        The version of the broker engine to upgrade to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withEngineVersion(String engineVersion) {
+        setEngineVersion(engineVersion);
+        return this;
+    }
+
+    /**
      * The list of information about logs to be enabled for the specified broker.
      * 
      * @param logs
@@ -143,10 +225,14 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAutoMinorVersionUpgrade() != null)
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getBrokerId() != null)
             sb.append("BrokerId: ").append(getBrokerId()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs());
         sb.append("}");
@@ -163,6 +249,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof UpdateBrokerResult == false)
             return false;
         UpdateBrokerResult other = (UpdateBrokerResult) obj;
+        if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
+            return false;
+        if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
+            return false;
         if (other.getBrokerId() == null ^ this.getBrokerId() == null)
             return false;
         if (other.getBrokerId() != null && other.getBrokerId().equals(this.getBrokerId()) == false)
@@ -170,6 +260,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
         if (other.getLogs() == null ^ this.getLogs() == null)
             return false;
@@ -183,8 +277,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getBrokerId() == null) ? 0 : getBrokerId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         return hashCode;
     }

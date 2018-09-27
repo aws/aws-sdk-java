@@ -154,7 +154,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. This Broker name already exists. Retry your request with another name.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.CreateBroker
@@ -279,7 +279,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Retry your request.
+     *         HTTP Status Code 409: Conflict. Retrying your request might resolve the issue.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.CreateUser
@@ -990,6 +990,9 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
      *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ConflictException
+     *         HTTP Status Code 409: Conflict. Concurrent broker update detected. Retrying your request might resolve
+     *         the issue.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateBroker
@@ -1051,8 +1054,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. This configuration name already exists. Retry your request with another
-     *         configuration name.
+     *         HTTP Status Code 409: Conflict. Concurrent update to configuration. Retry to create a new revision.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your input and then retry your request.
      * @sample AmazonMQ.UpdateConfiguration
@@ -1114,7 +1116,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Retry your request.
+     *         HTTP Status Code 409: Conflict. Retrying your request might resolve the issue.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateUser

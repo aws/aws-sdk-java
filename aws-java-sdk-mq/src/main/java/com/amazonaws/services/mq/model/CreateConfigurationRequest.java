@@ -29,7 +29,7 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
-    /** Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0. */
+    /** Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0. */
     private String engineVersion;
     /**
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
@@ -89,10 +89,10 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     *        Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -100,9 +100,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * 
-     * @return Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * @return Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      */
 
     public String getEngineVersion() {
@@ -110,10 +110,10 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     * Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
+     *        Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

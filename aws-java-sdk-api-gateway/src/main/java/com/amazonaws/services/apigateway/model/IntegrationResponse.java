@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * templates can be used to transform the back-end response.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IntegrationResponse implements Serializable, Cloneable, StructuredPojo {

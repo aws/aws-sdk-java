@@ -51,7 +51,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      */
@@ -260,7 +260,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      * 
@@ -268,7 +268,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      *        The new target value of the update operation. It is applicable for the <code>add</code> or
      *        <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
      *        object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a>.
      */
 
@@ -281,14 +281,14 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      * 
      * @return The new target value of the update operation. It is applicable for the <code>add</code> or
      *         <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
      *         object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a>.
      */
 
@@ -301,7 +301,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      * 
@@ -309,7 +309,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      *        The new target value of the update operation. It is applicable for the <code>add</code> or
      *        <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
      *        object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

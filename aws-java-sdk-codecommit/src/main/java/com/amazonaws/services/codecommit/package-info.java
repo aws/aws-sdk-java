@@ -98,6 +98,21 @@
  * <ul>
  * <li>
  * <p>
+ * <a>DeleteFile</a>, which deletes the content of a specified file from a specified branch.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
  * </p>
  * </li>

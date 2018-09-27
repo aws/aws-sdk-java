@@ -105,6 +105,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setMaintenanceWindowStartTime(WeeklyStartTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("pendingEngineVersion", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a REST API.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

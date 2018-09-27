@@ -25,7 +25,7 @@ import javax.annotation.Generated;
  * <code>DELETE</code> on the specified deployment resource (
  * <code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div class="seeAlso"><a>RestApi</a>,
  * <a>Deployments</a>, <a>Stage</a>, <a
- * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
+ * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
  * href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

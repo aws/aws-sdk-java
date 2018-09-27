@@ -28,11 +28,11 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
 
     /** Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. */
     private Boolean audit;
-    /** Location of CloudWatch Log group where audit logs will be sent. */
+    /** The location of the CloudWatch Logs log group where audit logs are sent. */
     private String auditLogGroup;
     /** Enables general logging. */
     private Boolean general;
-    /** Location of CloudWatch Log group where general logs will be sent. */
+    /** The location of the CloudWatch Logs log group where general logs are sent. */
     private String generalLogGroup;
     /** The list of information about logs pending to be deployed for the specified broker. */
     private PendingLogs pending;
@@ -82,10 +82,10 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      * 
      * @param auditLogGroup
-     *        Location of CloudWatch Log group where audit logs will be sent.
+     *        The location of the CloudWatch Logs log group where audit logs are sent.
      */
 
     public void setAuditLogGroup(String auditLogGroup) {
@@ -93,9 +93,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      * 
-     * @return Location of CloudWatch Log group where audit logs will be sent.
+     * @return The location of the CloudWatch Logs log group where audit logs are sent.
      */
 
     public String getAuditLogGroup() {
@@ -103,10 +103,10 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      * 
      * @param auditLogGroup
-     *        Location of CloudWatch Log group where audit logs will be sent.
+     *        The location of the CloudWatch Logs log group where audit logs are sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,10 +160,10 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      * 
      * @param generalLogGroup
-     *        Location of CloudWatch Log group where general logs will be sent.
+     *        The location of the CloudWatch Logs log group where general logs are sent.
      */
 
     public void setGeneralLogGroup(String generalLogGroup) {
@@ -171,9 +171,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      * 
-     * @return Location of CloudWatch Log group where general logs will be sent.
+     * @return The location of the CloudWatch Logs log group where general logs are sent.
      */
 
     public String getGeneralLogGroup() {
@@ -181,10 +181,10 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      * 
      * @param generalLogGroup
-     *        Location of CloudWatch Log group where general logs will be sent.
+     *        The location of the CloudWatch Logs log group where general logs are sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

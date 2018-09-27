@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The file name is not valid because it has exceeded the character limit for file names. File names, including the path
+ * The user name is not valid because it has exceeded the character limit for file names. File names, including the path
  * to the file, cannot exceed the character limit.
  * </p>
  */

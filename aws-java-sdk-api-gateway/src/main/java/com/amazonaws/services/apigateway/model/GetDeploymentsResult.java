@@ -24,8 +24,8 @@ import javax.annotation.Generated;
  * <div class="remarks">To create a new deployment of a <a>RestApi</a>, make a <code>POST</code> request against this
  * resource. To view, update, or delete an existing deployment, make a <code>GET</code>, <code>PATCH</code>, or
  * <code>DELETE</code> request, respectively, on a specified <a>Deployment</a> resource.</div> <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying an API</a>, <a
- * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying an API</a>, <a
+ * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
  * href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

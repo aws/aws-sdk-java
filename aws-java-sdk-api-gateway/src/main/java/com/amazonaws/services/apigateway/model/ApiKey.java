@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * can be mapped to any <a>Stage</a> on any <a>RestApi</a>, which indicates that the callers with the API key can make
  * requests to that stage.
  * </p>
- * <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+ * <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
  * API Keys</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

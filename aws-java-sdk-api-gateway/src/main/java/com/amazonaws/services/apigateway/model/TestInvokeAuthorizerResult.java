@@ -57,7 +57,7 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Map<String, java.util.List<String>> authorization;
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      */
@@ -312,11 +312,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      * 
-     * @return The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
+     * @return The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
      *         claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
      *         the API.
      */
@@ -327,12 +327,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      * 
      * @param claims
-     *        The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
+     *        The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
      *        claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
      *        the API.
      */
@@ -343,12 +343,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      * 
      * @param claims
-     *        The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
+     *        The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
      *        claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
      *        the API.
      * @return Returns a reference to this object so that method calls can be chained together.

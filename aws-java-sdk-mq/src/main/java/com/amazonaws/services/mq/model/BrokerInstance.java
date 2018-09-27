@@ -30,7 +30,7 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     private String consoleURL;
     /** The broker's wire-level protocol endpoints. */
     private java.util.List<String> endpoints;
-    /** The IP address of the ENI attached to the broker. */
+    /** The IP address of the Elastic Network Interface (ENI) attached to the broker. */
     private String ipAddress;
 
     /**
@@ -130,10 +130,10 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the ENI attached to the broker.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
      * 
      * @param ipAddress
-     *        The IP address of the ENI attached to the broker.
+     *        The IP address of the Elastic Network Interface (ENI) attached to the broker.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -141,9 +141,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the ENI attached to the broker.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
      * 
-     * @return The IP address of the ENI attached to the broker.
+     * @return The IP address of the Elastic Network Interface (ENI) attached to the broker.
      */
 
     public String getIpAddress() {
@@ -151,10 +151,10 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the ENI attached to the broker.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
      * 
      * @param ipAddress
-     *        The IP address of the ENI attached to the broker.
+     *        The IP address of the Elastic Network Interface (ENI) attached to the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

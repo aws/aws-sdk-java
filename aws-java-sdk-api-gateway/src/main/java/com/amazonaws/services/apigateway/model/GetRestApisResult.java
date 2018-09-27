@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * offers a paginated view of your APIs.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

@@ -68,7 +68,7 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
      * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      * </p>
      */
     private String operationName;
@@ -384,13 +384,13 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
      * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      * </p>
      * 
      * @param operationName
      *        A human-friendly operation identifier for the method. For example, you can assign the
      *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     *        href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     *        href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      */
 
     public void setOperationName(String operationName) {
@@ -401,12 +401,12 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
      * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      * </p>
      * 
      * @return A human-friendly operation identifier for the method. For example, you can assign the
      *         <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     *         href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     *         href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      */
 
     public String getOperationName() {
@@ -417,13 +417,13 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
      * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      * </p>
      * 
      * @param operationName
      *        A human-friendly operation identifier for the method. For example, you can assign the
      *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     *        href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     *        href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

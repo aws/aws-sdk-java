@@ -106,6 +106,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(DeleteFileRequest request) {
+
+        return deleteFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(DeleteFileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFileRequest, DeleteFileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest request) {
 
         return deleteRepositoryAsync(request, null);
@@ -218,6 +231,32 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     @Override
     public java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(GetDifferencesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDifferencesRequest, GetDifferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileResult> getFileAsync(GetFileRequest request) {
+
+        return getFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileResult> getFileAsync(GetFileRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFileRequest, GetFileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFolderResult> getFolderAsync(GetFolderRequest request) {
+
+        return getFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFolderResult> getFolderAsync(GetFolderRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFolderRequest, GetFolderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

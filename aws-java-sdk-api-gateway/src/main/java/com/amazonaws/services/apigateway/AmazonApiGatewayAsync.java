@@ -39,8 +39,8 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
-     * <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-     * CLI</a></div>
+     * <div class="seeAlso"><a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -53,8 +53,8 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
-     * <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-     * CLI</a></div>
+     * <div class="seeAlso"><a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -73,7 +73,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
@@ -87,7 +87,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
@@ -510,7 +510,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -524,7 +524,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -1267,8 +1267,8 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
-     * <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-     * CLI</a></div>
+     * <div class="seeAlso"><a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -1281,8 +1281,8 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
-     * <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-     * CLI</a></div>
+     * <div class="seeAlso"><a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -1301,7 +1301,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -1315,7 +1315,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -2511,7 +2511,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * @param importDocumentationPartsRequest
-     *        Import documentation parts from an external (e.g., Swagger) definition file.
+     *        Import documentation parts from an external (e.g., OpenAPI) definition file.
      * @return A Java Future containing the result of the ImportDocumentationParts operation returned by the service.
      * @sample AmazonApiGatewayAsync.ImportDocumentationParts
      */
@@ -2519,7 +2519,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * @param importDocumentationPartsRequest
-     *        Import documentation parts from an external (e.g., Swagger) definition file.
+     *        Import documentation parts from an external (e.g., OpenAPI) definition file.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2776,7 +2776,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * request body.
      * </p>
      * <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
      * authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
@@ -2792,7 +2792,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * request body.
      * </p>
      * <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
      * authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
@@ -2930,7 +2930,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.
@@ -2944,7 +2944,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
      * <div class="seeAlso"><a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS CLI</a></div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.

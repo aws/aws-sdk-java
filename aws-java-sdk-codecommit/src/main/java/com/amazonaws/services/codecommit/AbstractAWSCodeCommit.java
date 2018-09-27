@@ -68,6 +68,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public DeleteFileResult deleteFile(DeleteFileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +114,16 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
 
     @Override
     public GetDifferencesResult getDifferences(GetDifferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFileResult getFile(GetFileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFolderResult getFolder(GetFolderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

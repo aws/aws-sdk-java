@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

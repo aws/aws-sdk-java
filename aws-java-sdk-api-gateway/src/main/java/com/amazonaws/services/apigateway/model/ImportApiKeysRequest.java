@@ -28,7 +28,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      * Format</a>.
      * </p>
      */
@@ -51,7 +51,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      * Format</a>.
      * </p>
      * <p>
@@ -67,7 +67,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param body
      *        The payload of the POST request to import API keys. For the payload format, see <a
-     *        href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      *        Format</a>.
      */
 
@@ -78,7 +78,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      * Format</a>.
      * </p>
      * <p>
@@ -90,7 +90,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The payload of the POST request to import API keys. For the payload format, see <a
-     *         href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      *         Format</a>.
      */
 
@@ -101,7 +101,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      * Format</a>.
      * </p>
      * <p>
@@ -117,7 +117,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param body
      *        The payload of the POST request to import API keys. For the payload format, see <a
-     *        href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      *        Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

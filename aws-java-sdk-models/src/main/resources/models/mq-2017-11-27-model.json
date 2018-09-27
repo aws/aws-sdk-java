@@ -36,7 +36,7 @@
         "documentation" : "HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue."
       }, {
         "shape" : "ConflictException",
-        "documentation" : "HTTP Status Code 409: Conflict. This Broker name already exists. Retry your request with another name."
+        "documentation" : "HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name."
       }, {
         "shape" : "ForbiddenException",
         "documentation" : "HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request."
@@ -97,7 +97,7 @@
         "documentation" : "HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue."
       }, {
         "shape" : "ConflictException",
-        "documentation" : "HTTP Status Code 409: Conflict. Retry your request."
+        "documentation" : "HTTP Status Code 409: Conflict. Retrying your request might resolve the issue."
       }, {
         "shape" : "ForbiddenException",
         "documentation" : "HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request."
@@ -441,6 +441,9 @@
         "shape" : "InternalServerErrorException",
         "documentation" : "HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue."
       }, {
+        "shape" : "ConflictException",
+        "documentation" : "HTTP Status Code 409: Conflict. Concurrent broker update detected. Retrying your request might resolve the issue."
+      }, {
         "shape" : "ForbiddenException",
         "documentation" : "HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request."
       } ],
@@ -471,7 +474,7 @@
         "documentation" : "HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue."
       }, {
         "shape" : "ConflictException",
-        "documentation" : "HTTP Status Code 409: Conflict. This configuration name already exists. Retry your request with another configuration name."
+        "documentation" : "HTTP Status Code 409: Conflict. Concurrent update to configuration. Retry to create a new revision."
       }, {
         "shape" : "ForbiddenException",
         "documentation" : "HTTP Status Code 403: Access forbidden. Correct your input and then retry your request."
@@ -503,7 +506,7 @@
         "documentation" : "HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue."
       }, {
         "shape" : "ConflictException",
-        "documentation" : "HTTP Status Code 409: Conflict. Retry your request."
+        "documentation" : "HTTP Status Code 409: Conflict. Retrying your request might resolve the issue."
       }, {
         "shape" : "ForbiddenException",
         "documentation" : "HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request."
@@ -548,7 +551,7 @@
         "IpAddress" : {
           "shape" : "__string",
           "locationName" : "ipAddress",
-          "documentation" : "The IP address of the ENI attached to the broker."
+          "documentation" : "The IP address of the Elastic Network Interface (ENI) attached to the broker."
         }
       },
       "documentation" : "Returns information about all brokers."
@@ -765,7 +768,7 @@
         "EngineVersion" : {
           "shape" : "__string",
           "locationName" : "engineVersion",
-          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "HostInstanceType" : {
           "shape" : "__string",
@@ -858,7 +861,7 @@
         "EngineVersion" : {
           "shape" : "__string",
           "locationName" : "engineVersion",
-          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "HostInstanceType" : {
           "shape" : "__string",
@@ -924,7 +927,7 @@
         "EngineVersion" : {
           "shape" : "__string",
           "locationName" : "engineVersion",
-          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "Name" : {
           "shape" : "__string",
@@ -976,7 +979,7 @@
         "EngineVersion" : {
           "shape" : "__string",
           "locationName" : "engineVersion",
-          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+          "documentation" : "Required. The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "Name" : {
           "shape" : "__string",
@@ -1195,7 +1198,7 @@
         "EngineVersion" : {
           "shape" : "__string",
           "locationName" : "engineVersion",
-          "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+          "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "HostInstanceType" : {
           "shape" : "__string",
@@ -1211,6 +1214,11 @@
           "shape" : "WeeklyStartTime",
           "locationName" : "maintenanceWindowStartTime",
           "documentation" : "The parameters that determine the WeeklyStartTime."
+        },
+        "PendingEngineVersion" : {
+          "shape" : "__string",
+          "locationName" : "pendingEngineVersion",
+          "documentation" : "The version of the broker engine to upgrade to."
         },
         "PubliclyAccessible" : {
           "shape" : "__boolean",
@@ -1233,7 +1241,7 @@
           "documentation" : "The list of all ActiveMQ usernames for the specified broker."
         }
       },
-      "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+      "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
     },
     "DescribeBrokerRequest" : {
       "type" : "structure",
@@ -1303,7 +1311,7 @@
         "EngineVersion" : {
           "shape" : "__string",
           "locationName" : "engineVersion",
-          "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0."
+          "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "HostInstanceType" : {
           "shape" : "__string",
@@ -1319,6 +1327,11 @@
           "shape" : "WeeklyStartTime",
           "locationName" : "maintenanceWindowStartTime",
           "documentation" : "The parameters that determine the WeeklyStartTime."
+        },
+        "PendingEngineVersion" : {
+          "shape" : "__string",
+          "locationName" : "pendingEngineVersion",
+          "documentation" : "The version of the broker engine to upgrade to."
         },
         "PubliclyAccessible" : {
           "shape" : "__boolean",
@@ -1891,7 +1904,7 @@
         "AuditLogGroup" : {
           "shape" : "__string",
           "locationName" : "auditLogGroup",
-          "documentation" : "Location of CloudWatch Log group where audit logs will be sent."
+          "documentation" : "The location of the CloudWatch Logs log group where audit logs are sent."
         },
         "General" : {
           "shape" : "__boolean",
@@ -1901,7 +1914,7 @@
         "GeneralLogGroup" : {
           "shape" : "__string",
           "locationName" : "generalLogGroup",
-          "documentation" : "Location of CloudWatch Log group where general logs will be sent."
+          "documentation" : "The location of the CloudWatch Logs log group where general logs are sent."
         },
         "Pending" : {
           "shape" : "PendingLogs",
@@ -2017,10 +2030,20 @@
     "UpdateBrokerInput" : {
       "type" : "structure",
       "members" : {
+        "AutoMinorVersionUpgrade" : {
+          "shape" : "__boolean",
+          "locationName" : "autoMinorVersionUpgrade",
+          "documentation" : "Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot."
+        },
         "Configuration" : {
           "shape" : "ConfigurationId",
           "locationName" : "configuration",
           "documentation" : "A list of information about the configuration."
+        },
+        "EngineVersion" : {
+          "shape" : "__string",
+          "locationName" : "engineVersion",
+          "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -2033,6 +2056,11 @@
     "UpdateBrokerOutput" : {
       "type" : "structure",
       "members" : {
+        "AutoMinorVersionUpgrade" : {
+          "shape" : "__boolean",
+          "locationName" : "autoMinorVersionUpgrade",
+          "documentation" : "The new value of automatic upgrades to new minor version for brokers."
+        },
         "BrokerId" : {
           "shape" : "__string",
           "locationName" : "brokerId",
@@ -2042,6 +2070,11 @@
           "shape" : "ConfigurationId",
           "locationName" : "configuration",
           "documentation" : "The ID of the updated configuration."
+        },
+        "EngineVersion" : {
+          "shape" : "__string",
+          "locationName" : "engineVersion",
+          "documentation" : "The version of the broker engine to upgrade to."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -2054,6 +2087,11 @@
     "UpdateBrokerRequest" : {
       "type" : "structure",
       "members" : {
+        "AutoMinorVersionUpgrade" : {
+          "shape" : "__boolean",
+          "locationName" : "autoMinorVersionUpgrade",
+          "documentation" : "Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot."
+        },
         "BrokerId" : {
           "shape" : "__string",
           "location" : "uri",
@@ -2064,6 +2102,11 @@
           "shape" : "ConfigurationId",
           "locationName" : "configuration",
           "documentation" : "A list of information about the configuration."
+        },
+        "EngineVersion" : {
+          "shape" : "__string",
+          "locationName" : "engineVersion",
+          "documentation" : "The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -2077,6 +2120,11 @@
     "UpdateBrokerResponse" : {
       "type" : "structure",
       "members" : {
+        "AutoMinorVersionUpgrade" : {
+          "shape" : "__boolean",
+          "locationName" : "autoMinorVersionUpgrade",
+          "documentation" : "The new value of automatic upgrades to new minor version for brokers."
+        },
         "BrokerId" : {
           "shape" : "__string",
           "locationName" : "brokerId",
@@ -2086,6 +2134,11 @@
           "shape" : "ConfigurationId",
           "locationName" : "configuration",
           "documentation" : "The ID of the updated configuration."
+        },
+        "EngineVersion" : {
+          "shape" : "__string",
+          "locationName" : "engineVersion",
+          "documentation" : "The version of the broker engine to upgrade to."
         },
         "Logs" : {
           "shape" : "Logs",

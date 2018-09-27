@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a collection of <a>Model</a> resources.
  * </p>
  * <div class="seeAlso"> <a>Method</a>, <a>MethodResponse</a>, <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
  * </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

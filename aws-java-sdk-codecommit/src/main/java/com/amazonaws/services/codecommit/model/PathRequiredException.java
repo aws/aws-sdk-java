@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The filePath for a location cannot be empty or null.
+ * The folderPath for a location cannot be null.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

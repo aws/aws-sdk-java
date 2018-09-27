@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The parent commit ID is not valid. The specified parent commit ID does not exist in the specified branch of the
- * repository.
+ * The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the
+ * specified branch of the repository.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

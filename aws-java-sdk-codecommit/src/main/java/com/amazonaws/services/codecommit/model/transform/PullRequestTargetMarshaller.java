@@ -35,10 +35,10 @@ public class PullRequestTargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationReference").build();
     private static final MarshallingInfo<String> DESTINATIONCOMMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationCommit").build();
-    private static final MarshallingInfo<String> MERGEBASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("mergeBase").build();
     private static final MarshallingInfo<String> SOURCECOMMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCommit").build();
+    private static final MarshallingInfo<String> MERGEBASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mergeBase").build();
     private static final MarshallingInfo<StructuredPojo> MERGEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mergeMetadata").build();
 
@@ -62,8 +62,8 @@ public class PullRequestTargetMarshaller {
             protocolMarshaller.marshall(pullRequestTarget.getSourceReference(), SOURCEREFERENCE_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getDestinationReference(), DESTINATIONREFERENCE_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getDestinationCommit(), DESTINATIONCOMMIT_BINDING);
-            protocolMarshaller.marshall(pullRequestTarget.getMergeBase(), MERGEBASE_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getSourceCommit(), SOURCECOMMIT_BINDING);
+            protocolMarshaller.marshall(pullRequestTarget.getMergeBase(), MERGEBASE_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getMergeMetadata(), MERGEMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

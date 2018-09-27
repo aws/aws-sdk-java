@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a collection of <a>DomainName</a> resources.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Client-Side
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Client-Side
  * Certificate</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a collection of <a>Authorizer</a> resources.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
  * authorization</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

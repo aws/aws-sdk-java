@@ -1,3 +1,16 @@
+# __1.11.418__ __2018-09-27__
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds API support for getting the contents of a file, getting the contents of a folder, and for deleting a file in an AWS CodeCommit repository.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Adding support for OpenAPI 3.0 import and export.
+
+## __AmazonMQ__
+  - ### Features
+    - Amazon MQ supports ActiveMQ 5.15.6, in addition to 5.15.0. Automatic minor version upgrades can be toggled. Updated the documentation.
+
 # __1.11.417__ __2018-09-26__
 ## __AWS Glue__
   - ### Features

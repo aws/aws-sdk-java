@@ -57,7 +57,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      */
@@ -333,7 +333,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
@@ -348,8 +348,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param body
-     *        [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
-     *        JSON files are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
+     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -358,7 +358,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
@@ -369,8 +369,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * {@code position}.
      * </p>
      * 
-     * @return [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
-     *         JSON files are supported. The maximum size of the API definition file is 2MB.
+     * @return [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
+     *         JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -379,7 +379,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
@@ -394,8 +394,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param body
-     *        [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
-     *        JSON files are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
+     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

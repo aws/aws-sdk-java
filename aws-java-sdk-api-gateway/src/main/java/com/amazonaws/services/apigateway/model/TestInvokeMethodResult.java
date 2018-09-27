@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Represents the response of the test invoke request in the HTTP method.
  * </p>
  * <div class="seeAlso"> <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
- * API using the API Gateway console</a> </div>
+ * "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console"
+ * >Test API using the API Gateway console</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
