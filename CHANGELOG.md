@@ -1,3 +1,12 @@
+# __1.11.419__ __2018-09-28__
+## __AWS CodeStar__
+  - ### Features
+    - This release enables tagging CodeStar Projects at creation. The CreateProject API now includes optional tags parameter.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now use EC2 High Memory instances with 6 TiB memory (u-6tb1.metal), 9 TiB memory (u-9tb1.metal), and 12 TiB memory (u-12tb1.metal), which are ideal for running large in-memory databases, including production deployments of SAP HANA. These instances offer 448 logical processors, where each logical processor is a hyperthread on 224 cores. These instance deliver high networking throughput and lower latency with up to 25 Gbps of aggregate network bandwidth using Elastic Network Adapter (ENA)-based Enhanced Networking. These instances are EBS-Optimized by default, and support encrypted and unencrypted EBS volumes. This instance is only available in host-tenancy. You will need an EC2 Dedicated Host for this instance type to launch an instance.
+
 # __1.11.418__ __2018-09-27__
 ## __AWS CodeCommit__
   - ### Features

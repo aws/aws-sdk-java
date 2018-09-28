@@ -7,6 +7,7 @@
     "protocol":"json",
     "serviceAbbreviation":"CodeStar",
     "serviceFullName":"AWS CodeStar",
+    "serviceId":"CodeStar",
     "signatureVersion":"v4",
     "targetPrefix":"CodeStar_20170419",
     "uid":"codestar-2017-04-19"
@@ -368,6 +369,10 @@
         "clientRequestToken":{
           "shape":"ClientRequestToken",
           "documentation":"<p>Reserved for future use.</p>"
+        },
+        "tags":{
+          "shape":"Tags",
+          "documentation":"<p>The tags created for the project.</p>"
         }
       }
     },
@@ -549,6 +554,10 @@
         "projectTemplateId":{
           "shape":"ProjectTemplateId",
           "documentation":"<p>The ID for the AWS CodeStar project template used to create the project.</p>"
+        },
+        "status":{
+          "shape":"ProjectStatus",
+          "documentation":"<p>The project creation or deletion status.</p>"
         }
       }
     },
@@ -862,6 +871,21 @@
       "documentation":"<p>The specified AWS CodeStar project was not found.</p>",
       "exception":true
     },
+    "ProjectStatus":{
+      "type":"structure",
+      "required":["state"],
+      "members":{
+        "state":{
+          "shape":"State",
+          "documentation":"<p>The phase of completion for a project creation or deletion.</p>"
+        },
+        "reason":{
+          "shape":"Reason",
+          "documentation":"<p>In the case of a project creation or deletion failure, a reason for the failure.</p>"
+        }
+      },
+      "documentation":"<p>An indication of whether a project creation or deletion is failed or successful.</p>"
+    },
     "ProjectSummary":{
       "type":"structure",
       "members":{
@@ -879,11 +903,16 @@
     "ProjectTemplateId":{
       "type":"string",
       "min":1,
-      "pattern":"^arn:aws[^:\\s]{0,5}:codestar:[^:\\s]+::project-template\\/[a-z0-9-]+$"
+      "pattern":"^arn:aws[^:\\s]{0,5}:codestar:[^:\\s]+::project-template(\\/(github|codecommit))?\\/[a-z0-9-]+$"
     },
     "ProjectsList":{
       "type":"list",
       "member":{"shape":"ProjectSummary"}
+    },
+    "Reason":{
+      "type":"string",
+      "max":1024,
+      "pattern":"^$|^\\S(.*\\S)?$"
     },
     "RemoteAccessAllowed":{"type":"boolean"},
     "Resource":{
@@ -918,6 +947,10 @@
     "StackId":{
       "type":"string",
       "pattern":"^arn:aws[^:\\s]*:cloudformation:[^:\\s]+:[0-9]{12}:stack\\/[^:\\s]+\\/[^:\\s]+$"
+    },
+    "State":{
+      "type":"string",
+      "pattern":"^(CreateInProgress|CreateComplete|CreateFailed|DeleteComplete|DeleteFailed|DeleteInProgress|UpdateComplete|UpdateInProgress|UpdateFailed|Unknown)$"
     },
     "TagKey":{
       "type":"string",
@@ -1164,7 +1197,8 @@
       "type":"string",
       "max":64,
       "min":1,
-      "pattern":"^\\S(.*\\S)?$"
+      "pattern":"^\\S(.*\\S)?$",
+      "sensitive":true
     },
     "UserProfileNotFoundException":{
       "type":"structure",

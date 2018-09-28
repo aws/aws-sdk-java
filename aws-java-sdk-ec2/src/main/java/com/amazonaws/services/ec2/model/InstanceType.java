@@ -169,7 +169,10 @@ public enum InstanceType {
     Z1d2xlarge("z1d.2xlarge"),
     Z1d3xlarge("z1d.3xlarge"),
     Z1d6xlarge("z1d.6xlarge"),
-    Z1d12xlarge("z1d.12xlarge");
+    Z1d12xlarge("z1d.12xlarge"),
+    U6tb1Metal("u-6tb1.metal"),
+    U9tb1Metal("u-9tb1.metal"),
+    U12tb1Metal("u-12tb1.metal");
 
     private String value;
 

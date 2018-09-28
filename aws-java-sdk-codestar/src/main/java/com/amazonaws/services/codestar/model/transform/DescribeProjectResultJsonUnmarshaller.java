@@ -80,6 +80,10 @@ public class DescribeProjectResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeProjectResult.setProjectTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    describeProjectResult.setStatus(ProjectStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

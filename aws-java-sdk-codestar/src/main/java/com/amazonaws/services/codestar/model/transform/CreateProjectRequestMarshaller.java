@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codestar.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +37,8 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
 
@@ -56,6 +60,7 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
