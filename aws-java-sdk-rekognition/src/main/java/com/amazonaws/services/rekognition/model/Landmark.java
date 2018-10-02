@@ -27,32 +27,32 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      */
     private Float x;
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if
-     * the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      */
     private Float y;
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @see LandmarkType
      */
 
@@ -62,10 +62,10 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
-     * @return Type of the landmark.
+     * @return Type of landmark.
      * @see LandmarkType
      */
 
@@ -75,11 +75,11 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LandmarkType
      */
@@ -91,11 +91,11 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @see LandmarkType
      */
 
@@ -105,11 +105,11 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LandmarkType
      */
@@ -121,13 +121,13 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      * 
      * @param x
-     *        x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
-     *        example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is
+     *        The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
+     *        example, if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is
      *        0.5.
      */
 
@@ -137,12 +137,12 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      * 
-     * @return x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
-     *         example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is
+     * @return The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
+     *         example, if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is
      *         0.5.
      */
 
@@ -152,13 +152,13 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      * 
      * @param x
-     *        x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
-     *        example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is
+     *        The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
+     *        example, if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is
      *        0.5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -170,13 +170,13 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if
-     * the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      * 
      * @param y
-     *        y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
-     *        example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is
+     *        The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     *        example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is
      *        0.5.
      */
 
@@ -186,12 +186,12 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if
-     * the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      * 
-     * @return y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
-     *         example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is
+     * @return The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     *         example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is
      *         0.5.
      */
 
@@ -201,13 +201,13 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if
-     * the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      * 
      * @param y
-     *        y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
-     *        example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is
+     *        The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     *        example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is
      *        0.5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

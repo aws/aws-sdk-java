@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A face detected by but not indexed. Use the <code>Reasons</code> response attribute to determine why a face is not
- * indexed.
+ * A face that detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face
+ * wasn't indexed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,7 +28,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of reasons specifying why a face was not indexed.
+     * An array of reasons that specify why a face wasn't indexed.
      * </p>
      * <ul>
      * <li>
@@ -68,14 +68,14 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> reasons;
     /**
      * <p>
-     * Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     * The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      * </p>
      */
     private FaceDetail faceDetail;
 
     /**
      * <p>
-     * An array of reasons specifying why a face was not indexed.
+     * An array of reasons that specify why a face wasn't indexed.
      * </p>
      * <ul>
      * <li>
@@ -112,7 +112,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return An array of reasons specifying why a face was not indexed. </p>
+     * @return An array of reasons that specify why a face wasn't indexed. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -155,7 +155,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of reasons specifying why a face was not indexed.
+     * An array of reasons that specify why a face wasn't indexed.
      * </p>
      * <ul>
      * <li>
@@ -193,7 +193,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param reasons
-     *        An array of reasons specifying why a face was not indexed. </p>
+     *        An array of reasons that specify why a face wasn't indexed. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -241,7 +241,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of reasons specifying why a face was not indexed.
+     * An array of reasons that specify why a face wasn't indexed.
      * </p>
      * <ul>
      * <li>
@@ -284,7 +284,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param reasons
-     *        An array of reasons specifying why a face was not indexed. </p>
+     *        An array of reasons that specify why a face wasn't indexed. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -334,7 +334,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of reasons specifying why a face was not indexed.
+     * An array of reasons that specify why a face wasn't indexed.
      * </p>
      * <ul>
      * <li>
@@ -372,7 +372,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param reasons
-     *        An array of reasons specifying why a face was not indexed. </p>
+     *        An array of reasons that specify why a face wasn't indexed. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -417,7 +417,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of reasons specifying why a face was not indexed.
+     * An array of reasons that specify why a face wasn't indexed.
      * </p>
      * <ul>
      * <li>
@@ -455,7 +455,7 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param reasons
-     *        An array of reasons specifying why a face was not indexed. </p>
+     *        An array of reasons that specify why a face wasn't indexed. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -508,11 +508,11 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     * The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      * </p>
      * 
      * @param faceDetail
-     *        Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     *        The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      */
 
     public void setFaceDetail(FaceDetail faceDetail) {
@@ -521,10 +521,10 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     * The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      * </p>
      * 
-     * @return Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     * @return The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      */
 
     public FaceDetail getFaceDetail() {
@@ -533,11 +533,11 @@ public class UnindexedFace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     * The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      * </p>
      * 
      * @param faceDetail
-     *        Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
+     *        The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides face metadata for target image faces that are analysed by <code>CompareFaces</code> and
+ * Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and
  * <code>RecognizeCelebrities</code>.
  * </p>
  */

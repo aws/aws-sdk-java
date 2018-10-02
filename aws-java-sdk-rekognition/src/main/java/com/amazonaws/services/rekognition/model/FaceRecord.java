@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object containing both the face metadata (stored in the back-end database) and facial attributes that are detected
+ * Object containing both the face metadata (stored in the backend database), and facial attributes that are detected
  * but aren't stored in the database.
  * </p>
  */

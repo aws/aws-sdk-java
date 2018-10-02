@@ -34,7 +34,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box coordinates represent
+     * of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box coordinates represent
      * face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain
      * Exif metadata.
      * </p>
@@ -122,7 +122,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box coordinates represent
+     * of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box coordinates represent
      * face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain
      * Exif metadata.
      * </p>
@@ -135,7 +135,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box
+     *        the value of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box
      *        coordinates represent face locations after Exif metadata is used to correct the image orientation. Images
      *        in .png format don't contain Exif metadata.
      *        </p>
@@ -156,7 +156,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box coordinates represent
+     * of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box coordinates represent
      * face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain
      * Exif metadata.
      * </p>
@@ -168,9 +168,9 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      *         <p>
      *         If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *         the image's orientation. If so, and the Exif metadata for the input image populates the orientation
-     *         field, the value of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding
-     *         box coordinates represent face locations after Exif metadata is used to correct the image orientation.
-     *         Images in .png format don't contain Exif metadata.
+     *         field, the value of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box
+     *         coordinates represent face locations after Exif metadata is used to correct the image orientation. Images
+     *         in .png format don't contain Exif metadata.
      *         </p>
      * @see OrientationCorrection
      */
@@ -189,7 +189,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box coordinates represent
+     * of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box coordinates represent
      * face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain
      * Exif metadata.
      * </p>
@@ -202,7 +202,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box
+     *        the value of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box
      *        coordinates represent face locations after Exif metadata is used to correct the image orientation. Images
      *        in .png format don't contain Exif metadata.
      *        </p>
@@ -225,7 +225,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box coordinates represent
+     * of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box coordinates represent
      * face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain
      * Exif metadata.
      * </p>
@@ -238,7 +238,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box
+     *        the value of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box
      *        coordinates represent face locations after Exif metadata is used to correct the image orientation. Images
      *        in .png format don't contain Exif metadata.
      *        </p>
@@ -259,7 +259,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box coordinates represent
+     * of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box coordinates represent
      * face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain
      * Exif metadata.
      * </p>
@@ -272,7 +272,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>FaceDetails</code> bounding box
+     *        the value of <code>OrientationCorrection</code> is null. The <code>FaceDetails</code> bounding box
      *        coordinates represent face locations after Exif metadata is used to correct the image orientation. Images
      *        in .png format don't contain Exif metadata.
      *        </p>

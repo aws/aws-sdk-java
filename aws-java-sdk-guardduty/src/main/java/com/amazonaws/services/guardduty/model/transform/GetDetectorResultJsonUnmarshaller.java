@@ -52,6 +52,10 @@ public class GetDetectorResultJsonUnmarshaller implements Unmarshaller<GetDetect
                     context.nextToken();
                     getDetectorResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("findingPublishingFrequency", targetDepth)) {
+                    context.nextToken();
+                    getDetectorResult.setFindingPublishingFrequency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("serviceRole", targetDepth)) {
                     context.nextToken();
                     getDetectorResult.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));

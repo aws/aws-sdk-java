@@ -1,3 +1,12 @@
+# __1.11.420__ __2018-10-01__
+## __Amazon GuardDuty__
+  - ### Features
+    - Support optional FindingPublishingFrequency parameter in CreateDetector and UpdateDetector operations, and ClientToken on Create* operations
+
+## __Amazon Rekognition__
+  - ### Features
+    - Documentation updates for Amazon Rekognition
+
 # __1.11.419__ __2018-09-28__
 ## __AWS CodeStar__
   - ### Features

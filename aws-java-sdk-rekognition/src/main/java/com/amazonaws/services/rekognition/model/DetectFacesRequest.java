@@ -32,8 +32,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * An array of facial attributes you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned but the operation will take longer to complete.
+     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned, but the operation takes longer to complete.
      * </p>
      * <p>
      * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
@@ -93,8 +93,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * An array of facial attributes you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned but the operation will take longer to complete.
+     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned, but the operation takes longer to complete.
      * </p>
      * <p>
      * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
@@ -104,9 +104,9 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return An array of facial attributes you want to be returned. This can be the default list of attributes or all
      *         attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *         <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *         <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
-     *         <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
-     *         operation will take longer to complete.</p>
+     *         <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *         <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
+     *         operation takes longer to complete.</p>
      *         <p>
      *         If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to
      *         determine which attributes to return (in this case, all attributes).
@@ -122,8 +122,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * An array of facial attributes you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned but the operation will take longer to complete.
+     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned, but the operation takes longer to complete.
      * </p>
      * <p>
      * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
@@ -134,9 +134,9 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
      *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
-     *        operation will take longer to complete.</p>
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
+     *        operation takes longer to complete.</p>
      *        <p>
      *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
      *        which attributes to return (in this case, all attributes).
@@ -157,8 +157,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * An array of facial attributes you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned but the operation will take longer to complete.
+     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned, but the operation takes longer to complete.
      * </p>
      * <p>
      * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
@@ -174,9 +174,9 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
      *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
-     *        operation will take longer to complete.</p>
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
+     *        operation takes longer to complete.</p>
      *        <p>
      *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
      *        which attributes to return (in this case, all attributes).
@@ -199,8 +199,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * An array of facial attributes you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned but the operation will take longer to complete.
+     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned, but the operation takes longer to complete.
      * </p>
      * <p>
      * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
@@ -211,9 +211,9 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
      *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
-     *        operation will take longer to complete.</p>
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
+     *        operation takes longer to complete.</p>
      *        <p>
      *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
      *        which attributes to return (in this case, all attributes).
@@ -231,8 +231,8 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * An array of facial attributes you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned but the operation will take longer to complete.
+     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned, but the operation takes longer to complete.
      * </p>
      * <p>
      * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
@@ -243,9 +243,9 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
      *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
-     *        operation will take longer to complete.</p>
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
+     *        operation takes longer to complete.</p>
      *        <p>
      *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
      *        which attributes to return (in this case, all attributes).

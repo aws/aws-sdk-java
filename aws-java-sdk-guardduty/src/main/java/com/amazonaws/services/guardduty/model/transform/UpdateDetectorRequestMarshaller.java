@@ -31,6 +31,8 @@ public class UpdateDetectorRequestMarshaller {
             .marshallLocationName("detectorId").build();
     private static final MarshallingInfo<Boolean> ENABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("enable").build();
+    private static final MarshallingInfo<String> FINDINGPUBLISHINGFREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingPublishingFrequency").build();
 
     private static final UpdateDetectorRequestMarshaller instance = new UpdateDetectorRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateDetectorRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateDetectorRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(updateDetectorRequest.getEnable(), ENABLE_BINDING);
+            protocolMarshaller.marshall(updateDetectorRequest.getFindingPublishingFrequency(), FINDINGPUBLISHINGFREQUENCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

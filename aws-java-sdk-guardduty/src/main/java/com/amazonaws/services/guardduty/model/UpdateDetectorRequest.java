@@ -30,6 +30,8 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     private String detectorId;
     /** Updated boolean value for the detector that specifies whether the detector is enabled. */
     private Boolean enable;
+    /** A enum value that specifies how frequently customer got Finding updates published. */
+    private String findingPublishingFrequency;
 
     /**
      * The unique ID of the detector that you want to update.
@@ -110,6 +112,57 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @param findingPublishingFrequency
+     *        A enum value that specifies how frequently customer got Finding updates published.
+     * @see FindingPublishingFrequency
+     */
+
+    public void setFindingPublishingFrequency(String findingPublishingFrequency) {
+        this.findingPublishingFrequency = findingPublishingFrequency;
+    }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @return A enum value that specifies how frequently customer got Finding updates published.
+     * @see FindingPublishingFrequency
+     */
+
+    public String getFindingPublishingFrequency() {
+        return this.findingPublishingFrequency;
+    }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @param findingPublishingFrequency
+     *        A enum value that specifies how frequently customer got Finding updates published.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingPublishingFrequency
+     */
+
+    public UpdateDetectorRequest withFindingPublishingFrequency(String findingPublishingFrequency) {
+        setFindingPublishingFrequency(findingPublishingFrequency);
+        return this;
+    }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @param findingPublishingFrequency
+     *        A enum value that specifies how frequently customer got Finding updates published.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingPublishingFrequency
+     */
+
+    public UpdateDetectorRequest withFindingPublishingFrequency(FindingPublishingFrequency findingPublishingFrequency) {
+        this.findingPublishingFrequency = findingPublishingFrequency.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -123,7 +176,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getEnable() != null)
-            sb.append("Enable: ").append(getEnable());
+            sb.append("Enable: ").append(getEnable()).append(",");
+        if (getFindingPublishingFrequency() != null)
+            sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency());
         sb.append("}");
         return sb.toString();
     }
@@ -146,6 +201,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEnable() != null && other.getEnable().equals(this.getEnable()) == false)
             return false;
+        if (other.getFindingPublishingFrequency() == null ^ this.getFindingPublishingFrequency() == null)
+            return false;
+        if (other.getFindingPublishingFrequency() != null && other.getFindingPublishingFrequency().equals(this.getFindingPublishingFrequency()) == false)
+            return false;
         return true;
     }
 
@@ -156,6 +215,7 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getEnable() == null) ? 0 : getEnable().hashCode());
+        hashCode = prime * hashCode + ((getFindingPublishingFrequency() == null) ? 0 : getFindingPublishingFrequency().hashCode());
         return hashCode;
     }
 

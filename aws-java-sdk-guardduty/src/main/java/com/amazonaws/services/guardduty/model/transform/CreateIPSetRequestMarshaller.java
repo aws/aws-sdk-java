@@ -17,6 +17,8 @@ import javax.annotation.Generated;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.guardduty.model.*;
 
+import com.amazonaws.util.IdempotentUtils;
+
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -29,6 +31,9 @@ public class CreateIPSetRequestMarshaller {
 
     private static final MarshallingInfo<Boolean> ACTIVATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activate").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
     private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +60,7 @@ public class CreateIPSetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createIPSetRequest.getActivate(), ACTIVATE_BINDING);
+            protocolMarshaller.marshall(createIPSetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createIPSetRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(createIPSetRequest.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(createIPSetRequest.getLocation(), LOCATION_BINDING);

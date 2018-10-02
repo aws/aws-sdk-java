@@ -34,24 +34,25 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <note>
      * <p>
      * If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
-     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and the
-     * bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null. The bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      */
     private String orientationCorrection;
     /**
      * <p>
-     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      */
     private String faceModelVersion;
     /**
      * <p>
-     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
-     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-     * specify the <code>QualityFilter</code> request parameter.
+     * An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality
+     * filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use
+     * the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * </p>
      */
     private java.util.List<UnindexedFace> unindexedFaces;
@@ -143,9 +144,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <note>
      * <p>
      * If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
-     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and the
-     * bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null. The bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -155,8 +156,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
      *        If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
-     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and
-     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null.
+     *        The bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @see OrientationCorrection
@@ -175,9 +176,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <note>
      * <p>
      * If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
-     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and the
-     * bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null. The bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -186,9 +187,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *         <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *         <p>
      *         If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
-     *         Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null
-     *         and the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata
-     *         is used to correct the image orientation. Images in .png format don't contain Exif metadata.
+     *         Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null.
+     *         The bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *         used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *         </p>
      * @see OrientationCorrection
      */
@@ -206,9 +207,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <note>
      * <p>
      * If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
-     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and the
-     * bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null. The bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -218,8 +219,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
      *        If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
-     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and
-     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null.
+     *        The bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -240,9 +241,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <note>
      * <p>
      * If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
-     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and the
-     * bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null. The bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -252,8 +253,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
      *        If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
-     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and
-     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null.
+     *        The bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @see OrientationCorrection
@@ -272,9 +273,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <note>
      * <p>
      * If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
-     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and the
-     * bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null. The bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -284,8 +285,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
      *        If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
-     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null and
-     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is null.
+     *        The bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -299,12 +300,13 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      * 
      * @param faceModelVersion
-     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
-     *        ).
+     *        The version number of the face detection model that's associated with the input collection (
+     *        <code>CollectionId</code>).
      */
 
     public void setFaceModelVersion(String faceModelVersion) {
@@ -313,10 +315,11 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      * 
-     * @return Version number of the face detection model associated with the input collection (
+     * @return The version number of the face detection model that's associated with the input collection (
      *         <code>CollectionId</code>).
      */
 
@@ -326,12 +329,13 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * The version number of the face detection model that's associated with the input collection (
+     * <code>CollectionId</code>).
      * </p>
      * 
      * @param faceModelVersion
-     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
-     *        ).
+     *        The version number of the face detection model that's associated with the input collection (
+     *        <code>CollectionId</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,14 +346,14 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
-     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-     * specify the <code>QualityFilter</code> request parameter.
+     * An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality
+     * filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use
+     * the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * </p>
      * 
-     * @return An array of faces that detected in the image but not indexed either because the quality filter deemed
-     *         them to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the
-     *         quality filter, you specify the <code>QualityFilter</code> request parameter.
+     * @return An array of faces that were detected in the image but weren't indexed. They weren't indexed because the
+     *         quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered
+     *         them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.
      */
 
     public java.util.List<UnindexedFace> getUnindexedFaces() {
@@ -358,15 +362,15 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
-     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-     * specify the <code>QualityFilter</code> request parameter.
+     * An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality
+     * filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use
+     * the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * </p>
      * 
      * @param unindexedFaces
-     *        An array of faces that detected in the image but not indexed either because the quality filter deemed them
-     *        to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality
-     *        filter, you specify the <code>QualityFilter</code> request parameter.
+     *        An array of faces that were detected in the image but weren't indexed. They weren't indexed because the
+     *        quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered
+     *        them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.
      */
 
     public void setUnindexedFaces(java.util.Collection<UnindexedFace> unindexedFaces) {
@@ -380,9 +384,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
-     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-     * specify the <code>QualityFilter</code> request parameter.
+     * An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality
+     * filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use
+     * the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -391,9 +395,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param unindexedFaces
-     *        An array of faces that detected in the image but not indexed either because the quality filter deemed them
-     *        to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality
-     *        filter, you specify the <code>QualityFilter</code> request parameter.
+     *        An array of faces that were detected in the image but weren't indexed. They weren't indexed because the
+     *        quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered
+     *        them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,15 +413,15 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces that detected in the image but not indexed either because the quality filter deemed them to be
-     * of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you
-     * specify the <code>QualityFilter</code> request parameter.
+     * An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality
+     * filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use
+     * the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * </p>
      * 
      * @param unindexedFaces
-     *        An array of faces that detected in the image but not indexed either because the quality filter deemed them
-     *        to be of low-quality or the <code>MaxFaces</code> request parameter filtered them out. To use the quality
-     *        filter, you specify the <code>QualityFilter</code> request parameter.
+     *        An array of faces that were detected in the image but weren't indexed. They weren't indexed because the
+     *        quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered
+     *        them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

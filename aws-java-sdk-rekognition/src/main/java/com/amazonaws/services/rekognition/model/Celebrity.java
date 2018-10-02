@@ -52,7 +52,7 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
     private ComparedFace face;
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      */
     private Float matchConfidence;
@@ -257,11 +257,11 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      * 
      * @param matchConfidence
-     *        The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     *        The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      */
 
     public void setMatchConfidence(Float matchConfidence) {
@@ -270,10 +270,10 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      * 
-     * @return The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * @return The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      */
 
     public Float getMatchConfidence() {
@@ -282,11 +282,11 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      * 
      * @param matchConfidence
-     *        The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     *        The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
