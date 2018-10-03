@@ -1,3 +1,12 @@
+# __1.11.421__ __2018-10-02__
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Waiter for SageMaker Batch Transform Jobs.
+
 # __1.11.420__ __2018-10-01__
 ## __Amazon GuardDuty__
   - ### Features

@@ -32,6 +32,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
      * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      */
     private String name;
     /**
@@ -239,11 +246,25 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
      * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      * 
      * @param name
      *        Specifies the friendly name of the new secret.</p>
      *        <p>
      *        The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *        unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
+     *        automatically adds a hyphen and six random characters at the end of the ARN.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -257,10 +278,24 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
      * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      * 
      * @return Specifies the friendly name of the new secret.</p>
      *         <p>
      *         The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *         unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
+     *         automatically adds a hyphen and six random characters at the end of the ARN.
+     *         </p>
      */
 
     public String getName() {
@@ -274,11 +309,25 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
      * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      * 
      * @param name
      *        Specifies the friendly name of the new secret.</p>
      *        <p>
      *        The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *        unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
+     *        automatically adds a hyphen and six random characters at the end of the ARN.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
