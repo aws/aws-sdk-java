@@ -74,7 +74,7 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                 }
                 if (context.testExpression("StreamCreationTimestamp", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestampInMillis").unmarshall(context));
+                    streamDescription.setStreamCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("EnhancedMonitoring", targetDepth)) {
                     context.nextToken();

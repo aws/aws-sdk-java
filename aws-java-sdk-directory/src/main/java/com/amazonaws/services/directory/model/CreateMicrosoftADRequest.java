@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Creates a Microsoft AD in the AWS cloud.
+ * Creates an AWS Managed Microsoft AD directory.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD" target="_top">AWS API
@@ -64,7 +64,7 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     private DirectoryVpcSettings vpcSettings;
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      */
     private String edition;
@@ -295,11 +295,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * @see DirectoryEdition
      */
 
@@ -309,10 +309,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
-     * @return AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * @return AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the
+     *         default.
      * @see DirectoryEdition
      */
 
@@ -322,11 +323,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryEdition
      */
@@ -338,11 +339,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryEdition
      */

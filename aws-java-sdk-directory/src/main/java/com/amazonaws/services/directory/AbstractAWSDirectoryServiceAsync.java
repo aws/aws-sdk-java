@@ -723,6 +723,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(UpdateTrustRequest request) {
+
+        return updateTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(UpdateTrustRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTrustRequest, UpdateTrustResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(VerifyTrustRequest request) {
 
         return verifyTrustAsync(request, null);

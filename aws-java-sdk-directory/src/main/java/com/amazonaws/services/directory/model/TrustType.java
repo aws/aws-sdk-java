@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TrustType {
 
-    Forest("Forest");
+    Forest("Forest"),
+    External("External");
 
     private String value;
 

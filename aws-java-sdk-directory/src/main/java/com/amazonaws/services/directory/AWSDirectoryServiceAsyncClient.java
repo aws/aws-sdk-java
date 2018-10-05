@@ -1916,6 +1916,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(UpdateTrustRequest request) {
+
+        return updateTrustAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(final UpdateTrustRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTrustRequest, UpdateTrustResult> asyncHandler) {
+        final UpdateTrustRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTrustResult>() {
+            @Override
+            public UpdateTrustResult call() throws Exception {
+                UpdateTrustResult result = null;
+
+                try {
+                    result = executeUpdateTrust(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(VerifyTrustRequest request) {
 
         return verifyTrustAsync(request, null);

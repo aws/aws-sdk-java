@@ -62,7 +62,7 @@ public class ConsumerJsonUnmarshaller implements Unmarshaller<Consumer, JsonUnma
                 }
                 if (context.testExpression("ConsumerCreationTimestamp", targetDepth)) {
                     context.nextToken();
-                    consumer.setConsumerCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestampInMillis").unmarshall(context));
+                    consumer.setConsumerCreationTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

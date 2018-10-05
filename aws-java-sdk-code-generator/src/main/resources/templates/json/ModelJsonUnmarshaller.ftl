@@ -28,7 +28,8 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
         <#if memberModel.http.isHeader() >
             if (context.getHeader("${memberModel.http.unmarshallLocationName}") != null) {
                 context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
-                <#if memberModel.variable.simpleType == "Date">
+                 <#-- TODO: verify date marshalling/unmarshalling behavior with ion service, if we ever support one -->
+                <#if memberModel.variable.simpleType == "Date" && !metadata.ionProtocol && !metadata.cborProtocol>
                     ${shape.variable.variableName}.${memberModel.setterMethodName}(DateJsonUnmarshallerFactory.getInstance("${memberModel.variable.timestampFormat}").unmarshall(context));
                 <#else>
                     ${shape.variable.variableName}.${memberModel.setterMethodName}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));

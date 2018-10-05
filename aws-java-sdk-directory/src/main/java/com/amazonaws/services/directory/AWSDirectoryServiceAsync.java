@@ -448,7 +448,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a Microsoft AD in the AWS cloud.
+     * Creates an AWS Managed Microsoft AD directory.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -459,7 +459,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param createMicrosoftADRequest
-     *        Creates a Microsoft AD in the AWS cloud.
+     *        Creates an AWS Managed Microsoft AD directory.
      * @return A Java Future containing the result of the CreateMicrosoftAD operation returned by the service.
      * @sample AWSDirectoryServiceAsync.CreateMicrosoftAD
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD" target="_top">AWS API
@@ -469,7 +469,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a Microsoft AD in the AWS cloud.
+     * Creates an AWS Managed Microsoft AD directory.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -480,7 +480,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param createMicrosoftADRequest
-     *        Creates a Microsoft AD in the AWS cloud.
+     *        Creates an AWS Managed Microsoft AD directory.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -539,23 +539,23 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example,
-     * you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft
-     * Active Directory. This would allow you to provide users and groups access to resources in either domain, with a
-     * single set of credentials.
+     * you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises
+     * Microsoft Active Directory. This would allow you to provide users and groups access to resources in either
+     * domain, with a single set of credentials.
      * </p>
      * <p>
-     * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS
-     * cloud and an external domain.
+     * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD
+     * directory and an external domain. You can create either a forest trust or an external trust.
      * </p>
      * 
      * @param createTrustRequest
      *        AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For
-     *        example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing
+     *        example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing
      *        on-premises Microsoft Active Directory. This would allow you to provide users and groups access to
      *        resources in either domain, with a single set of credentials.</p>
      *        <p>
-     *        This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the
-     *        AWS cloud and an external domain.
+     *        This action initiates the creation of the AWS side of a trust relationship between an AWS Managed
+     *        Microsoft AD directory and an external domain.
      * @return A Java Future containing the result of the CreateTrust operation returned by the service.
      * @sample AWSDirectoryServiceAsync.CreateTrust
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust" target="_top">AWS API
@@ -566,23 +566,23 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     /**
      * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example,
-     * you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft
-     * Active Directory. This would allow you to provide users and groups access to resources in either domain, with a
-     * single set of credentials.
+     * you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises
+     * Microsoft Active Directory. This would allow you to provide users and groups access to resources in either
+     * domain, with a single set of credentials.
      * </p>
      * <p>
-     * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS
-     * cloud and an external domain.
+     * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD
+     * directory and an external domain. You can create either a forest trust or an external trust.
      * </p>
      * 
      * @param createTrustRequest
      *        AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For
-     *        example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing
+     *        example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing
      *        on-premises Microsoft Active Directory. This would allow you to provide users and groups access to
      *        resources in either domain, with a single set of credentials.</p>
      *        <p>
-     *        This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the
-     *        AWS cloud and an external domain.
+     *        This action initiates the creation of the AWS side of a trust relationship between an AWS Managed
+     *        Microsoft AD directory and an external domain.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -743,12 +743,12 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param deleteTrustRequest
-     *        Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the
-     *        external domain.
+     *        Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory
+     *        and the external domain.
      * @return A Java Future containing the result of the DeleteTrust operation returned by the service.
      * @sample AWSDirectoryServiceAsync.DeleteTrust
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust" target="_top">AWS API
@@ -758,12 +758,12 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param deleteTrustRequest
-     *        Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the
-     *        external domain.
+     *        Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory
+     *        and the external domain.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1107,8 +1107,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param describeTrustsRequest
-     *        Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters
-     *        are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+     *        Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input
+     *        parameters are are provided, such as directory ID or trust ID, this request describes all the trust
+     *        relationships.
      * @return A Java Future containing the result of the DescribeTrusts operation returned by the service.
      * @sample AWSDirectoryServiceAsync.DescribeTrusts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts" target="_top">AWS API
@@ -1126,8 +1127,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param describeTrustsRequest
-     *        Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters
-     *        are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+     *        Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input
+     *        parameters are are provided, such as directory ID or trust ID, this request describes all the trust
+     *        relationships.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1933,15 +1935,48 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active
+     * Directory.
+     * </p>
+     * 
+     * @param updateTrustRequest
+     * @return A Java Future containing the result of the UpdateTrust operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.UpdateTrust
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(UpdateTrustRequest updateTrustRequest);
+
+    /**
+     * <p>
+     * Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active
+     * Directory.
+     * </p>
+     * 
+     * @param updateTrustRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTrust operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.UpdateTrust
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(UpdateTrustRequest updateTrustRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTrustRequest, UpdateTrustResult> asyncHandler);
+
+    /**
+     * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.
      * </p>
      * <p>
-     * This action verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param verifyTrustRequest
-     *        Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and
-     *        an external domain.
+     *        Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory
+     *        and an external domain.
      * @return A Java Future containing the result of the VerifyTrust operation returned by the service.
      * @sample AWSDirectoryServiceAsync.VerifyTrust
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust" target="_top">AWS API
@@ -1954,12 +1989,12 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.
      * </p>
      * <p>
-     * This action verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param verifyTrustRequest
-     *        Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and
-     *        an external domain.
+     *        Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory
+     *        and an external domain.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

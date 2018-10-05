@@ -54,7 +54,7 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                 }
                 if (context.testExpression("ApproximateArrivalTimestamp", targetDepth)) {
                     context.nextToken();
-                    record.setApproximateArrivalTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestampInMillis").unmarshall(context));
+                    record.setApproximateArrivalTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Data", targetDepth)) {
                     context.nextToken();

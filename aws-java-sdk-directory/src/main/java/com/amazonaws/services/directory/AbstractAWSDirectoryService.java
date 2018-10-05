@@ -293,6 +293,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public UpdateTrustResult updateTrust(UpdateTrustRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public VerifyTrustResult verifyTrust(VerifyTrustRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

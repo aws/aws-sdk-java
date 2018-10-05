@@ -47,6 +47,8 @@ public class TrustMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateLastUpdatedDateTime").build();
     private static final MarshallingInfo<String> TRUSTSTATEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustStateReason").build();
+    private static final MarshallingInfo<String> SELECTIVEAUTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectiveAuth").build();
 
     private static final TrustMarshaller instance = new TrustMarshaller();
 
@@ -74,6 +76,7 @@ public class TrustMarshaller {
             protocolMarshaller.marshall(trust.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(trust.getStateLastUpdatedDateTime(), STATELASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(trust.getTrustStateReason(), TRUSTSTATEREASON_BINDING);
+            protocolMarshaller.marshall(trust.getSelectiveAuth(), SELECTIVEAUTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

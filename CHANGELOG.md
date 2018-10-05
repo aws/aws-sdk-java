@@ -1,3 +1,8 @@
+# __1.11.423__ __2018-10-05__
+## __AWS Directory Service__
+  - ### Features
+    - SDK changes to create a new type of trust for active directory
+
 # __1.11.422__ __2018-10-04__
 ## __AWS CodeBuild__
   - ### Features

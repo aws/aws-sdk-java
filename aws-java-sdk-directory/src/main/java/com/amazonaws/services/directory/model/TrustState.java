@@ -25,6 +25,9 @@ public enum TrustState {
     Verifying("Verifying"),
     VerifyFailed("VerifyFailed"),
     Verified("Verified"),
+    Updating("Updating"),
+    UpdateFailed("UpdateFailed"),
+    Updated("Updated"),
     Deleting("Deleting"),
     Deleted("Deleted"),
     Failed("Failed");

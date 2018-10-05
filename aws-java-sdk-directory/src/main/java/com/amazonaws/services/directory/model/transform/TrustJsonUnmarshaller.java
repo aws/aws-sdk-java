@@ -88,6 +88,10 @@ public class TrustJsonUnmarshaller implements Unmarshaller<Trust, JsonUnmarshall
                     context.nextToken();
                     trust.setTrustStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SelectiveAuth", targetDepth)) {
+                    context.nextToken();
+                    trust.setSelectiveAuth(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

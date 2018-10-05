@@ -40,6 +40,8 @@ public class CreateTrustRequestMarshaller {
             .marshallLocationName("TrustType").build();
     private static final MarshallingInfo<List> CONDITIONALFORWARDERIPADDRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalForwarderIpAddrs").build();
+    private static final MarshallingInfo<String> SELECTIVEAUTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectiveAuth").build();
 
     private static final CreateTrustRequestMarshaller instance = new CreateTrustRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateTrustRequestMarshaller {
             protocolMarshaller.marshall(createTrustRequest.getTrustDirection(), TRUSTDIRECTION_BINDING);
             protocolMarshaller.marshall(createTrustRequest.getTrustType(), TRUSTTYPE_BINDING);
             protocolMarshaller.marshall(createTrustRequest.getConditionalForwarderIpAddrs(), CONDITIONALFORWARDERIPADDRS_BINDING);
+            protocolMarshaller.marshall(createTrustRequest.getSelectiveAuth(), SELECTIVEAUTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

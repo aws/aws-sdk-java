@@ -1048,7 +1048,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a Microsoft AD in the AWS cloud.
+     * Creates an AWS Managed Microsoft AD directory.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -1059,7 +1059,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createMicrosoftADRequest
-     *        Creates a Microsoft AD in the AWS cloud.
+     *        Creates an AWS Managed Microsoft AD directory.
      * @return Result of the CreateMicrosoftAD operation returned by the service.
      * @throws DirectoryLimitExceededException
      *         The maximum number of directories in the region has been reached. You can use the
@@ -1191,23 +1191,23 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example,
-     * you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft
-     * Active Directory. This would allow you to provide users and groups access to resources in either domain, with a
-     * single set of credentials.
+     * you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises
+     * Microsoft Active Directory. This would allow you to provide users and groups access to resources in either
+     * domain, with a single set of credentials.
      * </p>
      * <p>
-     * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS
-     * cloud and an external domain.
+     * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD
+     * directory and an external domain. You can create either a forest trust or an external trust.
      * </p>
      * 
      * @param createTrustRequest
      *        AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For
-     *        example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing
+     *        example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing
      *        on-premises Microsoft Active Directory. This would allow you to provide users and groups access to
      *        resources in either domain, with a single set of credentials.</p>
      *        <p>
-     *        This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the
-     *        AWS cloud and an external domain.
+     *        This action initiates the creation of the AWS side of a trust relationship between an AWS Managed
+     *        Microsoft AD directory and an external domain.
      * @return Result of the CreateTrust operation returned by the service.
      * @throws EntityAlreadyExistsException
      *         The specified entity already exists.
@@ -1528,12 +1528,12 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param deleteTrustRequest
-     *        Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the
-     *        external domain.
+     *        Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory
+     *        and the external domain.
      * @return Result of the DeleteTrust operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
@@ -2093,8 +2093,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTrustsRequest
-     *        Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters
-     *        are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+     *        Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input
+     *        parameters are are provided, such as directory ID or trust ID, this request describes all the trust
+     *        relationships.
      * @return Result of the DescribeTrusts operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
@@ -3599,15 +3600,77 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active
+     * Directory.
+     * </p>
+     * 
+     * @param updateTrustRequest
+     * @return Result of the UpdateTrust operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateTrust
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateTrustResult updateTrust(UpdateTrustRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrust(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrustResult executeUpdateTrust(UpdateTrustRequest updateTrustRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTrustRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrustRequest> request = null;
+        Response<UpdateTrustResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrustRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrust");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrustResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTrustResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.
      * </p>
      * <p>
-     * This action verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param verifyTrustRequest
-     *        Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and
-     *        an external domain.
+     *        Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory
+     *        and an external domain.
      * @return Result of the VerifyTrust operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
