@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Represents a collection of usage plans for an AWS account.
  * </p>
  * <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
- * Usage Plans</a> </div>
+ * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage
+ * Plans</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

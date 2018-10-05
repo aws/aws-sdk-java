@@ -163,4 +163,11 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
             publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
     }
+
+    /**
+     * Marks the copy as a failure.
+     */
+    void reportFailure() {
+        transfer.setState(TransferState.Failed);
+    }
 }

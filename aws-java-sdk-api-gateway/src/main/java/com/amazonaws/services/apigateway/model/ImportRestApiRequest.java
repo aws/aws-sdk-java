@@ -68,8 +68,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     * [Required] The POST request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -360,8 +360,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     * [Required] The POST request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -375,8 +375,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param body
-     *        [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The POST request body containing external API definitions. Currently, only Swagger definition
+     *        JSON files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -385,8 +385,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     * [Required] The POST request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -396,8 +396,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * {@code position}.
      * </p>
      * 
-     * @return [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     *         JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     * @return [Required] The POST request body containing external API definitions. Currently, only Swagger definition
+     *         JSON files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -406,8 +406,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     * JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     * [Required] The POST request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -421,8 +421,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param body
-     *        [Required] The POST request body containing external API definitions. Currently, only OpenAPI definition
-     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The POST request body containing external API definitions. Currently, only Swagger definition
+     *        JSON files are supported. The maximum size of the API definition file is 2MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

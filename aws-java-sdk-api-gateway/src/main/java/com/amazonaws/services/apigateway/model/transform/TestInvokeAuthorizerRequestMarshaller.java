@@ -35,6 +35,8 @@ public class TestInvokeAuthorizerRequestMarshaller {
             .marshallLocationName("authorizer_id").build();
     private static final MarshallingInfo<Map> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("headers").build();
+    private static final MarshallingInfo<Map> MULTIVALUEHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiValueHeaders").build();
     private static final MarshallingInfo<String> PATHWITHQUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pathWithQueryString").build();
     private static final MarshallingInfo<String> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class TestInvokeAuthorizerRequestMarshaller {
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getRestApiId(), RESTAPIID_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getAuthorizerId(), AUTHORIZERID_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getHeaders(), HEADERS_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getMultiValueHeaders(), MULTIVALUEHEADERS_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getPathWithQueryString(), PATHWITHQUERYSTRING_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getStageVariables(), STAGEVARIABLES_BINDING);

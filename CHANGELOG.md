@@ -1,3 +1,24 @@
+# __1.11.422__ __2018-10-04__
+## __AWS CodeBuild__
+  - ### Features
+    - Add resolved source version field in build output
+
+## __AWS S3 Transfer Manager__
+  - ### Bugfixes
+    - Fixed the bug where transfer state was not updated to Failed when copy multiparts request failed.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway now enables you to specify folders and subfolders when you update your file gateway's view of your S3 objects using the Refresh Cache API.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Adding support for multi-value parameters in TestInvokeMethod and TestInvokeAuthorizer.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    -  Adds RejectedPatchesAction to baseline to enable stricted validation of the rejected Patches List ; Add InstalledRejected and InstallOverrideList to compliance reporting
+
 # __1.11.421__ __2018-10-02__
 ## __AWS Secrets Manager__
   - ### Features

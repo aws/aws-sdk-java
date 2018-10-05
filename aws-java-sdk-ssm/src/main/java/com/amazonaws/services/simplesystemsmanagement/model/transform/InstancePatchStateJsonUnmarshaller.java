@@ -64,6 +64,10 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                     context.nextToken();
                     instancePatchState.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InstallOverrideList", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setInstallOverrideList(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setOwnerInformation(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                 if (context.testExpression("InstalledOtherCount", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setInstalledOtherCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("InstalledRejectedCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setInstalledRejectedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingCount", targetDepth)) {
                     context.nextToken();

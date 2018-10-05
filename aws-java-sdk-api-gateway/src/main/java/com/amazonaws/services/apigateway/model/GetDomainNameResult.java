@@ -29,8 +29,8 @@ import javax.annotation.Generated;
  * mapping (<a>BasePathMapping</a>) of your API under the custom domain name.
  * </p>
  * </div> <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name
- * for an API</a> </div>
+ * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name for an
+ * API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -70,11 +70,11 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
     private String regionalDomainName;
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      */
     private String regionalHostedZoneId;
@@ -96,18 +96,18 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
      * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      */
     private String distributionDomainName;
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      */
     private String distributionHostedZoneId;
@@ -341,20 +341,20 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      * 
      * @param regionalHostedZoneId
      *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
      *        href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     *        API Gateway</a>.
      */
 
     public void setRegionalHostedZoneId(String regionalHostedZoneId) {
@@ -363,19 +363,19 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      * 
      * @return The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
      *         href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *         "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      *         >Set up a Regional Custom Domain Name</a> and <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *         Endpoints for API Gateway</a>.
+     *         href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     *         API Gateway</a>.
      */
 
     public String getRegionalHostedZoneId() {
@@ -384,20 +384,20 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      * 
      * @param regionalHostedZoneId
      *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
      *        href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     *        API Gateway</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,14 +497,14 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
      * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @param distributionDomainName
      *        The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      *        edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
      *        name to this distribution name. For more information about CloudFront distributions, see the <a
-     *        href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
+     *        href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront
      *        documentation</a>.
      */
 
@@ -517,13 +517,13 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
      * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @return The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      *         edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
      *         name to this distribution name. For more information about CloudFront distributions, see the <a
-     *         href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
+     *         href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront
      *         documentation</a>.
      */
 
@@ -536,14 +536,14 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
      * this distribution name. For more information about CloudFront distributions, see the <a
-     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
+     * href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @param distributionDomainName
      *        The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
      *        edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
      *        name to this distribution name. For more information about CloudFront distributions, see the <a
-     *        href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
+     *        href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/" target="_blank">Amazon CloudFront
      *        documentation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -556,20 +556,20 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      * 
      * @param distributionHostedZoneId
      *        The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     *        href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     *        API Gateway</a>.
      */
 
     public void setDistributionHostedZoneId(String distributionHostedZoneId) {
@@ -579,19 +579,19 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      * 
      * @return The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     *         <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *         <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     *         href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      *         >Set up a Regional Custom Domain Name</a> and <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *         Endpoints for API Gateway</a>.
+     *         href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     *         API Gateway</a>.
      */
 
     public String getDistributionHostedZoneId() {
@@ -601,20 +601,20 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      * >Set up a Regional Custom Domain Name</a> and <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
-     * API Gateway</a>.
+     * href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API
+     * Gateway</a>.
      * </p>
      * 
      * @param distributionHostedZoneId
      *        The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
-     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a
+     *        href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
      *        >Set up a Regional Custom Domain Name</a> and <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
-     *        Endpoints for API Gateway</a>.
+     *        href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     *        API Gateway</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

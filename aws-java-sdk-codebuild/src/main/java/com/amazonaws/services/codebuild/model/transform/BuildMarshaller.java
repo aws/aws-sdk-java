@@ -42,6 +42,8 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildStatus").build();
     private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceVersion").build();
+    private static final MarshallingInfo<String> RESOLVEDSOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resolvedSourceVersion").build();
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectName").build();
     private static final MarshallingInfo<List> PHASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -100,6 +102,7 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getCurrentPhase(), CURRENTPHASE_BINDING);
             protocolMarshaller.marshall(build.getBuildStatus(), BUILDSTATUS_BINDING);
             protocolMarshaller.marshall(build.getSourceVersion(), SOURCEVERSION_BINDING);
+            protocolMarshaller.marshall(build.getResolvedSourceVersion(), RESOLVEDSOURCEVERSION_BINDING);
             protocolMarshaller.marshall(build.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(build.getPhases(), PHASES_BINDING);
             protocolMarshaller.marshall(build.getSource(), SOURCE_BINDING);

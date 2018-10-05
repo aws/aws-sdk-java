@@ -35,12 +35,16 @@ public class InstancePatchStateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineId").build();
     private static final MarshallingInfo<String> SNAPSHOTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotId").build();
+    private static final MarshallingInfo<String> INSTALLOVERRIDELIST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstallOverrideList").build();
     private static final MarshallingInfo<String> OWNERINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerInformation").build();
     private static final MarshallingInfo<Integer> INSTALLEDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstalledCount").build();
     private static final MarshallingInfo<Integer> INSTALLEDOTHERCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstalledOtherCount").build();
+    private static final MarshallingInfo<Integer> INSTALLEDREJECTEDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstalledRejectedCount").build();
     private static final MarshallingInfo<Integer> MISSINGCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MissingCount").build();
     private static final MarshallingInfo<Integer> FAILEDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -74,9 +78,11 @@ public class InstancePatchStateMarshaller {
             protocolMarshaller.marshall(instancePatchState.getPatchGroup(), PATCHGROUP_BINDING);
             protocolMarshaller.marshall(instancePatchState.getBaselineId(), BASELINEID_BINDING);
             protocolMarshaller.marshall(instancePatchState.getSnapshotId(), SNAPSHOTID_BINDING);
+            protocolMarshaller.marshall(instancePatchState.getInstallOverrideList(), INSTALLOVERRIDELIST_BINDING);
             protocolMarshaller.marshall(instancePatchState.getOwnerInformation(), OWNERINFORMATION_BINDING);
             protocolMarshaller.marshall(instancePatchState.getInstalledCount(), INSTALLEDCOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getInstalledOtherCount(), INSTALLEDOTHERCOUNT_BINDING);
+            protocolMarshaller.marshall(instancePatchState.getInstalledRejectedCount(), INSTALLEDREJECTEDCOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getMissingCount(), MISSINGCOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getFailedCount(), FAILEDCOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getNotApplicableCount(), NOTAPPLICABLECOUNT_BINDING);

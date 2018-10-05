@@ -84,6 +84,10 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                     context.nextToken();
                     getPatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("RejectedPatchesAction", targetDepth)) {
+                    context.nextToken();
+                    getPatchBaselineResult.setRejectedPatchesAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PatchGroups", targetDepth)) {
                     context.nextToken();
                     getPatchBaselineResult.setPatchGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

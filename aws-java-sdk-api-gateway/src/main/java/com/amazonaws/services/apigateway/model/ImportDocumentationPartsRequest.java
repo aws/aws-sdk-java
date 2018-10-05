@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Import documentation parts from an external (e.g., OpenAPI) definition file.
+ * Import documentation parts from an external (e.g., Swagger) definition file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -48,7 +48,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
     private Boolean failOnWarnings;
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
      * this is a JSON object.
      * </p>
      */
@@ -249,7 +249,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
      * this is a JSON object.
      * </p>
      * <p>
@@ -264,7 +264,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param body
-     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
+     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger
      *        file, this is a JSON object.
      */
 
@@ -274,7 +274,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
      * this is a JSON object.
      * </p>
      * <p>
@@ -285,7 +285,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * {@code position}.
      * </p>
      * 
-     * @return [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
+     * @return [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger
      *         file, this is a JSON object.
      */
 
@@ -295,7 +295,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
      * this is a JSON object.
      * </p>
      * <p>
@@ -310,7 +310,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param body
-     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
+     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger
      *        file, this is a JSON object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

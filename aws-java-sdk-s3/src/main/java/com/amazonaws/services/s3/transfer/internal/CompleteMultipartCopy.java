@@ -83,6 +83,7 @@ public class CompleteMultipartCopy implements Callable<CopyResult> {
                     ;
             res = s3.completeMultipartUpload(req);
         } catch (Exception e) {
+            monitor.reportFailure();
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }

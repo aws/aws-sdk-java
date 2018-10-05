@@ -30,12 +30,12 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * The content map is a JSON string of API-specific key-value pairs. Although an API can use any shape for the content
- * map, only the OpenAPI-compliant documentation fields will be injected into the associated API entity definition in
- * the exported OpenAPI definition file.
+ * map, only the Swagger-compliant documentation fields will be injected into the associated API entity definition in
+ * the exported Swagger definition file.
  * </p>
  * </div> <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an
- * API</a>, <a>DocumentationParts</a> </div>
+ * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>,
+ * <a>DocumentationParts</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDocumentationPartResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -59,9 +59,9 @@ public class GetDocumentationPartResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a
-     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      * documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as
-     * part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of
+     * part of the API entity definitions, while the original documentation parts are exported in a Swagger extension of
      * <code>x-amazon-apigateway-documentation</code>.
      * </p>
      */
@@ -174,17 +174,17 @@ public class GetDocumentationPartResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a
-     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      * documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as
-     * part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of
+     * part of the API entity definitions, while the original documentation parts are exported in a Swagger extension of
      * <code>x-amazon-apigateway-documentation</code>.
      * </p>
      * 
      * @param properties
      *        A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded
-     *        as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     *        as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      *        documentation-related fields from the <literal>properties</literal> map are exported and, hence, published
-     *        as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI
+     *        as part of the API entity definitions, while the original documentation parts are exported in a Swagger
      *        extension of <code>x-amazon-apigateway-documentation</code>.
      */
 
@@ -195,17 +195,17 @@ public class GetDocumentationPartResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a
-     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      * documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as
-     * part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of
+     * part of the API entity definitions, while the original documentation parts are exported in a Swagger extension of
      * <code>x-amazon-apigateway-documentation</code>.
      * </p>
      * 
      * @return A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded
-     *         as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     *         as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      *         documentation-related fields from the <literal>properties</literal> map are exported and, hence,
      *         published as part of the API entity definitions, while the original documentation parts are exported in a
-     *         OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.
+     *         Swagger extension of <code>x-amazon-apigateway-documentation</code>.
      */
 
     public String getProperties() {
@@ -215,17 +215,17 @@ public class GetDocumentationPartResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a
-     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     * JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      * documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as
-     * part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of
+     * part of the API entity definitions, while the original documentation parts are exported in a Swagger extension of
      * <code>x-amazon-apigateway-documentation</code>.
      * </p>
      * 
      * @param properties
      *        A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded
-     *        as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
+     *        as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
      *        documentation-related fields from the <literal>properties</literal> map are exported and, hence, published
-     *        as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI
+     *        as part of the API entity definitions, while the original documentation parts are exported in a Swagger
      *        extension of <code>x-amazon-apigateway-documentation</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

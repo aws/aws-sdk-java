@@ -28,8 +28,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -51,8 +50,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -67,7 +65,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param body
      *        The payload of the POST request to import API keys. For the payload format, see <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *        href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      *        Format</a>.
      */
 
@@ -78,8 +76,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -90,7 +87,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The payload of the POST request to import API keys. For the payload format, see <a
-     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *         href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      *         Format</a>.
      */
 
@@ -101,8 +98,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The payload of the POST request to import API keys. For the payload format, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
-     * Format</a>.
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -117,7 +113,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param body
      *        The payload of the POST request to import API keys. For the payload format, see <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File
+     *        href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-key-file-format.html">API Key File
      *        Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

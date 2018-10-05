@@ -80,6 +80,13 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
     private com.amazonaws.internal.SdkInternalList<String> rejectedPatches;
     /**
      * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     */
+    private String rejectedPatchesAction;
+    /**
+     * <p>
      * The date when the patch baseline was created.
      * </p>
      */
@@ -618,6 +625,94 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @see PatchAction
+     */
+
+    public void setRejectedPatchesAction(String rejectedPatchesAction) {
+        this.rejectedPatchesAction = rejectedPatchesAction;
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @return The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *         if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *         dependency.
+     * @see PatchAction
+     */
+
+    public String getRejectedPatchesAction() {
+        return this.rejectedPatchesAction;
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchAction
+     */
+
+    public UpdatePatchBaselineResult withRejectedPatchesAction(String rejectedPatchesAction) {
+        setRejectedPatchesAction(rejectedPatchesAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @see PatchAction
+     */
+
+    public void setRejectedPatchesAction(PatchAction rejectedPatchesAction) {
+        withRejectedPatchesAction(rejectedPatchesAction);
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchAction
+     */
+
+    public UpdatePatchBaselineResult withRejectedPatchesAction(PatchAction rejectedPatchesAction) {
+        this.rejectedPatchesAction = rejectedPatchesAction.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The date when the patch baseline was created.
      * </p>
      * 
@@ -846,6 +941,8 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("ApprovedPatchesEnableNonSecurity: ").append(getApprovedPatchesEnableNonSecurity()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
+        if (getRejectedPatchesAction() != null)
+            sb.append("RejectedPatchesAction: ").append(getRejectedPatchesAction()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getModifiedDate() != null)
@@ -906,6 +1003,10 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getRejectedPatches() != null && other.getRejectedPatches().equals(this.getRejectedPatches()) == false)
             return false;
+        if (other.getRejectedPatchesAction() == null ^ this.getRejectedPatchesAction() == null)
+            return false;
+        if (other.getRejectedPatchesAction() != null && other.getRejectedPatchesAction().equals(this.getRejectedPatchesAction()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -939,6 +1040,7 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatchesEnableNonSecurity() == null) ? 0 : getApprovedPatchesEnableNonSecurity().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
+        hashCode = prime * hashCode + ((getRejectedPatchesAction() == null) ? 0 : getRejectedPatchesAction().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getModifiedDate() == null) ? 0 : getModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

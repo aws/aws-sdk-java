@@ -27,7 +27,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The session status to retrieve a list of sessions for. For example, "active".
+     * The session status to retrieve a list of sessions for. For example, "Active".
      * </p>
      */
     private String state;
@@ -53,11 +53,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The session status to retrieve a list of sessions for. For example, "active".
+     * The session status to retrieve a list of sessions for. For example, "Active".
      * </p>
      * 
      * @param state
-     *        The session status to retrieve a list of sessions for. For example, "active".
+     *        The session status to retrieve a list of sessions for. For example, "Active".
      * @see SessionState
      */
 
@@ -67,10 +67,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The session status to retrieve a list of sessions for. For example, "active".
+     * The session status to retrieve a list of sessions for. For example, "Active".
      * </p>
      * 
-     * @return The session status to retrieve a list of sessions for. For example, "active".
+     * @return The session status to retrieve a list of sessions for. For example, "Active".
      * @see SessionState
      */
 
@@ -80,11 +80,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The session status to retrieve a list of sessions for. For example, "active".
+     * The session status to retrieve a list of sessions for. For example, "Active".
      * </p>
      * 
      * @param state
-     *        The session status to retrieve a list of sessions for. For example, "active".
+     *        The session status to retrieve a list of sessions for. For example, "Active".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SessionState
      */
@@ -96,11 +96,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The session status to retrieve a list of sessions for. For example, "active".
+     * The session status to retrieve a list of sessions for. For example, "Active".
      * </p>
      * 
      * @param state
-     *        The session status to retrieve a list of sessions for. For example, "active".
+     *        The session status to retrieve a list of sessions for. For example, "Active".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SessionState
      */

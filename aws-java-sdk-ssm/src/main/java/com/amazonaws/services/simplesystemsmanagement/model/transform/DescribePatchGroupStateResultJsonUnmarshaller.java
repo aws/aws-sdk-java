@@ -60,6 +60,10 @@ public class DescribePatchGroupStateResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithInstalledOtherPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("InstancesWithInstalledRejectedPatches", targetDepth)) {
+                    context.nextToken();
+                    describePatchGroupStateResult.setInstancesWithInstalledRejectedPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("InstancesWithMissingPatches", targetDepth)) {
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithMissingPatches(context.getUnmarshaller(Integer.class).unmarshall(context));

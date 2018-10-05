@@ -19,9 +19,9 @@ import javax.annotation.Generated;
  * <p>
  * Represents a collection of <a>ClientCertificate</a> resources.
  * </p>
- * <div class="seeAlso"> <a href=
- * "https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
- * >Use Client-Side Certificate</a> </div>
+ * <div class="seeAlso"> <a
+ * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
+ * Client-Side Certificate</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

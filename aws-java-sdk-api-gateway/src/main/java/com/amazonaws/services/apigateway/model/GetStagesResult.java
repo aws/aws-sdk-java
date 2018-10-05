@@ -19,8 +19,8 @@ import javax.annotation.Generated;
  * <p>
  * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
  * </p>
- * <div class="seeAlso"><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html">Deploying API
- * in Stages</a></div>
+ * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/stages.html">Deploying API in
+ * Stages</a></div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

@@ -40,7 +40,7 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      * </p>
      */
     private String properties;
@@ -128,12 +128,12 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      * </p>
      * 
      * @param properties
      *        [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     *        API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     *        API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      */
 
     public void setProperties(String properties) {
@@ -143,11 +143,11 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      * </p>
      * 
      * @return [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     *         API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     *         API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      */
 
     public String getProperties() {
@@ -157,12 +157,12 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     * API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     * API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      * </p>
      * 
      * @param properties
      *        [Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are
-     *        API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
+     *        API-specific, but only Swagger-compliant key-value pairs can be exported and, hence, published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

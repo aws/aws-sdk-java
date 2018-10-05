@@ -24,8 +24,8 @@ import javax.annotation.Generated;
  * To associate an API stage with a selected API key in a usage plan, you must create a UsagePlanKey resource to
  * represent the selected <a>ApiKey</a>.
  * </p>
- * </div>" <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-
- * usage-plans.html">Create and Use Usage Plans</a> </div>
+ * </div>" <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-api-usage-
+ * plans.html">Create and Use Usage Plans</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUsagePlanKeyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

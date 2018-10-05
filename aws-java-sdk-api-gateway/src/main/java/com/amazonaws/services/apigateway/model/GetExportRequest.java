@@ -39,19 +39,18 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String stageName;
     /**
      * <p>
-     * [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI
-     * 2.0.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      */
     private String exportType;
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
-     * <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination
-     * of the following parameters are supported: <code>extensions='integrations'</code> or
-     * <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
-     * <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -59,8 +58,7 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The content-type of the export, for example <code>application/json</code>. Currently
      * <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of
-     * <code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for
-     * direct API requests.
+     * <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.
      * </p>
      */
     private String accepts;
@@ -147,13 +145,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI
-     * 2.0.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      * 
      * @param exportType
-     *        [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for
-     *        Swagger/OpenAPI 2.0.
+     *        [Required] The type of export. Currently only 'swagger' is supported.
      */
 
     public void setExportType(String exportType) {
@@ -162,12 +158,10 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI
-     * 2.0.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      * 
-     * @return [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for
-     *         Swagger/OpenAPI 2.0.
+     * @return [Required] The type of export. Currently only 'swagger' is supported.
      */
 
     public String getExportType() {
@@ -176,13 +170,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI
-     * 2.0.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      * 
      * @param exportType
-     *        [Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for
-     *        Swagger/OpenAPI 2.0.
+     *        [Required] The type of export. Currently only 'swagger' is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,20 +186,19 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
-     * <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination
-     * of the following parameters are supported: <code>extensions='integrations'</code> or
-     * <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
-     * <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      * 
      * @return A key-value map of query string parameters that specify properties of the export, depending on the
-     *         requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and
-     *         <code>swagger</code>, any combination of the following parameters are supported:
-     *         <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with
-     *         x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API
-     *         with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
-     *         extensions, allowing for import to the Postman tool
+     *         requested <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of
+     *         the following parameters are supported: <code>extensions='integrations'</code> or
+     *         <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
+     *         <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
+     *         <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -217,17 +208,17 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
-     * <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination
-     * of the following parameters are supported: <code>extensions='integrations'</code> or
-     * <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
-     * <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      * 
      * @param parameters
      *        A key-value map of query string parameters that specify properties of the export, depending on the
-     *        requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>
-     *        , any combination of the following parameters are supported: <code>extensions='integrations'</code> or
+     *        requested <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of
+     *        the following parameters are supported: <code>extensions='integrations'</code> or
      *        <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
      *        <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
      *        <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
@@ -240,17 +231,17 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
-     * <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination
-     * of the following parameters are supported: <code>extensions='integrations'</code> or
-     * <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
-     * <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      * 
      * @param parameters
      *        A key-value map of query string parameters that specify properties of the export, depending on the
-     *        requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>
-     *        , any combination of the following parameters are supported: <code>extensions='integrations'</code> or
+     *        requested <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of
+     *        the following parameters are supported: <code>extensions='integrations'</code> or
      *        <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
      *        <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
      *        <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
@@ -287,15 +278,14 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The content-type of the export, for example <code>application/json</code>. Currently
      * <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of
-     * <code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for
-     * direct API requests.
+     * <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.
      * </p>
      * 
      * @param accepts
      *        The content-type of the export, for example <code>application/json</code>. Currently
      *        <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code>
-     *        of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header
-     *        for direct API requests.
+     *        of <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API
+     *        requests.
      */
 
     public void setAccepts(String accepts) {
@@ -306,14 +296,13 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The content-type of the export, for example <code>application/json</code>. Currently
      * <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of
-     * <code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for
-     * direct API requests.
+     * <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.
      * </p>
      * 
      * @return The content-type of the export, for example <code>application/json</code>. Currently
      *         <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code>
-     *         of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header
-     *         for direct API requests.
+     *         of <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API
+     *         requests.
      */
 
     public String getAccepts() {
@@ -324,15 +313,14 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The content-type of the export, for example <code>application/json</code>. Currently
      * <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of
-     * <code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for
-     * direct API requests.
+     * <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.
      * </p>
      * 
      * @param accepts
      *        The content-type of the export, for example <code>application/json</code>. Currently
      *        <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code>
-     *        of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header
-     *        for direct API requests.
+     *        of <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API
+     *        requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

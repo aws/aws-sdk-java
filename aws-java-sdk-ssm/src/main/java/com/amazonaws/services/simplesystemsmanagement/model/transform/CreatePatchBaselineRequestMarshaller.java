@@ -46,6 +46,8 @@ public class CreatePatchBaselineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesEnableNonSecurity").build();
     private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
+    private static final MarshallingInfo<String> REJECTEDPATCHESACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatchesAction").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -78,6 +80,7 @@ public class CreatePatchBaselineRequestMarshaller {
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatchesEnableNonSecurity(), APPROVEDPATCHESENABLENONSECURITY_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
+            protocolMarshaller.marshall(createPatchBaselineRequest.getRejectedPatchesAction(), REJECTEDPATCHESACTION_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getClientToken(), CLIENTTOKEN_BINDING);

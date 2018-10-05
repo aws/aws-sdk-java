@@ -100,8 +100,8 @@ public interface AmazonApiGateway {
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
-     * <div class="seeAlso"><a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS CLI</a></div>
+     * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-api-key.html">AWS
+     * CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -127,8 +127,8 @@ public interface AmazonApiGateway {
      * <p>
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
      * </p>
-     * <div class="seeAlso"><a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS CLI</a></div>
+     * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-authorizer.html">AWS
+     * CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
@@ -476,8 +476,8 @@ public interface AmazonApiGateway {
      * <p>
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
-     * <div class="seeAlso"><a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS CLI</a></div>
+     * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+     * CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -1026,8 +1026,8 @@ public interface AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
-     * <div class="seeAlso"><a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS CLI</a></div>
+     * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizer.html">AWS
+     * CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -1046,8 +1046,8 @@ public interface AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
-     * <div class="seeAlso"><a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS CLI</a></div>
+     * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizers.html">AWS
+     * CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -1876,7 +1876,7 @@ public interface AmazonApiGateway {
 
     /**
      * @param importDocumentationPartsRequest
-     *        Import documentation parts from an external (e.g., OpenAPI) definition file.
+     *        Import documentation parts from an external (e.g., Swagger) definition file.
      * @return Result of the ImportDocumentationParts operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2097,7 +2097,7 @@ public interface AmazonApiGateway {
      * request body.
      * </p>
      * <div class="seeAlso"> <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
      * authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
@@ -2209,8 +2209,8 @@ public interface AmazonApiGateway {
      * <p>
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
-     * <div class="seeAlso"><a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS CLI</a></div>
+     * <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/update-authorizer.html">AWS
+     * CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.

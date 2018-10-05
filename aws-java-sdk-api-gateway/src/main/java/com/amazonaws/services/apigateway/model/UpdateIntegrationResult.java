@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.
  * </p>
  * <div class="remarks">In the API Gateway console, the built-in Lambda integration is an AWS integration.</div> <div
- * class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
+ * class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an
+ * API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -66,10 +66,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
-     * private HTTP integration, the URI is not used for routing.
+     * URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for either
+     * standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration,
+     * where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     * for routing.
      * </p>
      * </li>
      * <li>
@@ -84,7 +84,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -103,8 +103,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     private String connectionType;
     /**
      * <p>
-     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
-     * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
+     * The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the
+     * <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      */
     private String connectionId;
@@ -222,12 +222,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
-     * </div>
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
      */
     private java.util.Map<String, IntegrationResponse> integrationResponses;
 
@@ -553,10 +552,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
-     * private HTTP integration, the URI is not used for routing.
+     * URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for either
+     * standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration,
+     * where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     * for routing.
      * </p>
      * </li>
      * <li>
@@ -571,7 +570,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -585,11 +584,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *        HTTP(S) URL according to the <a target="_blank"
-     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *        integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *        the URI is not used for routing.
+     *        HTTP(S) URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986
+     *        specification</a>, for either standard integration, where <code>connectionType</code> is not
+     *        <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>.
+     *        For a private HTTP integration, the URI is not used for routing.
      *        </p>
      *        </li>
      *        <li>
@@ -605,8 +603,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      *        <code>service_api</code> refers to the path to an AWS service resource, including the region of the
      *        integrated AWS service, if applicable. For example, for integration with the S3 API of
-     *        <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
-     *        the <code>uri</code> can be either
+     *        <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     *        <code>uri</code> can be either
      *        <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      *        <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
      *        </p>
@@ -625,10 +623,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
-     * private HTTP integration, the URI is not used for routing.
+     * URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for either
+     * standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration,
+     * where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     * for routing.
      * </p>
      * </li>
      * <li>
@@ -643,7 +641,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -656,11 +654,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *         <li>
      *         <p>
      *         For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *         HTTP(S) URL according to the <a target="_blank"
-     *         href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *         standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *         integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *         the URI is not used for routing.
+     *         HTTP(S) URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986
+     *         specification</a>, for either standard integration, where <code>connectionType</code> is not
+     *         <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>
+     *         . For a private HTTP integration, the URI is not used for routing.
      *         </p>
      *         </li>
      *         <li>
@@ -676,8 +673,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *         parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      *         <code>service_api</code> refers to the path to an AWS service resource, including the region of the
      *         integrated AWS service, if applicable. For example, for integration with the S3 API of
-     *         <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
-     *         the <code>uri</code> can be either
+     *         <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     *         <code>uri</code> can be either
      *         <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      *         <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
      *         </p>
@@ -696,10 +693,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
-     * specification</a>, for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
-     * private HTTP integration, the URI is not used for routing.
+     * URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for either
+     * standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration,
+     * where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     * for routing.
      * </p>
      * </li>
      * <li>
@@ -714,7 +711,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -728,11 +725,10 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *        HTTP(S) URL according to the <a target="_blank"
-     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *        integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *        the URI is not used for routing.
+     *        HTTP(S) URL according to the <a target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986
+     *        specification</a>, for either standard integration, where <code>connectionType</code> is not
+     *        <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>.
+     *        For a private HTTP integration, the URI is not used for routing.
      *        </p>
      *        </li>
      *        <li>
@@ -748,8 +744,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      *        <code>service_api</code> refers to the path to an AWS service resource, including the region of the
      *        integrated AWS service, if applicable. For example, for integration with the S3 API of
-     *        <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
-     *        the <code>uri</code> can be either
+     *        <code><a href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     *        <code>uri</code> can be either
      *        <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      *        <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
      *        </p>
@@ -857,14 +853,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
-     * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
+     * The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the
+     * <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      * 
      * @param connectionId
-     *        The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
-     *        </a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and
-     *        undefined, otherwise.
+     *        The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
+     *        the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined,
+     *        otherwise.
      */
 
     public void setConnectionId(String connectionId) {
@@ -873,13 +869,13 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
-     * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
+     * The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the
+     * <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      * 
-     * @return The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
-     *         </a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and
-     *         undefined, otherwise.
+     * @return The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     *         of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined,
+     *         otherwise.
      */
 
     public String getConnectionId() {
@@ -888,14 +884,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
-     * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
+     * The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the
+     * <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      * 
      * @param connectionId
-     *        The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
-     *        </a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and
-     *        undefined, otherwise.
+     *        The (<a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
+     *        the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined,
+     *        otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1704,12 +1700,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
-     * </div>
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
      * 
      * @return Specifies the integration's responses.
      *         </p>
@@ -1729,12 +1724,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *         </p>
      * 
      *         <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      *         <p/>
      *         </div> <div class="seeAlso"> <a
-     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an
-     *         API</a>
+     *         href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
      */
 
     public java.util.Map<String, IntegrationResponse> getIntegrationResponses() {
@@ -1761,12 +1755,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
-     * </div>
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
      * 
      * @param integrationResponses
      *        Specifies the integration's responses.
@@ -1787,12 +1780,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        </p>
      * 
      *        <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      *        <p/>
      *        </div> <div class="seeAlso"> <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an
-     *        API</a>
+     *        href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
      */
 
     public void setIntegrationResponses(java.util.Map<String, IntegrationResponse> integrationResponses) {
@@ -1819,12 +1811,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
-     * </div>
+     * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
      * 
      * @param integrationResponses
      *        Specifies the integration's responses.
@@ -1845,12 +1836,11 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        </p>
      * 
      *        <pre>
-     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n" }, "statusCode": "200" }</code>
      * </pre>
      *        <p/>
      *        </div> <div class="seeAlso"> <a
-     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an
-     *        API</a>
+     *        href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,10 @@ public class RefreshCacheResultJsonUnmarshaller implements Unmarshaller<RefreshC
                     context.nextToken();
                     refreshCacheResult.setFileShareARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NotificationId", targetDepth)) {
+                    context.nextToken();
+                    refreshCacheResult.setNotificationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

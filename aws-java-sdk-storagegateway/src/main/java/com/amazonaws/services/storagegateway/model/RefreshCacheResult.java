@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * RefreshCacheOutput
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS API
  *      Documentation</a>
@@ -24,6 +27,8 @@ import javax.annotation.Generated;
 public class RefreshCacheResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String fileShareARN;
+
+    private String notificationId;
 
     /**
      * @param fileShareARN
@@ -52,6 +57,32 @@ public class RefreshCacheResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * @param notificationId
+     */
+
+    public void setNotificationId(String notificationId) {
+        this.notificationId = notificationId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getNotificationId() {
+        return this.notificationId;
+    }
+
+    /**
+     * @param notificationId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RefreshCacheResult withNotificationId(String notificationId) {
+        setNotificationId(notificationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -63,7 +94,9 @@ public class RefreshCacheResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFileShareARN() != null)
-            sb.append("FileShareARN: ").append(getFileShareARN());
+            sb.append("FileShareARN: ").append(getFileShareARN()).append(",");
+        if (getNotificationId() != null)
+            sb.append("NotificationId: ").append(getNotificationId());
         sb.append("}");
         return sb.toString();
     }
@@ -82,6 +115,10 @@ public class RefreshCacheResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getFileShareARN() != null && other.getFileShareARN().equals(this.getFileShareARN()) == false)
             return false;
+        if (other.getNotificationId() == null ^ this.getNotificationId() == null)
+            return false;
+        if (other.getNotificationId() != null && other.getNotificationId().equals(this.getNotificationId()) == false)
+            return false;
         return true;
     }
 
@@ -91,6 +128,7 @@ public class RefreshCacheResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFileShareARN() == null) ? 0 : getFileShareARN().hashCode());
+        hashCode = prime * hashCode + ((getNotificationId() == null) ? 0 : getNotificationId().hashCode());
         return hashCode;
     }
 

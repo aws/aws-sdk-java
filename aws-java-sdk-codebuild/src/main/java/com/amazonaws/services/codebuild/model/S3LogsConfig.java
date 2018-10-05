@@ -50,7 +50,7 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>,
      * and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or
-     * <code>aws:s3:::my-bucket/build-log</code>.
+     * <code>arn:aws:s3:::my-bucket/build-log</code>.
      * </p>
      */
     private String location;
@@ -210,13 +210,13 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>,
      * and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or
-     * <code>aws:s3:::my-bucket/build-log</code>.
+     * <code>arn:aws:s3:::my-bucket/build-log</code>.
      * </p>
      * 
      * @param location
      *        The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is
      *        <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are
-     *        <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
+     *        <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.
      */
 
     public void setLocation(String location) {
@@ -227,12 +227,12 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>,
      * and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or
-     * <code>aws:s3:::my-bucket/build-log</code>.
+     * <code>arn:aws:s3:::my-bucket/build-log</code>.
      * </p>
      * 
      * @return The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is
      *         <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are
-     *         <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
+     *         <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.
      */
 
     public String getLocation() {
@@ -243,13 +243,13 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>,
      * and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or
-     * <code>aws:s3:::my-bucket/build-log</code>.
+     * <code>arn:aws:s3:::my-bucket/build-log</code>.
      * </p>
      * 
      * @param location
      *        The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is
      *        <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are
-     *        <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
+     *        <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

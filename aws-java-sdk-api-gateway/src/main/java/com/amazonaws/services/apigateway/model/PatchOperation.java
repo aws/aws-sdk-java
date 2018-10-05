@@ -35,14 +35,13 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
     private String op;
     /**
      * <p>
-     * The <code>op</code> operation's target, as identified by a <a
-     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that references a
-     * location within the targeted resource. For example, if the target resource has an updateable property of
-     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the <code>name</code>
-     * property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/") character appearing in
-     * path names must be escaped with "~1", as shown in the example above. Each <code>op</code> operation can have only
-     * one <code>path</code> associated with it.
+     * The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON Pointer</a> value
+     * that references a location within the targeted resource. For example, if the target resource has an updateable
+     * property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
+     * <code>name</code> property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>),
+     * the path for the <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/")
+     * character appearing in path names must be escaped with "~1", as shown in the example above. Each <code>op</code>
+     * operation can have only one <code>path</code> associated with it.
      * </p>
      */
     private String path;
@@ -51,7 +50,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      */
@@ -172,22 +171,20 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>op</code> operation's target, as identified by a <a
-     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that references a
-     * location within the targeted resource. For example, if the target resource has an updateable property of
-     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the <code>name</code>
-     * property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/") character appearing in
-     * path names must be escaped with "~1", as shown in the example above. Each <code>op</code> operation can have only
-     * one <code>path</code> associated with it.
+     * The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON Pointer</a> value
+     * that references a location within the targeted resource. For example, if the target resource has an updateable
+     * property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
+     * <code>name</code> property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>),
+     * the path for the <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/")
+     * character appearing in path names must be escaped with "~1", as shown in the example above. Each <code>op</code>
+     * operation can have only one <code>path</code> associated with it.
      * </p>
      * 
      * @param path
-     *        The <code>op</code> operation's target, as identified by a <a
-     *        href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that
-     *        references a location within the targeted resource. For example, if the target resource has an updateable
-     *        property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
-     *        <code>name</code> property value is a JSON object (e.g.,
+     *        The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON
+     *        Pointer</a> value that references a location within the targeted resource. For example, if the target
+     *        resource has an updateable property of <code>{"name":"value"}</code>, the path for this property is
+     *        <code>/name</code>. If the <code>name</code> property value is a JSON object (e.g.,
      *        <code>{"name": {"child/name": "child-value"}}</code>), the path for the <code>child/name</code> property
      *        will be <code>/name/child~1name</code>. Any slash ("/") character appearing in path names must be escaped
      *        with "~1", as shown in the example above. Each <code>op</code> operation can have only one
@@ -200,21 +197,19 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>op</code> operation's target, as identified by a <a
-     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that references a
-     * location within the targeted resource. For example, if the target resource has an updateable property of
-     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the <code>name</code>
-     * property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/") character appearing in
-     * path names must be escaped with "~1", as shown in the example above. Each <code>op</code> operation can have only
-     * one <code>path</code> associated with it.
+     * The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON Pointer</a> value
+     * that references a location within the targeted resource. For example, if the target resource has an updateable
+     * property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
+     * <code>name</code> property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>),
+     * the path for the <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/")
+     * character appearing in path names must be escaped with "~1", as shown in the example above. Each <code>op</code>
+     * operation can have only one <code>path</code> associated with it.
      * </p>
      * 
-     * @return The <code>op</code> operation's target, as identified by a <a
-     *         href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that
-     *         references a location within the targeted resource. For example, if the target resource has an updateable
-     *         property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
-     *         <code>name</code> property value is a JSON object (e.g.,
+     * @return The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON
+     *         Pointer</a> value that references a location within the targeted resource. For example, if the target
+     *         resource has an updateable property of <code>{"name":"value"}</code>, the path for this property is
+     *         <code>/name</code>. If the <code>name</code> property value is a JSON object (e.g.,
      *         <code>{"name": {"child/name": "child-value"}}</code>), the path for the <code>child/name</code> property
      *         will be <code>/name/child~1name</code>. Any slash ("/") character appearing in path names must be escaped
      *         with "~1", as shown in the example above. Each <code>op</code> operation can have only one
@@ -227,22 +222,20 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>op</code> operation's target, as identified by a <a
-     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that references a
-     * location within the targeted resource. For example, if the target resource has an updateable property of
-     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the <code>name</code>
-     * property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/") character appearing in
-     * path names must be escaped with "~1", as shown in the example above. Each <code>op</code> operation can have only
-     * one <code>path</code> associated with it.
+     * The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON Pointer</a> value
+     * that references a location within the targeted resource. For example, if the target resource has an updateable
+     * property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
+     * <code>name</code> property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>),
+     * the path for the <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/")
+     * character appearing in path names must be escaped with "~1", as shown in the example above. Each <code>op</code>
+     * operation can have only one <code>path</code> associated with it.
      * </p>
      * 
      * @param path
-     *        The <code>op</code> operation's target, as identified by a <a
-     *        href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that
-     *        references a location within the targeted resource. For example, if the target resource has an updateable
-     *        property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the
-     *        <code>name</code> property value is a JSON object (e.g.,
+     *        The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON
+     *        Pointer</a> value that references a location within the targeted resource. For example, if the target
+     *        resource has an updateable property of <code>{"name":"value"}</code>, the path for this property is
+     *        <code>/name</code>. If the <code>name</code> property value is a JSON object (e.g.,
      *        <code>{"name": {"child/name": "child-value"}}</code>), the path for the <code>child/name</code> property
      *        will be <code>/name/child~1name</code>. Any slash ("/") character appearing in path names must be escaped
      *        with "~1", as shown in the example above. Each <code>op</code> operation can have only one
@@ -260,7 +253,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      * 
@@ -268,8 +261,8 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      *        The new target value of the update operation. It is applicable for the <code>add</code> or
      *        <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
      *        object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     *        JSON for Parameters</a>.
+     *        href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     *        Parameters</a>.
      */
 
     public void setValue(String value) {
@@ -281,15 +274,15 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      * 
      * @return The new target value of the update operation. It is applicable for the <code>add</code> or
      *         <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
      *         object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     *         JSON for Parameters</a>.
+     *         href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     *         Parameters</a>.
      */
 
     public String getValue() {
@@ -301,7 +294,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
      * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
      * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a>.
      * </p>
      * 
@@ -309,8 +302,8 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      *        The new target value of the update operation. It is applicable for the <code>add</code> or
      *        <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
      *        object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     *        JSON for Parameters</a>.
+     *        href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     *        Parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

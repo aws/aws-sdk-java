@@ -104,6 +104,29 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private String sourceVersion;
     /**
      * <p>
+     * An identifier for the version of this build's source code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String resolvedSourceVersion;
+    /**
+     * <p>
      * The name of the AWS CodeBuild project.
      * </p>
      */
@@ -886,6 +909,145 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     public Build withSourceVersion(String sourceVersion) {
         setSourceVersion(sourceVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An identifier for the version of this build's source code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resolvedSourceVersion
+     *        An identifier for the version of this build's source code. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *        </p>
+     *        </li>
+     */
+
+    public void setResolvedSourceVersion(String resolvedSourceVersion) {
+        this.resolvedSourceVersion = resolvedSourceVersion;
+    }
+
+    /**
+     * <p>
+     * An identifier for the version of this build's source code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return An identifier for the version of this build's source code. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *         </p>
+     *         </li>
+     */
+
+    public String getResolvedSourceVersion() {
+        return this.resolvedSourceVersion;
+    }
+
+    /**
+     * <p>
+     * An identifier for the version of this build's source code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resolvedSourceVersion
+     *        An identifier for the version of this build's source code. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For AWS CodePipeline, the source revision provided by AWS CodePipeline.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withResolvedSourceVersion(String resolvedSourceVersion) {
+        setResolvedSourceVersion(resolvedSourceVersion);
         return this;
     }
 
@@ -2117,6 +2279,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             sb.append("BuildStatus: ").append(getBuildStatus()).append(",");
         if (getSourceVersion() != null)
             sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
+        if (getResolvedSourceVersion() != null)
+            sb.append("ResolvedSourceVersion: ").append(getResolvedSourceVersion()).append(",");
         if (getProjectName() != null)
             sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getPhases() != null)
@@ -2192,6 +2356,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
             return false;
         if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
+            return false;
+        if (other.getResolvedSourceVersion() == null ^ this.getResolvedSourceVersion() == null)
+            return false;
+        if (other.getResolvedSourceVersion() != null && other.getResolvedSourceVersion().equals(this.getResolvedSourceVersion()) == false)
             return false;
         if (other.getProjectName() == null ^ this.getProjectName() == null)
             return false;
@@ -2276,6 +2444,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCurrentPhase() == null) ? 0 : getCurrentPhase().hashCode());
         hashCode = prime * hashCode + ((getBuildStatus() == null) ? 0 : getBuildStatus().hashCode());
         hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
+        hashCode = prime * hashCode + ((getResolvedSourceVersion() == null) ? 0 : getResolvedSourceVersion().hashCode());
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getPhases() == null) ? 0 : getPhases().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());

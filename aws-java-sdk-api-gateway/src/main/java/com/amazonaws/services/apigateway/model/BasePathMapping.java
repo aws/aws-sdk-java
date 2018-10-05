@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <div class="remarks">A custom domain name plus a <code>BasePathMapping</code> specification identifies a deployed
  * <a>RestApi</a> in a given stage of the owner <a>Account</a>.</div> <div class="seeAlso"> <a
- * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain
- * Names</a> </div>
+ * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain Names</a>
+ * </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BasePathMapping implements Serializable, Cloneable, StructuredPojo {

@@ -84,6 +84,10 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                     context.nextToken();
                     updatePatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("RejectedPatchesAction", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setRejectedPatchesAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
                     updatePatchBaselineResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

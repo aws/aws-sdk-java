@@ -740,7 +740,7 @@
         {"shape":"InvalidGatewayRequestException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were added, removed or replaced since the gateway last listed the bucket's contents and cached the results. This operation is only supported in the file gateway type.</p>"
+      "documentation":"<p>Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were added, removed or replaced since the gateway last listed the bucket's contents and cached the results. This operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch event when your RefreshCache operation completes. For more information, see <a href=\"https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification\">Getting Notified About File Operations</a>.</p>"
     },
     "RemoveTagsFromResource":{
       "name":"RemoveTagsFromResource",
@@ -1009,7 +1009,7 @@
         },
         "GatewayType":{
           "shape":"GatewayType",
-          "documentation":"<p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>. </p> <p> Valid Values: \"STORED\", \"CACHED\", \"VTL\", \"FILE_S3\"</p>"
+          "documentation":"<p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>. </p> <p> Valid Values: \"STORED\", \"CACHED\", \"VTL\", \"FILE_S3\"</p>"
         },
         "TapeDriveType":{
           "shape":"TapeDriveType",
@@ -2531,6 +2531,18 @@
       "max":100,
       "min":0
     },
+    "Folder":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "FolderList":{
+      "type":"list",
+      "member":{"shape":"Folder"},
+      "documentation":"<p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>\"/\"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to \"true\", the entire S3 bucket that the file share has access to is refreshed.</p>",
+      "max":50,
+      "min":1
+    },
     "GatewayARN":{
       "type":"string",
       "documentation":"<p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and region.</p>",
@@ -3084,14 +3096,21 @@
       "type":"structure",
       "required":["FileShareARN"],
       "members":{
-        "FileShareARN":{"shape":"FileShareARN"}
+        "FileShareARN":{"shape":"FileShareARN"},
+        "FolderList":{"shape":"FolderList"},
+        "Recursive":{
+          "shape":"Boolean",
+          "documentation":"<p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to \"true\", each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is \"true\".</p>"
+        }
       }
     },
     "RefreshCacheOutput":{
       "type":"structure",
       "members":{
-        "FileShareARN":{"shape":"FileShareARN"}
-      }
+        "FileShareARN":{"shape":"FileShareARN"},
+        "NotificationId":{"shape":"NotificationId"}
+      },
+      "documentation":"<p>RefreshCacheOutput</p>"
     },
     "RegionId":{
       "type":"string",

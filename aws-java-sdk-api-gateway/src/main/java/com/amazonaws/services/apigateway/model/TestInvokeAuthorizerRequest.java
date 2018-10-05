@@ -46,6 +46,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.Map<String, String> headers;
     /**
      * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> multiValueHeaders;
+    /**
+     * <p>
      * [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path
      * parameters and query string parameters.
      * </p>
@@ -214,6 +221,73 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     public TestInvokeAuthorizerRequest clearHeadersEntries() {
         this.headers = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     * 
+     * @return [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
+     *         This is where the incoming authorization token, or identity source, may be specified.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getMultiValueHeaders() {
+        return multiValueHeaders;
+    }
+
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     * 
+     * @param multiValueHeaders
+     *        [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
+     *        This is where the incoming authorization token, or identity source, may be specified.
+     */
+
+    public void setMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
+        this.multiValueHeaders = multiValueHeaders;
+    }
+
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     * 
+     * @param multiValueHeaders
+     *        [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
+     *        This is where the incoming authorization token, or identity source, may be specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestInvokeAuthorizerRequest withMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
+        setMultiValueHeaders(multiValueHeaders);
+        return this;
+    }
+
+    public TestInvokeAuthorizerRequest addMultiValueHeadersEntry(String key, java.util.List<String> value) {
+        if (null == this.multiValueHeaders) {
+            this.multiValueHeaders = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.multiValueHeaders.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.multiValueHeaders.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MultiValueHeaders.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestInvokeAuthorizerRequest clearMultiValueHeadersEntries() {
+        this.multiValueHeaders = null;
         return this;
     }
 
@@ -442,6 +516,8 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getHeaders() != null)
             sb.append("Headers: ").append(getHeaders()).append(",");
+        if (getMultiValueHeaders() != null)
+            sb.append("MultiValueHeaders: ").append(getMultiValueHeaders()).append(",");
         if (getPathWithQueryString() != null)
             sb.append("PathWithQueryString: ").append(getPathWithQueryString()).append(",");
         if (getBody() != null)
@@ -476,6 +552,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
             return false;
+        if (other.getMultiValueHeaders() == null ^ this.getMultiValueHeaders() == null)
+            return false;
+        if (other.getMultiValueHeaders() != null && other.getMultiValueHeaders().equals(this.getMultiValueHeaders()) == false)
+            return false;
         if (other.getPathWithQueryString() == null ^ this.getPathWithQueryString() == null)
             return false;
         if (other.getPathWithQueryString() != null && other.getPathWithQueryString().equals(this.getPathWithQueryString()) == false)
@@ -503,6 +583,7 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
         hashCode = prime * hashCode + ((getAuthorizerId() == null) ? 0 : getAuthorizerId().hashCode());
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
+        hashCode = prime * hashCode + ((getMultiValueHeaders() == null) ? 0 : getMultiValueHeaders().hashCode());
         hashCode = prime * hashCode + ((getPathWithQueryString() == null) ? 0 : getPathWithQueryString().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getStageVariables() == null) ? 0 : getStageVariables().hashCode());
