@@ -48,7 +48,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String targetSelection;
     /**
      * <p>
-     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
+     * or <code>COMPLETED</code>.
      * </p>
      */
     private String status;
@@ -113,6 +114,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobProcessDetails jobProcessDetails;
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job
+     * execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal
+     * state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     */
+    private TimeoutConfig timeoutConfig;
 
     /**
      * <p>
@@ -283,11 +292,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
+     * or <code>COMPLETED</code>.
      * </p>
      * 
      * @param status
-     *        The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     *        The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
+     *        <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.
      * @see JobStatus
      */
 
@@ -297,10 +308,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
+     * or <code>COMPLETED</code>.
      * </p>
      * 
-     * @return The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     * @return The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
+     *         <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.
      * @see JobStatus
      */
 
@@ -310,11 +323,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
+     * or <code>COMPLETED</code>.
      * </p>
      * 
      * @param status
-     *        The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     *        The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
+     *        <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -326,11 +341,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     * The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
+     * or <code>COMPLETED</code>.
      * </p>
      * 
      * @param status
-     *        The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or <code>COMPLETED</code>.
+     *        The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>,
+     *        <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -791,6 +808,58 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job
+     * execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal
+     * state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param timeoutConfig
+     *        Specifies the amount of time each device has to finish its execution of the job. A timer is started when
+     *        the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *        another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     */
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job
+     * execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal
+     * state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @return Specifies the amount of time each device has to finish its execution of the job. A timer is started when
+     *         the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *         another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     */
+
+    public TimeoutConfig getTimeoutConfig() {
+        return this.timeoutConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job
+     * execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal
+     * state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param timeoutConfig
+     *        Specifies the amount of time each device has to finish its execution of the job. A timer is started when
+     *        the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *        another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        setTimeoutConfig(timeoutConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -828,7 +897,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getCompletedAt() != null)
             sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getJobProcessDetails() != null)
-            sb.append("JobProcessDetails: ").append(getJobProcessDetails());
+            sb.append("JobProcessDetails: ").append(getJobProcessDetails()).append(",");
+        if (getTimeoutConfig() != null)
+            sb.append("TimeoutConfig: ").append(getTimeoutConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -899,6 +970,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobProcessDetails() != null && other.getJobProcessDetails().equals(this.getJobProcessDetails()) == false)
             return false;
+        if (other.getTimeoutConfig() == null ^ this.getTimeoutConfig() == null)
+            return false;
+        if (other.getTimeoutConfig() != null && other.getTimeoutConfig().equals(this.getTimeoutConfig()) == false)
+            return false;
         return true;
     }
 
@@ -921,6 +996,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
         hashCode = prime * hashCode + ((getJobProcessDetails() == null) ? 0 : getJobProcessDetails().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
         return hashCode;
     }
 

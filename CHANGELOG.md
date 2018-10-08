@@ -1,3 +1,12 @@
+# __1.11.424__ __2018-10-08__
+## __AWS IoT__
+  - ### Features
+    - We are releasing job execution timeout functionalities to customers. Customer now can set job execution timeout on the job level when creating a job. 
+
+## __AWS IoT Jobs Data Plane__
+  - ### Features
+    - We are releasing job execution timeout functionalities to customers. Device can now set and update their job execution timeout. 
+
 # __1.11.423__ __2018-10-05__
 ## __AWS Directory Service__
   - ### Features

@@ -77,6 +77,10 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                     context.nextToken();
                     jobExecution.setLastUpdatedAt(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("approximateSecondsBeforeTimedOut", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setApproximateSecondsBeforeTimedOut(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("versionNumber", targetDepth)) {
                     context.nextToken();
                     jobExecution.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));

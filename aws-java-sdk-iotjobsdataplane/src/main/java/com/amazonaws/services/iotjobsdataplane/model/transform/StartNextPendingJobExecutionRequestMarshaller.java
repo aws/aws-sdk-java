@@ -33,6 +33,8 @@ public class StartNextPendingJobExecutionRequestMarshaller {
             .marshallLocationName("thingName").build();
     private static final MarshallingInfo<Map> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("statusDetails").build();
+    private static final MarshallingInfo<Long> STEPTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stepTimeoutInMinutes").build();
 
     private static final StartNextPendingJobExecutionRequestMarshaller instance = new StartNextPendingJobExecutionRequestMarshaller();
 
@@ -52,6 +54,7 @@ public class StartNextPendingJobExecutionRequestMarshaller {
         try {
             protocolMarshaller.marshall(startNextPendingJobExecutionRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(startNextPendingJobExecutionRequest.getStatusDetails(), STATUSDETAILS_BINDING);
+            protocolMarshaller.marshall(startNextPendingJobExecutionRequest.getStepTimeoutInMinutes(), STEPTIMEOUTINMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

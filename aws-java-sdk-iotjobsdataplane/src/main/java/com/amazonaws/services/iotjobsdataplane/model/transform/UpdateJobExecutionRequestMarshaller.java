@@ -37,6 +37,8 @@ public class UpdateJobExecutionRequestMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<Map> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("statusDetails").build();
+    private static final MarshallingInfo<Long> STEPTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stepTimeoutInMinutes").build();
     private static final MarshallingInfo<Long> EXPECTEDVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expectedVersion").build();
     private static final MarshallingInfo<Boolean> INCLUDEJOBEXECUTIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -66,6 +68,7 @@ public class UpdateJobExecutionRequestMarshaller {
             protocolMarshaller.marshall(updateJobExecutionRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(updateJobExecutionRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(updateJobExecutionRequest.getStatusDetails(), STATUSDETAILS_BINDING);
+            protocolMarshaller.marshall(updateJobExecutionRequest.getStepTimeoutInMinutes(), STEPTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(updateJobExecutionRequest.getExpectedVersion(), EXPECTEDVERSION_BINDING);
             protocolMarshaller.marshall(updateJobExecutionRequest.getIncludeJobExecutionState(), INCLUDEJOBEXECUTIONSTATE_BINDING);
             protocolMarshaller.marshall(updateJobExecutionRequest.getIncludeJobDocument(), INCLUDEJOBDOCUMENT_BINDING);

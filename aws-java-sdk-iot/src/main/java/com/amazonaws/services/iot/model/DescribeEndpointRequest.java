@@ -27,19 +27,101 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
+     * The endpoint type. Valid endpoint types include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String endpointType;
 
     /**
      * <p>
-     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
+     * The endpoint type. Valid endpoint types include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endpointType
-     *        The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and
-     *        <code>iot:Jobs</code>).
+     *        The endpoint type. Valid endpoint types include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     *        </p>
+     *        </li>
      */
 
     public void setEndpointType(String endpointType) {
@@ -48,11 +130,65 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
+     * The endpoint type. Valid endpoint types include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and
-     *         <code>iot:Jobs</code>).
+     * @return The endpoint type. Valid endpoint types include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     *         </p>
+     *         </li>
      */
 
     public String getEndpointType() {
@@ -61,12 +197,66 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>).
+     * The endpoint type. Valid endpoint types include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endpointType
-     *        The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code> and
-     *        <code>iot:Jobs</code>).
+     *        The endpoint type. Valid endpoint types include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -72,6 +72,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private JobExecutionsRolloutConfig jobExecutionsRolloutConfig;
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     */
+    private TimeoutConfig timeoutConfig;
 
     /**
      * <p>
@@ -473,6 +481,59 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param timeoutConfig
+     *        Specifies the amount of time each device has to finish its execution of the job. The timer is started when
+     *        the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *        another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     */
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @return Specifies the amount of time each device has to finish its execution of the job. The timer is started
+     *         when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set
+     *         to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>
+     *         .
+     */
+
+    public TimeoutConfig getTimeoutConfig() {
+        return this.timeoutConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param timeoutConfig
+     *        Specifies the amount of time each device has to finish its execution of the job. The timer is started when
+     *        the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *        another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        setTimeoutConfig(timeoutConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -498,7 +559,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTargetSelection() != null)
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
         if (getJobExecutionsRolloutConfig() != null)
-            sb.append("JobExecutionsRolloutConfig: ").append(getJobExecutionsRolloutConfig());
+            sb.append("JobExecutionsRolloutConfig: ").append(getJobExecutionsRolloutConfig()).append(",");
+        if (getTimeoutConfig() != null)
+            sb.append("TimeoutConfig: ").append(getTimeoutConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +608,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getJobExecutionsRolloutConfig() != null && other.getJobExecutionsRolloutConfig().equals(this.getJobExecutionsRolloutConfig()) == false)
             return false;
+        if (other.getTimeoutConfig() == null ^ this.getTimeoutConfig() == null)
+            return false;
+        if (other.getTimeoutConfig() != null && other.getTimeoutConfig().equals(this.getTimeoutConfig()) == false)
+            return false;
         return true;
     }
 
@@ -561,6 +628,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getPresignedUrlConfig() == null) ? 0 : getPresignedUrlConfig().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRolloutConfig() == null) ? 0 : getJobExecutionsRolloutConfig().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
         return hashCode;
     }
 

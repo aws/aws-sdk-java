@@ -88,6 +88,10 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                     context.nextToken();
                     jobExecution.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("approximateSecondsBeforeTimedOut", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setApproximateSecondsBeforeTimedOut(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

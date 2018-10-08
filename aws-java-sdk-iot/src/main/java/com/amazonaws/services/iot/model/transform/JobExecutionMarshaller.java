@@ -47,6 +47,8 @@ public class JobExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionNumber").build();
     private static final MarshallingInfo<Long> VERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("versionNumber").build();
+    private static final MarshallingInfo<Long> APPROXIMATESECONDSBEFORETIMEDOUT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("approximateSecondsBeforeTimedOut").build();
 
     private static final JobExecutionMarshaller instance = new JobExecutionMarshaller();
 
@@ -74,6 +76,7 @@ public class JobExecutionMarshaller {
             protocolMarshaller.marshall(jobExecution.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(jobExecution.getExecutionNumber(), EXECUTIONNUMBER_BINDING);
             protocolMarshaller.marshall(jobExecution.getVersionNumber(), VERSIONNUMBER_BINDING);
+            protocolMarshaller.marshall(jobExecution.getApproximateSecondsBeforeTimedOut(), APPROXIMATESECONDSBEFORETIMEDOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

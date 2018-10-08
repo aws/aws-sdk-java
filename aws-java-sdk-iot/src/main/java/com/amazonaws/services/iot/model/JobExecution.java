@@ -33,7 +33,7 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     private String jobId;
     /**
      * <p>
-     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).
      * </p>
      */
     private String status;
@@ -87,6 +87,13 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long versionNumber;
+    /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     */
+    private Long approximateSecondsBeforeTimedOut;
 
     /**
      * <p>
@@ -130,11 +137,12 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).
      * </p>
      * 
      * @param status
-     *        The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     *        The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or
+     *        REJECTED).
      * @see JobExecutionStatus
      */
 
@@ -144,10 +152,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).
      * </p>
      * 
-     * @return The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     * @return The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or
+     *         REJECTED).
      * @see JobExecutionStatus
      */
 
@@ -157,11 +166,12 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).
      * </p>
      * 
      * @param status
-     *        The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     *        The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or
+     *        REJECTED).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobExecutionStatus
      */
@@ -173,11 +183,12 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     * The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).
      * </p>
      * 
      * @param status
-     *        The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or REJECTED).
+     *        The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or
+     *        REJECTED).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobExecutionStatus
      */
@@ -537,6 +548,52 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param approximateSecondsBeforeTimedOut
+     *        The estimated number of seconds that remain before the job execution status will be changed to
+     *        <code>TIMED_OUT</code>.
+     */
+
+    public void setApproximateSecondsBeforeTimedOut(Long approximateSecondsBeforeTimedOut) {
+        this.approximateSecondsBeforeTimedOut = approximateSecondsBeforeTimedOut;
+    }
+
+    /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @return The estimated number of seconds that remain before the job execution status will be changed to
+     *         <code>TIMED_OUT</code>.
+     */
+
+    public Long getApproximateSecondsBeforeTimedOut() {
+        return this.approximateSecondsBeforeTimedOut;
+    }
+
+    /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param approximateSecondsBeforeTimedOut
+     *        The estimated number of seconds that remain before the job execution status will be changed to
+     *        <code>TIMED_OUT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecution withApproximateSecondsBeforeTimedOut(Long approximateSecondsBeforeTimedOut) {
+        setApproximateSecondsBeforeTimedOut(approximateSecondsBeforeTimedOut);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -566,7 +623,9 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
         if (getExecutionNumber() != null)
             sb.append("ExecutionNumber: ").append(getExecutionNumber()).append(",");
         if (getVersionNumber() != null)
-            sb.append("VersionNumber: ").append(getVersionNumber());
+            sb.append("VersionNumber: ").append(getVersionNumber()).append(",");
+        if (getApproximateSecondsBeforeTimedOut() != null)
+            sb.append("ApproximateSecondsBeforeTimedOut: ").append(getApproximateSecondsBeforeTimedOut());
         sb.append("}");
         return sb.toString();
     }
@@ -621,6 +680,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersionNumber() != null && other.getVersionNumber().equals(this.getVersionNumber()) == false)
             return false;
+        if (other.getApproximateSecondsBeforeTimedOut() == null ^ this.getApproximateSecondsBeforeTimedOut() == null)
+            return false;
+        if (other.getApproximateSecondsBeforeTimedOut() != null
+                && other.getApproximateSecondsBeforeTimedOut().equals(this.getApproximateSecondsBeforeTimedOut()) == false)
+            return false;
         return true;
     }
 
@@ -639,6 +703,7 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getExecutionNumber() == null) ? 0 : getExecutionNumber().hashCode());
         hashCode = prime * hashCode + ((getVersionNumber() == null) ? 0 : getVersionNumber().hashCode());
+        hashCode = prime * hashCode + ((getApproximateSecondsBeforeTimedOut() == null) ? 0 : getApproximateSecondsBeforeTimedOut().hashCode());
         return hashCode;
     }
 
