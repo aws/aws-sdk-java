@@ -29,7 +29,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * accepts EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -39,7 +39,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a
+     * use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -171,14 +171,14 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * accepts EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *         to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *         parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *         parameter, which accepts EC2 tags. For more information about how to use targets, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *         Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -194,7 +194,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * accepts EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -202,7 +202,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceIds
      *        The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *        to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *        parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *        parameter, which accepts EC2 tags. For more information about how to use targets, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -220,7 +220,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * accepts EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -233,7 +233,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceIds
      *        The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *        to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *        parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *        parameter, which accepts EC2 tags. For more information about how to use targets, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -253,7 +253,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * accepts EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -261,7 +261,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceIds
      *        The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *        to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *        parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *        parameter, which accepts EC2 tags. For more information about how to use targets, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -276,14 +276,14 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a
+     * use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *         specify. Targets is required if you don't provide one or more instance IDs in the call. For more
-     *         information about how to use Targets, see <a
+     *         information about how to use targets, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *         Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -299,7 +299,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a
+     * use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -307,7 +307,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param targets
      *        (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *        specify. Targets is required if you don't provide one or more instance IDs in the call. For more
-     *        information about how to use Targets, see <a
+     *        information about how to use targets, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
@@ -325,7 +325,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a
+     * use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -338,7 +338,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param targets
      *        (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *        specify. Targets is required if you don't provide one or more instance IDs in the call. For more
-     *        information about how to use Targets, see <a
+     *        information about how to use targets, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -358,7 +358,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a
+     * use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
      * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -366,7 +366,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param targets
      *        (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *        specify. Targets is required if you don't provide one or more instance IDs in the call. For more
-     *        information about how to use Targets, see <a
+     *        information about how to use targets, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

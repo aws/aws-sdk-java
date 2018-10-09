@@ -22,7 +22,6 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.RequestClientOptions;
 import com.amazonaws.Response;
-import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.internal.SignerConstants;
 import com.amazonaws.handlers.HandlerAfterAttemptContext;
@@ -38,7 +37,6 @@ import com.amazonaws.util.ImmutableMapParameter;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.Throwables;
 import com.amazonaws.util.TimingInfo;
-import java.io.IOException;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collection;
@@ -108,8 +106,8 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
 
         String apiName = request.getHandlerContext(HandlerContextKey.OPERATION_NAME);
         String serviceId = request.getHandlerContext(HandlerContextKey.SERVICE_ID);
-        String signingRegion = request.getHandlerContext(HandlerContextKey.SIGNING_REGION);
         String sessionToken = getSessionToken(request.getHeaders());
+        String region = request.getHandlerContext(HandlerContextKey.SIGNING_REGION);
 
         String accessKey = null;
         if (request.getHandlerContext(HandlerContextKey.AWS_CREDENTIALS) != null) {
@@ -134,7 +132,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
             .withVersion(VERSION)
             .withService(serviceId)
             .withClientId(clientId)
-            .withRegion(signingRegion)
+            .withRegion(region)
             .withAccessKey(accessKey)
             .withUserAgent(trimValueIfExceedsMaxLength(USER_AGENT_KEY, getDefaultUserAgent(request)))
             .withTimestamp(timestamp)
@@ -152,6 +150,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
     private ApiCallMonitoringEvent generateApiCallMonitoringEvent(Request<?> request) {
         String apiName = request.getHandlerContext(HandlerContextKey.OPERATION_NAME);
         String serviceId = request.getHandlerContext(HandlerContextKey.SERVICE_ID);
+        String region = request.getHandlerContext(HandlerContextKey.SIGNING_REGION);
 
         Long timestamp = null;
         Long latency = null;
@@ -173,6 +172,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
         return new ApiCallMonitoringEvent()
             .withApi(apiName)
             .withVersion(VERSION)
+            .withRegion(region)
             .withService(serviceId)
             .withClientId(clientId)
             .withAttemptCount(requestCount)

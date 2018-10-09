@@ -156,6 +156,43 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Stops a Maintenance Window execution that is already in progress and cancels any tasks in the window that have
+     * not already starting running. (Tasks already in progress will continue to completion.)
+     * </p>
+     * 
+     * @param cancelMaintenanceWindowExecutionRequest
+     * @return A Java Future containing the result of the CancelMaintenanceWindowExecution operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.CancelMaintenanceWindowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMaintenanceWindowExecutionResult> cancelMaintenanceWindowExecutionAsync(
+            CancelMaintenanceWindowExecutionRequest cancelMaintenanceWindowExecutionRequest);
+
+    /**
+     * <p>
+     * Stops a Maintenance Window execution that is already in progress and cancels any tasks in the window that have
+     * not already starting running. (Tasks already in progress will continue to completion.)
+     * </p>
+     * 
+     * @param cancelMaintenanceWindowExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelMaintenanceWindowExecution operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CancelMaintenanceWindowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMaintenanceWindowExecutionResult> cancelMaintenanceWindowExecutionAsync(
+            CancelMaintenanceWindowExecutionRequest cancelMaintenanceWindowExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelMaintenanceWindowExecutionRequest, CancelMaintenanceWindowExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
      * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
      * instance. For more information about activations, see <a
@@ -1614,6 +1651,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Retrieves information about upcoming executions of a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowScheduleRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowSchedule operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowScheduleResult> describeMaintenanceWindowScheduleAsync(
+            DescribeMaintenanceWindowScheduleRequest describeMaintenanceWindowScheduleRequest);
+
+    /**
+     * <p>
+     * Retrieves information about upcoming executions of a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowSchedule operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowScheduleResult> describeMaintenanceWindowScheduleAsync(
+            DescribeMaintenanceWindowScheduleRequest describeMaintenanceWindowScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowScheduleRequest, DescribeMaintenanceWindowScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the targets registered with the Maintenance Window.
      * </p>
      * 
@@ -1714,6 +1786,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(
             DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowsRequest, DescribeMaintenanceWindowsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the Maintenance Windows targets or tasks that an instance is associated with.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsForTargetRequest
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowsForTarget operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeMaintenanceWindowsForTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowsForTargetResult> describeMaintenanceWindowsForTargetAsync(
+            DescribeMaintenanceWindowsForTargetRequest describeMaintenanceWindowsForTargetRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the Maintenance Windows targets or tasks that an instance is associated with.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsForTargetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMaintenanceWindowsForTarget operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeMaintenanceWindowsForTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMaintenanceWindowsForTargetResult> describeMaintenanceWindowsForTargetAsync(
+            DescribeMaintenanceWindowsForTargetRequest describeMaintenanceWindowsForTargetRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowsForTargetRequest, DescribeMaintenanceWindowsForTargetResult> asyncHandler);
 
     /**
      * <p>

@@ -751,6 +751,72 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Stops a Maintenance Window execution that is already in progress and cancels any tasks in the window that have
+     * not already starting running. (Tasks already in progress will continue to completion.)
+     * </p>
+     * 
+     * @param cancelMaintenanceWindowExecutionRequest
+     * @return Result of the CancelMaintenanceWindowExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @sample AWSSimpleSystemsManagement.CancelMaintenanceWindowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelMaintenanceWindowExecutionResult cancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelMaintenanceWindowExecution(request);
+    }
+
+    @SdkInternalApi
+    final CancelMaintenanceWindowExecutionResult executeCancelMaintenanceWindowExecution(
+            CancelMaintenanceWindowExecutionRequest cancelMaintenanceWindowExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelMaintenanceWindowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelMaintenanceWindowExecutionRequest> request = null;
+        Response<CancelMaintenanceWindowExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelMaintenanceWindowExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelMaintenanceWindowExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMaintenanceWindowExecution");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelMaintenanceWindowExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelMaintenanceWindowExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
      * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
      * instance. For more information about activations, see <a
@@ -3460,6 +3526,71 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Retrieves information about upcoming executions of a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowScheduleRequest
+     * @return Result of the DescribeMaintenanceWindowSchedule operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMaintenanceWindowScheduleResult describeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowScheduleResult executeDescribeMaintenanceWindowSchedule(
+            DescribeMaintenanceWindowScheduleRequest describeMaintenanceWindowScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMaintenanceWindowScheduleRequest> request = null;
+        Response<DescribeMaintenanceWindowScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMaintenanceWindowScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMaintenanceWindowScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowSchedule");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMaintenanceWindowScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the targets registered with the Maintenance Window.
      * </p>
      * 
@@ -3634,6 +3765,64 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeMaintenanceWindowsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the Maintenance Windows targets or tasks that an instance is associated with.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsForTargetRequest
+     * @return Result of the DescribeMaintenanceWindowsForTarget operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowsForTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMaintenanceWindowsForTargetResult describeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowsForTarget(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowsForTargetResult executeDescribeMaintenanceWindowsForTarget(
+            DescribeMaintenanceWindowsForTargetRequest describeMaintenanceWindowsForTargetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowsForTargetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMaintenanceWindowsForTargetRequest> request = null;
+        Response<DescribeMaintenanceWindowsForTargetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMaintenanceWindowsForTargetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMaintenanceWindowsForTargetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowsForTarget");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceWindowsForTargetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMaintenanceWindowsForTargetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -33,8 +33,14 @@ public class CreateMaintenanceWindowRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> STARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StartDate").build();
+    private static final MarshallingInfo<String> ENDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EndDate").build();
     private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schedule").build();
+    private static final MarshallingInfo<String> SCHEDULETIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleTimezone").build();
     private static final MarshallingInfo<Integer> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Duration").build();
     private static final MarshallingInfo<Integer> CUTOFF_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,7 +69,10 @@ public class CreateMaintenanceWindowRequestMarshaller {
         try {
             protocolMarshaller.marshall(createMaintenanceWindowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createMaintenanceWindowRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getStartDate(), STARTDATE_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getEndDate(), ENDDATE_BINDING);
             protocolMarshaller.marshall(createMaintenanceWindowRequest.getSchedule(), SCHEDULE_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getScheduleTimezone(), SCHEDULETIMEZONE_BINDING);
             protocolMarshaller.marshall(createMaintenanceWindowRequest.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(createMaintenanceWindowRequest.getCutoff(), CUTOFF_BINDING);
             protocolMarshaller.marshall(createMaintenanceWindowRequest.getAllowUnassociatedTargets(), ALLOWUNASSOCIATEDTARGETS_BINDING);

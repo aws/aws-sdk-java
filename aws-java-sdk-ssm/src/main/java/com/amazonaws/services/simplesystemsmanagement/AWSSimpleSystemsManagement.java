@@ -193,6 +193,29 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Stops a Maintenance Window execution that is already in progress and cancels any tasks in the window that have
+     * not already starting running. (Tasks already in progress will continue to completion.)
+     * </p>
+     * 
+     * @param cancelMaintenanceWindowExecutionRequest
+     * @return Result of the CancelMaintenanceWindowExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @sample AWSSimpleSystemsManagement.CancelMaintenanceWindowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelMaintenanceWindowExecutionResult cancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest cancelMaintenanceWindowExecutionRequest);
+
+    /**
+     * <p>
      * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
      * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
      * instance. For more information about activations, see <a
@@ -1251,6 +1274,28 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Retrieves information about upcoming executions of a Maintenance Window.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowScheduleRequest
+     * @return Result of the DescribeMaintenanceWindowSchedule operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline,
+     *         doesn't exist.</p>
+     *         <p>
+     *         For information about resource limits in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
+     *         Manager Limits</a>.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMaintenanceWindowScheduleResult describeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest describeMaintenanceWindowScheduleRequest);
+
+    /**
+     * <p>
      * Lists the targets registered with the Maintenance Window.
      * </p>
      * 
@@ -1307,6 +1352,22 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the Maintenance Windows targets or tasks that an instance is associated with.
+     * </p>
+     * 
+     * @param describeMaintenanceWindowsForTargetRequest
+     * @return Result of the DescribeMaintenanceWindowsForTarget operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowsForTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMaintenanceWindowsForTargetResult describeMaintenanceWindowsForTarget(
+            DescribeMaintenanceWindowsForTargetRequest describeMaintenanceWindowsForTargetRequest);
 
     /**
      * <p>

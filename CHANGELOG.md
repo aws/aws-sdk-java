@@ -1,3 +1,8 @@
+# __1.11.425__ __2018-10-09__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adds StartDate, EndDate, and ScheduleTimezone to CreateMaintenanceWindow and UpdateMaintenanceWindow; Adds NextExecutionTime to GetMaintenanceWindow and DescribeMaintenanceWindows; Adds CancelMaintenanceWindowExecution, DescribeMaintenanceWindowSchedule and DescribeMaintenanceWindowsForTarget APIs.
+
 # __1.11.424__ __2018-10-08__
 ## __AWS IoT__
   - ### Features

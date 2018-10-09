@@ -24,7 +24,6 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
     public static final String API_CALL_ATTEMPT_MONITORING_EVENT_TYPE = "ApiCallAttempt";
 
     private String fqdn;
-    private String region;
     private String userAgent;
     private String accessKey;
     private String sessionToken;
@@ -94,18 +93,12 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
     }
 
     /**
-     * @return the signing region used by the service client that made the request attempt.
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    /**
      * Sets the region
      *
      * @param region The new region value.
      * @return This object for method chaining.
      */
+    @Override
     public ApiCallAttemptMonitoringEvent withRegion(String region) {
         this.region = region;
         return this;

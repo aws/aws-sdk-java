@@ -367,7 +367,6 @@ public class ClientSideMonitoringRequestHandlerTest {
         assertNotNull("attempt latency should not be null", monitoringEvent
             .getAttemptLatency());
         assertEquals("wow.service", monitoringEvent.getFqdn());
-        assertEquals(REGION, monitoringEvent.getRegion());
         assertEquals(SECURITY_TOKENS, monitoringEvent.getSessionToken());
         assertNotNull(monitoringEvent.getUserAgent());
     }
@@ -422,6 +421,7 @@ public class ClientSideMonitoringRequestHandlerTest {
         assertEquals(API_NAME, monitoringEvent.getApi());
         assertEquals(SERVICE_ID, monitoringEvent.getService());
         assertEquals(CLIENT_ID, monitoringEvent.getClientId());
+        assertEquals(REGION, monitoringEvent.getRegion());
         assertNotNull("timestamp should not be null", monitoringEvent.getTimestamp());
         assertNotNull("type should not be null", monitoringEvent.getType());
         assertNotNull("Version should not be null", monitoringEvent.getVersion());

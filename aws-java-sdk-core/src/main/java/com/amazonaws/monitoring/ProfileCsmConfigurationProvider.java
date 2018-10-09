@@ -35,7 +35,7 @@ import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
 public final class ProfileCsmConfigurationProvider implements CsmConfigurationProvider {
     public static final String CSM_ENABLED_PROPERTY = "csm_enabled";
     public static final String CSM_PORT_PROPERTY = "csm_port";
-    public static final String CSM_CLIENT_ID_PROPERTY = "csm_clientid";
+    public static final String CSM_CLIENT_ID_PROPERTY = "csm_client_id";
 
     private final AwsProfileFileLocationProvider configFileLocationProvider;
 

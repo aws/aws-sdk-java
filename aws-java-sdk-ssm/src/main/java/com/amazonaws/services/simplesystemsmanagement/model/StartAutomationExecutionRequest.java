@@ -60,7 +60,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify
-     * Targets.
+     * targets.
      * </p>
      */
     private String targetParameterName;
@@ -358,12 +358,12 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify
-     * Targets.
+     * targets.
      * </p>
      * 
      * @param targetParameterName
      *        The name of the parameter used as the target resource for the rate-controlled execution. Required if you
-     *        specify Targets.
+     *        specify targets.
      */
 
     public void setTargetParameterName(String targetParameterName) {
@@ -373,11 +373,11 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify
-     * Targets.
+     * targets.
      * </p>
      * 
      * @return The name of the parameter used as the target resource for the rate-controlled execution. Required if you
-     *         specify Targets.
+     *         specify targets.
      */
 
     public String getTargetParameterName() {
@@ -387,12 +387,12 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify
-     * Targets.
+     * targets.
      * </p>
      * 
      * @param targetParameterName
      *        The name of the parameter used as the target resource for the rate-controlled execution. Required if you
-     *        specify Targets.
+     *        specify targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

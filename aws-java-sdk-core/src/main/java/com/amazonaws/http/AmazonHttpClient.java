@@ -43,6 +43,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.CanHandleNullCredentials;
@@ -87,6 +88,7 @@ import com.amazonaws.retry.v2.RetryPolicyContext;
 import com.amazonaws.util.AwsClientSideMonitoringMetrics;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.CapacityManager;
 import com.amazonaws.util.CollectionUtils;
 import com.amazonaws.util.CountingInputStream;
@@ -105,6 +107,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -1040,17 +1043,21 @@ public class AmazonHttpClient {
                     originalContent.mark(readLimit);
                 }
                 execOneParams.initPerRetry();
-                if (execOneParams.redirectedURI != null) {
+                URI redirectedURI = execOneParams.redirectedURI;
+                if (redirectedURI != null) {
                 /*
                  * [scheme:][//authority][path][?query][#fragment]
                  */
-                    String scheme = execOneParams.redirectedURI.getScheme();
+                    String scheme = redirectedURI.getScheme();
                     String beforeAuthority = scheme == null ? "" : scheme + "://";
-                    String authority = execOneParams.redirectedURI.getAuthority();
-                    String path = execOneParams.redirectedURI.getPath();
+                    String authority = redirectedURI.getAuthority();
+                    String path = redirectedURI.getPath();
 
                     request.setEndpoint(URI.create(beforeAuthority + authority));
                     request.setResourcePath(SdkHttpUtils.urlEncode(path, true));
+                    awsRequestMetrics.addPropertyWith(Field.RedirectLocation,
+                                                      redirectedURI.toString());
+
                 }
                 if (execOneParams.authRetryParam != null) {
                     request.setEndpoint(execOneParams.authRetryParam.getEndpointForRetry());
@@ -1316,8 +1323,7 @@ public class AmazonHttpClient {
                 }
                 execOneParams.redirectedURI = URI.create(redirectedLocation);
                 awsRequestMetrics.addPropertyWith(Field.StatusCode, statusCode)
-                        .addPropertyWith(Field.RedirectLocation, redirectedLocation)
-                        .addPropertyWith(Field.AWSRequestID, null);
+                                 .addPropertyWith(Field.AWSRequestID, null);
                 return null; // => retry
             }
             execOneParams.leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
@@ -1837,6 +1843,13 @@ public class AmazonHttpClient {
                                                            .withUri(signerURI)
                                                            .withIsRedirect(true)
                                                            .build());
+
+                    if (signer instanceof AWS4Signer) {
+                        String regionName = ((AWS4Signer) signer).getRegionName();
+                        if (regionName != null) {
+                            request.addHandlerContext(HandlerContextKey.SIGNING_REGION, regionName);
+                        }
+                    }
                 } else if (signer == null) {
                     signerURI = request.getEndpoint();
                     signer = execContext

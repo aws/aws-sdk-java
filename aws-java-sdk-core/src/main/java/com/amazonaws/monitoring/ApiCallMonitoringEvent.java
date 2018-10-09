@@ -38,6 +38,12 @@ public class ApiCallMonitoringEvent extends ApiMonitoringEvent {
     }
 
     @Override
+    public ApiCallMonitoringEvent withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    @Override
     public ApiCallMonitoringEvent withService(String service) {
         this.service = service;
         return this;

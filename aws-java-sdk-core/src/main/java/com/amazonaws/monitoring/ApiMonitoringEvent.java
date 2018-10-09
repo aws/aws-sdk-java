@@ -16,7 +16,6 @@
 package com.amazonaws.monitoring;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Base class contains a collection of data that describes a specific Api Call event that occurs during the execution of SDK logic
@@ -28,6 +27,7 @@ public abstract class ApiMonitoringEvent implements MonitoringEvent {
     protected String clientId;
     protected Long timestamp;
     protected Integer version;
+    protected String region;
 
     /**
      * @return the operation name for the api call being made.
@@ -104,6 +104,24 @@ public abstract class ApiMonitoringEvent implements MonitoringEvent {
      * @return This object for method chaining.
      */
     public abstract ApiMonitoringEvent withVersion(Integer version);
+
+    /**
+     * @return the signing region used by the service client to perform the
+     * request's attempt(s).  For requests that end up making attempts to more than
+     * one region due to redirection, the region used on the final attempt must be
+     * used as the Region value for the overall Api Call event.
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    /**
+     * Sets the region
+     *
+     * @param region The new region value.
+     * @return This object for method chaining.
+     */
+    public abstract ApiMonitoringEvent withRegion(String region);
 
     /**
      * @return the type of the event
