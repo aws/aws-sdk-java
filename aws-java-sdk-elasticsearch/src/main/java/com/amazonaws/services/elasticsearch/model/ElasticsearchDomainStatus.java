@@ -159,6 +159,12 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     */
+    private ServiceSoftwareOptions serviceSoftwareOptions;
 
     /**
      * <p>
@@ -1176,6 +1182,46 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        The current status of the Elasticsearch domain's service software.
+     */
+
+    public void setServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
+        this.serviceSoftwareOptions = serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @return The current status of the Elasticsearch domain's service software.
+     */
+
+    public ServiceSoftwareOptions getServiceSoftwareOptions() {
+        return this.serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        The current status of the Elasticsearch domain's service software.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
+        setServiceSoftwareOptions(serviceSoftwareOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1225,7 +1271,9 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
-            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions());
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
+        if (getServiceSoftwareOptions() != null)
+            sb.append("ServiceSoftwareOptions: ").append(getServiceSoftwareOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1320,6 +1368,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             return false;
         if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
             return false;
+        if (other.getServiceSoftwareOptions() == null ^ this.getServiceSoftwareOptions() == null)
+            return false;
+        if (other.getServiceSoftwareOptions() != null && other.getServiceSoftwareOptions().equals(this.getServiceSoftwareOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1348,6 +1400,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
+        hashCode = prime * hashCode + ((getServiceSoftwareOptions() == null) ? 0 : getServiceSoftwareOptions().hashCode());
         return hashCode;
     }
 

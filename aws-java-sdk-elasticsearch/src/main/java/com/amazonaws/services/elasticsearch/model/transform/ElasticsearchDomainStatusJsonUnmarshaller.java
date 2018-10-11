@@ -131,6 +131,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     elasticsearchDomainStatus.setLogPublishingOptions(new MapUnmarshaller<String, LogPublishingOption>(context.getUnmarshaller(String.class),
                             LogPublishingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setServiceSoftwareOptions(ServiceSoftwareOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -67,6 +67,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
+     * Deletes a previously submitted transcription job as wella s any other generated results such as the
+     * transcription, models, and so on.
+     * </p>
+     * 
+     * @param deleteTranscriptionJobRequest
+     * @return A Java Future containing the result of the DeleteTranscriptionJob operation returned by the service.
+     * @sample AmazonTranscribeAsync.DeleteTranscriptionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest deleteTranscriptionJobRequest);
+
+    /**
+     * <p>
+     * Deletes a previously submitted transcription job as wella s any other generated results such as the
+     * transcription, models, and so on.
+     * </p>
+     * 
+     * @param deleteTranscriptionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTranscriptionJob operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.DeleteTranscriptionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest deleteTranscriptionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTranscriptionJobRequest, DeleteTranscriptionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a vocabulary from Amazon Transcribe.
      * </p>
      * 

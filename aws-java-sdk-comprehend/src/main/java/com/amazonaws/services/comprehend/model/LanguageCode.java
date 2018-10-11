@@ -21,7 +21,11 @@ import javax.annotation.Generated;
 public enum LanguageCode {
 
     En("en"),
-    Es("es");
+    Es("es"),
+    Fr("fr"),
+    De("de"),
+    It("it"),
+    Pt("pt");
 
     private String value;
 

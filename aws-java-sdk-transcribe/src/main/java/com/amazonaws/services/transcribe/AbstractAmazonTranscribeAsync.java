@@ -41,6 +41,19 @@ public class AbstractAmazonTranscribeAsync extends AbstractAmazonTranscribe impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest request) {
+
+        return deleteTranscriptionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTranscriptionJobRequest, DeleteTranscriptionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteVocabularyResult> deleteVocabularyAsync(DeleteVocabularyRequest request) {
 
         return deleteVocabularyAsync(request, null);

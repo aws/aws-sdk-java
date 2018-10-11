@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -95,7 +95,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -129,6 +129,48 @@
       },
       "syncReturnType" : "CreateVocabularyResult"
     },
+    "DeleteTranscriptionJob" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteTranscriptionJobResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteTranscriptionJobResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTranscriptionJobRequest, DeleteTranscriptionJobResult>",
+      "asyncReturnType" : "DeleteTranscriptionJobResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a previously submitted transcription job as wella s any other generated results such as the transcription, models, and so on.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "exceptions" : [ {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "BadRequestException",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalFailureException",
+        "documentation" : "<p>There was an internal error. Check the error message and try your request again.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteTranscriptionJobRequest",
+        "variableName" : "deleteTranscriptionJobRequest",
+        "variableType" : "DeleteTranscriptionJobRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteTranscriptionJobRequest",
+        "variableSetterType" : "DeleteTranscriptionJobRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteTranscriptionJob",
+      "operationName" : "DeleteTranscriptionJob",
+      "returnType" : {
+        "returnType" : "DeleteTranscriptionJobResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteTranscriptionJobResult"
+    },
     "DeleteVocabulary" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteVocabularyResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteVocabularyResult>",
@@ -149,7 +191,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalFailureException",
@@ -187,7 +229,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -245,7 +287,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -279,7 +321,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -321,7 +363,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -363,7 +405,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -409,7 +451,7 @@
       "endpointOperation" : false,
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -458,7 +500,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+      "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
       "enums" : null,
       "errorCode" : "BadRequestException",
       "hasHeaderMember" : false,
@@ -1814,6 +1856,222 @@
         "documentation" : null,
         "simpleType" : "CreateVocabularyResult",
         "variableSetterType" : "CreateVocabularyResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteTranscriptionJobRequest" : {
+      "c2jName" : "DeleteTranscriptionJobRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteTranscriptionJob",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Transcribe.DeleteTranscriptionJob",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "TranscriptionJobName",
+        "c2jShape" : "TranscriptionJobName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the transcription job to be deleted.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTranscriptionJobName",
+        "getterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@return The name of the transcription job to be deleted.*/",
+        "getterMethodName" : "getTranscriptionJobName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TranscriptionJobName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TranscriptionJobName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "TranscriptionJobName",
+        "setterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.*/",
+        "setterMethodName" : "setTranscriptionJobName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "transcriptionJobName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "transcriptionJobName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the transcription job to be deleted.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "TranscriptionJobName" : {
+          "c2jName" : "TranscriptionJobName",
+          "c2jShape" : "TranscriptionJobName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the transcription job to be deleted.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTranscriptionJobName",
+          "getterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@return The name of the transcription job to be deleted.*/",
+          "getterMethodName" : "getTranscriptionJobName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TranscriptionJobName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TranscriptionJobName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "TranscriptionJobName",
+          "setterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.*/",
+          "setterMethodName" : "setTranscriptionJobName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "transcriptionJobName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the transcription job to be deleted.</p>\n@param transcriptionJobName The name of the transcription job to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "transcriptionJobName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the transcription job to be deleted.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "TranscriptionJobName" ],
+      "shapeName" : "DeleteTranscriptionJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteTranscriptionJobRequest",
+        "variableName" : "deleteTranscriptionJobRequest",
+        "variableType" : "DeleteTranscriptionJobRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteTranscriptionJobRequest",
+        "variableSetterType" : "DeleteTranscriptionJobRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteTranscriptionJobResult" : {
+      "c2jName" : "DeleteTranscriptionJobResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteTranscriptionJobResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteTranscriptionJobResult",
+        "variableName" : "deleteTranscriptionJobResult",
+        "variableType" : "DeleteTranscriptionJobResult",
+        "documentation" : null,
+        "simpleType" : "DeleteTranscriptionJobResult",
+        "variableSetterType" : "DeleteTranscriptionJobResult"
       },
       "wrapper" : false
     },

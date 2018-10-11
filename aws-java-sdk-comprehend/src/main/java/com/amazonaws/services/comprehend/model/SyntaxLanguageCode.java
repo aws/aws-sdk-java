@@ -20,7 +20,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SyntaxLanguageCode {
 
-    En("en");
+    En("en"),
+    Es("es"),
+    Fr("fr"),
+    De("de"),
+    It("it"),
+    Pt("pt");
 
     private String value;
 

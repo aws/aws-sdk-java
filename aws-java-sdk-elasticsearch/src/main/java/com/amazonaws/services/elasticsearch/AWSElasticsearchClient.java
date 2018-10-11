@@ -85,6 +85,12 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("DisabledOperationException").withModeledClass(
                                     com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withModeledClass(
+                                    com.amazonaws.services.elasticsearch.model.InvalidTypeException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
@@ -99,12 +105,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
                                     com.amazonaws.services.elasticsearch.model.InternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.InvalidTypeException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class));
 
     /**
@@ -362,6 +362,74 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<AddTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
+     * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+     * state.
+     * </p>
+     * 
+     * @param cancelElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code>
+     *        operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software
+     *        update on.
+     * @return Result of the CancelElasticsearchServiceSoftwareUpdate operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.CancelElasticsearchServiceSoftwareUpdate
+     */
+    @Override
+    public CancelElasticsearchServiceSoftwareUpdateResult cancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelElasticsearchServiceSoftwareUpdate(request);
+    }
+
+    @SdkInternalApi
+    final CancelElasticsearchServiceSoftwareUpdateResult executeCancelElasticsearchServiceSoftwareUpdate(
+            CancelElasticsearchServiceSoftwareUpdateRequest cancelElasticsearchServiceSoftwareUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelElasticsearchServiceSoftwareUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelElasticsearchServiceSoftwareUpdateRequest> request = null;
+        Response<CancelElasticsearchServiceSoftwareUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelElasticsearchServiceSoftwareUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelElasticsearchServiceSoftwareUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelElasticsearchServiceSoftwareUpdate");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelElasticsearchServiceSoftwareUpdateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CancelElasticsearchServiceSoftwareUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1538,6 +1606,71 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Schedules a service software update for an Amazon ES domain.
+     * </p>
+     * 
+     * @param startElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation.
+     *        Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
+     * @return Result of the StartElasticsearchServiceSoftwareUpdate operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.StartElasticsearchServiceSoftwareUpdate
+     */
+    @Override
+    public StartElasticsearchServiceSoftwareUpdateResult startElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartElasticsearchServiceSoftwareUpdate(request);
+    }
+
+    @SdkInternalApi
+    final StartElasticsearchServiceSoftwareUpdateResult executeStartElasticsearchServiceSoftwareUpdate(
+            StartElasticsearchServiceSoftwareUpdateRequest startElasticsearchServiceSoftwareUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startElasticsearchServiceSoftwareUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartElasticsearchServiceSoftwareUpdateRequest> request = null;
+        Response<StartElasticsearchServiceSoftwareUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartElasticsearchServiceSoftwareUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startElasticsearchServiceSoftwareUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartElasticsearchServiceSoftwareUpdate");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartElasticsearchServiceSoftwareUpdateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartElasticsearchServiceSoftwareUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

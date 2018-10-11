@@ -22065,6 +22065,18 @@
       }, {
         "name" : "Es",
         "value" : "es"
+      }, {
+        "name" : "Fr",
+        "value" : "fr"
+      }, {
+        "name" : "De",
+        "value" : "de"
+      }, {
+        "name" : "It",
+        "value" : "it"
+      }, {
+        "name" : "Pt",
+        "value" : "pt"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -37167,6 +37179,21 @@
       "enums" : [ {
         "name" : "En",
         "value" : "en"
+      }, {
+        "name" : "Es",
+        "value" : "es"
+      }, {
+        "name" : "Fr",
+        "value" : "fr"
+      }, {
+        "name" : "De",
+        "value" : "de"
+      }, {
+        "name" : "It",
+        "value" : "it"
+      }, {
+        "name" : "Pt",
+        "value" : "pt"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

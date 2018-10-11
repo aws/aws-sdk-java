@@ -96,6 +96,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest request) {
+
+        return deleteTranscriptionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(final DeleteTranscriptionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTranscriptionJobRequest, DeleteTranscriptionJobResult> asyncHandler) {
+        final DeleteTranscriptionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTranscriptionJobResult>() {
+            @Override
+            public DeleteTranscriptionJobResult call() throws Exception {
+                DeleteTranscriptionJobResult result = null;
+
+                try {
+                    result = executeDeleteTranscriptionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteVocabularyResult> deleteVocabularyAsync(DeleteVocabularyRequest request) {
 
         return deleteVocabularyAsync(request, null);

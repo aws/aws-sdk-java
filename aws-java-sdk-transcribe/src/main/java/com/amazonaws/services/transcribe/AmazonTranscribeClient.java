@@ -146,9 +146,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param createVocabularyRequest
      * @return Result of the CreateVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
@@ -208,6 +208,70 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes a previously submitted transcription job as wella s any other generated results such as the
+     * transcription, models, and so on.
+     * </p>
+     * 
+     * @param deleteTranscriptionJobRequest
+     * @return Result of the DeleteTranscriptionJob operation returned by the service.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteTranscriptionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTranscriptionJobResult deleteTranscriptionJob(DeleteTranscriptionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTranscriptionJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTranscriptionJobResult executeDeleteTranscriptionJob(DeleteTranscriptionJobRequest deleteTranscriptionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTranscriptionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTranscriptionJobRequest> request = null;
+        Response<DeleteTranscriptionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTranscriptionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTranscriptionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTranscriptionJob");
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTranscriptionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTranscriptionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a vocabulary from Amazon Transcribe.
      * </p>
      * 
@@ -219,9 +283,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @sample AmazonTranscribe.DeleteVocabulary
@@ -280,9 +344,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param getTranscriptionJobRequest
      * @return Result of the GetTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
@@ -351,9 +415,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @sample AmazonTranscribe.GetVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary" target="_top">AWS API
      *      Documentation</a>
@@ -408,9 +472,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param listTranscriptionJobsRequest
      * @return Result of the ListTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
@@ -472,9 +536,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param listVocabulariesRequest
      * @return Result of the ListVocabularies operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
@@ -534,9 +598,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param startTranscriptionJobRequest
      * @return Result of the StartTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
@@ -604,9 +668,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param updateVocabularyRequest
      * @return Result of the UpdateVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when creating a
-     *         resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception
-     *         <code>Message</code> field for more information.
+     *         Your request didn't pass one or more validation tests. For example, a name may not exist when getting a
+     *         transcription job or custom vocabulary. See the exception <code>Message</code> field for more
+     *         information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.

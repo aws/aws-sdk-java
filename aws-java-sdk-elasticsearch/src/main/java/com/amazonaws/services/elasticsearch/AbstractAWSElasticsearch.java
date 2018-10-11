@@ -43,6 +43,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
     }
 
     @Override
+    public CancelElasticsearchServiceSoftwareUpdateResult cancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateElasticsearchDomainResult createElasticsearchDomain(CreateElasticsearchDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -131,6 +136,11 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
 
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartElasticsearchServiceSoftwareUpdateResult startElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

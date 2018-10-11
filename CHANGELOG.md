@@ -1,3 +1,16 @@
+# __1.11.426__ __2018-10-10__
+## __Amazon Comprehend__
+  - ### Features
+    - This release adds French, Italian, German and Portuguese language support for all existing synchronous and asynchronous APIs
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service now supports customer-scheduled service software updates. When new service software becomes available, you can request an update to your domain and benefit from new features more quickly. If you take no action, we update the service software automatically after a certain time frame.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this update Amazon Transcribe now supports deleting completed transcription jobs. 
+
 # __1.11.425__ __2018-10-09__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

@@ -1344,7 +1344,11 @@
       "type":"string",
       "enum":[
         "en",
-        "es"
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt"
       ]
     },
     "ListDominantLanguageDetectionJobsRequest":{
@@ -2039,7 +2043,14 @@
     },
     "SyntaxLanguageCode":{
       "type":"string",
-      "enum":["en"]
+      "enum":[
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt"
+      ]
     },
     "SyntaxToken":{
       "type":"structure",

@@ -41,6 +41,21 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
+            CancelElasticsearchServiceSoftwareUpdateRequest request) {
+
+        return cancelElasticsearchServiceSoftwareUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
+            CancelElasticsearchServiceSoftwareUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelElasticsearchServiceSoftwareUpdateRequest, CancelElasticsearchServiceSoftwareUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateElasticsearchDomainResult> createElasticsearchDomainAsync(CreateElasticsearchDomainRequest request) {
 
         return createElasticsearchDomainAsync(request, null);
@@ -282,6 +297,21 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch impl
     @Override
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
+            StartElasticsearchServiceSoftwareUpdateRequest request) {
+
+        return startElasticsearchServiceSoftwareUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
+            StartElasticsearchServiceSoftwareUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartElasticsearchServiceSoftwareUpdateRequest, StartElasticsearchServiceSoftwareUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -69,6 +69,8 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICESOFTWAREOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceSoftwareOptions").build();
 
     private static final ElasticsearchDomainStatusMarshaller instance = new ElasticsearchDomainStatusMarshaller();
 
@@ -106,6 +108,7 @@ public class ElasticsearchDomainStatusMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainStatus.getNodeToNodeEncryptionOptions(), NODETONODEENCRYPTIONOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getServiceSoftwareOptions(), SERVICESOFTWAREOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

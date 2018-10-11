@@ -29,6 +29,20 @@
       ],
       "documentation":"<p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an audio file.</p>"
     },
+    "DeleteTranscriptionJob":{
+      "name":"DeleteTranscriptionJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteTranscriptionJobRequest"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"BadRequestException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Deletes a previously submitted transcription job as wella s any other generated results such as the transcription, models, and so on.</p>"
+    },
     "DeleteVocabulary":{
       "name":"DeleteVocabulary",
       "http":{
@@ -146,7 +160,7 @@
       "members":{
         "Message":{"shape":"FailureReason"}
       },
-      "documentation":"<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+      "documentation":"<p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
       "exception":true
     },
     "Boolean":{"type":"boolean"},
@@ -206,6 +220,16 @@
       }
     },
     "DateTime":{"type":"timestamp"},
+    "DeleteTranscriptionJobRequest":{
+      "type":"structure",
+      "required":["TranscriptionJobName"],
+      "members":{
+        "TranscriptionJobName":{
+          "shape":"TranscriptionJobName",
+          "documentation":"<p>The name of the transcription job to be deleted.</p>"
+        }
+      }
+    },
     "DeleteVocabularyRequest":{
       "type":"structure",
       "required":["VocabularyName"],

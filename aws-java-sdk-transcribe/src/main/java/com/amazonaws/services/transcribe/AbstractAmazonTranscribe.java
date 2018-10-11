@@ -33,6 +33,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public DeleteTranscriptionJobResult deleteTranscriptionJob(DeleteTranscriptionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVocabularyResult deleteVocabulary(DeleteVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
