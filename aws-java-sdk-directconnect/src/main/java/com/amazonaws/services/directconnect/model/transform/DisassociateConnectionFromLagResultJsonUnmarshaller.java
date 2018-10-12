@@ -96,6 +96,10 @@ public class DisassociateConnectionFromLagResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     disassociateConnectionFromLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    disassociateConnectionFromLagResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     disassociateConnectionFromLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

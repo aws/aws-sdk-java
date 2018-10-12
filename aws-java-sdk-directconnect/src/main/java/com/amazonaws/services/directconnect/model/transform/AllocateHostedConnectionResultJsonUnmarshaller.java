@@ -96,6 +96,10 @@ public class AllocateHostedConnectionResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     allocateHostedConnectionResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    allocateHostedConnectionResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     allocateHostedConnectionResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

@@ -42,6 +42,15 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     private String query;
     /**
      * <p>
+     * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
+     * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
+     * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
+     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * </p>
+     */
+    private String statementType;
+    /**
+     * <p>
      * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
      * results.
      * </p>
@@ -62,7 +71,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     private QueryExecutionStatus status;
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute.
+     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
+     * type of statement that was run.
      * </p>
      */
     private QueryExecutionStatistics statistics;
@@ -144,6 +154,89 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     public QueryExecution withQuery(String query) {
         setQuery(query);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
+     * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
+     * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
+     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * </p>
+     * 
+     * @param statementType
+     *        The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
+     *        <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
+     *        <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
+     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     * @see StatementType
+     */
+
+    public void setStatementType(String statementType) {
+        this.statementType = statementType;
+    }
+
+    /**
+     * <p>
+     * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
+     * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
+     * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
+     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * </p>
+     * 
+     * @return The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
+     *         <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
+     *         <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
+     *         DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     * @see StatementType
+     */
+
+    public String getStatementType() {
+        return this.statementType;
+    }
+
+    /**
+     * <p>
+     * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
+     * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
+     * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
+     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * </p>
+     * 
+     * @param statementType
+     *        The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
+     *        <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
+     *        <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
+     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatementType
+     */
+
+    public QueryExecution withStatementType(String statementType) {
+        setStatementType(statementType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code>
+     * indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>.
+     * <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,
+     * or <code>DESCRIBE &lt;table&gt;</code>.
+     * </p>
+     * 
+     * @param statementType
+     *        The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
+     *        <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as
+     *        <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and
+     *        DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatementType
+     */
+
+    public QueryExecution withStatementType(StatementType statementType) {
+        this.statementType = statementType.toString();
         return this;
     }
 
@@ -281,11 +374,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute.
+     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
+     * type of statement that was run.
      * </p>
      * 
      * @param statistics
-     *        The amount of data scanned during the query execution and the amount of time that it took to execute.
+     *        The amount of data scanned during the query execution and the amount of time that it took to execute, and
+     *        the type of statement that was run.
      */
 
     public void setStatistics(QueryExecutionStatistics statistics) {
@@ -294,10 +389,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute.
+     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
+     * type of statement that was run.
      * </p>
      * 
-     * @return The amount of data scanned during the query execution and the amount of time that it took to execute.
+     * @return The amount of data scanned during the query execution and the amount of time that it took to execute, and
+     *         the type of statement that was run.
      */
 
     public QueryExecutionStatistics getStatistics() {
@@ -306,11 +403,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute.
+     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
+     * type of statement that was run.
      * </p>
      * 
      * @param statistics
-     *        The amount of data scanned during the query execution and the amount of time that it took to execute.
+     *        The amount of data scanned during the query execution and the amount of time that it took to execute, and
+     *        the type of statement that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,6 +433,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             sb.append("QueryExecutionId: ").append(getQueryExecutionId()).append(",");
         if (getQuery() != null)
             sb.append("Query: ").append(getQuery()).append(",");
+        if (getStatementType() != null)
+            sb.append("StatementType: ").append(getStatementType()).append(",");
         if (getResultConfiguration() != null)
             sb.append("ResultConfiguration: ").append(getResultConfiguration()).append(",");
         if (getQueryExecutionContext() != null)
@@ -364,6 +465,10 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getQuery() != null && other.getQuery().equals(this.getQuery()) == false)
             return false;
+        if (other.getStatementType() == null ^ this.getStatementType() == null)
+            return false;
+        if (other.getStatementType() != null && other.getStatementType().equals(this.getStatementType()) == false)
+            return false;
         if (other.getResultConfiguration() == null ^ this.getResultConfiguration() == null)
             return false;
         if (other.getResultConfiguration() != null && other.getResultConfiguration().equals(this.getResultConfiguration()) == false)
@@ -390,6 +495,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getQueryExecutionId() == null) ? 0 : getQueryExecutionId().hashCode());
         hashCode = prime * hashCode + ((getQuery() == null) ? 0 : getQuery().hashCode());
+        hashCode = prime * hashCode + ((getStatementType() == null) ? 0 : getStatementType().hashCode());
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
         hashCode = prime * hashCode + ((getQueryExecutionContext() == null) ? 0 : getQueryExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

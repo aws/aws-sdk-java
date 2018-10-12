@@ -747,14 +747,14 @@ public class AmazonHttpClient {
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_STARTED_EVENT);
                 response = executeHelper();
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_SUCCESS_EVENT);
-                awsRequestMetrics.endEvent(AwsClientSideMonitoringMetrics.Latency);
+                awsRequestMetrics.endEvent(AwsClientSideMonitoringMetrics.ApiCallLatency);
                 awsRequestMetrics.getTimingInfo().endTiming();
                 afterResponse(response);
                 return response;
             } catch (AmazonClientException e) {
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_FAILED_EVENT);
 
-                awsRequestMetrics.endEvent(AwsClientSideMonitoringMetrics.Latency);
+                awsRequestMetrics.endEvent(AwsClientSideMonitoringMetrics.ApiCallLatency);
                 // Exceptions generated here will block the rethrow of e.
                 afterError(response, e);
                 throw e;
@@ -1034,7 +1034,7 @@ public class AmazonHttpClient {
                 final int readLimit = requestConfig.getRequestClientOptions().getReadLimit();
                 originalContent.mark(readLimit);
             }
-            awsRequestMetrics.startEvent(AwsClientSideMonitoringMetrics.Latency);
+            awsRequestMetrics.startEvent(AwsClientSideMonitoringMetrics.ApiCallLatency);
             while (true) {
                 checkInterrupted();
                 if (originalContent instanceof BufferedInputStream && originalContent.markSupported()) {

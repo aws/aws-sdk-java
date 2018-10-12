@@ -60,6 +60,10 @@ public class NewPrivateVirtualInterfaceAllocationJsonUnmarshaller implements Unm
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    newPrivateVirtualInterfaceAllocation.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));

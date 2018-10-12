@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS Direct Connect location where connections and interconnects can be requested.
+ * Information about an AWS Direct Connect location.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Location" target="_top">AWS API
@@ -30,37 +30,30 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code used to indicate the AWS Direct Connect location.
+     * The code for the location.
      * </p>
      */
     private String locationCode;
     /**
      * <p>
-     * The name of the AWS Direct Connect location. The name includes the colocation partner name and the physical site
-     * of the lit building.
+     * The name of the location. This includes the name of the colocation partner and the physical site of the building.
      * </p>
      */
     private String locationName;
     /**
      * <p>
-     * The AWS region where the AWS Direct connect location is located.
-     * </p>
-     * <p>
-     * Example: us-east-1
-     * </p>
-     * <p>
-     * Default: None
+     * The AWS Region for the location.
      * </p>
      */
     private String region;
 
     /**
      * <p>
-     * The code used to indicate the AWS Direct Connect location.
+     * The code for the location.
      * </p>
      * 
      * @param locationCode
-     *        The code used to indicate the AWS Direct Connect location.
+     *        The code for the location.
      */
 
     public void setLocationCode(String locationCode) {
@@ -69,10 +62,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code used to indicate the AWS Direct Connect location.
+     * The code for the location.
      * </p>
      * 
-     * @return The code used to indicate the AWS Direct Connect location.
+     * @return The code for the location.
      */
 
     public String getLocationCode() {
@@ -81,11 +74,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code used to indicate the AWS Direct Connect location.
+     * The code for the location.
      * </p>
      * 
      * @param locationCode
-     *        The code used to indicate the AWS Direct Connect location.
+     *        The code for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,13 +89,12 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Direct Connect location. The name includes the colocation partner name and the physical site
-     * of the lit building.
+     * The name of the location. This includes the name of the colocation partner and the physical site of the building.
      * </p>
      * 
      * @param locationName
-     *        The name of the AWS Direct Connect location. The name includes the colocation partner name and the
-     *        physical site of the lit building.
+     *        The name of the location. This includes the name of the colocation partner and the physical site of the
+     *        building.
      */
 
     public void setLocationName(String locationName) {
@@ -111,12 +103,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Direct Connect location. The name includes the colocation partner name and the physical site
-     * of the lit building.
+     * The name of the location. This includes the name of the colocation partner and the physical site of the building.
      * </p>
      * 
-     * @return The name of the AWS Direct Connect location. The name includes the colocation partner name and the
-     *         physical site of the lit building.
+     * @return The name of the location. This includes the name of the colocation partner and the physical site of the
+     *         building.
      */
 
     public String getLocationName() {
@@ -125,13 +116,12 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Direct Connect location. The name includes the colocation partner name and the physical site
-     * of the lit building.
+     * The name of the location. This includes the name of the colocation partner and the physical site of the building.
      * </p>
      * 
      * @param locationName
-     *        The name of the AWS Direct Connect location. The name includes the colocation partner name and the
-     *        physical site of the lit building.
+     *        The name of the location. This includes the name of the colocation partner and the physical site of the
+     *        building.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,22 +132,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region where the AWS Direct connect location is located.
-     * </p>
-     * <p>
-     * Example: us-east-1
-     * </p>
-     * <p>
-     * Default: None
+     * The AWS Region for the location.
      * </p>
      * 
      * @param region
-     *        The AWS region where the AWS Direct connect location is located.</p>
-     *        <p>
-     *        Example: us-east-1
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The AWS Region for the location.
      */
 
     public void setRegion(String region) {
@@ -166,21 +145,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region where the AWS Direct connect location is located.
-     * </p>
-     * <p>
-     * Example: us-east-1
-     * </p>
-     * <p>
-     * Default: None
+     * The AWS Region for the location.
      * </p>
      * 
-     * @return The AWS region where the AWS Direct connect location is located.</p>
-     *         <p>
-     *         Example: us-east-1
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The AWS Region for the location.
      */
 
     public String getRegion() {
@@ -189,22 +157,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region where the AWS Direct connect location is located.
-     * </p>
-     * <p>
-     * Example: us-east-1
-     * </p>
-     * <p>
-     * Default: None
+     * The AWS Region for the location.
      * </p>
      * 
      * @param region
-     *        The AWS region where the AWS Direct connect location is located.</p>
-     *        <p>
-     *        Example: us-east-1
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The AWS Region for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreatePublicVirtualInterface operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"
  *      target="_top">AWS API Documentation</a>
@@ -28,19 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     */
     private String connectionId;
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      */
     private NewPublicVirtualInterface newPublicVirtualInterface;
 
     /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -48,7 +52,11 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
+     * @return The ID of the connection.
      */
 
     public String getConnectionId() {
@@ -56,7 +64,12 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,16 +80,11 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
      * @param newPublicVirtualInterface
-     *        Detailed information for the public virtual interface to be created.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the public virtual interface.
      */
 
     public void setNewPublicVirtualInterface(NewPublicVirtualInterface newPublicVirtualInterface) {
@@ -85,15 +93,10 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
-     * @return Detailed information for the public virtual interface to be created.</p>
-     *         <p>
-     *         Default: None
+     * @return Information about the public virtual interface.
      */
 
     public NewPublicVirtualInterface getNewPublicVirtualInterface() {
@@ -102,16 +105,11 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
      * @param newPublicVirtualInterface
-     *        Detailed information for the public virtual interface to be created.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the public virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

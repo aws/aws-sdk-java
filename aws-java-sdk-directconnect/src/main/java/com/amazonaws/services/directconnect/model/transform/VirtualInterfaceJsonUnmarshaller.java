@@ -108,6 +108,14 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                     context.nextToken();
                     virtualInterface.setCustomerRouterConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     virtualInterface.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));

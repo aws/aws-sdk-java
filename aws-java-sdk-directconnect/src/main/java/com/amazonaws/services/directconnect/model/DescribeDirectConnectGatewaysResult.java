@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Container for the response from the DescribeDirectConnectGateways API call
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways"
  *      target="_top">AWS API Documentation</a>
@@ -29,19 +26,23 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the direct connect gateways.
+     * The Direct Connect gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DirectConnectGateway> directConnectGateways;
-
+    /**
+     * <p>
+     * The token to retrieve the next page.
+     * </p>
+     */
     private String nextToken;
 
     /**
      * <p>
-     * Information about the direct connect gateways.
+     * The Direct Connect gateways.
      * </p>
      * 
-     * @return Information about the direct connect gateways.
+     * @return The Direct Connect gateways.
      */
 
     public java.util.List<DirectConnectGateway> getDirectConnectGateways() {
@@ -53,11 +54,11 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the direct connect gateways.
+     * The Direct Connect gateways.
      * </p>
      * 
      * @param directConnectGateways
-     *        Information about the direct connect gateways.
+     *        The Direct Connect gateways.
      */
 
     public void setDirectConnectGateways(java.util.Collection<DirectConnectGateway> directConnectGateways) {
@@ -71,7 +72,7 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the direct connect gateways.
+     * The Direct Connect gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +81,7 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param directConnectGateways
-     *        Information about the direct connect gateways.
+     *        The Direct Connect gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +97,11 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the direct connect gateways.
+     * The Direct Connect gateways.
      * </p>
      * 
      * @param directConnectGateways
-     *        Information about the direct connect gateways.
+     *        The Direct Connect gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +111,12 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -118,7 +124,11 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * The token to retrieve the next page.
+     * </p>
+     * 
+     * @return The token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -126,7 +136,12 @@ public class DescribeDirectConnectGatewaysResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

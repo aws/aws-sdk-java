@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to theHostedConnection operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection"
  *      target="_top">AWS API Documentation</a>
@@ -30,52 +27,26 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The numeric account ID of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account ID of the customer for the connection.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
-     * The bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: <code>500Mbps</code>
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     * 400Mbps, and 500Mbps.
      * </p>
      */
     private String bandwidth;
     /**
      * <p>
-     * The name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<code>500M Connection to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the hosted connection.
      * </p>
      */
     private String connectionName;
@@ -83,33 +54,16 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The dedicated VLAN provisioned to the hosted connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private Integer vlan;
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the interconnect or LAG on which the connection will be provisioned.</p>
-     *        <p>
-     *        Example: dxcon-456abc78 or dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect or LAG.
      */
 
     public void setConnectionId(String connectionId) {
@@ -118,21 +72,10 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      * 
-     * @return The ID of the interconnect or LAG on which the connection will be provisioned.</p>
-     *         <p>
-     *         Example: dxcon-456abc78 or dxlag-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the interconnect or LAG.
      */
 
     public String getConnectionId() {
@@ -141,22 +84,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the interconnect or LAG on which the connection will be provisioned.</p>
-     *        <p>
-     *        Example: dxcon-456abc78 or dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect or LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,22 +99,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The numeric account ID of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account ID of the customer for the connection.
      * </p>
      * 
      * @param ownerAccount
-     *        The numeric account ID of the customer for whom the connection will be provisioned.</p>
-     *        <p>
-     *        Example: 123443215678
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account ID of the customer for the connection.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -191,21 +112,10 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The numeric account ID of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account ID of the customer for the connection.
      * </p>
      * 
-     * @return The numeric account ID of the customer for whom the connection will be provisioned.</p>
-     *         <p>
-     *         Example: 123443215678
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the AWS account ID of the customer for the connection.
      */
 
     public String getOwnerAccount() {
@@ -214,22 +124,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The numeric account ID of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account ID of the customer for the connection.
      * </p>
      * 
      * @param ownerAccount
-     *        The numeric account ID of the customer for whom the connection will be provisioned.</p>
-     *        <p>
-     *        Example: 123443215678
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account ID of the customer for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,28 +139,13 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: <code>500Mbps</code>
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     * 400Mbps, and 500Mbps.
      * </p>
      * 
      * @param bandwidth
-     *        The bandwidth of the connection.</p>
-     *        <p>
-     *        Example: <code>500Mbps</code>
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     *        The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps,
+     *        300Mbps, 400Mbps, and 500Mbps.
      */
 
     public void setBandwidth(String bandwidth) {
@@ -270,27 +154,12 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: <code>500Mbps</code>
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     * 400Mbps, and 500Mbps.
      * </p>
      * 
-     * @return The bandwidth of the connection.</p>
-     *         <p>
-     *         Example: <code>500Mbps</code>
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * @return The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps,
+     *         300Mbps, 400Mbps, and 500Mbps.
      */
 
     public String getBandwidth() {
@@ -299,28 +168,13 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: <code>500Mbps</code>
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     * 400Mbps, and 500Mbps.
      * </p>
      * 
      * @param bandwidth
-     *        The bandwidth of the connection.</p>
-     *        <p>
-     *        Example: <code>500Mbps</code>
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     *        The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps,
+     *        300Mbps, 400Mbps, and 500Mbps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,22 +185,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<code>500M Connection to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the hosted connection.
      * </p>
      * 
      * @param connectionName
-     *        The name of the provisioned connection.</p>
-     *        <p>
-     *        Example: "<code>500M Connection to AWS</code>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the hosted connection.
      */
 
     public void setConnectionName(String connectionName) {
@@ -355,21 +198,10 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<code>500M Connection to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the hosted connection.
      * </p>
      * 
-     * @return The name of the provisioned connection.</p>
-     *         <p>
-     *         Example: "<code>500M Connection to AWS</code>"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The name of the hosted connection.
      */
 
     public String getConnectionName() {
@@ -378,22 +210,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<code>500M Connection to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the hosted connection.
      * </p>
      * 
      * @param connectionName
-     *        The name of the provisioned connection.</p>
-     *        <p>
-     *        Example: "<code>500M Connection to AWS</code>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the hosted connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,20 +227,9 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The dedicated VLAN provisioned to the hosted connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param vlan
-     *        The dedicated VLAN provisioned to the hosted connection.</p>
-     *        <p>
-     *        Example: 101
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The dedicated VLAN provisioned to the hosted connection.
      */
 
     public void setVlan(Integer vlan) {
@@ -430,19 +240,8 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The dedicated VLAN provisioned to the hosted connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The dedicated VLAN provisioned to the hosted connection.</p>
-     *         <p>
-     *         Example: 101
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The dedicated VLAN provisioned to the hosted connection.
      */
 
     public Integer getVlan() {
@@ -453,20 +252,9 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The dedicated VLAN provisioned to the hosted connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param vlan
-     *        The dedicated VLAN provisioned to the hosted connection.</p>
-     *        <p>
-     *        Example: 101
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The dedicated VLAN provisioned to the hosted connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

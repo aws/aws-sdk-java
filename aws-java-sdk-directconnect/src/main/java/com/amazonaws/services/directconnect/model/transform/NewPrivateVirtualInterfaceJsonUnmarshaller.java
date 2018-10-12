@@ -60,6 +60,10 @@ public class NewPrivateVirtualInterfaceJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     newPrivateVirtualInterface.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    newPrivateVirtualInterface.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterface.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));

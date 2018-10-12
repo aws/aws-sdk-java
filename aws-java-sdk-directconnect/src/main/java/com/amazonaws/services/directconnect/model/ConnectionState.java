@@ -15,54 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * State of the connection.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the
- * ordering state until the owner of the hosted connection confirms or declines the connection order.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Requested</b>: The initial state of a standard connection. The connection stays in the requested state until the
- * Letter of Authorization (LOA) is sent to the customer.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Pending</b>: The connection has been approved, and is being initialized.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Available</b>: The network link is up, and the connection is ready for use.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Down</b>: The network link is down.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleting</b>: The connection is in the process of being deleted.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleted</b>: The connection has been deleted.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the
- * end customer.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConnectionState {

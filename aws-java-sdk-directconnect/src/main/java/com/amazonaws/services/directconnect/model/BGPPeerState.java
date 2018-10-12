@@ -15,37 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The state of the BGP peer.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Verifying</b>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state
- * only applies to BGP peers on a public virtual interface.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Pending</b>: The BGP peer has been created, and is in this state until it is ready to be established.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Available</b>: The BGP peer can be established.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleting</b>: The BGP peer is in the process of being deleted.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleted</b>: The BGP peer has been deleted and cannot be established.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BGPPeerState {

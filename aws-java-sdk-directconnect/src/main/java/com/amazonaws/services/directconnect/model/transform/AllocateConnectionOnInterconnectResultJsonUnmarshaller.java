@@ -96,6 +96,10 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
                     context.nextToken();
                     allocateConnectionOnInterconnectResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    allocateConnectionOnInterconnectResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

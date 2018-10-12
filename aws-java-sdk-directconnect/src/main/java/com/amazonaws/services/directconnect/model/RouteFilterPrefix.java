@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual
- * interface.
+ * Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a
+ * public virtual interface.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/RouteFilterPrefix" target="_top">AWS
@@ -31,35 +31,21 @@ public class RouteFilterPrefix implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by commas.
-     * </p>
-     * <p>
-     * IPv6 CIDRs must be at least a /64 or shorter
-     * </p>
-     * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     * The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or
+     * shorter.
      * </p>
      */
     private String cidr;
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by commas.
-     * </p>
-     * <p>
-     * IPv6 CIDRs must be at least a /64 or shorter
-     * </p>
-     * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     * The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or
+     * shorter.
      * </p>
      * 
      * @param cidr
-     *        CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
-     *        <p>
-     *        IPv6 CIDRs must be at least a /64 or shorter
-     *        </p>
-     *        <p>
-     *        Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     *        The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64
+     *        or shorter.
      */
 
     public void setCidr(String cidr) {
@@ -68,21 +54,12 @@ public class RouteFilterPrefix implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by commas.
-     * </p>
-     * <p>
-     * IPv6 CIDRs must be at least a /64 or shorter
-     * </p>
-     * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     * The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or
+     * shorter.
      * </p>
      * 
-     * @return CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
-     *         <p>
-     *         IPv6 CIDRs must be at least a /64 or shorter
-     *         </p>
-     *         <p>
-     *         Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     * @return The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64
+     *         or shorter.
      */
 
     public String getCidr() {
@@ -91,22 +68,13 @@ public class RouteFilterPrefix implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * CIDR notation for the advertised route. Multiple routes are separated by commas.
-     * </p>
-     * <p>
-     * IPv6 CIDRs must be at least a /64 or shorter
-     * </p>
-     * <p>
-     * Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     * The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or
+     * shorter.
      * </p>
      * 
      * @param cidr
-     *        CIDR notation for the advertised route. Multiple routes are separated by commas.</p>
-     *        <p>
-     *        IPv6 CIDRs must be at least a /64 or shorter
-     *        </p>
-     *        <p>
-     *        Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+     *        The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64
+     *        or shorter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

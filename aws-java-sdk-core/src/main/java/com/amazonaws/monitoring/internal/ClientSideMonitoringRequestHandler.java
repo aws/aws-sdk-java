@@ -162,7 +162,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
             requestCount = timingInfo.getCounter(AWSRequestMetrics.Field.RequestCount.name()) == null ? 0 :
                            timingInfo.getCounter(AWSRequestMetrics.Field.RequestCount.name()).intValue();
 
-            TimingInfo latencyTimingInfo = timingInfo.getSubMeasurement(AwsClientSideMonitoringMetrics.Latency.name());
+            TimingInfo latencyTimingInfo = timingInfo.getSubMeasurement(AwsClientSideMonitoringMetrics.ApiCallLatency.name());
             if (latencyTimingInfo != null) {
                 latency = convertToLongIfNotNull(latencyTimingInfo.getTimeTakenMillisIfKnown());
                 timestamp = latencyTimingInfo.getStartEpochTimeMilliIfKnown();

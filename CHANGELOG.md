@@ -1,3 +1,24 @@
+# __1.11.427__ __2018-10-11__
+## __AWS Direct Connect__
+  - ### Features
+    - This release adds support for Jumbo Frames over AWS Direct Connect. You can now set MTU value when creating new virtual interfaces. This release also includes a new API to modify MTU value of existing virtual interfaces.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Added Paginators for all the MediaConvert list operations
+
+## __Amazon Athena__
+  - ### Features
+    - 1. GetQueryExecution API changes to return statementType of a submitted Athena query.  2. GetQueryResults API changes to return the number of rows added to a table when a CTAS query is executed.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now launch the smaller-sized G3 instance called g3s.xlarge. G3s.xlarge provides 4 vCPU, 30.5 GB RAM and a NVIDIA Tesla M60 GPU. It is ideal for remote workstations, engineering and architectural applications, and 3D visualizations and rendering for visual effects.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this release, Amazon Transcribe now supports transcriptions from audio sources in British English (en-UK), Australian English (en-AU), and Canadian French (fr-CA).
+
 # __1.11.426__ __2018-10-10__
 ## __Amazon Comprehend__
   - ### Features

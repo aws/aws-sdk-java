@@ -48,6 +48,10 @@ public class GetQueryResultsResultJsonUnmarshaller implements Unmarshaller<GetQu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("UpdateCount", targetDepth)) {
+                    context.nextToken();
+                    getQueryResultsResult.setUpdateCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("ResultSet", targetDepth)) {
                     context.nextToken();
                     getQueryResultsResult.setResultSet(ResultSetJsonUnmarshaller.getInstance().unmarshall(context));

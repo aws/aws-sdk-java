@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The response received when DescribeInterconnectLoa is called.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"
  *      target="_top">AWS API Documentation</a>
@@ -26,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInterconnectLoaResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
+     * </p>
+     */
     private Loa loa;
 
     /**
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
+     * </p>
+     * 
      * @param loa
+     *        The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
      */
 
     public void setLoa(Loa loa) {
@@ -37,7 +44,11 @@ public class DescribeInterconnectLoaResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
+     * </p>
+     * 
+     * @return The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
      */
 
     public Loa getLoa() {
@@ -45,7 +56,12 @@ public class DescribeInterconnectLoaResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
+     * </p>
+     * 
      * @param loa
+     *        The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

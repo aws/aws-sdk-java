@@ -108,6 +108,14 @@ public class AssociateVirtualInterfaceResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     associateVirtualInterfaceResult.setCustomerRouterConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    associateVirtualInterfaceResult.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    associateVirtualInterfaceResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     associateVirtualInterfaceResult.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));

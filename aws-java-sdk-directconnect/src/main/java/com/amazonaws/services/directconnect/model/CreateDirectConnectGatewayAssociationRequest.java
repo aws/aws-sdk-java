@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateDirectConnectGatewayAssociation operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation"
  *      target="_top">AWS API Documentation</a>
@@ -30,13 +27,7 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      */
     private String directConnectGatewayId;
@@ -44,33 +35,16 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private String virtualGatewayId;
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      */
 
     public void setDirectConnectGatewayId(String directConnectGatewayId) {
@@ -79,21 +53,10 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
-     * @return The ID of the direct connect gateway.</p>
-     *         <p>
-     *         Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the Direct Connect gateway.
      */
 
     public String getDirectConnectGatewayId() {
@@ -102,22 +65,11 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,20 +82,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.</p>
-     *        <p>
-     *        Example: "vgw-abc123ef"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual private gateway.
      */
 
     public void setVirtualGatewayId(String virtualGatewayId) {
@@ -154,19 +95,8 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The ID of the virtual private gateway.</p>
-     *         <p>
-     *         Example: "vgw-abc123ef"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the virtual private gateway.
      */
 
     public String getVirtualGatewayId() {
@@ -177,20 +107,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.</p>
-     *        <p>
-     *        Example: "vgw-abc123ef"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

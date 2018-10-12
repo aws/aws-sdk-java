@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DeleteBGPPeer operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer" target="_top">AWS API
  *      Documentation</a>
@@ -30,39 +27,30 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      */
     private String virtualInterfaceId;
-
+    /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     */
     private Integer asn;
-
+    /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     */
     private String customerAddress;
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceId
-     *        The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     *        <p>
-     *        Example: dxvif-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual interface.
      */
 
     public void setVirtualInterfaceId(String virtualInterfaceId) {
@@ -71,21 +59,10 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
-     * @return The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     *         <p>
-     *         Example: dxvif-456abc78
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the virtual interface.
      */
 
     public String getVirtualInterfaceId() {
@@ -94,22 +71,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceId
-     *        The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     *        <p>
-     *        Example: dxvif-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +85,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public void setAsn(Integer asn) {
@@ -127,7 +98,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
+     * @return The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public Integer getAsn() {
@@ -135,7 +110,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +125,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      */
 
     public void setCustomerAddress(String customerAddress) {
@@ -153,7 +138,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
+     * @return The IP address assigned to the customer interface.
      */
 
     public String getCustomerAddress() {
@@ -161,7 +150,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

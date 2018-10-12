@@ -323,7 +323,7 @@ public class ClientSideMonitoringRequestHandlerTest {
         AWSRequestMetricsFullSupport metrics =
             new AWSRequestMetricsFullSupport();
         metrics.addProperty(AWSRequestMetrics.Field.ServiceName, SERVICE_NAME);
-        metrics.startEvent(AwsClientSideMonitoringMetrics.Latency);
+        metrics.startEvent(AwsClientSideMonitoringMetrics.ApiCallLatency);
 
         for (int i = 0; i < requestCount; i++) {
             metrics.startEvent(AWSRequestMetrics.Field.HttpRequestTime);
@@ -332,7 +332,7 @@ public class ClientSideMonitoringRequestHandlerTest {
             metrics.startEvent(AWSRequestMetrics.Field.HttpClientReceiveResponseTime);
             metrics.endEvent(AWSRequestMetrics.Field.HttpClientReceiveResponseTime);
             metrics.endEvent(AWSRequestMetrics.Field.HttpRequestTime);
-            metrics.endEvent(AwsClientSideMonitoringMetrics.Latency);
+            metrics.endEvent(AwsClientSideMonitoringMetrics.ApiCallLatency);
         }
 
         metrics.setCounter(AWSRequestMetrics.Field.RequestCount, requestCount);

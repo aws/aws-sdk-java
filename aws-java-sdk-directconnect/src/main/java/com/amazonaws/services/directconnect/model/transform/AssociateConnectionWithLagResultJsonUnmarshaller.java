@@ -96,6 +96,10 @@ public class AssociateConnectionWithLagResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    associateConnectionWithLagResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

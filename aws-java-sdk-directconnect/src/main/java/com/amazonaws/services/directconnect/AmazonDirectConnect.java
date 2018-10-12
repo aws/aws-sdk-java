@@ -27,14 +27,12 @@ import com.amazonaws.services.directconnect.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10
- * gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct
- * Connect router. With this connection in place, you can create virtual interfaces directly to the AWS cloud (for
- * example, to Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)) and to Amazon
- * Virtual Private Cloud (Amazon VPC), bypassing Internet service providers in your network path. An AWS Direct Connect
- * location provides access to AWS in the region it is associated with, as well as access to other US regions. For
- * example, you can provision a single connection to any AWS Direct Connect location in the US and use it to access
- * public AWS services in all US Regions and AWS GovCloud (US).
+ * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic
+ * cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. With this
+ * connection in place, you can create virtual interfaces directly to the AWS cloud (for example, to Amazon EC2 and
+ * Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network path. A connection provides access
+ * to all AWS Regions except the China (Beijing) and (China) Ningxia Regions. AWS resources in the China Regions can
+ * only be accessed through locations associated with those Regions.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -102,30 +100,27 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deprecated in favor of <a>AllocateHostedConnection</a>.
+     * Deprecated. Use <a>AllocateHostedConnection</a> instead.
      * </p>
      * <p>
      * Creates a hosted connection on an interconnect.
      * </p>
      * <p>
-     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the given
+     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified
      * interconnect.
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param allocateConnectionOnInterconnectRequest
-     *        Container for the parameters to the AllocateConnectionOnInterconnect operation.
      * @return Result of the AllocateConnectionOnInterconnect operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AllocateConnectionOnInterconnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"
      *      target="_top">AWS API Documentation</a>
@@ -135,27 +130,24 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a hosted connection on an interconnect or a link aggregation group (LAG).
+     * Creates a hosted connection on the specified interconnect or a link aggregation group (LAG).
      * </p>
      * <p>
-     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the given
+     * Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection on the specified
      * interconnect or LAG.
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param allocateHostedConnectionRequest
-     *        Container for the parameters to theHostedConnection operation.
      * @return Result of the AllocateHostedConnection operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AllocateHostedConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection"
      *      target="_top">AWS API Documentation</a>
@@ -164,23 +156,20 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Provisions a private virtual interface to be owned by another AWS customer.
+     * Provisions a private virtual interface to be owned by the specified AWS account.
      * </p>
      * <p>
-     * Virtual interfaces created using this action must be confirmed by the virtual interface owner by using the
-     * <a>ConfirmPrivateVirtualInterface</a> action. Until then, the virtual interface will be in 'Confirming' state,
-     * and will not be available for handling traffic.
+     * Virtual interfaces created using this action must be confirmed by the owner using
+     * <a>ConfirmPrivateVirtualInterface</a>. Until then, the virtual interface is in the <code>Confirming</code> state
+     * and is not available to handle traffic.
      * </p>
      * 
      * @param allocatePrivateVirtualInterfaceRequest
-     *        Container for the parameters to the AllocatePrivateVirtualInterface operation.
      * @return Result of the AllocatePrivateVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AllocatePrivateVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -189,31 +178,28 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Provisions a public virtual interface to be owned by a different customer.
+     * Provisions a public virtual interface to be owned by the specified AWS account.
      * </p>
      * <p>
-     * The owner of a connection calls this function to provision a public virtual interface which will be owned by
-     * another AWS customer.
+     * The owner of a connection calls this function to provision a public virtual interface to be owned by the
+     * specified AWS account.
      * </p>
      * <p>
-     * Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling
-     * ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming'
-     * state, and will not be available for handling traffic.
+     * Virtual interfaces created using this function must be confirmed by the owner using
+     * <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the virtual interface is in the
+     * <code>confirming</code> state and is not available to handle traffic.
      * </p>
      * <p>
-     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
-     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * When creating an IPv6 public virtual interface, omit the Amazon address and customer address. IPv6 addresses are
+     * automatically assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
      * </p>
      * 
      * @param allocatePublicVirtualInterfaceRequest
-     *        Container for the parameters to the AllocatePublicVirtualInterface operation.
      * @return Result of the AllocatePublicVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AllocatePublicVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -223,10 +209,10 @@ public interface AmazonDirectConnect {
     /**
      * <p>
      * Associates an existing connection with a link aggregation group (LAG). The connection is interrupted and
-     * re-established as a member of the LAG (connectivity to AWS will be interrupted). The connection must be hosted on
-     * the same AWS Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can
-     * reassociate a connection that's currently associated with a different LAG; however, if removing the connection
-     * will cause the original LAG to fall below its setting for minimum number of operational connections, the request
+     * re-established as a member of the LAG (connectivity to AWS is interrupted). The connection must be hosted on the
+     * same AWS Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can
+     * re-associate a connection that's currently associated with a different LAG; however, if removing the connection
+     * would cause the original LAG to fall below its setting for minimum number of operational connections, the request
      * fails.
      * </p>
      * <p>
@@ -240,14 +226,11 @@ public interface AmazonDirectConnect {
      * </p>
      * 
      * @param associateConnectionWithLagRequest
-     *        Container for the parameters to the AssociateConnectionWithLag operation.
      * @return Result of the AssociateConnectionWithLag operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AssociateConnectionWithLag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag"
      *      target="_top">AWS API Documentation</a>
@@ -263,19 +246,16 @@ public interface AmazonDirectConnect {
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param associateHostedConnectionRequest
-     *        Container for the parameters to the AssociateHostedConnection operation.
      * @return Result of the AssociateHostedConnection operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AssociateHostedConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection"
      *      target="_top">AWS API Documentation</a>
@@ -293,20 +273,17 @@ public interface AmazonDirectConnect {
      * be migrated along with their virtual interfaces using <a>AssociateHostedConnection</a>.
      * </p>
      * <p>
-     * In order to reassociate a virtual interface to a new connection or LAG, the requester must own either the virtual
+     * To reassociate a virtual interface to a new connection or LAG, the requester must own either the virtual
      * interface itself or the connection to which the virtual interface is currently associated. Additionally, the
-     * requester must own the connection or LAG to which the virtual interface will be newly associated.
+     * requester must own the connection or LAG for the association.
      * </p>
      * 
      * @param associateVirtualInterfaceRequest
-     *        Container for the parameters to the AssociateVirtualInterface operation.
      * @return Result of the AssociateVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.AssociateVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -315,22 +292,19 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Confirm the creation of a hosted connection on an interconnect.
+     * Confirms the creation of the specified hosted connection on an interconnect.
      * </p>
      * <p>
-     * Upon creation, the hosted connection is initially in the 'Ordering' state, and will remain in this state until
-     * the owner calls ConfirmConnection to confirm creation of the hosted connection.
+     * Upon creation, the hosted connection is initially in the <code>Ordering</code> state, and remains in this state
+     * until the owner confirms creation of the hosted connection.
      * </p>
      * 
      * @param confirmConnectionRequest
-     *        Container for the parameters to the ConfirmConnection operation.
      * @return Result of the ConfirmConnection operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.ConfirmConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection"
      *      target="_top">AWS API Documentation</a>
@@ -339,22 +313,19 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Accept ownership of a private virtual interface created by another customer.
+     * Accepts ownership of a private virtual interface created by another AWS account.
      * </p>
      * <p>
-     * After the virtual interface owner calls this function, the virtual interface will be created and attached to the
-     * given virtual private gateway or direct connect gateway, and will be available for handling traffic.
+     * After the virtual interface owner makes this call, the virtual interface is created and attached to the specified
+     * virtual private gateway or Direct Connect gateway, and is made available to handle traffic.
      * </p>
      * 
      * @param confirmPrivateVirtualInterfaceRequest
-     *        Container for the parameters to the ConfirmPrivateVirtualInterface operation.
      * @return Result of the ConfirmPrivateVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.ConfirmPrivateVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -363,22 +334,19 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Accept ownership of a public virtual interface created by another customer.
+     * Accepts ownership of a public virtual interface created by another AWS account.
      * </p>
      * <p>
-     * After the virtual interface owner calls this function, the specified virtual interface will be created and made
-     * available for handling traffic.
+     * After the virtual interface owner makes this call, the specified virtual interface is created and made available
+     * to handle traffic.
      * </p>
      * 
      * @param confirmPublicVirtualInterfaceRequest
-     *        Container for the parameters to the ConfirmPublicVirtualInterface operation.
      * @return Result of the ConfirmPublicVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.ConfirmPublicVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -387,16 +355,18 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in the same address family
-     * (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+     * Creates a BGP peer on the specified virtual interface.
+     * </p>
+     * <p>
+     * The BGP peer cannot be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual interface.
      * </p>
      * <p>
      * You must create a BGP peer for the corresponding address family in order to access AWS resources that also use
      * that address family.
      * </p>
      * <p>
-     * When creating a IPv6 BGP peer, the Amazon address and customer address fields must be left blank. IPv6 addresses
-     * are automatically assigned from Amazon's pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
+     * When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically
+     * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
      * </p>
      * <p>
      * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
@@ -404,14 +374,11 @@ public interface AmazonDirectConnect {
      * </p>
      * 
      * @param createBGPPeerRequest
-     *        Container for the parameters to the CreateBGPPeer operation.
      * @return Result of the CreateBGPPeer operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreateBGPPeer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer" target="_top">AWS
      *      API Documentation</a>
@@ -420,34 +387,27 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new connection between the customer network and a specific AWS Direct Connect location.
+     * Creates a connection between a customer network and a specific AWS Direct Connect location.
      * </p>
      * <p>
-     * A connection links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10
-     * gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct
-     * Connect router. An AWS Direct Connect location provides access to Amazon Web Services in the region it is
-     * associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a
-     * connection in one region does not provide connectivity to other regions.
+     * A connection links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic
+     * cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router.
      * </p>
      * <p>
-     * To find the locations for your region, use <a>DescribeLocations</a>.
+     * To find the locations for your Region, use <a>DescribeLocations</a>.
      * </p>
      * <p>
      * You can automatically add the new connection to a link aggregation group (LAG) by specifying a LAG ID in the
      * request. This ensures that the new connection is allocated on the same AWS Direct Connect endpoint that hosts the
-     * specified LAG. If there are no available ports on the endpoint, the request fails and no connection will be
-     * created.
+     * specified LAG. If there are no available ports on the endpoint, the request fails and no connection is created.
      * </p>
      * 
      * @param createConnectionRequest
-     *        Container for the parameters to the CreateConnection operation.
      * @return Result of the CreateConnection operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreateConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection" target="_top">AWS
      *      API Documentation</a>
@@ -456,22 +416,19 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new direct connect gateway. A direct connect gateway is an intermediate object that enables you to
-     * connect a set of virtual interfaces and virtual private gateways. direct connect gateways are global and visible
-     * in any AWS region after they are created. The virtual interfaces and virtual private gateways that are connected
-     * through a direct connect gateway can be in different regions. This enables you to connect to a VPC in any region,
-     * regardless of the region in which the virtual interfaces are located, and pass traffic between them.
+     * Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual
+     * interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any AWS Region after
+     * it is created. The virtual interfaces and virtual private gateways that are connected through a Direct Connect
+     * gateway can be in different AWS Regions. This enables you to connect to a VPC in any Region, regardless of the
+     * Region in which the virtual interfaces are located, and pass traffic between them.
      * </p>
      * 
      * @param createDirectConnectGatewayRequest
-     *        Container for the parameters to the CreateDirectConnectGateway operation.
      * @return Result of the CreateDirectConnectGateway operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreateDirectConnectGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway"
      *      target="_top">AWS API Documentation</a>
@@ -480,19 +437,16 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates an association between a direct connect gateway and a virtual private gateway (VGW). The VGW must be
-     * attached to a VPC and must not be associated with another direct connect gateway.
+     * Creates an association between a Direct Connect gateway and a virtual private gateway. The virtual private
+     * gateway must be attached to a VPC and must not be associated with another Direct Connect gateway.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationRequest
-     *        Container for the parameters to the CreateDirectConnectGatewayAssociation operation.
      * @return Result of the CreateDirectConnectGatewayAssociation operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreateDirectConnectGatewayAssociation
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation"
@@ -503,42 +457,39 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect
+     * Creates an interconnect between an AWS Direct Connect partner's network and a specific AWS Direct Connect
      * location.
      * </p>
      * <p>
-     * An interconnect is a connection which is capable of hosting other connections. The AWS Direct Connect partner can
-     * use an interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own
-     * connections. Like a standard connection, an interconnect links the AWS Direct Connect partner's network to an AWS
-     * Direct Connect location over a standard 1 Gbps or 10 Gbps Ethernet fiber-optic cable. One end is connected to the
-     * partner's router, the other to an AWS Direct Connect router.
+     * An interconnect is a connection which is capable of hosting other connections. The partner can use an
+     * interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own
+     * connections. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect
+     * location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to
+     * an AWS Direct Connect router.
      * </p>
      * <p>
      * You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the
      * request. This ensures that the new interconnect is allocated on the same AWS Direct Connect endpoint that hosts
-     * the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect will be
+     * the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect is
      * created.
      * </p>
      * <p>
      * For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling
-     * AllocateConnectionOnInterconnect. The end customer can then connect to AWS resources by creating a virtual
-     * interface on their connection, using the VLAN assigned to them by the AWS Direct Connect partner.
+     * <a>AllocateConnectionOnInterconnect</a>. The end customer can then connect to AWS resources by creating a virtual
+     * interface on their connection, using the VLAN assigned to them by the partner.
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param createInterconnectRequest
-     *        Container for the parameters to the CreateInterconnect operation.
      * @return Result of the CreateInterconnect operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreateInterconnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect"
      *      target="_top">AWS API Documentation</a>
@@ -547,14 +498,13 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new link aggregation group (LAG) with the specified number of bundled physical connections between the
+     * Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the
      * customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link
-     * Aggregation Control Protocol (LACP) to aggregate multiple 1 gigabit or 10 gigabit interfaces, allowing you to
-     * treat them as a single interface.
+     * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single
+     * interface.
      * </p>
      * <p>
-     * All connections in a LAG must use the same bandwidth (for example, 10 Gbps), and must terminate at the same AWS
-     * Direct Connect endpoint.
+     * All connections in a LAG must use the same bandwidth and must terminate at the same AWS Direct Connect endpoint.
      * </p>
      * <p>
      * You can have up to 10 connections per LAG. Regardless of this limit, if you request more connections for the LAG
@@ -574,14 +524,11 @@ public interface AmazonDirectConnect {
      * </p>
      * 
      * @param createLagRequest
-     *        Container for the parameters to the CreateLag operation.
      * @return Result of the CreateLag operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreateLag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag" target="_top">AWS API
      *      Documentation</a>
@@ -590,19 +537,19 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect
-     * traffic. A private virtual interface supports sending traffic to a single virtual private cloud (VPC).
+     * Creates a private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic.
+     * A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway
+     * (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for
+     * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
+     * a VGW only provides access to a single VPC within the same Region.
      * </p>
      * 
      * @param createPrivateVirtualInterfaceRequest
-     *        Container for the parameters to the CreatePrivateVirtualInterface operation.
      * @return Result of the CreatePrivateVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreatePrivateVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -611,24 +558,21 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect
-     * traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple
-     * Storage Service (Amazon S3).
+     * Creates a public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A
+     * public virtual interface supports sending traffic to public services of AWS such as Amazon S3.
      * </p>
      * <p>
-     * When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields
-     * should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.
+     * When creating an IPv6 public virtual interface (<code>addressFamily</code> is <code>ipv6</code>), leave the
+     * <code>customer</code> and <code>amazon</code> address fields blank to use auto-assigned IPv6 space. Custom IPv6
+     * addresses are not supported.
      * </p>
      * 
      * @param createPublicVirtualInterfaceRequest
-     *        Container for the parameters to the CreatePublicVirtualInterface operation.
      * @return Result of the CreatePublicVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.CreatePublicVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -637,19 +581,18 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes a BGP peer on the specified virtual interface that matches the specified customer address and ASN. You
-     * cannot delete the last BGP peer from a virtual interface.
+     * Deletes the BGP peer on the specified virtual interface with the specified customer address and ASN.
+     * </p>
+     * <p>
+     * You cannot delete the last BGP peer from a virtual interface.
      * </p>
      * 
      * @param deleteBGPPeerRequest
-     *        Container for the parameters to the DeleteBGPPeer operation.
      * @return Result of the DeleteBGPPeer operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteBGPPeer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer" target="_top">AWS
      *      API Documentation</a>
@@ -658,23 +601,20 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes the connection.
+     * Deletes the specified connection.
      * </p>
      * <p>
-     * Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. You need to cancel
-     * separately with the providers any services or charges for cross-connects or network circuits that connect you to
-     * the AWS Direct Connect location.
+     * Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. If you are
+     * partnering with any third parties to connect with the AWS Direct Connect location, you must cancel your service
+     * with them separately.
      * </p>
      * 
      * @param deleteConnectionRequest
-     *        Container for the parameters to the DeleteConnection operation.
      * @return Result of the DeleteConnection operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection" target="_top">AWS
      *      API Documentation</a>
@@ -683,20 +623,17 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes a direct connect gateway. You must first delete all virtual interfaces that are attached to the direct
-     * connect gateway and disassociate all virtual private gateways that are associated with the direct connect
-     * gateway.
+     * Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces that are attached to
+     * the Direct Connect gateway and disassociate all virtual private gateways that are associated with the Direct
+     * Connect gateway.
      * </p>
      * 
      * @param deleteDirectConnectGatewayRequest
-     *        Container for the parameters to the DeleteDirectConnectGateway operation.
      * @return Result of the DeleteDirectConnectGateway operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteDirectConnectGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway"
      *      target="_top">AWS API Documentation</a>
@@ -705,18 +642,15 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes the association between a direct connect gateway and a virtual private gateway.
+     * Deletes the association between the specified Direct Connect gateway and virtual private gateway.
      * </p>
      * 
      * @param deleteDirectConnectGatewayAssociationRequest
-     *        Container for the parameters to the DeleteDirectConnectGatewayAssociation operation.
      * @return Result of the DeleteDirectConnectGatewayAssociation operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteDirectConnectGatewayAssociation
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation"
@@ -731,19 +665,16 @@ public interface AmazonDirectConnect {
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param deleteInterconnectRequest
-     *        Container for the parameters to the DeleteInterconnect operation.
      * @return Result of the DeleteInterconnect operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteInterconnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect"
      *      target="_top">AWS API Documentation</a>
@@ -752,19 +683,16 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes a link aggregation group (LAG). You cannot delete a LAG if it has active virtual interfaces or hosted
-     * connections.
+     * Deletes the specified link aggregation group (LAG). You cannot delete a LAG if it has active virtual interfaces
+     * or hosted connections.
      * </p>
      * 
      * @param deleteLagRequest
-     *        Container for the parameters to the DeleteLag operation.
      * @return Result of the DeleteLag operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteLag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag" target="_top">AWS API
      *      Documentation</a>
@@ -777,14 +705,11 @@ public interface AmazonDirectConnect {
      * </p>
      * 
      * @param deleteVirtualInterfaceRequest
-     *        Container for the parameters to the DeleteVirtualInterface operation.
      * @return Result of the DeleteVirtualInterface operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DeleteVirtualInterface
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface"
      *      target="_top">AWS API Documentation</a>
@@ -793,27 +718,24 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deprecated in favor of <a>DescribeLoa</a>.
+     * Deprecated. Use <a>DescribeLoa</a> instead.
      * </p>
      * <p>
-     * Returns the LOA-CFA for a Connection.
+     * Gets the LOA-CFA for a connection.
      * </p>
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or
      * service provider uses when establishing your cross connect to AWS at the colocation facility. For more
      * information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
-     * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user guide.
+     * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeConnectionLoaRequest
-     *        Container for the parameters to the DescribeConnectionLoa operation.
      * @return Result of the DescribeConnectionLoa operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeConnectionLoa
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa"
      *      target="_top">AWS API Documentation</a>
@@ -823,21 +745,15 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Displays all connections in this region.
-     * </p>
-     * <p>
-     * If a connection ID is provided, the call returns only that particular connection.
+     * Displays the specified connection or all connections in this Region.
      * </p>
      * 
      * @param describeConnectionsRequest
-     *        Container for the parameters to the DescribeConnections operation.
      * @return Result of the DescribeConnections operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeConnections
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections"
      *      target="_top">AWS API Documentation</a>
@@ -853,26 +769,23 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deprecated in favor of <a>DescribeHostedConnections</a>.
+     * Deprecated. Use <a>DescribeHostedConnections</a> instead.
      * </p>
      * <p>
-     * Returns a list of connections that have been provisioned on the given interconnect.
+     * Lists the connections that have been provisioned on the specified interconnect.
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param describeConnectionsOnInterconnectRequest
-     *        Container for the parameters to the DescribeConnectionsOnInterconnect operation.
      * @return Result of the DescribeConnectionsOnInterconnect operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeConnectionsOnInterconnect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect"
      *      target="_top">AWS API Documentation</a>
@@ -882,22 +795,20 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns a list of all direct connect gateway and virtual private gateway (VGW) associations. Either a direct
-     * connect gateway ID or a VGW ID must be provided in the request. If a direct connect gateway ID is provided, the
-     * response returns all VGWs associated with the direct connect gateway. If a VGW ID is provided, the response
-     * returns all direct connect gateways associated with the VGW. If both are provided, the response only returns the
-     * association that matches both the direct connect gateway and the VGW.
+     * Lists the associations between your Direct Connect gateways and virtual private gateways. You must specify a
+     * Direct Connect gateway, a virtual private gateway, or both. If you specify a Direct Connect gateway, the response
+     * contains all virtual private gateways associated with the Direct Connect gateway. If you specify a virtual
+     * private gateway, the response contains all Direct Connect gateways associated with the virtual private gateway.
+     * If you specify both, the response contains the association between the Direct Connect gateway and the virtual
+     * private gateway.
      * </p>
      * 
      * @param describeDirectConnectGatewayAssociationsRequest
-     *        Container for the parameters to the DescribeDirectConnectGatewayAssociations operation.
      * @return Result of the DescribeDirectConnectGatewayAssociations operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeDirectConnectGatewayAssociations
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations"
@@ -908,22 +819,19 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns a list of all direct connect gateway and virtual interface (VIF) attachments. Either a direct connect
-     * gateway ID or a VIF ID must be provided in the request. If a direct connect gateway ID is provided, the response
-     * returns all VIFs attached to the direct connect gateway. If a VIF ID is provided, the response returns all direct
-     * connect gateways attached to the VIF. If both are provided, the response only returns the attachment that matches
-     * both the direct connect gateway and the VIF.
+     * Lists the attachments between your Direct Connect gateways and virtual interfaces. You must specify a Direct
+     * Connect gateway, a virtual interface, or both. If you specify a Direct Connect gateway, the response contains all
+     * virtual interfaces attached to the Direct Connect gateway. If you specify a virtual interface, the response
+     * contains all Direct Connect gateways attached to the virtual interface. If you specify both, the response
+     * contains the attachment between the Direct Connect gateway and the virtual interface.
      * </p>
      * 
      * @param describeDirectConnectGatewayAttachmentsRequest
-     *        Container for the parameters to the DescribeDirectConnectGatewayAttachments operation.
      * @return Result of the DescribeDirectConnectGatewayAttachments operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeDirectConnectGatewayAttachments
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments"
@@ -934,21 +842,16 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns a list of direct connect gateways in your account. Deleted direct connect gateways are not returned. You
-     * can provide a direct connect gateway ID in the request to return information about the specific direct connect
-     * gateway only. Otherwise, if a direct connect gateway ID is not provided, information about all of your direct
-     * connect gateways is returned.
+     * Lists all your Direct Connect gateways or only the specified Direct Connect gateway. Deleted Direct Connect
+     * gateways are not returned.
      * </p>
      * 
      * @param describeDirectConnectGatewaysRequest
-     *        Container for the parameters to the DescribeDirectConnectGateways operation.
      * @return Result of the DescribeDirectConnectGateways operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeDirectConnectGateways
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways"
      *      target="_top">AWS API Documentation</a>
@@ -957,24 +860,21 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns a list of hosted connections that have been provisioned on the given interconnect or link aggregation
-     * group (LAG).
+     * Lists the hosted connections that have been provisioned on the specified interconnect or link aggregation group
+     * (LAG).
      * </p>
      * <note>
      * <p>
-     * This is intended for use by AWS Direct Connect partners only.
+     * Intended for use by AWS Direct Connect partners only.
      * </p>
      * </note>
      * 
      * @param describeHostedConnectionsRequest
-     *        Container for the parameters to the DescribeHostedConnections operation.
      * @return Result of the DescribeHostedConnections operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeHostedConnections
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections"
      *      target="_top">AWS API Documentation</a>
@@ -983,27 +883,24 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Deprecated in favor of <a>DescribeLoa</a>.
+     * Deprecated. Use <a>DescribeLoa</a> instead.
      * </p>
      * <p>
-     * Returns the LOA-CFA for an Interconnect.
+     * Gets the LOA-CFA for the specified interconnect.
      * </p>
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
      * establishing your cross connect to AWS at the colocation facility. For more information, see <a
      * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
-     * Direct Connect Locations</a> in the AWS Direct Connect user guide.
+     * Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeInterconnectLoaRequest
-     *        Container for the parameters to the DescribeInterconnectLoa operation.
      * @return Result of the DescribeInterconnectLoa operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeInterconnectLoa
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa"
      *      target="_top">AWS API Documentation</a>
@@ -1013,21 +910,15 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns a list of interconnects owned by the AWS account.
-     * </p>
-     * <p>
-     * If an interconnect ID is provided, it will only return this particular interconnect.
+     * Lists the interconnects owned by the AWS account or only the specified interconnect.
      * </p>
      * 
      * @param describeInterconnectsRequest
-     *        Container for the parameters to the DescribeInterconnects operation.
      * @return Result of the DescribeInterconnects operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeInterconnects
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects"
      *      target="_top">AWS API Documentation</a>
@@ -1043,21 +934,15 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Describes the link aggregation groups (LAGs) in your account.
-     * </p>
-     * <p>
-     * If a LAG ID is provided, only information about the specified LAG is returned.
+     * Describes all your link aggregation groups (LAG) or the specified LAG.
      * </p>
      * 
      * @param describeLagsRequest
-     *        Container for the parameters to the DescribeLags operation.
      * @return Result of the DescribeLags operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeLags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags" target="_top">AWS API
      *      Documentation</a>
@@ -1066,24 +951,21 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
+     * Gets the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
      * </p>
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
      * establishing your cross connect to AWS at the colocation facility. For more information, see <a
      * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
-     * Direct Connect Locations</a> in the AWS Direct Connect user guide.
+     * Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeLoaRequest
-     *        Container for the parameters to the DescribeLoa operation.
      * @return Result of the DescribeLoa operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeLoa
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa" target="_top">AWS API
      *      Documentation</a>
@@ -1092,18 +974,16 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns the list of AWS Direct Connect locations in the current AWS region. These are the locations that may be
-     * selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+     * Lists the AWS Direct Connect locations in the current AWS Region. These are the locations that can be selected
+     * when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
      * </p>
      * 
      * @param describeLocationsRequest
      * @return Result of the DescribeLocations operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeLocations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations"
      *      target="_top">AWS API Documentation</a>
@@ -1119,18 +999,15 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Describes the tags associated with the specified Direct Connect resources.
+     * Describes the tags associated with the specified AWS Direct Connect resources.
      * </p>
      * 
      * @param describeTagsRequest
-     *        Container for the parameters to the DescribeTags operation.
      * @return Result of the DescribeTags operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags" target="_top">AWS API
      *      Documentation</a>
@@ -1139,23 +1016,18 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Returns a list of virtual private gateways owned by the AWS account.
+     * Lists the virtual private gateways owned by the AWS account.
      * </p>
      * <p>
-     * You can create one or more AWS Direct Connect private virtual interfaces linking to a virtual private gateway. A
-     * virtual private gateway can be managed via Amazon Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.
+     * You can create one or more AWS Direct Connect private virtual interfaces linked to a virtual private gateway.
      * </p>
      * 
      * @param describeVirtualGatewaysRequest
      * @return Result of the DescribeVirtualGateways operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeVirtualGateways
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways"
      *      target="_top">AWS API Documentation</a>
@@ -1177,18 +1049,16 @@ public interface AmazonDirectConnect {
      * returned.
      * </p>
      * <p>
-     * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.
+     * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer
+     * network.
      * </p>
      * 
      * @param describeVirtualInterfacesRequest
-     *        Container for the parameters to the DescribeVirtualInterfaces operation.
      * @return Result of the DescribeVirtualInterfaces operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DescribeVirtualInterfaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"
      *      target="_top">AWS API Documentation</a>
@@ -1211,20 +1081,17 @@ public interface AmazonDirectConnect {
      * converted to an interconnect.
      * </p>
      * <p>
-     * If disassociating the connection will cause the LAG to fall below its setting for minimum number of operational
+     * If disassociating the connection would cause the LAG to fall below its setting for minimum number of operational
      * connections, the request fails, except when it's the last member of the LAG. If all connections are
      * disassociated, the LAG continues to exist as an empty LAG with no physical connections.
      * </p>
      * 
      * @param disassociateConnectionFromLagRequest
-     *        Container for the parameters to the DisassociateConnectionFromLag operation.
      * @return Result of the DisassociateConnectionFromLag operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.DisassociateConnectionFromLag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag"
      *      target="_top">AWS API Documentation</a>
@@ -1233,27 +1100,24 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Adds the specified tags to the specified Direct Connect resource. Each Direct Connect resource can have a maximum
-     * of 50 tags.
+     * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50
+     * tags.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
-     * Direct Connect resource, this action updates its value.
+     * resource, this action updates its value.
      * </p>
      * 
      * @param tagResourceRequest
-     *        Container for the parameters to the TagResource operation.
      * @return Result of the TagResource operation returned by the service.
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
      * @throws TooManyTagsException
-     *         You have reached the limit on the number of tags that can be assigned to a Direct Connect resource.
+     *         You have reached the limit on the number of tags that can be assigned.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1262,18 +1126,15 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Removes one or more tags from the specified Direct Connect resource.
+     * Removes one or more tags from the specified AWS Direct Connect resource.
      * </p>
      * 
      * @param untagResourceRequest
-     *        Container for the parameters to the UntagResource operation.
      * @return Result of the UntagResource operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource" target="_top">AWS
      *      API Documentation</a>
@@ -1282,7 +1143,7 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Updates the attributes of a link aggregation group (LAG).
+     * Updates the attributes of the specified link aggregation group (LAG).
      * </p>
      * <p>
      * You can update the following attributes:
@@ -1301,26 +1162,46 @@ public interface AmazonDirectConnect {
      * </ul>
      * <p>
      * When you create a LAG, the default value for the minimum number of operational connections is zero (0). If you
-     * update this value, and the number of operational connections falls below the specified value, the LAG will
-     * automatically go down to avoid overutilization of the remaining connections. Adjusting this value should be done
-     * with care as it could force the LAG down if the value is set higher than the current number of operational
-     * connections.
+     * update this value and the number of operational connections falls below the specified value, the LAG
+     * automatically goes down to avoid over-utilization of the remaining connections. Adjust this value with care, as
+     * it could force the LAG down if it is set higher than the current number of operational connections.
      * </p>
      * 
      * @param updateLagRequest
-     *        Container for the parameters to the UpdateLag operation.
      * @return Result of the UpdateLag operation returned by the service.
      * @throws DirectConnectServerException
-     *         A server-side error occurred during the API call. The error message will contain additional details about
-     *         the cause.
+     *         A server-side error occurred.
      * @throws DirectConnectClientException
-     *         The API was called with invalid parameters. The error message will contain additional details about the
-     *         cause.
+     *         One or more parameters are not valid.
      * @sample AmazonDirectConnect.UpdateLag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateLagResult updateLag(UpdateLagRequest updateLagRequest);
+
+    /**
+     * <p>
+     * Updates the specified attributes of the specified virtual private interface.
+     * </p>
+     * <p>
+     * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
+     * 
+     * @param updateVirtualInterfaceAttributesRequest
+     * @return Result of the UpdateVirtualInterfaceAttributes operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.UpdateVirtualInterfaceAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateVirtualInterfaceAttributesResult updateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest updateVirtualInterfaceAttributesRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

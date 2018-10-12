@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DescribeDirectConnectGatewayAssociations operation.
- * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations"
@@ -31,13 +28,7 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      */
     private String directConnectGatewayId;
@@ -45,54 +36,28 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private String virtualGatewayId;
     /**
      * <p>
-     * The maximum number of direct connect gateway associations to return per page.
-     * </p>
-     * <p>
-     * Example: 15
-     * </p>
-     * <p>
-     * Default: None
+     * The maximum number of associations to return per page.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token provided in the previous describe result to retrieve the next page of the result.
-     * </p>
-     * <p>
-     * Default: None
+     * The token provided in the previous call to retrieve the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      */
 
     public void setDirectConnectGatewayId(String directConnectGatewayId) {
@@ -101,21 +66,10 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
-     * @return The ID of the direct connect gateway.</p>
-     *         <p>
-     *         Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the Direct Connect gateway.
      */
 
     public String getDirectConnectGatewayId() {
@@ -124,22 +78,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,20 +95,9 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.</p>
-     *        <p>
-     *        Example: "vgw-abc123ef"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual private gateway.
      */
 
     public void setVirtualGatewayId(String virtualGatewayId) {
@@ -176,19 +108,8 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The ID of the virtual private gateway.</p>
-     *         <p>
-     *         Example: "vgw-abc123ef"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the virtual private gateway.
      */
 
     public String getVirtualGatewayId() {
@@ -199,20 +120,9 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.</p>
-     *        <p>
-     *        Example: "vgw-abc123ef"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,22 +133,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The maximum number of direct connect gateway associations to return per page.
-     * </p>
-     * <p>
-     * Example: 15
-     * </p>
-     * <p>
-     * Default: None
+     * The maximum number of associations to return per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of direct connect gateway associations to return per page.</p>
-     *        <p>
-     *        Example: 15
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The maximum number of associations to return per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -247,21 +146,10 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The maximum number of direct connect gateway associations to return per page.
-     * </p>
-     * <p>
-     * Example: 15
-     * </p>
-     * <p>
-     * Default: None
+     * The maximum number of associations to return per page.
      * </p>
      * 
-     * @return The maximum number of direct connect gateway associations to return per page.</p>
-     *         <p>
-     *         Example: 15
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The maximum number of associations to return per page.
      */
 
     public Integer getMaxResults() {
@@ -270,22 +158,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The maximum number of direct connect gateway associations to return per page.
-     * </p>
-     * <p>
-     * Example: 15
-     * </p>
-     * <p>
-     * Default: None
+     * The maximum number of associations to return per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of direct connect gateway associations to return per page.</p>
-     *        <p>
-     *        Example: 15
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The maximum number of associations to return per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,16 +173,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The token provided in the previous describe result to retrieve the next page of the result.
-     * </p>
-     * <p>
-     * Default: None
+     * The token provided in the previous call to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        The token provided in the previous describe result to retrieve the next page of the result.</p>
-     *        <p>
-     *        Default: None
+     *        The token provided in the previous call to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -314,15 +186,10 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The token provided in the previous describe result to retrieve the next page of the result.
-     * </p>
-     * <p>
-     * Default: None
+     * The token provided in the previous call to retrieve the next page.
      * </p>
      * 
-     * @return The token provided in the previous describe result to retrieve the next page of the result.</p>
-     *         <p>
-     *         Default: None
+     * @return The token provided in the previous call to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -331,16 +198,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The token provided in the previous describe result to retrieve the next page of the result.
-     * </p>
-     * <p>
-     * Default: None
+     * The token provided in the previous call to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        The token provided in the previous describe result to retrieve the next page of the result.</p>
-     *        <p>
-     *        Default: None
+     *        The token provided in the previous call to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

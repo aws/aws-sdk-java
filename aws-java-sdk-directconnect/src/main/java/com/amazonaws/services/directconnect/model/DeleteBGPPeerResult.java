@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The response received when DeleteBGPPeer is called.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer" target="_top">AWS API
  *      Documentation</a>
@@ -26,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteBGPPeerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The virtual interface.
+     * </p>
+     */
     private VirtualInterface virtualInterface;
 
     /**
+     * <p>
+     * The virtual interface.
+     * </p>
+     * 
      * @param virtualInterface
+     *        The virtual interface.
      */
 
     public void setVirtualInterface(VirtualInterface virtualInterface) {
@@ -37,7 +44,11 @@ public class DeleteBGPPeerResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The virtual interface.
+     * </p>
+     * 
+     * @return The virtual interface.
      */
 
     public VirtualInterface getVirtualInterface() {
@@ -45,7 +56,12 @@ public class DeleteBGPPeerResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The virtual interface.
+     * </p>
+     * 
      * @param virtualInterface
+     *        The virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

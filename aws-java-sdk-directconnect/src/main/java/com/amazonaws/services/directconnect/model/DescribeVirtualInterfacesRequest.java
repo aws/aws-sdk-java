@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DescribeVirtualInterfaces operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"
  *      target="_top">AWS API Documentation</a>
@@ -28,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     */
     private String connectionId;
-
+    /**
+     * <p>
+     * The ID of the virtual interface.
+     * </p>
+     */
     private String virtualInterfaceId;
 
     /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -41,7 +52,11 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
+     * @return The ID of the connection.
      */
 
     public String getConnectionId() {
@@ -49,7 +64,12 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The ID of the connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +79,12 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The ID of the virtual interface.
+     * </p>
+     * 
      * @param virtualInterfaceId
+     *        The ID of the virtual interface.
      */
 
     public void setVirtualInterfaceId(String virtualInterfaceId) {
@@ -67,7 +92,11 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the virtual interface.
+     * </p>
+     * 
+     * @return The ID of the virtual interface.
      */
 
     public String getVirtualInterfaceId() {
@@ -75,7 +104,12 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The ID of the virtual interface.
+     * </p>
+     * 
      * @param virtualInterfaceId
+     *        The ID of the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

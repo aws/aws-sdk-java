@@ -84,6 +84,10 @@ public class InterconnectJsonUnmarshaller implements Unmarshaller<Interconnect, 
                     context.nextToken();
                     interconnect.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    interconnect.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     interconnect.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

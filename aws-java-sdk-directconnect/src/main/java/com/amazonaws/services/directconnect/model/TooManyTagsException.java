@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit on the number of tags that can be assigned to a Direct Connect resource.
+ * You have reached the limit on the number of tags that can be assigned.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

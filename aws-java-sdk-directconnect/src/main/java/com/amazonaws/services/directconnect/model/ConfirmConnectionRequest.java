@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the ConfirmConnection operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection" target="_top">AWS
  *      API Documentation</a>
@@ -28,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfirmConnectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the hosted connection.
+     * </p>
+     */
     private String connectionId;
 
     /**
+     * <p>
+     * The ID of the hosted connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the hosted connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -39,7 +46,11 @@ public class ConfirmConnectionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the hosted connection.
+     * </p>
+     * 
+     * @return The ID of the hosted connection.
      */
 
     public String getConnectionId() {
@@ -47,7 +58,12 @@ public class ConfirmConnectionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The ID of the hosted connection.
+     * </p>
+     * 
      * @param connectionId
+     *        The ID of the hosted connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

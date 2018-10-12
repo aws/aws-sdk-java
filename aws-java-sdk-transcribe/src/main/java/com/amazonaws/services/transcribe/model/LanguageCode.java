@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum LanguageCode {
 
     EnUS("en-US"),
-    EsUS("es-US");
+    EsUS("es-US"),
+    EnAU("en-AU"),
+    FrCA("fr-CA"),
+    EnUK("en-UK");
 
     private String value;
 

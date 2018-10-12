@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DisassociateConnectionFromLag operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag"
  *      target="_top">AWS API Documentation</a>
@@ -30,47 +27,24 @@ public class DisassociateConnectionFromLagRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the connection to disassociate from the LAG.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection. For example, dxcon-abc123.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The ID of the LAG.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG. For example, dxlag-abc123.
      * </p>
      */
     private String lagId;
 
     /**
      * <p>
-     * The ID of the connection to disassociate from the LAG.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection. For example, dxcon-abc123.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the connection to disassociate from the LAG.</p>
-     *        <p>
-     *        Example: dxcon-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection. For example, dxcon-abc123.
      */
 
     public void setConnectionId(String connectionId) {
@@ -79,21 +53,10 @@ public class DisassociateConnectionFromLagRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the connection to disassociate from the LAG.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection. For example, dxcon-abc123.
      * </p>
      * 
-     * @return The ID of the connection to disassociate from the LAG.</p>
-     *         <p>
-     *         Example: dxcon-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the connection. For example, dxcon-abc123.
      */
 
     public String getConnectionId() {
@@ -102,22 +65,11 @@ public class DisassociateConnectionFromLagRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the connection to disassociate from the LAG.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection. For example, dxcon-abc123.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the connection to disassociate from the LAG.</p>
-     *        <p>
-     *        Example: dxcon-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection. For example, dxcon-abc123.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,22 +80,11 @@ public class DisassociateConnectionFromLagRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the LAG.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG. For example, dxlag-abc123.
      * </p>
      * 
      * @param lagId
-     *        The ID of the LAG.</p>
-     *        <p>
-     *        Example: dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the LAG. For example, dxlag-abc123.
      */
 
     public void setLagId(String lagId) {
@@ -152,21 +93,10 @@ public class DisassociateConnectionFromLagRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the LAG.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG. For example, dxlag-abc123.
      * </p>
      * 
-     * @return The ID of the LAG.</p>
-     *         <p>
-     *         Example: dxlag-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the LAG. For example, dxlag-abc123.
      */
 
     public String getLagId() {
@@ -175,22 +105,11 @@ public class DisassociateConnectionFromLagRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the LAG.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG. For example, dxlag-abc123.
      * </p>
      * 
      * @param lagId
-     *        The ID of the LAG.</p>
-     *        <p>
-     *        Example: dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the LAG. For example, dxlag-abc123.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

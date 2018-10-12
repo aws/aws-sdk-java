@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * If query results are encrypted in Amazon S3, indicates the Amazon S3 encryption option used.
+ * If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code>
+ * or <code>CSE-KMS</code>) and key information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EncryptionConfiguration" target="_top">AWS API

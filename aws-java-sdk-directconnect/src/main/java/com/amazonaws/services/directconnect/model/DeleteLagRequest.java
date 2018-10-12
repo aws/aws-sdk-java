@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DeleteLag operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag" target="_top">AWS API
  *      Documentation</a>
@@ -30,35 +27,18 @@ public class DeleteLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the LAG to delete.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG.
      * </p>
      */
     private String lagId;
 
     /**
      * <p>
-     * The ID of the LAG to delete.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG.
      * </p>
      * 
      * @param lagId
-     *        The ID of the LAG to delete.</p>
-     *        <p>
-     *        Example: dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the LAG.
      */
 
     public void setLagId(String lagId) {
@@ -67,21 +47,10 @@ public class DeleteLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the LAG to delete.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG.
      * </p>
      * 
-     * @return The ID of the LAG to delete.</p>
-     *         <p>
-     *         Example: dxlag-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the LAG.
      */
 
     public String getLagId() {
@@ -90,22 +59,11 @@ public class DeleteLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the LAG to delete.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the LAG.
      * </p>
      * 
      * @param lagId
-     *        The ID of the LAG to delete.</p>
-     *        <p>
-     *        Example: dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

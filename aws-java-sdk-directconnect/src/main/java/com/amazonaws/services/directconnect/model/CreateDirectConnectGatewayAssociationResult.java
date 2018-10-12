@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Container for the response from the CreateDirectConnectGatewayAssociation API call
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation"
  *      target="_top">AWS API Documentation</a>
@@ -29,18 +26,18 @@ public class CreateDirectConnectGatewayAssociationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The direct connect gateway association to be created.
+     * The association to be created.
      * </p>
      */
     private DirectConnectGatewayAssociation directConnectGatewayAssociation;
 
     /**
      * <p>
-     * The direct connect gateway association to be created.
+     * The association to be created.
      * </p>
      * 
      * @param directConnectGatewayAssociation
-     *        The direct connect gateway association to be created.
+     *        The association to be created.
      */
 
     public void setDirectConnectGatewayAssociation(DirectConnectGatewayAssociation directConnectGatewayAssociation) {
@@ -49,10 +46,10 @@ public class CreateDirectConnectGatewayAssociationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The direct connect gateway association to be created.
+     * The association to be created.
      * </p>
      * 
-     * @return The direct connect gateway association to be created.
+     * @return The association to be created.
      */
 
     public DirectConnectGatewayAssociation getDirectConnectGatewayAssociation() {
@@ -61,11 +58,11 @@ public class CreateDirectConnectGatewayAssociationResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The direct connect gateway association to be created.
+     * The association to be created.
      * </p>
      * 
      * @param directConnectGatewayAssociation
-     *        The direct connect gateway association to be created.
+     *        The association to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

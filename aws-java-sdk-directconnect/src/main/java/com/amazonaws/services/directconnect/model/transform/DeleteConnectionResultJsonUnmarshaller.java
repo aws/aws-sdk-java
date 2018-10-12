@@ -96,6 +96,10 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
                     context.nextToken();
                     deleteConnectionResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     deleteConnectionResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

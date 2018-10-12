@@ -108,6 +108,14 @@ public class AllocatePublicVirtualInterfaceResultJsonUnmarshaller implements Unm
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setCustomerRouterConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));

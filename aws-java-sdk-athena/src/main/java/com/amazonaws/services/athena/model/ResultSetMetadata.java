@@ -30,17 +30,17 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about the columns in a query execution result.
+     * Information about the columns returned in a query result metadata.
      * </p>
      */
     private java.util.List<ColumnInfo> columnInfo;
 
     /**
      * <p>
-     * Information about the columns in a query execution result.
+     * Information about the columns returned in a query result metadata.
      * </p>
      * 
-     * @return Information about the columns in a query execution result.
+     * @return Information about the columns returned in a query result metadata.
      */
 
     public java.util.List<ColumnInfo> getColumnInfo() {
@@ -49,11 +49,11 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about the columns in a query execution result.
+     * Information about the columns returned in a query result metadata.
      * </p>
      * 
      * @param columnInfo
-     *        Information about the columns in a query execution result.
+     *        Information about the columns returned in a query result metadata.
      */
 
     public void setColumnInfo(java.util.Collection<ColumnInfo> columnInfo) {
@@ -67,7 +67,7 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about the columns in a query execution result.
+     * Information about the columns returned in a query result metadata.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param columnInfo
-     *        Information about the columns in a query execution result.
+     *        Information about the columns returned in a query result metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class ResultSetMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Information about the columns in a query execution result.
+     * Information about the columns returned in a query result metadata.
      * </p>
      * 
      * @param columnInfo
-     *        Information about the columns in a query execution result.
+     *        Information about the columns returned in a query result metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

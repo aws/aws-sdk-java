@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateInterconnect operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect" target="_top">AWS
  *      API Documentation</a>
@@ -32,62 +29,34 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the interconnect.
      * </p>
-     * <p>
-     * Example: "<i>1G Interconnect to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private String interconnectName;
     /**
      * <p>
-     * The port bandwidth
-     * </p>
-     * <p>
-     * Example: 1Gbps
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps,10Gbps
+     * The port bandwidth, in Gbps. The possible values are 1 and 10.
      * </p>
      */
     private String bandwidth;
     /**
      * <p>
-     * Where the interconnect is located
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location of the interconnect.
      * </p>
      */
     private String location;
-
+    /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     */
     private String lagId;
 
     /**
      * <p>
      * The name of the interconnect.
      * </p>
-     * <p>
-     * Example: "<i>1G Interconnect to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param interconnectName
-     *        The name of the interconnect.</p>
-     *        <p>
-     *        Example: "<i>1G Interconnect to AWS</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the interconnect.
      */
 
     public void setInterconnectName(String interconnectName) {
@@ -98,19 +67,8 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the interconnect.
      * </p>
-     * <p>
-     * Example: "<i>1G Interconnect to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The name of the interconnect.</p>
-     *         <p>
-     *         Example: "<i>1G Interconnect to AWS</i>"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The name of the interconnect.
      */
 
     public String getInterconnectName() {
@@ -121,20 +79,9 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the interconnect.
      * </p>
-     * <p>
-     * Example: "<i>1G Interconnect to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param interconnectName
-     *        The name of the interconnect.</p>
-     *        <p>
-     *        Example: "<i>1G Interconnect to AWS</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the interconnect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,28 +92,11 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The port bandwidth
-     * </p>
-     * <p>
-     * Example: 1Gbps
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps,10Gbps
+     * The port bandwidth, in Gbps. The possible values are 1 and 10.
      * </p>
      * 
      * @param bandwidth
-     *        The port bandwidth</p>
-     *        <p>
-     *        Example: 1Gbps
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Available values: 1Gbps,10Gbps
+     *        The port bandwidth, in Gbps. The possible values are 1 and 10.
      */
 
     public void setBandwidth(String bandwidth) {
@@ -175,27 +105,10 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The port bandwidth
-     * </p>
-     * <p>
-     * Example: 1Gbps
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps,10Gbps
+     * The port bandwidth, in Gbps. The possible values are 1 and 10.
      * </p>
      * 
-     * @return The port bandwidth</p>
-     *         <p>
-     *         Example: 1Gbps
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Available values: 1Gbps,10Gbps
+     * @return The port bandwidth, in Gbps. The possible values are 1 and 10.
      */
 
     public String getBandwidth() {
@@ -204,28 +117,11 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The port bandwidth
-     * </p>
-     * <p>
-     * Example: 1Gbps
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps,10Gbps
+     * The port bandwidth, in Gbps. The possible values are 1 and 10.
      * </p>
      * 
      * @param bandwidth
-     *        The port bandwidth</p>
-     *        <p>
-     *        Example: 1Gbps
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Available values: 1Gbps,10Gbps
+     *        The port bandwidth, in Gbps. The possible values are 1 and 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,22 +132,11 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Where the interconnect is located
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location of the interconnect.
      * </p>
      * 
      * @param location
-     *        Where the interconnect is located</p>
-     *        <p>
-     *        Example: EqSV5
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The location of the interconnect.
      */
 
     public void setLocation(String location) {
@@ -260,21 +145,10 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Where the interconnect is located
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location of the interconnect.
      * </p>
      * 
-     * @return Where the interconnect is located</p>
-     *         <p>
-     *         Example: EqSV5
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The location of the interconnect.
      */
 
     public String getLocation() {
@@ -283,22 +157,11 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Where the interconnect is located
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location of the interconnect.
      * </p>
      * 
      * @param location
-     *        Where the interconnect is located</p>
-     *        <p>
-     *        Example: EqSV5
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The location of the interconnect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,7 +171,12 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
      * @param lagId
+     *        The ID of the LAG.
      */
 
     public void setLagId(String lagId) {
@@ -316,7 +184,11 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
+     * @return The ID of the LAG.
      */
 
     public String getLagId() {
@@ -324,7 +196,12 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
      * @param lagId
+     *        The ID of the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

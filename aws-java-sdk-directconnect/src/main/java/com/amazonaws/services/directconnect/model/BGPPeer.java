@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure containing information about a BGP peer.
+ * Information about a BGP peer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/BGPPeer" target="_top">AWS API
@@ -28,28 +28,108 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     */
     private Integer asn;
-
+    /**
+     * <p>
+     * The authentication key for BGP configuration.
+     * </p>
+     */
     private String authKey;
-
+    /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     */
     private String addressFamily;
-
+    /**
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     */
     private String amazonAddress;
-
+    /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     */
     private String customerAddress;
-
+    /**
+     * <p>
+     * The state of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created.
+     * This state applies only to public virtual interfaces.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The BGP peer is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The BGP peer is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String bgpPeerState;
-
+    /**
+     * <p>
+     * The status of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function.
+     * Ensure that you are receiving routes over the BGP session.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>down</code>: The BGP peer is down.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The BGP peer status is unknown.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String bgpStatus;
     /**
      * <p>
-     * The Direct Connection endpoint which the BGP peer terminates on.
+     * The Direct Connect endpoint on which the BGP peer terminates.
      * </p>
      */
     private String awsDeviceV2;
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public void setAsn(Integer asn) {
@@ -57,7 +137,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
+     * @return The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public Integer getAsn() {
@@ -65,7 +149,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,7 +164,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The authentication key for BGP configuration.
+     * </p>
+     * 
      * @param authKey
+     *        The authentication key for BGP configuration.
      */
 
     public void setAuthKey(String authKey) {
@@ -83,7 +177,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The authentication key for BGP configuration.
+     * </p>
+     * 
+     * @return The authentication key for BGP configuration.
      */
 
     public String getAuthKey() {
@@ -91,7 +189,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The authentication key for BGP configuration.
+     * </p>
+     * 
      * @param authKey
+     *        The authentication key for BGP configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +204,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @see AddressFamily
      */
 
@@ -110,7 +218,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
+     * @return The address family for the BGP peer.
      * @see AddressFamily
      */
 
@@ -119,7 +231,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AddressFamily
      */
@@ -130,7 +247,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @see AddressFamily
      */
 
@@ -139,7 +261,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AddressFamily
      */
@@ -150,7 +277,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     * 
      * @param amazonAddress
+     *        The IP address assigned to the Amazon interface.
      */
 
     public void setAmazonAddress(String amazonAddress) {
@@ -158,7 +290,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     * 
+     * @return The IP address assigned to the Amazon interface.
      */
 
     public String getAmazonAddress() {
@@ -166,7 +302,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     * 
      * @param amazonAddress
+     *        The IP address assigned to the Amazon interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,7 +317,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      */
 
     public void setCustomerAddress(String customerAddress) {
@@ -184,7 +330,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
+     * @return The IP address assigned to the customer interface.
      */
 
     public String getCustomerAddress() {
@@ -192,7 +342,12 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,7 +357,68 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created.
+     * This state applies only to public virtual interfaces.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The BGP peer is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The BGP peer is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpPeerState
+     *        The state of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be
+     *        created. This state applies only to public virtual interfaces.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be
+     *        established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The BGP peer is ready to be established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The BGP peer is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     *        </p>
+     *        </li>
      * @see BGPPeerState
      */
 
@@ -211,7 +427,67 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The state of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created.
+     * This state applies only to public virtual interfaces.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The BGP peer is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The BGP peer is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The state of the BGP peer. The following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be
+     *         created. This state applies only to public virtual interfaces.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be
+     *         established.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available</code>: The BGP peer is ready to be established.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleting</code>: The BGP peer is being deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     *         </p>
+     *         </li>
      * @see BGPPeerState
      */
 
@@ -220,7 +496,68 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created.
+     * This state applies only to public virtual interfaces.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The BGP peer is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The BGP peer is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpPeerState
+     *        The state of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be
+     *        created. This state applies only to public virtual interfaces.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be
+     *        established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The BGP peer is ready to be established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The BGP peer is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BGPPeerState
      */
@@ -231,7 +568,68 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created.
+     * This state applies only to public virtual interfaces.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The BGP peer is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The BGP peer is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpPeerState
+     *        The state of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be
+     *        created. This state applies only to public virtual interfaces.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be
+     *        established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The BGP peer is ready to be established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The BGP peer is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     *        </p>
+     *        </li>
      * @see BGPPeerState
      */
 
@@ -240,7 +638,68 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created.
+     * This state applies only to public virtual interfaces.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The BGP peer is ready to be established.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The BGP peer is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpPeerState
+     *        The state of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be
+     *        created. This state applies only to public virtual interfaces.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be
+     *        established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: The BGP peer is ready to be established.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: The BGP peer is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The BGP peer is deleted and cannot be established.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BGPPeerState
      */
@@ -251,7 +710,47 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function.
+     * Ensure that you are receiving routes over the BGP session.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>down</code>: The BGP peer is down.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The BGP peer status is unknown.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpStatus
+     *        The status of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing
+     *        function. Ensure that you are receiving routes over the BGP session.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>down</code>: The BGP peer is down.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        </p>
+     *        </li>
      * @see BGPStatus
      */
 
@@ -260,7 +759,46 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function.
+     * Ensure that you are receiving routes over the BGP session.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>down</code>: The BGP peer is down.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The BGP peer status is unknown.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The status of the BGP peer. The following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing
+     *         function. Ensure that you are receiving routes over the BGP session.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>down</code>: The BGP peer is down.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unknown</code>: The BGP peer status is unknown.
+     *         </p>
+     *         </li>
      * @see BGPStatus
      */
 
@@ -269,7 +807,47 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function.
+     * Ensure that you are receiving routes over the BGP session.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>down</code>: The BGP peer is down.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The BGP peer status is unknown.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpStatus
+     *        The status of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing
+     *        function. Ensure that you are receiving routes over the BGP session.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>down</code>: The BGP peer is down.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BGPStatus
      */
@@ -280,7 +858,47 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function.
+     * Ensure that you are receiving routes over the BGP session.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>down</code>: The BGP peer is down.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The BGP peer status is unknown.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpStatus
+     *        The status of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing
+     *        function. Ensure that you are receiving routes over the BGP session.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>down</code>: The BGP peer is down.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        </p>
+     *        </li>
      * @see BGPStatus
      */
 
@@ -289,7 +907,47 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the BGP peer. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing function.
+     * Ensure that you are receiving routes over the BGP session.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>down</code>: The BGP peer is down.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The BGP peer status is unknown.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param bgpStatus
+     *        The status of the BGP peer. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>up</code>: The BGP peer is established. This state does not indicate the state of the routing
+     *        function. Ensure that you are receiving routes over the BGP session.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>down</code>: The BGP peer is down.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BGPStatus
      */
@@ -301,11 +959,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Direct Connection endpoint which the BGP peer terminates on.
+     * The Direct Connect endpoint on which the BGP peer terminates.
      * </p>
      * 
      * @param awsDeviceV2
-     *        The Direct Connection endpoint which the BGP peer terminates on.
+     *        The Direct Connect endpoint on which the BGP peer terminates.
      */
 
     public void setAwsDeviceV2(String awsDeviceV2) {
@@ -314,10 +972,10 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Direct Connection endpoint which the BGP peer terminates on.
+     * The Direct Connect endpoint on which the BGP peer terminates.
      * </p>
      * 
-     * @return The Direct Connection endpoint which the BGP peer terminates on.
+     * @return The Direct Connect endpoint on which the BGP peer terminates.
      */
 
     public String getAwsDeviceV2() {
@@ -326,11 +984,11 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Direct Connection endpoint which the BGP peer terminates on.
+     * The Direct Connect endpoint on which the BGP peer terminates.
      * </p>
      * 
      * @param awsDeviceV2
-     *        The Direct Connection endpoint which the BGP peer terminates on.
+     *        The Direct Connect endpoint on which the BGP peer terminates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

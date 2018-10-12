@@ -15,13 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * A standard media type indicating the content type of the LOA-CFA document. Currently, the only supported value is
- * "application/pdf".
- * </p>
- * <p>
- * Default: application/pdf
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LoaContentType {

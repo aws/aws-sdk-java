@@ -20,7 +20,7 @@ import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.util.TimingInfo;
 
 /**
- * Latency metric information provider.
+ * ApiCallLatency metric information provider.
  */
 @NotThreadSafe
 public class ServiceLatencyProvider {

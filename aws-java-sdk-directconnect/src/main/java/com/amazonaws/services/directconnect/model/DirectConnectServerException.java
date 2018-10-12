@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A server-side error occurred during the API call. The error message will contain additional details about the cause.
+ * A server-side error occurred.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

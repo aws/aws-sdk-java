@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DescribeTags operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags" target="_top">AWS API
  *      Documentation</a>
@@ -30,17 +27,17 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceArns;
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     * @return The Amazon Resource Names (ARNs) of the resources.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -52,11 +49,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     *        The Amazon Resource Names (ARNs) of the resources.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -70,7 +67,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +76,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     *        The Amazon Resource Names (ARNs) of the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +92,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARNs) of the Direct Connect resources.
+     *        The Amazon Resource Names (ARNs) of the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

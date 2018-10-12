@@ -21,5 +21,9 @@ import com.amazonaws.metrics.RequestMetricType;
  * Metrics used for generate client side monitoring events.
  */
 public enum AwsClientSideMonitoringMetrics implements RequestMetricType {
-    Latency
+    /**
+     * The elapsed time, in milliseconds, between when the Api Call was begun and when a final response or error is
+     * manifested to the caller.
+     */
+    ApiCallLatency
 }

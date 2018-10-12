@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * A structure containing a list of virtual interfaces.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces"
  *      target="_top">AWS API Documentation</a>
@@ -28,17 +25,17 @@ public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of virtual interfaces.
+     * The virtual interfaces
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VirtualInterface> virtualInterfaces;
 
     /**
      * <p>
-     * A list of virtual interfaces.
+     * The virtual interfaces
      * </p>
      * 
-     * @return A list of virtual interfaces.
+     * @return The virtual interfaces
      */
 
     public java.util.List<VirtualInterface> getVirtualInterfaces() {
@@ -50,11 +47,11 @@ public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of virtual interfaces.
+     * The virtual interfaces
      * </p>
      * 
      * @param virtualInterfaces
-     *        A list of virtual interfaces.
+     *        The virtual interfaces
      */
 
     public void setVirtualInterfaces(java.util.Collection<VirtualInterface> virtualInterfaces) {
@@ -68,7 +65,7 @@ public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of virtual interfaces.
+     * The virtual interfaces
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +74,7 @@ public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param virtualInterfaces
-     *        A list of virtual interfaces.
+     *        The virtual interfaces
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +90,11 @@ public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of virtual interfaces.
+     * The virtual interfaces
      * </p>
      * 
      * @param virtualInterfaces
-     *        A list of virtual interfaces.
+     *        The virtual interfaces
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

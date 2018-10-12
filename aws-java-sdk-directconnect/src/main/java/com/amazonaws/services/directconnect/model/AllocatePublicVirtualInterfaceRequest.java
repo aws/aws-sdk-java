@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the AllocatePublicVirtualInterface operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface"
  *      target="_top">AWS API Documentation</a>
@@ -30,44 +27,30 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The connection ID on which the public virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the public virtual interface is provisioned.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The AWS account that will own the new public virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the public virtual interface.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
-     * Detailed information for the public virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      */
     private NewPublicVirtualInterfaceAllocation newPublicVirtualInterfaceAllocation;
 
     /**
      * <p>
-     * The connection ID on which the public virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the public virtual interface is provisioned.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID on which the public virtual interface is provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection on which the public virtual interface is provisioned.
      */
 
     public void setConnectionId(String connectionId) {
@@ -76,15 +59,10 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The connection ID on which the public virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the public virtual interface is provisioned.
      * </p>
      * 
-     * @return The connection ID on which the public virtual interface is provisioned.</p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the connection on which the public virtual interface is provisioned.
      */
 
     public String getConnectionId() {
@@ -93,16 +71,11 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The connection ID on which the public virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the public virtual interface is provisioned.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID on which the public virtual interface is provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection on which the public virtual interface is provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,16 +86,11 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account that will own the new public virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the public virtual interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS account that will own the new public virtual interface.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account that owns the public virtual interface.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -131,15 +99,10 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account that will own the new public virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the public virtual interface.
      * </p>
      * 
-     * @return The AWS account that will own the new public virtual interface.</p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the AWS account that owns the public virtual interface.
      */
 
     public String getOwnerAccount() {
@@ -148,16 +111,11 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account that will own the new public virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the public virtual interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS account that will own the new public virtual interface.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account that owns the public virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,16 +126,11 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
      * @param newPublicVirtualInterfaceAllocation
-     *        Detailed information for the public virtual interface to be provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the public virtual interface.
      */
 
     public void setNewPublicVirtualInterfaceAllocation(NewPublicVirtualInterfaceAllocation newPublicVirtualInterfaceAllocation) {
@@ -186,15 +139,10 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
-     * @return Detailed information for the public virtual interface to be provisioned.</p>
-     *         <p>
-     *         Default: None
+     * @return Information about the public virtual interface.
      */
 
     public NewPublicVirtualInterfaceAllocation getNewPublicVirtualInterfaceAllocation() {
@@ -203,16 +151,11 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Detailed information for the public virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the public virtual interface.
      * </p>
      * 
      * @param newPublicVirtualInterfaceAllocation
-     *        Detailed information for the public virtual interface to be provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the public virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

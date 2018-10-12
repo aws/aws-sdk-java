@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The API was called with invalid parameters. The error message will contain additional details about the cause.
+ * One or more parameters are not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

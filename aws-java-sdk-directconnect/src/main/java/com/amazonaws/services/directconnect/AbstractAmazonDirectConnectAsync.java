@@ -736,4 +736,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualInterfaceAttributesResult> updateVirtualInterfaceAttributesAsync(
+            UpdateVirtualInterfaceAttributesRequest request) {
+
+        return updateVirtualInterfaceAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualInterfaceAttributesResult> updateVirtualInterfaceAttributesAsync(
+            UpdateVirtualInterfaceAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVirtualInterfaceAttributesRequest, UpdateVirtualInterfaceAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

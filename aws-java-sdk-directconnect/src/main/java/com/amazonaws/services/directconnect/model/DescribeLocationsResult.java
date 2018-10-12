@@ -16,11 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * A location is a network facility where AWS Direct Connect routers are available to be connected. Generally, these are
- * colocation hubs where many network providers have equipment, and where cross connects can be delivered. Locations
- * include a name and facility code, and must be provided when creating a connection.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations" target="_top">AWS
  *      API Documentation</a>
@@ -30,18 +25,17 @@ public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of colocation hubs where network providers have equipment. Most regions have multiple locations available.
+     * The locations.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Location> locations;
 
     /**
      * <p>
-     * A list of colocation hubs where network providers have equipment. Most regions have multiple locations available.
+     * The locations.
      * </p>
      * 
-     * @return A list of colocation hubs where network providers have equipment. Most regions have multiple locations
-     *         available.
+     * @return The locations.
      */
 
     public java.util.List<Location> getLocations() {
@@ -53,12 +47,11 @@ public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of colocation hubs where network providers have equipment. Most regions have multiple locations available.
+     * The locations.
      * </p>
      * 
      * @param locations
-     *        A list of colocation hubs where network providers have equipment. Most regions have multiple locations
-     *        available.
+     *        The locations.
      */
 
     public void setLocations(java.util.Collection<Location> locations) {
@@ -72,7 +65,7 @@ public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of colocation hubs where network providers have equipment. Most regions have multiple locations available.
+     * The locations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,8 +74,7 @@ public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param locations
-     *        A list of colocation hubs where network providers have equipment. Most regions have multiple locations
-     *        available.
+     *        The locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +90,11 @@ public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of colocation hubs where network providers have equipment. Most regions have multiple locations available.
+     * The locations.
      * </p>
      * 
      * @param locations
-     *        A list of colocation hubs where network providers have equipment. Most regions have multiple locations
-     *        available.
+     *        The locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

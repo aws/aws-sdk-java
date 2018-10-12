@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateBGPPeer operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer" target="_top">AWS API
  *      Documentation</a>
@@ -30,44 +27,24 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface on which the BGP peer will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      */
     private String virtualInterfaceId;
     /**
      * <p>
-     * Detailed information for the BGP peer to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the BGP peer.
      * </p>
      */
     private NewBGPPeer newBGPPeer;
 
     /**
      * <p>
-     * The ID of the virtual interface on which the BGP peer will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceId
-     *        The ID of the virtual interface on which the BGP peer will be provisioned.</p>
-     *        <p>
-     *        Example: dxvif-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual interface.
      */
 
     public void setVirtualInterfaceId(String virtualInterfaceId) {
@@ -76,21 +53,10 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface on which the BGP peer will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
-     * @return The ID of the virtual interface on which the BGP peer will be provisioned.</p>
-     *         <p>
-     *         Example: dxvif-456abc78
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the virtual interface.
      */
 
     public String getVirtualInterfaceId() {
@@ -99,22 +65,11 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface on which the BGP peer will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceId
-     *        The ID of the virtual interface on which the BGP peer will be provisioned.</p>
-     *        <p>
-     *        Example: dxvif-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,16 +80,11 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Detailed information for the BGP peer to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the BGP peer.
      * </p>
      * 
      * @param newBGPPeer
-     *        Detailed information for the BGP peer to be created.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the BGP peer.
      */
 
     public void setNewBGPPeer(NewBGPPeer newBGPPeer) {
@@ -143,15 +93,10 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Detailed information for the BGP peer to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the BGP peer.
      * </p>
      * 
-     * @return Detailed information for the BGP peer to be created.</p>
-     *         <p>
-     *         Default: None
+     * @return Information about the BGP peer.
      */
 
     public NewBGPPeer getNewBGPPeer() {
@@ -160,16 +105,11 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Detailed information for the BGP peer to be created.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the BGP peer.
      * </p>
      * 
      * @param newBGPPeer
-     *        Detailed information for the BGP peer to be created.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the BGP peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

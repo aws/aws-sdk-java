@@ -58,6 +58,10 @@ public class VirtualInterfaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualInterfaceState").build();
     private static final MarshallingInfo<String> CUSTOMERROUTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerRouterConfig").build();
+    private static final MarshallingInfo<Integer> MTU_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mtu").build();
+    private static final MarshallingInfo<Boolean> JUMBOFRAMECAPABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jumboFrameCapable").build();
     private static final MarshallingInfo<String> VIRTUALGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualGatewayId").build();
     private static final MarshallingInfo<String> DIRECTCONNECTGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -102,6 +106,8 @@ public class VirtualInterfaceMarshaller {
             protocolMarshaller.marshall(virtualInterface.getAddressFamily(), ADDRESSFAMILY_BINDING);
             protocolMarshaller.marshall(virtualInterface.getVirtualInterfaceState(), VIRTUALINTERFACESTATE_BINDING);
             protocolMarshaller.marshall(virtualInterface.getCustomerRouterConfig(), CUSTOMERROUTERCONFIG_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getMtu(), MTU_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getJumboFrameCapable(), JUMBOFRAMECAPABLE_BINDING);
             protocolMarshaller.marshall(virtualInterface.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
             protocolMarshaller.marshall(virtualInterface.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
             protocolMarshaller.marshall(virtualInterface.getRouteFilterPrefixes(), ROUTEFILTERPREFIXES_BINDING);

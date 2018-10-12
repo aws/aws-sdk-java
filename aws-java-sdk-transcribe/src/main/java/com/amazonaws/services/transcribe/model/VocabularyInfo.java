@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a custom vocabulary.
+ * Provides information about a custom vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are
+ * in preview are not available. In the console, the vocabulary section will be greyed-out and SDK will return error
+ * message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyInfo" target="_top">AWS API

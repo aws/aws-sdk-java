@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the AllocatePrivateVirtualInterface operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface"
  *      target="_top">AWS API Documentation</a>
@@ -30,44 +27,30 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The connection ID on which the private virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the private virtual interface is provisioned.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The AWS account that will own the new private virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the virtual private interface.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
-     * Detailed information for the private virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the private virtual interface.
      * </p>
      */
     private NewPrivateVirtualInterfaceAllocation newPrivateVirtualInterfaceAllocation;
 
     /**
      * <p>
-     * The connection ID on which the private virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the private virtual interface is provisioned.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID on which the private virtual interface is provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection on which the private virtual interface is provisioned.
      */
 
     public void setConnectionId(String connectionId) {
@@ -76,15 +59,10 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The connection ID on which the private virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the private virtual interface is provisioned.
      * </p>
      * 
-     * @return The connection ID on which the private virtual interface is provisioned.</p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the connection on which the private virtual interface is provisioned.
      */
 
     public String getConnectionId() {
@@ -93,16 +71,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The connection ID on which the private virtual interface is provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the connection on which the private virtual interface is provisioned.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID on which the private virtual interface is provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection on which the private virtual interface is provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,16 +86,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The AWS account that will own the new private virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the virtual private interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS account that will own the new private virtual interface.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account that owns the virtual private interface.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -131,15 +99,10 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The AWS account that will own the new private virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the virtual private interface.
      * </p>
      * 
-     * @return The AWS account that will own the new private virtual interface.</p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the AWS account that owns the virtual private interface.
      */
 
     public String getOwnerAccount() {
@@ -148,16 +111,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The AWS account that will own the new private virtual interface.
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account that owns the virtual private interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS account that will own the new private virtual interface.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account that owns the virtual private interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,16 +126,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Detailed information for the private virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the private virtual interface.
      * </p>
      * 
      * @param newPrivateVirtualInterfaceAllocation
-     *        Detailed information for the private virtual interface to be provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the private virtual interface.
      */
 
     public void setNewPrivateVirtualInterfaceAllocation(NewPrivateVirtualInterfaceAllocation newPrivateVirtualInterfaceAllocation) {
@@ -186,15 +139,10 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Detailed information for the private virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the private virtual interface.
      * </p>
      * 
-     * @return Detailed information for the private virtual interface to be provisioned.</p>
-     *         <p>
-     *         Default: None
+     * @return Information about the private virtual interface.
      */
 
     public NewPrivateVirtualInterfaceAllocation getNewPrivateVirtualInterfaceAllocation() {
@@ -203,16 +151,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Detailed information for the private virtual interface to be provisioned.
-     * </p>
-     * <p>
-     * Default: None
+     * Information about the private virtual interface.
      * </p>
      * 
      * @param newPrivateVirtualInterfaceAllocation
-     *        Detailed information for the private virtual interface to be provisioned.</p>
-     *        <p>
-     *        Default: None
+     *        Information about the private virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

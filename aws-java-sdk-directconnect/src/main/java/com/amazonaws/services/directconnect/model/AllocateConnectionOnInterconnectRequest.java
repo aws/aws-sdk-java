@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the AllocateConnectionOnInterconnect operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect"
  *      target="_top">AWS API Documentation</a>
@@ -30,52 +27,26 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      */
     private String bandwidth;
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      */
     private String connectionName;
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      */
     private String interconnectId;
@@ -83,39 +54,18 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private Integer vlan;
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      * 
      * @param bandwidth
-     *        Bandwidth of the connection.</p>
-     *        <p>
-     *        Example: "<i>500Mbps</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     *        The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     *        400Mbps, and 500Mbps.
      */
 
     public void setBandwidth(String bandwidth) {
@@ -124,27 +74,12 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      * 
-     * @return Bandwidth of the connection.</p>
-     *         <p>
-     *         Example: "<i>500Mbps</i>"
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * @return The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     *         400Mbps, and 500Mbps.
      */
 
     public String getBandwidth() {
@@ -153,28 +88,13 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Bandwidth of the connection.
-     * </p>
-     * <p>
-     * Example: "<i>500Mbps</i>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     * The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and
+     * 500Mbps.
      * </p>
      * 
      * @param bandwidth
-     *        Bandwidth of the connection.</p>
-     *        <p>
-     *        Example: "<i>500Mbps</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+     *        The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps,
+     *        400Mbps, and 500Mbps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,22 +105,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      * 
      * @param connectionName
-     *        Name of the provisioned connection.</p>
-     *        <p>
-     *        Example: "<i>500M Connection to AWS</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the provisioned connection.
      */
 
     public void setConnectionName(String connectionName) {
@@ -209,21 +118,10 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      * 
-     * @return Name of the provisioned connection.</p>
-     *         <p>
-     *         Example: "<i>500M Connection to AWS</i>"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The name of the provisioned connection.
      */
 
     public String getConnectionName() {
@@ -232,22 +130,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Name of the provisioned connection.
-     * </p>
-     * <p>
-     * Example: "<i>500M Connection to AWS</i>"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the provisioned connection.
      * </p>
      * 
      * @param connectionName
-     *        Name of the provisioned connection.</p>
-     *        <p>
-     *        Example: "<i>500M Connection to AWS</i>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the provisioned connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,22 +145,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      * 
      * @param ownerAccount
-     *        Numeric account Id of the customer for whom the connection will be provisioned.</p>
-     *        <p>
-     *        Example: 123443215678
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account of the customer for whom the connection will be provisioned.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -282,21 +158,10 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      * 
-     * @return Numeric account Id of the customer for whom the connection will be provisioned.</p>
-     *         <p>
-     *         Example: 123443215678
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the AWS account of the customer for whom the connection will be provisioned.
      */
 
     public String getOwnerAccount() {
@@ -305,22 +170,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Numeric account Id of the customer for whom the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: 123443215678
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the AWS account of the customer for whom the connection will be provisioned.
      * </p>
      * 
      * @param ownerAccount
-     *        Numeric account Id of the customer for whom the connection will be provisioned.</p>
-     *        <p>
-     *        Example: 123443215678
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the AWS account of the customer for whom the connection will be provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,22 +185,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      * 
      * @param interconnectId
-     *        ID of the interconnect on which the connection will be provisioned.</p>
-     *        <p>
-     *        Example: dxcon-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      */
 
     public void setInterconnectId(String interconnectId) {
@@ -355,21 +198,10 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      * 
-     * @return ID of the interconnect on which the connection will be provisioned.</p>
-     *         <p>
-     *         Example: dxcon-456abc78
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      */
 
     public String getInterconnectId() {
@@ -378,22 +210,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * ID of the interconnect on which the connection will be provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * </p>
      * 
      * @param interconnectId
-     *        ID of the interconnect on which the connection will be provisioned.</p>
-     *        <p>
-     *        Example: dxcon-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect on which the connection will be provisioned. For example, dxcon-456abc78.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,20 +227,9 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param vlan
-     *        The dedicated VLAN provisioned to the connection.</p>
-     *        <p>
-     *        Example: 101
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The dedicated VLAN provisioned to the connection.
      */
 
     public void setVlan(Integer vlan) {
@@ -430,19 +240,8 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The dedicated VLAN provisioned to the connection.</p>
-     *         <p>
-     *         Example: 101
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The dedicated VLAN provisioned to the connection.
      */
 
     public Integer getVlan() {
@@ -453,20 +252,9 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * <p>
      * The dedicated VLAN provisioned to the connection.
      * </p>
-     * <p>
-     * Example: 101
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param vlan
-     *        The dedicated VLAN provisioned to the connection.</p>
-     *        <p>
-     *        Example: 101
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The dedicated VLAN provisioned to the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

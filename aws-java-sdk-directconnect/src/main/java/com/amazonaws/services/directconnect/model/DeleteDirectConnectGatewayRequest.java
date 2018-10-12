@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DeleteDirectConnectGateway operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway"
  *      target="_top">AWS API Documentation</a>
@@ -30,35 +27,18 @@ public class DeleteDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      */
     private String directConnectGatewayId;
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      */
 
     public void setDirectConnectGatewayId(String directConnectGatewayId) {
@@ -67,21 +47,10 @@ public class DeleteDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
-     * @return The ID of the direct connect gateway.</p>
-     *         <p>
-     *         Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the Direct Connect gateway.
      */
 
     public String getDirectConnectGatewayId() {
@@ -90,22 +59,11 @@ public class DeleteDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

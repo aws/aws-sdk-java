@@ -54,6 +54,8 @@ public class LagMarshaller {
             .marshallLocationName("connections").build();
     private static final MarshallingInfo<Boolean> ALLOWSHOSTEDCONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowsHostedConnections").build();
+    private static final MarshallingInfo<Boolean> JUMBOFRAMECAPABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jumboFrameCapable").build();
 
     private static final LagMarshaller instance = new LagMarshaller();
 
@@ -84,6 +86,7 @@ public class LagMarshaller {
             protocolMarshaller.marshall(lag.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
             protocolMarshaller.marshall(lag.getConnections(), CONNECTIONS_BINDING);
             protocolMarshaller.marshall(lag.getAllowsHostedConnections(), ALLOWSHOSTEDCONNECTIONS_BINDING);
+            protocolMarshaller.marshall(lag.getJumboFrameCapable(), JUMBOFRAMECAPABLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

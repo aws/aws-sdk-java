@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The tags associated with a Direct Connect resource.
+ * Information about a tag associated with an AWS Direct Connect resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
@@ -43,11 +43,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Direct Connect resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,10 +56,10 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -68,11 +68,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Direct Connect resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

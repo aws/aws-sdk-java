@@ -113,6 +113,8 @@ public enum DirectConnectActions implements Action {
     UntagResource("directconnect:UntagResource"),
     /** Action for the UpdateLag operation. */
     UpdateLag("directconnect:UpdateLag"),
+    /** Action for the UpdateVirtualInterfaceAttributes operation. */
+    UpdateVirtualInterfaceAttributes("directconnect:UpdateVirtualInterfaceAttributes"),
 
     ;
 

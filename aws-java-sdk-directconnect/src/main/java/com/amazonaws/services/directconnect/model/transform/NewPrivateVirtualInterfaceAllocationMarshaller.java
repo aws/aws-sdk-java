@@ -33,6 +33,8 @@ public class NewPrivateVirtualInterfaceAllocationMarshaller {
             .marshallLocationName("vlan").build();
     private static final MarshallingInfo<Integer> ASN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("asn").build();
+    private static final MarshallingInfo<Integer> MTU_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mtu").build();
     private static final MarshallingInfo<String> AUTHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("authKey").build();
     private static final MarshallingInfo<String> AMAZONADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class NewPrivateVirtualInterfaceAllocationMarshaller {
             protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getVirtualInterfaceName(), VIRTUALINTERFACENAME_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getVlan(), VLAN_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getAsn(), ASN_BINDING);
+            protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getMtu(), MTU_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getAuthKey(), AUTHKEY_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getAmazonAddress(), AMAZONADDRESS_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterfaceAllocation.getAddressFamily(), ADDRESSFAMILY_BINDING);

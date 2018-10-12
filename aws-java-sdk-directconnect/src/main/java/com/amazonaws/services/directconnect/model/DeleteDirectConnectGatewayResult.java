@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Container for the response from the DeleteDirectConnectGateway API call
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway"
  *      target="_top">AWS API Documentation</a>
@@ -28,18 +25,18 @@ public class DeleteDirectConnectGatewayResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The direct connect gateway to be deleted.
+     * The Direct Connect gateway.
      * </p>
      */
     private DirectConnectGateway directConnectGateway;
 
     /**
      * <p>
-     * The direct connect gateway to be deleted.
+     * The Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGateway
-     *        The direct connect gateway to be deleted.
+     *        The Direct Connect gateway.
      */
 
     public void setDirectConnectGateway(DirectConnectGateway directConnectGateway) {
@@ -48,10 +45,10 @@ public class DeleteDirectConnectGatewayResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The direct connect gateway to be deleted.
+     * The Direct Connect gateway.
      * </p>
      * 
-     * @return The direct connect gateway to be deleted.
+     * @return The Direct Connect gateway.
      */
 
     public DirectConnectGateway getDirectConnectGateway() {
@@ -60,11 +57,11 @@ public class DeleteDirectConnectGatewayResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The direct connect gateway to be deleted.
+     * The Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGateway
-     *        The direct connect gateway to be deleted.
+     *        The Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

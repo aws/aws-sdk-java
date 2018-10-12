@@ -84,6 +84,10 @@ public class CreateInterconnectResultJsonUnmarshaller implements Unmarshaller<Cr
                     context.nextToken();
                     createInterconnectResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("awsDeviceV2", targetDepth)) {
                     context.nextToken();
                     createInterconnectResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));

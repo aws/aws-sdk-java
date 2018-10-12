@@ -15,7 +15,9 @@ package com.amazonaws.services.athena.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The reason for the query throttling, for example, when it exceeds the concurrent query limit.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ThrottleReason {

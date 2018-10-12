@@ -15,31 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * State of the direct connect gateway.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Pending</b>: The initial state after calling <a>CreateDirectConnectGateway</a>.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Available</b>: The direct connect gateway is ready for use.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleting</b>: The initial state after calling <a>DeleteDirectConnectGateway</a>.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleted</b>: The direct connect gateway is deleted and cannot pass traffic.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DirectConnectGatewayState {
