@@ -65,7 +65,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String name;
@@ -154,12 +154,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -208,7 +208,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
@@ -246,7 +246,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        If <code>Name</code> is a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setName(String name) {
@@ -290,7 +290,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet
@@ -327,7 +327,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         If <code>Name</code> is a trail ARN, it must be in the format:
      *         </p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getName() {
@@ -371,7 +371,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
@@ -409,7 +409,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        If <code>Name</code> is a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -936,12 +936,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -966,12 +966,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -1002,12 +1002,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -1031,12 +1031,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      *         <li>
@@ -1067,12 +1067,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -1097,12 +1097,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>

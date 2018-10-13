@@ -35,7 +35,7 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
      * is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String name;
@@ -47,7 +47,7 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
      * is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
@@ -55,7 +55,7 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
      *        status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The
      *        format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setName(String name) {
@@ -69,14 +69,14 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
      * is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the
      *         status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The
      *         format of a trail ARN is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getName() {
@@ -90,7 +90,7 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
      * is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
@@ -98,7 +98,7 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
      *        status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The
      *        format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,7 +50,7 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Date endTime;
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      */
     private Integer maxResults;
@@ -230,11 +230,11 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
      * @param maxResults
-     *        The number of events to return. Possible values are 1 through 50. The default is 10.
+     *        The number of events to return. Possible values are 1 through 50. The default is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -243,10 +243,10 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
-     * @return The number of events to return. Possible values are 1 through 50. The default is 10.
+     * @return The number of events to return. Possible values are 1 through 50. The default is 50.
      */
 
     public Integer getMaxResults() {
@@ -255,11 +255,11 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
      * @param maxResults
-     *        The number of events to return. Possible values are 1 through 50. The default is 10.
+     *        The number of events to return. Possible values are 1 through 50. The default is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

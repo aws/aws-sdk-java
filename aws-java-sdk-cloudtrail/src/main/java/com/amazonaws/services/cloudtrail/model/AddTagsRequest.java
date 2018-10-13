@@ -33,7 +33,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String resourceId;
@@ -49,13 +49,13 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceId
      *        Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setResourceId(String resourceId) {
@@ -67,12 +67,12 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getResourceId() {
@@ -84,13 +84,13 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceId
      *        Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

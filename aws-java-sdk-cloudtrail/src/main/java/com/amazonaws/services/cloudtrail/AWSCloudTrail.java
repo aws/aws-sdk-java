@@ -130,7 +130,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN
      *         is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws TagsLimitExceededException
@@ -350,7 +350,8 @@ public interface AWSCloudTrail {
      * <ul>
      * <li>
      * <p>
-     * The S3 objects that you are logging for data events.
+     * If your event selector includes read-only events, write-only events, or all events. This applies to both
+     * management events and data events.
      * </p>
      * </li>
      * <li>
@@ -360,7 +361,8 @@ public interface AWSCloudTrail {
      * </li>
      * <li>
      * <p>
-     * If your event selector includes read-only events, write-only events, or all.
+     * If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging
+     * for data events.
      * </p>
      * </li>
      * </ul>
@@ -515,7 +517,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN
      *         is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws InvalidTrailNameException
@@ -563,11 +565,17 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account.
-     * Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during
-     * the last seven days. Lookup supports the following attributes:
+     * Looks up <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
+     * >management events</a> captured by CloudTrail. Events for a region can be looked up in that region during the
+     * last 90 days. Lookup supports the following attributes:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * AWS access key
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Event ID
@@ -581,6 +589,11 @@ public interface AWSCloudTrail {
      * <li>
      * <p>
      * Event source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Read only
      * </p>
      * </li>
      * <li>
@@ -600,7 +613,7 @@ public interface AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
-     * All attributes are optional. The default number of results returned is 10, with a maximum of 50 possible. The
+     * All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The
      * response includes a token that you can use to get the next page of results.
      * </p>
      * <important>
@@ -643,10 +656,14 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Configures an event selector for your trail. Use event selectors to specify whether you want your trail to log
-     * management and/or data events. When an event occurs in your account, CloudTrail evaluates the event selectors in
-     * all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If
-     * the event doesn't match any event selector, the trail doesn't log the event.
+     * Configures an event selector for your trail. Use event selectors to further specify the management and data event
+     * settings for your trail. By default, trails created without specific event selectors will be configured to log
+     * all read and write management events, and no data events.
+     * </p>
+     * <p>
+     * When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For each trail, if
+     * the event matches any event selector, the trail processes and logs the event. If the event doesn't match any
+     * event selector, the trail doesn't log the event.
      * </p>
      * <p>
      * Example
@@ -686,7 +703,9 @@ public interface AWSCloudTrail {
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+     * >Logging Data and Management Events for Trails </a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -727,8 +746,14 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws InvalidEventSelectorsException
-     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with an invalid
-     *         number of event selectors, data resources, or an invalid value for a parameter:</p>
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors or data resources that is not valid. The combination of event selectors and data
+     *         resources is not valid. A trail can have up to 5 event selectors. A trail is limited to 250 data
+     *         resources. These data resources can be distributed across event selectors, but the overall total cannot
+     *         exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -737,7 +762,9 @@ public interface AWSCloudTrail {
      *         </li>
      *         <li>
      *         <p>
-     *         Specify a valid number of data resources (1 to 250) for an event selector.
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
      *         </p>
      *         </li>
      *         <li>
@@ -770,7 +797,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN
      *         is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws InvalidTrailNameException

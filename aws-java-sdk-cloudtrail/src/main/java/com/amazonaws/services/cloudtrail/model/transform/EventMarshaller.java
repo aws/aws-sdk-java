@@ -32,6 +32,10 @@ public class EventMarshaller {
             .marshallLocationName("EventId").build();
     private static final MarshallingInfo<String> EVENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EventName").build();
+    private static final MarshallingInfo<String> READONLY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ReadOnly").build();
+    private static final MarshallingInfo<String> ACCESSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessKeyId").build();
     private static final MarshallingInfo<java.util.Date> EVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventTime").build();
     private static final MarshallingInfo<String> EVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +65,8 @@ public class EventMarshaller {
         try {
             protocolMarshaller.marshall(event.getEventId(), EVENTID_BINDING);
             protocolMarshaller.marshall(event.getEventName(), EVENTNAME_BINDING);
+            protocolMarshaller.marshall(event.getReadOnly(), READONLY_BINDING);
+            protocolMarshaller.marshall(event.getAccessKeyId(), ACCESSKEYID_BINDING);
             protocolMarshaller.marshall(event.getEventTime(), EVENTTIME_BINDING);
             protocolMarshaller.marshall(event.getEventSource(), EVENTSOURCE_BINDING);
             protocolMarshaller.marshall(event.getUsername(), USERNAME_BINDING);

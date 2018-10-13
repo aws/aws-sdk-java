@@ -594,6 +594,6 @@ public final class ItemUtils {
 
     public static void checkInvalidAttribute(String attrName, Object val) {
         checkInvalidAttrName(attrName);
-        ValidationUtils.assertNotNull(val, "val");
+        ValidationUtils.assertNotNull(val, attrName);
     }
 }

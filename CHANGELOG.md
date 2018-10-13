@@ -1,3 +1,8 @@
+# __1.11.428__ __2018-10-12__
+## __AWS CloudTrail__
+  - ### Features
+    - The LookupEvents API now supports two new attribute keys: ReadOnly and AccessKeyId
+
 # __1.11.427__ __2018-10-11__
 ## __AWS Direct Connect__
   - ### Features

@@ -22,10 +22,12 @@ public enum LookupAttributeKey {
 
     EventId("EventId"),
     EventName("EventName"),
+    ReadOnly("ReadOnly"),
     Username("Username"),
     ResourceType("ResourceType"),
     ResourceName("ResourceName"),
-    EventSource("EventSource");
+    EventSource("EventSource"),
+    AccessKeyId("AccessKeyId");
 
     private String value;
 

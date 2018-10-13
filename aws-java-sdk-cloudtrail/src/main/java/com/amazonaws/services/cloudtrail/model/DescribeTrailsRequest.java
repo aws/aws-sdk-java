@@ -33,7 +33,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * If an empty list is specified, information for the trail in the current region is returned.
@@ -74,7 +74,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * If an empty list is specified, information for the trail in the current region is returned.
@@ -104,7 +104,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail
      *         ARN is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *         </p>
      *         <p>
      *         If an empty list is specified, information for the trail in the current region is returned.
@@ -143,7 +143,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * If an empty list is specified, information for the trail in the current region is returned.
@@ -174,7 +174,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN
      *        is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *        </p>
      *        <p>
      *        If an empty list is specified, information for the trail in the current region is returned.
@@ -215,7 +215,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * If an empty list is specified, information for the trail in the current region is returned.
@@ -251,7 +251,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN
      *        is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *        </p>
      *        <p>
      *        If an empty list is specified, information for the trail in the current region is returned.
@@ -294,7 +294,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * If an empty list is specified, information for the trail in the current region is returned.
@@ -325,7 +325,7 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN
      *        is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *        </p>
      *        <p>
      *        If an empty list is specified, information for the trail in the current region is returned.

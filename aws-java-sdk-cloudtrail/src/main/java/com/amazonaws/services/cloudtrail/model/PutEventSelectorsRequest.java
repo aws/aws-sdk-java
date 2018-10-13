@@ -62,7 +62,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String trailName;
@@ -110,7 +110,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailName
@@ -148,7 +148,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you specify a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setTrailName(String trailName) {
@@ -192,7 +192,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the
@@ -229,7 +229,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         If you specify a trail ARN, it must be in the format:
      *         </p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getTrailName() {
@@ -273,7 +273,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailName
@@ -311,7 +311,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you specify a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
