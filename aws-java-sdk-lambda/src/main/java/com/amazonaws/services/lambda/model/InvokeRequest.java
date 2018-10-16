@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke" target="_top">AWS API
  *      Documentation</a>
@@ -28,26 +27,58 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Lambda function name.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can optionally
-     * request asynchronous execution by specifying <code>Event</code> as the <code>InvocationType</code>. You can also
-     * use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the
-     * caller is authorized to invoke the function and if the inputs are valid. You request this by specifying
-     * <code>DryRun</code> as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want
-     * to verify access to a function without running it.
+     * Choose from the following options.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the
+     * function returns a response or times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
+     * dead-letter queue (if configured).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the
+     * function.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String invocationType;
     /**
@@ -70,6 +101,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
+     * <note>
+     * <p>
+     * <code>ClientContext</code> information is returned only if you use the synchronous (<code>RequestResponse</code>)
+     * invocation type.
+     * </p>
+     * </note>
      */
     private String clientContext;
     /**
@@ -80,37 +117,65 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private java.nio.ByteBuffer payload;
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
-     * </p>
-     * <p>
-     * If you don't provide this parameter, then the API uses unqualified function ARN which results in invocation of
-     * the <code>$LATEST</code> version.
+     * Specify a version or alias to invoke a published version of the function.
      * </p>
      */
     private String qualifier;
 
     /**
      * <p>
-     * The Lambda function name.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name.</p>
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -119,23 +184,57 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Lambda function name.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return The Lambda function name.</p>
+     * @return The name of the lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *         Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -144,24 +243,58 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Lambda function name.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name.</p>
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,22 +305,50 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can optionally
-     * request asynchronous execution by specifying <code>Event</code> as the <code>InvocationType</code>. You can also
-     * use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the
-     * caller is authorized to invoke the function and if the inputs are valid. You request this by specifying
-     * <code>DryRun</code> as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want
-     * to verify access to a function without running it.
+     * Choose from the following options.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the
+     * function returns a response or times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
+     * dead-letter queue (if configured).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the
+     * function.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param invocationType
-     *        By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can
-     *        optionally request asynchronous execution by specifying <code>Event</code> as the
-     *        <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the
-     *        function but do some verification, such as if the caller is authorized to invoke the function and if the
-     *        inputs are valid. You request this by specifying <code>DryRun</code> as the <code>InvocationType</code>.
-     *        This is useful in a cross-account scenario when you want to verify access to a function without running
-     *        it.
+     *        Choose from the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
+     *        the function returns a response or times out.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
+     *        function's dead-letter queue (if configured).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
+     *        the function.
+     *        </p>
+     *        </li>
      * @see InvocationType
      */
 
@@ -197,21 +358,49 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can optionally
-     * request asynchronous execution by specifying <code>Event</code> as the <code>InvocationType</code>. You can also
-     * use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the
-     * caller is authorized to invoke the function and if the inputs are valid. You request this by specifying
-     * <code>DryRun</code> as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want
-     * to verify access to a function without running it.
+     * Choose from the following options.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the
+     * function returns a response or times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
+     * dead-letter queue (if configured).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the
+     * function.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can
-     *         optionally request asynchronous execution by specifying <code>Event</code> as the
-     *         <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the
-     *         function but do some verification, such as if the caller is authorized to invoke the function and if the
-     *         inputs are valid. You request this by specifying <code>DryRun</code> as the <code>InvocationType</code>.
-     *         This is useful in a cross-account scenario when you want to verify access to a function without running
-     *         it.
+     * @return Choose from the following options.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open
+     *         until the function returns a response or times out.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
+     *         function's dead-letter queue (if configured).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
+     *         the function.
+     *         </p>
+     *         </li>
      * @see InvocationType
      */
 
@@ -221,22 +410,50 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can optionally
-     * request asynchronous execution by specifying <code>Event</code> as the <code>InvocationType</code>. You can also
-     * use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the
-     * caller is authorized to invoke the function and if the inputs are valid. You request this by specifying
-     * <code>DryRun</code> as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want
-     * to verify access to a function without running it.
+     * Choose from the following options.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the
+     * function returns a response or times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
+     * dead-letter queue (if configured).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the
+     * function.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param invocationType
-     *        By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can
-     *        optionally request asynchronous execution by specifying <code>Event</code> as the
-     *        <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the
-     *        function but do some verification, such as if the caller is authorized to invoke the function and if the
-     *        inputs are valid. You request this by specifying <code>DryRun</code> as the <code>InvocationType</code>.
-     *        This is useful in a cross-account scenario when you want to verify access to a function without running
-     *        it.
+     *        Choose from the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
+     *        the function returns a response or times out.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
+     *        function's dead-letter queue (if configured).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
+     *        the function.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InvocationType
      */
@@ -248,22 +465,50 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can optionally
-     * request asynchronous execution by specifying <code>Event</code> as the <code>InvocationType</code>. You can also
-     * use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the
-     * caller is authorized to invoke the function and if the inputs are valid. You request this by specifying
-     * <code>DryRun</code> as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want
-     * to verify access to a function without running it.
+     * Choose from the following options.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the
+     * function returns a response or times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
+     * dead-letter queue (if configured).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the
+     * function.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param invocationType
-     *        By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can
-     *        optionally request asynchronous execution by specifying <code>Event</code> as the
-     *        <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the
-     *        function but do some verification, such as if the caller is authorized to invoke the function and if the
-     *        inputs are valid. You request this by specifying <code>DryRun</code> as the <code>InvocationType</code>.
-     *        This is useful in a cross-account scenario when you want to verify access to a function without running
-     *        it.
+     *        Choose from the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
+     *        the function returns a response or times out.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
+     *        function's dead-letter queue (if configured).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
+     *        the function.
+     *        </p>
+     *        </li>
      * @see InvocationType
      */
 
@@ -273,22 +518,50 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can optionally
-     * request asynchronous execution by specifying <code>Event</code> as the <code>InvocationType</code>. You can also
-     * use this parameter to request AWS Lambda to not execute the function but do some verification, such as if the
-     * caller is authorized to invoke the function and if the inputs are valid. You request this by specifying
-     * <code>DryRun</code> as the <code>InvocationType</code>. This is useful in a cross-account scenario when you want
-     * to verify access to a function without running it.
+     * Choose from the following options.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the
+     * function returns a response or times out.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
+     * dead-letter queue (if configured).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the
+     * function.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param invocationType
-     *        By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation type. You can
-     *        optionally request asynchronous execution by specifying <code>Event</code> as the
-     *        <code>InvocationType</code>. You can also use this parameter to request AWS Lambda to not execute the
-     *        function but do some verification, such as if the caller is authorized to invoke the function and if the
-     *        inputs are valid. You request this by specifying <code>DryRun</code> as the <code>InvocationType</code>.
-     *        This is useful in a cross-account scenario when you want to verify access to a function without running
-     *        it.
+     *        Choose from the following options.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
+     *        the function returns a response or times out.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
+     *        function's dead-letter queue (if configured).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
+     *        the function.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InvocationType
      */
@@ -412,6 +685,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
+     * <note>
+     * <p>
+     * <code>ClientContext</code> information is returned only if you use the synchronous (<code>RequestResponse</code>)
+     * invocation type.
+     * </p>
+     * </note>
      * 
      * @param clientContext
      *        Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you
@@ -421,6 +700,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        Mobile Analytics API Reference and User Guide</i>.</p>
      *        <p>
      *        The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <code>ClientContext</code> information is returned only if you use the synchronous (
+     *        <code>RequestResponse</code>) invocation type.
+     *        </p>
      */
 
     public void setClientContext(String clientContext) {
@@ -438,6 +723,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
+     * <note>
+     * <p>
+     * <code>ClientContext</code> information is returned only if you use the synchronous (<code>RequestResponse</code>)
+     * invocation type.
+     * </p>
+     * </note>
      * 
      * @return Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you
      *         are invoking. You can then process the client information in your Lambda function as you choose through
@@ -446,6 +737,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         Mobile Analytics API Reference and User Guide</i>.</p>
      *         <p>
      *         The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         <code>ClientContext</code> information is returned only if you use the synchronous (
+     *         <code>RequestResponse</code>) invocation type.
+     *         </p>
      */
 
     public String getClientContext() {
@@ -463,6 +760,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
      * </p>
+     * <note>
+     * <p>
+     * <code>ClientContext</code> information is returned only if you use the synchronous (<code>RequestResponse</code>)
+     * invocation type.
+     * </p>
+     * </note>
      * 
      * @param clientContext
      *        Using the <code>ClientContext</code> you can pass client-specific information to the Lambda function you
@@ -472,6 +775,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        Mobile Analytics API Reference and User Guide</i>.</p>
      *        <p>
      *        The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        <code>ClientContext</code> information is returned only if you use the synchronous (
+     *        <code>RequestResponse</code>) invocation type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,23 +904,11 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
-     * </p>
-     * <p>
-     * If you don't provide this parameter, then the API uses unqualified function ARN which results in invocation of
-     * the <code>$LATEST</code> version.
+     * Specify a version or alias to invoke a published version of the function.
      * </p>
      * 
      * @param qualifier
-     *        You can use this optional parameter to specify a Lambda function version or alias name. If you specify a
-     *        function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you
-     *        specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the alias
-     *        points.</p>
-     *        <p>
-     *        If you don't provide this parameter, then the API uses unqualified function ARN which results in
-     *        invocation of the <code>$LATEST</code> version.
+     *        Specify a version or alias to invoke a published version of the function.
      */
 
     public void setQualifier(String qualifier) {
@@ -620,22 +917,10 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
-     * </p>
-     * <p>
-     * If you don't provide this parameter, then the API uses unqualified function ARN which results in invocation of
-     * the <code>$LATEST</code> version.
+     * Specify a version or alias to invoke a published version of the function.
      * </p>
      * 
-     * @return You can use this optional parameter to specify a Lambda function version or alias name. If you specify a
-     *         function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you
-     *         specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the
-     *         alias points.</p>
-     *         <p>
-     *         If you don't provide this parameter, then the API uses unqualified function ARN which results in
-     *         invocation of the <code>$LATEST</code> version.
+     * @return Specify a version or alias to invoke a published version of the function.
      */
 
     public String getQualifier() {
@@ -644,23 +929,11 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
-     * </p>
-     * <p>
-     * If you don't provide this parameter, then the API uses unqualified function ARN which results in invocation of
-     * the <code>$LATEST</code> version.
+     * Specify a version or alias to invoke a published version of the function.
      * </p>
      * 
      * @param qualifier
-     *        You can use this optional parameter to specify a Lambda function version or alias name. If you specify a
-     *        function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you
-     *        specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the alias
-     *        points.</p>
-     *        <p>
-     *        If you don't provide this parameter, then the API uses unqualified function ARN which results in
-     *        invocation of the <code>$LATEST</code> version.
+     *        Specify a version or alias to invoke a published version of the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

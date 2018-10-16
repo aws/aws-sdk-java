@@ -90,12 +90,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified when deleting a Read Replica.
+     * Can't be specified when deleting a Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -435,12 +435,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified when deleting a Read Replica.
+     * Can't be specified when deleting a Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -468,12 +468,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified when deleting a Read Replica.
+     *        Can't be specified when deleting a Read Replica.
      *        </p>
      *        </li>
      */
@@ -507,12 +507,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified when deleting a Read Replica.
+     * Can't be specified when deleting a Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -539,12 +539,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be specified when deleting a Read Replica.
+     *         Can't be specified when deleting a Read Replica.
      *         </p>
      *         </li>
      */
@@ -578,12 +578,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified when deleting a Read Replica.
+     * Can't be specified when deleting a Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -611,12 +611,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified when deleting a Read Replica.
+     *        Can't be specified when deleting a Read Replica.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -57,6 +57,21 @@
       ],
       "documentation":"<p>Associates the specified product with the specified portfolio.</p>"
     },
+    "AssociateServiceActionWithProvisioningArtifact":{
+      "name":"AssociateServiceActionWithProvisioningArtifact",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateServiceActionWithProvisioningArtifactInput"},
+      "output":{"shape":"AssociateServiceActionWithProvisioningArtifactOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"DuplicateResourceException"},
+        {"shape":"LimitExceededException"}
+      ],
+      "documentation":"<p>Associates a self-service action with a provisioning artifact.</p>"
+    },
     "AssociateTagOptionWithResource":{
       "name":"AssociateTagOptionWithResource",
       "http":{
@@ -74,6 +89,32 @@
         {"shape":"InvalidStateException"}
       ],
       "documentation":"<p>Associate the specified TagOption with the specified portfolio or product.</p>"
+    },
+    "BatchAssociateServiceActionWithProvisioningArtifact":{
+      "name":"BatchAssociateServiceActionWithProvisioningArtifact",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchAssociateServiceActionWithProvisioningArtifactInput"},
+      "output":{"shape":"BatchAssociateServiceActionWithProvisioningArtifactOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"}
+      ],
+      "documentation":"<p>Associates multiple self-service actions with provisioning artifacts.</p>"
+    },
+    "BatchDisassociateServiceActionFromProvisioningArtifact":{
+      "name":"BatchDisassociateServiceActionFromProvisioningArtifact",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchDisassociateServiceActionFromProvisioningArtifactInput"},
+      "output":{"shape":"BatchDisassociateServiceActionFromProvisioningArtifactOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"}
+      ],
+      "documentation":"<p>Disassociates a batch of self-service actions from the specified provisioning artifact.</p>"
     },
     "CopyProduct":{
       "name":"CopyProduct",
@@ -180,6 +221,20 @@
       ],
       "documentation":"<p>Creates a provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot create a provisioning artifact for a product that was shared with you.</p>"
     },
+    "CreateServiceAction":{
+      "name":"CreateServiceAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateServiceActionInput"},
+      "output":{"shape":"CreateServiceActionOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"},
+        {"shape":"LimitExceededException"}
+      ],
+      "documentation":"<p>Creates a self-service action.</p>"
+    },
     "CreateTagOption":{
       "name":"CreateTagOption",
       "http":{
@@ -282,6 +337,20 @@
         {"shape":"InvalidParametersException"}
       ],
       "documentation":"<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>"
+    },
+    "DeleteServiceAction":{
+      "name":"DeleteServiceAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteServiceActionInput"},
+      "output":{"shape":"DeleteServiceActionOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "documentation":"<p>Deletes a self-service action.</p>"
     },
     "DeleteTagOption":{
       "name":"DeleteTagOption",
@@ -445,6 +514,19 @@
       ],
       "documentation":"<p>Gets information about the specified request operation.</p> <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>"
     },
+    "DescribeServiceAction":{
+      "name":"DescribeServiceAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeServiceActionInput"},
+      "output":{"shape":"DescribeServiceActionOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Describes a self-service action.</p>"
+    },
     "DescribeTagOption":{
       "name":"DescribeTagOption",
       "http":{
@@ -488,6 +570,19 @@
       ],
       "documentation":"<p>Disassociates the specified product from the specified portfolio. </p>"
     },
+    "DisassociateServiceActionFromProvisioningArtifact":{
+      "name":"DisassociateServiceActionFromProvisioningArtifact",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateServiceActionFromProvisioningArtifactInput"},
+      "output":{"shape":"DisassociateServiceActionFromProvisioningArtifactOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Disassociates the specified self-service action association from the specified provisioning artifact.</p>"
+    },
     "DisassociateTagOptionFromResource":{
       "name":"DisassociateTagOptionFromResource",
       "http":{
@@ -516,6 +611,21 @@
         {"shape":"InvalidStateException"}
       ],
       "documentation":"<p>Provisions or modifies a product based on the resource changes for the specified plan.</p>"
+    },
+    "ExecuteProvisionedProductServiceAction":{
+      "name":"ExecuteProvisionedProductServiceAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ExecuteProvisionedProductServiceActionInput"},
+      "output":{"shape":"ExecuteProvisionedProductServiceActionOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidStateException"}
+      ],
+      "documentation":"<p>Executes a self-service action against a provisioned product.</p>"
     },
     "ListAcceptedPortfolioShares":{
       "name":"ListAcceptedPortfolioShares",
@@ -640,6 +750,20 @@
       ],
       "documentation":"<p>Lists all provisioning artifacts (also known as versions) for the specified product.</p>"
     },
+    "ListProvisioningArtifactsForServiceAction":{
+      "name":"ListProvisioningArtifactsForServiceAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListProvisioningArtifactsForServiceActionInput"},
+      "output":{"shape":"ListProvisioningArtifactsForServiceActionOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParametersException"}
+      ],
+      "documentation":"<p>Lists all provisioning artifacts (also known as versions) for the specified self-service action.</p>"
+    },
     "ListRecordHistory":{
       "name":"ListRecordHistory",
       "http":{
@@ -667,6 +791,33 @@
         {"shape":"InvalidParametersException"}
       ],
       "documentation":"<p>Lists the resources associated with the specified TagOption.</p>"
+    },
+    "ListServiceActions":{
+      "name":"ListServiceActions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListServiceActionsInput"},
+      "output":{"shape":"ListServiceActionsOutput"},
+      "errors":[
+        {"shape":"InvalidParametersException"}
+      ],
+      "documentation":"<p>Lists all self-service actions.</p>"
+    },
+    "ListServiceActionsForProvisioningArtifact":{
+      "name":"ListServiceActionsForProvisioningArtifact",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListServiceActionsForProvisioningArtifactInput"},
+      "output":{"shape":"ListServiceActionsForProvisioningArtifactOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParametersException"}
+      ],
+      "documentation":"<p>Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.</p>"
     },
     "ListTagOptions":{
       "name":"ListTagOptions",
@@ -849,6 +1000,20 @@
       ],
       "documentation":"<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p> <p>You cannot update a provisioning artifact for a product that was shared with you.</p>"
     },
+    "UpdateServiceAction":{
+      "name":"UpdateServiceAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateServiceActionInput"},
+      "output":{"shape":"UpdateServiceActionOutput"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParametersException"}
+      ],
+      "documentation":"<p>Updates a self-service action.</p>"
+    },
     "UpdateTagOption":{
       "name":"UpdateTagOption",
       "http":{
@@ -867,7 +1032,10 @@
     }
   },
   "shapes":{
-    "AcceptLanguage":{"type":"string"},
+    "AcceptLanguage":{
+      "type":"string",
+      "max":100
+    },
     "AcceptPortfolioShareInput":{
       "type":"structure",
       "required":["PortfolioId"],
@@ -990,6 +1158,37 @@
       "members":{
       }
     },
+    "AssociateServiceActionWithProvisioningArtifactInput":{
+      "type":"structure",
+      "required":[
+        "ProductId",
+        "ProvisioningArtifactId",
+        "ServiceActionId"
+      ],
+      "members":{
+        "ProductId":{
+          "shape":"Id",
+          "documentation":"<p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>"
+        },
+        "ProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>"
+        },
+        "ServiceActionId":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "AssociateServiceActionWithProvisioningArtifactOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "AssociateTagOptionWithResourceInput":{
       "type":"structure",
       "required":[
@@ -1013,6 +1212,52 @@
       }
     },
     "AttributeValue":{"type":"string"},
+    "BatchAssociateServiceActionWithProvisioningArtifactInput":{
+      "type":"structure",
+      "required":["ServiceActionAssociations"],
+      "members":{
+        "ServiceActionAssociations":{
+          "shape":"ServiceActionAssociations",
+          "documentation":"<p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "BatchAssociateServiceActionWithProvisioningArtifactOutput":{
+      "type":"structure",
+      "members":{
+        "FailedServiceActionAssociations":{
+          "shape":"FailedServiceActionAssociations",
+          "documentation":"<p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>"
+        }
+      }
+    },
+    "BatchDisassociateServiceActionFromProvisioningArtifactInput":{
+      "type":"structure",
+      "required":["ServiceActionAssociations"],
+      "members":{
+        "ServiceActionAssociations":{
+          "shape":"ServiceActionAssociations",
+          "documentation":"<p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "BatchDisassociateServiceActionFromProvisioningArtifactOutput":{
+      "type":"structure",
+      "members":{
+        "FailedServiceActionAssociations":{
+          "shape":"FailedServiceActionAssociations",
+          "documentation":"<p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>"
+        }
+      }
+    },
     "CausingEntity":{"type":"string"},
     "ChangeAction":{
       "type":"string",
@@ -1491,6 +1736,51 @@
         }
       }
     },
+    "CreateServiceActionInput":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "DefinitionType",
+        "Definition",
+        "IdempotencyToken"
+      ],
+      "members":{
+        "Name":{
+          "shape":"ServiceActionName",
+          "documentation":"<p>The self-service action name.</p>"
+        },
+        "DefinitionType":{
+          "shape":"ServiceActionDefinitionType",
+          "documentation":"<p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>"
+        },
+        "Definition":{
+          "shape":"ServiceActionDefinitionMap",
+          "documentation":"<p>The self-service action definition. Can be one of the following:</p> <dl> <dt>Name</dt> <dd> <p>The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.</p> </dd> <dt>Version</dt> <dd> <p>The AWS Systems Manager automation document version. For example, <code>\"Version\": \"1\"</code> </p> </dd> <dt>AssumeRole</dt> <dd> <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>\"AssumeRole\": \"arn:aws:iam::12345678910:role/ActionRole\"</code>.</p> <p>To reuse the provisioned product launch role, set to <code>\"AssumeRole\": \"LAUNCH_ROLE\"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of parameters in JSON format.</p> <p>For example: <code>[{\\\"Name\\\":\\\"InstanceId\\\",\\\"Type\\\":\\\"TARGET\\\"}]</code>.</p> </dd> </dl>"
+        },
+        "Description":{
+          "shape":"ServiceActionDescription",
+          "documentation":"<p>The self-service action description.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        },
+        "IdempotencyToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateServiceActionOutput":{
+      "type":"structure",
+      "members":{
+        "ServiceActionDetail":{
+          "shape":"ServiceActionDetail",
+          "documentation":"<p>An object containing information about the self-service action.</p>"
+        }
+      }
+    },
     "CreateTagOptionInput":{
       "type":"structure",
       "required":[
@@ -1648,6 +1938,25 @@
       }
     },
     "DeleteProvisioningArtifactOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteServiceActionInput":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "DeleteServiceActionOutput":{
       "type":"structure",
       "members":{
       }
@@ -2042,6 +2351,29 @@
         }
       }
     },
+    "DescribeServiceActionInput":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "DescribeServiceActionOutput":{
+      "type":"structure",
+      "members":{
+        "ServiceActionDetail":{
+          "shape":"ServiceActionDetail",
+          "documentation":"<p>Detailed information about the self-service action.</p>"
+        }
+      }
+    },
     "DescribeTagOptionInput":{
       "type":"structure",
       "required":["Id"],
@@ -2110,6 +2442,37 @@
       }
     },
     "DisassociateProductFromPortfolioOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DisassociateServiceActionFromProvisioningArtifactInput":{
+      "type":"structure",
+      "required":[
+        "ProductId",
+        "ProvisioningArtifactId",
+        "ServiceActionId"
+      ],
+      "members":{
+        "ProductId":{
+          "shape":"Id",
+          "documentation":"<p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>"
+        },
+        "ProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>"
+        },
+        "ServiceActionId":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "DisassociateServiceActionFromProvisioningArtifactOutput":{
       "type":"structure",
       "members":{
       }
@@ -2183,11 +2546,79 @@
         }
       }
     },
+    "ExecuteProvisionedProductServiceActionInput":{
+      "type":"structure",
+      "required":[
+        "ProvisionedProductId",
+        "ServiceActionId",
+        "ExecuteToken"
+      ],
+      "members":{
+        "ProvisionedProductId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioned product.</p>"
+        },
+        "ServiceActionId":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "ExecuteToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p>An idempotency token that uniquely identifies the execute request.</p>",
+          "idempotencyToken":true
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "ExecuteProvisionedProductServiceActionOutput":{
+      "type":"structure",
+      "members":{
+        "RecordDetail":{
+          "shape":"RecordDetail",
+          "documentation":"<p>An object containing detailed information about the result of provisioning the product.</p>"
+        }
+      }
+    },
+    "FailedServiceActionAssociation":{
+      "type":"structure",
+      "members":{
+        "ServiceActionId":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "ProductId":{
+          "shape":"Id",
+          "documentation":"<p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>"
+        },
+        "ProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>"
+        },
+        "ErrorCode":{
+          "shape":"ServiceActionAssociationErrorCode",
+          "documentation":"<p>The error code. Valid values are listed below.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"ServiceActionAssociationErrorMessage",
+          "documentation":"<p>A text description of the error.</p>"
+        }
+      },
+      "documentation":"<p>An object containing information about the error, along with identifying information about the self-service action and its associations.</p>"
+    },
+    "FailedServiceActionAssociations":{
+      "type":"list",
+      "member":{"shape":"FailedServiceActionAssociation"},
+      "max":50
+    },
     "HasDefaultPath":{"type":"boolean"},
     "Id":{
       "type":"string",
       "max":100,
-      "min":1
+      "min":1,
+      "pattern":"^[a-zA-Z0-9_\\-]*"
     },
     "IdempotencyToken":{
       "type":"string",
@@ -2519,6 +2950,41 @@
         }
       }
     },
+    "ListProvisioningArtifactsForServiceActionInput":{
+      "type":"structure",
+      "required":["ServiceActionId"],
+      "members":{
+        "ServiceActionId":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "PageSize":{
+          "shape":"PageSize",
+          "documentation":"<p>The maximum number of items to return with this call.</p>"
+        },
+        "PageToken":{
+          "shape":"PageToken",
+          "documentation":"<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "ListProvisioningArtifactsForServiceActionOutput":{
+      "type":"structure",
+      "members":{
+        "ProvisioningArtifactViews":{
+          "shape":"ProvisioningArtifactViews",
+          "documentation":"<p>An array of objects with information about product views and provisioning artifacts.</p>"
+        },
+        "NextPageToken":{
+          "shape":"PageToken",
+          "documentation":"<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
+        }
+      }
+    },
     "ListProvisioningArtifactsInput":{
       "type":"structure",
       "required":["ProductId"],
@@ -2633,6 +3099,78 @@
         }
       }
     },
+    "ListServiceActionsForProvisioningArtifactInput":{
+      "type":"structure",
+      "required":[
+        "ProductId",
+        "ProvisioningArtifactId"
+      ],
+      "members":{
+        "ProductId":{
+          "shape":"Id",
+          "documentation":"<p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>"
+        },
+        "ProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>"
+        },
+        "PageSize":{
+          "shape":"PageSize",
+          "documentation":"<p>The maximum number of items to return with this call.</p>"
+        },
+        "PageToken":{
+          "shape":"PageToken",
+          "documentation":"<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "ListServiceActionsForProvisioningArtifactOutput":{
+      "type":"structure",
+      "members":{
+        "ServiceActionSummaries":{
+          "shape":"ServiceActionSummaries",
+          "documentation":"<p>An object containing information about the self-service actions associated with the provisioning artifact.</p>"
+        },
+        "NextPageToken":{
+          "shape":"PageToken",
+          "documentation":"<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
+        }
+      }
+    },
+    "ListServiceActionsInput":{
+      "type":"structure",
+      "members":{
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        },
+        "PageSize":{
+          "shape":"PageSize",
+          "documentation":"<p>The maximum number of items to return with this call.</p>"
+        },
+        "PageToken":{
+          "shape":"PageToken",
+          "documentation":"<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
+        }
+      }
+    },
+    "ListServiceActionsOutput":{
+      "type":"structure",
+      "members":{
+        "ServiceActionSummaries":{
+          "shape":"ServiceActionSummaries",
+          "documentation":"<p>An object containing information about the service actions associated with the provisioning artifact.</p>"
+        },
+        "NextPageToken":{
+          "shape":"PageToken",
+          "documentation":"<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
+        }
+      }
+    },
     "ListTagOptionsFilters":{
       "type":"structure",
       "members":{
@@ -2703,6 +3241,7 @@
     },
     "PageToken":{
       "type":"string",
+      "max":2024,
       "pattern":"[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*"
     },
     "ParameterConstraints":{
@@ -3143,6 +3682,14 @@
         "LastRecordId":{
           "shape":"LastRequestId",
           "documentation":"<p>The record identifier of the last request performed on this provisioned product.</p>"
+        },
+        "ProductId":{
+          "shape":"Id",
+          "documentation":"<p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>"
+        },
+        "ProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>"
         }
       },
       "documentation":"<p>Information about a provisioned product.</p>"
@@ -3474,6 +4021,24 @@
         "MARKETPLACE_AMI",
         "MARKETPLACE_CAR"
       ]
+    },
+    "ProvisioningArtifactView":{
+      "type":"structure",
+      "members":{
+        "ProductViewSummary":{
+          "shape":"ProductViewSummary",
+          "documentation":"<p>Summary information about a product view.</p>"
+        },
+        "ProvisioningArtifact":{
+          "shape":"ProvisioningArtifact",
+          "documentation":"<p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains summary information about a product view and a provisioning artifact.</p>"
+    },
+    "ProvisioningArtifactViews":{
+      "type":"list",
+      "member":{"shape":"ProvisioningArtifactView"}
     },
     "ProvisioningArtifacts":{
       "type":"list",
@@ -4012,6 +4577,125 @@
       "max":100,
       "min":0
     },
+    "ServiceActionAssociation":{
+      "type":"structure",
+      "required":[
+        "ServiceActionId",
+        "ProductId",
+        "ProvisioningArtifactId"
+      ],
+      "members":{
+        "ServiceActionId":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>"
+        },
+        "ProductId":{
+          "shape":"Id",
+          "documentation":"<p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>"
+        },
+        "ProvisioningArtifactId":{
+          "shape":"Id",
+          "documentation":"<p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>"
+        }
+      },
+      "documentation":"<p>A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>"
+    },
+    "ServiceActionAssociationErrorCode":{
+      "type":"string",
+      "enum":[
+        "DUPLICATE_RESOURCE",
+        "INTERNAL_FAILURE",
+        "LIMIT_EXCEEDED",
+        "RESOURCE_NOT_FOUND",
+        "THROTTLING"
+      ]
+    },
+    "ServiceActionAssociationErrorMessage":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "ServiceActionAssociations":{
+      "type":"list",
+      "member":{"shape":"ServiceActionAssociation"},
+      "max":50,
+      "min":1
+    },
+    "ServiceActionDefinitionKey":{
+      "type":"string",
+      "enum":[
+        "Name",
+        "Version",
+        "AssumeRole",
+        "Parameters"
+      ]
+    },
+    "ServiceActionDefinitionMap":{
+      "type":"map",
+      "key":{"shape":"ServiceActionDefinitionKey"},
+      "value":{"shape":"ServiceActionDefinitionValue"},
+      "max":100,
+      "min":1
+    },
+    "ServiceActionDefinitionType":{
+      "type":"string",
+      "enum":["SSM_AUTOMATION"]
+    },
+    "ServiceActionDefinitionValue":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "ServiceActionDescription":{
+      "type":"string",
+      "max":1024
+    },
+    "ServiceActionDetail":{
+      "type":"structure",
+      "members":{
+        "ServiceActionSummary":{
+          "shape":"ServiceActionSummary",
+          "documentation":"<p>Summary information about the self-service action.</p>"
+        },
+        "Definition":{
+          "shape":"ServiceActionDefinitionMap",
+          "documentation":"<p>A map that defines the self-service action.</p>"
+        }
+      },
+      "documentation":"<p>An object containing detailed information about the self-service action.</p>"
+    },
+    "ServiceActionName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9_\\-.]*"
+    },
+    "ServiceActionSummaries":{
+      "type":"list",
+      "member":{"shape":"ServiceActionSummary"}
+    },
+    "ServiceActionSummary":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier.</p>"
+        },
+        "Name":{
+          "shape":"ServiceActionName",
+          "documentation":"<p>The self-service action name.</p>"
+        },
+        "Description":{
+          "shape":"ServiceActionDescription",
+          "documentation":"<p>The self-service action description.</p>"
+        },
+        "DefinitionType":{
+          "shape":"ServiceActionDefinitionType",
+          "documentation":"<p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>"
+        }
+      },
+      "documentation":"<p>Detailed information about the self-service action.</p>"
+    },
     "SortField":{"type":"string"},
     "SortOrder":{
       "type":"string",
@@ -4467,6 +5151,41 @@
     "UpdateProvisioningParameters":{
       "type":"list",
       "member":{"shape":"UpdateProvisioningParameter"}
+    },
+    "UpdateServiceActionInput":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"Id",
+          "documentation":"<p>The self-service action identifier.</p>"
+        },
+        "Name":{
+          "shape":"ServiceActionName",
+          "documentation":"<p>The self-service action name.</p>"
+        },
+        "Definition":{
+          "shape":"ServiceActionDefinitionMap",
+          "documentation":"<p>A map that defines the self-service action.</p>"
+        },
+        "Description":{
+          "shape":"ServiceActionDescription",
+          "documentation":"<p>The self-service action description.</p>"
+        },
+        "AcceptLanguage":{
+          "shape":"AcceptLanguage",
+          "documentation":"<p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p> </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> - Chinese</p> </li> </ul>"
+        }
+      }
+    },
+    "UpdateServiceActionOutput":{
+      "type":"structure",
+      "members":{
+        "ServiceActionDetail":{
+          "shape":"ServiceActionDetail",
+          "documentation":"<p>Detailed information about the self-service action.</p>"
+        }
+      }
     },
     "UpdateTagOptionInput":{
       "type":"structure",

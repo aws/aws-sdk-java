@@ -45,6 +45,10 @@ public class ProvisionedProductDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
     private static final MarshallingInfo<String> LASTRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRecordId").build();
+    private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
 
     private static final ProvisionedProductDetailMarshaller instance = new ProvisionedProductDetailMarshaller();
 
@@ -71,6 +75,8 @@ public class ProvisionedProductDetailMarshaller {
             protocolMarshaller.marshall(provisionedProductDetail.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getLastRecordId(), LASTRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

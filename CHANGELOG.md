@@ -1,3 +1,16 @@
+# __1.11.429__ __2018-10-15__
+## __AWS Lambda__
+  - ### Features
+    - Documentation updates for lambda
+
+## __AWS Service Catalog__
+  - ### Features
+    - AWS Service Catalog enables you to reduce administrative maintenance and end-user training while adhering to compliance and security measures. With service actions, you as the administrator can enable end users to perform operational tasks, troubleshoot issues, run approved commands, or request permissions within Service Catalog. Service actions are defined using AWS Systems Manager documents, where you have access to pre-defined actions that implement AWS best practices, such asEC2 stop and reboot, as well as the ability to define custom actions.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds a new parameter to specify the DB instance or cluster parameter group for restore from DB snapshot and restore to point int time operations. For more information, see Amazon RDS Documentation.
+
 # __1.11.428__ __2018-10-12__
 ## __AWS CloudTrail__
   - ### Features

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that contains your environment's configuration settings.
+ * A function's environment variable settings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment" target="_top">AWS API
@@ -30,17 +30,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings.
+     * Environment variable key-value pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings.
+     * Environment variable key-value pairs.
      * </p>
      * 
-     * @return The key-value pairs that represent your environment's configuration settings.
+     * @return Environment variable key-value pairs.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -52,11 +52,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings.
+     * Environment variable key-value pairs.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings.
+     *        Environment variable key-value pairs.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -65,11 +65,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings.
+     * Environment variable key-value pairs.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings.
+     *        Environment variable key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

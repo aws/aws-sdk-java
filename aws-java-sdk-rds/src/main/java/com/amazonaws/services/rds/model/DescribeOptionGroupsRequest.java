@@ -28,7 +28,7 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion.
+     * The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.
      * </p>
      */
     private String optionGroupName;
@@ -75,11 +75,11 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion.
+     * The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group to describe. Cannot be supplied together with EngineName or
+     *        The name of the option group to describe. Can't be supplied together with EngineName or
      *        MajorEngineVersion.
      */
 
@@ -89,10 +89,10 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion.
+     * The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.
      * </p>
      * 
-     * @return The name of the option group to describe. Cannot be supplied together with EngineName or
+     * @return The name of the option group to describe. Can't be supplied together with EngineName or
      *         MajorEngineVersion.
      */
 
@@ -102,11 +102,11 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion.
+     * The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group to describe. Cannot be supplied together with EngineName or
+     *        The name of the option group to describe. Can't be supplied together with EngineName or
      *        MajorEngineVersion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

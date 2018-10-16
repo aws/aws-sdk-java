@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that contains error information associated with your configuration settings.
+ * Error messages for environment variables that could not be applied.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError" target="_top">AWS API
@@ -30,24 +30,24 @@ public class EnvironmentError implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code returned by the environment error object.
+     *        The error code.
      */
 
     public void setErrorCode(String errorCode) {
@@ -56,10 +56,10 @@ public class EnvironmentError implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      * 
-     * @return The error code returned by the environment error object.
+     * @return The error code.
      */
 
     public String getErrorCode() {
@@ -68,11 +68,11 @@ public class EnvironmentError implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code returned by the environment error object.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class EnvironmentError implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      * 
      * @param message
-     *        The message returned by the environment error object.
+     *        The error message.
      */
 
     public void setMessage(String message) {
@@ -96,10 +96,10 @@ public class EnvironmentError implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      * 
-     * @return The message returned by the environment error object.
+     * @return The error message.
      */
 
     public String getMessage() {
@@ -108,11 +108,11 @@ public class EnvironmentError implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      * 
      * @param message
-     *        The message returned by the environment error object.
+     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

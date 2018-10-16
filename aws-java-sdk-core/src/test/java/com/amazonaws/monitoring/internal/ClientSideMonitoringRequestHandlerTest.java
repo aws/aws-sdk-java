@@ -17,6 +17,7 @@ package com.amazonaws.monitoring.internal;
 
 import static com.amazonaws.monitoring.ApiCallMonitoringEvent.API_CALL_MONITORING_EVENT_TYPE;
 import static com.amazonaws.http.HttpResponseHandler.X_AMZN_REQUEST_ID_HEADER;
+import static com.amazonaws.util.AwsClientSideMonitoringMetrics.MaxRetriesExceeded;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.notNullValue;
@@ -39,6 +40,7 @@ import com.amazonaws.auth.internal.SignerConstants;
 import com.amazonaws.handlers.HandlerAfterAttemptContext;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpResponse;
+import com.amazonaws.http.timers.client.ClientExecutionTimeoutException;
 import com.amazonaws.monitoring.ApiCallAttemptMonitoringEvent;
 import com.amazonaws.monitoring.ApiCallMonitoringEvent;
 import com.amazonaws.monitoring.ApiMonitoringEvent;
@@ -314,6 +316,37 @@ public class ClientSideMonitoringRequestHandlerTest {
         requestHandler.afterError(request, response, new AmazonServiceException("test"));
         verify(agentMonitoringListener, times(1)).handleEvent(any(ApiMonitoringEvent.class));
         verify(customMonitoringListener, times(1)).handleEvent(any(ApiMonitoringEvent.class));
+    }
+
+    @Test
+    public void afterError_maxRetriesExceeded() {
+        Request<?> request = getRequest();
+        AWSRequestMetrics metrics = getMetrics(3);
+        metrics.addPropertyWith(MaxRetriesExceeded, true);
+        request.setAWSRequestMetrics(metrics);
+        requestHandler.afterError(request, getResponse(request), new IOException(""));
+
+        ArgumentCaptor<ApiCallMonitoringEvent> monitoringEventArgumentCaptor =
+            ArgumentCaptor.forClass(ApiCallMonitoringEvent.class);
+
+        verify(agentMonitoringListener, times(1)).handleEvent(monitoringEventArgumentCaptor.capture());
+        ApiCallMonitoringEvent event = monitoringEventArgumentCaptor.getValue();
+        assertThat(event.getMaxRetriesExceeded(), is(1));
+    }
+
+    @Test
+    public void afterError_clientExecutionTimeoutException() {
+        Request<?> request = getRequest();
+        AWSRequestMetrics metrics = getMetrics(1);
+        request.setAWSRequestMetrics(metrics);
+        requestHandler.afterError(request, getResponse(request), new ClientExecutionTimeoutException(""));
+
+        ArgumentCaptor<ApiCallMonitoringEvent> monitoringEventArgumentCaptor =
+            ArgumentCaptor.forClass(ApiCallMonitoringEvent.class);
+
+        verify(agentMonitoringListener, times(1)).handleEvent(monitoringEventArgumentCaptor.capture());
+        ApiCallMonitoringEvent event = monitoringEventArgumentCaptor.getValue();
+        assertThat(event.getApiCallTimeout(), is(1));
     }
 
     /**

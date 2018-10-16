@@ -46,7 +46,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB instances
+     * Can't be associated with any DB instances
      * </p>
      * </li>
      * </ul>
@@ -82,7 +82,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB instances
+     *        Can't be associated with any DB instances
      *        </p>
      *        </li>
      */
@@ -110,7 +110,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB instances
+     * Can't be associated with any DB instances
      * </p>
      * </li>
      * </ul>
@@ -133,7 +133,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB instances
+     *        Can't be associated with any DB instances
      *        </p>
      *        </li>
      */
@@ -162,7 +162,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB instances
+     * Can't be associated with any DB instances
      * </p>
      * </li>
      * </ul>
@@ -184,7 +184,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be associated with any DB instances
+     *         Can't be associated with any DB instances
      *         </p>
      *         </li>
      */
@@ -213,7 +213,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB instances
+     * Can't be associated with any DB instances
      * </p>
      * </li>
      * </ul>
@@ -236,7 +236,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB instances
+     *        Can't be associated with any DB instances
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

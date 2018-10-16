@@ -22,6 +22,7 @@ import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailable
 import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
 import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
 import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottledRetryCount;
+import static com.amazonaws.util.AwsClientSideMonitoringMetrics.MaxRetriesExceeded;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 
 import com.amazonaws.AbortedException;
@@ -79,6 +80,7 @@ import com.amazonaws.internal.SdkBufferedInputStream;
 import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
 import com.amazonaws.retry.RetryPolicyAdapter;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
@@ -677,6 +679,8 @@ public class AmazonHttpClient {
         private final ExecutionContext executionContext;
         private final List<RequestHandler2> requestHandler2s;
         private final AWSRequestMetrics awsRequestMetrics;
+        //TODO: Call CSMRequestHandler directly in this class since it's CSM aware now
+        private RequestHandler2 csmRequestHandler;
 
         private RequestExecutor(Request<?> request, RequestConfig requestConfig,
                                 HttpResponseHandler<? extends SdkBaseException> errorResponseHandler,
@@ -690,6 +694,12 @@ public class AmazonHttpClient {
             this.executionContext = executionContext;
             this.requestHandler2s = requestHandler2s;
             this.awsRequestMetrics = executionContext.getAwsRequestMetrics();
+            for (RequestHandler2 requestHandler2 : requestHandler2s) {
+                if (requestHandler2 instanceof ClientSideMonitoringRequestHandler) {
+                    csmRequestHandler = requestHandler2;
+                    break;
+                }
+            }
         }
 
         /**
@@ -806,7 +816,9 @@ public class AmazonHttpClient {
             if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
                 // Clear the interrupt status
                 Thread.interrupted();
-                return new ClientExecutionTimeoutException();
+                ClientExecutionTimeoutException exception = new ClientExecutionTimeoutException();
+                reportClientExecutionTimeout(exception);
+                return exception;
             } else {
                 Thread.currentThread().interrupt();
                 return new AbortedException(e);
@@ -827,10 +839,18 @@ public class AmazonHttpClient {
             if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
                 // Clear the interrupt status
                 Thread.interrupted();
-                return new ClientExecutionTimeoutException();
+                ClientExecutionTimeoutException exception = new ClientExecutionTimeoutException();
+                reportClientExecutionTimeout(exception);
+                return exception;
             } else {
                 Thread.currentThread().interrupt();
                 return ae;
+            }
+        }
+
+        private void reportClientExecutionTimeout(ClientExecutionTimeoutException exception) {
+            if (csmRequestHandler != null) {
+                csmRequestHandler.afterError(request, null, exception);
             }
         }
 
@@ -1506,24 +1526,26 @@ public class AmazonHttpClient {
                 }
             }
 
+            RetryPolicyContext context = RetryPolicyContext.builder()
+                                                           .request(request)
+                                                           .originalRequest(requestConfig.getOriginalRequest())
+                                                           .exception(exception)
+                                                           .retriesAttempted(retriesAttempted)
+                                                           .httpStatusCode(params.getStatusCode())
+                                                           .build();
+
             // Do not use retry capacity for throttling exceptions
             if (!RetryUtils.isThrottlingException(exception)) {
                 // See if we have enough available retry capacity to be able to execute
                 // this retry attempt.
                 if (!retryCapacity.acquire(THROTTLED_RETRY_COST)) {
                     awsRequestMetrics.incrementCounter(ThrottledRetryCount);
+                    reportMaxRetriesExceededIfRetryable(context);
                     return false;
                 }
                 executionContext.markRetryCapacityConsumed();
             }
 
-            RetryPolicyContext context = RetryPolicyContext.builder()
-                    .request(request)
-                    .originalRequest(requestConfig.getOriginalRequest())
-                    .exception(exception)
-                    .retriesAttempted(retriesAttempted)
-                    .httpStatusCode(params.getStatusCode())
-                    .build();
             // Finally, pass all the context information to the RetryCondition and let it
             // decide whether it should be retried.
             if (!retryPolicy.shouldRetry(context)) {
@@ -1531,10 +1553,17 @@ public class AmazonHttpClient {
                 if (executionContext.retryCapacityConsumed()) {
                     retryCapacity.release(THROTTLED_RETRY_COST);
                 }
+                reportMaxRetriesExceededIfRetryable(context);
                 return false;
             }
 
             return true;
+        }
+
+        private void reportMaxRetriesExceededIfRetryable(RetryPolicyContext context) {
+            if (retryPolicy instanceof RetryPolicyAdapter && ((RetryPolicyAdapter) retryPolicy).isRetryable(context)) {
+                awsRequestMetrics.addPropertyWith(MaxRetriesExceeded, true);
+            }
         }
 
         /**

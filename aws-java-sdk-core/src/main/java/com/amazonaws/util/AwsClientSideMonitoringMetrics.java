@@ -25,5 +25,10 @@ public enum AwsClientSideMonitoringMetrics implements RequestMetricType {
      * The elapsed time, in milliseconds, between when the Api Call was begun and when a final response or error is
      * manifested to the caller.
      */
-    ApiCallLatency
+    ApiCallLatency,
+
+    /**
+     * a boolean value that is false unless the Api call failed and the final attempt returned a retryable error.
+     */
+    MaxRetriesExceeded
 }

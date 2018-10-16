@@ -46,7 +46,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -77,7 +77,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot contain a timestamp set in the future.
+     * Can't contain a timestamp set in the future.
      * </p>
      * </li>
      * </ul>
@@ -121,7 +121,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -148,7 +148,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -180,7 +180,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -206,7 +206,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         Can't end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      *         </ul>
@@ -238,7 +238,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -265,7 +265,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -301,7 +301,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot contain a timestamp set in the future.
+     * Can't contain a timestamp set in the future.
      * </p>
      * </li>
      * </ul>
@@ -329,7 +329,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot contain a timestamp set in the future.
+     *        Can't contain a timestamp set in the future.
      *        </p>
      *        </li>
      *        </ul>
@@ -363,7 +363,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot contain a timestamp set in the future.
+     * Can't contain a timestamp set in the future.
      * </p>
      * </li>
      * </ul>
@@ -390,7 +390,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot contain a timestamp set in the future.
+     *         Can't contain a timestamp set in the future.
      *         </p>
      *         </li>
      *         </ul>
@@ -424,7 +424,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Cannot contain a timestamp set in the future.
+     * Can't contain a timestamp set in the future.
      * </p>
      * </li>
      * </ul>
@@ -452,7 +452,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot contain a timestamp set in the future.
+     *        Can't contain a timestamp set in the future.
      *        </p>
      *        </li>
      *        </ul>

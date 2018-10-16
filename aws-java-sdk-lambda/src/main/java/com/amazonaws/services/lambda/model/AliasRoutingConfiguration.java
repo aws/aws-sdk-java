@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that implements what percentage of traffic will invoke each function version. For more information,
- * see <a>lambda-traffic-shifting-using-aliases</a>.
+ * The alias's <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic
+ * shifting</a> configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasRoutingConfiguration" target="_top">AWS
@@ -31,23 +31,17 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
-     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.
+     * The name of the second alias, and the percentage of traffic that is routed to it.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, Double> additionalVersionWeights;
 
     /**
      * <p>
-     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
-     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.
+     * The name of the second alias, and the percentage of traffic that is routed to it.
      * </p>
      * 
-     * @return Set this value to dictate what percentage of traffic will invoke the updated function version. If set to
-     *         an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information,
-     *         see <a>lambda-traffic-shifting-using-aliases</a>.
+     * @return The name of the second alias, and the percentage of traffic that is routed to it.
      */
 
     public java.util.Map<String, Double> getAdditionalVersionWeights() {
@@ -59,15 +53,11 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
-     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.
+     * The name of the second alias, and the percentage of traffic that is routed to it.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        Set this value to dictate what percentage of traffic will invoke the updated function version. If set to
-     *        an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information,
-     *        see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        The name of the second alias, and the percentage of traffic that is routed to it.
      */
 
     public void setAdditionalVersionWeights(java.util.Map<String, Double> additionalVersionWeights) {
@@ -77,15 +67,11 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
-     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.
+     * The name of the second alias, and the percentage of traffic that is routed to it.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        Set this value to dictate what percentage of traffic will invoke the updated function version. If set to
-     *        an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information,
-     *        see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        The name of the second alias, and the percentage of traffic that is routed to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

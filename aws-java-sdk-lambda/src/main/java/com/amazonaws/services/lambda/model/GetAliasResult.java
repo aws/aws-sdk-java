@@ -55,7 +55,7 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     /**
      * <p>
      * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
-     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * will invoke each version.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
@@ -241,12 +241,12 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     /**
      * <p>
      * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
-     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * will invoke each version.
      * </p>
      * 
      * @param routingConfig
      *        Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        traffic will invoke each version.
      */
 
     public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
@@ -256,11 +256,11 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     /**
      * <p>
      * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
-     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * will invoke each version.
      * </p>
      * 
      * @return Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
-     *         traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *         traffic will invoke each version.
      */
 
     public AliasRoutingConfiguration getRoutingConfig() {
@@ -270,12 +270,12 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     /**
      * <p>
      * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
-     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * will invoke each version.
      * </p>
      * 
      * @param routingConfig
      *        Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        traffic will invoke each version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

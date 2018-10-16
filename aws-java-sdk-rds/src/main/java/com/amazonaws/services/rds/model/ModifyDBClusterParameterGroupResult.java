@@ -45,7 +45,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -77,7 +77,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -105,7 +105,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -139,7 +139,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -166,7 +166,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         </ul>
@@ -200,7 +200,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -228,7 +228,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>

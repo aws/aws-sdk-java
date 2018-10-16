@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
- * (DLQ). For more information, see <a>dlq</a>.
+ * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a> for failed asynchronous
+ * invocations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeadLetterConfig" target="_top">AWS API
@@ -31,21 +31,18 @@ public class DeadLetterConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private String targetArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter
-     *        Queue (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      */
 
     public void setTargetArn(String targetArn) {
@@ -54,12 +51,10 @@ public class DeadLetterConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter
-     *         Queue (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     * @return The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      */
 
     public String getTargetArn() {
@@ -68,13 +63,11 @@ public class DeadLetterConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter
-     *        Queue (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
+     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

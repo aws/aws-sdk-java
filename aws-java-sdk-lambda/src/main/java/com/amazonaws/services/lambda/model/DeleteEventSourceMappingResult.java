@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes mapping between an Amazon Kinesis or DynamoDB stream or an Amazon SQS queue and a Lambda function.
+ * Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping" target="_top">AWS
@@ -41,8 +41,7 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private Integer batchSize;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
-     * events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      * </p>
      */
     private String eventSourceArn;
@@ -60,7 +59,8 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private java.util.Date lastModified;
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue is
+     * the event source.
      * </p>
      */
     private String lastProcessingResult;
@@ -168,13 +168,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
-     * events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the
-     *        source of events.
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -183,12 +181,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
-     * events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the
-     *         source of events.
+     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      */
 
     public String getEventSourceArn() {
@@ -197,13 +193,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
-     * events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the
-     *        source of events.
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,11 +288,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue is
+     * the event source.
      * </p>
      * 
      * @param lastProcessingResult
-     *        The result of the last AWS Lambda invocation of your Lambda function.
+     *        The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS
+     *        queue is the event source.
      */
 
     public void setLastProcessingResult(String lastProcessingResult) {
@@ -307,10 +303,12 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue is
+     * the event source.
      * </p>
      * 
-     * @return The result of the last AWS Lambda invocation of your Lambda function.
+     * @return The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS
+     *         queue is the event source.
      */
 
     public String getLastProcessingResult() {
@@ -319,11 +317,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue is
+     * the event source.
      * </p>
      * 
      * @param lastProcessingResult
-     *        The result of the last AWS Lambda invocation of your Lambda function.
+     *        The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS
+     *        queue is the event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

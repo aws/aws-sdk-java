@@ -24,7 +24,11 @@ import javax.annotation.Generated;
 public class CodeStorageExceededException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
-    /** <p/> */
+    /**
+     * <p>
+     * The exception type.
+     * </p>
+     */
     private String type;
 
     /**
@@ -38,9 +42,12 @@ public class CodeStorageExceededException extends com.amazonaws.services.lambda.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The exception type.
+     * </p>
      * 
      * @param type
+     *        The exception type.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Type")
@@ -49,9 +56,11 @@ public class CodeStorageExceededException extends com.amazonaws.services.lambda.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The exception type.
+     * </p>
      * 
-     * @return
+     * @return The exception type.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Type")
@@ -60,9 +69,12 @@ public class CodeStorageExceededException extends com.amazonaws.services.lambda.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The exception type.
+     * </p>
      * 
      * @param type
+     *        The exception type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

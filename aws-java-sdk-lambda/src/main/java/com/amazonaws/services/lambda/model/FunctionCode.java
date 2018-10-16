@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The code for the Lambda function.
+ * The code for the Lambda function. You can specify either an S3 location, or upload a deployment package directly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode" target="_top">AWS API
@@ -30,41 +30,34 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
+     * handle the encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same region as your function.
      * </p>
      */
     private String s3Bucket;
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      */
     private String s3Key;
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      */
     private String s3ObjectVersion;
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
+     * handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -78,11 +71,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     *        The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI
+     *        clients handle the encoding for you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -91,11 +81,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
+     * handle the encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -105,11 +92,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *         the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *         SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *         "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *         >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     * @return The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI
+     *         clients handle the encoding for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -118,11 +102,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
+     * handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -136,11 +117,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
+     *        The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI
+     *        clients handle the encoding for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,13 +129,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same region as your function.
      * </p>
      * 
      * @param s3Bucket
-     *        Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *        reside in the same AWS region where you are creating the Lambda function.
+     *        An Amazon S3 bucket in the same region as your function.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -166,12 +142,10 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same region as your function.
      * </p>
      * 
-     * @return Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *         reside in the same AWS region where you are creating the Lambda function.
+     * @return An Amazon S3 bucket in the same region as your function.
      */
 
     public String getS3Bucket() {
@@ -180,13 +154,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same region as your function.
      * </p>
      * 
      * @param s3Bucket
-     *        Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *        reside in the same AWS region where you are creating the Lambda function.
+     *        An Amazon S3 bucket in the same region as your function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,11 +169,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 object (the deployment package) key name you want to upload.
+     *        The Amazon S3 key of the deployment package.
      */
 
     public void setS3Key(String s3Key) {
@@ -210,10 +182,10 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
-     * @return The Amazon S3 object (the deployment package) key name you want to upload.
+     * @return The Amazon S3 key of the deployment package.
      */
 
     public String getS3Key() {
@@ -222,11 +194,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 object (the deployment package) key name you want to upload.
+     *        The Amazon S3 key of the deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +209,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
      * @param s3ObjectVersion
-     *        The Amazon S3 object (the deployment package) version you want to upload.
+     *        For versioned objects, the version of the deployment package object to use.
      */
 
     public void setS3ObjectVersion(String s3ObjectVersion) {
@@ -250,10 +222,10 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
-     * @return The Amazon S3 object (the deployment package) version you want to upload.
+     * @return For versioned objects, the version of the deployment package object to use.
      */
 
     public String getS3ObjectVersion() {
@@ -262,11 +234,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
      * @param s3ObjectVersion
-     *        The Amazon S3 object (the deployment package) version you want to upload.
+     *        For versioned objects, the version of the deployment package object to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

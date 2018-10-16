@@ -26,8 +26,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The function's configuration.
+     * </p>
+     */
     private FunctionConfiguration configuration;
-
+    /**
+     * <p>
+     * The function's code.
+     * </p>
+     */
     private FunctionCodeLocation code;
     /**
      * <p>
@@ -39,13 +48,19 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
     /**
      * <p>
-     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * The concurrent execution limit set for this function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * </p>
      */
     private Concurrency concurrency;
 
     /**
+     * <p>
+     * The function's configuration.
+     * </p>
+     * 
      * @param configuration
+     *        The function's configuration.
      */
 
     public void setConfiguration(FunctionConfiguration configuration) {
@@ -53,7 +68,11 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The function's configuration.
+     * </p>
+     * 
+     * @return The function's configuration.
      */
 
     public FunctionConfiguration getConfiguration() {
@@ -61,7 +80,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The function's configuration.
+     * </p>
+     * 
      * @param configuration
+     *        The function's configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +95,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The function's code.
+     * </p>
+     * 
      * @param code
+     *        The function's code.
      */
 
     public void setCode(FunctionCodeLocation code) {
@@ -79,7 +108,11 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The function's code.
+     * </p>
+     * 
+     * @return The function's code.
      */
 
     public FunctionCodeLocation getCode() {
@@ -87,7 +120,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The function's code.
+     * </p>
+     * 
      * @param code
+     *        The function's code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,12 +212,13 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * The concurrent execution limit set for this function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * </p>
      * 
      * @param concurrency
-     *        The concurrent execution limit set for this function. For more information, see
-     *        <a>concurrent-executions</a>.
+     *        The concurrent execution limit set for this function. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      */
 
     public void setConcurrency(Concurrency concurrency) {
@@ -188,11 +227,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * The concurrent execution limit set for this function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * </p>
      * 
-     * @return The concurrent execution limit set for this function. For more information, see
-     *         <a>concurrent-executions</a>.
+     * @return The concurrent execution limit set for this function. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      */
 
     public Concurrency getConcurrency() {
@@ -201,12 +241,13 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+     * The concurrent execution limit set for this function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * </p>
      * 
      * @param concurrency
-     *        The concurrent execution limit set for this function. For more information, see
-     *        <a>concurrent-executions</a>.
+     *        The concurrent execution limit set for this function. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

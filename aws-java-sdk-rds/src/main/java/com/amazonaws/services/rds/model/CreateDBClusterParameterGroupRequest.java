@@ -36,7 +36,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBClusterParameterGroup.
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -86,7 +86,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBClusterParameterGroup.
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -104,7 +104,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DBClusterParameterGroup.
+     *        Must match the name of an existing DB cluster parameter group.
      *        </p>
      *        </li>
      *        </ul>
@@ -128,7 +128,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBClusterParameterGroup.
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -145,7 +145,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must match the name of an existing DBClusterParameterGroup.
+     *         Must match the name of an existing DB cluster parameter group.
      *         </p>
      *         </li>
      *         </ul>
@@ -169,7 +169,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBClusterParameterGroup.
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -187,7 +187,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DBClusterParameterGroup.
+     *        Must match the name of an existing DB cluster parameter group.
      *        </p>
      *        </li>
      *        </ul>

@@ -175,6 +175,10 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             }
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName()));
+        }
+
         if (restoreDBClusterFromSnapshotRequest.getDeletionProtection() != null) {
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getDeletionProtection()));
         }

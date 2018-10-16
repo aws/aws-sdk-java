@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -28,14 +27,31 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
@@ -61,9 +77,8 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private String description;
     /**
      * <p>
-     * The function execution time at which AWS Lambda should terminate the function. Because the execution time has
-     * cost implications, we recommend you set this value based on your expected execution time. The default is 3
-     * seconds.
+     * The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds. The
+     * maximum allowed value is 900 seconds.
      * </p>
      */
     private Integer timeout;
@@ -76,7 +91,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer memorySize;
-
+    /**
+     * <p>
+     * Specify security groups and subnets in a VPC to which your Lambda function needs access.
+     * </p>
+     */
     private VpcConfig vpcConfig;
     /**
      * <p>
@@ -86,28 +105,15 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private Environment environment;
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The runtime version for the function.
      * </p>
-     * <p>
-     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
-     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     * </p>
-     * <note>
-     * <p>
-     * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
-     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
-     * contains functions written in the Node v0.10.42 runtime.
-     * </p>
-     * </note>
      */
     private String runtime;
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
-     * For more information, see <a>dlq</a>.
+     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * they fail processing. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -120,7 +126,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private String kMSKeyArn;
     /**
      * <p>
-     * The parent object that contains your function's tracing settings.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
      * </p>
      */
     private TracingConfig tracingConfig;
@@ -129,31 +135,65 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
      * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -162,23 +202,57 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function.</p>
+     * @return The name of the lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *         Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -187,24 +261,58 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length.
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,15 +455,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The function execution time at which AWS Lambda should terminate the function. Because the execution time has
-     * cost implications, we recommend you set this value based on your expected execution time. The default is 3
-     * seconds.
+     * The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds. The
+     * maximum allowed value is 900 seconds.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which AWS Lambda should terminate the function. Because the execution time
-     *        has cost implications, we recommend you set this value based on your expected execution time. The default
-     *        is 3 seconds.
+     *        The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds.
+     *        The maximum allowed value is 900 seconds.
      */
 
     public void setTimeout(Integer timeout) {
@@ -364,14 +470,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The function execution time at which AWS Lambda should terminate the function. Because the execution time has
-     * cost implications, we recommend you set this value based on your expected execution time. The default is 3
-     * seconds.
+     * The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds. The
+     * maximum allowed value is 900 seconds.
      * </p>
      * 
-     * @return The function execution time at which AWS Lambda should terminate the function. Because the execution time
-     *         has cost implications, we recommend you set this value based on your expected execution time. The default
-     *         is 3 seconds.
+     * @return The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds.
+     *         The maximum allowed value is 900 seconds.
      */
 
     public Integer getTimeout() {
@@ -380,15 +484,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The function execution time at which AWS Lambda should terminate the function. Because the execution time has
-     * cost implications, we recommend you set this value based on your expected execution time. The default is 3
-     * seconds.
+     * The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds. The
+     * maximum allowed value is 900 seconds.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which AWS Lambda should terminate the function. Because the execution time
-     *        has cost implications, we recommend you set this value based on your expected execution time. The default
-     *        is 3 seconds.
+     *        The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds.
+     *        The maximum allowed value is 900 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,7 +558,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Specify security groups and subnets in a VPC to which your Lambda function needs access.
+     * </p>
+     * 
      * @param vpcConfig
+     *        Specify security groups and subnets in a VPC to which your Lambda function needs access.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -464,7 +571,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * Specify security groups and subnets in a VPC to which your Lambda function needs access.
+     * </p>
+     * 
+     * @return Specify security groups and subnets in a VPC to which your Lambda function needs access.
      */
 
     public VpcConfig getVpcConfig() {
@@ -472,7 +583,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Specify security groups and subnets in a VPC to which your Lambda function needs access.
+     * </p>
+     * 
      * @param vpcConfig
+     *        Specify security groups and subnets in a VPC to which your Lambda function needs access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,38 +639,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The runtime version for the function.
      * </p>
-     * <p>
-     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
-     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     * </p>
-     * <note>
-     * <p>
-     * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
-     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
-     * contains functions written in the Node v0.10.42 runtime.
-     * </p>
-     * </note>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
-     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
-     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     *        for each region that contains functions written in the Node v0.10.42 runtime.
-     *        </p>
+     *        The runtime version for the function.
      * @see Runtime
      */
 
@@ -564,37 +653,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The runtime version for the function.
      * </p>
-     * <p>
-     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
-     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     * </p>
-     * <note>
-     * <p>
-     * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
-     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
-     * contains functions written in the Node v0.10.42 runtime.
-     * </p>
-     * </note>
      * 
-     * @return The runtime environment for the Lambda function.</p>
-     *         <p>
-     *         To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
-     *         value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *         runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
-     *         "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     *         </p>
-     *         <note>
-     *         <p>
-     *         Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *         runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     *         will result in an invalid parameter error being returned. Note that you will have to follow this
-     *         procedure for each region that contains functions written in the Node v0.10.42 runtime.
-     *         </p>
+     * @return The runtime version for the function.
      * @see Runtime
      */
 
@@ -604,38 +666,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The runtime version for the function.
      * </p>
-     * <p>
-     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
-     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     * </p>
-     * <note>
-     * <p>
-     * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
-     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
-     * contains functions written in the Node v0.10.42 runtime.
-     * </p>
-     * </note>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
-     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
-     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     *        for each region that contains functions written in the Node v0.10.42 runtime.
-     *        </p>
+     *        The runtime version for the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -647,38 +682,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The runtime version for the function.
      * </p>
-     * <p>
-     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
-     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     * </p>
-     * <note>
-     * <p>
-     * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
-     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
-     * contains functions written in the Node v0.10.42 runtime.
-     * </p>
-     * </note>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
-     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
-     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     *        for each region that contains functions written in the Node v0.10.42 runtime.
-     *        </p>
+     *        The runtime version for the function.
      * @see Runtime
      */
 
@@ -688,38 +696,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The runtime version for the function.
      * </p>
-     * <p>
-     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
-     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     * </p>
-     * <note>
-     * <p>
-     * Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime
-     * versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in
-     * an invalid parameter error being returned. Note that you will have to follow this procedure for each region that
-     * contains functions written in the Node v0.10.42 runtime.
-     * </p>
-     * </note>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
-     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
-     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js
-     *        runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     *        will result in an invalid parameter error being returned. Note that you will have to follow this procedure
-     *        for each region that contains functions written in the Node v0.10.42 runtime.
-     *        </p>
+     *        The runtime version for the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -731,13 +712,15 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
-     * For more information, see <a>dlq</a>.
+     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * they fail processing. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
-     *        topic. For more information, see <a>dlq</a>.
+     *        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
+     *        when they fail processing. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      */
 
     public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
@@ -746,12 +729,14 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
-     * For more information, see <a>dlq</a>.
+     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * they fail processing. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      * </p>
      * 
-     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
-     *         SNS topic. For more information, see <a>dlq</a>.
+     * @return A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous
+     *         events when they fail processing. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      */
 
     public DeadLetterConfig getDeadLetterConfig() {
@@ -760,13 +745,15 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
-     * For more information, see <a>dlq</a>.
+     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * they fail processing. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
-     *        topic. For more information, see <a>dlq</a>.
+     *        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
+     *        when they fail processing. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -823,11 +810,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains your function's tracing settings.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
      * </p>
      * 
      * @param tracingConfig
-     *        The parent object that contains your function's tracing settings.
+     *        Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
+     *        X-Ray.
      */
 
     public void setTracingConfig(TracingConfig tracingConfig) {
@@ -836,10 +824,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains your function's tracing settings.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
      * </p>
      * 
-     * @return The parent object that contains your function's tracing settings.
+     * @return Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
+     *         X-Ray.
      */
 
     public TracingConfig getTracingConfig() {
@@ -848,11 +837,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains your function's tracing settings.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
      * </p>
      * 
      * @param tracingConfig
-     *        The parent object that contains your function's tracing settings.
+     *        Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
+     *        X-Ray.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -866,14 +856,14 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
      * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      * 
      * @param revisionId
      *        An optional value you can use to ensure you are updating the latest update of the function version or
      *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
      *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      */
 
     public void setRevisionId(String revisionId) {
@@ -885,13 +875,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
      * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      * 
      * @return An optional value you can use to ensure you are updating the latest update of the function version or
      *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
      *         function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *         version or alias <code>RevisionID</code> using either or .
+     *         version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      */
 
     public String getRevisionId() {
@@ -903,14 +893,14 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
      * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      * 
      * @param revisionId
      *        An optional value you can use to ensure you are updating the latest update of the function version or
      *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
      *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

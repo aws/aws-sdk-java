@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that contains your function's tracing settings.
+ * The function's AWS X-Ray tracing configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TracingConfig" target="_top">AWS API
@@ -30,25 +30,18 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service
-     * if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing header it receives
-     * from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.
+     * The tracing mode.
      * </p>
      */
     private String mode;
 
     /**
      * <p>
-     * Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service
-     * if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing header it receives
-     * from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.
+     * The tracing mode.
      * </p>
      * 
      * @param mode
-     *        Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream
-     *        service if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing
-     *        header it receives from an upstream service. If no tracing header is received, Lambda will call X-Ray for
-     *        a tracing decision.
+     *        The tracing mode.
      * @see TracingMode
      */
 
@@ -58,15 +51,10 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service
-     * if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing header it receives
-     * from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.
+     * The tracing mode.
      * </p>
      * 
-     * @return Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream
-     *         service if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing
-     *         header it receives from an upstream service. If no tracing header is received, Lambda will call X-Ray for
-     *         a tracing decision.
+     * @return The tracing mode.
      * @see TracingMode
      */
 
@@ -76,16 +64,11 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service
-     * if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing header it receives
-     * from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.
+     * The tracing mode.
      * </p>
      * 
      * @param mode
-     *        Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream
-     *        service if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing
-     *        header it receives from an upstream service. If no tracing header is received, Lambda will call X-Ray for
-     *        a tracing decision.
+     *        The tracing mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TracingMode
      */
@@ -97,16 +80,11 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service
-     * if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing header it receives
-     * from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.
+     * The tracing mode.
      * </p>
      * 
      * @param mode
-     *        Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream
-     *        service if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing
-     *        header it receives from an upstream service. If no tracing header is received, Lambda will call X-Ray for
-     *        a tracing decision.
+     *        The tracing mode.
      * @see TracingMode
      */
 
@@ -116,16 +94,11 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream service
-     * if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing header it receives
-     * from an upstream service. If no tracing header is received, Lambda will call X-Ray for a tracing decision.
+     * The tracing mode.
      * </p>
      * 
      * @param mode
-     *        Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request from an upstream
-     *        service if it contains a tracing header with "sampled=1". If Active, Lambda will respect any tracing
-     *        header it receives from an upstream service. If no tracing header is received, Lambda will call X-Ray for
-     *        a tracing decision.
+     *        The tracing mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TracingMode
      */

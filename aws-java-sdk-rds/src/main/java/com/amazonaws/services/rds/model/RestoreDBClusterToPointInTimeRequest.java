@@ -46,7 +46,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -117,12 +117,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -140,7 +140,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      */
     private Boolean useLatestRestorableTime;
@@ -197,7 +197,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      * </p>
      * <ul>
      * <li>
@@ -258,6 +258,38 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
+     * default DB cluster parameter group for the specified engine is used.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String dBClusterParameterGroupName;
+    /**
+     * <p>
      * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false.
      * </p>
@@ -284,7 +316,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -307,7 +339,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      */
@@ -336,7 +368,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -358,7 +390,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      */
@@ -387,7 +419,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -410,7 +442,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -698,12 +730,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -732,12 +764,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     *        Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     *        Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -772,12 +804,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -805,12 +837,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     *         Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     *         Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -845,12 +877,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -879,12 +911,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+     *        Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     *        Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -907,7 +939,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @param useLatestRestorableTime
@@ -917,7 +949,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        Default: <code>false</code>
      *        </p>
      *        <p>
-     *        Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
 
     public void setUseLatestRestorableTime(Boolean useLatestRestorableTime) {
@@ -933,7 +965,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
@@ -942,7 +974,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         Default: <code>false</code>
      *         </p>
      *         <p>
-     *         Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
 
     public Boolean getUseLatestRestorableTime() {
@@ -958,7 +990,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @param useLatestRestorableTime
@@ -968,7 +1000,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        Default: <code>false</code>
      *        </p>
      *        <p>
-     *        Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -986,7 +1018,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Default: <code>false</code>
      * </p>
      * <p>
-     * Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
@@ -995,7 +1027,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         Default: <code>false</code>
      *         </p>
      *         <p>
-     *         Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+     *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
 
     public Boolean isUseLatestRestorableTime() {
@@ -1331,7 +1363,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      * </p>
      * <ul>
      * <li>
@@ -1364,7 +1396,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
-     *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      *        </p>
      *        <ul>
      *        <li>
@@ -1403,7 +1435,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      * </p>
      * <ul>
      * <li>
@@ -1436,7 +1468,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         identified by the <code>KmsKeyId</code> parameter.
      *         </p>
      *         <p>
-     *         If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      *         </p>
      *         <ul>
      *         <li>
@@ -1475,7 +1507,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
-     * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      * </p>
      * <ul>
      * <li>
@@ -1508,7 +1540,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
-     *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
      *        </p>
      *        <ul>
      *        <li>
@@ -1828,6 +1860,199 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
+     * default DB cluster parameter group for the specified engine is used.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBClusterParameterGroupName
+     *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
+     *        the default DB cluster parameter group for the specified engine is used.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If supplied, must match the name of an existing DB cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 letters, numbers, or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
+        this.dBClusterParameterGroupName = dBClusterParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
+     * default DB cluster parameter group for the specified engine is used.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The name of the DB cluster parameter group to associate with this DB cluster. If this argument is
+     *         omitted, the default DB cluster parameter group for the specified engine is used.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If supplied, must match the name of an existing DB cluster parameter group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 letters, numbers, or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
+     */
+
+    public String getDBClusterParameterGroupName() {
+        return this.dBClusterParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
+     * default DB cluster parameter group for the specified engine is used.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DB cluster parameter group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBClusterParameterGroupName
+     *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
+     *        the default DB cluster parameter group for the specified engine is used.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If supplied, must match the name of an existing DB cluster parameter group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 letters, numbers, or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withDBClusterParameterGroupName(String dBClusterParameterGroupName) {
+        setDBClusterParameterGroupName(dBClusterParameterGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
      * value is set to true. The default is false.
      * </p>
@@ -1925,6 +2150,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
             sb.append("BacktrackWindow: ").append(getBacktrackWindow()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getDBClusterParameterGroupName() != null)
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
@@ -1998,6 +2225,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDBClusterParameterGroupName() == null ^ this.getDBClusterParameterGroupName() == null)
+            return false;
+        if (other.getDBClusterParameterGroupName() != null && other.getDBClusterParameterGroupName().equals(this.getDBClusterParameterGroupName()) == false)
+            return false;
         if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
@@ -2024,6 +2255,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }

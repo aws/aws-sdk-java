@@ -15,7 +15,9 @@ package com.amazonaws.services.lambda.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Need additional permissions to configure VPC settings.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EC2AccessDeniedException extends com.amazonaws.services.lambda.model.AWSLambdaException {

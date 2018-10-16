@@ -24,6 +24,8 @@ public class ApiCallMonitoringEvent extends ApiMonitoringEvent {
 
     private Integer attemptCount;
     private Long latency;
+    private int apiCallTimeout;
+    private int maxRetriesExceeded;
 
     @Override
     public ApiCallMonitoringEvent withApi(String api) {
@@ -101,6 +103,42 @@ public class ApiCallMonitoringEvent extends ApiMonitoringEvent {
      */
     public ApiCallMonitoringEvent withLatency(Long latency) {
         this.latency = latency;
+        return this;
+    }
+
+    /**
+     * @return a boolean (0/1) value that is 0 unless the Api call failed due to hitting an Api Call time limit.
+     */
+    public int getApiCallTimeout() {
+        return apiCallTimeout;
+    }
+
+    /**
+     * Sets the api call timeout
+     *
+     * @param apiCallTimeout The new apiCallTimeout value.
+     * @return This object for method chaining.
+     */
+    public ApiCallMonitoringEvent withApiCallTimeout(int apiCallTimeout) {
+        this.apiCallTimeout = apiCallTimeout;
+        return this;
+    }
+
+    /**
+     * @return a boolean (0/1) value that is 0 unless the Api call failed and the final attempt returned a retryable error.
+     */
+    public int getMaxRetriesExceeded() {
+        return maxRetriesExceeded;
+    }
+
+    /**
+     * Sets the api call timeout
+     *
+     * @param maxRetriesExceeded The new maxRetriesExceeded value.
+     * @return This object for method chaining.
+     */
+    public ApiCallMonitoringEvent withMaxRetriesExceeded(int maxRetriesExceeded) {
+        this.maxRetriesExceeded = maxRetriesExceeded;
         return this;
     }
 

@@ -46,7 +46,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Can't be associated with any DB clusters.
      * </p>
      * </li>
      * </ul>
@@ -73,7 +73,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Can't be associated with any DB clusters.
      * </p>
      * </li>
      * </ul>
@@ -96,7 +96,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB clusters.
+     *        Can't be associated with any DB clusters.
      *        </p>
      *        </li>
      */
@@ -125,7 +125,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Can't be associated with any DB clusters.
      * </p>
      * </li>
      * </ul>
@@ -147,7 +147,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be associated with any DB clusters.
+     *         Can't be associated with any DB clusters.
      *         </p>
      *         </li>
      */
@@ -176,7 +176,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Can't be associated with any DB clusters.
      * </p>
      * </li>
      * </ul>
@@ -199,7 +199,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB clusters.
+     *        Can't be associated with any DB clusters.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -16,6 +16,7 @@
 package com.amazonaws.monitoring.internal;
 
 import static com.amazonaws.util.AWSRequestMetrics.Field.HttpRequestTime;
+import static com.amazonaws.util.AwsClientSideMonitoringMetrics.MaxRetriesExceeded;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
@@ -27,12 +28,14 @@ import com.amazonaws.auth.internal.SignerConstants;
 import com.amazonaws.handlers.HandlerAfterAttemptContext;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
+import com.amazonaws.http.timers.client.ClientExecutionTimeoutException;
 import com.amazonaws.monitoring.ApiCallAttemptMonitoringEvent;
 import com.amazonaws.monitoring.ApiCallMonitoringEvent;
 import com.amazonaws.monitoring.MonitoringEvent;
 import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AwsClientSideMonitoringMetrics;
+import com.amazonaws.util.CollectionUtils;
 import com.amazonaws.util.ImmutableMapParameter;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.Throwables;
@@ -93,7 +96,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
 
     @Override
     public void afterError(Request<?> request, Response<?> response, Exception e) {
-        ApiCallMonitoringEvent event = generateApiCallMonitoringEvent(request);
+        ApiCallMonitoringEvent event = generateApiCallMonitoringEvent(request, e);
         handToMonitoringListeners(event);
     }
 
@@ -178,6 +181,22 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
             .withAttemptCount(requestCount)
             .withLatency(latency)
             .withTimestamp(timestamp);
+    }
+
+    private ApiCallMonitoringEvent generateApiCallMonitoringEvent(Request<?> request, Exception e) {
+        ApiCallMonitoringEvent event = generateApiCallMonitoringEvent(request);
+        AWSRequestMetrics metrics = request.getAWSRequestMetrics();
+
+        if (e instanceof ClientExecutionTimeoutException) {
+            event.withApiCallTimeout(1);
+        }
+
+        if (metrics != null && !CollectionUtils.isNullOrEmpty(metrics.getProperty(MaxRetriesExceeded))) {
+            boolean maxRetriesExceeded = (Boolean) metrics.getProperty(MaxRetriesExceeded).get(0);
+            event.withMaxRetriesExceeded(maxRetriesExceeded ? 1 : 0);
+        }
+
+        return event;
     }
 
     /**

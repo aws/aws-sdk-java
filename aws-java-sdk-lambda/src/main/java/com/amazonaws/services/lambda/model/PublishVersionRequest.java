@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion" target="_top">AWS API
  *      Documentation</a>
@@ -28,11 +27,31 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
-     * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
@@ -56,27 +75,66 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * it will fail with an error message, advising you retrieve the latest function version or alias
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
-     * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can
-     *        specify Amazon Resource Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -85,18 +143,57 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
-     * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you
-     *         can specify Amazon Resource Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * @return The name of the lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -105,19 +202,58 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a
-     * partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name. You can specify a function name (for example, <code>Thumbnail</code>) or you can
-     *        specify Amazon Resource Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,15 +370,15 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * it will fail with an error message, advising you retrieve the latest function version or alias
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      * 
      * @param revisionId
      *        An optional value you can use to ensure you are updating the latest update of the function version or
      *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        function or alias, it will fail with an error message, advising you retrieve the latest function version
+     *        or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      */
 
     public void setRevisionId(String revisionId) {
@@ -253,14 +389,14 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * it will fail with an error message, advising you retrieve the latest function version or alias
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      * 
      * @return An optional value you can use to ensure you are updating the latest update of the function version or
      *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *         version or alias <code>RevisionID</code> using either or .
+     *         function or alias, it will fail with an error message, advising you retrieve the latest function version
+     *         or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      */
 
     public String getRevisionId() {
@@ -271,15 +407,15 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
      * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * it will fail with an error message, advising you retrieve the latest function version or alias
+     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * </p>
      * 
      * @param revisionId
      *        An optional value you can use to ensure you are updating the latest update of the function version or
      *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        function or alias, it will fail with an error message, advising you retrieve the latest function version
+     *        or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

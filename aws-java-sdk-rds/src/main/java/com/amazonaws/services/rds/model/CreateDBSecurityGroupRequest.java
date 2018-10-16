@@ -46,7 +46,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -98,7 +98,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -137,7 +137,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -168,7 +168,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -205,7 +205,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -235,7 +235,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -272,7 +272,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -303,7 +303,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>

@@ -27,8 +27,31 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
@@ -53,20 +76,67 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * invoke each version. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
+     * Using Aliases</a>.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        Name of the Lambda function for which you want to create an alias. Note that the length constraint applies
-     *        only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -75,12 +145,57 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return Name of the Lambda function for which you want to create an alias. Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * @return The name of the lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -89,13 +204,58 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        Name of the Lambda function for which you want to create an alias. Note that the length constraint applies
-     *        only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,12 +387,16 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * invoke each version. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
+     * Using Aliases</a>.
      * </p>
      * 
      * @param routingConfig
      *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        traffic will invoke each version. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     *        Shifting Using Aliases</a>.
      */
 
     public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
@@ -242,11 +406,15 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * invoke each version. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
+     * Using Aliases</a>.
      * </p>
      * 
      * @return Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *         traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *         traffic will invoke each version. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     *         Shifting Using Aliases</a>.
      */
 
     public AliasRoutingConfiguration getRoutingConfig() {
@@ -256,12 +424,16 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * invoke each version. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
+     * Using Aliases</a>.
      * </p>
      * 
      * @param routingConfig
      *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        traffic will invoke each version. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     *        Shifting Using Aliases</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

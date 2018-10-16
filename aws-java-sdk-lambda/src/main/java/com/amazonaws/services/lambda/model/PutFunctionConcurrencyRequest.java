@@ -27,28 +27,95 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the function you are setting concurrent execution limits on. For more information, see
-     * <a>concurrent-executions</a>.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * The concurrent execution limit reserved for this function. For more information, see
-     * <a>concurrent-executions</a>.
+     * The concurrent execution limit reserved for this function.
      * </p>
      */
     private Integer reservedConcurrentExecutions;
 
     /**
      * <p>
-     * The name of the function you are setting concurrent execution limits on. For more information, see
-     * <a>concurrent-executions</a>.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the function you are setting concurrent execution limits on. For more information, see
-     *        <a>concurrent-executions</a>.
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -57,12 +124,57 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the function you are setting concurrent execution limits on. For more information, see
-     * <a>concurrent-executions</a>.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return The name of the function you are setting concurrent execution limits on. For more information, see
-     *         <a>concurrent-executions</a>.
+     * @return The name of the lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -71,13 +183,58 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the function you are setting concurrent execution limits on. For more information, see
-     * <a>concurrent-executions</a>.
+     * The name of the lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the function you are setting concurrent execution limits on. For more information, see
-     *        <a>concurrent-executions</a>.
+     *        The name of the lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +245,11 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The concurrent execution limit reserved for this function. For more information, see
-     * <a>concurrent-executions</a>.
+     * The concurrent execution limit reserved for this function.
      * </p>
      * 
      * @param reservedConcurrentExecutions
-     *        The concurrent execution limit reserved for this function. For more information, see
-     *        <a>concurrent-executions</a>.
+     *        The concurrent execution limit reserved for this function.
      */
 
     public void setReservedConcurrentExecutions(Integer reservedConcurrentExecutions) {
@@ -103,12 +258,10 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The concurrent execution limit reserved for this function. For more information, see
-     * <a>concurrent-executions</a>.
+     * The concurrent execution limit reserved for this function.
      * </p>
      * 
-     * @return The concurrent execution limit reserved for this function. For more information, see
-     *         <a>concurrent-executions</a>.
+     * @return The concurrent execution limit reserved for this function.
      */
 
     public Integer getReservedConcurrentExecutions() {
@@ -117,13 +270,11 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The concurrent execution limit reserved for this function. For more information, see
-     * <a>concurrent-executions</a>.
+     * The concurrent execution limit reserved for this function.
      * </p>
      * 
      * @param reservedConcurrentExecutions
-     *        The concurrent execution limit reserved for this function. For more information, see
-     *        <a>concurrent-executions</a>.
+     *        The concurrent execution limit reserved for this function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides limits of code size and concurrency associated with the current account and region.
+ * Provides limits of code size and concurrency associated with the current account and region. For more information or
+ * to request a limit increase for concurrent executions, see <a
+ * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda Limits</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit" target="_top">AWS API
@@ -50,17 +52,15 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     private Long codeSizeZipped;
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 1000.
+     * Number of simultaneous executions of your function per region. The default limit is 1000.
      * </p>
      */
     private Integer concurrentExecutions;
     /**
      * <p>
      * The number of concurrent executions available to functions that do not have concurrency limits set. For more
-     * information, see <a>concurrent-executions</a>.
+     * information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.
      * </p>
      */
     private Integer unreservedConcurrentExecutions;
@@ -199,17 +199,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 1000.
+     * Number of simultaneous executions of your function per region. The default limit is 1000.
      * </p>
      * 
      * @param concurrentExecutions
-     *        Number of simultaneous executions of your function per region. For more information or to request a limit
-     *        increase for concurrent executions, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *        Executions</a>. The default limit is 1000.
+     *        Number of simultaneous executions of your function per region. The default limit is 1000.
      */
 
     public void setConcurrentExecutions(Integer concurrentExecutions) {
@@ -218,16 +212,10 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 1000.
+     * Number of simultaneous executions of your function per region. The default limit is 1000.
      * </p>
      * 
-     * @return Number of simultaneous executions of your function per region. For more information or to request a limit
-     *         increase for concurrent executions, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *         Executions</a>. The default limit is 1000.
+     * @return Number of simultaneous executions of your function per region. The default limit is 1000.
      */
 
     public Integer getConcurrentExecutions() {
@@ -236,17 +224,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 1000.
+     * Number of simultaneous executions of your function per region. The default limit is 1000.
      * </p>
      * 
      * @param concurrentExecutions
-     *        Number of simultaneous executions of your function per region. For more information or to request a limit
-     *        increase for concurrent executions, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *        Executions</a>. The default limit is 1000.
+     *        Number of simultaneous executions of your function per region. The default limit is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,12 +240,14 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of concurrent executions available to functions that do not have concurrency limits set. For more
-     * information, see <a>concurrent-executions</a>.
+     * information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.
      * </p>
      * 
      * @param unreservedConcurrentExecutions
      *        The number of concurrent executions available to functions that do not have concurrency limits set. For
-     *        more information, see <a>concurrent-executions</a>.
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      */
 
     public void setUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
@@ -273,11 +257,13 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of concurrent executions available to functions that do not have concurrency limits set. For more
-     * information, see <a>concurrent-executions</a>.
+     * information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.
      * </p>
      * 
      * @return The number of concurrent executions available to functions that do not have concurrency limits set. For
-     *         more information, see <a>concurrent-executions</a>.
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      */
 
     public Integer getUnreservedConcurrentExecutions() {
@@ -287,12 +273,14 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of concurrent executions available to functions that do not have concurrency limits set. For more
-     * information, see <a>concurrent-executions</a>.
+     * information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.
      * </p>
      * 
      * @param unreservedConcurrentExecutions
      *        The number of concurrent executions available to functions that do not have concurrency limits set. For
-     *        more information, see <a>concurrent-executions</a>.
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
