@@ -20,9 +20,9 @@ import javax.annotation.Generated;
  * The collection of VPC links under the caller's account in a region.
  * </p>
  * <div class="seeAlso"> <a
- * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/getting-started-with-private-integration.html">Getting
- * Started with Private Integrations</a>, <a
- * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/set-up-private-integration.html">Set up Private
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-with-private-integration.html"
+ * >Getting Started with Private Integrations</a>, <a
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html">Set up Private
  * Integrations</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

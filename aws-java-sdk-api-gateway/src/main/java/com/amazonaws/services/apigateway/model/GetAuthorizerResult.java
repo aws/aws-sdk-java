@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * a client calls the method.
  * </p>
  * <div class="seeAlso"> <a
- * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable custom
  * authorization</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -57,7 +57,7 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<String> providerARNs;
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     * Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      * </p>
      */
     private String authType;
@@ -383,11 +383,11 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     * Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      * </p>
      * 
      * @param authType
-     *        Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     *        Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      */
 
     public void setAuthType(String authType) {
@@ -396,10 +396,10 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     * Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      * </p>
      * 
-     * @return Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     * @return Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      */
 
     public String getAuthType() {
@@ -408,11 +408,11 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     * Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      * </p>
      * 
      * @param authType
-     *        Optional customer-defined field, used in Swagger imports and exports without functional impact.
+     *        Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

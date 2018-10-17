@@ -22,9 +22,9 @@ import javax.annotation.Generated;
  * </p>
  * <div class="remarks">Client certificates are used to authenticate an API by the backend server. To authenticate an
  * API client (or user), use IAM roles and policies, a custom <a>Authorizer</a> or an Amazon Cognito user pool.</div>
- * <div class="seeAlso"> <a
- * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
- * Client-Side Certificate</a> </div>
+ * <div class="seeAlso"> <a href=
+ * "https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
+ * >Use Client-Side Certificate</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetClientCertificateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

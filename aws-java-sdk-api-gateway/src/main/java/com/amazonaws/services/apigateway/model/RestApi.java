@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents a REST API.
  * </p>
- * <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Create
- * an API</a> </div>
+ * <div class="seeAlso"> <a
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RestApi implements Serializable, Cloneable, StructuredPojo {

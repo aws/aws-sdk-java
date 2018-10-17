@@ -33,6 +33,8 @@ public class PutPermissionRequestMarshaller {
             .marshallLocationName("Principal").build();
     private static final MarshallingInfo<String> STATEMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementId").build();
+    private static final MarshallingInfo<StructuredPojo> CONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Condition").build();
 
     private static final PutPermissionRequestMarshaller instance = new PutPermissionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class PutPermissionRequestMarshaller {
             protocolMarshaller.marshall(putPermissionRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(putPermissionRequest.getPrincipal(), PRINCIPAL_BINDING);
             protocolMarshaller.marshall(putPermissionRequest.getStatementId(), STATEMENTID_BINDING);
+            protocolMarshaller.marshall(putPermissionRequest.getCondition(), CONDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

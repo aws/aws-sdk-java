@@ -19,8 +19,9 @@ import javax.annotation.Generated;
  * <p>
  * Represents a collection of <a>BasePathMapping</a> resources.
  * </p>
- * <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-custom-domains.html">Use
- * Custom Domain Names</a> </div>
+ * <div class="seeAlso"> <a
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain
+ * Names</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetBasePathMappingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

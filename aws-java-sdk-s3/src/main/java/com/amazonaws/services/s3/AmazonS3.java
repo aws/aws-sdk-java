@@ -3481,8 +3481,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the tagging configuration for the specified bucket, or null if
-     * the specified bucket does not exist, or an empty list if no
-     * configuration has been established.
+     * the specified bucket does not exist, or if no configuration has been established.
      *
      * @param bucketName
      *            The name of the bucket for which to retrieve tagging
@@ -3495,8 +3494,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the tagging configuration for the specified bucket, or null if
-     * the specified bucket does not exist, or an empty list if no
-     * configuration has been established.
+     * the specified bucket does not exist, or if no configuration has been established.
      *
      * @param getBucketTaggingConfigurationRequest
      *            The request object for retrieving the bucket tagging

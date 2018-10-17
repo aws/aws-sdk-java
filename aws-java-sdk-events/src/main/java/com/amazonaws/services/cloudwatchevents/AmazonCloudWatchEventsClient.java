@@ -860,9 +860,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default
-     * <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to your default
-     * event bus.
+     * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to your
+     * account's default <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events
+     * arriving to your default event bus.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have a CloudWatch Events rule with
@@ -870,7 +870,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </p>
      * <p>
      * To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for
-     * each of these accounts.
+     * each of these accounts. Or, if all the accounts are members of the same AWS organization, you can run
+     * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and specifying the AWS organization ID
+     * in <code>Condition</code>, to grant permissions to all accounts in that organization.
      * </p>
      * <p>
      * The permission policy on the default event bus cannot exceed 10 KB in size.
